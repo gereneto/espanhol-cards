@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12141c">
+<title>Espanhol Cards</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇸</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="marca">Espanhol <span>Cards</span></div>
+  <div class="placar" id="placar"></div>
+  <nav class="acoes-topo">
+    <button class="icone" id="btn-painel" title="Estatísticas">📊</button>
+    <button class="icone" id="btn-config" title="Configurações">⚙️</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ══════════ INÍCIO ══════════ -->
+  <section id="tela-inicio" class="tela">
+    <div class="bloco-inicio">
+      <h1>Pronto para estudar?</h1>
+      <p class="sub" id="resumo-inicio">Carregando…</p>
+      <button class="primario grande" id="btn-comecar">Próximo card</button>
+      <p class="dica">Atalhos: <kbd>1</kbd>–<kbd>5</kbd> escolhem a alternativa · <kbd>Enter</kbd> avança</p>
+    </div>
+  </section>
+
+  <!-- ══════════ CARD ══════════ -->
+  <section id="tela-card" class="tela oculto">
+    <div class="card">
+      <div class="card-meta">
+        <span class="etiqueta" id="meta-tipo">palavra</span>
+        <span class="etiqueta suave" id="meta-modo">múltipla escolha</span>
+        <span class="etiqueta suave oculto" id="meta-nivel"></span>
+      </div>
+
+      <p class="enunciado" id="enunciado">O que significa em português?</p>
+      <div class="termo" id="termo"></div>
+
+      <!-- múltipla escolha -->
+      <div id="area-multipla" class="alternativas"></div>
+
+      <!-- escrita -->
+      <div id="area-escrita" class="oculto">
+        <input type="text" id="entrada" autocomplete="off" autocorrect="off"
+               autocapitalize="off" spellcheck="false" placeholder="escreva o significado…">
+        <div class="linha-botoes">
+          <button class="primario" id="btn-responder">Responder</button>
+          <button class="secundario" id="btn-nao-sei">Não sei</button>
+        </div>
+      </div>
+
+      <!-- feedback -->
+      <div id="area-feedback" class="oculto">
+        <div class="veredito" id="veredito"></div>
+        <div class="resposta-certa">
+          <span class="rotulo">Resposta</span>
+          <strong id="resposta-certa"></strong>
+        </div>
+        <p class="nota" id="nota"></p>
+        <div class="medidas" id="medidas"></div>
+
+        <div id="area-conhecia" class="conhecia oculto">
+          <p class="pergunta-conhecia">Você já conhecia isso antes?</p>
+          <div class="linha-botoes">
+            <button class="opcao-conhecia" data-conhecia="sim">Já conhecia bem</button>
+            <button class="opcao-conhecia" data-conhecia="mais_ou_menos">Já tinha visto</button>
+            <button class="opcao-conhecia" data-conhecia="nao">Não conhecia</button>
+          </div>
+        </div>
+
+        <button class="primario grande" id="btn-proximo">Próximo card</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PAINEL ══════════ -->
+  <section id="tela-painel" class="tela oculto">
+    <h2>Como você está indo</h2>
+    <div id="painel-conteudo"></div>
+    <button class="secundario" data-voltar>Voltar</button>
+  </section>
+
+  <!-- ══════════ CONFIGURAÇÕES ══════════ -->
+  <section id="tela-config" class="tela oculto">
+    <h2>Configurações</h2>
+
+    <div class="grupo">
+      <h3>Sincronizar com o GitHub</h3>
+      <p class="ajuda">
+        Seus resultados são gravados em
+        <code>gereneto/espanhol-cards-dados</code>. Para isso o app precisa de um
+        <em>token</em> seu, guardado apenas neste navegador (nunca vai para o repositório do app).
+        Crie um <strong>fine-grained token</strong> com acesso somente a esse repositório e
+        permissão <strong>Contents: Read and write</strong>.
+      </p>
+      <label>Repositório de dados
+        <input type="text" id="cfg-repo" placeholder="gereneto/espanhol-cards-dados">
+      </label>
+      <label>Token do GitHub
+        <input type="password" id="cfg-token" placeholder="github_pat_…" autocomplete="off">
+      </label>
+      <label class="linha-check">
+        <input type="checkbox" id="cfg-auto" checked>
+        <span>Enviar automaticamente durante o estudo</span>
+      </label>
+      <div class="linha-botoes">
+        <button class="primario" id="btn-salvar-cfg">Salvar</button>
+        <button class="secundario" id="btn-enviar">Enviar agora</button>
+        <button class="secundario" id="btn-baixar">Baixar do GitHub</button>
+      </div>
+      <p class="estado-sync" id="estado-sync"></p>
+    </div>
+
+    <div class="grupo">
+      <h3>Cópia local</h3>
+      <p class="ajuda">Funciona sem token, caso você prefira levar o arquivo na mão.</p>
+      <div class="linha-botoes">
+        <button class="secundario" id="btn-exportar">Exportar arquivo</button>
+        <button class="secundario" id="btn-importar">Importar arquivo</button>
+        <input type="file" id="arquivo-importar" accept="application/json" hidden>
+      </div>
+    </div>
+
+    <div class="grupo perigo">
+      <h3>Zerar</h3>
+      <p class="ajuda">Apaga todo o progresso guardado neste navegador. O que já foi enviado ao GitHub continua lá.</p>
+      <button class="secundario" id="btn-zerar">Apagar progresso local</button>
+    </div>
+
+    <button class="secundario" data-voltar>Voltar</button>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <span id="rodape-sync">•</span>
+</footer>
+
+<script src="data/cards.js"></script>
+<script src="js/motor.js"></script>
+<script src="js/github.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
