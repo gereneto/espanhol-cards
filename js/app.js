@@ -18,7 +18,7 @@
     'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
-    'area-conhecia', 'btn-proximo', 'painel-conteudo',
+    'area-conhecia', 'btn-confirmar', 'btn-proximo', 'aviso-registrado', 'painel-conteudo',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
     'arquivo-importar', 'btn-zerar', 'rodape-sync'
@@ -144,6 +144,11 @@
 
     el['area-feedback'].classList.add('oculto');
     el['area-conhecia'].classList.add('oculto');
+    el['area-conhecia'].classList.remove('travada');
+    el['btn-confirmar'].disabled = false;
+    el['btn-confirmar'].textContent = 'Confirmar resposta';
+    el['aviso-registrado'].classList.add('oculto');
+    document.querySelectorAll('.opcao-conhecia').forEach(b => { b.disabled = false; });
 
     if (modoAtual === 'multipla') {
       montarAlternativas();
@@ -259,8 +264,11 @@
     el.veredito.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  function avancar() {
-    if (respostaPendente) {
+  /* Grava a resposta e devolve o card para a fila, sem sair da tela.
+     Depois disso, a pergunta "já conhecia?" não muda mais nada. */
+  function confirmar() {
+    if (!respostaPendente) return;
+    {
       const r = respostaPendente;
       r.conhecia = conheciaEscolhida;
 
@@ -304,6 +312,16 @@
         sincronizar({ silencioso: true });
       }
     }
+
+    el['btn-confirmar'].disabled = true;
+    el['btn-confirmar'].textContent = 'Resposta registrada ✓';
+    el['aviso-registrado'].classList.remove('oculto');
+    el['area-conhecia'].classList.add('travada');
+    document.querySelectorAll('.opcao-conhecia').forEach(b => { b.disabled = true; });
+  }
+
+  function avancar() {
+    confirmar();
     proximoCard();
   }
 
@@ -618,6 +636,7 @@
   /* ═══════════════ eventos ═══════════════ */
 
   el['btn-comecar'].addEventListener('click', proximoCard);
+  el['btn-confirmar'].addEventListener('click', confirmar);
   el['btn-proximo'].addEventListener('click', avancar);
   el['btn-responder'].addEventListener('click', () => responderEscrita(false));
   el['btn-nao-sei'].addEventListener('click', () => responderEscrita(true));
@@ -684,7 +703,8 @@
     if (alvo === 'INPUT' && e.key !== 'Escape') return;
 
     if (!el['area-feedback'].classList.contains('oculto')) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); avancar(); }
+      if (e.key === 'Enter') { e.preventDefault(); avancar(); }
+      if (e.key === ' ') { e.preventDefault(); confirmar(); }
       if (!el['area-conhecia'].classList.contains('oculto') && '123'.includes(e.key)) {
         e.preventDefault();
         document.querySelectorAll('.opcao-conhecia')[+e.key - 1].click();

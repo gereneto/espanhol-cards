@@ -17,6 +17,9 @@ sendo 33 deles falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `pol
 4. O app cronometra cada resposta e classifica em **rápido / médio / lento**,
    com limiares diferentes para palavra e frase, e para escolher e escrever.
 5. Na estreia do card ele ainda pergunta **se você já conhecia aquilo**.
+6. No fim há dois botões: **Confirmar resposta** grava e deixa você no card, para
+   reler a nota com calma; **Próximo card** grava e já traz o seguinte. Depois de
+   confirmar, a pergunta "já conhecia?" trava — ela só conta antes do registro.
 
 Tudo isso é gravado para calibrar as próximas levas de cards.
 
@@ -41,12 +44,13 @@ o card continua na múltipla escolha.
 A fila inicial intercala os níveis (A1, A2, B1, B2, C1, C2, A1…) e alterna
 palavra/frase, para descobrir logo onde está o seu teto.
 
-## Rodando
+## Onde roda
 
-É um site estático, sem build e sem dependências.
+No ar em **[espanhol-cards.netlify.app](https://espanhol-cards.netlify.app)**.
 
-- **GitHub Pages**: em Settings → Pages, publique a partir da branch `main`, pasta `/ (root)`.
-- **Local**: abrir o `index.html` direto no navegador já funciona.
+É um site estático, sem build e sem dependências: o Netlify publica a raiz do
+repositório direto, sem comando de build. Para mexer localmente, basta abrir o
+`index.html` no navegador — funciona igual.
 
 ## Dados e sincronização
 
@@ -100,7 +104,8 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 | Tecla | O quê |
 |---|---|
 | `1`–`5` | escolhe a alternativa |
-| `Enter` | responde / vai para o próximo |
+| `Enter` | responde / grava e vai para o próximo |
+| `espaço` | grava a resposta sem sair do card |
 | `1`–`3` | responde "já conhecia?" |
 
 ## Estrutura
