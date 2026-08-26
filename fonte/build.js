@@ -125,4 +125,25 @@ fs.writeFileSync(
   'utf8'
 );
 
-console.log('\n  ok → data/cards.json e data/cards.js\n');
+/* ── carimbo de versão nos assets ──
+   Sem isso o navegador pode servir um data/cards.js velho junto de um
+   index.html novo, misturando baralho antigo com código novo. */
+const crypto = require('crypto');
+const assets = ['style.css', 'js/motor.js', 'js/github.js', 'js/app.js', 'data/cards.js'];
+const soma = crypto.createHash('sha1');
+for (const a of assets) soma.update(fs.readFileSync(path.join(raiz, a)));
+const versao = soma.digest('hex').slice(0, 8);
+
+const indice = path.join(raiz, 'index.html');
+let html = fs.readFileSync(indice, 'utf8');
+for (const a of assets) {
+  const escapado = a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  html = html.replace(
+    new RegExp('(href|src)="' + escapado + '(\\?v=[^"]*)?"', 'g'),
+    '$1="' + a + '?v=' + versao + '"'
+  );
+}
+fs.writeFileSync(indice, html, 'utf8');
+
+console.log('\n  ok → data/cards.json e data/cards.js');
+console.log('  assets carimbados com ?v=' + versao + '\n');

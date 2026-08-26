@@ -47,11 +47,12 @@ palavra/frase, para descobrir logo onde está o seu teto.
 
 ## Onde roda
 
-No ar em **[espanhol-cards.netlify.app](https://espanhol-cards.netlify.app)**.
+No ar em **[gereneto.github.io/espanhol-cards](https://gereneto.github.io/espanhol-cards/)**,
+publicado pelo GitHub Pages a partir da branch `main`, pasta `/ (root)`.
 
-É um site estático, sem build e sem dependências: o Netlify publica a raiz do
-repositório direto, sem comando de build. Para mexer localmente, basta abrir o
-`index.html` no navegador — funciona igual.
+É um site estático, sem build e sem dependências, então o Pages serve os
+arquivos direto (o `.nojekyll` na raiz evita que o Jekyll se meta). Para mexer
+localmente, basta abrir o `index.html` no navegador — funciona igual.
 
 ## Dados e sincronização
 
