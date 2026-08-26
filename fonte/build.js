@@ -57,6 +57,43 @@ for (const c of cards) {
   }
   const vistos = new Set((c.distratores || []).map(normalizar));
   if (vistos.size !== (c.distratores || []).length) erros.push('distratores repetidos entre si: ' + onde);
+
+  /* Os distratores precisam ter o MESMO FORMATO da resposta certa. Se só a
+     resposta certa traz duas traduções separadas por "/", ou um parêntese,
+     ou é bem mais longa que as outras, dá para acertar sem saber espanhol —
+     basta escolher a diferente. */
+  if (Array.isArray(c.distratores) && c.distratores.length === 4) {
+    const barras = s => (s.match(/\//g) || []).length;
+    const temParentese = s => s.includes('(');
+    const palavras = s => s.trim().split(/\s+/).length;
+
+    const bCerta = barras(c.pt);
+    const iguais = c.distratores.filter(d => barras(d) === bCerta).length;
+    if (iguais < 3) {
+      erros.push('formato entrega a resposta em ' + onde +
+        ': a certa tem ' + bCerta + ' "/" e os distratores têm [' +
+        c.distratores.map(barras) + ']');
+    }
+
+    const comParentese = c.distratores.filter(temParentese).length;
+    if (temParentese(c.pt) && comParentese === 0) {
+      erros.push('só a resposta certa tem parêntese: ' + onde);
+    }
+    if (!temParentese(c.pt) && comParentese >= 3) {
+      erros.push('só os distratores têm parêntese: ' + onde);
+    }
+
+    const wCerta = palavras(c.pt);
+    const wAlts = c.distratores.map(palavras);
+    if (wCerta > Math.max(...wAlts) + 1) {
+      erros.push('a resposta certa é bem mais longa que os distratores: ' + onde +
+        ' (' + wCerta + ' palavras contra no máximo ' + Math.max(...wAlts) + ')');
+    }
+    if (wCerta < Math.min(...wAlts) - 1) {
+      erros.push('a resposta certa é bem mais curta que os distratores: ' + onde +
+        ' (' + wCerta + ' palavras contra no mínimo ' + Math.min(...wAlts) + ')');
+    }
+  }
 }
 
 /* ── estatísticas ── */

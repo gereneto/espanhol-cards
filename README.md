@@ -16,10 +16,11 @@ sendo 33 deles falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `pol
    Se errar escrevendo, o card volta para a múltipla escolha.
 4. O app cronometra cada resposta e classifica em **rápido / médio / lento**,
    com limiares diferentes para palavra e frase, e para escolher e escrever.
-5. Na estreia do card ele ainda pergunta **se você já conhecia aquilo**.
-6. No fim há dois botões: **Confirmar resposta** grava e deixa você no card, para
-   reler a nota com calma; **Próximo card** grava e já traz o seguinte. Depois de
-   confirmar, a pergunta "já conhecia?" trava — ela só conta antes do registro.
+5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
+   O **Próximo card** só serve para avançar, então dá para ficar lendo a nota.
+6. Se você **acertar de primeira**, ele pergunta **se já conhecia aquilo**, e grava
+   assim que você responde. Não pergunta quando você erra (aí a resposta seria
+   óbvia) nem quando o card já apareceu antes (aí você conheceria do próprio app).
 
 Tudo isso é gravado para calibrar as próximas levas de cards.
 
@@ -90,7 +91,14 @@ Os cards ficam em `fonte/cards/*.json`. Cada um é assim:
 
 `pt` é a resposta mostrada; `aceitas` são as outras formas válidas ao escrever
 (sem acento e sem artigo já são toleradas automaticamente, além de um erro
-de digitação ou dois). Depois de editar:
+de digitação ou dois).
+
+> **Os distratores precisam ter o mesmo formato da resposta certa.** Se só a certa
+> traz duas traduções separadas por `/`, ou um parêntese, ou é bem mais longa que
+> as outras, dá para acertar sem saber nada de espanhol — basta escolher a
+> diferente. O `build.js` recusa o baralho quando isso acontece.
+
+Depois de editar:
 
 ```bash
 node fonte/build.js
@@ -104,8 +112,7 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 | Tecla | O quê |
 |---|---|
 | `1`–`5` | escolhe a alternativa |
-| `Enter` | responde / grava e vai para o próximo |
-| `espaço` | grava a resposta sem sair do card |
+| `Enter` | responde / vai para o próximo card |
 | `1`–`3` | responde "já conhecia?" |
 
 ## Estrutura

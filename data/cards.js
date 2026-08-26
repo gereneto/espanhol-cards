@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-08-23",
+ "gerado_em": "2026-08-26",
  "total": 140,
  "cards": [
   {
@@ -38,10 +38,10 @@ window.CARDS_RAW = {
     "primoroso"
    ],
    "distratores": [
-    "esquisito, estranho",
-    "exigente",
-    "escasso",
-    "exausto"
+    "esquisito / estranho",
+    "exigente / cheio de manias",
+    "escasso / raro",
+    "exausto / esgotado"
    ],
    "nivel": "B1",
    "tags": [
@@ -63,10 +63,10 @@ window.CARDS_RAW = {
     "um pouco"
    ],
    "distratores": [
-    "um rato (animal)",
-    "um roubo",
-    "um susto",
-    "um ratinho de computador"
+    "um rato / um camundongo",
+    "um roubo / um furto",
+    "um susto / um sobressalto",
+    "um mouse / um ratinho"
    ],
    "nivel": "A2",
    "tags": [
@@ -130,10 +130,10 @@ window.CARDS_RAW = {
     "workshop"
    ],
    "distratores": [
-    "o talher",
-    "o talho",
-    "a loja",
-    "o armazém"
+    "o talher (de mesa) / o garfo",
+    "a loja (de roupa) / a butique",
+    "o armazém (de secos) / o depósito",
+    "o talho (de carnes) / o açougue"
    ],
    "nivel": "A2",
    "tags": [
@@ -173,10 +173,10 @@ window.CARDS_RAW = {
     "poeira"
    ],
    "distratores": [
-    "o polvo",
-    "o pulmão",
-    "o povo",
-    "o polo"
+    "o polvo / o molusco",
+    "o pulmão / o fôlego",
+    "o povo / a gente",
+    "o polo / o eixo"
    ],
    "nivel": "A2",
    "tags": [
@@ -237,10 +237,10 @@ window.CARDS_RAW = {
     "cauda"
    ],
    "distratores": [
-    "a cola (de colar)",
-    "a coleira",
-    "o colar",
-    "a coluna"
+    "a cola / o grude",
+    "a coleira / a guia",
+    "o colar / o pingente",
+    "a coluna / a espinha"
    ],
    "nivel": "A2",
    "tags": [
@@ -278,10 +278,10 @@ window.CARDS_RAW = {
     "longo"
    ],
    "distratores": [
-    "largo, amplo",
-    "estreito",
-    "farto",
-    "folgado"
+    "largo / amplo",
+    "estreito / apertado",
+    "farto / abundante",
+    "folgado / frouxo"
    ],
    "nivel": "A2",
    "tags": [
@@ -299,10 +299,10 @@ window.CARDS_RAW = {
     "amplo"
    ],
    "distratores": [
-    "comprido",
-    "estreito",
-    "alto",
-    "apertado"
+    "comprido (em extensão)",
+    "estreito (sem espaço)",
+    "alto (em altura)",
+    "apertado (sem folga)"
    ],
    "nivel": "A2",
    "tags": [
@@ -321,10 +321,10 @@ window.CARDS_RAW = {
     "dar pulos"
    ],
    "distratores": [
-    "brincar",
-    "fazer piada",
-    "provocar",
-    "dançar"
+    "brincar / se divertir",
+    "fazer piada / zombar",
+    "provocar / cutucar",
+    "dançar / rodopiar"
    ],
    "nivel": "A2",
    "tags": [
@@ -385,10 +385,10 @@ window.CARDS_RAW = {
     "alegado"
    ],
    "distratores": [
-    "presunto (comida)",
-    "o embutido",
-    "pressuposto",
-    "preciso"
+    "presunto / fiambre",
+    "pressuposto / premissa",
+    "preciso / exato",
+    "presente / atual"
    ],
    "nivel": "B2",
    "tags": [
@@ -406,10 +406,10 @@ window.CARDS_RAW = {
     "educacao"
    ],
    "distratores": [
-    "a criança",
-    "a criatura",
-    "o criado",
-    "a criancice"
+    "a criança / o menino (de colo)",
+    "a criatura / o ser (vivo)",
+    "o criado / o empregado (da casa)",
+    "a criancice / a bobagem (de criança)"
    ],
    "nivel": "B1",
    "tags": [
@@ -428,10 +428,10 @@ window.CARDS_RAW = {
     "classe"
    ],
    "distratores": [
-    "a aula",
-    "a lição",
-    "o curso",
-    "o auditório"
+    "a aula de espanhol",
+    "a lição de casa",
+    "o curso de idiomas",
+    "o auditório da escola"
    ],
    "nivel": "A2",
    "tags": [
@@ -493,10 +493,10 @@ window.CARDS_RAW = {
     "em seguida"
    ],
    "distratores": [
-    "logo, imediatamente",
-    "lugar",
-    "longe",
-    "antes"
+    "logo / imediatamente",
+    "lugar / local",
+    "longe / distante",
+    "antes / previamente"
    ],
    "nivel": "A1",
    "tags": [
@@ -599,10 +599,10 @@ window.CARDS_RAW = {
     "boneca"
    ],
    "distratores": [
-    "o punho da camisa",
-    "o cotovelo",
-    "a moeda",
-    "a mancha"
+    "o punho / a manga",
+    "o cotovelo / o braço",
+    "a moeda / o troco",
+    "a mancha / o borrão"
    ],
    "nivel": "B1",
    "tags": [
@@ -623,10 +623,10 @@ window.CARDS_RAW = {
     "com raiva"
    ],
    "distratores": [
-    "enfadonho, chato",
-    "cansado",
-    "entediado",
-    "desanimado"
+    "enfadonho / chato",
+    "cansado / exausto",
+    "entediado / sem graça",
+    "desanimado / pra baixo"
    ],
    "nivel": "A2",
    "tags": [
@@ -645,10 +645,10 @@ window.CARDS_RAW = {
     "retirar"
    ],
    "distratores": [
-    "quitar uma dívida",
-    "querer",
-    "aquietar",
-    "desistir"
+    "quitar / saldar",
+    "querer / desejar",
+    "aquietar / acalmar",
+    "desistir / abandonar"
    ],
    "nivel": "A2",
    "tags": [
@@ -668,10 +668,10 @@ window.CARDS_RAW = {
     "jogar"
    ],
    "distratores": [
-    "tirar, remover",
-    "atirar com arma",
-    "esticar",
-    "empurrar"
+    "tirar / remover",
+    "atirar / disparar",
+    "esticar / alongar",
+    "empurrar / apertar"
    ],
    "nivel": "A2",
    "tags": [
@@ -713,10 +713,10 @@ window.CARDS_RAW = {
     "cadeira"
    ],
    "distratores": [
-    "a assinatura",
-    "a assinatura digital",
-    "o assunto",
-    "a designação"
+    "a assinatura / a rubrica",
+    "o assunto / o tema",
+    "a designação / a nomeação",
+    "a atribuição / a tarefa"
    ],
    "nivel": "B1",
    "tags": [
@@ -737,10 +737,10 @@ window.CARDS_RAW = {
     "graduacao"
    ],
    "distratores": [
-    "a carreira profissional apenas",
-    "a carroça",
-    "a estrada",
-    "o carro"
+    "a carreira profissional / o cargo",
+    "a carroça antiga / o carrinho",
+    "a estrada principal / a rodovia",
+    "o carro de corrida / o automóvel"
    ],
    "nivel": "B1",
    "tags": [
@@ -761,10 +761,10 @@ window.CARDS_RAW = {
     "ingresso"
    ],
    "distratores": [
-    "o bilhetinho",
-    "o boleto bancário",
-    "o bolso",
-    "a bilheteria"
+    "o bilhetinho / o recado",
+    "o boleto / a fatura",
+    "o bolso / a algibeira",
+    "a bilheteria / a fila"
    ],
    "nivel": "A2",
    "tags": [
@@ -806,10 +806,10 @@ window.CARDS_RAW = {
     "varar a noite"
    ],
    "distratores": [
-    "acordar cedo",
-    "cochilar",
-    "transnoitar em viagem",
-    "sonhar"
+    "acordar cedo / madrugar",
+    "cochilar / tirar uma soneca",
+    "sonhar / ter pesadelos",
+    "trocar de turno / revezar"
    ],
    "nivel": "B2",
    "tags": [
@@ -850,10 +850,10 @@ window.CARDS_RAW = {
     "doce demais"
    ],
    "distratores": [
-    "insosso",
-    "amargo",
-    "azedo",
-    "apimentado"
+    "insosso (sem sal)",
+    "amargo (como café)",
+    "azedo (como limão)",
+    "apimentado (que arde)"
    ],
    "nivel": "B2",
    "tags": [
@@ -874,10 +874,10 @@ window.CARDS_RAW = {
     "insipido"
    ],
    "distratores": [
-    "salgado demais",
-    "apimentado",
-    "engraçado",
-    "suave"
+    "salgado demais / forte",
+    "apimentado / ardido",
+    "engraçado / divertido",
+    "suave / delicado"
    ],
    "nivel": "B1",
    "tags": [
@@ -899,10 +899,10 @@ window.CARDS_RAW = {
     "pao-duro"
    ],
    "distratores": [
-    "elegante",
-    "caríssimo",
-    "cortante",
-    "cuidadoso"
+    "elegante / de bom gosto",
+    "caríssimo / de luxo",
+    "cortante / afiado",
+    "cuidadoso / caprichado"
    ],
    "nivel": "C1",
    "tags": [
@@ -915,7 +915,7 @@ window.CARDS_RAW = {
    "id": "p042",
    "tipo": "palavra",
    "es": "currar",
-   "pt": "trabalhar (gíria)",
+   "pt": "trabalhar",
    "aceitas": [
     "trabalhar",
     "ralar",
@@ -947,10 +947,10 @@ window.CARDS_RAW = {
     "agradavel"
    ],
    "distratores": [
-    "chato",
-    "mau",
-    "maduro",
-    "maior"
+    "chato / insuportável",
+    "mau / malvado",
+    "maduro / adulto",
+    "maior / mais velho"
    ],
    "nivel": "B2",
    "tags": [
@@ -972,10 +972,10 @@ window.CARDS_RAW = {
     "adoravel"
    ],
    "distratores": [
-    "estranho",
-    "entranhado na rocha",
-    "insuportável",
-    "distante"
+    "estranho / muito esquisito (de propósito)",
+    "insuportável / muito chato (de perto)",
+    "distante / muito frio (no trato)",
+    "entranhado / bem preso (na rocha)"
    ],
    "nivel": "C1",
    "tags": [
@@ -1034,17 +1034,17 @@ window.CARDS_RAW = {
    "id": "p047",
    "tipo": "palavra",
    "es": "estrenar",
-   "pt": "usar/estrear pela primeira vez",
+   "pt": "estrear / usar pela primeira vez",
    "aceitas": [
     "estrear",
     "usar pela primeira vez",
     "inaugurar"
    ],
    "distratores": [
-    "treinar",
-    "estranhar",
-    "apertar",
-    "esticar"
+    "treinar / repetir muitas vezes",
+    "estranhar / achar esquisito de início",
+    "apertar / deixar mais justo",
+    "esticar / alongar aos poucos"
    ],
    "nivel": "B2",
    "tags": [
@@ -1065,10 +1065,10 @@ window.CARDS_RAW = {
     "se arranjar"
    ],
    "distratores": [
-    "apanhar",
-    "apadrinhar",
-    "apanhar frutas",
-    "apressar-se"
+    "apanhar / levar uma surra",
+    "apadrinhar / dar apoio",
+    "colher / juntar as frutas",
+    "apressar-se / correr contra o tempo"
    ],
    "nivel": "C1",
    "tags": [
@@ -1089,10 +1089,10 @@ window.CARDS_RAW = {
     "servico porco"
    ],
    "distratores": [
-    "a chapa",
-    "o chapéu",
-    "a chapada",
-    "o biscate bem feito"
+    "a chapa / a placa de metal",
+    "o chapéu / a aba de palha",
+    "a chapada / o terreno alto",
+    "o capricho / o trabalho benfeito"
    ],
    "nivel": "C1",
    "tags": [
@@ -1113,10 +1113,10 @@ window.CARDS_RAW = {
     "exigente demais"
    ],
    "distratores": [
-    "esquisito",
-    "curioso",
-    "quieto",
-    "fofoqueiro"
+    "esquisito / estranho",
+    "curioso / abelhudo",
+    "quieto / calado",
+    "fofoqueiro / linguarudo"
    ],
    "nivel": "C1",
    "tags": [
@@ -1160,10 +1160,10 @@ window.CARDS_RAW = {
     "preguica"
    ],
    "distratores": [
-    "o desejo",
-    "a decisão",
-    "a dissidência",
-    "o desatino"
+    "o desejo / a vontade",
+    "a decisão / a escolha",
+    "a dissidência / a divergência",
+    "o desatino / a loucura"
    ],
    "nivel": "C1",
    "tags": [
@@ -1183,10 +1183,10 @@ window.CARDS_RAW = {
     "encolher"
    ],
    "distratores": [
-    "aumentar",
-    "mesclar",
-    "murmurar",
-    "marcar"
+    "aumentar / crescer",
+    "mesclar / misturar",
+    "murmurar / sussurrar",
+    "marcar / assinalar"
    ],
    "nivel": "C1",
    "tags": [
@@ -1207,10 +1207,10 @@ window.CARDS_RAW = {
     "enfraquecer"
    ],
    "distratores": [
-    "escavar um poço",
-    "sacudir",
-    "socar",
-    "salvar"
+    "escavar / cavoucar",
+    "sacudir / chacoalhar",
+    "socar / esmurrar",
+    "salvar / resgatar"
    ],
    "nivel": "C1",
    "tags": [
@@ -1231,10 +1231,10 @@ window.CARDS_RAW = {
     "ignorar"
    ],
    "distratores": [
-    "destacar",
-    "enfrentar",
-    "assoalhar",
-    "suavizar"
+    "destacar / realçar",
+    "enfrentar / encarar",
+    "assoalhar / atapetar",
+    "suavizar / amenizar"
    ],
    "nivel": "C2",
    "tags": [
@@ -1255,10 +1255,10 @@ window.CARDS_RAW = {
     "insignificante"
    ],
    "distratores": [
-    "balido",
-    "valioso",
-    "balançado",
-    "desequilibrado"
+    "valioso / de muito valor",
+    "balido / som da ovelha",
+    "balançado / em desequilíbrio",
+    "urgente / de máxima prioridade"
    ],
    "nivel": "C2",
    "tags": [
@@ -1279,10 +1279,10 @@ window.CARDS_RAW = {
     "que faz fe"
    ],
    "distratores": [
-    "fedorento",
-    "recente",
-    "feito às pressas",
-    "duvidoso"
+    "fedorento / malcheiroso",
+    "recente / atual",
+    "apressado / malfeito",
+    "duvidoso / contestável"
    ],
    "nivel": "C2",
    "tags": [
@@ -1303,10 +1303,10 @@ window.CARDS_RAW = {
     "impreterivel"
    ],
    "distratores": [
-    "perene",
-    "permanente",
-    "pertinente",
-    "opcional"
+    "perene / contínuo e duradouro",
+    "permanente / fixo e definitivo",
+    "pertinente / adequado e oportuno",
+    "opcional / livre e dispensável"
    ],
    "nivel": "C2",
    "tags": [
@@ -1328,10 +1328,10 @@ window.CARDS_RAW = {
     "sombra"
    ],
    "distratores": [
-    "o atiçamento",
-    "o abismo",
-    "o arbusto",
-    "o atestado"
+    "o atiçamento / a provocação",
+    "o abismo / o precipício",
+    "o arbusto / a moita",
+    "o atestado / o comprovante"
    ],
    "nivel": "C2",
    "tags": [
@@ -1351,10 +1351,10 @@ window.CARDS_RAW = {
     "desassossego"
    ],
    "distratores": [
-    "a sobra",
-    "o naufrágio apenas",
-    "a calmaria",
-    "a zombaria"
+    "a sobra / o resto",
+    "o naufrágio / o afundamento",
+    "a calmaria / a serenidade",
+    "a zombaria / o deboche"
    ],
    "nivel": "C2",
    "tags": [
@@ -1399,10 +1399,10 @@ window.CARDS_RAW = {
     "deterioracao"
    ],
    "distratores": [
-    "o menosprezo",
-    "o cabo menor",
-    "o benefício",
-    "o acabamento"
+    "o menosprezo / o desdém",
+    "o acabamento / o remate",
+    "o benefício / a vantagem",
+    "o cabimento / a pertinência"
    ],
    "nivel": "C2",
    "tags": [
@@ -1423,10 +1423,10 @@ window.CARDS_RAW = {
     "tracar"
    ],
    "distratores": [
-    "persuadir",
-    "pentear",
-    "perfurar",
-    "aperfeiçoar"
+    "persuadir / convencer",
+    "pentear / ajeitar",
+    "perfurar / furar",
+    "aperfeiçoar / apurar"
    ],
    "nivel": "C2",
    "tags": [
@@ -1494,10 +1494,10 @@ window.CARDS_RAW = {
     "porcaria"
    ],
    "distratores": [
-    "o engenho",
-    "o gênero",
-    "o gênio",
-    "a engenharia"
+    "o engenho / a criatividade",
+    "o gênero / a categoria",
+    "o gênio / a genialidade",
+    "a engenharia / a construção"
    ],
    "nivel": "C2",
    "tags": [
@@ -1509,7 +1509,7 @@ window.CARDS_RAW = {
    "id": "p067",
    "tipo": "palavra",
    "es": "desvelarse",
-   "pt": "perder o sono / desvelar-se",
+   "pt": "perder o sono / não conseguir dormir",
    "aceitas": [
     "perder o sono",
     "ficar sem sono",
@@ -1518,10 +1518,10 @@ window.CARDS_RAW = {
     "dedicar-se"
    ],
    "distratores": [
-    "revelar um segredo",
-    "despertar cedo",
-    "dormir profundamente",
-    "velar um morto"
+    "revelar um segredo / contar tudo",
+    "despertar cedo / levantar de madrugada",
+    "dormir profundamente / apagar de vez",
+    "velar um morto / passar a noite ao lado"
    ],
    "nivel": "B2",
    "tags": [
@@ -1542,10 +1542,10 @@ window.CARDS_RAW = {
     "entender"
    ],
    "distratores": [
-    "pilhar cidade",
-    "pilotar",
-    "empilhar",
-    "pisar"
+    "pilhar / saquear",
+    "pilotar / dirigir",
+    "empilhar / amontoar",
+    "pisar / calcar"
    ],
    "nivel": "B2",
    "tags": [
@@ -1567,10 +1567,10 @@ window.CARDS_RAW = {
     "crepusculo"
    ],
    "distratores": [
-    "o amanhecer",
-    "o atraso",
-    "o adormecer",
-    "a madrugada"
+    "o amanhecer / o nascer do sol",
+    "a madrugada / o meio da noite",
+    "o meio-dia / o sol a pino",
+    "o atraso / a demora na chegada"
    ],
    "nivel": "B1",
    "tags": [
@@ -1582,7 +1582,7 @@ window.CARDS_RAW = {
    "id": "p070",
    "tipo": "palavra",
    "es": "ufano",
-   "pt": "orgulhoso / ufano",
+   "pt": "orgulhoso / envaidecido",
    "aceitas": [
     "orgulhoso",
     "ufano",
@@ -1590,10 +1590,10 @@ window.CARDS_RAW = {
     "satisfeito"
    ],
    "distratores": [
-    "ufanista",
-    "humilde",
-    "furioso",
-    "cansado"
+    "humilde / modesto",
+    "furioso / enraivecido",
+    "cansado / esgotado",
+    "arrependido / pesaroso"
    ],
    "nivel": "C2",
    "tags": [
@@ -1638,10 +1638,10 @@ window.CARDS_RAW = {
     "deixa pra la"
    ],
    "distratores": [
-    "Nada passa por aqui.",
-    "Nada acontece nunca.",
-    "Não vai dar certo.",
-    "Não passe por aí."
+    "Nada passa por aqui. / Está parado.",
+    "Nada acontece nunca. / É sempre igual.",
+    "Não vai dar certo. / Vai falhar.",
+    "Não passe por aí. / Evite o lugar."
    ],
    "nivel": "A1",
    "tags": [
@@ -1661,10 +1661,10 @@ window.CARDS_RAW = {
     "nao aguento mais esperar"
    ],
    "distratores": [
-    "Estou cheio de comida.",
-    "Espero estar farto.",
-    "Estou pronto para esperar.",
-    "Tenho tempo de sobra."
+    "Estou cheio de comida agora.",
+    "Espero ficar farto de comer.",
+    "Estou disposto a esperar mais.",
+    "Tenho bastante tempo para esperar."
    ],
    "nivel": "B1",
    "tags": [
@@ -1684,10 +1684,10 @@ window.CARDS_RAW = {
     "da uma forca"
    ],
    "distratores": [
-    "Me jogue a mão.",
-    "Solte a minha mão.",
-    "Levante a mão.",
-    "Me dê a mão para atravessar."
+    "Me jogue a mão. / Me arremesse.",
+    "Solte a minha mão. / Me largue.",
+    "Levante a mão. / Peça a palavra.",
+    "Me dê a mão. / Vamos atravessar."
    ],
    "nivel": "B1",
    "tags": [
@@ -1731,10 +1731,10 @@ window.CARDS_RAW = {
     "nem pensar"
    ],
    "distratores": [
-    "Nem de brincadeira eu conto.",
-    "Que piada boa.",
-    "Nem que fosse de graça eu ia.",
-    "Sem graça nenhuma."
+    "Nem de brincadeira. / Sem graça nenhuma.",
+    "Que piada boa. / Muito engraçado.",
+    "Nem que fosse grátis. / Não vale a pena.",
+    "Só de sacanagem. / Para irritar."
    ],
    "nivel": "C1",
    "tags": [
@@ -1780,10 +1780,10 @@ window.CARDS_RAW = {
     "conheco de algum lugar"
    ],
    "distratores": [
-    "Está tocando.",
-    "Me soa mal.",
-    "Toca para mim.",
-    "Estou sonhando."
+    "Está tocando. / O som saiu.",
+    "Me soa mal. / Não gostei.",
+    "Toca para mim. / Faça um som.",
+    "Estou sonhando. / Não é real."
    ],
    "nivel": "B1",
    "tags": [
@@ -1873,10 +1873,10 @@ window.CARDS_RAW = {
     "vou com a cara dele"
    ],
    "distratores": [
-    "Ele caiu bem.",
-    "Caiu bem em mim.",
-    "Ele me cai em cima.",
-    "Sinto-me bem."
+    "Ele caiu bem. / A roupa ficou boa.",
+    "Ele caiu em cima de mim. / Me derrubou.",
+    "Eu caio bem ali. / O lugar me serve.",
+    "Ele me faz bem. / Melhora minha saúde."
    ],
    "nivel": "B1",
    "tags": [
@@ -1897,10 +1897,10 @@ window.CARDS_RAW = {
     "dar mancada"
    ],
    "distratores": [
-    "Meter o pé na porta.",
-    "Enfiar o pé na jaca.",
-    "Colocar a pata no chão.",
-    "Bater o pé."
+    "Meter o pé na porta. / Forçar a entrada.",
+    "Enfiar o pé na jaca. / Exagerar na bebida.",
+    "Botar a pata no chão. / Firmar o passo.",
+    "Bater o pé. / Insistir na teimosia."
    ],
    "nivel": "B2",
    "tags": [
@@ -1921,10 +1921,10 @@ window.CARDS_RAW = {
     "no quinto dos infernos"
    ],
    "distratores": [
-    "Estar no quinto andar.",
-    "Estar entre pinheiros.",
-    "Estar em quinto lugar.",
-    "Estar no ponto certo."
+    "Estar no quinto andar. / Subir mais um pouco.",
+    "Estar entre os pinheiros. / Ficar dentro da mata.",
+    "Estar em quinto lugar. / Quase chegar ao pódio.",
+    "Estar bem no ponto certo. / Acertar o alvo."
    ],
    "nivel": "C1",
    "tags": [
@@ -1945,10 +1945,10 @@ window.CARDS_RAW = {
     "dar-se por vencido"
    ],
    "distratores": [
-    "Puxar a toalha.",
-    "Estender a toalha.",
-    "Lavar a roupa suja.",
-    "Secar as mãos."
+    "Puxar a toalha. / Arrastar.",
+    "Estender a toalha. / Secar ao sol.",
+    "Lavar a roupa suja. / Brigar em casa.",
+    "Secar as mãos. / Se limpar."
    ],
    "nivel": "B2",
    "tags": [
@@ -1992,10 +1992,10 @@ window.CARDS_RAW = {
     "e barbada"
    ],
    "distratores": [
-    "O pão foi comido.",
-    "É comida boa.",
-    "É pão duro.",
-    "Já foi tudo consumido."
+    "O pão acabou. / Comeram tudo.",
+    "É comida boa. / Alimenta bem.",
+    "É pão-duro. / Não gasta nada.",
+    "Já foi consumido. / Não sobrou."
    ],
    "nivel": "B2",
    "tags": [
@@ -2088,10 +2088,10 @@ window.CARDS_RAW = {
     "se anima"
    ],
    "distratores": [
-    "Coloque as pilhas no controle.",
-    "Ligue o aparelho.",
-    "Empilhe as coisas.",
-    "Descanse um pouco."
+    "Ponha as pilhas. / Troque a bateria.",
+    "Ligue o aparelho. / Aperte o botão.",
+    "Empilhe tudo. / Organize as caixas.",
+    "Descanse um pouco. / Recarregue as forças."
    ],
    "nivel": "B2",
    "tags": [
@@ -2158,10 +2158,10 @@ window.CARDS_RAW = {
     "estou detonado"
    ],
    "distratores": [
-    "Estou empoeirado.",
-    "Fiz uma poeira.",
-    "Estou de mau humor.",
-    "Fiquei todo sujo."
+    "Estou empoeirado. / Estou sujo.",
+    "Fiz uma poeira. / Levantei pó.",
+    "Estou de mau humor. / Estou irritado.",
+    "Fiquei todo sujo. / Preciso de banho."
    ],
    "nivel": "B2",
    "tags": [
@@ -2206,10 +2206,10 @@ window.CARDS_RAW = {
     "de supetao"
    ],
    "distratores": [
-    "Das boas às primeiras.",
-    "Em primeiro lugar.",
-    "Com boas intenções.",
-    "Aos poucos."
+    "Das boas às primeiras. / Bem na ordem certa.",
+    "Em primeiro lugar de todos. / Antes de tudo.",
+    "Com as melhores intenções. / De coração bem aberto.",
+    "Aos poucos e com muita calma. / Bem devagar."
    ],
    "nivel": "C1",
    "tags": [
@@ -2230,10 +2230,10 @@ window.CARDS_RAW = {
     "deu um pé na bunda"
    ],
    "distratores": [
-    "Deu abóboras a ele.",
-    "Cozinhou para ele.",
-    "Deu um presente.",
-    "Deu uma bronca."
+    "Ela deu abóboras a ele. / Presenteou.",
+    "Ela cozinhou para ele. / Fez o jantar.",
+    "Ela deu um presente. / Foi generosa.",
+    "Ela deu uma bronca. / Ficou brava."
    ],
    "nivel": "C1",
    "tags": [
@@ -2302,10 +2302,10 @@ window.CARDS_RAW = {
     "perdeu a linha"
    ],
    "distratores": [
-    "A panela caiu.",
-    "Esqueceu a panela no fogo.",
-    "Deixou a comida queimar.",
-    "Ficou com fome."
+    "A panela dele caiu. / Quebrou.",
+    "Ele esqueceu a panela. / Queimou tudo.",
+    "Ele deixou a comida queimar. / Estragou.",
+    "Ele ficou com fome. / Não comeu."
    ],
    "nivel": "C1",
    "tags": [
@@ -2352,10 +2352,10 @@ window.CARDS_RAW = {
     "aprontou um barraco"
    ],
    "distratores": [
-    "Montou um galinheiro.",
-    "Assou um frango.",
-    "Montou um negócio.",
-    "Cavalgou um pônei."
+    "Montou um galinheiro. / Criou galinhas.",
+    "Assou um frango. / Fez o almoço.",
+    "Montou um negócio. / Abriu empresa.",
+    "Cavalgou um pônei. / Andou a cavalo."
    ],
    "nivel": "C1",
    "tags": [
@@ -2449,10 +2449,10 @@ window.CARDS_RAW = {
     "que tal"
    ],
    "distratores": [
-    "Que tal isso?",
-    "Qual deles?",
-    "O que é isso?",
-    "Quanto custa?"
+    "Que tal isso? / Gostou?",
+    "Qual deles? / Escolha um.",
+    "O que é isso? / Explique.",
+    "Quanto custa? / Qual o preço?"
    ],
    "nivel": "A1",
    "tags": [
@@ -2472,10 +2472,10 @@ window.CARDS_RAW = {
     "bateu uma vontade de dormir"
    ],
    "distratores": [
-    "Ganhei uma soneca.",
-    "Tenho que dormir.",
-    "Consegui dormir.",
-    "Estou dormindo."
+    "Tenho que ir dormir agora.",
+    "Consegui dormir bem essa noite.",
+    "Ganhei uma soneca de brinde.",
+    "Estou dormindo neste exato momento."
    ],
    "nivel": "A2",
    "tags": [
@@ -2563,10 +2563,10 @@ window.CARDS_RAW = {
     "tenho mais dois"
    ],
    "distratores": [
-    "Fico com dois.",
-    "Faltam dois para mim.",
-    "Dei dois.",
-    "Quero dois."
+    "Fico com dois. / Escolhi esses.",
+    "Faltam dois para mim. / Preciso de dois.",
+    "Dei dois embora. / Me livrei deles.",
+    "Quero dois. / Me traga dois."
    ],
    "nivel": "B1",
    "tags": [
@@ -2586,10 +2586,10 @@ window.CARDS_RAW = {
     "ta pra chegar"
    ],
    "distratores": [
-    "Está caindo.",
-    "Vai cair.",
-    "Está no chão.",
-    "Está prestes a desistir."
+    "Está caindo no chão neste momento.",
+    "Vai cair de um momento para outro.",
+    "Está deitado no chão faz tempo.",
+    "Está prestes a desistir de tudo."
    ],
    "nivel": "C1",
    "tags": [
@@ -2631,10 +2631,10 @@ window.CARDS_RAW = {
     "a ver se nos vemos"
    ],
    "distratores": [
-    "Vá ver se nos vê.",
-    "Estamos nos vendo.",
-    "Vamos assistir juntos.",
-    "Vou ver você."
+    "Vá ver se ele consegue nos ver.",
+    "Estamos nos vendo neste exato momento.",
+    "Vamos assistir ao filme juntos hoje.",
+    "Vou ver você amanhã sem falta."
    ],
    "nivel": "B2",
    "tags": [
@@ -2700,10 +2700,10 @@ window.CARDS_RAW = {
     "mesmo tentando nao consegue"
    ],
    "distratores": [
-    "Quanto mais tenta, mais consegue.",
-    "Só consegue se tentar.",
-    "Tentou muito e conseguiu.",
-    "Não tenta nem consegue."
+    "Quanto mais ele tenta, mais consegue.",
+    "Ele só vai conseguir se tentar de novo.",
+    "Ele tentou bastante e acabou conseguindo.",
+    "Ele não tenta e por isso não consegue."
    ],
    "nivel": "B2",
    "tags": [
@@ -2771,10 +2771,10 @@ window.CARDS_RAW = {
     "nem que fosse milionario"
    ],
    "distratores": [
-    "Nem se fosse milionário.",
-    "Nenhum milionário faria isso.",
-    "Ele é mesmo milionário.",
-    "Se fosse milionário, faria."
+    "Nem se ele fosse milionário eu iria.",
+    "Nenhum milionário faria uma coisa dessas.",
+    "Ele é milionário de verdade mesmo.",
+    "Se ele fosse milionário, teria comprado."
    ],
    "nivel": "C1",
    "tags": [
@@ -2953,10 +2953,10 @@ window.CARDS_RAW = {
     "sao carne e unha"
    ],
    "distratores": [
-    "Estão brigados.",
-    "São parentes.",
-    "São iguais fisicamente.",
-    "São rivais."
+    "Estão brigados. / Não se falam.",
+    "São parentes. / Têm o mesmo sangue.",
+    "São iguaizinhos. / Parecem gêmeos.",
+    "São rivais. / Vivem competindo."
    ],
    "nivel": "B2",
    "tags": [
@@ -2977,10 +2977,10 @@ window.CARDS_RAW = {
     "nao faca rodeios"
    ],
    "distratores": [
-    "Não suba nos galhos.",
-    "Não ande pelo mato.",
-    "Não se ramifique.",
-    "Não corte os galhos."
+    "Não suba nos galhos. / Pode quebrar.",
+    "Não ande pelo mato. / É perigoso.",
+    "Não se ramifique. / Siga um caminho.",
+    "Não corte os galhos. / Deixe a árvore."
    ],
    "nivel": "C1",
    "tags": [
@@ -3049,10 +3049,10 @@ window.CARDS_RAW = {
     "fiquei estatico"
    ],
    "distratores": [
-    "Fiquei na pedra.",
-    "Peguei uma pedra.",
-    "Fiquei duro (sem dinheiro).",
-    "Fiquei firme na decisão."
+    "Fiquei na pedra. / Sentei ali.",
+    "Peguei uma pedra. / Levantei do chão.",
+    "Fiquei duro. / Sem dinheiro nenhum.",
+    "Fiquei firme. / Não mudei de ideia."
    ],
    "nivel": "B2",
    "tags": [
@@ -3073,10 +3073,10 @@ window.CARDS_RAW = {
     "to pra baixo"
    ],
    "distratores": [
-    "Estou descendo.",
-    "Estou de baixa no trabalho.",
-    "Estou no fundo do poço financeiro.",
-    "Estou animado."
+    "Estou descendo. / Vou de elevador.",
+    "Estou de baixa. / Afastado do trabalho.",
+    "Estou no fundo do poço. / Sem dinheiro.",
+    "Estou animado. / Cheio de energia."
    ],
    "nivel": "B2",
    "tags": [
@@ -3120,10 +3120,10 @@ window.CARDS_RAW = {
     "atabalhoadamente"
    ],
    "distratores": [
-    "Fez com muito cuidado.",
-    "Fez aos poucos.",
-    "Fez em dobro.",
-    "Fez de noite."
+    "Fez com muito cuidado. / Com todo o capricho.",
+    "Fez aos poucos. / Um pedaço a cada dia.",
+    "Fez tudo em dobro. / Duas vezes bem seguidas.",
+    "Fez durante a noite. / Quando todos já dormiam."
    ],
    "nivel": "C2",
    "tags": [
@@ -3144,10 +3144,10 @@ window.CARDS_RAW = {
     "teima e teima"
    ],
    "distratores": [
-    "Continua errando.",
-    "Repete a letra R.",
-    "Já desistiu.",
-    "Está com raiva."
+    "Continua errando tudo. / Não acerta uma.",
+    "Continua repetindo a letra. / Treina o erre.",
+    "Já desistiu de tudo. / Largou de mão.",
+    "Continua com raiva. / Não esfriou a cabeça."
    ],
    "nivel": "C2",
    "tags": [
@@ -3192,10 +3192,10 @@ window.CARDS_RAW = {
     "e fantastico"
    ],
    "distratores": [
-    "É leite puro.",
-    "Que nojo!",
-    "É muito ruim, sempre.",
-    "É indiferente."
+    "É leite puro! / Sem mistura!",
+    "Que nojo! / Não dá para olhar!",
+    "É muito ruim! / Uma porcaria!",
+    "É indiferente! / Dá na mesma!"
    ],
    "nivel": "C1",
    "tags": [
@@ -3216,10 +3216,10 @@ window.CARDS_RAW = {
     "fechado as oito"
    ],
    "distratores": [
-    "Vale oito reais.",
-    "Ficamos até as oito.",
-    "Sobraram oito.",
-    "Vale a pena às oito."
+    "Tudo bem, isso vale oito reais.",
+    "Beleza, a gente fica até as oito.",
+    "Certo, sobraram oito lugares para nós.",
+    "Combinado, vale a pena chegar às oito."
    ],
    "nivel": "B1",
    "tags": [

@@ -129,6 +129,13 @@ window.Motor = (function () {
     return Math.max(3, Math.round(base * ruido));
   }
 
+  /* Acertar devagar, na múltipla escolha, algo que a pessoa diz não conhecer
+     é mais provável ter sido chute do que conhecimento. */
+  function pareceChute(r) {
+    return !!r.acertou && r.modo === 'multipla'
+      && r.conhecia === 'nao' && r.velocidade === 'lento';
+  }
+
   /* Registra uma resposta no estado do card. */
   function registrar(est, r) {
     est.vistas++;
@@ -147,9 +154,7 @@ window.Motor = (function () {
     // avanço/recuo de etapa
     if (r.acertou) {
       if (r.modo === 'multipla') {
-        // acerto lento em algo que não conhecia cheira a chute: fica na múltipla
-        const chutePossivel = r.conhecia === 'nao' && r.velocidade === 'lento';
-        est.etapa = chutePossivel ? 'multipla' : 'escrita';
+        est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
       } else {
         est.etapa = est.seguidas >= 3 ? 'consolidado' : 'escrita';
       }
@@ -227,7 +232,7 @@ window.Motor = (function () {
   return {
     NIVEIS, LIMIARES,
     normalizar, conferir, velocidade,
-    estadoInicial, registrar, modoDe,
+    estadoInicial, registrar, modoDe, pareceChute,
     distanciaNaFila, montarFila, alternativas, embaralhar,
     respostasAceitas
   };

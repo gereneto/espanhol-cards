@@ -18,7 +18,7 @@
     'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
-    'area-conhecia', 'btn-confirmar', 'btn-proximo', 'aviso-registrado', 'painel-conteudo',
+    'area-conhecia', 'btn-proximo', 'painel-conteudo',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
     'arquivo-importar', 'btn-zerar', 'rodape-sync'
@@ -33,7 +33,7 @@
   let inicioResposta = 0;
   let pausou = false;
   let respostaPendente = null;
-  let conheciaEscolhida = null;
+  let ultimoRegistro = null;
   let respostasDesdeSync = 0;
   let sincronizando = false;
 
@@ -128,7 +128,7 @@
     const est = estadoDe(id);
     modoAtual = Motor.modoDe(est);
     respostaPendente = null;
-    conheciaEscolhida = null;
+    ultimoRegistro = null;
     pausou = false;
 
     el['meta-tipo'].textContent = cardAtual.tipo;
@@ -144,11 +144,6 @@
 
     el['area-feedback'].classList.add('oculto');
     el['area-conhecia'].classList.add('oculto');
-    el['area-conhecia'].classList.remove('travada');
-    el['btn-confirmar'].disabled = false;
-    el['btn-confirmar'].textContent = 'Confirmar resposta';
-    el['aviso-registrado'].classList.add('oculto');
-    document.querySelectorAll('.opcao-conhecia').forEach(b => { b.disabled = false; });
 
     if (modoAtual === 'multipla') {
       montarAlternativas();
@@ -223,15 +218,14 @@
     });
   }
 
-  /* Mostra o feedback. O registro só acontece em avancar(),
-     porque a resposta sobre "já conhecia" ainda pode mudar a fila. */
+  /* Grava a resposta na hora e mostra o feedback. */
   function concluir(r) {
     r.velocidade = Motor.velocidade(cardAtual, r.modo, r.ms);
     r.pausado = pausou;
     respostaPendente = r;
 
-    const est = estadoDe(cardAtual.id);
-    const primeiraVez = !est || est.vistas === 0;
+    const primeiraVez = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
+    registrar(r);
 
     el.veredito.className = 'veredito ' + (r.quase ? 'quase' : r.acertou ? 'ok' : 'erro');
     el.veredito.textContent = r.desistiu ? 'Sem problema — fica para a próxima'
@@ -251,10 +245,11 @@
       (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
       (r.pausado ? '<span class="medida">tempo não contado (você saiu da aba)</span>' : '');
 
-    // a pergunta sobre conhecimento prévio só faz sentido na estreia do card
-    el['area-conhecia'].classList.toggle('oculto', !primeiraVez);
+    /* Perguntar "já conhecia?" só faz sentido quando ele acerta de primeira:
+       se errou, a resposta é óbvia; se o card já apareceu antes, ele conhece
+       do próprio app e não do repertório dele. */
+    el['area-conhecia'].classList.toggle('oculto', !(primeiraVez && r.acertou));
     [...document.querySelectorAll('.opcao-conhecia')].forEach(b => {
-      b.classList.remove('ativo');
       b.style.borderColor = '';
       b.style.color = '';
     });
@@ -264,64 +259,78 @@
     el.veredito.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  /* Grava a resposta e devolve o card para a fila, sem sair da tela.
-     Depois disso, a pergunta "já conhecia?" não muda mais nada. */
-  function confirmar() {
-    if (!respostaPendente) return;
-    {
-      const r = respostaPendente;
-      r.conhecia = conheciaEscolhida;
+  /* Grava a resposta e devolve o card para a fila. */
+  function registrar(r) {
+    const id = cardAtual.id;
+    const est = progresso.cards[id] || (progresso.cards[id] = Motor.estadoInicial(id));
+    Motor.registrar(est, r);
 
-      const id = cardAtual.id;
-      const est = progresso.cards[id] || (progresso.cards[id] = Motor.estadoInicial(id));
-      Motor.registrar(est, r);
+    const dist = Motor.distanciaNaFila(est, r);
+    progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
 
-      // devolve o card para a fila, mais adiante
-      const dist = Motor.distanciaNaFila(est, r);
-      progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
+    progresso.totais.respostas++;
+    if (r.acertou) progresso.totais.acertos++;
 
-      progresso.totais.respostas++;
-      if (r.acertou) progresso.totais.acertos++;
+    const evento = {
+      em: new Date().toISOString(),
+      card: id,
+      es: cardAtual.es,
+      tipo: cardAtual.tipo,
+      nivel: cardAtual.nivel,
+      tags: cardAtual.tags,
+      modo: r.modo,
+      acertou: r.acertou,
+      quase: !!r.quase,
+      desistiu: !!r.desistiu,
+      ms: r.ms,
+      velocidade: r.velocidade,
+      conhecia: null,
+      resposta: r.resposta || null,
+      pausado: !!r.pausado,
+      etapa_depois: est.etapa,
+      distancia_fila: dist
+    };
+    sessao.eventos.push(evento);
 
-      sessao.eventos.push({
-        em: new Date().toISOString(),
-        card: id,
-        es: cardAtual.es,
-        tipo: cardAtual.tipo,
-        nivel: cardAtual.nivel,
-        tags: cardAtual.tags,
-        modo: r.modo,
-        acertou: r.acertou,
-        quase: !!r.quase,
-        desistiu: !!r.desistiu,
-        ms: r.ms,
-        velocidade: r.velocidade,
-        conhecia: r.conhecia || null,
-        resposta: r.resposta || null,
-        pausado: !!r.pausado,
-        etapa_depois: est.etapa,
-        distancia_fila: dist
-      });
+    ultimoRegistro = { id, est, evento, r };
 
-      respostaPendente = null;
-      salvarProgresso();
-      atualizarPlacar();
+    salvarProgresso();
+    atualizarPlacar();
+    talvezSincronizar();
+  }
 
-      if (++respostasDesdeSync >= SINCRONIZAR_A_CADA && GH.cfg().auto && GH.configurado()) {
-        respostasDesdeSync = 0;
-        sincronizar({ silencioso: true });
-      }
+  /* A resposta sobre conhecimento prévio chega depois do registro, então
+     revisa o que ela muda: a etapa (acerto lento no que não se conhecia é
+     provável chute) e a distância até o card voltar. */
+  function aplicarConhecia(valor) {
+    if (!ultimoRegistro) return;
+    const { id, est, evento, r } = ultimoRegistro;
+
+    r.conhecia = valor;
+    est.conhecia = valor;
+    evento.conhecia = valor;
+    if (est.historico.length) est.historico[est.historico.length - 1].conhecia = valor;
+
+    if (Motor.pareceChute(r)) est.etapa = 'multipla';
+    evento.etapa_depois = est.etapa;
+
+    const i = progresso.fila.indexOf(id);
+    if (i >= 0) progresso.fila.splice(i, 1);
+    const dist = Motor.distanciaNaFila(est, r);
+    progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
+    evento.distancia_fila = dist;
+
+    salvarProgresso();
+  }
+
+  function talvezSincronizar() {
+    if (++respostasDesdeSync >= SINCRONIZAR_A_CADA && GH.cfg().auto && GH.configurado()) {
+      respostasDesdeSync = 0;
+      sincronizar({ silencioso: true });
     }
-
-    el['btn-confirmar'].disabled = true;
-    el['btn-confirmar'].textContent = 'Resposta registrada ✓';
-    el['aviso-registrado'].classList.remove('oculto');
-    el['area-conhecia'].classList.add('travada');
-    document.querySelectorAll('.opcao-conhecia').forEach(b => { b.disabled = true; });
   }
 
   function avancar() {
-    confirmar();
     proximoCard();
   }
 
@@ -636,7 +645,6 @@
   /* ═══════════════ eventos ═══════════════ */
 
   el['btn-comecar'].addEventListener('click', proximoCard);
-  el['btn-confirmar'].addEventListener('click', confirmar);
   el['btn-proximo'].addEventListener('click', avancar);
   el['btn-responder'].addEventListener('click', () => responderEscrita(false));
   el['btn-nao-sei'].addEventListener('click', () => responderEscrita(true));
@@ -646,7 +654,7 @@
 
   document.querySelectorAll('.opcao-conhecia').forEach(b => {
     b.addEventListener('click', () => {
-      conheciaEscolhida = b.dataset.conhecia;
+      aplicarConhecia(b.dataset.conhecia);
       document.querySelectorAll('.opcao-conhecia').forEach(o => {
         o.style.borderColor = '';
         o.style.color = '';
@@ -703,8 +711,7 @@
     if (alvo === 'INPUT' && e.key !== 'Escape') return;
 
     if (!el['area-feedback'].classList.contains('oculto')) {
-      if (e.key === 'Enter') { e.preventDefault(); avancar(); }
-      if (e.key === ' ') { e.preventDefault(); confirmar(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); avancar(); }
       if (!el['area-conhecia'].classList.contains('oculto') && '123'.includes(e.key)) {
         e.preventDefault();
         document.querySelectorAll('.opcao-conhecia')[+e.key - 1].click();

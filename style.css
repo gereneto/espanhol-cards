@@ -148,20 +148,9 @@ button{font:inherit}
 }
 .medida b{color:var(--texto);font-weight:600}
 
-.acoes-feedback{display:flex;gap:10px;flex-wrap:wrap}
-.acoes-feedback button{flex:1;min-width:170px;padding:14px 20px;font-size:16px}
-.acoes-feedback .secundario:disabled{
-  cursor:default;border-color:var(--ok);color:var(--ok);background:rgba(61,220,151,.1);
-}
-.aviso-registrado{
-  margin:11px 0 0;font-size:13px;color:var(--ok);
-}
-
 .conhecia{
   border-top:1px solid var(--borda);margin:0 0 18px;padding-top:16px;
 }
-.conhecia.travada{opacity:.55}
-.conhecia.travada .opcao-conhecia{cursor:default}
 .pergunta-conhecia{margin:0;font-size:14.5px}
 .conhecia .linha-botoes{margin-top:10px}
 .opcao-conhecia{
