@@ -18,7 +18,8 @@
     'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
-    'area-conhecia', 'btn-proximo', 'painel-conteudo',
+    'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
+    'btn-proximo', 'painel-conteudo',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
     'arquivo-importar', 'btn-zerar', 'rodape-sync'
@@ -34,6 +35,7 @@
   let pausou = false;
   let respostaPendente = null;
   let ultimoRegistro = null;
+  let estreiaPendente = false;
   let respostasDesdeSync = 0;
   let sincronizando = false;
 
@@ -129,6 +131,7 @@
     modoAtual = Motor.modoDe(est);
     respostaPendente = null;
     ultimoRegistro = null;
+    estreiaPendente = false;
     pausou = false;
 
     el['meta-tipo'].textContent = cardAtual.tipo;
@@ -144,6 +147,9 @@
 
     el['area-feedback'].classList.add('oculto');
     el['area-conhecia'].classList.add('oculto');
+    el['area-julgamento'].classList.add('oculto');
+    el['resposta-dada'].classList.add('oculto');
+    el['btn-proximo'].classList.remove('oculto');
 
     if (modoAtual === 'multipla') {
       montarAlternativas();
@@ -212,26 +218,19 @@
 
     concluir({
       modo: 'escrita',
-      acertou: conferencia !== 'errado',
+      acertou: conferencia === 'certo',
       quase: conferencia === 'quase',
       ms, resposta: texto, desistiu: !!desistiu
     });
   }
 
-  /* Grava a resposta na hora e mostra o feedback. */
+  /* Mostra o feedback. Grava na hora, salvo quando a resposta caiu na
+     tolerância — aí quem decide é você, e só então grava. */
   function concluir(r) {
     r.velocidade = Motor.velocidade(cardAtual, r.modo, r.ms);
     r.pausado = pausou;
     respostaPendente = r;
-
-    const primeiraVez = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
-    registrar(r);
-
-    el.veredito.className = 'veredito ' + (r.quase ? 'quase' : r.acertou ? 'ok' : 'erro');
-    el.veredito.textContent = r.desistiu ? 'Sem problema — fica para a próxima'
-      : r.quase ? 'Quase! Aceitei como certa'
-      : r.acertou ? 'Certo!'
-      : 'Não foi dessa vez';
+    estreiaPendente = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
 
     el['resposta-certa'].textContent = cardAtual.pt;
     el.nota.textContent = cardAtual.nota || '';
@@ -245,20 +244,63 @@
       (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
       (r.pausado ? '<span class="medida">tempo não contado (você saiu da aba)</span>' : '');
 
-    /* Perguntar "já conhecia?" só faz sentido quando ele acerta de primeira:
-       se errou, a resposta é óbvia; se o card já apareceu antes, ele conhece
-       do próprio app e não do repertório dele. */
-    el['area-conhecia'].classList.toggle('oculto', !(primeiraVez && r.acertou));
+    el['area-conhecia'].classList.add('oculto');
     [...document.querySelectorAll('.opcao-conhecia')].forEach(b => {
       b.style.borderColor = '';
       b.style.color = '';
     });
+
+    if (r.quase) {
+      // chegou perto: mostra o que você escreveu e devolve a decisão
+      el.veredito.className = 'veredito quase';
+      el.veredito.textContent = 'Deu quase';
+      el['texto-dado'].textContent = r.resposta;
+      el['resposta-dada'].classList.remove('oculto');
+      el['area-julgamento'].classList.remove('oculto');
+      el['btn-proximo'].classList.add('oculto');
+    } else {
+      el['resposta-dada'].classList.add('oculto');
+      el['area-julgamento'].classList.add('oculto');
+      el['btn-proximo'].classList.remove('oculto');
+      mostrarVeredito(r);
+      registrar(r);
+      mostrarPerguntaConhecia(r);
+    }
 
     el['area-feedback'].classList.remove('oculto');
     el['btn-proximo'].focus({ preventScroll: true });
     el.veredito.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
+  function mostrarVeredito(r) {
+    el.veredito.className = 'veredito ' + (r.acertou ? 'ok' : 'erro');
+    el.veredito.textContent = r.desistiu ? 'Sem problema — fica para a próxima'
+      : r.julgadoPorVoce ? (r.acertou ? 'Certo — você contou como acerto' : 'Contado como erro')
+      : r.acertou ? 'Certo!'
+      : 'Não foi dessa vez';
+  }
+
+  /* Perguntar "já conhecia?" só faz sentido quando você acerta de primeira:
+     errando, a resposta é óbvia; se o card já apareceu antes, você o conhece
+     do próprio app e não do seu repertório. */
+  function mostrarPerguntaConhecia(r) {
+    el['area-conhecia'].classList.toggle('oculto', !(estreiaPendente && r.acertou));
+  }
+
+  /* Você decide se o quase-certo valeu. Só depois disso a resposta é gravada. */
+  function julgar(valor) {
+    if (!respostaPendente || ultimoRegistro) return;
+    const r = respostaPendente;
+    r.acertou = valor === 'certo';
+    r.julgadoPorVoce = true;
+
+    el['area-julgamento'].classList.add('oculto');
+    el['btn-proximo'].classList.remove('oculto');
+    mostrarVeredito(r);
+    registrar(r);
+    mostrarPerguntaConhecia(r);
+    el['btn-proximo'].focus({ preventScroll: true });
+  }
   /* Grava a resposta e devolve o card para a fila. */
   function registrar(r) {
     const id = cardAtual.id;
@@ -287,6 +329,7 @@
       conhecia: null,
       resposta: r.resposta || null,
       pausado: !!r.pausado,
+      julgado_por_voce: !!r.julgadoPorVoce,
       etapa_depois: est.etapa,
       distancia_fila: dist
     };
@@ -348,6 +391,8 @@
   }
 
   function avancar() {
+    // com o julgamento pendente, avançar deixaria a resposta sem registro
+    if (respostaPendente && !ultimoRegistro) return;
     proximoCard();
   }
 
@@ -760,6 +805,10 @@
     if (e.key === 'Enter' || e.keyCode === 13) { e.preventDefault(); responderEscrita(false); }
   });
 
+  document.querySelectorAll('.opcao-julgamento').forEach(b => {
+    b.addEventListener('click', () => julgar(b.dataset.julgamento));
+  });
+
   document.querySelectorAll('.opcao-conhecia').forEach(b => {
     b.addEventListener('click', () => {
       aplicarConhecia(b.dataset.conhecia);
@@ -833,6 +882,13 @@
     if (alvo === 'INPUT' && e.key !== 'Escape') return;
 
     if (!el['area-feedback'].classList.contains('oculto')) {
+      if (!el['area-julgamento'].classList.contains('oculto')) {
+        if ('12'.includes(e.key)) {
+          e.preventDefault();
+          document.querySelectorAll('.opcao-julgamento')[+e.key - 1].click();
+        }
+        return;
+      }
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); avancar(); }
       if (!el['area-conhecia'].classList.contains('oculto') && '123'.includes(e.key)) {
         e.preventDefault();

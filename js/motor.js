@@ -91,26 +91,37 @@ window.Motor = (function () {
 
   /* Confere a resposta escrita. Devolve 'certo' | 'quase' | 'errado'.
 
-     É rígido de propósito: vale a resposta que consta da lista do card,
-     depois de normalizada. Não há semelhança de texto valendo ponto — uma
-     frase parecida com a certa, mas com um erro, é erro. A única folga é
-     um deslize de teclado numa resposta de palavra única, que não é outra
-     resposta, é a mesma mal digitada. Modos diferentes de dizer a mesma
-     coisa se resolvem acrescentando a variante em "aceitas". */
+     'certo' é só o que consta da lista do card depois de normalizado —
+     nenhuma semelhança de texto vira acerto sozinha.
+
+     'quase' não decide nada: marca que a resposta chegou perto o bastante
+     para valer a pergunta, e quem julga é a pessoa. Como ninguém é aprovado
+     à revelia, aqui dá para ser generoso: erro de digitação, uma letra
+     trocada, uma palavra fora do lugar. Se for deslize, ela diz que
+     acertou; se o sentido mudou, ela diz que errou. */
   function conferir(card, texto) {
     const dado = normalizar(texto);
     if (!dado) return 'errado';
 
     const aceitas = respostasAceitas(card);
     if (aceitas.includes(dado)) return 'certo';
-
-    if (!dado.includes(' ')) {
-      for (const alvo of aceitas) {
-        if (alvo.includes(' ') || alvo.length < 6) continue;
-        if (distancia(dado, alvo) === 1) return 'quase';
-      }
-    }
+    if (aceitas.some(alvo => parecido(dado, alvo))) return 'quase';
     return 'errado';
+  }
+
+  /* Perto o bastante para perguntar — não perto o bastante para valer ponto. */
+  function parecido(a, b) {
+    const maior = Math.max(a.length, b.length);
+    if (maior < 4) return false;
+
+    const d = distancia(a, b);
+    if (!d) return true;
+
+    // palavra única: tolera o deslize de teclado
+    if (!a.includes(' ') && !b.includes(' ')) return d <= (maior >= 8 ? 2 : 1);
+
+    // frase: exige que quase tudo coincida
+    return 1 - d / maior >= 0.82;
   }
 
   function velocidade(card, modo, ms) {

@@ -148,6 +148,29 @@ button{font:inherit}
 }
 .medida b{color:var(--texto);font-weight:600}
 
+.resposta-dada{
+  background:rgba(255,209,102,.09);border:1px solid rgba(255,209,102,.32);
+  border-radius:11px;padding:12px 15px;margin-bottom:10px;
+}
+.resposta-dada .rotulo{
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.7px;
+  color:var(--quase);margin-bottom:3px;
+}
+.resposta-dada strong{font-size:18px}
+
+.julgamento{
+  border-top:1px solid var(--borda);margin:14px 0 18px;padding-top:16px;
+}
+.pergunta-julgamento{margin:0;font-size:14.5px}
+.julgamento .linha-botoes{margin-top:10px}
+.opcao-julgamento{
+  flex:1;min-width:130px;border-radius:999px;padding:11px 15px;
+  font-size:14.5px;font-weight:600;cursor:pointer;
+  background:var(--fundo-3);border:1px solid var(--borda);color:var(--texto);
+}
+.opcao-julgamento.acertei:hover{border-color:var(--ok);color:var(--ok);background:rgba(61,220,151,.1)}
+.opcao-julgamento.errei:hover{border-color:var(--erro);color:var(--erro);background:rgba(255,107,107,.1)}
+
 .conhecia{
   border-top:1px solid var(--borda);margin:0 0 18px;padding-top:16px;
 }

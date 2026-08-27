@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#12141c">
 <title>Espanhol Cards</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇸</text></svg>">
-<link rel="stylesheet" href="style.css?v=396af7fa">
+<link rel="stylesheet" href="style.css?v=22042278">
 </head>
 <body>
 
@@ -60,9 +60,21 @@
       <!-- feedback -->
       <div id="area-feedback" class="oculto">
         <div class="veredito" id="veredito"></div>
+        <div class="resposta-dada oculto" id="resposta-dada">
+          <span class="rotulo">Você escreveu</span>
+          <strong id="texto-dado"></strong>
+        </div>
         <div class="resposta-certa">
           <span class="rotulo">Resposta</span>
           <strong id="resposta-certa"></strong>
+        </div>
+
+        <div id="area-julgamento" class="julgamento oculto">
+          <p class="pergunta-julgamento">Não foi exatamente isso. Você considera que acertou?</p>
+          <div class="linha-botoes">
+            <button class="opcao-julgamento acertei" data-julgamento="certo">Acertei</button>
+            <button class="opcao-julgamento errei" data-julgamento="errado">Errei</button>
+          </div>
         </div>
         <p class="nota" id="nota"></p>
         <div class="medidas" id="medidas"></div>
@@ -144,9 +156,9 @@
   <span id="rodape-sync">•</span>
 </footer>
 
-<script src="data/cards.js?v=396af7fa"></script>
-<script src="js/motor.js?v=396af7fa"></script>
-<script src="js/github.js?v=396af7fa"></script>
-<script src="js/app.js?v=396af7fa"></script>
+<script src="data/cards.js?v=22042278"></script>
+<script src="js/motor.js?v=22042278"></script>
+<script src="js/github.js?v=22042278"></script>
+<script src="js/app.js?v=22042278"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…).
    com limiares diferentes para palavra e frase, e para escolher e escrever.
 5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
    O **Próximo card** só serve para avançar, então dá para ficar lendo a nota.
+   A exceção é o quase-certo: aí o app pergunta antes se conta como acerto.
 6. Se você **acertar de primeira**, ele pergunta **se já conhecia aquilo**, e grava
    assim que você responde. Não pergunta quando você erra (aí a resposta seria
    óbvia) nem quando o card já apareceu antes (aí você conheceria do próprio app).
@@ -108,17 +109,26 @@ Os cards ficam em `fonte/cards/*.json`. Cada um é assim:
 `pt` é a resposta mostrada; `aceitas` são as **outras maneiras de dizer a mesma
 coisa**, e é lá que se resolve a variação de tradução.
 
-A conferência é generosa com a forma e rígida com o conteúdo. Sai de graça o
-que é a mesma resposta escrita de outro jeito: acento, maiúscula, pontuação,
-plural (`sentir saudade` = `sentir saudades`), número por extenso (`3 anos` =
-`três anos`), contração (`pra`, `tô`), artigo e pronome-sujeito (`eu concordo`
-= `concordo`), e o `já` aspectual. Não sai de graça nada que mude o sentido —
-negação, preposição, verbo e substantivo entram inteiros na comparação, de modo
-que uma frase parecida com a certa, mas errada, continua errada. A única folga
-é um deslize de teclado numa resposta de palavra única.
+A resposta escrita cai em um de três baldes.
 
-Ou seja: sinônimo verdadeiro (`é preciso` / `é necessário`) se resolve
-acrescentando a variante em `aceitas`, nunca afrouxando a comparação.
+**Certo, direto.** Sai de graça o que é a mesma resposta escrita de outro jeito:
+acento, maiúscula, pontuação, plural (`sentir saudade` = `sentir saudades`),
+número por extenso (`3 anos` = `três anos`), contração (`pra`, `tô`), artigo e
+pronome-sujeito (`eu concordo` = `concordo`), e o `já` aspectual. Sinônimo
+verdadeiro (`é preciso` / `é necessário`) entra pela lista `aceitas` do card —
+nunca afrouxando a comparação.
+
+**Quase — e aí quem decide é você.** Se a resposta chegou perto mas não bate,
+o app não dá nem tira ponto: mostra o que você escreveu ao lado da resposta
+certa e pergunta se conta como acerto. Só depois da sua decisão a resposta é
+gravada, e o log guarda `julgado_por_voce: true`. É por existir essa pergunta
+que a detecção pode ser generosa — erro de digitação, letra trocada, palavra
+fora do lugar. Nada é aprovado à sua revelia, então o risco de aceitar errado
+é seu, não do app.
+
+**Errado.** O que nem chegou perto. Negação, preposição, verbo e substantivo
+entram inteiros na comparação, então `envergonhada` para `embarazada` e
+`é impossível` no lugar de `é preciso` continuam simplesmente errados.
 
 > **Os distratores precisam ter o mesmo formato da resposta certa.** Se só a certa
 > traz duas traduções separadas por `/`, ou um parêntese, ou é bem mais longa que
@@ -141,6 +151,7 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 | `1`–`5` | escolhe a alternativa |
 | `Enter` | responde / vai para o próximo card |
 | `1`–`3` | responde "já conhecia?" |
+| `1` / `2` | no quase-certo, "Acertei" / "Errei" |
 
 No topo, 🏠 volta para a página inicial de qualquer tela, 📊 abre as
 estatísticas e ⚙️ as configurações. O cabeçalho é fixo, então esses botões
