@@ -13,7 +13,7 @@
   const $ = s => document.querySelector(s);
   const el = {};
   [
-    'placar', 'btn-painel', 'btn-config', 'resumo-inicio', 'btn-comecar',
+    'placar', 'btn-inicio', 'btn-painel', 'btn-config', 'resumo-inicio', 'btn-comecar',
     'tela-inicio', 'tela-card', 'tela-painel', 'tela-config',
     'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
@@ -294,6 +294,7 @@
 
     ultimoRegistro = { id, est, evento, r };
 
+    reordenarNovos();
     salvarProgresso();
     atualizarPlacar();
     talvezSincronizar();
@@ -323,6 +324,22 @@
     salvarProgresso();
   }
 
+  /* Reordena só a parte inédita da fila, mantendo as mesmas posições — o
+     ritmo de entrada de cards novos continua igual, muda apenas de que
+     nível é o próximo, conforme o seu desempenho. */
+  function reordenarNovos() {
+    const posicoes = [];
+    const novos = [];
+    progresso.fila.forEach((id, i) => {
+      if (!progresso.cards[id]) { posicoes.push(i); novos.push(id); }
+    });
+    if (novos.length < 2) return;
+
+    const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, progresso.cards));
+    const ordem = Motor.ordenarNovos(novos, pesos, PORID);
+    posicoes.forEach((pos, k) => { progresso.fila[pos] = ordem[k]; });
+  }
+
   function talvezSincronizar() {
     if (++respostasDesdeSync >= SINCRONIZAR_A_CADA && GH.cfg().auto && GH.configurado()) {
       respostasDesdeSync = 0;
@@ -341,6 +358,13 @@
     const t = progresso.totais;
     const taxa = t.respostas ? Math.round(100 * t.acertos / t.respostas) : 0;
 
+    /* Estreias: a primeira vez de cada card é a única medida limpa do que
+       você já sabia antes de o app te mostrar a resposta. */
+    const estreados = ids.filter(id => progresso.cards[id].primeiraCerta !== undefined);
+    const dePrimeira = estreados.filter(id => progresso.cards[id].primeiraCerta);
+    const sabiaMesmo = dePrimeira.filter(id => progresso.cards[id].conhecia !== 'nao');
+    const deduziu = dePrimeira.length - sabiaMesmo.length;
+
     const tempos = [];
     ids.forEach(id => (progresso.cards[id].historico || []).forEach(h => {
       if (!h.pausado) tempos.push(h.ms);
@@ -351,42 +375,126 @@
     const consolidados = ids.filter(id => progresso.cards[id].etapa === 'consolidado').length;
     const escrevendo = ids.filter(id => progresso.cards[id].etapa === 'escrita').length;
 
+    /* Aprendido aqui: você não conhecia, e hoje já escreve certo. */
+    const aprendidos = ids.filter(id => {
+      const e = progresso.cards[id];
+      return e.conhecia === 'nao' && (e.etapa === 'consolidado' || e.seguidas >= 1) && e.acertos > 0;
+    }).length;
+
     let html = '<div class="grade">' +
       metrica(ids.length + '/' + CARDS.length, 'cards já vistos') +
+      metrica(pctDe(dePrimeira.length, estreados.length), 'acertou de primeira') +
       metrica(taxa + '%', 'acerto geral') +
-      metrica(mediaSeg + 's', 'tempo médio') +
+      metrica(aprendidos, 'aprendidos aqui') +
       metrica(consolidados, 'dominados') +
-      metrica(escrevendo, 'na fase de escrita') +
-      metrica(t.respostas, 'respostas no total') +
+      metrica(mediaSeg + 's', 'tempo médio') +
       '</div>';
 
-    html += tabelaPor('Por nível', c => c.nivel, Motor.NIVEIS);
-    html += tabelaPor('Por tipo', c => c.tipo, ['palavra', 'frase']);
-
-    // cards mais difíceis
-    const dificeis = ids
-      .map(id => ({ id, e: progresso.cards[id] }))
-      .filter(x => x.e.erros > 0)
-      .sort((a, b) => (b.e.erros - a.e.erros) || (b.e.vistas - a.e.vistas))
-      .slice(0, 12);
-
-    if (dificeis.length) {
-      html += '<h3>Onde você mais tropeça</h3><table><tr>' +
-        '<th>Card</th><th>Significado</th><th class="num">Erros</th><th class="num">Vistas</th></tr>' +
-        dificeis.map(x => {
-          const c = PORID[x.id];
-          return '<tr><td>' + escapar(c.es) + '</td><td>' + escapar(c.pt) +
-            '</td><td class="num">' + x.e.erros + '</td><td class="num">' + x.e.vistas + '</td></tr>';
-        }).join('') + '</table>';
+    if (estreados.length) {
+      html += '<p class="legenda">Das <b>' + estreados.length + '</b> estreias, você acertou <b>' +
+        dePrimeira.length + '</b> — sendo <b>' + sabiaMesmo.length + '</b> que já conhecia e <b>' +
+        deduziu + '</b> que deduziu ou chutou. Restam <b>' + (CARDS.length - ids.length) +
+        '</b> cards que ainda não apareceram.</p>';
     }
+
+    html += tabelaNivel();
+    html += tabelaModo();
+    html += tabelaPor('Por tipo', c => c.tipo, ['palavra', 'frase']);
+    html += tabelaTema();
 
     el['painel-conteudo'].innerHTML = html;
     mostrar('tela-painel');
   }
 
+  function pctDe(parte, total) {
+    return total ? Math.round(100 * parte / total) + '%' : '—';
+  }
+
   function metrica(valor, rotulo) {
     return '<div class="metrica"><div class="valor">' + valor +
       '</div><div class="rotulo">' + rotulo + '</div></div>';
+  }
+
+  /* Por nível, separando a estreia das respostas seguintes: a estreia diz
+     o que você já trazia, o resto diz o quanto está fixando. */
+  function tabelaNivel() {
+    const g = {};
+    Motor.NIVEIS.forEach(n => (g[n] = { vistos: 0, estreias: 0, certasEstreia: 0, depois: 0, certasDepois: 0 }));
+
+    Object.keys(progresso.cards).forEach(id => {
+      const c = PORID[id]; if (!c) return;
+      const e = progresso.cards[id];
+      const x = g[c.nivel];
+      x.vistos++;
+      (e.historico || []).forEach((h, i) => {
+        if (i === 0) { x.estreias++; if (h.acertou) x.certasEstreia++; }
+        else { x.depois++; if (h.acertou) x.certasDepois++; }
+      });
+    });
+
+    const linhas = Motor.NIVEIS.filter(n => g[n].vistos).map(n => {
+      const x = g[n];
+      const pct = x.estreias ? Math.round(100 * x.certasEstreia / x.estreias) : 0;
+      return '<tr><td>' + n + '</td>' +
+        '<td class="num">' + x.vistos + '</td>' +
+        '<td class="num">' + pctDe(x.certasEstreia, x.estreias) + '</td>' +
+        '<td class="num">' + pctDe(x.certasDepois, x.depois) + '</td>' +
+        '<td><div class="barra"><i style="width:' + pct + '%"></i></div></td></tr>';
+    }).join('');
+
+    if (!linhas) return '';
+    return '<h3>Por nível</h3><p class="legenda">A coluna “de primeira” é o que você já sabia; ' +
+      '“depois” é o quanto está fixando com a repetição.</p>' +
+      '<table><tr><th>Nível</th><th class="num">Cards</th><th class="num">De primeira</th>' +
+      '<th class="num">Depois</th><th></th></tr>' + linhas + '</table>';
+  }
+
+  /* Escolher entre cinco é bem mais fácil que escrever do zero. */
+  function tabelaModo() {
+    const g = { multipla: { n: 0, certas: 0, ms: 0, msN: 0 }, escrita: { n: 0, certas: 0, ms: 0, msN: 0 } };
+    Object.keys(progresso.cards).forEach(id => {
+      (progresso.cards[id].historico || []).forEach(h => {
+        const x = g[h.modo]; if (!x) return;
+        x.n++; if (h.acertou) x.certas++;
+        if (!h.pausado) { x.ms += h.ms; x.msN++; }
+      });
+    });
+    const rotulos = { multipla: 'escolhendo entre 5', escrita: 'escrevendo' };
+    const linhas = Object.keys(g).filter(k => g[k].n).map(k => {
+      const x = g[k];
+      return '<tr><td>' + rotulos[k] + '</td><td class="num">' + x.n + '</td>' +
+        '<td class="num">' + pctDe(x.certas, x.n) + '</td>' +
+        '<td class="num">' + (x.msN ? (x.ms / x.msN / 1000).toFixed(1) + 's' : '—') + '</td></tr>';
+    }).join('');
+    if (!linhas) return '';
+    return '<h3>Escolher x escrever</h3><table><tr><th>Modo</th><th class="num">Respostas</th>' +
+      '<th class="num">Acerto</th><th class="num">Tempo médio</th></tr>' + linhas + '</table>';
+  }
+
+  function tabelaTema() {
+    const g = {};
+    Object.keys(progresso.cards).forEach(id => {
+      const c = PORID[id]; if (!c) return;
+      (c.tags || []).forEach(tag => {
+        const x = g[tag] || (g[tag] = { cards: 0, certas: 0, total: 0 });
+        x.cards++;
+        (progresso.cards[id].historico || []).forEach(h => {
+          x.total++; if (h.acertou) x.certas++;
+        });
+      });
+    });
+    const temas = Object.keys(g).filter(k => g[k].total >= 3)
+      .sort((a, b) => (g[a].certas / g[a].total) - (g[b].certas / g[b].total));
+    if (!temas.length) return '';
+    const linhas = temas.map(k => {
+      const pct = Math.round(100 * g[k].certas / g[k].total);
+      return '<tr><td>' + escapar(k) + '</td><td class="num">' + g[k].cards + '</td>' +
+        '<td class="num">' + pct + '%</td>' +
+        '<td><div class="barra"><i style="width:' + pct + '%"></i></div></td></tr>';
+    }).join('');
+    return '<h3>Por tema</h3><p class="legenda">Do mais difícil para o mais fácil.</p>' +
+      '<table><tr><th>Tema</th><th class="num">Cards</th><th class="num">Acerto</th><th></th></tr>' +
+      linhas + '</table>';
   }
 
   function tabelaPor(titulo, chave, ordem) {
@@ -664,6 +772,20 @@
     });
   });
 
+  /* Sair de um card sem responder não pode sumir com ele: volta para a
+     frente da fila, para ser o próximo quando você voltar. */
+  function irParaInicio() {
+    if (cardAtual && !respostaPendente && progresso.fila.indexOf(cardAtual.id) < 0) {
+      progresso.fila.unshift(cardAtual.id);
+      salvarProgresso();
+    }
+    cardAtual = null;
+    respostaPendente = null;
+    atualizarPlacar();
+    mostrar('tela-inicio');
+  }
+
+  el['btn-inicio'].addEventListener('click', irParaInicio);
   el['btn-painel'].addEventListener('click', abrirPainel);
   el['btn-config'].addEventListener('click', abrirConfig);
   document.querySelectorAll('[data-voltar]').forEach(b => {

@@ -16,18 +16,54 @@ window.Motor = (function () {
 
   const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
-  /* ── normalização de texto para comparar respostas ── */
+  /* ── normalização de texto para comparar respostas ──
+     Aqui só entra o que é a MESMA resposta escrita de outro jeito: acento,
+     plural, número por extenso, contração, artigo e pronome-sujeito, que o
+     português dispensa. Nada que possa fazer uma resposta errada colar na
+     certa — negação, preposição, verbo e substantivo ficam intactos.
+     Sinônimo de verdade entra pela lista "aceitas" de cada card. */
+
+  const NUMEROS = {
+    '0': 'zero', '1': 'um', '2': 'dois', '3': 'tres', '4': 'quatro',
+    '5': 'cinco', '6': 'seis', '7': 'sete', '8': 'oito', '9': 'nove',
+    '10': 'dez', '11': 'onze', '12': 'doze', '13': 'treze', '14': 'quatorze',
+    '15': 'quinze', '16': 'dezesseis', '17': 'dezessete', '18': 'dezoito',
+    '19': 'dezenove', '20': 'vinte', '30': 'trinta', '50': 'cinquenta', '100': 'cem'
+  };
+
+  /* Contrações e grafias alternativas da mesma palavra. */
+  const GRAFIAS = {
+    pra: 'para', pro: 'para', to: 'estou', ta: 'esta', tao: 'estao',
+    duas: 'dois', vc: 'voce', catorze: 'quatorze'
+  };
+
+  /* Palavras que o português põe ou tira sem mudar nada: artigos e
+     pronomes-sujeito (as duas línguas dispensam o sujeito), mais o "já"
+     aspectual. Nenhuma negação e nenhuma preposição entram aqui. */
+  const OMISSIVEIS = new Set([
+    'o', 'a', 'os', 'as', 'um', 'uma', 'uns', 'umas',
+    'eu', 'ele', 'ela', 'eles', 'elas', 'voce', 'voces', 'tu', 'nos',
+    'ja'
+  ]);
+
   function normalizar(txt) {
-    return (txt || '')
+    const bruto = (txt || '')
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // tira acentos
       .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, ' ')                       // tira pontuação
-      .replace(/\b(o|a|os|as|um|uma|uns|umas)\b/g, ' ')   // artigos são opcionais
-      .replace(/\s+/g, ' ')
-      .trim();
-  }
+      .replace(/[^a-z0-9\s]/g, ' ');                      // tira pontuação
 
-  /* distância de Levenshtein, para tolerar erro de digitação */
+    const saida = [];
+    for (let p of bruto.split(/\s+/)) {
+      if (!p) continue;
+      if (NUMEROS[p]) p = NUMEROS[p];                     // "3 anos" = "três anos"
+      if (GRAFIAS[p]) p = GRAFIAS[p];
+      p = p.replace(/^(\w{3,})s$/, '$1');                 // plural = singular
+      if (OMISSIVEIS.has(p)) continue;
+      saida.push(p);
+    }
+    return saida.join(' ');
+  }
+  /* distância de Levenshtein, só para deslize de digitação em palavra única */
   function distancia(a, b) {
     if (a === b) return 0;
     const m = a.length, n = b.length;
@@ -53,22 +89,25 @@ window.Motor = (function () {
     return lista.map(normalizar).filter(Boolean);
   }
 
-  /* Confere a resposta escrita. Devolve 'certo' | 'quase' | 'errado'. */
+  /* Confere a resposta escrita. Devolve 'certo' | 'quase' | 'errado'.
+
+     É rígido de propósito: vale a resposta que consta da lista do card,
+     depois de normalizada. Não há semelhança de texto valendo ponto — uma
+     frase parecida com a certa, mas com um erro, é erro. A única folga é
+     um deslize de teclado numa resposta de palavra única, que não é outra
+     resposta, é a mesma mal digitada. Modos diferentes de dizer a mesma
+     coisa se resolvem acrescentando a variante em "aceitas". */
   function conferir(card, texto) {
     const dado = normalizar(texto);
     if (!dado) return 'errado';
+
     const aceitas = respostasAceitas(card);
     if (aceitas.includes(dado)) return 'certo';
 
-    for (const alvo of aceitas) {
-      const limite = alvo.length <= 4 ? 0 : alvo.length <= 8 ? 1 : 2;
-      if (limite && distancia(dado, alvo) <= limite) return 'quase';
-    }
-    // resposta contida na aceita (ou vice-versa), quando é frase longa
-    for (const alvo of aceitas) {
-      if (alvo.length >= 12 && (alvo.includes(dado) || dado.includes(alvo))) {
-        const razao = Math.min(alvo.length, dado.length) / Math.max(alvo.length, dado.length);
-        if (razao >= 0.7) return 'quase';
+    if (!dado.includes(' ')) {
+      for (const alvo of aceitas) {
+        if (alvo.includes(' ') || alvo.length < 6) continue;
+        if (distancia(dado, alvo) === 1) return 'quase';
       }
     }
     return 'errado';
@@ -162,6 +201,9 @@ window.Motor = (function () {
       est.etapa = 'multipla';
     }
 
+    // a estreia é a única medida limpa do que já se sabia antes do app
+    if (est.vistas === 1) est.primeiraCerta = !!r.acertou;
+
     if (r.conhecia) est.conhecia = r.conhecia;
 
     est.historico.push({
@@ -224,6 +266,83 @@ window.Motor = (function () {
     return a;
   }
 
+  /* ── qual nível puxar a seguir ──
+     Nota de domínio por nível, de 0 a 1. A estreia do card pesa como
+     evidência do que já se sabia: acerto conhecendo vale 1; acerto dizendo
+     não conhecer vale 0,4, porque provavelmente foi dedução ou chute. As
+     respostas seguintes valem 1 quando certas — elas não dizem o que já se
+     sabia, mas dizem em que nível está custando fixar. Tudo é puxado para
+     0,5 enquanto há pouca evidência, para um acerto solto não decidir nada. */
+  function dominioPorNivel(cards, estados) {
+    const g = {};
+    for (const n of NIVEIS) g[n] = { pontos: 0, respostas: 0 };
+
+    for (const c of cards) {
+      const e = estados[c.id];
+      if (!e || !e.vistas) continue;
+      const x = g[c.nivel];
+
+      if (e.primeiraCerta !== undefined) {
+        x.respostas++;
+        if (e.primeiraCerta) x.pontos += (e.conhecia === 'nao' ? 0.4 : 1);
+      }
+      const depois = Math.max(0, e.vistas - 1);
+      const certasDepois = Math.max(0, e.acertos - (e.primeiraCerta ? 1 : 0));
+      x.respostas += depois;
+      x.pontos += Math.min(certasDepois, depois);
+    }
+
+    const K = 4, PRIOR = 0.5;
+    const saida = {};
+    for (const n of NIVEIS) {
+      saida[n] = (g[n].pontos + K * PRIOR) / (g[n].respostas + K);
+    }
+    return saida;
+  }
+
+  /* Peso de cada nível na hora de sortear o próximo card inédito.
+     A curva tem pico no domínio intermediário: o nível que você ainda não
+     domina, mas no qual já se vira. Nível que você gabarita entedia; nível
+     em que você erra quase tudo desanima. O piso garante que todos
+     continuem aparecendo. */
+  const ALVO = 0.62, LARGURA = 0.22, PISO = 0.15;
+  function pesosDeNivel(dominio) {
+    const p = {};
+    for (const n of NIVEIS) {
+      const d = dominio[n];
+      p[n] = PISO + Math.exp(-Math.pow(d - ALVO, 2) / (2 * LARGURA * LARGURA));
+    }
+    return p;
+  }
+
+  /* Sorteia a ordem dos cards inéditos conforme o peso do nível,
+     alternando palavra e frase quando dá. */
+  function ordenarNovos(ids, pesos, porId) {
+    const restantes = ids.slice();
+    const ordem = [];
+    let tipoAnterior = null;
+
+    while (restantes.length) {
+      let total = 0;
+      const peso = restantes.map(id => {
+        const c = porId[id];
+        let w = pesos[c.nivel] || PISO;
+        if (c.tipo === tipoAnterior) w *= 0.6;
+        total += w;
+        return w;
+      });
+
+      let sorteio = Math.random() * total;
+      let i = 0;
+      while (i < restantes.length - 1 && sorteio > peso[i]) { sorteio -= peso[i]; i++; }
+
+      const escolhido = restantes.splice(i, 1)[0];
+      ordem.push(escolhido);
+      tipoAnterior = porId[escolhido].tipo;
+    }
+    return ordem;
+  }
+
   /* Alternativas da múltipla escolha: a certa mais os 4 distratores. */
   function alternativas(card) {
     return embaralhar([card.pt, ...card.distratores]);
@@ -234,6 +353,7 @@ window.Motor = (function () {
     normalizar, conferir, velocidade,
     estadoInicial, registrar, modoDe, pareceChute,
     distanciaNaFila, montarFila, alternativas, embaralhar,
+    dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
   };
 })();

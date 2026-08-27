@@ -1,7 +1,7 @@
 {
  "versao": 1,
- "gerado_em": "2026-08-26",
- "total": 140,
+ "gerado_em": "2026-08-27",
+ "total": 200,
  "cards": [
   {
    "id": "p001",
@@ -989,9 +989,13 @@
    "pt": "sentir saudade",
    "aceitas": [
     "sentir saudade",
-    "sentir falta",
+    "sentir saudades",
     "ter saudade",
-    "saudade"
+    "ter saudades",
+    "sentir falta",
+    "morrer de saudades",
+    "saudade",
+    "saudades"
    ],
    "distratores": [
     "envelhecer",
@@ -1608,9 +1612,13 @@
    "aceitas": [
     "tanto faz",
     "da na mesma",
+    "da no mesmo",
     "pra mim tanto faz",
     "nao faz diferenca",
-    "me e indiferente"
+    "me e indiferente",
+    "e indiferente",
+    "pouco importa",
+    "que seja"
    ],
    "distratores": [
     "Me dê o mesmo.",
@@ -1634,7 +1642,12 @@
     "tudo bem",
     "nao foi nada",
     "relaxa",
-    "deixa pra la"
+    "deixa pra la",
+    "sem problema",
+    "nao tem nada",
+    "esta tudo bem",
+    "nao aconteceu nada",
+    "tranquilo"
    ],
    "distratores": [
     "Nada passa por aqui. / Está parado.",
@@ -1657,7 +1670,11 @@
     "estou de saco cheio de esperar",
     "cansei de esperar",
     "estou farto de esperar",
-    "nao aguento mais esperar"
+    "nao aguento mais esperar",
+    "estou cheio de esperar",
+    "to de saco cheio de esperar",
+    "estou cansado de esperar",
+    "enjoei de esperar"
    ],
    "distratores": [
     "Estou cheio de comida agora.",
@@ -1680,7 +1697,11 @@
     "me da uma mao",
     "me ajuda",
     "me de uma mao",
-    "da uma forca"
+    "da uma forca",
+    "me da uma forca",
+    "me ajude",
+    "pode me ajudar",
+    "me da uma ajuda"
    ],
    "distratores": [
     "Me jogue a mão. / Me arremesse.",
@@ -1703,7 +1724,10 @@
     "estou ficando atrasado",
     "esta ficando tarde para mim",
     "vou me atrasar",
-    "ta ficando tarde"
+    "ta ficando tarde",
+    "estou atrasado",
+    "esta ficando tarde",
+    "vou acabar me atrasando"
    ],
    "distratores": [
     "Ele me atrasou.",
@@ -1727,7 +1751,11 @@
     "nem a pau",
     "nem morto",
     "de forma alguma",
-    "nem pensar"
+    "nem pensar",
+    "jamais",
+    "nem sonhando",
+    "de maneira nenhuma",
+    "nem ferrando"
    ],
    "distratores": [
     "Nem de brincadeira. / Sem graça nenhuma.",
@@ -1752,7 +1780,11 @@
     "esta distraido",
     "viajando",
     "esta aereo",
-    "ta viajando"
+    "ta viajando",
+    "esta nas nuvens",
+    "esta voando",
+    "esta com a cabeca longe",
+    "esta desligado"
    ],
    "distratores": [
     "Está chovendo muito.",
@@ -1776,7 +1808,10 @@
     "ja ouvi isso",
     "me soa familiar",
     "me e familiar",
-    "conheco de algum lugar"
+    "conheco de algum lugar",
+    "soa familiar",
+    "ja ouvi falar",
+    "me lembra alguma coisa"
    ],
    "distratores": [
     "Está tocando. / O som saiu.",
@@ -1799,7 +1834,11 @@
     "talvez eu va",
     "quem sabe eu va",
     "pode ser que eu va",
-    "capaz que eu va"
+    "capaz que eu va",
+    "talvez eu vada",
+    "talvez va",
+    "pode ser que va",
+    "quem sabe va"
    ],
    "distratores": [
     "Vou da melhor forma.",
@@ -1822,7 +1861,10 @@
     "estou ha dois anos aqui",
     "faz dois anos que estou aqui",
     "ha dois anos que moro aqui",
-    "estou aqui ha dois anos"
+    "estou aqui ha dois anos",
+    "moro aqui ha dois anos",
+    "tem dois anos que estou aqui",
+    "estou aqui faz dois anos"
    ],
    "distratores": [
     "Levo dois anos daqui.",
@@ -1845,7 +1887,10 @@
     "acabei de chegar",
     "cheguei agora",
     "acabo de chegar",
-    "recem cheguei"
+    "recem cheguei",
+    "cheguei agorinha",
+    "acabei de chegar agora",
+    "cheguei ha pouco"
    ],
    "distratores": [
     "Acabo de sair.",
@@ -1869,7 +1914,11 @@
     "acho ele gente boa",
     "gosto dele",
     "me agrada",
-    "vou com a cara dele"
+    "vou com a cara dele",
+    "simpatizo com ele",
+    "acho ele legal",
+    "ele me agrada",
+    "gosto dele como pessoa"
    ],
    "distratores": [
     "Ele caiu bem. / A roupa ficou boa.",
@@ -1893,7 +1942,10 @@
     "pisar na bola",
     "cometer uma gafe",
     "errar feio",
-    "dar mancada"
+    "dar mancada",
+    "fazer besteira",
+    "dar um fora",
+    "meter os pes pelas maos"
    ],
    "distratores": [
     "Meter o pé na porta. / Forçar a entrada.",
@@ -1915,9 +1967,12 @@
    "aceitas": [
     "no fim do mundo",
     "muito longe",
-    "na cocanha",
     "longe pra caramba",
-    "no quinto dos infernos"
+    "no quinto dos infernos",
+    "ficar no fim do mundo",
+    "ser muito longe",
+    "la longe",
+    "no fim da picada"
    ],
    "distratores": [
     "Estar no quinto andar. / Subir mais um pouco.",
@@ -1941,7 +1996,10 @@
     "jogar a toalha",
     "desistir",
     "entregar os pontos",
-    "dar-se por vencido"
+    "dar-se por vencido",
+    "largar tudo",
+    "desistir de vez",
+    "atirar a toalha"
    ],
    "distratores": [
     "Puxar a toalha. / Arrastar.",
@@ -1964,7 +2022,10 @@
     "nao tem papas na lingua",
     "fala o que pensa",
     "e franco",
-    "fala sem rodeios"
+    "fala sem rodeios",
+    "nao tem pelos na lingua",
+    "diz o que pensa",
+    "fala na lata"
    ],
    "distratores": [
     "Tem a língua presa.",
@@ -1988,7 +2049,10 @@
     "e sopa",
     "e facil",
     "e mamao com acucar",
-    "e barbada"
+    "e barbada",
+    "e canja",
+    "e facil demais",
+    "e tranquilo"
    ],
    "distratores": [
     "O pão acabou. / Comeram tudo.",
@@ -2009,9 +2073,11 @@
    "pt": "Custa os olhos da cara.",
    "aceitas": [
     "custa os olhos da cara",
-    "e caríssimo",
+    "e carissimo",
     "custa uma fortuna",
-    "e muito caro"
+    "e muito caro",
+    "custa caro pra caramba",
+    "sai os olhos da cara"
    ],
    "distratores": [
     "Custa um olho roxo.",
@@ -2035,7 +2101,10 @@
     "e maluco",
     "esta louco",
     "e doido",
-    "pirou"
+    "pirou",
+    "e completamente louco",
+    "e biruta",
+    "esta pirado"
    ],
    "distratores": [
     "É teimoso como uma cabra.",
@@ -2059,7 +2128,10 @@
     "acertar em cheio",
     "acertar na mosca",
     "dar no alvo",
-    "matar a charada"
+    "matar a charada",
+    "acertar em cheio na mosca",
+    "dar em cheio",
+    "acertar direitinho"
    ],
    "distratores": [
     "Bater o prego.",
@@ -2084,7 +2156,10 @@
     "se esforca",
     "acorda",
     "poe pra quebrar",
-    "se anima"
+    "se anima",
+    "se mexe",
+    "poe as pilhas",
+    "va a luta"
    ],
    "distratores": [
     "Ponha as pilhas. / Troque a bateria.",
@@ -2107,7 +2182,9 @@
     "fazer vista grossa",
     "fingir que nao viu",
     "deixar passar",
-    "fazer de conta que nao viu"
+    "fazer de conta que nao viu",
+    "fechar os olhos",
+    "ignorar de proposito"
    ],
    "distratores": [
     "Engordar os olhos.",
@@ -2130,7 +2207,10 @@
     "vamos direto ao ponto",
     "vamos ao que interessa",
     "sem rodeios",
-    "vamos ao ponto"
+    "vamos ao ponto",
+    "va direto ao ponto",
+    "vamos ao assunto",
+    "chega de rodeios"
    ],
    "distratores": [
     "Vamos ao grão de café.",
@@ -2154,7 +2234,10 @@
     "estou exausto",
     "estou moido",
     "to destruido",
-    "estou detonado"
+    "estou detonado",
+    "estou morto de cansaco",
+    "estou arrasado",
+    "nao aguento mais"
    ],
    "distratores": [
     "Estou empoeirado. / Estou sujo.",
@@ -2178,7 +2261,10 @@
     "so por garantia",
     "por precaucao",
     "por seguranca",
-    "vai que"
+    "vai que",
+    "por desencargo",
+    "so por seguranca",
+    "caso aconteca algo"
    ],
    "distratores": [
     "Por causa das moscas.",
@@ -2202,7 +2288,10 @@
     "sem mais nem menos",
     "de repente",
     "do nada",
-    "de supetao"
+    "de supetao",
+    "de uma hora pra outra",
+    "assim do nada",
+    "sem aviso"
    ],
    "distratores": [
     "Das boas às primeiras. / Bem na ordem certa.",
@@ -2226,7 +2315,10 @@
     "rejeitou",
     "deu o fora",
     "recusou o pedido",
-    "deu um pé na bunda"
+    "deu um pe na bunda",
+    "dispensou ele",
+    "deu o fora nele",
+    "recusou ele"
    ],
    "distratores": [
     "Ela deu abóboras a ele. / Presenteou.",
@@ -2249,7 +2341,10 @@
     "nao acerta uma",
     "nao faz nada certo",
     "erra tudo",
-    "nao acerta nada"
+    "nao acerta nada",
+    "nao acerta em nada",
+    "erra todas",
+    "nao consegue acertar"
    ],
    "distratores": [
     "Não chuta a bola.",
@@ -2273,7 +2368,9 @@
     "que barganha",
     "que negocio bom",
     "que oferta",
-    "que achado"
+    "que achado",
+    "que baita negocio",
+    "que preco bom"
    ],
    "distratores": [
     "Que chatice!",
@@ -2298,7 +2395,10 @@
     "pirou",
     "surtou",
     "enlouqueceu",
-    "perdeu a linha"
+    "perdeu a linha",
+    "ficou maluco",
+    "deu um piti",
+    "perdeu o juizo"
    ],
    "distratores": [
     "A panela dele caiu. / Quebrou.",
@@ -2323,7 +2423,10 @@
     "detonou ele",
     "criticou muito",
     "malhou ele",
-    "meteu o pau"
+    "meteu o pau",
+    "falou muito mal dele",
+    "acabou com ele",
+    "desceu a lenha nele"
    ],
    "distratores": [
     "Pintou de verde.",
@@ -2348,7 +2451,10 @@
     "armou um barraco",
     "fez um showzinho",
     "deu chilique",
-    "aprontou um barraco"
+    "aprontou um barraco",
+    "fez um auê",
+    "armou um escandalo",
+    "deu um showzinho"
    ],
    "distratores": [
     "Montou um galinheiro. / Criou galinhas.",
@@ -2373,7 +2479,10 @@
     "pouco me importa",
     "tanto faz",
     "nao dou a minima",
-    "estou pouco me lixando"
+    "estou pouco me lixando",
+    "nao me importo nem um pouco",
+    "nao ligo",
+    "nao faz diferenca para mim"
    ],
    "distratores": [
     "Importo pepinos.",
@@ -2396,7 +2505,10 @@
     "num piscar de olhos",
     "num instante",
     "rapidinho",
-    "num segundo"
+    "num segundo",
+    "em um piscar de olhos",
+    "num abrir e fechar de olhos",
+    "rapidissimo"
    ],
    "distratores": [
     "Abrindo e fechando a porta.",
@@ -2420,7 +2532,10 @@
     "fingiu que nao entendeu",
     "fez de conta que nao era com ele",
     "se fez de bobo",
-    "fez cara de paisagem"
+    "fez cara de paisagem",
+    "se fez de desentendido",
+    "fingiu nao entender",
+    "se fez de sonso"
    ],
    "distratores": [
     "Virou sueco.",
@@ -2445,7 +2560,10 @@
     "e ai",
     "tudo bem",
     "como voce esta",
-    "que tal"
+    "que tal",
+    "como vao as coisas",
+    "beleza",
+    "como e que vai"
    ],
    "distratores": [
     "Que tal isso? / Gostou?",
@@ -2468,7 +2586,10 @@
     "estou com vontade de dormir",
     "tenho vontade de dormir",
     "estou a fim de dormir",
-    "bateu uma vontade de dormir"
+    "bateu uma vontade de dormir",
+    "to com vontade de dormir",
+    "estou com sono",
+    "deu vontade de dormir"
    ],
    "distratores": [
     "Tenho que ir dormir agora.",
@@ -2490,7 +2611,9 @@
    "aceitas": [
     "esta muito frio",
     "faz muito frio",
-    "ta muito frio"
+    "ta muito frio",
+    "esta fazendo muito frio",
+    "que frio"
    ],
    "distratores": [
     "Faz frio há muito tempo.",
@@ -2513,7 +2636,10 @@
     "tenho que ir embora",
     "preciso ir",
     "tenho que ir",
-    "vou ter que ir"
+    "vou ter que ir",
+    "preciso ir embora",
+    "tenho que vazar",
+    "devo ir embora"
    ],
    "distratores": [
     "Tenho que ir aí.",
@@ -2536,7 +2662,10 @@
     "eu esqueci",
     "esqueci",
     "me esqueci",
-    "acabei esquecendo"
+    "acabei esquecendo",
+    "esqueci disso",
+    "me deu um branco",
+    "acabou me escapando"
    ],
    "distratores": [
     "Ele me esqueceu.",
@@ -2559,7 +2688,10 @@
     "ainda tenho dois",
     "sobraram dois",
     "restam dois",
-    "tenho mais dois"
+    "tenho mais dois",
+    "me restam dois",
+    "ficaram dois",
+    "tem dois ainda"
    ],
    "distratores": [
     "Fico com dois. / Escolhi esses.",
@@ -2582,7 +2714,10 @@
     "esta para chegar",
     "chega a qualquer momento",
     "esta chegando",
-    "ta pra chegar"
+    "ta pra chegar",
+    "deve chegar a qualquer momento",
+    "esta prestes a chegar",
+    "chega ja ja"
    ],
    "distratores": [
     "Está caindo no chão neste momento.",
@@ -2604,7 +2739,9 @@
    "aceitas": [
     "que eu saiba nao",
     "ate onde sei nao",
-    "pelo que sei nao"
+    "pelo que sei nao",
+    "que eu saiba que nao",
+    "ao que eu saiba nao"
    ],
    "distratores": [
     "Eu não sei nada.",
@@ -2627,7 +2764,10 @@
     "vamos ver se a gente se encontra",
     "quem sabe a gente se ve",
     "vamos marcar",
-    "a ver se nos vemos"
+    "a ver si nos vemos",
+    "vamos ver se nos encontramos",
+    "quem sabe nos vemos",
+    "vamos ver se rola de se ver"
    ],
    "distratores": [
     "Vá ver se ele consegue nos ver.",
@@ -2650,7 +2790,8 @@
     "tomara que ele viesse amanha",
     "quem dera ele viesse amanha",
     "oxala ele viesse amanha",
-    "se ao menos ele viesse amanha"
+    "se ao menos ele viesse amanha",
+    "quisera que ele viesse amanha"
    ],
    "distratores": [
     "Tomara que ele venha amanhã (bem provável).",
@@ -2673,7 +2814,9 @@
    "aceitas": [
     "se eu soubesse nao teria vindo",
     "se tivesse sabido nao teria vindo",
-    "tivesse eu sabido nao teria vindo"
+    "tivesse eu sabido nao teria vindo",
+    "se eu tivesse sabido nao teria vindo",
+    "caso soubesse nao teria vindo"
    ],
    "distratores": [
     "Por ter sabido, não vim.",
@@ -2696,7 +2839,9 @@
    "aceitas": [
     "por mais que tente nao consegue",
     "por mais que ele tente nao consegue",
-    "mesmo tentando nao consegue"
+    "mesmo tentando nao consegue",
+    "por mais que se esforce nao consegue",
+    "tenta e nao consegue"
    ],
    "distratores": [
     "Quanto mais ele tenta, mais consegue.",
@@ -2719,7 +2864,9 @@
    "aceitas": [
     "como se nada tivesse acontecido",
     "como se nada tivesse ocorrido",
-    "como se nada houvesse acontecido"
+    "como se nada houvesse acontecido",
+    "como se nada tivesse se passado",
+    "como se nada fosse"
    ],
    "distratores": [
     "Como se nada acontecesse.",
@@ -2743,7 +2890,9 @@
     "mesmo que chova eu irei",
     "ainda que chova eu vou",
     "nem que chova eu vou",
-    "mesmo que chova vou"
+    "mesmo que chova vou",
+    "mesmo chovendo eu vou",
+    "mesmo que chova eu vou"
    ],
    "distratores": [
     "Embora chovesse, fui.",
@@ -2761,26 +2910,26 @@
   {
    "id": "f050",
    "tipo": "frase",
-   "es": "Ni que fuera millonario.",
-   "pt": "Até parece que ele é milionário.",
+   "es": "¡Ni que fueras millonario!",
+   "pt": "Até parece que você é milionário!",
    "aceitas": [
-    "ate parece que ele e milionario",
-    "como se fosse milionario",
+    "ate parece que voce e milionario",
     "ate parece milionario",
-    "nem que fosse milionario"
+    "como se voce fosse milionario",
+    "nem parece que voce e milionario"
    ],
    "distratores": [
-    "Nem se ele fosse milionário eu iria.",
-    "Nenhum milionário faria uma coisa dessas.",
-    "Ele é milionário de verdade mesmo.",
-    "Se ele fosse milionário, teria comprado."
+    "Nem se você fosse milionário eu iria!",
+    "Nenhum milionário faria uma coisa dessas!",
+    "Você é milionário de verdade mesmo!",
+    "Se você fosse milionário, teria comprado!"
    ],
    "nivel": "C1",
    "tags": [
     "gramática",
     "expressão"
    ],
-   "nota": "'Ni que' + subjuntivo é uma ironia: 'até parece que...'."
+   "nota": "'Ni que' + imperfeito do subjuntivo é ironia que NEGA a premissa: diz-se de quem gasta como rico, justamente para dizer que ele não é. Equivale ao nosso 'até parece que...'."
   },
   {
    "id": "f051",
@@ -2791,7 +2940,10 @@
     "eu disse isso a ele ontem",
     "eu falei isso pra ele ontem",
     "disse a ele ontem",
-    "eu contei pra ele ontem"
+    "eu contei pra ele ontem",
+    "falei isso para ele ontem",
+    "eu disse a ele ontem",
+    "contei isso a ele ontem"
    ],
    "distratores": [
     "Ele me disse ontem.",
@@ -2813,9 +2965,14 @@
    "pt": "É preciso fazer isso agora.",
    "aceitas": [
     "e preciso fazer isso agora",
+    "e necessario fazer isso agora",
     "tem que ser feito agora",
-    "temos que fazer isso ja",
-    "precisa ser feito agora"
+    "temos que fazer isso agora",
+    "precisa ser feito agora",
+    "e preciso fazer agora",
+    "tem que fazer isso agora",
+    "deve ser feito agora",
+    "e necessario fazer agora"
    ],
    "distratores": [
     "Há quem faça isso.",
@@ -2837,7 +2994,11 @@
    "aceitas": [
     "estudo espanhol ha tres anos",
     "faz tres anos que estudo espanhol",
-    "ha tres anos estudo espanhol"
+    "ha tres anos estudo espanhol",
+    "estou estudando espanhol ha tres anos",
+    "estudo espanhol faz tres anos",
+    "venho estudando espanhol ha tres anos",
+    "tem tres anos que estudo espanhol"
    ],
    "distratores": [
     "Levei três anos estudando espanhol.",
@@ -2859,7 +3020,9 @@
    "aceitas": [
     "ha males que vem para bem",
     "tudo tem um lado bom",
-    "nao ha mal que nao traga um bem"
+    "nao ha mal que nao traga um bem",
+    "existe males que vem para bem",
+    "todo mal traz algum bem"
    ],
    "distratores": [
     "Não há mal nenhum.",
@@ -2881,7 +3044,8 @@
    "aceitas": [
     "deus ajuda quem cedo madruga",
     "deus ajuda quem acorda cedo",
-    "quem madruga deus ajuda"
+    "quem madruga deus ajuda",
+    "a quem madruga deus ajuda"
    ],
    "distratores": [
     "Deus ajuda a quem se ajuda.",
@@ -2903,7 +3067,9 @@
    "aceitas": [
     "quem muito quer nada tem",
     "quem abraca demais nao aperta nada",
-    "quem tudo quer tudo perde"
+    "quem tudo quer tudo perde",
+    "quem muito abarca pouco aperta",
+    "quem quer tudo fica sem nada"
    ],
    "distratores": [
     "Quem aperta muito, perde.",
@@ -2926,7 +3092,9 @@
     "venderam gato por lebre",
     "deram gato por lebre",
     "passaram ele pra tras",
-    "enganaram ele"
+    "enganaram ele",
+    "venderam gato por lebre a ele",
+    "aplicaram um golpe nele"
    ],
    "distratores": [
     "Deram um gato a ele.",
@@ -2949,7 +3117,9 @@
     "sao unha e carne",
     "sao inseparaveis",
     "sao muito unidos",
-    "sao carne e unha"
+    "sao carne e unha",
+    "sao grudados",
+    "sao inseparaveis mesmo"
    ],
    "distratores": [
     "Estão brigados. / Não se falam.",
@@ -2973,7 +3143,10 @@
     "va direto ao ponto",
     "pare de enrolar",
     "sem rodeios",
-    "nao faca rodeios"
+    "nao faca rodeios",
+    "deixa de rodeios",
+    "nao enrola",
+    "chega de enrolacao"
    ],
    "distratores": [
     "Não suba nos galhos. / Pode quebrar.",
@@ -2996,7 +3169,9 @@
     "ele sempre consegue o que quer",
     "sempre faz o que quer",
     "sempre leva a melhor",
-    "sempre sai com a dele"
+    "sempre sai com a dele",
+    "sempre da um jeito de conseguir",
+    "sempre impoe a vontade dele"
    ],
    "distratores": [
     "Ele sempre sai sozinho.",
@@ -3020,7 +3195,9 @@
     "ta de mau humor",
     "esta irritado",
     "acordou de mau humor",
-    "esta emburrado"
+    "esta emburrado",
+    "esta de cara feia",
+    "esta azedo"
    ],
    "distratores": [
     "Está com leite estragado.",
@@ -3045,7 +3222,10 @@
     "fiquei chocado",
     "fiquei de queixo caido",
     "fiquei paralisado",
-    "fiquei estatico"
+    "fiquei estatico",
+    "fiquei sem reacao",
+    "fiquei abismado",
+    "fiquei gelado"
    ],
    "distratores": [
     "Fiquei na pedra. / Sentei ali.",
@@ -3069,7 +3249,10 @@
     "estou desanimado",
     "to na fossa",
     "estou deprimido",
-    "to pra baixo"
+    "to pra baixo",
+    "estou meio pra baixo",
+    "estou cabisbaixo",
+    "estou desmotivado"
    ],
    "distratores": [
     "Estou descendo. / Vou de elevador.",
@@ -3092,7 +3275,9 @@
     "botar lenha na fogueira",
     "por lenha na fogueira",
     "piorar a situacao",
-    "jogar lenha na fogueira"
+    "jogar lenha na fogueira",
+    "atiçar a briga",
+    "aumentar o fogo"
    ],
    "distratores": [
     "Apagar o fogo.",
@@ -3116,7 +3301,9 @@
     "a torto e a direito",
     "sem criterio",
     "de qualquer maneira",
-    "atabalhoadamente"
+    "atabalhoadamente",
+    "fez as pressas e mal",
+    "fez sem cuidado nenhum"
    ],
    "distratores": [
     "Fez com muito cuidado. / Com todo o capricho.",
@@ -3140,7 +3327,9 @@
     "insiste sem parar",
     "continua na mesma tecla",
     "bate na mesma tecla",
-    "teima e teima"
+    "teima e teima",
+    "continua teimando na mesma",
+    "nao larga o osso"
    ],
    "distratores": [
     "Continua errando tudo. / Não acerta uma.",
@@ -3164,7 +3353,9 @@
     "a muito custo consegui terminar",
     "a duras penas consegui terminar",
     "mal consegui terminar",
-    "com muita dificuldade consegui terminar"
+    "com muita dificuldade consegui terminar",
+    "consegui terminar com muito custo",
+    "foi dificil mas terminei"
    ],
    "distratores": [
     "Com facilidade terminei.",
@@ -3188,7 +3379,10 @@
     "e demais",
     "e o maximo",
     "e sensacional",
-    "e fantastico"
+    "e fantastico",
+    "e demais da conta",
+    "e show",
+    "e espetacular"
    ],
    "distratores": [
     "É leite puro! / Sem mistura!",
@@ -3212,7 +3406,9 @@
     "beleza a gente se encontra as oito",
     "ok combinado as oito",
     "ta bom nos vemos as oito",
-    "fechado as oito"
+    "fechado as oito",
+    "beleza fica combinado as oito",
+    "ta certo a gente se ve as oito"
    ],
    "distratores": [
     "Tudo bem, isso vale oito reais.",
@@ -3236,7 +3432,9 @@
     "ainda bem que voce chegou",
     "que bom que voce chegou",
     "gracas a deus voce chegou",
-    "ainda bem que chegou"
+    "ainda bem que chegou",
+    "menos mal que voce chegou",
+    "ate que enfim voce chegou"
    ],
    "distratores": [
     "Pior que você chegou.",
@@ -3249,6 +3447,1358 @@
     "cotidiano"
    ],
    "nota": "'Menos mal que' = ainda bem que."
+  },
+  {
+   "id": "p071",
+   "tipo": "palavra",
+   "es": "la calle",
+   "pt": "a rua",
+   "aceitas": [
+    "rua",
+    "via"
+   ],
+   "distratores": [
+    "a calha",
+    "o calor",
+    "a colina",
+    "a caleira"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "'Salir a la calle' = sair na rua. Cuidado com a pronúncia do 'll'."
+  },
+  {
+   "id": "p072",
+   "tipo": "palavra",
+   "es": "la ventana",
+   "pt": "a janela",
+   "aceitas": [
+    "janela",
+    "vitrine"
+   ],
+   "distratores": [
+    "o ventilador",
+    "a varanda",
+    "o vento",
+    "a ventania"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Do mesmo grupo: 'puerta' = porta, 'pared' = parede."
+  },
+  {
+   "id": "p073",
+   "tipo": "palavra",
+   "es": "el suelo",
+   "pt": "o chão",
+   "aceitas": [
+    "chao",
+    "piso",
+    "solo"
+   ],
+   "distratores": [
+    "o sono",
+    "o soalho de cima",
+    "o teto",
+    "o sol"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Cuidado: 'suelo' também é a forma de 'soler' (costumar) na primeira pessoa."
+  },
+  {
+   "id": "p074",
+   "tipo": "palavra",
+   "es": "la llave",
+   "pt": "a chave",
+   "aceitas": [
+    "chave"
+   ],
+   "distratores": [
+    "a chuva",
+    "a lavagem",
+    "a chama",
+    "a nave"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "O 'll' espanhol soa como o nosso 'lh' ou 'j', dependendo da região."
+  },
+  {
+   "id": "p075",
+   "tipo": "palavra",
+   "es": "la tienda",
+   "pt": "a loja",
+   "aceitas": [
+    "loja",
+    "mercearia",
+    "barraca"
+   ],
+   "distratores": [
+    "a tenda de circo",
+    "a tendência",
+    "a toalha",
+    "a tinta"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "Também significa barraca de acampar: 'tienda de campaña'."
+  },
+  {
+   "id": "p076",
+   "tipo": "palavra",
+   "es": "el pájaro",
+   "pt": "o pássaro",
+   "aceitas": [
+    "passaro",
+    "ave"
+   ],
+   "distratores": [
+    "o papagaio",
+    "o pagamento",
+    "o parceiro",
+    "o palhaço"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "animais"
+   ],
+   "nota": "O 'j' espanhol tem som de 'r' forte do português."
+  },
+  {
+   "id": "p077",
+   "tipo": "palavra",
+   "es": "la carpeta",
+   "pt": "a pasta",
+   "aceitas": [
+    "pasta",
+    "pasta de arquivos",
+    "fichario"
+   ],
+   "distratores": [
+    "o carpete",
+    "o carpinteiro",
+    "a carteira",
+    "a carroça"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "escritório"
+   ],
+   "nota": "Falso amigo. Carpete = 'moqueta' ou 'alfombra'."
+  },
+  {
+   "id": "p078",
+   "tipo": "palavra",
+   "es": "la firma",
+   "pt": "a assinatura",
+   "aceitas": [
+    "assinatura",
+    "rubrica"
+   ],
+   "distratores": [
+    "a firma comercial",
+    "a firmeza",
+    "a forma",
+    "a fila"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Falso amigo. Firma (empresa) = 'empresa'. E 'firmar' = assinar."
+  },
+  {
+   "id": "p079",
+   "tipo": "palavra",
+   "es": "la nevera",
+   "pt": "a geladeira",
+   "aceitas": [
+    "geladeira",
+    "frigorifico",
+    "refrigerador"
+   ],
+   "distratores": [
+    "a neve",
+    "a nevasca",
+    "a caldeira",
+    "a neblina"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Vem de 'nieve' (neve). Também se diz 'frigorífico' na Espanha."
+  },
+  {
+   "id": "p080",
+   "tipo": "palavra",
+   "es": "el grifo",
+   "pt": "a torneira",
+   "aceitas": [
+    "torneira"
+   ],
+   "distratores": [
+    "o grifo do texto",
+    "a grife",
+    "o grito",
+    "o grampo"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Na América Latina também se diz 'la llave' ou 'el caño'."
+  },
+  {
+   "id": "p081",
+   "tipo": "palavra",
+   "es": "la basura",
+   "pt": "o lixo",
+   "aceitas": [
+    "lixo",
+    "sujeira"
+   ],
+   "distratores": [
+    "a bagunça",
+    "a base",
+    "a bassoura",
+    "a batida"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "'Sacar la basura' = levar o lixo para fora."
+  },
+  {
+   "id": "p082",
+   "tipo": "palavra",
+   "es": "soler",
+   "pt": "costumar",
+   "aceitas": [
+    "costumar",
+    "ter o costume de",
+    "ter o habito de"
+   ],
+   "distratores": [
+    "soltar",
+    "solucionar",
+    "soar",
+    "soletrar"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Verbo sem equivalente direto: 'suelo ir' = costumo ir. Muito frequente."
+  },
+  {
+   "id": "p083",
+   "tipo": "palavra",
+   "es": "enterarse",
+   "pt": "ficar sabendo",
+   "aceitas": [
+    "ficar sabendo",
+    "tomar conhecimento",
+    "descobrir",
+    "saber"
+   ],
+   "distratores": [
+    "enterrar",
+    "inteirar-se de dinheiro",
+    "entrar",
+    "enternecer-se"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Me enteré ayer' = fiquei sabendo ontem."
+  },
+  {
+   "id": "p084",
+   "tipo": "palavra",
+   "es": "el atasco",
+   "pt": "o engarrafamento",
+   "aceitas": [
+    "engarrafamento",
+    "congestionamento",
+    "transito parado"
+   ],
+   "distratores": [
+    "o ataque",
+    "o atalho",
+    "o tacho",
+    "o atraso do voo"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "De 'atascarse' (entupir, emperrar). Também: 'embotellamiento'."
+  },
+  {
+   "id": "p085",
+   "tipo": "palavra",
+   "es": "la huelga",
+   "pt": "a greve",
+   "aceitas": [
+    "greve",
+    "paralisacao"
+   ],
+   "distratores": [
+    "a folga",
+    "a fuga",
+    "a horta",
+    "a huella"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "'Estar en huelga' = estar em greve. Cuidado: 'folga' = 'descanso'."
+  },
+  {
+   "id": "p086",
+   "tipo": "palavra",
+   "es": "el reto",
+   "pt": "o desafio",
+   "aceitas": [
+    "desafio",
+    "provacao"
+   ],
+   "distratores": [
+    "o resto",
+    "o relato",
+    "o retoque",
+    "o reitor"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Retar a alguien' = desafiar alguém."
+  },
+  {
+   "id": "p087",
+   "tipo": "palavra",
+   "es": "tardar",
+   "pt": "demorar",
+   "aceitas": [
+    "demorar",
+    "levar tempo",
+    "atrasar"
+   ],
+   "distratores": [
+    "tardear",
+    "trocar",
+    "tratar",
+    "tostar"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'¿Cuánto tardas?' = quanto tempo você demora?"
+  },
+  {
+   "id": "p088",
+   "tipo": "palavra",
+   "es": "el hito",
+   "pt": "o marco",
+   "aceitas": [
+    "marco",
+    "marco historico",
+    "divisor de aguas"
+   ],
+   "distratores": [
+    "o fio",
+    "o mito",
+    "o hábito",
+    "o hectare"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Un hito histórico' = um marco histórico."
+  },
+  {
+   "id": "p089",
+   "tipo": "palavra",
+   "es": "el sesgo",
+   "pt": "o viés",
+   "aceitas": [
+    "vies",
+    "tendencia",
+    "enviesamento",
+    "inclinacao"
+   ],
+   "distratores": [
+    "o segredo",
+    "o seguro",
+    "o segmento",
+    "o sossego"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Sesgo cognitivo' = viés cognitivo. Também: corte na diagonal."
+  },
+  {
+   "id": "p090",
+   "tipo": "palavra",
+   "es": "el auge",
+   "pt": "o apogeu",
+   "aceitas": [
+    "apogeu",
+    "auge",
+    "pico",
+    "apice"
+   ],
+   "distratores": [
+    "o aumento",
+    "o augúrio",
+    "o alcance",
+    "o abismo"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'En pleno auge' = no auge."
+  },
+  {
+   "id": "p091",
+   "tipo": "palavra",
+   "es": "la brecha",
+   "pt": "a lacuna",
+   "aceitas": [
+    "lacuna",
+    "brecha",
+    "fosso",
+    "abismo",
+    "distancia"
+   ],
+   "distratores": [
+    "a brasa",
+    "a bretanha",
+    "a brincadeira",
+    "a broca"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Brecha salarial' = diferença salarial."
+  },
+  {
+   "id": "p092",
+   "tipo": "palavra",
+   "es": "plantear",
+   "pt": "propor",
+   "aceitas": [
+    "propor",
+    "colocar",
+    "levantar",
+    "apresentar",
+    "formular"
+   ],
+   "distratores": [
+    "plantar",
+    "planejar",
+    "aplainar",
+    "plastificar"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Plantear una pregunta' = fazer uma pergunta. 'Plantearse' = considerar."
+  },
+  {
+   "id": "p093",
+   "tipo": "palavra",
+   "es": "el hastío",
+   "pt": "o tédio",
+   "aceitas": [
+    "tedio",
+    "enfado",
+    "fastio",
+    "aborrecimento"
+   ],
+   "distratores": [
+    "o asco",
+    "o hasteamento",
+    "o hospício",
+    "o hábito"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Tédio profundo, com um quê de repulsa. De 'hastiar'."
+  },
+  {
+   "id": "p094",
+   "tipo": "palavra",
+   "es": "descabellado",
+   "pt": "absurdo",
+   "aceitas": [
+    "absurdo",
+    "despropositado",
+    "disparatado",
+    "sem cabimento",
+    "maluco"
+   ],
+   "distratores": [
+    "descabelado",
+    "descalço",
+    "descartado",
+    "descolorido"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "'Una idea descabellada' = uma ideia sem pé nem cabeça."
+  },
+  {
+   "id": "p095",
+   "tipo": "palavra",
+   "es": "acuciante",
+   "pt": "premente",
+   "aceitas": [
+    "premente",
+    "urgente",
+    "inadiavel",
+    "apremiante"
+   ],
+   "distratores": [
+    "acusador",
+    "aguçado",
+    "acolhedor",
+    "acanhado"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "'Una necesidad acuciante' = uma necessidade premente."
+  },
+  {
+   "id": "p096",
+   "tipo": "palavra",
+   "es": "a regañadientes",
+   "pt": "a contragosto",
+   "aceitas": [
+    "a contragosto",
+    "contrariado",
+    "de ma vontade",
+    "resmungando"
+   ],
+   "distratores": [
+    "de bom grado",
+    "às escondidas",
+    "com pressa",
+    "de mãos dadas"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Literalmente 'rangendo os dentes'. Fazer algo sem querer."
+  },
+  {
+   "id": "p097",
+   "tipo": "palavra",
+   "es": "taimado",
+   "pt": "matreiro",
+   "aceitas": [
+    "matreiro",
+    "astuto",
+    "manhoso",
+    "dissimulado",
+    "velhaco"
+   ],
+   "distratores": [
+    "tímido",
+    "tolhido",
+    "tacanho",
+    "teimoso"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Esperteza com má intenção. Não confundir com 'teimoso' = 'tozudo'."
+  },
+  {
+   "id": "p098",
+   "tipo": "palavra",
+   "es": "prolijo",
+   "pt": "prolixo",
+   "aceitas": [
+    "prolixo",
+    "detalhado demais",
+    "minucioso",
+    "cansativo"
+   ],
+   "distratores": [
+    "prolífico",
+    "próximo",
+    "propício",
+    "prodigioso"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Na Espanha é pejorativo (longo demais); no Cone Sul pode ser elogio (caprichado)."
+  },
+  {
+   "id": "p099",
+   "tipo": "palavra",
+   "es": "adusto",
+   "pt": "austero",
+   "aceitas": [
+    "austero",
+    "severo",
+    "seco",
+    "rispido",
+    "carrancudo"
+   ],
+   "distratores": [
+    "adulto",
+    "ajustado",
+    "adulado",
+    "abusado"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "'Un rostro adusto' = um rosto fechado, sem simpatia."
+  },
+  {
+   "id": "p100",
+   "tipo": "palavra",
+   "es": "soterrar",
+   "pt": "enterrar",
+   "aceitas": [
+    "enterrar",
+    "soterrar",
+    "sepultar",
+    "encobrir",
+    "ocultar"
+   ],
+   "distratores": [
+    "soltar",
+    "sortear",
+    "socorrer",
+    "sobrar"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Também no sentido figurado: 'soterrar un proyecto' = engavetar um projeto."
+  },
+  {
+   "id": "f071",
+   "tipo": "frase",
+   "es": "¿Cómo te llamas?",
+   "pt": "Como você se chama?",
+   "aceitas": [
+    "como voce se chama",
+    "qual e o seu nome",
+    "como e o seu nome",
+    "como tu te chamas"
+   ],
+   "distratores": [
+    "Como você se chateia?",
+    "Como você me chamou?",
+    "Por que você chamou?",
+    "Quando você chamou?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "'Llamarse' = chamar-se. Resposta: 'me llamo…'."
+  },
+  {
+   "id": "f072",
+   "tipo": "frase",
+   "es": "¿Dónde está el baño?",
+   "pt": "Onde fica o banheiro?",
+   "aceitas": [
+    "onde fica o banheiro",
+    "onde e o banheiro",
+    "onde esta o banheiro"
+   ],
+   "distratores": [
+    "Onde fica a banheira?",
+    "Quando abre o banheiro?",
+    "De onde vem o banho?",
+    "Como chego ao banho?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano",
+    "viagem"
+   ],
+   "nota": "Na América Latina se diz mais 'el baño'; na Espanha, 'el servicio'."
+  },
+  {
+   "id": "f073",
+   "tipo": "frase",
+   "es": "No entiendo nada.",
+   "pt": "Não entendo nada.",
+   "aceitas": [
+    "nao entendo nada",
+    "nao estou entendendo nada",
+    "nao compreendo nada"
+   ],
+   "distratores": [
+    "Não pretendo nada.",
+    "Não atendo ninguém.",
+    "Não entendi ontem.",
+    "Não entrego nada."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "'Entender' e 'comprender' funcionam igual aqui."
+  },
+  {
+   "id": "f074",
+   "tipo": "frase",
+   "es": "¿Cuánto cuesta?",
+   "pt": "Quanto custa?",
+   "aceitas": [
+    "quanto custa",
+    "qual e o preco",
+    "quanto e"
+   ],
+   "distratores": [
+    "Quanto cabe?",
+    "Quanto conta?",
+    "Quando custou?",
+    "Quanto pesa?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano",
+    "viagem"
+   ],
+   "nota": "'Costar' também significa 'ser difícil': 'me cuesta entenderlo'."
+  },
+  {
+   "id": "f075",
+   "tipo": "frase",
+   "es": "Tengo hambre.",
+   "pt": "Estou com fome.",
+   "aceitas": [
+    "estou com fome",
+    "to com fome",
+    "tenho fome"
+   ],
+   "distratores": [
+    "Estou com sede.",
+    "Estou com sono.",
+    "Estou com frio.",
+    "Estou com pressa."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Em espanhol se 'tem' fome; em português se 'está com' fome."
+  },
+  {
+   "id": "f076",
+   "tipo": "frase",
+   "es": "Hasta mañana.",
+   "pt": "Até amanhã.",
+   "aceitas": [
+    "ate amanha",
+    "nos vemos amanha"
+   ],
+   "distratores": [
+    "Até de manhã.",
+    "Desde amanhã.",
+    "Até mais tarde.",
+    "Boa manhã."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "'Mañana' é amanhã; 'la mañana' é a manhã. O artigo muda tudo."
+  },
+  {
+   "id": "f077",
+   "tipo": "frase",
+   "es": "Estoy de acuerdo.",
+   "pt": "Eu concordo.",
+   "aceitas": [
+    "eu concordo",
+    "concordo",
+    "estou de acordo",
+    "penso igual"
+   ],
+   "distratores": [
+    "Eu acordei agora.",
+    "Eu me lembro disso.",
+    "Eu combinei antes.",
+    "Eu acordo cedo."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Cuidado com 'acordar', que em espanhol é combinar, não despertar."
+  },
+  {
+   "id": "f078",
+   "tipo": "frase",
+   "es": "No me acuerdo.",
+   "pt": "Não me lembro.",
+   "aceitas": [
+    "nao me lembro",
+    "nao lembro",
+    "nao me recordo"
+   ],
+   "distratores": [
+    "Não acordo cedo.",
+    "Não concordo com isso.",
+    "Não combinei nada.",
+    "Não me acordaram."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Par do card 'acordarse': lembrar-se, e não despertar."
+  },
+  {
+   "id": "f079",
+   "tipo": "frase",
+   "es": "¿Me puedes echar una mano?",
+   "pt": "Você pode me ajudar?",
+   "aceitas": [
+    "voce pode me ajudar",
+    "me ajuda",
+    "pode me dar uma mao",
+    "pode me ajudar"
+   ],
+   "distratores": [
+    "Você pode me dar a mão?",
+    "Você pode lavar as mãos?",
+    "Você pode soltar a mão?",
+    "Você pode erguer a mão?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "'Echar una mano' = dar uma ajuda, e não estender a mão."
+  },
+  {
+   "id": "f080",
+   "tipo": "frase",
+   "es": "Está lloviendo a cántaros.",
+   "pt": "Está chovendo canivete.",
+   "aceitas": [
+    "esta chovendo canivete",
+    "esta chovendo muito",
+    "chove torrencialmente",
+    "esta caindo o mundo"
+   ],
+   "distratores": [
+    "Está chovendo devagar.",
+    "Está chovendo em cântaros.",
+    "Está garoando bem pouco.",
+    "Está prestes a chover."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'A cántaros' = aos baldes. Chuva muito forte."
+  },
+  {
+   "id": "f081",
+   "tipo": "frase",
+   "es": "No te preocupes.",
+   "pt": "Não se preocupe.",
+   "aceitas": [
+    "nao se preocupe",
+    "fica tranquilo",
+    "relaxa",
+    "nao esquenta"
+   ],
+   "distratores": [
+    "Não se apresse.",
+    "Não se incomode em vir.",
+    "Não se ocupe disso.",
+    "Não se prepare ainda."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Resposta comum: 'no te preocupes, no pasa nada'."
+  },
+  {
+   "id": "f082",
+   "tipo": "frase",
+   "es": "Suelo levantarme temprano.",
+   "pt": "Costumo acordar cedo.",
+   "aceitas": [
+    "costumo acordar cedo",
+    "costumo levantar cedo",
+    "geralmente acordo cedo",
+    "tenho o costume de acordar cedo"
+   ],
+   "distratores": [
+    "Consigo acordar cedo.",
+    "Preciso acordar cedo.",
+    "Quero acordar cedo.",
+    "Detesto acordar cedo."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "gramática",
+    "verbo"
+   ],
+   "nota": "'Soler + infinitivo' = costumar. Não existe equivalente direto em português."
+  },
+  {
+   "id": "f083",
+   "tipo": "frase",
+   "es": "¿Te apetece un café?",
+   "pt": "Você está a fim de um café?",
+   "aceitas": [
+    "voce esta a fim de um cafe",
+    "quer um cafe",
+    "voce aceita um cafe",
+    "topa um cafe"
+   ],
+   "distratores": [
+    "Você aguenta mais um café hoje?",
+    "Você já tomou um café hoje?",
+    "Você prepara um café para mim?",
+    "Você prefere um café ou chá?"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cotidiano",
+    "Espanha"
+   ],
+   "nota": "'Apetecer' = dar vontade. Na América Latina: '¿se te antoja?'."
+  },
+  {
+   "id": "f084",
+   "tipo": "frase",
+   "es": "Me enteré ayer.",
+   "pt": "Fiquei sabendo ontem.",
+   "aceitas": [
+    "fiquei sabendo ontem",
+    "soube ontem",
+    "descobri ontem",
+    "tomei conhecimento ontem"
+   ],
+   "distratores": [
+    "Enterrei isso ontem.",
+    "Entrei lá ontem.",
+    "Entreguei tudo ontem.",
+    "Entendi isso ontem."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Enterarse de algo' = ficar sabendo de algo."
+  },
+  {
+   "id": "f085",
+   "tipo": "frase",
+   "es": "Tardé dos horas en llegar.",
+   "pt": "Demorei duas horas para chegar.",
+   "aceitas": [
+    "demorei duas horas para chegar",
+    "levei duas horas para chegar",
+    "gastei duas horas ate chegar"
+   ],
+   "distratores": [
+    "Cheguei duas horas atrasado.",
+    "Esperei duas horas para sair.",
+    "Fiquei duas horas por lá.",
+    "Saí duas horas mais cedo."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Tardar en + infinitivo' = demorar para fazer algo."
+  },
+  {
+   "id": "f086",
+   "tipo": "frase",
+   "es": "Se me da bien cocinar.",
+   "pt": "Tenho jeito para cozinhar.",
+   "aceitas": [
+    "tenho jeito para cozinhar",
+    "sou bom de cozinha",
+    "me dou bem cozinhando",
+    "levo jeito para cozinhar"
+   ],
+   "distratores": [
+    "Me faz bem cozinhar.",
+    "Me dá fome cozinhar.",
+    "Me custa caro cozinhar.",
+    "Me dá trabalho cozinhar."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'Dársele bien algo a alguien' = ter facilidade para algo."
+  },
+  {
+   "id": "f087",
+   "tipo": "frase",
+   "es": "A fin de cuentas, da igual.",
+   "pt": "No fim das contas, tanto faz.",
+   "aceitas": [
+    "no fim das contas tanto faz",
+    "afinal tanto faz",
+    "no final das contas da na mesma"
+   ],
+   "distratores": [
+    "No fim do mês, pago tudo.",
+    "Ao fim da conta, pagamos.",
+    "Em resumo, conte comigo.",
+    "Para fechar a conta, tanto faz."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Conector muito usado para concluir um raciocínio."
+  },
+  {
+   "id": "f088",
+   "tipo": "frase",
+   "es": "Por lo visto, no vendrá.",
+   "pt": "Pelo visto, ele não virá.",
+   "aceitas": [
+    "pelo visto ele nao vira",
+    "ao que parece ele nao vem",
+    "pelo jeito nao vem",
+    "aparentemente nao vira"
+   ],
+   "distratores": [
+    "Pelo que vi, ele veio.",
+    "Pela visão dele, não venderá.",
+    "Já que foi visto, não virá.",
+    "Pelo visto, ele vendeu."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'Por lo visto' = ao que tudo indica."
+  },
+  {
+   "id": "f089",
+   "tipo": "frase",
+   "es": "Con tal de que vengas, me da igual.",
+   "pt": "Contanto que você venha, tanto faz.",
+   "aceitas": [
+    "contanto que voce venha tanto faz",
+    "desde que voce venha tanto faz",
+    "se voce vier tanto faz"
+   ],
+   "distratores": [
+    "Com o tal que veio, tanto faz.",
+    "Contando que você venha, eu vou.",
+    "Com tudo que você trouxe, tanto faz.",
+    "Conte que você virá, tanto faz."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "gramática",
+    "subjuntivo"
+   ],
+   "nota": "'Con tal de que' + subjuntivo = contanto que."
+  },
+  {
+   "id": "f090",
+   "tipo": "frase",
+   "es": "Dicho sea de paso, tenía razón.",
+   "pt": "Aliás, ele tinha razão.",
+   "aceitas": [
+    "alias ele tinha razao",
+    "por sinal ele tinha razao",
+    "diga-se de passagem ele tinha razao"
+   ],
+   "distratores": [
+    "Dito isso, ele saiu.",
+    "Falando baixo, ele tinha razão.",
+    "De passagem, ele disse a razão.",
+    "Ao dizer isso, ele passou."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Equivale ao nosso 'diga-se de passagem'."
+  },
+  {
+   "id": "f091",
+   "tipo": "frase",
+   "es": "No tiene desperdicio.",
+   "pt": "Não tem nada para jogar fora.",
+   "aceitas": [
+    "nao tem nada para jogar fora",
+    "e bom do inicio ao fim",
+    "vale a pena inteiro",
+    "tudo nele presta"
+   ],
+   "distratores": [
+    "Não produz nenhum tipo de lixo.",
+    "Não sobrou nada dele no fim.",
+    "Não desperdiça nem um centavo à toa.",
+    "Não tem valor nenhum para nós."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Elogio: tudo naquilo é aproveitável, do começo ao fim."
+  },
+  {
+   "id": "f092",
+   "tipo": "frase",
+   "es": "Me está dando largas.",
+   "pt": "Ele está me enrolando.",
+   "aceitas": [
+    "ele esta me enrolando",
+    "esta me empurrando com a barriga",
+    "esta adiando comigo",
+    "esta me fazendo esperar"
+   ],
+   "distratores": [
+    "Ele está me alongando.",
+    "Ele está me dando espaço.",
+    "Ele está me dando folga.",
+    "Ele está me esticando."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'Dar largas a algo' = adiar sem dizer não."
+  },
+  {
+   "id": "f093",
+   "tipo": "frase",
+   "es": "Se fue de rositas.",
+   "pt": "Ele saiu impune.",
+   "aceitas": [
+    "ele saiu impune",
+    "escapou sem punicao",
+    "se safou",
+    "saiu ileso",
+    "nao pagou por nada"
+   ],
+   "distratores": [
+    "Ele saiu com rosas.",
+    "Ele saiu bem cedo.",
+    "Ele saiu de fininho.",
+    "Ele saiu bem feliz."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "Espanha"
+   ],
+   "nota": "Escapar de um castigo merecido sem nenhuma consequência."
+  },
+  {
+   "id": "f094",
+   "tipo": "frase",
+   "es": "Aquí hay gato encerrado.",
+   "pt": "Aqui tem coisa errada.",
+   "aceitas": [
+    "aqui tem coisa errada",
+    "tem algo estranho aqui",
+    "tem dedo de gente aqui",
+    "aqui tem gato",
+    "isso esta mal contado"
+   ],
+   "distratores": [
+    "Aqui tem gato preso.",
+    "Aqui mora um gato.",
+    "Aqui entrou um gato.",
+    "Aqui falta um gato."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Desconfiança de que algo está escondido. Como 'aqui tem dedo de gente'."
+  },
+  {
+   "id": "f095",
+   "tipo": "frase",
+   "es": "Habida cuenta de ello, renunció.",
+   "pt": "Tendo isso em vista, ele renunciou.",
+   "aceitas": [
+    "tendo isso em vista ele renunciou",
+    "diante disso ele renunciou",
+    "considerando isso ele renunciou"
+   ],
+   "distratores": [
+    "Tendo pago a conta, ele renunciou.",
+    "Havendo contado tudo, ele renunciou.",
+    "Tendo contas a pagar, ele renunciou.",
+    "Feita a contagem, ele renunciou."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "formal"
+   ],
+   "nota": "Registro formal e jurídico. Equivale a 'tendo em vista'."
+  },
+  {
+   "id": "f096",
+   "tipo": "frase",
+   "es": "So pena de multa.",
+   "pt": "Sob pena de multa.",
+   "aceitas": [
+    "sob pena de multa",
+    "sujeito a multa",
+    "com risco de multa"
+   ],
+   "distratores": [
+    "Sem pena de multa.",
+    "Sob dó da multa.",
+    "Só a pena da multa.",
+    "Sobre a pena de multa."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "jurídico",
+    "formal"
+   ],
+   "nota": "'So' aqui é 'sob', preposição arcaica que sobrevive em fórmulas jurídicas."
+  },
+  {
+   "id": "f097",
+   "tipo": "frase",
+   "es": "A la sazón vivía en Madrid.",
+   "pt": "Naquela época ele morava em Madri.",
+   "aceitas": [
+    "naquela epoca ele morava em madri",
+    "na ocasiao ele morava em madri",
+    "por entao morava em madri"
+   ],
+   "distratores": [
+    "Por sorte ele morava em Madri.",
+    "Com tempero ele cozinhava em Madri.",
+    "Na estação ele morava em Madri.",
+    "Por acaso ele morava em Madri."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "formal"
+   ],
+   "nota": "'A la sazón' = naquele tempo. Literário. Cuidado: 'sazón' também é tempero."
+  },
+  {
+   "id": "f098",
+   "tipo": "frase",
+   "es": "Amén de costoso, es lento.",
+   "pt": "Além de caro, é lento.",
+   "aceitas": [
+    "alem de caro e lento",
+    "fora ser caro e lento",
+    "nao bastasse ser caro e lento"
+   ],
+   "distratores": [
+    "Amanhã, se caro, será lento.",
+    "Assim como o caro, é lento.",
+    "Apesar de caro, é lento.",
+    "Por ser caro, é lento."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "formal"
+   ],
+   "nota": "'Amén de' = além de. Nada a ver com o 'amém' religioso."
+  },
+  {
+   "id": "f099",
+   "tipo": "frase",
+   "es": "No da su brazo a torcer.",
+   "pt": "Ele não dá o braço a torcer.",
+   "aceitas": [
+    "ele nao da o braco a torcer",
+    "nao admite que errou",
+    "nao cede nunca",
+    "nao volta atras"
+   ],
+   "distratores": [
+    "Ele não torce o braço de ninguém.",
+    "Ele não estica o braço direito.",
+    "Ele não dá a mão para ninguém.",
+    "Ele não quebra o braço de novo."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Idêntica ao português: não reconhece que errou nem cede."
+  },
+  {
+   "id": "f100",
+   "tipo": "frase",
+   "es": "Más vale tarde que nunca.",
+   "pt": "Antes tarde do que nunca.",
+   "aceitas": [
+    "antes tarde do que nunca",
+    "melhor tarde do que nunca"
+   ],
+   "distratores": [
+    "Mais vale cedo do que tarde.",
+    "Vale mais nunca do que tarde.",
+    "Melhor nunca do que atrasado.",
+    "Tanto faz cedo ou tarde."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "provérbio"
+   ],
+   "nota": "Provérbio quase idêntico, só muda a ordem das palavras."
   }
  ]
 }

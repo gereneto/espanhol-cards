@@ -3,8 +3,8 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São 140 cards nesta primeira leva — 70 palavras e 70 frases, do A1 ao C2,
-sendo 33 deles falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…).
+São **200 cards** — 100 palavras e 100 frases, do A1 ao C2, sendo 33 deles
+falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…).
 
 ## Como funciona
 
@@ -24,6 +24,23 @@ sendo 33 deles falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `pol
 
 Tudo isso é gravado para calibrar as próximas levas de cards.
 
+### O que aparece a seguir
+
+A fila inicial intercala os níveis e alterna palavra/frase, para achar seu teto
+logo de cara. Depois disso, **o nível dos cards inéditos passa a seguir o seu
+desempenho**: o app calcula uma nota de domínio por nível e sorteia mais cards
+daquele que você ainda não domina mas já consegue acompanhar.
+
+Na nota de domínio, a **estreia** do card pesa mais, porque é a única medida
+limpa do que você já sabia: acertar conhecendo vale 1; acertar dizendo que não
+conhecia vale 0,4, já que provavelmente foi dedução ou chute. As respostas
+seguintes valem por mostrarem em que nível está custando fixar. Enquanto há
+pouca evidência, tudo é puxado para o meio, para um acerto solto não decidir nada.
+
+A curva de peso tem pico no domínio intermediário e um piso, de modo que
+**todos os níveis continuam aparecendo** — nível que você gabarita entedia,
+nível em que você erra tudo desanima.
+
 ### A fila
 
 Não há repetição espaçada por datas. Existe **uma fila só**: ao responder,
@@ -42,8 +59,6 @@ Dizer "já conhecia bem" empurra mais para o fim; "não conhecia" segura mais pe
 Acerto lento em algo que você disse não conhecer é tratado como possível chute:
 o card continua na múltipla escolha.
 
-A fila inicial intercala os níveis (A1, A2, B1, B2, C1, C2, A1…) e alterna
-palavra/frase, para descobrir logo onde está o seu teto.
 
 ## Onde roda
 
@@ -90,9 +105,20 @@ Os cards ficam em `fonte/cards/*.json`. Cada um é assim:
 }
 ```
 
-`pt` é a resposta mostrada; `aceitas` são as outras formas válidas ao escrever
-(sem acento e sem artigo já são toleradas automaticamente, além de um erro
-de digitação ou dois).
+`pt` é a resposta mostrada; `aceitas` são as **outras maneiras de dizer a mesma
+coisa**, e é lá que se resolve a variação de tradução.
+
+A conferência é generosa com a forma e rígida com o conteúdo. Sai de graça o
+que é a mesma resposta escrita de outro jeito: acento, maiúscula, pontuação,
+plural (`sentir saudade` = `sentir saudades`), número por extenso (`3 anos` =
+`três anos`), contração (`pra`, `tô`), artigo e pronome-sujeito (`eu concordo`
+= `concordo`), e o `já` aspectual. Não sai de graça nada que mude o sentido —
+negação, preposição, verbo e substantivo entram inteiros na comparação, de modo
+que uma frase parecida com a certa, mas errada, continua errada. A única folga
+é um deslize de teclado numa resposta de palavra única.
+
+Ou seja: sinônimo verdadeiro (`é preciso` / `é necessário`) se resolve
+acrescentando a variante em `aceitas`, nunca afrouxando a comparação.
 
 > **Os distratores precisam ter o mesmo formato da resposta certa.** Se só a certa
 > traz duas traduções separadas por `/`, ou um parêntese, ou é bem mais longa que
@@ -115,6 +141,10 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 | `1`–`5` | escolhe a alternativa |
 | `Enter` | responde / vai para o próximo card |
 | `1`–`3` | responde "já conhecia?" |
+
+No topo, 🏠 volta para a página inicial de qualquer tela, 📊 abre as
+estatísticas e ⚙️ as configurações. O cabeçalho é fixo, então esses botões
+ficam sempre à mão.
 
 ## Estrutura
 
