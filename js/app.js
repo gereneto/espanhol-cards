@@ -16,6 +16,7 @@
     'placar', 'btn-inicio', 'btn-painel', 'btn-config', 'resumo-inicio', 'btn-comecar',
     'tela-inicio', 'tela-card', 'tela-painel', 'tela-config',
     'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
+    'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
@@ -31,6 +32,8 @@
   let sessao = novaSessao();
   let cardAtual = null;
   let modoAtual = null;
+  let direcaoAtual = 'es-pt';
+  let alvoAtual = null;
   let inicioResposta = 0;
   let pausou = false;
   let respostaPendente = null;
@@ -115,7 +118,8 @@
         (novos ? novos + ' cards ainda não apareceram.' : 'Você já viu todos os cards pelo menos uma vez.')
       : CARDS.length + ' cards prontos — ' +
         CARDS.filter(c => c.tipo === 'palavra').length + ' palavras e ' +
-        CARDS.filter(c => c.tipo === 'frase').length + ' frases, do A1 ao C2.';
+        CARDS.filter(c => c.tipo === 'frase').length + ' frases, do A1 ao C2, mais ' +
+        CARDS.filter(c => c.nivel === 'VR' || c.nivel === 'VI').length + ' de conjugação.';
   }
 
   /* ═══════════════ fluxo do card ═══════════════ */
@@ -128,7 +132,10 @@
     if (!cardAtual) return proximoCard();
 
     const est = estadoDe(id);
-    modoAtual = Motor.modoDe(est);
+    const fase = Motor.faseDe(est);
+    modoAtual = fase.modo;
+    direcaoAtual = fase.direcao;
+    alvoAtual = Motor.resposta(cardAtual, direcaoAtual);
     respostaPendente = null;
     ultimoRegistro = null;
     estreiaPendente = false;
@@ -137,12 +144,20 @@
     el['meta-tipo'].textContent = cardAtual.tipo;
     el['meta-modo'].textContent = modoAtual === 'multipla' ? 'múltipla escolha' : 'escreva a resposta';
     el['meta-nivel'].classList.add('oculto');
-    el['meta-nivel'].textContent = cardAtual.nivel;
+    el['meta-nivel'].textContent = Motor.ROTULO_NIVEL[cardAtual.nivel] || cardAtual.nivel;
 
-    el.enunciado.textContent = cardAtual.tipo === 'palavra'
-      ? 'O que significa esta palavra?'
-      : 'O que quer dizer esta frase?';
-    el.termo.textContent = cardAtual.es;
+    const inversa = direcaoAtual === 'pt-es';
+    el.enunciado.textContent = inversa
+      ? (cardAtual.tipo === 'palavra' ? 'Como se diz esta palavra em espanhol?' : 'Como se diz isto em espanhol?')
+      : (cardAtual.tipo === 'palavra' ? 'O que significa esta palavra?' : 'O que quer dizer esta frase?');
+
+    el['bandeira-pergunta'].textContent = inversa ? '🇧🇷' : '🇪🇸';
+    el['bandeira-resposta'].textContent = inversa ? '🇪🇸' : '🇧🇷';
+    el['bandeira-feedback'].textContent = inversa ? '🇪🇸' : '🇧🇷';
+    el['rotulo-resposta-txt'].textContent = inversa ? 'responda em espanhol' : 'responda em português';
+    el.entrada.placeholder = inversa ? 'escreva em espanhol…' : 'escreva o significado…';
+
+    el.termo.textContent = Motor.pergunta(cardAtual, direcaoAtual);
     el.termo.classList.toggle('frase', cardAtual.tipo === 'frase');
 
     el['area-feedback'].classList.add('oculto');
@@ -171,7 +186,7 @@
   }
 
   function montarAlternativas() {
-    const opcoes = Motor.alternativas(cardAtual);
+    const opcoes = Motor.alternativas(cardAtual, direcaoAtual, CARDS);
     el['area-multipla'].innerHTML = '';
     opcoes.forEach((texto, i) => {
       const b = document.createElement('button');
@@ -193,16 +208,16 @@
   function responderMultipla(texto, botao) {
     if (respostaPendente) return;
     const ms = tempoGasto();
-    const acertou = texto === cardAtual.pt;
+    const acertou = texto === alvoAtual;
 
     [...el['area-multipla'].children].forEach(b => {
       b.disabled = true;
       const rotulo = b.lastChild.textContent;
-      if (rotulo === cardAtual.pt) b.classList.add('certa');
+      if (rotulo === alvoAtual) b.classList.add('certa');
       else if (b === botao && !acertou) b.classList.add('errada');
     });
 
-    concluir({ modo: 'multipla', acertou, quase: false, ms, resposta: texto });
+    concluir({ modo: 'multipla', direcao: direcaoAtual, acertou, quase: false, ms, resposta: texto });
   }
 
   function responderEscrita(desistiu) {
@@ -211,13 +226,14 @@
     const texto = desistiu ? '' : el.entrada.value;
     if (!desistiu && !texto.trim()) { el.entrada.focus(); return; }
 
-    const conferencia = desistiu ? 'errado' : Motor.conferir(cardAtual, texto);
+    const conferencia = desistiu ? 'errado' : Motor.conferir(cardAtual, texto, direcaoAtual);
     el.entrada.disabled = true;
     el['btn-responder'].disabled = true;
     el['btn-nao-sei'].disabled = true;
 
     concluir({
       modo: 'escrita',
+      direcao: direcaoAtual,
       acertou: conferencia === 'certo',
       quase: conferencia === 'quase',
       ms, resposta: texto, desistiu: !!desistiu
@@ -232,7 +248,7 @@
     respostaPendente = r;
     estreiaPendente = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
 
-    el['resposta-certa'].textContent = cardAtual.pt;
+    el['resposta-certa'].textContent = alvoAtual;
     el.nota.textContent = cardAtual.nota || '';
     el.nota.classList.toggle('oculto', !cardAtual.nota);
     el['meta-nivel'].classList.remove('oculto');
@@ -240,7 +256,7 @@
     const rotuloVel = { rapido: 'rápido', medio: 'no tempo médio', lento: 'devagar' }[r.velocidade];
     el.medidas.innerHTML =
       '<span class="medida"><b>' + (r.ms / 1000).toFixed(1) + 's</b> — ' + rotuloVel + '</span>' +
-      '<span class="medida">nível <b>' + cardAtual.nivel + '</b></span>' +
+      '<span class="medida">' + escapar(Motor.ROTULO_NIVEL[cardAtual.nivel] || cardAtual.nivel) + '</span>' +
       (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
       (r.pausado ? '<span class="medida">tempo não contado (você saiu da aba)</span>' : '');
 
@@ -321,6 +337,7 @@
       nivel: cardAtual.nivel,
       tags: cardAtual.tags,
       modo: r.modo,
+      direcao: r.direcao,
       acertou: r.acertou,
       quase: !!r.quase,
       desistiu: !!r.desistiu,
@@ -417,13 +434,14 @@
     const mediaSeg = tempos.length
       ? (tempos.reduce((a, b) => a + b, 0) / tempos.length / 1000).toFixed(1) : '—';
 
-    const consolidados = ids.filter(id => progresso.cards[id].etapa === 'consolidado').length;
-    const escrevendo = ids.filter(id => progresso.cards[id].etapa === 'escrita').length;
+    const etapaDe = id => progresso.cards[id].etapa;
+    const dominados = ids.filter(id => etapaDe(id) === 'dominado').length;
+    const naInversa = ids.filter(id => ['consolidado', 'inversa-multipla', 'inversa-escrita'].includes(etapaDe(id))).length;
 
     /* Aprendido aqui: você não conhecia, e hoje já escreve certo. */
     const aprendidos = ids.filter(id => {
       const e = progresso.cards[id];
-      return e.conhecia === 'nao' && (e.etapa === 'consolidado' || e.seguidas >= 1) && e.acertos > 0;
+      return e.conhecia === 'nao' && e.acertos > 0 && e.etapa !== 'multipla';
     }).length;
 
     let html = '<div class="grade">' +
@@ -431,7 +449,8 @@
       metrica(pctDe(dePrimeira.length, estreados.length), 'acertou de primeira') +
       metrica(taxa + '%', 'acerto geral') +
       metrica(aprendidos, 'aprendidos aqui') +
-      metrica(consolidados, 'dominados') +
+      metrica(naInversa, 'já indo para o espanhol') +
+      metrica(dominados, 'dominados nas duas direções') +
       metrica(mediaSeg + 's', 'tempo médio') +
       '</div>';
 
@@ -669,8 +688,8 @@
     L.push('- Cards no baralho: **' + CARDS.length + '**');
     L.push('- Cards já vistos: **' + ids.length + '**');
     L.push('- Respostas: **' + t.respostas + '** · acerto geral: **' + taxa + '%**');
-    L.push('- Dominados (3 acertos seguidos escrevendo): **' +
-      ids.filter(id => progresso.cards[id].etapa === 'consolidado').length + '**');
+    L.push('- Dominados nas duas direções: **' +
+      ids.filter(id => progresso.cards[id].etapa === 'dominado').length + '**');
     L.push('');
 
     const porNivel = agregar(c => c.nivel);

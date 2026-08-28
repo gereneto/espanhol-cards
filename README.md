@@ -3,8 +3,9 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **200 cards** — 100 palavras e 100 frases, do A1 ao C2, sendo 33 deles
-falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…).
+São **250 cards** — 100 palavras e 150 frases, sendo 33 falsos amigos
+(`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…) e 50 de conjugação
+verbal, quase todos irregulares.
 
 ## Como funciona
 
@@ -14,6 +15,11 @@ falsos amigos (`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…).
    (para `exquisito`, uma das opções é "esquisito").
 3. Se você acertar, **da próxima vez terá que escrever** a resposta.
    Se errar escrevendo, o card volta para a múltipla escolha.
+   Depois de três acertos seguidos escrevendo, **o card se inverte**: passa a
+   mostrar o português e a pedir o espanhol, de novo primeiro escolhendo e
+   depois escrevendo. Uma **🇪🇸** e uma **🇧🇷** marcam a direção — uma ao lado
+   da pergunta, outra ao lado da resposta — para não haver dúvida de que lado
+   traduzir. Só depois de vencer as duas direções o card sai de circulação.
 4. O app cronometra cada resposta e classifica em **rápido / médio / lento**,
    com limiares diferentes para palavra e frase, e para escolher e escrever.
 5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
@@ -37,6 +43,11 @@ limpa do que você já sabia: acertar conhecendo vale 1; acertar dizendo que nã
 conhecia vale 0,4, já que provavelmente foi dedução ou chute. As respostas
 seguintes valem por mostrarem em que nível está custando fixar. Enquanto há
 pouca evidência, tudo é puxado para o meio, para um acerto solto não decidir nada.
+
+Além do A1–C2, há duas trilhas próprias de conjugação — **VR** (verbo regular)
+e **VI** (verbo irregular) —, porque irregularidade não é questão de
+proficiência: `anduve` pega gente de qualquer nível. Elas entram no mesmo
+sorteio, com nota de domínio própria.
 
 A curva de peso tem pico no domínio intermediário e um piso, de modo que
 **todos os níveis continuam aparecendo** — nível que você gabarita entedia,

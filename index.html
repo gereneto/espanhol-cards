@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#12141c">
 <title>Espanhol Cards</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇸</text></svg>">
-<link rel="stylesheet" href="style.css?v=22042278">
+<link rel="stylesheet" href="style.css?v=87c0b631">
 </head>
 <body>
 
@@ -42,7 +42,15 @@
       </div>
 
       <p class="enunciado" id="enunciado">O que significa em português?</p>
-      <div class="termo" id="termo"></div>
+      <div class="termo-linha">
+        <span class="bandeira" id="bandeira-pergunta" title="idioma da pergunta">🇪🇸</span>
+        <div class="termo" id="termo"></div>
+      </div>
+
+      <p class="rotulo-resposta">
+        <span class="bandeira" id="bandeira-resposta" title="idioma da resposta">🇧🇷</span>
+        <span id="rotulo-resposta-txt">responda em português</span>
+      </p>
 
       <!-- múltipla escolha -->
       <div id="area-multipla" class="alternativas"></div>
@@ -65,7 +73,7 @@
           <strong id="texto-dado"></strong>
         </div>
         <div class="resposta-certa">
-          <span class="rotulo">Resposta</span>
+          <span class="rotulo"><span id="bandeira-feedback">🇧🇷</span> Resposta</span>
           <strong id="resposta-certa"></strong>
         </div>
 
@@ -156,9 +164,9 @@
   <span id="rodape-sync">•</span>
 </footer>
 
-<script src="data/cards.js?v=22042278"></script>
-<script src="js/motor.js?v=22042278"></script>
-<script src="js/github.js?v=22042278"></script>
-<script src="js/app.js?v=22042278"></script>
+<script src="data/cards.js?v=87c0b631"></script>
+<script src="js/motor.js?v=87c0b631"></script>
+<script src="js/github.js?v=87c0b631"></script>
+<script src="js/app.js?v=87c0b631"></script>
 </body>
 </html>

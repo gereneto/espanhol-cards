@@ -11,7 +11,7 @@ const path = require('path');
 
 const raiz = path.join(__dirname, '..');
 const pastaCards = path.join(__dirname, 'cards');
-const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'VR', 'VI'];
 
 const normalizar = s => s
   .normalize('NFD').replace(/[̀-ͯ]/g, '')

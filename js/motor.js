@@ -14,7 +14,14 @@ window.Motor = (function () {
     frase:   { multipla: [7000, 20000], escrita: [15000, 45000] }
   };
 
-  const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  /* Além do CEFR, duas trilhas próprias de conjugação verbal, que não cabem
+     bem numa faixa de proficiência — irregular do A2 é irregular no C1. */
+  const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'VR', 'VI'];
+
+  const ROTULO_NIVEL = {
+    A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'C1', C2: 'C2',
+    VR: 'verbo regular', VI: 'verbo irregular'
+  };
 
   /* ── normalização de texto para comparar respostas ──
      Aqui só entra o que é a MESMA resposta escrita de outro jeito: acento,
@@ -43,7 +50,12 @@ window.Motor = (function () {
   const OMISSIVEIS = new Set([
     'o', 'a', 'os', 'as', 'um', 'uma', 'uns', 'umas',
     'eu', 'ele', 'ela', 'eles', 'elas', 'voce', 'voces', 'tu', 'nos',
-    'ja'
+    'ja',
+    /* o espanhol dispensa o sujeito tanto quanto o português: "no sabía"
+       é tão correto quanto "yo no sabía". Quem carrega a pessoa é o verbo
+       conjugado, que continua entrando inteiro na comparação. */
+    'yo', 'el', 'ella', 'ellos', 'ellas',
+    'nosotros', 'nosotras', 'vosotros', 'usted', 'ustedes'
   ]);
 
   function normalizar(txt) {
@@ -55,10 +67,11 @@ window.Motor = (function () {
     const saida = [];
     for (let p of bruto.split(/\s+/)) {
       if (!p) continue;
+      if (OMISSIVEIS.has(p)) continue;                    // antes de mexer na palavra
       if (NUMEROS[p]) p = NUMEROS[p];                     // "3 anos" = "três anos"
       if (GRAFIAS[p]) p = GRAFIAS[p];
       p = p.replace(/^(\w{3,})s$/, '$1');                 // plural = singular
-      if (OMISSIVEIS.has(p)) continue;
+      if (OMISSIVEIS.has(p)) continue;                    // e de novo, para "eles" → "ele"
       saida.push(p);
     }
     return saida.join(' ');
@@ -83,8 +96,18 @@ window.Motor = (function () {
     return ant[n];
   }
 
-  /* Todas as formas aceitas como resposta certa de um card. */
-  function respostasAceitas(card) {
+  /* O espanhol dispensa o artigo do mesmo jeito que o português: quem
+     responde "oficina" acertou tanto quanto quem responde "la oficina". */
+  const ARTIGOS_ES = /^(el|la|los|las|un|una|unos|unas)\s+/i;
+  function normalizarEs(txt) {
+    return normalizar(String(txt || '').trim().replace(ARTIGOS_ES, ''));
+  }
+
+  /* Todas as formas aceitas como resposta certa, na direção pedida. */
+  function respostasAceitas(card, direcao) {
+    if (direcao === 'pt-es') {
+      return [card.es, ...(card.aceitasEs || [])].map(normalizarEs).filter(Boolean);
+    }
     const lista = [card.pt, ...card.pt.split('/'), ...(card.aceitas || [])];
     return lista.map(normalizar).filter(Boolean);
   }
@@ -99,11 +122,11 @@ window.Motor = (function () {
      à revelia, aqui dá para ser generoso: erro de digitação, uma letra
      trocada, uma palavra fora do lugar. Se for deslize, ela diz que
      acertou; se o sentido mudou, ela diz que errou. */
-  function conferir(card, texto) {
-    const dado = normalizar(texto);
+  function conferir(card, texto, direcao) {
+    const dado = direcao === 'pt-es' ? normalizarEs(texto) : normalizar(texto);
     if (!dado) return 'errado';
 
-    const aceitas = respostasAceitas(card);
+    const aceitas = respostasAceitas(card, direcao);
     if (aceitas.includes(dado)) return 'certo';
     if (aceitas.some(alvo => parecido(dado, alvo))) return 'quase';
     return 'errado';
@@ -135,7 +158,7 @@ window.Motor = (function () {
   function estadoInicial(id) {
     return {
       id,
-      etapa: 'multipla',   // multipla → escrita → consolidado
+      etapa: 'multipla',   // ver FASES: duas direções, cada uma com dois modos
       vistas: 0,
       acertos: 0,
       erros: 0,
@@ -201,15 +224,23 @@ window.Motor = (function () {
       est.errosSeguidos = (est.errosSeguidos || 0) + 1;
     }
 
-    // avanço/recuo de etapa
+    /* Avanço e recuo. Cada direção percorre o mesmo caminho: escolher entre
+       cinco, depois escrever, e três acertos seguidos escrevendo fecham a
+       direção. Errar devolve para a múltipla escolha da direção em que está
+       — quem já provou o espanhol→português não volta à estaca zero. */
+    const inversa = r.direcao === 'pt-es';
     if (r.acertou) {
       if (r.modo === 'multipla') {
-        est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
+        if (inversa) est.etapa = 'inversa-escrita';
+        else est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
+      } else if (est.seguidas >= 3) {
+        est.etapa = inversa ? 'dominado' : 'inversa-multipla';
+        est.seguidas = 0;   // a direção nova começa do zero
       } else {
-        est.etapa = est.seguidas >= 3 ? 'consolidado' : 'escrita';
+        est.etapa = inversa ? 'inversa-escrita' : 'escrita';
       }
     } else {
-      est.etapa = 'multipla';
+      est.etapa = inversa ? 'inversa-multipla' : 'multipla';
     }
 
     // a estreia é a única medida limpa do que já se sabia antes do app
@@ -233,15 +264,37 @@ window.Motor = (function () {
     return est;
   }
 
-  /* Modo de apresentação: primeira vez (ou depois de errar) é múltipla escolha;
-     depois de acertar, tem que escrever. */
-  function modoDe(est) {
-    return (!est || est.etapa === 'multipla') ? 'multipla' : 'escrita';
+  /* ── as duas direções ──
+     Todo card começa em espanhol→português: você lê o espanhol e diz o que
+     é. Depois de dominado nessa direção, ele vira: aparece o português e
+     você tem que produzir o espanhol, que é bem mais difícil. Cada direção
+     repete o mesmo caminho — primeiro escolher entre cinco, depois escrever. */
+  const FASES = {
+    'multipla':         { direcao: 'es-pt', modo: 'multipla' },
+    'escrita':          { direcao: 'es-pt', modo: 'escrita' },
+    'consolidado':      { direcao: 'pt-es', modo: 'multipla' },  // valor antigo
+    'inversa-multipla': { direcao: 'pt-es', modo: 'multipla' },
+    'inversa-escrita':  { direcao: 'pt-es', modo: 'escrita' },
+    'dominado':         { direcao: 'pt-es', modo: 'escrita' }
+  };
+
+  function faseDe(est) {
+    return FASES[(est && est.etapa)] || FASES['multipla'];
   }
 
+  function modoDe(est) { return faseDe(est).modo; }
+  function direcaoDe(est) { return faseDe(est).direcao; }
+
+  /* O que o card pergunta e o que ele espera, conforme a direção. */
+  function pergunta(card, direcao) {
+    return direcao === 'pt-es' ? card.pt : card.es;
+  }
+  function resposta(card, direcao) {
+    return direcao === 'pt-es' ? card.es : card.pt;
+  }
   /* ── montagem da fila inicial ──
-     Intercala os níveis (A1, A2, B1, B2, C1, C2, A1, …) e alterna
-     palavra/frase, para medir logo de cara onde está o seu teto. */
+     Intercala os níveis e alterna palavra/frase, para medir logo de cara
+     onde está o seu teto. */
   function montarFila(cards) {
     const baldes = {};
     for (const n of NIVEIS) baldes[n] = { palavra: [], frase: [] };
@@ -355,14 +408,44 @@ window.Motor = (function () {
   }
 
   /* Alternativas da múltipla escolha: a certa mais os 4 distratores. */
-  function alternativas(card) {
-    return embaralhar([card.pt, ...card.distratores]);
+  function alternativas(card, direcao, todos) {
+    if (direcao !== 'pt-es') return embaralhar([card.pt, ...card.distratores]);
+    return embaralhar([card.es, ...distratoresEs(card, todos || [])]);
+  }
+
+  /* Na direção invertida o baralho não traz distratores prontos, então eles
+     saem de outros cards. Não é sorteio cego: prefere os que têm chance de
+     confundir de verdade — mesmo tema, mesmo nível, tamanho e começo
+     parecidos —, que é o que faz a alternativa doer. */
+  function distratoresEs(card, todos) {
+    if (Array.isArray(card.distratoresEs) && card.distratoresEs.length >= 4) {
+      return embaralhar(card.distratoresEs.slice()).slice(0, 4);
+    }
+
+    const tags = new Set(card.tags || []);
+    const alvo = normalizarEs(card.es);
+
+    const candidatos = todos
+      .filter(c => c.id !== card.id && c.tipo === card.tipo && normalizarEs(c.es) !== alvo)
+      .map(c => {
+        let nota = Math.random();
+        if (c.nivel === card.nivel) nota += 2;
+        if ((c.tags || []).some(t => tags.has(t))) nota += 2.5;
+        nota += 1.5 * Math.min(c.es.length, card.es.length) / Math.max(c.es.length, card.es.length);
+        if (c.es[0].toLowerCase() === card.es[0].toLowerCase()) nota += 1;
+        return { c, nota };
+      })
+      .sort((a, b) => b.nota - a.nota)
+      .slice(0, 10);
+
+    return embaralhar(candidatos).slice(0, 4).map(x => x.c.es);
   }
 
   return {
-    NIVEIS, LIMIARES,
+    NIVEIS, ROTULO_NIVEL, LIMIARES,
     normalizar, conferir, velocidade,
-    estadoInicial, registrar, modoDe, pareceChute,
+    estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
+    pergunta, resposta, normalizarEs,
     distanciaNaFila, montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

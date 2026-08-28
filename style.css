@@ -92,11 +92,23 @@ button{font:inherit}
 }
 .etiqueta.suave{background:var(--fundo-3);color:var(--texto-2);border-color:var(--borda)}
 .enunciado{color:var(--texto-2);font-size:13.5px;margin:0 0 6px}
+.termo-linha{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
 .termo{
-  font-size:30px;font-weight:700;line-height:1.25;margin-bottom:22px;
-  color:#fff;overflow-wrap:break-word;
+  font-size:30px;font-weight:700;line-height:1.25;
+  color:#fff;overflow-wrap:break-word;flex:1;
 }
 .termo.frase{font-size:23px;font-style:italic}
+
+/* a bandeira diz de que lado vai a tradução, para não errar a direção */
+.bandeira{font-size:22px;line-height:1.3;flex:none}
+.rotulo-resposta{
+  display:flex;align-items:center;gap:8px;
+  margin:0 0 14px;font-size:12.5px;color:var(--texto-2);
+  text-transform:uppercase;letter-spacing:.6px;
+  border-top:1px dashed var(--borda);padding-top:13px;
+}
+.rotulo-resposta .bandeira{font-size:17px}
+.resposta-certa .rotulo span{font-size:13px;margin-right:2px}
 
 /* ── alternativas ── */
 .alternativas{display:flex;flex-direction:column;gap:9px}
