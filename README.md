@@ -3,7 +3,7 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **250 cards** — 100 palavras e 150 frases, sendo 33 falsos amigos
+São **249 cards** — 99 palavras e 150 frases, sendo 33 falsos amigos
 (`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…) e 50 de conjugação
 verbal, quase todos irregulares.
 
@@ -128,6 +128,17 @@ número por extenso (`3 anos` = `três anos`), contração (`pra`, `tô`), artig
 pronome-sujeito (`eu concordo` = `concordo`), e o `já` aspectual. Sinônimo
 verdadeiro (`é preciso` / `é necessário`) entra pela lista `aceitas` do card —
 nunca afrouxando a comparação.
+
+A régua não é a mesma nas duas direções. Escrevendo **em espanhol** ela é mais
+dura, porque a grafia é parte do que você está aprendendo: uma letra fora do
+lugar pode ser exatamente a lacuna. Em português, que você já domina, errar uma
+tecla não diz nada sobre saber a palavra, e a folga é maior.
+
+Nos cards de conjugação há um corte a mais: se o que você escreveu **é outra
+forma verbal registrada do card**, não foi a mão que escorregou — foi o tempo
+ou a pessoa, que é justamente o que o card cobra. Isso é erro seco, sem
+perguntar nada, e o feedback nomeia o que você escreveu: *«Él dice la verdad»
+— presente*, contra o pretérito que era pedido.
 
 **Quase — e aí quem decide é você.** Se a resposta chegou perto mas não bate,
 o app não dá nem tira ponto: mostra o que você escreveu ao lado da resposta

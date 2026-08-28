@@ -2,7 +2,7 @@
 window.CARDS_RAW = {
  "versao": 1,
  "gerado_em": "2026-08-28",
- "total": 250,
+ "total": 249,
  "cards": [
   {
    "id": "p001",
@@ -2912,30 +2912,6 @@ window.CARDS_RAW = {
    "nota": "'Aunque' + subjuntivo = concessão hipotética; + indicativo = fato conhecido."
   },
   {
-   "id": "f050",
-   "tipo": "frase",
-   "es": "¡Ni que fueras millonario!",
-   "pt": "Até parece que você é milionário!",
-   "aceitas": [
-    "ate parece que voce e milionario",
-    "ate parece milionario",
-    "como se voce fosse milionario",
-    "nem parece que voce e milionario"
-   ],
-   "distratores": [
-    "Nem se você fosse milionário eu iria!",
-    "Nenhum milionário faria uma coisa dessas!",
-    "Você é milionário de verdade mesmo!",
-    "Se você fosse milionário, teria comprado!"
-   ],
-   "nivel": "C1",
-   "tags": [
-    "gramática",
-    "expressão"
-   ],
-   "nota": "'Ni que' + imperfeito do subjuntivo é ironia que NEGA a premissa: diz-se de quem gasta como rico, justamente para dizer que ele não é. Equivale ao nosso 'até parece que...'."
-  },
-  {
    "id": "f051",
    "tipo": "frase",
    "es": "Se lo dije ayer.",
@@ -4826,7 +4802,13 @@ window.CARDS_RAW = {
     "imperfeito",
     "saber"
    ],
-   "nota": "'Sabía' é imperfeito. O pretérito seria 'supe' (fiquei sabendo), que é bem diferente."
+   "nota": "'Sabía' é imperfeito. O pretérito seria 'supe' (fiquei sabendo), que é bem diferente.",
+   "formasEs": {
+    "Yo no sé": "presente",
+    "Yo no supe": "pretérito",
+    "Yo no sabré": "futuro",
+    "Yo no sabría": "condicional"
+   }
   },
   {
    "id": "v002",
@@ -4851,7 +4833,13 @@ window.CARDS_RAW = {
     "pretérito",
     "saber"
    ],
-   "nota": "'Saber' no pretérito muda de sentido: 'supe' = fiquei sabendo, não 'sabia'."
+   "nota": "'Saber' no pretérito muda de sentido: 'supe' = fiquei sabendo, não 'sabia'.",
+   "formasEs": {
+    "Ayer lo sabía": "imperfeito",
+    "Ayer lo sé": "presente",
+    "Ayer lo sabré": "futuro",
+    "Ayer lo sabría": "condicional"
+   }
   },
   {
    "id": "v003",
@@ -4874,7 +4862,13 @@ window.CARDS_RAW = {
     "pretérito",
     "tener"
    ],
-   "nota": "'Tener' é irregular no pretérito: tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron."
+   "nota": "'Tener' é irregular no pretérito: tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron.",
+   "formasEs": {
+    "Ella tiene un hijo": "presente",
+    "Ella tenía un hijo": "imperfeito",
+    "Ella tendrá un hijo": "futuro",
+    "Ella tendría un hijo": "condicional"
+   }
   },
   {
    "id": "v004",
@@ -4899,7 +4893,13 @@ window.CARDS_RAW = {
     "presente",
     "tener"
    ],
-   "nota": "'Tengo' com g irregular. E 'tener prisa' = estar com pressa, não 'ter pressa'."
+   "nota": "'Tengo' com g irregular. E 'tener prisa' = estar com pressa, não 'ter pressa'.",
+   "formasEs": {
+    "Yo tuve prisa": "pretérito",
+    "Yo tenía prisa": "imperfeito",
+    "Yo tendré prisa": "futuro",
+    "Yo tendría prisa": "condicional"
+   }
   },
   {
    "id": "v005",
@@ -4922,7 +4922,13 @@ window.CARDS_RAW = {
     "pretérito",
     "hacer"
    ],
-   "nota": "'Hacer' no pretérito: hice, hiciste, hizo, hicimos, hicisteis, hicieron. Note o 'z' em 'hizo'."
+   "nota": "'Hacer' no pretérito: hice, hiciste, hizo, hicimos, hicisteis, hicieron. Note o 'z' em 'hizo'.",
+   "formasEs": {
+    "Ellos hacen todo": "presente",
+    "Ellos hacían todo": "imperfeito",
+    "Ellos harán todo": "futuro",
+    "Ellos harían todo": "condicional"
+   }
   },
   {
    "id": "v006",
@@ -4946,7 +4952,13 @@ window.CARDS_RAW = {
     "pretérito",
     "hacer"
    ],
-   "nota": "Terceira pessoa vira 'hizo', com z. E 'cena' = jantar."
+   "nota": "Terceira pessoa vira 'hizo', com z. E 'cena' = jantar.",
+   "formasEs": {
+    "Él hace la cena": "presente",
+    "Él hacía la cena": "imperfeito",
+    "Él hará la cena": "futuro",
+    "Él haría la cena": "condicional"
+   }
   },
   {
    "id": "v007",
@@ -4970,7 +4982,13 @@ window.CARDS_RAW = {
     "presente",
     "hacer"
    ],
-   "nota": "'Hago' com g, como 'tengo', 'pongo', 'salgo', 'digo'."
+   "nota": "'Hago' com g, como 'tengo', 'pongo', 'salgo', 'digo'.",
+   "formasEs": {
+    "Yo hice la comida": "pretérito",
+    "Yo hacía la comida": "imperfeito",
+    "Yo haré la comida": "futuro",
+    "Yo haría la comida": "condicional"
+   }
   },
   {
    "id": "v008",
@@ -4993,7 +5011,13 @@ window.CARDS_RAW = {
     "pretérito",
     "ir"
    ],
-   "nota": "Cuidado: 'fui' serve para 'ir' e para 'ser'. O contexto decide."
+   "nota": "Cuidado: 'fui' serve para 'ir' e para 'ser'. O contexto decide.",
+   "formasEs": {
+    "Yo voy al médico": "presente",
+    "Yo iba al médico": "imperfeito",
+    "Yo iré al médico": "futuro",
+    "Yo iría al médico": "condicional"
+   }
   },
   {
    "id": "v009",
@@ -5016,7 +5040,13 @@ window.CARDS_RAW = {
     "pretérito",
     "ser"
    ],
-   "nota": "Mesmo 'fui' do verbo 'ir'. Aqui é 'ser', porque vem seguido de profissão."
+   "nota": "Mesmo 'fui' do verbo 'ir'. Aqui é 'ser', porque vem seguido de profissão.",
+   "formasEs": {
+    "Yo soy profesor": "presente",
+    "Yo era profesor": "imperfeito",
+    "Yo seré profesor": "futuro",
+    "Yo sería profesor": "condicional"
+   }
   },
   {
    "id": "v010",
@@ -5040,7 +5070,13 @@ window.CARDS_RAW = {
     "imperfeito",
     "ir"
    ],
-   "nota": "'Ir' tem imperfeito irregular: iba, ibas, iba, íbamos, ibais, iban."
+   "nota": "'Ir' tem imperfeito irregular: iba, ibas, iba, íbamos, ibais, iban.",
+   "formasEs": {
+    "Antes yo voy mucho": "presente",
+    "Antes yo fui mucho": "pretérito",
+    "Antes yo iré mucho": "futuro",
+    "Antes yo iría mucho": "condicional"
+   }
   },
   {
    "id": "v011",
@@ -5064,7 +5100,13 @@ window.CARDS_RAW = {
     "imperfeito",
     "ser"
    ],
-   "nota": "'Ser' no imperfeito: era, eras, era, éramos, erais, eran."
+   "nota": "'Ser' no imperfeito: era, eras, era, éramos, erais, eran.",
+   "formasEs": {
+    "Nosotros somos amigos": "presente",
+    "Nosotros fuimos amigos": "pretérito",
+    "Nosotros seremos amigos": "futuro",
+    "Nosotros seríamos amigos": "condicional"
+   }
   },
   {
    "id": "v012",
@@ -5088,7 +5130,13 @@ window.CARDS_RAW = {
     "pretérito",
     "estar"
    ],
-   "nota": "'Estar' no pretérito: estuve, estuviste, estuvo. Segue o padrão de 'tuve'."
+   "nota": "'Estar' no pretérito: estuve, estuviste, estuvo. Segue o padrão de 'tuve'.",
+   "formasEs": {
+    "Yo estoy allí": "presente",
+    "Yo estaba allí": "imperfeito",
+    "Yo estaré allí": "futuro",
+    "Yo estaría allí": "condicional"
+   }
   },
   {
    "id": "v013",
@@ -5112,7 +5160,13 @@ window.CARDS_RAW = {
     "pretérito",
     "decir"
    ],
-   "nota": "'Decir': dije, dijiste, dijo, dijimos, dijisteis, dijeron. Note 'dijeron', sem i."
+   "nota": "'Decir': dije, dijiste, dijo, dijimos, dijisteis, dijeron. Note 'dijeron', sem i.",
+   "formasEs": {
+    "Él dice la verdad": "presente",
+    "Él decía la verdad": "imperfeito",
+    "Él dirá la verdad": "futuro",
+    "Él diría la verdad": "condicional"
+   }
   },
   {
    "id": "v014",
@@ -5135,7 +5189,13 @@ window.CARDS_RAW = {
     "presente",
     "decir"
    ],
-   "nota": "'Decir' no presente muda o e por i: digo, dices, dice, decimos, decís, dicen."
+   "nota": "'Decir' no presente muda o e por i: digo, dices, dice, decimos, decís, dicen.",
+   "formasEs": {
+    "Yo dije que sí": "pretérito",
+    "Yo decía que sí": "imperfeito",
+    "Yo diré que sí": "futuro",
+    "Yo diría que sí": "condicional"
+   }
   },
   {
    "id": "v015",
@@ -5158,7 +5218,13 @@ window.CARDS_RAW = {
     "pretérito",
     "venir"
    ],
-   "nota": "'Venir': vine, viniste, vino, vinimos, vinisteis, vinieron."
+   "nota": "'Venir': vine, viniste, vino, vinimos, vinisteis, vinieron.",
+   "formasEs": {
+    "Ellos vienen ayer": "presente",
+    "Ellos venían ayer": "imperfeito",
+    "Ellos vendrán ayer": "futuro",
+    "Ellos vendrían ayer": "condicional"
+   }
   },
   {
    "id": "v016",
@@ -5182,7 +5248,13 @@ window.CARDS_RAW = {
     "pretérito",
     "venir"
    ],
-   "nota": "'Vino' é 'veio' — e também é 'vinho'. O contexto separa."
+   "nota": "'Vino' é 'veio' — e também é 'vinho'. O contexto separa.",
+   "formasEs": {
+    "Él viene solo": "presente",
+    "Él venía solo": "imperfeito",
+    "Él vendrá solo": "futuro",
+    "Él vendría solo": "condicional"
+   }
   },
   {
    "id": "v017",
@@ -5207,7 +5279,13 @@ window.CARDS_RAW = {
     "pretérito",
     "poner"
    ],
-   "nota": "'Poner': puse, pusiste, puso, pusimos, pusisteis, pusieron."
+   "nota": "'Poner': puse, pusiste, puso, pusimos, pusisteis, pusieron.",
+   "formasEs": {
+    "Yo pongo la mesa": "presente",
+    "Yo ponía la mesa": "imperfeito",
+    "Yo pondré la mesa": "futuro",
+    "Yo pondría la mesa": "condicional"
+   }
   },
   {
    "id": "v018",
@@ -5231,7 +5309,13 @@ window.CARDS_RAW = {
     "pretérito",
     "poder"
    ],
-   "nota": "'Poder': pude, pudiste, pudo, pudimos, pudisteis, pudieron."
+   "nota": "'Poder': pude, pudiste, pudo, pudimos, pudisteis, pudieron.",
+   "formasEs": {
+    "Yo no puedo ir": "presente",
+    "Yo no podía ir": "imperfeito",
+    "Yo no podré ir": "futuro",
+    "Yo no podría ir": "condicional"
+   }
   },
   {
    "id": "v019",
@@ -5254,7 +5338,13 @@ window.CARDS_RAW = {
     "pretérito",
     "querer"
    ],
-   "nota": "'Querer': quise, quisiste, quiso. No negativo, 'no quiso' = se recusou."
+   "nota": "'Querer': quise, quisiste, quiso. No negativo, 'no quiso' = se recusou.",
+   "formasEs": {
+    "Ella quiere ayudar": "presente",
+    "Ella quería ayudar": "imperfeito",
+    "Ella querrá ayudar": "futuro",
+    "Ella querría ayudar": "condicional"
+   }
   },
   {
    "id": "v020",
@@ -5277,7 +5367,13 @@ window.CARDS_RAW = {
     "presente",
     "querer"
    ],
-   "nota": "Verbo de mudança e→ie: quiero, quieres, quiere, queremos, queréis, quieren."
+   "nota": "Verbo de mudança e→ie: quiero, quieres, quiere, queremos, queréis, quieren.",
+   "formasEs": {
+    "Yo quise agua": "pretérito",
+    "Yo quería agua": "imperfeito",
+    "Yo querré agua": "futuro",
+    "Yo querría agua": "condicional"
+   }
   },
   {
    "id": "v021",
@@ -5302,7 +5398,13 @@ window.CARDS_RAW = {
     "pretérito",
     "andar"
    ],
-   "nota": "Pega muita gente: 'andar' é irregular no pretérito — anduve, anduviste, anduvo."
+   "nota": "Pega muita gente: 'andar' é irregular no pretérito — anduve, anduviste, anduvo.",
+   "formasEs": {
+    "Nosotros andamos mucho": "presente",
+    "Nosotros andábamos mucho": "imperfeito",
+    "Nosotros andaremos mucho": "futuro",
+    "Nosotros andaríamos mucho": "condicional"
+   }
   },
   {
    "id": "v022",
@@ -5325,7 +5427,13 @@ window.CARDS_RAW = {
     "pretérito",
     "traer"
    ],
-   "nota": "'Traer': traje, trajiste, trajo, trajimos, trajisteis, trajeron."
+   "nota": "'Traer': traje, trajiste, trajo, trajimos, trajisteis, trajeron.",
+   "formasEs": {
+    "Él trae el libro": "presente",
+    "Él traía el libro": "imperfeito",
+    "Él traerá el libro": "futuro",
+    "Él traería el libro": "condicional"
+   }
   },
   {
    "id": "v023",
@@ -5350,7 +5458,13 @@ window.CARDS_RAW = {
     "pretérito",
     "dar"
    ],
-   "nota": "'Dar' no pretérito toma forma de -er/-ir: di, diste, dio, dimos, disteis, dieron."
+   "nota": "'Dar' no pretérito toma forma de -er/-ir: di, diste, dio, dimos, disteis, dieron.",
+   "formasEs": {
+    "Yo le doy el dinero": "presente",
+    "Yo le daba el dinero": "imperfeito",
+    "Yo le daré el dinero": "futuro",
+    "Yo le daría el dinero": "condicional"
+   }
   },
   {
    "id": "v024",
@@ -5375,7 +5489,13 @@ window.CARDS_RAW = {
     "pretérito",
     "ver"
    ],
-   "nota": "'Ver': vi, viste, vio, vimos, visteis, vieron. Sem acento em 'vi' e 'vio'."
+   "nota": "'Ver': vi, viste, vio, vimos, visteis, vieron. Sem acento em 'vi' e 'vio'.",
+   "formasEs": {
+    "Yo lo veo ayer": "presente",
+    "Yo lo veía ayer": "imperfeito",
+    "Yo lo veré ayer": "futuro",
+    "Yo lo vería ayer": "condicional"
+   }
   },
   {
    "id": "v025",
@@ -5399,7 +5519,13 @@ window.CARDS_RAW = {
     "imperfeito",
     "ver"
    ],
-   "nota": "'Ver' tem imperfeito irregular: veía, veías, veía, veíamos, veíais, veían."
+   "nota": "'Ver' tem imperfeito irregular: veía, veías, veía, veíamos, veíais, veían.",
+   "formasEs": {
+    "Antes yo veo más": "presente",
+    "Antes yo vi más": "pretérito",
+    "Antes yo veré más": "futuro",
+    "Antes yo vería más": "condicional"
+   }
   },
   {
    "id": "v026",
@@ -5423,7 +5549,13 @@ window.CARDS_RAW = {
     "presente",
     "salir"
    ],
-   "nota": "'Salgo' com g. O futuro também é irregular: saldré."
+   "nota": "'Salgo' com g. O futuro também é irregular: saldré.",
+   "formasEs": {
+    "Yo salí ahora": "pretérito",
+    "Yo salía ahora": "imperfeito",
+    "Yo saldré ahora": "futuro",
+    "Yo saldría ahora": "condicional"
+   }
   },
   {
    "id": "v027",
@@ -5447,7 +5579,13 @@ window.CARDS_RAW = {
     "presente",
     "conocer"
    ],
-   "nota": "Verbos em -cer ganham z: conozco, parezco, agradezco, merezco."
+   "nota": "Verbos em -cer ganham z: conozco, parezco, agradezco, merezco.",
+   "formasEs": {
+    "Yo conocí a Ana": "pretérito",
+    "Yo conocía a Ana": "imperfeito",
+    "Yo conoceré a Ana": "futuro",
+    "Yo conocería a Ana": "condicional"
+   }
   },
   {
    "id": "v028",
@@ -5471,7 +5609,13 @@ window.CARDS_RAW = {
     "presente",
     "oír"
    ],
-   "nota": "'Oír': oigo, oyes, oye, oímos, oís, oyen. O y aparece do nada."
+   "nota": "'Oír': oigo, oyes, oye, oímos, oís, oyen. O y aparece do nada.",
+   "formasEs": {
+    "Yo oí música": "pretérito",
+    "Yo oía música": "imperfeito",
+    "Yo oiré música": "futuro",
+    "Yo oiría música": "condicional"
+   }
   },
   {
    "id": "v029",
@@ -5494,7 +5638,13 @@ window.CARDS_RAW = {
     "pretérito",
     "dormir"
    ],
-   "nota": "Na 3ª pessoa o o vira u: durmió, durmieron. No presente vira ue: duermo."
+   "nota": "Na 3ª pessoa o o vira u: durmió, durmieron. No presente vira ue: duermo.",
+   "formasEs": {
+    "Ellos duermen bien": "presente",
+    "Ellos dormían bien": "imperfeito",
+    "Ellos dormirán bien": "futuro",
+    "Ellos dormirían bien": "condicional"
+   }
   },
   {
    "id": "v030",
@@ -5517,7 +5667,13 @@ window.CARDS_RAW = {
     "presente",
     "dormir"
    ],
-   "nota": "Mudança o→ue: duermo, duermes, duerme, dormimos, dormís, duermen."
+   "nota": "Mudança o→ue: duermo, duermes, duerme, dormimos, dormís, duermen.",
+   "formasEs": {
+    "Yo dormí poco": "pretérito",
+    "Yo dormía poco": "imperfeito",
+    "Yo dormiré poco": "futuro",
+    "Yo dormiría poco": "condicional"
+   }
   },
   {
    "id": "v031",
@@ -5540,7 +5696,13 @@ window.CARDS_RAW = {
     "pretérito",
     "pedir"
    ],
-   "nota": "Na 3ª pessoa o e vira i: pidió, pidieron. Cuidado: 'pedir' não é 'perguntar'."
+   "nota": "Na 3ª pessoa o e vira i: pidió, pidieron. Cuidado: 'pedir' não é 'perguntar'.",
+   "formasEs": {
+    "Él pide la cuenta": "presente",
+    "Él pedía la cuenta": "imperfeito",
+    "Él pedirá la cuenta": "futuro",
+    "Él pediría la cuenta": "condicional"
+   }
   },
   {
    "id": "v032",
@@ -5564,7 +5726,13 @@ window.CARDS_RAW = {
     "presente",
     "jugar"
    ],
-   "nota": "Único verbo com u→ue: juego, juegas, juega, jugamos, jugáis, juegan."
+   "nota": "Único verbo com u→ue: juego, juegas, juega, jugamos, jugáis, juegan.",
+   "formasEs": {
+    "Yo jugué al fútbol": "pretérito",
+    "Yo jugaba al fútbol": "imperfeito",
+    "Yo jugaré al fútbol": "futuro",
+    "Yo jugaría al fútbol": "condicional"
+   }
   },
   {
    "id": "v033",
@@ -5589,7 +5757,13 @@ window.CARDS_RAW = {
     "presente",
     "empezar"
    ],
-   "nota": "Mudança e→ie: empiezo, empiezas, empieza. No pretérito: empecé, com c."
+   "nota": "Mudança e→ie: empiezo, empiezas, empieza. No pretérito: empecé, com c.",
+   "formasEs": {
+    "Empezó a llover": "pretérito",
+    "Empezaba a llover": "imperfeito",
+    "Empezará a llover": "futuro",
+    "Empezaría a llover": "condicional"
+   }
   },
   {
    "id": "v034",
@@ -5614,7 +5788,12 @@ window.CARDS_RAW = {
     "subjuntivo",
     "venir"
    ],
-   "nota": "Presente do subjuntivo de 'venir' sai do 'vengo': venga, vengas, venga."
+   "nota": "Presente do subjuntivo de 'venir' sai do 'vengo': venga, vengas, venga.",
+   "formasEs": {
+    "Ojalá viniera mañana": "imperfeito do subjuntivo",
+    "Ojalá viene mañana": "indicativo, onde o subjuntivo é obrigatório",
+    "Ojalá vendrá mañana": "futuro do indicativo, que aqui não cabe"
+   }
   },
   {
    "id": "v035",
@@ -5638,7 +5817,12 @@ window.CARDS_RAW = {
     "subjuntivo",
     "ser"
    ],
-   "nota": "'Ser' no subjuntivo: sea, seas, sea, seamos, seáis, sean."
+   "nota": "'Ser' no subjuntivo: sea, seas, sea, seamos, seáis, sean.",
+   "formasEs": {
+    "No creo que es fácil": "indicativo, onde o subjuntivo é obrigatório",
+    "No creo que fuera fácil": "imperfeito do subjuntivo",
+    "No creo que será fácil": "futuro do indicativo, que aqui não cabe"
+   }
   },
   {
    "id": "v036",
@@ -5662,7 +5846,13 @@ window.CARDS_RAW = {
     "subjuntivo",
     "tener"
    ],
-   "nota": "Futuro incerto pede subjuntivo nas duas línguas: 'cuando tengas' = quando tiver."
+   "nota": "Futuro incerto pede subjuntivo nas duas línguas: 'cuando tengas' = quando tiver.",
+   "formasEs": {
+    "Cuando tienes tiempo": "presente do indicativo",
+    "Cuando tenías tiempo": "imperfeito",
+    "Cuando tendrás tiempo": "futuro",
+    "Cuando tuviste tiempo": "pretérito"
+   }
   },
   {
    "id": "v037",
@@ -5686,7 +5876,13 @@ window.CARDS_RAW = {
     "imperativo",
     "venir"
    ],
-   "nota": "Imperativos curtos e irregulares: ven, ten, haz, di, sal, pon, sé, ve."
+   "nota": "Imperativos curtos e irregulares: ven, ten, haz, di, sal, pon, sé, ve.",
+   "formasEs": {
+    "Viene aquí": "presente",
+    "Vino aquí": "pretérito",
+    "Vendrá aquí": "futuro",
+    "Venía aquí": "imperfeito"
+   }
   },
   {
    "id": "v038",
@@ -5710,7 +5906,13 @@ window.CARDS_RAW = {
     "imperativo",
     "hacer"
    ],
-   "nota": "'Haz' é o imperativo de 'hacer'. Note o subjuntivo 'quieras' depois."
+   "nota": "'Haz' é o imperativo de 'hacer'. Note o subjuntivo 'quieras' depois.",
+   "formasEs": {
+    "Hace lo que quiere": "presente",
+    "Hizo lo que quiso": "pretérito",
+    "Hará lo que quiera": "futuro",
+    "Haría lo que quisiera": "condicional"
+   }
   },
   {
    "id": "v039",
@@ -5734,7 +5936,13 @@ window.CARDS_RAW = {
     "subjuntivo",
     "condicional"
    ],
-   "nota": "Imperfeito do subjuntivo + condicional, igual ao português."
+   "nota": "Imperfeito do subjuntivo + condicional, igual ao português.",
+   "formasEs": {
+    "Si tengo dinero, viajo": "presente",
+    "Si tenía dinero, viajaba": "imperfeito",
+    "Si tuve dinero, viajé": "pretérito",
+    "Si tendré dinero, viajaré": "futuro"
+   }
   },
   {
    "id": "v040",
@@ -5758,7 +5966,13 @@ window.CARDS_RAW = {
     "condicional",
     "haber"
    ],
-   "nota": "'Haber' no condicional: habría, habrías, habría. Serve para o 'teria feito'."
+   "nota": "'Haber' no condicional: habría, habrías, habría. Serve para o 'teria feito'.",
+   "formasEs": {
+    "He venido antes": "pretérito perfeito",
+    "Había venido antes": "mais-que-perfeito",
+    "Habré venido antes": "futuro perfeito",
+    "Vendré antes": "futuro simples"
+   }
   },
   {
    "id": "v041",
@@ -5781,7 +5995,13 @@ window.CARDS_RAW = {
     "presente",
     "regular"
    ],
-   "nota": "Regular em -ar: hablo, hablas, habla, hablamos, habláis, hablan."
+   "nota": "Regular em -ar: hablo, hablas, habla, hablamos, habláis, hablan.",
+   "formasEs": {
+    "Yo hablé español": "pretérito",
+    "Yo hablaba español": "imperfeito",
+    "Yo hablaré español": "futuro",
+    "Yo hablaría español": "condicional"
+   }
   },
   {
    "id": "v042",
@@ -5804,7 +6024,13 @@ window.CARDS_RAW = {
     "pretérito",
     "regular"
    ],
-   "nota": "Regular em -er: comí, comiste, comió, comimos, comisteis, comieron."
+   "nota": "Regular em -er: comí, comiste, comió, comimos, comisteis, comieron.",
+   "formasEs": {
+    "Ella come temprano": "presente",
+    "Ella comía temprano": "imperfeito",
+    "Ella comerá temprano": "futuro",
+    "Ella comería temprano": "condicional"
+   }
   },
   {
    "id": "v043",
@@ -5829,7 +6055,12 @@ window.CARDS_RAW = {
     "presente",
     "regular"
    ],
-   "nota": "Em -ir, presente e pretérito de 'nosotros' são iguais: vivimos. O contexto decide."
+   "nota": "Em -ir, presente e pretérito de 'nosotros' são iguais: vivimos. O contexto decide.",
+   "formasEs": {
+    "Nosotros vivíamos aquí": "imperfeito",
+    "Nosotros viviremos aquí": "futuro",
+    "Nosotros viviríamos aquí": "condicional"
+   }
   },
   {
    "id": "v044",
@@ -5852,7 +6083,13 @@ window.CARDS_RAW = {
     "imperfeito",
     "regular"
    ],
-   "nota": "Imperfeito regular em -ar: -aba, -abas, -aba, -ábamos, -abais, -aban."
+   "nota": "Imperfeito regular em -ar: -aba, -abas, -aba, -ábamos, -abais, -aban.",
+   "formasEs": {
+    "Yo trabajo mucho": "presente",
+    "Yo trabajé mucho": "pretérito",
+    "Yo trabajaré mucho": "futuro",
+    "Yo trabajaría mucho": "condicional"
+   }
   },
   {
    "id": "v045",
@@ -5876,7 +6113,13 @@ window.CARDS_RAW = {
     "futuro",
     "regular"
    ],
-   "nota": "O futuro regular junta a terminação ao infinitivo inteiro: estudar + án."
+   "nota": "O futuro regular junta a terminação ao infinitivo inteiro: estudar + án.",
+   "formasEs": {
+    "Ellos estudian mañana": "presente",
+    "Ellos estudiaron mañana": "pretérito",
+    "Ellos estudiaban mañana": "imperfeito",
+    "Ellos estudiarían mañana": "condicional"
+   }
   },
   {
    "id": "v046",
@@ -5901,7 +6144,13 @@ window.CARDS_RAW = {
     "condicional",
     "regular"
    ],
-   "nota": "Condicional regular: infinitivo + ía. Em português usamos mais 'tomar' que 'beber'."
+   "nota": "Condicional regular: infinitivo + ía. Em português usamos mais 'tomar' que 'beber'.",
+   "formasEs": {
+    "Yo bebo un café": "presente",
+    "Yo bebí un café": "pretérito",
+    "Yo bebía un café": "imperfeito",
+    "Yo beberé un café": "futuro"
+   }
   },
   {
    "id": "v047",
@@ -5926,7 +6175,13 @@ window.CARDS_RAW = {
     "pretérito perfeito",
     "haber"
    ],
-   "nota": "O espanhol usa muito o 'he/has/ha/hemos + particípio' onde o português usa o passado simples."
+   "nota": "O espanhol usa muito o 'he/has/ha/hemos + particípio' onde o português usa o passado simples.",
+   "formasEs": {
+    "Habíamos terminado": "mais-que-perfeito",
+    "Habremos terminado": "futuro perfeito",
+    "Habríamos terminado": "condicional",
+    "Terminamos": "pretérito simples"
+   }
   },
   {
    "id": "v048",
@@ -5949,7 +6204,13 @@ window.CARDS_RAW = {
     "gerúndio",
     "regular"
    ],
-   "nota": "Gerúndio em -ando/-iendo. Igual ao português, mas o espanhol usa menos."
+   "nota": "Gerúndio em -ando/-iendo. Igual ao português, mas o espanhol usa menos.",
+   "formasEs": {
+    "Estaba comiendo": "imperfeito",
+    "Estaré comiendo": "futuro",
+    "Estaría comiendo": "condicional",
+    "He comido": "pretérito perfeito"
+   }
   },
   {
    "id": "v049",
@@ -5972,7 +6233,13 @@ window.CARDS_RAW = {
     "presente",
     "gustar"
    ],
-   "nota": "'Gustar' inverte: quem gosta vira objeto indireto. 'Me gusta' = a mim agrada."
+   "nota": "'Gustar' inverte: quem gosta vira objeto indireto. 'Me gusta' = a mim agrada.",
+   "formasEs": {
+    "No me gustó esperar": "pretérito",
+    "No me gustaba esperar": "imperfeito",
+    "No me gustará esperar": "futuro",
+    "No me gustaría esperar": "condicional"
+   }
   },
   {
    "id": "v050",
@@ -5997,7 +6264,13 @@ window.CARDS_RAW = {
     "pretérito",
     "caer"
    ],
-   "nota": "O 'se me' tira a culpa: não foi você que derrubou, aconteceu. E 'vaso' = copo."
+   "nota": "O 'se me' tira a culpa: não foi você que derrubou, aconteceu. E 'vaso' = copo.",
+   "formasEs": {
+    "Se me cae el vaso": "presente",
+    "Se me caía el vaso": "imperfeito",
+    "Se me caerá el vaso": "futuro",
+    "Se me caería el vaso": "condicional"
+   }
   }
  ]
 };

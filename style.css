@@ -243,3 +243,14 @@ label input:focus{outline:0;border-color:var(--acento)}
   .placar{display:none}
   main{padding:16px 13px 30px}
 }
+
+/* quando o erro foi de conjugação, o feedback nomeia o que ele escreveu */
+.resposta-dada.conjugacao{
+  background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.32);
+}
+.resposta-dada.conjugacao .rotulo{color:var(--erro)}
+.forma-rotulo{
+  font-size:12.5px;font-weight:500;color:var(--texto-2);
+  border:1px solid var(--borda);border-radius:999px;padding:2px 9px;
+  margin-left:8px;white-space:nowrap;
+}

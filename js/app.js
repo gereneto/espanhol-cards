@@ -164,6 +164,7 @@
     el['area-conhecia'].classList.add('oculto');
     el['area-julgamento'].classList.add('oculto');
     el['resposta-dada'].classList.add('oculto');
+    el['resposta-dada'].classList.remove('conjugacao');
     el['btn-proximo'].classList.remove('oculto');
 
     if (modoAtual === 'multipla') {
@@ -266,6 +267,18 @@
       b.style.color = '';
     });
 
+    /* Escreveu outra conjugação: mostra qual foi, para o erro ensinar algo. */
+    const forma = r.modo === 'escrita' && !r.desistiu
+      ? Motor.formaReconhecida(cardAtual, r.resposta, r.direcao) : null;
+    if (forma) {
+      el['texto-dado'].innerHTML = escapar(forma.forma) +
+        ' <span class="forma-rotulo">' + escapar(forma.rotulo) + '</span>';
+      el['resposta-dada'].classList.remove('oculto');
+      el['resposta-dada'].classList.add('conjugacao');
+    } else {
+      el['resposta-dada'].classList.remove('conjugacao');
+    }
+
     if (r.quase) {
       // chegou perto: mostra o que você escreveu e devolve a decisão
       el.veredito.className = 'veredito quase';
@@ -275,7 +288,7 @@
       el['area-julgamento'].classList.remove('oculto');
       el['btn-proximo'].classList.add('oculto');
     } else {
-      el['resposta-dada'].classList.add('oculto');
+      if (!forma) el['resposta-dada'].classList.add('oculto');
       el['area-julgamento'].classList.add('oculto');
       el['btn-proximo'].classList.remove('oculto');
       mostrarVeredito(r);

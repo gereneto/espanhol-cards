@@ -128,23 +128,45 @@ window.Motor = (function () {
 
     const aceitas = respostasAceitas(card, direcao);
     if (aceitas.includes(dado)) return 'certo';
-    if (aceitas.some(alvo => parecido(dado, alvo))) return 'quase';
+
+    /* Se o que ele escreveu é outra conjugação registrada do mesmo verbo,
+       não foi a mão que escorregou: foi o tempo ou a pessoa que ele errou,
+       que é justamente o que o card cobra. Erro seco, sem perguntar. */
+    if (formaReconhecida(card, texto, direcao)) return 'errado';
+
+    if (aceitas.some(alvo => parecido(dado, alvo, direcao))) return 'quase';
     return 'errado';
   }
 
-  /* Perto o bastante para perguntar — não perto o bastante para valer ponto. */
-  function parecido(a, b) {
+  /* Quando a resposta coincide com outra forma verbal do card, devolve qual
+     é, para o feedback poder dizer o que ele escreveu de fato. */
+  function formaReconhecida(card, texto, direcao) {
+    if (direcao !== 'pt-es' || !card.formasEs) return null;
+    const dado = normalizarEs(texto);
+    for (const forma of Object.keys(card.formasEs)) {
+      if (normalizarEs(forma) === dado) return { forma, rotulo: card.formasEs[forma] };
+    }
+    return null;
+  }
+
+  /* Perto o bastante para perguntar — não perto o bastante para valer ponto.
+
+     Escrevendo em espanhol a régua é mais dura: a grafia é parte do que se
+     está aprendendo, então uma letra fora do lugar pode ser exatamente a
+     lacuna, não um deslize de teclado. Em português, que ele já domina,
+     errar uma tecla não diz nada sobre saber a palavra. */
+  function parecido(a, b, direcao) {
     const maior = Math.max(a.length, b.length);
     if (maior < 4) return false;
 
     const d = distancia(a, b);
     if (!d) return true;
+    const inversa = direcao === 'pt-es';
 
-    // palavra única: tolera o deslize de teclado
-    if (!a.includes(' ') && !b.includes(' ')) return d <= (maior >= 8 ? 2 : 1);
-
-    // frase: exige que quase tudo coincida
-    return 1 - d / maior >= 0.82;
+    if (!a.includes(' ') && !b.includes(' ')) {
+      return inversa ? (d === 1 && maior >= 6) : d <= (maior >= 8 ? 2 : 1);
+    }
+    return 1 - d / maior >= (inversa ? 0.92 : 0.82);
   }
 
   function velocidade(card, modo, ms) {
@@ -445,7 +467,7 @@ window.Motor = (function () {
     NIVEIS, ROTULO_NIVEL, LIMIARES,
     normalizar, conferir, velocidade,
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
-    pergunta, resposta, normalizarEs,
+    pergunta, resposta, normalizarEs, formaReconhecida,
     distanciaNaFila, montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

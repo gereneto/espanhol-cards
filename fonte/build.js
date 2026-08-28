@@ -55,6 +55,15 @@ for (const c of cards) {
   for (const d of c.distratores || []) {
     if (certas.has(normalizar(d))) erros.push('distrator igual à resposta: ' + onde + ' → ' + d);
   }
+  /* uma forma verbal alternativa nunca pode coincidir com a resposta certa */
+  if (c.formasEs) {
+    const semArtigo = t => normalizar(String(t).replace(/^(el|la|los|las|un|una|unos|unas)s+/i, ''));
+    const certa = semArtigo(c.es);
+    for (const f of Object.keys(c.formasEs)) {
+      if (semArtigo(f) === certa) erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);
+    }
+  }
+
   const vistos = new Set((c.distratores || []).map(normalizar));
   if (vistos.size !== (c.distratores || []).length) erros.push('distratores repetidos entre si: ' + onde);
 
