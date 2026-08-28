@@ -90,6 +90,7 @@ onde são gravados três arquivos:
 - `progresso.json` — estado de cada card (etapa, acertos, erros, tempos, histórico)
 - `sessoes/<data>.json` — registro de cada resposta da sessão
 - `resumo.md` — relatório legível, base para calibrar a próxima leva
+- `contestacoes.json` — respostas que você achou que deveriam ter sido aceitas
 
 Para ligar a sincronização, abra **⚙️** no app e informe um
 [fine-grained token](https://github.com/settings/personal-access-tokens/new)
@@ -147,6 +148,12 @@ gravada, e o log guarda `julgado_por_voce: true`. É por existir essa pergunta
 que a detecção pode ser generosa — erro de digitação, letra trocada, palavra
 fora do lugar. Nada é aprovado à sua revelia, então o risco de aceitar errado
 é seu, não do app.
+
+**Errado — e você pode discordar.** Toda resposta escrita contada como erro
+traz no fim a opção **“Acho que essa resposta deveria ser aceita”**. Às vezes o
+card é que está incompleto, e quem percebe isso é quem respondeu. O caso vai
+para `contestacoes.json` no repositório de dados e ganha uma seção no
+`resumo.md`, para revisarmos um a um na atualização seguinte.
 
 **Errado.** O que nem chegou perto. Negação, preposição, verbo e substantivo
 entram inteiros na comparação, então `envergonhada` para `embarazada` e

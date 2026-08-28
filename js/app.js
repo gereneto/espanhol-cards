@@ -20,6 +20,7 @@
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
+    'area-contestar', 'btn-contestar', 'aviso-contestado',
     'btn-proximo', 'painel-conteudo',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
@@ -154,7 +155,10 @@
     el['bandeira-pergunta'].textContent = inversa ? '🇧🇷' : '🇪🇸';
     el['bandeira-resposta'].textContent = inversa ? '🇪🇸' : '🇧🇷';
     el['bandeira-feedback'].textContent = inversa ? '🇪🇸' : '🇧🇷';
-    el['rotulo-resposta-txt'].textContent = inversa ? 'responda em espanhol' : 'responda em português';
+    /* na múltipla escolha a bandeira já diz tudo; o texto só ajuda quando
+       é você quem tem que produzir a resposta */
+    el['rotulo-resposta-txt'].textContent = modoAtual === 'multipla' ? ''
+      : (inversa ? 'responda em espanhol' : 'responda em português');
     el.entrada.placeholder = inversa ? 'escreva em espanhol…' : 'escreva o significado…';
 
     el.termo.textContent = Motor.pergunta(cardAtual, direcaoAtual);
@@ -165,6 +169,9 @@
     el['area-julgamento'].classList.add('oculto');
     el['resposta-dada'].classList.add('oculto');
     el['resposta-dada'].classList.remove('conjugacao');
+    el['area-contestar'].classList.add('oculto');
+    el['aviso-contestado'].classList.add('oculto');
+    el['btn-contestar'].disabled = false;
     el['btn-proximo'].classList.remove('oculto');
 
     if (modoAtual === 'multipla') {
@@ -294,6 +301,7 @@
       mostrarVeredito(r);
       registrar(r);
       mostrarPerguntaConhecia(r);
+      mostrarContestar(r);
     }
 
     el['area-feedback'].classList.remove('oculto');
@@ -328,6 +336,7 @@
     mostrarVeredito(r);
     registrar(r);
     mostrarPerguntaConhecia(r);
+    mostrarContestar(r);
     el['btn-proximo'].focus({ preventScroll: true });
   }
   /* Grava a resposta e devolve o card para a fila. */
@@ -411,6 +420,43 @@
     const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, progresso.cards));
     const ordem = Motor.ordenarNovos(novos, pesos, PORID);
     posicoes.forEach((pos, k) => { progresso.fila[pos] = ordem[k]; });
+  }
+
+  /* Escreveu, foi contado como erro, mas acha que a resposta valia. O card
+     pode estar incompleto, não ele — e quem sabe disso é quem respondeu.
+     Fica registrado para revisarmos card a card na próxima atualização. */
+  function mostrarContestar(r) {
+    const cabe = r.modo === 'escrita' && !r.acertou && !r.desistiu
+      && String(r.resposta || '').trim();
+    el['area-contestar'].classList.toggle('oculto', !cabe);
+  }
+
+  function contestar() {
+    if (!ultimoRegistro) return;
+    const { id, evento, r } = ultimoRegistro;
+
+    progresso.contestacoes = progresso.contestacoes || [];
+    const repetida = progresso.contestacoes.some(c =>
+      c.card === id && Motor.normalizar(c.resposta) === Motor.normalizar(r.resposta));
+
+    if (!repetida) {
+      progresso.contestacoes.push({
+        em: new Date().toISOString(),
+        card: id,
+        es: cardAtual.es,
+        pt: cardAtual.pt,
+        nivel: cardAtual.nivel,
+        direcao: r.direcao,
+        esperado: Motor.resposta(cardAtual, r.direcao),
+        resposta: r.resposta
+      });
+      salvarProgresso();
+    }
+    evento.contestado = true;
+
+    el['btn-contestar'].disabled = true;
+    el['aviso-contestado'].classList.remove('oculto');
+    if (GH.cfg().auto && GH.configurado()) sincronizar({ silencioso: true });
   }
 
   function talvezSincronizar() {
@@ -637,6 +683,14 @@
           { keepalive: opcoes.keepalive });
       }
 
+      const contestacoes = progresso.contestacoes || [];
+      if (contestacoes.length) {
+        await GH.escrever('contestacoes.json',
+          JSON.stringify({ atualizado_em: agora, total: contestacoes.length, casos: contestacoes }, null, 1),
+          'respostas contestadas — ' + agora,
+          { keepalive: opcoes.keepalive });
+      }
+
       await GH.escrever('resumo.md', gerarResumo(), 'resumo — ' + agora,
         { keepalive: opcoes.keepalive });
 
@@ -670,6 +724,7 @@
       versao: 1,
       atualizado_em: new Date().toISOString(),
       fila: (local.fila && local.fila.length) ? local.fila : (remoto.fila || []),
+      contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
       cards: {},
       totais: {
         respostas: Math.max(local.totais.respostas, (remoto.totais || {}).respostas || 0),
@@ -685,6 +740,19 @@
       saida.cards[id] = (b.vistas > a.vistas) ? b : a;
     });
     return conciliarFila(saida);
+  }
+
+  /* Contestação é registro do que ele pensou: nunca se perde numa mesclagem. */
+  function juntarContestacoes(a, b) {
+    const saida = [];
+    const vistas = new Set();
+    for (const c of [...(a || []), ...(b || [])]) {
+      const chave = c.card + '|' + Motor.normalizar(c.resposta);
+      if (vistas.has(chave)) continue;
+      vistas.add(chave);
+      saida.push(c);
+    }
+    return saida;
   }
 
   /* Relatório legível — é por ele que a calibragem começa da próxima vez. */
@@ -776,6 +844,22 @@
       L.push('');
     }
 
+    const contestadas = progresso.contestacoes || [];
+    if (contestadas.length) {
+      L.push('## Respostas que ele acha que deveriam ser aceitas (' + contestadas.length + ')');
+      L.push('');
+      L.push('**Revisar uma a uma antes da próxima leva.** Ele escreveu isto, foi');
+      L.push('contado como erro, e discordou.');
+      L.push('');
+      L.push('| Card | Pediu | Ele escreveu | Esperava |');
+      L.push('|---|---|---|---|');
+      contestadas.forEach(c => {
+        const pediu = c.direcao === 'pt-es' ? c.pt : c.es;
+        L.push('| `' + c.card + '` | ' + pediu + ' | **' + c.resposta + '** | ' + c.esperado + ' |');
+      });
+      L.push('');
+    }
+
     L.push('---');
     L.push('');
     L.push('_Gerado pelo app. Serve de base para calibrar a próxima leva de cards._');
@@ -831,6 +915,7 @@
 
   el['btn-comecar'].addEventListener('click', proximoCard);
   el['btn-proximo'].addEventListener('click', avancar);
+  el['btn-contestar'].addEventListener('click', contestar);
   el['btn-responder'].addEventListener('click', () => responderEscrita(false));
   el['btn-nao-sei'].addEventListener('click', () => responderEscrita(true));
   el.entrada.addEventListener('keydown', e => {
