@@ -119,8 +119,7 @@
         (novos ? novos + ' cards ainda não apareceram.' : 'Você já viu todos os cards pelo menos uma vez.')
       : CARDS.length + ' cards prontos — ' +
         CARDS.filter(c => c.tipo === 'palavra').length + ' palavras e ' +
-        CARDS.filter(c => c.tipo === 'frase').length + ' frases, do A1 ao C2, mais ' +
-        CARDS.filter(c => c.nivel === 'VR' || c.nivel === 'VI').length + ' de conjugação.';
+        CARDS.filter(c => c.tipo === 'frase').length + ' frases, do A1 ao C2.';
   }
 
   /* ═══════════════ fluxo do card ═══════════════ */

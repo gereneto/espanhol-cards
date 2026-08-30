@@ -11,7 +11,7 @@ const path = require('path');
 
 const raiz = path.join(__dirname, '..');
 const pastaCards = path.join(__dirname, 'cards');
-const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'VR', 'VI'];
+const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 const normalizar = s => s
   .normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -57,7 +57,7 @@ for (const c of cards) {
   }
   /* uma forma verbal alternativa nunca pode coincidir com a resposta certa */
   if (c.formasEs) {
-    const semArtigo = t => normalizar(String(t).replace(/^(el|la|los|las|un|una|unos|unas)s+/i, ''));
+    const semArtigo = t => normalizar(String(t).replace(/^(el|la|los|las|un|una|unos|unas)\s+/i, ''));
     const certa = semArtigo(c.es);
     for (const f of Object.keys(c.formasEs)) {
       if (semArtigo(f) === certa) erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);

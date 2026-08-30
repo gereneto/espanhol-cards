@@ -44,10 +44,23 @@ conhecia vale 0,4, já que provavelmente foi dedução ou chute. As respostas
 seguintes valem por mostrarem em que nível está custando fixar. Enquanto há
 pouca evidência, tudo é puxado para o meio, para um acerto solto não decidir nada.
 
-Além do A1–C2, há duas trilhas próprias de conjugação — **VR** (verbo regular)
-e **VI** (verbo irregular) —, porque irregularidade não é questão de
-proficiência: `anduve` pega gente de qualquer nível. Elas entram no mesmo
-sorteio, com nota de domínio própria.
+### Como o nível é atribuído
+
+O `nivel` é o CEFR e nada mais — um eixo só. Ele mede **o quanto a palavra ou
+construção é frequente e útil**, não o quanto é difícil de decorar.
+
+Nos cards de conjugação o nível sai de duas coisas somadas: **a frequência do
+verbo** e **a dificuldade do tempo**. Irregularidade não entra na conta, porque
+não é questão de proficiência — `tener` é vocabulário de A1 mesmo sendo
+irregular em tudo. Então `Yo tengo prisa` é **A1**, `Él dijo la verdad` é **A2**
+(mesmo verbo comum, mas pretérito irregular), `Nosotros anduvimos mucho` é **B1**
+(verbo menos frequente, pretérito que quase ninguém espera) e
+`Habría venido antes` é **C1** (condicional composto).
+
+Que o card é de conjugação, e se o verbo é regular ou irregular, fica nas
+etiquetas (`conjugação`, `irregular`, `pretérito`, `tener`). O painel mostra o
+acerto por tema, então dá para ver como você vai nos irregulares sem que isso
+contamine a nota do nível.
 
 A curva de peso tem pico no domínio intermediário e um piso, de modo que
 **todos os níveis continuam aparecendo** — nível que você gabarita entedia,

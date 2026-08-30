@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-08-28",
+ "gerado_em": "2026-08-30",
  "total": 249,
  "cards": [
   {
@@ -4796,11 +4796,12 @@ window.CARDS_RAW = {
     "Eu não saberia.",
     "Eu não saberei."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "imperfeito",
-    "saber"
+    "saber",
+    "irregular"
    ],
    "nota": "'Sabía' é imperfeito. O pretérito seria 'supe' (fiquei sabendo), que é bem diferente.",
    "formasEs": {
@@ -4827,11 +4828,12 @@ window.CARDS_RAW = {
     "Ontem eu vou saber.",
     "Ontem eu saberia disso."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "saber"
+    "saber",
+    "irregular"
    ],
    "nota": "'Saber' no pretérito muda de sentido: 'supe' = fiquei sabendo, não 'sabia'.",
    "formasEs": {
@@ -4856,11 +4858,12 @@ window.CARDS_RAW = {
     "Ela terá um filho.",
     "Ela teria um filho."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "tener"
+    "tener",
+    "irregular"
    ],
    "nota": "'Tener' é irregular no pretérito: tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron.",
    "formasEs": {
@@ -4887,11 +4890,12 @@ window.CARDS_RAW = {
     "Eu terei pressa.",
     "Eu teria pressa."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "tener"
+    "tener",
+    "irregular"
    ],
    "nota": "'Tengo' com g irregular. E 'tener prisa' = estar com pressa, não 'ter pressa'.",
    "formasEs": {
@@ -4916,11 +4920,12 @@ window.CARDS_RAW = {
     "Eles farão tudo.",
     "Eles fariam tudo."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "hacer"
+    "hacer",
+    "irregular"
    ],
    "nota": "'Hacer' no pretérito: hice, hiciste, hizo, hicimos, hicisteis, hicieron. Note o 'z' em 'hizo'.",
    "formasEs": {
@@ -4946,11 +4951,12 @@ window.CARDS_RAW = {
     "Ele fará o jantar.",
     "Ele faria o jantar."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "hacer"
+    "hacer",
+    "irregular"
    ],
    "nota": "Terceira pessoa vira 'hizo', com z. E 'cena' = jantar.",
    "formasEs": {
@@ -4976,11 +4982,12 @@ window.CARDS_RAW = {
     "Eu farei a comida.",
     "Eu faria a comida."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "hacer"
+    "hacer",
+    "irregular"
    ],
    "nota": "'Hago' com g, como 'tengo', 'pongo', 'salgo', 'digo'.",
    "formasEs": {
@@ -5005,11 +5012,12 @@ window.CARDS_RAW = {
     "Eu irei ao médico.",
     "Eu iria ao médico."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "ir"
+    "ir",
+    "irregular"
    ],
    "nota": "Cuidado: 'fui' serve para 'ir' e para 'ser'. O contexto decide.",
    "formasEs": {
@@ -5034,11 +5042,12 @@ window.CARDS_RAW = {
     "Eu serei professor.",
     "Eu seria professor."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "ser"
+    "ser",
+    "irregular"
    ],
    "nota": "Mesmo 'fui' do verbo 'ir'. Aqui é 'ser', porque vem seguido de profissão.",
    "formasEs": {
@@ -5064,11 +5073,12 @@ window.CARDS_RAW = {
     "Antes eu irei muito.",
     "Antes eu iria muito."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "imperfeito",
-    "ir"
+    "ir",
+    "irregular"
    ],
    "nota": "'Ir' tem imperfeito irregular: iba, ibas, iba, íbamos, ibais, iban.",
    "formasEs": {
@@ -5094,11 +5104,12 @@ window.CARDS_RAW = {
     "Nós seremos amigos.",
     "Nós seríamos amigos."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "imperfeito",
-    "ser"
+    "ser",
+    "irregular"
    ],
    "nota": "'Ser' no imperfeito: era, eras, era, éramos, erais, eran.",
    "formasEs": {
@@ -5124,11 +5135,12 @@ window.CARDS_RAW = {
     "Eu estarei lá.",
     "Eu estaria lá."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "estar"
+    "estar",
+    "irregular"
    ],
    "nota": "'Estar' no pretérito: estuve, estuviste, estuvo. Segue o padrão de 'tuve'.",
    "formasEs": {
@@ -5154,11 +5166,12 @@ window.CARDS_RAW = {
     "Ele dirá a verdade.",
     "Ele diria a verdade."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "decir"
+    "decir",
+    "irregular"
    ],
    "nota": "'Decir': dije, dijiste, dijo, dijimos, dijisteis, dijeron. Note 'dijeron', sem i.",
    "formasEs": {
@@ -5183,11 +5196,12 @@ window.CARDS_RAW = {
     "Eu direi que sim.",
     "Eu diria que sim."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "decir"
+    "decir",
+    "irregular"
    ],
    "nota": "'Decir' no presente muda o e por i: digo, dices, dice, decimos, decís, dicen.",
    "formasEs": {
@@ -5212,11 +5226,12 @@ window.CARDS_RAW = {
     "Eles virão ontem.",
     "Eles viriam ontem."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "venir"
+    "venir",
+    "irregular"
    ],
    "nota": "'Venir': vine, viniste, vino, vinimos, vinisteis, vinieron.",
    "formasEs": {
@@ -5242,11 +5257,12 @@ window.CARDS_RAW = {
     "Ele virá sozinho.",
     "Ele viria sozinho."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "venir"
+    "venir",
+    "irregular"
    ],
    "nota": "'Vino' é 'veio' — e também é 'vinho'. O contexto separa.",
    "formasEs": {
@@ -5273,11 +5289,12 @@ window.CARDS_RAW = {
     "Eu porei a mesa.",
     "Eu poria a mesa."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "poner"
+    "poner",
+    "irregular"
    ],
    "nota": "'Poner': puse, pusiste, puso, pusimos, pusisteis, pusieron.",
    "formasEs": {
@@ -5303,11 +5320,12 @@ window.CARDS_RAW = {
     "Eu não poderei ir.",
     "Eu não poderia ir."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "poder"
+    "poder",
+    "irregular"
    ],
    "nota": "'Poder': pude, pudiste, pudo, pudimos, pudisteis, pudieron.",
    "formasEs": {
@@ -5332,11 +5350,12 @@ window.CARDS_RAW = {
     "Ela quererá ajudar.",
     "Ela quereria ajudar."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "querer"
+    "querer",
+    "irregular"
    ],
    "nota": "'Querer': quise, quisiste, quiso. No negativo, 'no quiso' = se recusou.",
    "formasEs": {
@@ -5361,11 +5380,12 @@ window.CARDS_RAW = {
     "Eu quererei água.",
     "Eu quereria água."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "querer"
+    "querer",
+    "irregular"
    ],
    "nota": "Verbo de mudança e→ie: quiero, quieres, quiere, queremos, queréis, quieren.",
    "formasEs": {
@@ -5392,11 +5412,12 @@ window.CARDS_RAW = {
     "Nós andaremos muito.",
     "Nós andaremos bastante."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "andar"
+    "andar",
+    "irregular"
    ],
    "nota": "Pega muita gente: 'andar' é irregular no pretérito — anduve, anduviste, anduvo.",
    "formasEs": {
@@ -5421,11 +5442,12 @@ window.CARDS_RAW = {
     "Ele trará o livro.",
     "Ele traria o livro."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "traer"
+    "traer",
+    "irregular"
    ],
    "nota": "'Traer': traje, trajiste, trajo, trajimos, trajisteis, trajeron.",
    "formasEs": {
@@ -5452,11 +5474,12 @@ window.CARDS_RAW = {
     "Eu darei o dinheiro a ele.",
     "Eu daria o dinheiro a ele."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "dar"
+    "dar",
+    "irregular"
    ],
    "nota": "'Dar' no pretérito toma forma de -er/-ir: di, diste, dio, dimos, disteis, dieron.",
    "formasEs": {
@@ -5483,11 +5506,12 @@ window.CARDS_RAW = {
     "Eu o verei ontem.",
     "Eu o veria ontem."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
-    "ver"
+    "ver",
+    "irregular"
    ],
    "nota": "'Ver': vi, viste, vio, vimos, visteis, vieron. Sem acento em 'vi' e 'vio'.",
    "formasEs": {
@@ -5513,11 +5537,12 @@ window.CARDS_RAW = {
     "Antes eu verei mais.",
     "Antes eu veria mais."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "imperfeito",
-    "ver"
+    "ver",
+    "irregular"
    ],
    "nota": "'Ver' tem imperfeito irregular: veía, veías, veía, veíamos, veíais, veían.",
    "formasEs": {
@@ -5543,11 +5568,12 @@ window.CARDS_RAW = {
     "Eu sairei agora.",
     "Eu sairia agora."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "salir"
+    "salir",
+    "irregular"
    ],
    "nota": "'Salgo' com g. O futuro também é irregular: saldré.",
    "formasEs": {
@@ -5573,11 +5599,12 @@ window.CARDS_RAW = {
     "Eu conhecerei a Ana.",
     "Eu conheceria a Ana."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "presente",
-    "conocer"
+    "conocer",
+    "irregular"
    ],
    "nota": "Verbos em -cer ganham z: conozco, parezco, agradezco, merezco.",
    "formasEs": {
@@ -5603,11 +5630,12 @@ window.CARDS_RAW = {
     "Eu ouvirei música.",
     "Eu ouviria música."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "presente",
-    "oír"
+    "oír",
+    "irregular"
    ],
    "nota": "'Oír': oigo, oyes, oye, oímos, oís, oyen. O y aparece do nada.",
    "formasEs": {
@@ -5632,11 +5660,12 @@ window.CARDS_RAW = {
     "Eles dormirão bem.",
     "Eles dormiriam bem."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "dormir"
+    "dormir",
+    "irregular"
    ],
    "nota": "Na 3ª pessoa o o vira u: durmió, durmieron. No presente vira ue: duermo.",
    "formasEs": {
@@ -5661,11 +5690,12 @@ window.CARDS_RAW = {
     "Eu dormirei pouco.",
     "Eu dormiria pouco."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "dormir"
+    "dormir",
+    "irregular"
    ],
    "nota": "Mudança o→ue: duermo, duermes, duerme, dormimos, dormís, duermen.",
    "formasEs": {
@@ -5690,11 +5720,12 @@ window.CARDS_RAW = {
     "Ele pedirá a conta.",
     "Ele pediria a conta."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "pretérito",
-    "pedir"
+    "pedir",
+    "irregular"
    ],
    "nota": "Na 3ª pessoa o e vira i: pidió, pidieron. Cuidado: 'pedir' não é 'perguntar'.",
    "formasEs": {
@@ -5720,11 +5751,12 @@ window.CARDS_RAW = {
     "Eu jogarei futebol.",
     "Eu jogaria futebol."
    ],
-   "nivel": "VI",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "jugar"
+    "jugar",
+    "irregular"
    ],
    "nota": "Único verbo com u→ue: juego, juegas, juega, jugamos, jugáis, juegan.",
    "formasEs": {
@@ -5751,11 +5783,12 @@ window.CARDS_RAW = {
     "Começará a chover.",
     "Começaria a chover."
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "presente",
-    "empezar"
+    "empezar",
+    "irregular"
    ],
    "nota": "Mudança e→ie: empiezo, empiezas, empieza. No pretérito: empecé, com c.",
    "formasEs": {
@@ -5782,11 +5815,12 @@ window.CARDS_RAW = {
     "Tomara que ele virá amanhã.",
     "Tomara que ele viria amanhã."
    ],
-   "nivel": "VI",
+   "nivel": "B2",
    "tags": [
     "conjugação",
     "subjuntivo",
-    "venir"
+    "venir",
+    "irregular"
    ],
    "nota": "Presente do subjuntivo de 'venir' sai do 'vengo': venga, vengas, venga.",
    "formasEs": {
@@ -5811,11 +5845,12 @@ window.CARDS_RAW = {
     "Não acho que será fácil.",
     "Não acho que seria fácil."
    ],
-   "nivel": "VI",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "subjuntivo",
-    "ser"
+    "ser",
+    "irregular"
    ],
    "nota": "'Ser' no subjuntivo: sea, seas, sea, seamos, seáis, sean.",
    "formasEs": {
@@ -5840,11 +5875,12 @@ window.CARDS_RAW = {
     "Quando você terá tempo.",
     "Quando você teria tempo."
    ],
-   "nivel": "VI",
+   "nivel": "B2",
    "tags": [
     "conjugação",
     "subjuntivo",
-    "tener"
+    "tener",
+    "irregular"
    ],
    "nota": "Futuro incerto pede subjuntivo nas duas línguas: 'cuando tengas' = quando tiver.",
    "formasEs": {
@@ -5870,11 +5906,12 @@ window.CARDS_RAW = {
     "Vinha aqui!",
     "Viria aqui!"
    ],
-   "nivel": "VI",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "imperativo",
-    "venir"
+    "venir",
+    "irregular"
    ],
    "nota": "Imperativos curtos e irregulares: ven, ten, haz, di, sal, pon, sé, ve.",
    "formasEs": {
@@ -5900,11 +5937,12 @@ window.CARDS_RAW = {
     "Fará o que você quiser!",
     "Faria o que você quisesse!"
    ],
-   "nivel": "VI",
+   "nivel": "B2",
    "tags": [
     "conjugação",
     "imperativo",
-    "hacer"
+    "hacer",
+    "irregular"
    ],
    "nota": "'Haz' é o imperativo de 'hacer'. Note o subjuntivo 'quieras' depois.",
    "formasEs": {
@@ -5930,11 +5968,12 @@ window.CARDS_RAW = {
     "Se eu tive dinheiro, viajei.",
     "Se eu tenho dinheiro, viajo."
    ],
-   "nivel": "VI",
+   "nivel": "B2",
    "tags": [
     "conjugação",
     "subjuntivo",
-    "condicional"
+    "condicional",
+    "irregular"
    ],
    "nota": "Imperfeito do subjuntivo + condicional, igual ao português.",
    "formasEs": {
@@ -5960,11 +5999,12 @@ window.CARDS_RAW = {
     "Eu virei antes.",
     "Eu venho antes."
    ],
-   "nivel": "VI",
+   "nivel": "C1",
    "tags": [
     "conjugação",
     "condicional",
-    "haber"
+    "haber",
+    "irregular"
    ],
    "nota": "'Haber' no condicional: habría, habrías, habría. Serve para o 'teria feito'.",
    "formasEs": {
@@ -5989,7 +6029,7 @@ window.CARDS_RAW = {
     "Eu falarei espanhol.",
     "Eu falaria espanhol."
    ],
-   "nivel": "VR",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
@@ -6018,7 +6058,7 @@ window.CARDS_RAW = {
     "Ela comerá cedo.",
     "Ela comeria cedo."
    ],
-   "nivel": "VR",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito",
@@ -6049,7 +6089,7 @@ window.CARDS_RAW = {
     "Nós moraríamos aqui.",
     "Nós teríamos morado aqui."
    ],
-   "nivel": "VR",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
@@ -6077,7 +6117,7 @@ window.CARDS_RAW = {
     "Eu trabalharei muito.",
     "Eu trabalharia muito."
    ],
-   "nivel": "VR",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "imperfeito",
@@ -6107,7 +6147,7 @@ window.CARDS_RAW = {
     "Eles estudavam amanhã.",
     "Eles estudariam amanhã."
    ],
-   "nivel": "VR",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "futuro",
@@ -6138,7 +6178,7 @@ window.CARDS_RAW = {
     "Eu tomarei um café.",
     "Eu tomo um café."
    ],
-   "nivel": "VR",
+   "nivel": "B1",
    "tags": [
     "conjugação",
     "condicional",
@@ -6169,11 +6209,12 @@ window.CARDS_RAW = {
     "Nós terminaríamos.",
     "Nós tínhamos terminado."
    ],
-   "nivel": "VR",
+   "nivel": "A2",
    "tags": [
     "conjugação",
     "pretérito perfeito",
-    "haber"
+    "haber",
+    "regular"
    ],
    "nota": "O espanhol usa muito o 'he/has/ha/hemos + particípio' onde o português usa o passado simples.",
    "formasEs": {
@@ -6198,7 +6239,7 @@ window.CARDS_RAW = {
     "Estaria comendo.",
     "Tinha comido."
    ],
-   "nivel": "VR",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "gerúndio",
@@ -6227,11 +6268,12 @@ window.CARDS_RAW = {
     "Eu não gostarei de esperar.",
     "Eu não gostaria de esperar."
    ],
-   "nivel": "VR",
+   "nivel": "A1",
    "tags": [
     "conjugação",
     "presente",
-    "gustar"
+    "gustar",
+    "regular"
    ],
    "nota": "'Gustar' inverte: quem gosta vira objeto indireto. 'Me gusta' = a mim agrada.",
    "formasEs": {
@@ -6258,11 +6300,12 @@ window.CARDS_RAW = {
     "Eu peguei o copo rápido.",
     "Eu enchi o copo de novo."
    ],
-   "nivel": "VI",
+   "nivel": "B2",
    "tags": [
     "conjugação",
     "pretérito",
-    "caer"
+    "caer",
+    "irregular"
    ],
    "nota": "O 'se me' tira a culpa: não foi você que derrubou, aconteceu. E 'vaso' = copo.",
    "formasEs": {

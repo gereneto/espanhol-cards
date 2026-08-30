@@ -14,14 +14,11 @@ window.Motor = (function () {
     frase:   { multipla: [7000, 20000], escrita: [15000, 45000] }
   };
 
-  /* Além do CEFR, duas trilhas próprias de conjugação verbal, que não cabem
-     bem numa faixa de proficiência — irregular do A2 é irregular no C1. */
-  const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'VR', 'VI'];
-
-  const ROTULO_NIVEL = {
-    A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'C1', C2: 'C2',
-    VR: 'verbo regular', VI: 'verbo irregular'
-  };
+  /* Um eixo só: o CEFR. Conjugação é assunto de etiqueta ('conjugação',
+     'irregular', 'pretérito'), não de faixa — o nível de um card de verbo
+     sai da frequência do verbo somada à dificuldade do tempo. */
+  const NIVEIS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  const ROTULO_NIVEL = { A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'C1', C2: 'C2' };
 
   /* ── normalização de texto para comparar respostas ──
      Aqui só entra o que é a MESMA resposta escrita de outro jeito: acento,
