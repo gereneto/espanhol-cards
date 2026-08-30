@@ -2,7 +2,7 @@
 window.CARDS_RAW = {
  "versao": 1,
  "gerado_em": "2026-08-30",
- "total": 249,
+ "total": 361,
  "cards": [
   {
    "id": "p001",
@@ -6314,6 +6314,2467 @@ window.CARDS_RAW = {
     "Se me caerá el vaso": "futuro",
     "Se me caería el vaso": "condicional"
    }
+  },
+  {
+   "id": "p101",
+   "tipo": "palavra",
+   "es": "la goma de borrar",
+   "pt": "a borracha de apagar",
+   "aceitas": [
+    "borracha",
+    "borracha de apagar"
+   ],
+   "distratores": [
+    "a goma de mascar",
+    "a cola de papel",
+    "a fita de medir",
+    "a tinta de escrever"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "escola"
+   ],
+   "nota": "Par de 'borracho' (bêbado). Aqui o material é 'goma'; na América Latina, 'borrador'."
+  },
+  {
+   "id": "p102",
+   "tipo": "palavra",
+   "es": "el pegamento",
+   "pt": "a cola",
+   "aceitas": [
+    "cola",
+    "grude",
+    "adesivo"
+   ],
+   "distratores": [
+    "o pagamento",
+    "o pigmento",
+    "o pedaço",
+    "o pente"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "escola"
+   ],
+   "nota": "'Cola' em espanhol é rabo ou fila. A cola de colar é 'pegamento'."
+  },
+  {
+   "id": "p103",
+   "tipo": "palavra",
+   "es": "el jarrón",
+   "pt": "o vaso de flores",
+   "aceitas": [
+    "vaso",
+    "vaso de flores",
+    "jarro",
+    "floreira"
+   ],
+   "distratores": [
+    "o copo de água",
+    "o jarro de suco",
+    "o prato de sopa",
+    "o balde de areia"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "casa"
+   ],
+   "nota": "Par de 'vaso' (copo). O vaso de flores é 'jarrón' ou 'florero'."
+  },
+  {
+   "id": "p104",
+   "tipo": "palavra",
+   "es": "el ratón",
+   "pt": "o rato",
+   "aceitas": [
+    "rato",
+    "camundongo",
+    "mouse"
+   ],
+   "distratores": [
+    "o rastro",
+    "o retorno",
+    "o rincão",
+    "o rodo"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "animais"
+   ],
+   "nota": "Par de 'un rato' (um tempinho). O animal é 'ratón' — e o do computador também."
+  },
+  {
+   "id": "p105",
+   "tipo": "palavra",
+   "es": "la clase",
+   "pt": "a aula",
+   "aceitas": [
+    "aula",
+    "licao",
+    "materia"
+   ],
+   "distratores": [
+    "a classe social",
+    "a chave",
+    "a cláusula",
+    "a clareira"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "falso-amigo",
+    "escola"
+   ],
+   "nota": "Par de 'aula' (sala). A aula em si é 'clase'."
+  },
+  {
+   "id": "p106",
+   "tipo": "palavra",
+   "es": "el niño",
+   "pt": "a criança",
+   "aceitas": [
+    "crianca",
+    "menino",
+    "garoto"
+   ],
+   "distratores": [
+    "o ninho",
+    "o nervo",
+    "o ninguém",
+    "o nível"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Par de 'crianza' (criação). Criança é 'niño' ou 'niña'."
+  },
+  {
+   "id": "p107",
+   "tipo": "palavra",
+   "es": "el soborno",
+   "pt": "o suborno",
+   "aceitas": [
+    "suborno",
+    "propina ilegal",
+    "corrupcao"
+   ],
+   "distratores": [
+    "o sobrenome",
+    "o sobrado",
+    "o soborno de festa",
+    "o sobressalto"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Par de 'propina' (gorjeta). O suborno é 'soborno'."
+  },
+  {
+   "id": "p108",
+   "tipo": "palavra",
+   "es": "el jamón",
+   "pt": "o presunto",
+   "aceitas": [
+    "presunto",
+    "fiambre"
+   ],
+   "distratores": [
+    "o jarro",
+    "o jantar",
+    "o jaleco",
+    "o jasmim"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "comida"
+   ],
+   "nota": "Par de 'presunto' (suposto). O embutido é 'jamón'."
+  },
+  {
+   "id": "p109",
+   "tipo": "palavra",
+   "es": "despertarse",
+   "pt": "acordar",
+   "aceitas": [
+    "acordar",
+    "despertar",
+    "levantar"
+   ],
+   "distratores": [
+    "desistir",
+    "despedir",
+    "despachar",
+    "desprezar"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "verbo"
+   ],
+   "nota": "Par de 'acordarse' (lembrar-se). Acordar do sono é 'despertarse'."
+  },
+  {
+   "id": "p110",
+   "tipo": "palavra",
+   "es": "la escena",
+   "pt": "a cena",
+   "aceitas": [
+    "cena",
+    "cena de filme",
+    "sequencia"
+   ],
+   "distratores": [
+    "a escada",
+    "a escola",
+    "a esquina",
+    "a escova"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Par de 'cena' (jantar). A cena de filme é 'escena'."
+  },
+  {
+   "id": "p111",
+   "tipo": "palavra",
+   "es": "el apodo",
+   "pt": "o apelido",
+   "aceitas": [
+    "apelido",
+    "alcunha",
+    "codinome"
+   ],
+   "distratores": [
+    "o apoio",
+    "o aposento",
+    "o apogeu",
+    "o apetite"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Par de 'apellido' (sobrenome). O apelido é 'apodo' ou 'sobrenombre'."
+  },
+  {
+   "id": "p112",
+   "tipo": "palavra",
+   "es": "el éxito",
+   "pt": "o sucesso",
+   "aceitas": [
+    "sucesso",
+    "exito",
+    "triunfo"
+   ],
+   "distratores": [
+    "a saída",
+    "o exame",
+    "o exílio",
+    "o exército"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Não confunda com 'salida' (saída). E sucesso em espanhol não é 'suceso'."
+  },
+  {
+   "id": "p113",
+   "tipo": "palavra",
+   "es": "el suceso",
+   "pt": "o acontecimento",
+   "aceitas": [
+    "acontecimento",
+    "ocorrencia",
+    "fato",
+    "evento"
+   ],
+   "distratores": [
+    "o sucesso",
+    "o sucessor",
+    "o suspiro",
+    "o sustento"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "Falso amigo perigoso: 'suceso' é acontecimento, às vezes ruim. Sucesso é 'éxito'."
+  },
+  {
+   "id": "p114",
+   "tipo": "palavra",
+   "es": "el disgusto",
+   "pt": "o aborrecimento",
+   "aceitas": [
+    "aborrecimento",
+    "desgosto",
+    "desagrado",
+    "chateacao"
+   ],
+   "distratores": [
+    "o desgaste",
+    "o desconto",
+    "o descuido",
+    "o desfecho"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "'Llevarse un disgusto' = levar um desgosto. Não é 'nojo', que é 'asco'."
+  },
+  {
+   "id": "p115",
+   "tipo": "palavra",
+   "es": "la copa",
+   "pt": "a taça",
+   "aceitas": [
+    "taca",
+    "calice",
+    "copo de vinho"
+   ],
+   "distratores": [
+    "a copa da casa",
+    "a capa",
+    "a cópia",
+    "a coroa"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "casa"
+   ],
+   "nota": "Par de 'vaso' (copo). A taça é 'copa' — e a Copa do Mundo também."
+  },
+  {
+   "id": "p116",
+   "tipo": "palavra",
+   "es": "la tasa",
+   "pt": "a taxa",
+   "aceitas": [
+    "taxa",
+    "indice",
+    "alíquota"
+   ],
+   "distratores": [
+    "a tábua",
+    "a tampa",
+    "a tarefa",
+    "a torre"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "'Tasa de interés' = taxa de juros. Não confunda com 'taza' (xícara)."
+  },
+  {
+   "id": "p117",
+   "tipo": "palavra",
+   "es": "el postre",
+   "pt": "a sobremesa",
+   "aceitas": [
+    "sobremesa",
+    "doce"
+   ],
+   "distratores": [
+    "o posto",
+    "o poste",
+    "o pôster",
+    "o portão"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "comida"
+   ],
+   "nota": "Par de 'sobremesa' (conversa após a refeição). O doce é 'postre'."
+  },
+  {
+   "id": "p118",
+   "tipo": "palavra",
+   "es": "el techo",
+   "pt": "o teto",
+   "aceitas": [
+    "teto",
+    "forro",
+    "telhado"
+   ],
+   "distratores": [
+    "o trecho",
+    "o tecido",
+    "o tédio",
+    "o termo"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "'Techo' é o teto; o telhado por fora é 'tejado'."
+  },
+  {
+   "id": "p119",
+   "tipo": "palavra",
+   "es": "la pared",
+   "pt": "a parede",
+   "aceitas": [
+    "parede",
+    "muro"
+   ],
+   "distratores": [
+    "a parada",
+    "a partida",
+    "a paridade",
+    "a paróquia"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Muro externo é 'muro'; parede de dentro é 'pared'."
+  },
+  {
+   "id": "p120",
+   "tipo": "palavra",
+   "es": "la silla",
+   "pt": "a cadeira",
+   "aceitas": [
+    "cadeira",
+    "assento"
+   ],
+   "distratores": [
+    "a sela",
+    "a sílaba",
+    "a silhueta",
+    "a sirene"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Lembre que 'cadera' é quadril. 'Silla' é a cadeira de sentar."
+  },
+  {
+   "id": "p121",
+   "tipo": "palavra",
+   "es": "el cuchillo",
+   "pt": "a faca",
+   "aceitas": [
+    "faca"
+   ],
+   "distratores": [
+    "a colher",
+    "o cachimbo",
+    "o cochilo",
+    "o cacho"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa",
+    "comida"
+   ],
+   "nota": "Talheres: cuchillo (faca), tenedor (garfo), cuchara (colher)."
+  },
+  {
+   "id": "p122",
+   "tipo": "palavra",
+   "es": "el tenedor",
+   "pt": "o garfo",
+   "aceitas": [
+    "garfo"
+   ],
+   "distratores": [
+    "o tenente",
+    "o tendão",
+    "o tenor",
+    "o teor"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa",
+    "comida"
+   ],
+   "nota": "De 'tener' (segurar). Cuidado: 'cubierto' é o talher em geral."
+  },
+  {
+   "id": "p123",
+   "tipo": "palavra",
+   "es": "la cuchara",
+   "pt": "a colher",
+   "aceitas": [
+    "colher",
+    "colherada"
+   ],
+   "distratores": [
+    "a cachoeira",
+    "a caçarola",
+    "a cortina",
+    "a cabana"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa",
+    "comida"
+   ],
+   "nota": "A colher de chá é 'cucharita' ou 'cucharilla'."
+  },
+  {
+   "id": "p124",
+   "tipo": "palavra",
+   "es": "la servilleta",
+   "pt": "o guardanapo",
+   "aceitas": [
+    "guardanapo"
+   ],
+   "distratores": [
+    "a serventia",
+    "a cervejaria",
+    "a serpente",
+    "a sobrancelha"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "comida"
+   ],
+   "nota": "De 'servir'. Nada a ver com 'servil'."
+  },
+  {
+   "id": "p125",
+   "tipo": "palavra",
+   "es": "el zumo",
+   "pt": "o suco",
+   "aceitas": [
+    "suco",
+    "sumo"
+   ],
+   "distratores": [
+    "o zumbido",
+    "o zelo",
+    "o zinco",
+    "o zunido"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "comida",
+    "Espanha"
+   ],
+   "nota": "Na Espanha é 'zumo'; na América Latina, 'jugo'."
+  },
+  {
+   "id": "p126",
+   "tipo": "palavra",
+   "es": "el melocotón",
+   "pt": "o pêssego",
+   "aceitas": [
+    "pessego"
+   ],
+   "distratores": [
+    "o melão",
+    "o marmelo",
+    "o mamão",
+    "o morango"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Na América Latina se diz 'durazno'."
+  },
+  {
+   "id": "p127",
+   "tipo": "palavra",
+   "es": "la piña",
+   "pt": "o abacaxi",
+   "aceitas": [
+    "abacaxi",
+    "ananas"
+   ],
+   "distratores": [
+    "a pinha",
+    "a pimenta",
+    "a pinça",
+    "a pintura"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Vem do formato de pinha. 'Piña colada' é literalmente abacaxi coado."
+  },
+  {
+   "id": "p128",
+   "tipo": "palavra",
+   "es": "la sandía",
+   "pt": "a melancia",
+   "aceitas": [
+    "melancia"
+   ],
+   "distratores": [
+    "a sandália",
+    "a sardinha",
+    "a sanfona",
+    "a santidade"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Do árabe. Não confunda com 'sandalia' (sandália)."
+  },
+  {
+   "id": "p129",
+   "tipo": "palavra",
+   "es": "la mantequilla",
+   "pt": "a manteiga",
+   "aceitas": [
+    "manteiga"
+   ],
+   "distratores": [
+    "a mantilha",
+    "a manta",
+    "a maquilagem",
+    "a mandíbula"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Na Argentina e no Uruguai se diz 'manteca'."
+  },
+  {
+   "id": "p130",
+   "tipo": "palavra",
+   "es": "el pollo",
+   "pt": "o frango",
+   "aceitas": [
+    "frango",
+    "galinha"
+   ],
+   "distratores": [
+    "o polvo",
+    "o pombo",
+    "o poço",
+    "o pólen"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Cuidado com 'polvo' (pó) e 'pulpo' (polvo). 'Pollo' é frango."
+  },
+  {
+   "id": "p131",
+   "tipo": "palavra",
+   "es": "el conejo",
+   "pt": "o coelho",
+   "aceitas": [
+    "coelho"
+   ],
+   "distratores": [
+    "o conselho",
+    "o convento",
+    "o condado",
+    "o consumo"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "animais"
+   ],
+   "nota": "Cuidado: 'consejo' é conselho. 'Conejo' é o bicho."
+  },
+  {
+   "id": "p132",
+   "tipo": "palavra",
+   "es": "el zorro",
+   "pt": "a raposa",
+   "aceitas": [
+    "raposa"
+   ],
+   "distratores": [
+    "o zangão",
+    "o zebu",
+    "o zumbido",
+    "o zíper"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "animais"
+   ],
+   "nota": "Também vira adjetivo: 'ser un zorro' = ser esperto."
+  },
+  {
+   "id": "p133",
+   "tipo": "palavra",
+   "es": "la abeja",
+   "pt": "a abelha",
+   "aceitas": [
+    "abelha"
+   ],
+   "distratores": [
+    "a ovelha",
+    "a aveia",
+    "a abóbada",
+    "a azeitona"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "animais"
+   ],
+   "nota": "Cuidado: 'oveja' é ovelha. Uma letra separa as duas."
+  },
+  {
+   "id": "p134",
+   "tipo": "palavra",
+   "es": "la mariposa",
+   "pt": "a borboleta",
+   "aceitas": [
+    "borboleta"
+   ],
+   "distratores": [
+    "a mariquinha",
+    "a margarida",
+    "a marina",
+    "a maravilha"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "animais"
+   ],
+   "nota": "Também é o nado borboleta."
+  },
+  {
+   "id": "p135",
+   "tipo": "palavra",
+   "es": "la hormiga",
+   "pt": "a formiga",
+   "aceitas": [
+    "formiga"
+   ],
+   "distratores": [
+    "a fôrma",
+    "a horta",
+    "a fumaça",
+    "a farinha"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "animais"
+   ],
+   "nota": "O f- do português virou h- mudo em espanhol: formiga/hormiga, fazer/hacer."
+  },
+  {
+   "id": "p136",
+   "tipo": "palavra",
+   "es": "la araña",
+   "pt": "a aranha",
+   "aceitas": [
+    "aranha"
+   ],
+   "distratores": [
+    "a arara",
+    "a areia",
+    "a armadilha",
+    "a arruela"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "animais"
+   ],
+   "nota": "O 'ñ' faz o som do nosso 'nh'."
+  },
+  {
+   "id": "p137",
+   "tipo": "palavra",
+   "es": "el bolsillo",
+   "pt": "o bolso",
+   "aceitas": [
+    "bolso",
+    "algibeira"
+   ],
+   "distratores": [
+    "a bolsa de mão",
+    "o bolinho",
+    "o boliche",
+    "o bolso de viagem"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "'Bolsa' é a bolsa; 'bolsillo' é o bolso da roupa."
+  },
+  {
+   "id": "p138",
+   "tipo": "palavra",
+   "es": "el cinturón",
+   "pt": "o cinto",
+   "aceitas": [
+    "cinto",
+    "cinturao",
+    "faixa"
+   ],
+   "distratores": [
+    "o cintilar",
+    "o cinema",
+    "o cimento",
+    "o cilindro"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "'Cinturón de seguridad' = cinto de segurança."
+  },
+  {
+   "id": "p139",
+   "tipo": "palavra",
+   "es": "la corbata",
+   "pt": "a gravata",
+   "aceitas": [
+    "gravata"
+   ],
+   "distratores": [
+    "a corveta",
+    "a corda",
+    "a cortina",
+    "a coroa"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "Vem de 'croata', pelo lenço que os croatas usavam no pescoço."
+  },
+  {
+   "id": "p140",
+   "tipo": "palavra",
+   "es": "los calcetines",
+   "pt": "as meias",
+   "aceitas": [
+    "meias",
+    "meia",
+    "soquetes"
+   ],
+   "distratores": [
+    "os calçados",
+    "as calças",
+    "os calcanhares",
+    "os cálculos"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "Meia-calça é 'medias' — justamente o falso amigo."
+  },
+  {
+   "id": "p141",
+   "tipo": "palavra",
+   "es": "las gafas",
+   "pt": "os óculos",
+   "aceitas": [
+    "oculos",
+    "lentes"
+   ],
+   "distratores": [
+    "as gavetas",
+    "as gaiolas",
+    "as garrafas",
+    "as galochas"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "Na América Latina se diz 'lentes' ou 'anteojos'."
+  },
+  {
+   "id": "p142",
+   "tipo": "palavra",
+   "es": "el paraguas",
+   "pt": "o guarda-chuva",
+   "aceitas": [
+    "guarda-chuva",
+    "guarda chuva",
+    "sombrinha"
+   ],
+   "distratores": [
+    "o para-brisa",
+    "o paradeiro",
+    "o parapeito",
+    "o paraquedas"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "objetos"
+   ],
+   "nota": "Literalmente 'para águas'. O de sol é 'sombrilla'."
+  },
+  {
+   "id": "p143",
+   "tipo": "palavra",
+   "es": "el jabón",
+   "pt": "o sabonete",
+   "aceitas": [
+    "sabonete",
+    "sabao"
+   ],
+   "distratores": [
+    "o jarro",
+    "o jabuti",
+    "o jantar",
+    "o javali"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "O mesmo 'j' com som de r forte. Sabão em pó é 'detergente'."
+  },
+  {
+   "id": "p144",
+   "tipo": "palavra",
+   "es": "la ducha",
+   "pt": "o chuveiro",
+   "aceitas": [
+    "chuveiro",
+    "banho",
+    "ducha"
+   ],
+   "distratores": [
+    "a dúvida",
+    "a dúzia",
+    "a doçura",
+    "a dobra"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "'Darse una ducha' = tomar banho."
+  },
+  {
+   "id": "p145",
+   "tipo": "palavra",
+   "es": "el espejo",
+   "pt": "o espelho",
+   "aceitas": [
+    "espelho"
+   ],
+   "distratores": [
+    "o espeto",
+    "o esparso",
+    "o espanto",
+    "o esporte"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "O 'j' espanhol soa como r forte: es-pe-ro."
+  },
+  {
+   "id": "p146",
+   "tipo": "palavra",
+   "es": "la almohada",
+   "pt": "o travesseiro",
+   "aceitas": [
+    "travesseiro",
+    "almofada de dormir"
+   ],
+   "distratores": [
+    "a almofada de sofá",
+    "a alavanca",
+    "a amêndoa",
+    "a armadura"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Do árabe, como quase toda palavra espanhola que começa com 'al-'."
+  },
+  {
+   "id": "p147",
+   "tipo": "palavra",
+   "es": "la sábana",
+   "pt": "o lençol",
+   "aceitas": [
+    "lencol"
+   ],
+   "distratores": [
+    "a savana",
+    "a sabedoria",
+    "a saboneteira",
+    "a sacola"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Acento na primeira sílaba: SÁ-ba-na. 'Sabana' sem acento é savana."
+  },
+  {
+   "id": "p148",
+   "tipo": "palavra",
+   "es": "el cajón",
+   "pt": "a gaveta",
+   "aceitas": [
+    "gaveta"
+   ],
+   "distratores": [
+    "o caixão",
+    "o caixote",
+    "o calção",
+    "o cachorro"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Caixão de defunto é 'ataúd'. 'Cajón' é a gaveta."
+  },
+  {
+   "id": "p149",
+   "tipo": "palavra",
+   "es": "el enchufe",
+   "pt": "a tomada",
+   "aceitas": [
+    "tomada",
+    "plugue",
+    "interruptor"
+   ],
+   "distratores": [
+    "o encaixe",
+    "o encanto",
+    "o enredo",
+    "o engate"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "'Tener enchufe' também significa ter pistolão, ter QI."
+  },
+  {
+   "id": "p150",
+   "tipo": "palavra",
+   "es": "la bombilla",
+   "pt": "a lâmpada",
+   "aceitas": [
+    "lampada"
+   ],
+   "distratores": [
+    "a bomba",
+    "a bombacha",
+    "a borboleta",
+    "a bússola"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "Na Argentina, 'bombilla' é o canudo do chimarrão."
+  },
+  {
+   "id": "p151",
+   "tipo": "palavra",
+   "es": "el mando",
+   "pt": "o controle remoto",
+   "aceitas": [
+    "controle remoto",
+    "controle",
+    "comando"
+   ],
+   "distratores": [
+    "o mandado judicial",
+    "o mandato do prefeito",
+    "o manuseio do aparelho",
+    "o manual de instruções"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "'Mando a distancia'. Também significa comando, chefia."
+  },
+  {
+   "id": "p152",
+   "tipo": "palavra",
+   "es": "la cerradura",
+   "pt": "a fechadura",
+   "aceitas": [
+    "fechadura",
+    "tranca"
+   ],
+   "distratores": [
+    "a serradura",
+    "a cercadura",
+    "a cerimônia",
+    "a cerveja"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "casa"
+   ],
+   "nota": "De 'cerrar' (fechar). Serragem é 'serrín'."
+  },
+  {
+   "id": "p153",
+   "tipo": "palavra",
+   "es": "el tornillo",
+   "pt": "o parafuso",
+   "aceitas": [
+    "parafuso"
+   ],
+   "distratores": [
+    "o torno",
+    "o torneio",
+    "o tornozelo",
+    "o torrão"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "objetos"
+   ],
+   "nota": "'Le falta un tornillo' = falta um parafuso, é meio doido."
+  },
+  {
+   "id": "p154",
+   "tipo": "palavra",
+   "es": "el martillo",
+   "pt": "o martelo",
+   "aceitas": [
+    "martelo"
+   ],
+   "distratores": [
+    "o martírio",
+    "o marcador",
+    "o mármore",
+    "o marfim"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "objetos"
+   ],
+   "nota": "Mesmo padrão de 'tornillo', 'bolsillo': o -illo é diminutivo."
+  },
+  {
+   "id": "p155",
+   "tipo": "palavra",
+   "es": "el ladrillo",
+   "pt": "o tijolo",
+   "aceitas": [
+    "tijolo"
+   ],
+   "distratores": [
+    "o ladrão",
+    "o ladrilho",
+    "o lado",
+    "o lamento"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "objetos"
+   ],
+   "nota": "Cuidado: ladrilho de piso é 'baldosa' ou 'azulejo'."
+  },
+  {
+   "id": "p156",
+   "tipo": "palavra",
+   "es": "el ascensor",
+   "pt": "o elevador",
+   "aceitas": [
+    "elevador"
+   ],
+   "distratores": [
+    "o ascendente",
+    "o acessório",
+    "o assento",
+    "o acesso"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "De 'ascender'. Na Colômbia e no México se diz 'elevador'."
+  },
+  {
+   "id": "p157",
+   "tipo": "palavra",
+   "es": "la acera",
+   "pt": "a calçada",
+   "aceitas": [
+    "calcada",
+    "passeio"
+   ],
+   "distratores": [
+    "a aceitação",
+    "a acerola",
+    "a açucena",
+    "a acidez"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "Na Argentina, 'vereda'. No México, 'banqueta'."
+  },
+  {
+   "id": "p158",
+   "tipo": "palavra",
+   "es": "el barrio",
+   "pt": "o bairro",
+   "aceitas": [
+    "bairro",
+    "vizinhanca"
+   ],
+   "distratores": [
+    "o barro",
+    "o barril",
+    "o barco",
+    "o barulho"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "'Barro' em espanhol é lama. O bairro é 'barrio'."
+  },
+  {
+   "id": "p159",
+   "tipo": "palavra",
+   "es": "el buzón",
+   "pt": "a caixa de correio",
+   "aceitas": [
+    "caixa de correio",
+    "caixa postal",
+    "caixa de mensagens"
+   ],
+   "distratores": [
+    "a caixa de sapato",
+    "a caixa de ferramentas",
+    "a caixa registradora",
+    "a caixa de música"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "'Buzón de voz' = caixa postal do telefone."
+  },
+  {
+   "id": "p160",
+   "tipo": "palavra",
+   "es": "el andén",
+   "pt": "a plataforma",
+   "aceitas": [
+    "plataforma",
+    "plataforma de embarque",
+    "gare"
+   ],
+   "distratores": [
+    "o andar do prédio",
+    "o andaime",
+    "o andamento",
+    "o anexo"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "A plataforma da estação de trem ou metrô."
+  },
+  {
+   "id": "p161",
+   "tipo": "palavra",
+   "es": "la maleta",
+   "pt": "a mala",
+   "aceitas": [
+    "mala",
+    "valise"
+   ],
+   "distratores": [
+    "a maleta de médico",
+    "a maldade",
+    "a maçaneta",
+    "a maquete"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "'Hacer la maleta' = fazer as malas."
+  },
+  {
+   "id": "p162",
+   "tipo": "palavra",
+   "es": "el equipaje",
+   "pt": "a bagagem",
+   "aceitas": [
+    "bagagem",
+    "malas"
+   ],
+   "distratores": [
+    "o equipamento",
+    "a equipe",
+    "o equívoco",
+    "o esquadro"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "Cuidado: 'equipo' é equipe ou equipamento. 'Equipaje' é bagagem."
+  },
+  {
+   "id": "p163",
+   "tipo": "palavra",
+   "es": "el fontanero",
+   "pt": "o encanador",
+   "aceitas": [
+    "encanador",
+    "bombeiro hidraulico",
+    "canalizador"
+   ],
+   "distratores": [
+    "o fazendeiro",
+    "o funileiro",
+    "o fabricante",
+    "o faxineiro"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "profissões"
+   ],
+   "nota": "Na América Latina, 'plomero'. De 'fontana' (fonte)."
+  },
+  {
+   "id": "p164",
+   "tipo": "palavra",
+   "es": "el albañil",
+   "pt": "o pedreiro",
+   "aceitas": [
+    "pedreiro",
+    "construtor"
+   ],
+   "distratores": [
+    "o alfaiate",
+    "o alferes",
+    "o almirante",
+    "o alpinista"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "profissões"
+   ],
+   "nota": "Do árabe 'al-banni' (construtor)."
+  },
+  {
+   "id": "p165",
+   "tipo": "palavra",
+   "es": "el cerrajero",
+   "pt": "o chaveiro",
+   "aceitas": [
+    "chaveiro",
+    "serralheiro"
+   ],
+   "distratores": [
+    "o cervejeiro",
+    "o carpinteiro",
+    "o cozinheiro",
+    "o costureiro"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "profissões"
+   ],
+   "nota": "De 'cerradura' (fechadura). O objeto chaveiro é 'llavero'."
+  },
+  {
+   "id": "p166",
+   "tipo": "palavra",
+   "es": "el sueldo",
+   "pt": "o salário",
+   "aceitas": [
+    "salario",
+    "ordenado",
+    "remuneracao"
+   ],
+   "distratores": [
+    "o solo",
+    "o sonho",
+    "o sussurro",
+    "o suplemento"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "Também 'salario'. 'Sueldo mínimo' = salário mínimo."
+  },
+  {
+   "id": "p167",
+   "tipo": "palavra",
+   "es": "la jubilación",
+   "pt": "a aposentadoria",
+   "aceitas": [
+    "aposentadoria",
+    "aposentacao",
+    "reforma"
+   ],
+   "distratores": [
+    "a jubilação escolar",
+    "a jubilosidade",
+    "a juventude",
+    "a jurisdição"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "'Jubilarse' = aposentar-se. Vem de júbilo, a alegria de parar."
+  },
+  {
+   "id": "p168",
+   "tipo": "palavra",
+   "es": "el paro",
+   "pt": "o desemprego",
+   "aceitas": [
+    "desemprego",
+    "desocupacao",
+    "greve"
+   ],
+   "distratores": [
+    "o parapeito",
+    "o paradeiro",
+    "o parecer",
+    "o parentesco"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho",
+    "Espanha"
+   ],
+   "nota": "'Estar en el paro' = estar desempregado. Também significa paralisação."
+  },
+  {
+   "id": "p169",
+   "tipo": "palavra",
+   "es": "el despido",
+   "pt": "a demissão",
+   "aceitas": [
+    "demissao",
+    "dispensa",
+    "desligamento"
+   ],
+   "distratores": [
+    "a despedida",
+    "o despertar",
+    "o despacho",
+    "o desprezo"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "Cuidado: 'despedida' é a despedida. 'Despido' é ser demitido."
+  },
+  {
+   "id": "p170",
+   "tipo": "palavra",
+   "es": "la beca",
+   "pt": "a bolsa de estudos",
+   "aceitas": [
+    "bolsa de estudos",
+    "bolsa",
+    "auxilio"
+   ],
+   "distratores": [
+    "a caixa de livros",
+    "a lista de espera",
+    "a carga de matérias",
+    "a prova de seleção"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "escola"
+   ],
+   "nota": "'Becario' é o bolsista, e também o estagiário."
+  },
+  {
+   "id": "p171",
+   "tipo": "palavra",
+   "es": "el borrador",
+   "pt": "o rascunho",
+   "aceitas": [
+    "rascunho",
+    "esboco",
+    "minuta"
+   ],
+   "distratores": [
+    "o bordado",
+    "o borrão",
+    "o botão",
+    "o boletim"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "escola"
+   ],
+   "nota": "De 'borrar' (apagar). Na América Latina também é a borracha de apagar."
+  },
+  {
+   "id": "p172",
+   "tipo": "palavra",
+   "es": "el titular",
+   "pt": "a manchete",
+   "aceitas": [
+    "manchete",
+    "cabecalho",
+    "titulo"
+   ],
+   "distratores": [
+    "o titulado",
+    "o tutor",
+    "o timbre",
+    "o tratado"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "mídia"
+   ],
+   "nota": "Também é o titular de um cargo ou de uma conta."
+  },
+  {
+   "id": "p173",
+   "tipo": "palavra",
+   "es": "el guion",
+   "pt": "o roteiro",
+   "aceitas": [
+    "roteiro",
+    "script",
+    "argumento"
+   ],
+   "distratores": [
+    "o guia turístico",
+    "o guarda",
+    "o guisado",
+    "o guindaste"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "mídia"
+   ],
+   "nota": "Também é o hífen na escrita. 'Guionista' é o roteirista."
+  },
+  {
+   "id": "p174",
+   "tipo": "palavra",
+   "es": "el estreno",
+   "pt": "a estreia",
+   "aceitas": [
+    "estreia",
+    "lancamento",
+    "abertura"
+   ],
+   "distratores": [
+    "o estranho",
+    "o estrondo",
+    "o estrago",
+    "o estilo"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "mídia"
+   ],
+   "nota": "De 'estrenar' (usar pela primeira vez), que já apareceu como verbo."
+  },
+  {
+   "id": "p175",
+   "tipo": "palavra",
+   "es": "la gira",
+   "pt": "a turnê",
+   "aceitas": [
+    "turne",
+    "excursao",
+    "tour"
+   ],
+   "distratores": [
+    "a girândola",
+    "a girafa",
+    "a gíria",
+    "a guirlanda"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "mídia"
+   ],
+   "nota": "De 'girar', rodar. 'Estar de gira' = estar em turnê."
+  },
+  {
+   "id": "p176",
+   "tipo": "palavra",
+   "es": "el repunte",
+   "pt": "a alta",
+   "aceitas": [
+    "alta",
+    "recuperacao",
+    "retomada",
+    "subida"
+   ],
+   "distratores": [
+    "o repique",
+    "o reparo",
+    "o repouso",
+    "o repasse"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "economia"
+   ],
+   "nota": "'Repunte económico' = retomada da economia. O oposto é 'caída'."
+  },
+  {
+   "id": "p177",
+   "tipo": "palavra",
+   "es": "el desplome",
+   "pt": "o desabamento",
+   "aceitas": [
+    "desabamento",
+    "despencada",
+    "colapso",
+    "queda brusca"
+   ],
+   "distratores": [
+    "o desdobramento",
+    "o deslocamento",
+    "o desperdício",
+    "o desconforto"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "economia"
+   ],
+   "nota": "Serve para prédio que cai e para bolsa que despenca."
+  },
+  {
+   "id": "p178",
+   "tipo": "palavra",
+   "es": "la injerencia",
+   "pt": "a ingerência",
+   "aceitas": [
+    "ingerencia",
+    "interferencia",
+    "intromissao"
+   ],
+   "distratores": [
+    "a ingestão",
+    "a inteligência",
+    "a indigência",
+    "a insurgência"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "política"
+   ],
+   "nota": "Cuidado com a grafia: injerencia com j, de 'injerir' (intrometer-se)."
+  },
+  {
+   "id": "p179",
+   "tipo": "palavra",
+   "es": "el atajo",
+   "pt": "o atalho",
+   "aceitas": [
+    "atalho",
+    "caminho curto"
+   ],
+   "distratores": [
+    "o ataque",
+    "o atado",
+    "o atraso",
+    "o ateísmo"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "De 'atajar' (cortar caminho). Não confunda com 'ataque'."
+  },
+  {
+   "id": "p180",
+   "tipo": "palavra",
+   "es": "el embuste",
+   "pt": "a mentira",
+   "aceitas": [
+    "mentira",
+    "lorota",
+    "embuste",
+    "peta"
+   ],
+   "distratores": [
+    "o embarque",
+    "o embutido",
+    "o embrulho",
+    "o emblema"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Embustero' é o mentiroso contumaz."
+  },
+  {
+   "id": "p181",
+   "tipo": "palavra",
+   "es": "el ahínco",
+   "pt": "o afinco",
+   "aceitas": [
+    "afinco",
+    "empenho",
+    "dedicacao",
+    "garra"
+   ],
+   "distratores": [
+    "o afogamento",
+    "o alento",
+    "o agrado",
+    "o arremate"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Con ahínco' = com afinco. O h é mudo: a-ÍN-co."
+  },
+  {
+   "id": "p182",
+   "tipo": "palavra",
+   "es": "la mesura",
+   "pt": "a moderação",
+   "aceitas": [
+    "moderacao",
+    "comedimento",
+    "mesura",
+    "equilibrio"
+   ],
+   "distratores": [
+    "a medição",
+    "a mensagem",
+    "a mestria",
+    "a mistura"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Sin mesura' = sem moderação. Não é a mesura de reverência."
+  },
+  {
+   "id": "p183",
+   "tipo": "palavra",
+   "es": "el óbice",
+   "pt": "o empecilho",
+   "aceitas": [
+    "empecilho",
+    "obice",
+    "obstaculo",
+    "impedimento"
+   ],
+   "distratores": [
+    "o ofício",
+    "o orifício",
+    "o obelisco",
+    "o obituário"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "substantivo",
+    "jurídico"
+   ],
+   "nota": "'No es óbice para' = não impede que. Bem formal."
+  },
+  {
+   "id": "p184",
+   "tipo": "palavra",
+   "es": "la inquina",
+   "pt": "a antipatia",
+   "aceitas": [
+    "antipatia",
+    "ojeriza",
+    "birra",
+    "rancor"
+   ],
+   "distratores": [
+    "a inquietude",
+    "a inquilina",
+    "a indagação",
+    "a insígnia"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Tenerle inquina a alguien' = ter ojeriza de alguém."
+  },
+  {
+   "id": "p185",
+   "tipo": "palavra",
+   "es": "el escarnio",
+   "pt": "o escárnio",
+   "aceitas": [
+    "escarnio",
+    "zombaria",
+    "deboche",
+    "humilhacao"
+   ],
+   "distratores": [
+    "o escarcéu",
+    "o escaninho",
+    "o escalão",
+    "o escrutínio"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Zombaria cruel, feita em público."
+  },
+  {
+   "id": "p186",
+   "tipo": "palavra",
+   "es": "el sosiego",
+   "pt": "o sossego",
+   "aceitas": [
+    "sossego",
+    "tranquilidade",
+    "calma",
+    "serenidade"
+   ],
+   "distratores": [
+    "o socorro",
+    "o soluço",
+    "o sortilégio",
+    "o sobressalto"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "'Sosegado' é o sossegado. Note o -ie- que o português não tem."
+  },
+  {
+   "id": "p187",
+   "tipo": "palavra",
+   "es": "el arrojo",
+   "pt": "a ousadia",
+   "aceitas": [
+    "ousadia",
+    "coragem",
+    "destemor",
+    "arrojo"
+   ],
+   "distratores": [
+    "o arroio",
+    "o arranjo",
+    "o arrocho",
+    "o arrepio"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "De 'arrojarse' (lançar-se). 'Arroyo' com y é riacho."
+  },
+  {
+   "id": "p188",
+   "tipo": "palavra",
+   "es": "la pesadumbre",
+   "pt": "o pesar",
+   "aceitas": [
+    "pesar",
+    "tristeza",
+    "aflicao",
+    "desgosto"
+   ],
+   "distratores": [
+    "a pesagem",
+    "a pescaria",
+    "a pesquisa",
+    "a peçonha"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Tristeza pesada e duradoura. Mesmo sufixo de 'muchedumbre' (multidão)."
+  },
+  {
+   "id": "p189",
+   "tipo": "palavra",
+   "es": "el marasmo",
+   "pt": "o marasmo",
+   "aceitas": [
+    "marasmo",
+    "estagnacao",
+    "apatia",
+    "paralisia"
+   ],
+   "distratores": [
+    "o mecanismo",
+    "o magnetismo",
+    "o materialismo",
+    "o militarismo"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Estagnação total, sem energia nem movimento."
+  },
+  {
+   "id": "p190",
+   "tipo": "palavra",
+   "es": "la argucia",
+   "pt": "o sofisma",
+   "aceitas": [
+    "sofisma",
+    "argucia",
+    "artimanha",
+    "subterfugio"
+   ],
+   "distratores": [
+    "a angústia",
+    "a arrogância",
+    "a ambiguidade",
+    "a artimanha honesta"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Argumento esperto mas falso, feito para enganar."
+  },
+  {
+   "id": "p191",
+   "tipo": "palavra",
+   "es": "remilgado",
+   "pt": "melindroso",
+   "aceitas": [
+    "melindroso",
+    "fresco",
+    "cheio de dedos",
+    "afetado"
+   ],
+   "distratores": [
+    "remendado",
+    "remediado",
+    "remoto",
+    "remanescente"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "'Remilgos' são os melindres, o fricote."
+  },
+  {
+   "id": "p192",
+   "tipo": "palavra",
+   "es": "escueto",
+   "pt": "sucinto",
+   "aceitas": [
+    "sucinto",
+    "conciso",
+    "enxuto",
+    "breve"
+   ],
+   "distratores": [
+    "escuro",
+    "escasso",
+    "esculpido",
+    "escorado"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "'Una respuesta escueta' = uma resposta seca, sem rodeios."
+  },
+  {
+   "id": "p193",
+   "tipo": "palavra",
+   "es": "aciago",
+   "pt": "aziago",
+   "aceitas": [
+    "aziago",
+    "funesto",
+    "infeliz",
+    "de mau agouro"
+   ],
+   "distratores": [
+    "acinzentado",
+    "acidentado",
+    "acalorado",
+    "acanhado"
+   ],
+   "nivel": "C2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "'Un día aciago' = um dia funesto, de má sorte."
+  },
+  {
+   "id": "p194",
+   "tipo": "palavra",
+   "es": "huraño",
+   "pt": "arredio",
+   "aceitas": [
+    "arredio",
+    "esquivo",
+    "insociavel",
+    "fechado"
+   ],
+   "distratores": [
+    "huguenote",
+    "humilde",
+    "hurrah",
+    "hospitaleiro"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Quem foge do convívio. Não confunda com 'huracán'."
+  },
+  {
+   "id": "p195",
+   "tipo": "palavra",
+   "es": "acaparar",
+   "pt": "açambarcar",
+   "aceitas": [
+    "acambarcar",
+    "monopolizar",
+    "concentrar",
+    "abocanhar",
+    "estocar"
+   ],
+   "distratores": [
+    "acalentar",
+    "acamparar",
+    "acautelar",
+    "acalorar"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Acaparar la atención' = monopolizar a atenção."
+  },
+  {
+   "id": "p196",
+   "tipo": "palavra",
+   "es": "esmerarse",
+   "pt": "caprichar",
+   "aceitas": [
+    "caprichar",
+    "esmerar-se",
+    "caprichar no trabalho",
+    "esforcar-se"
+   ],
+   "distratores": [
+    "esmagar-se",
+    "esmorecer",
+    "esmiuçar-se",
+    "espalhar-se"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Esmerarse en algo' = caprichar em algo. 'Esmero' é o capricho."
+  },
+  {
+   "id": "p197",
+   "tipo": "palavra",
+   "es": "rehuir",
+   "pt": "esquivar-se",
+   "aceitas": [
+    "esquivar-se",
+    "evitar",
+    "fugir de",
+    "escapar de"
+   ],
+   "distratores": [
+    "reunir",
+    "refluir",
+    "reluzir",
+    "rebuscar"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Rehuir la mirada' = desviar o olhar. O h é mudo: re-u-ÍR."
+  },
+  {
+   "id": "p198",
+   "tipo": "palavra",
+   "es": "acatar",
+   "pt": "acatar",
+   "aceitas": [
+    "acatar",
+    "obedecer",
+    "cumprir",
+    "respeitar"
+   ],
+   "distratores": [
+    "atacar",
+    "abater",
+    "apartar",
+    "acautelar"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Acatar una orden' = cumprir uma ordem. Cuidado com 'atacar'."
+  },
+  {
+   "id": "p199",
+   "tipo": "palavra",
+   "es": "vislumbrar",
+   "pt": "vislumbrar",
+   "aceitas": [
+    "vislumbrar",
+    "entrever",
+    "antever",
+    "perceber"
+   ],
+   "distratores": [
+    "visitar",
+    "vistoriar",
+    "vituperar",
+    "vivificar"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Ver de forma vaga, ou pressentir. Combina com 'atisbo'."
+  },
+  {
+   "id": "p200",
+   "tipo": "palavra",
+   "es": "zanjar",
+   "pt": "resolver",
+   "aceitas": [
+    "resolver",
+    "encerrar",
+    "liquidar",
+    "dirimir",
+    "por fim a"
+   ],
+   "distratores": [
+    "zangar",
+    "zarpar",
+    "zunir",
+    "zombar"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'Zanjar una discusión' = encerrar de vez uma discussão. De 'zanja' (vala)."
+  },
+  {
+   "id": "f101",
+   "tipo": "frase",
+   "es": "Se me hace agua la boca.",
+   "pt": "Estou com água na boca.",
+   "aceitas": [
+    "estou com agua na boca",
+    "fiquei com agua na boca",
+    "me da agua na boca",
+    "da agua na boca"
+   ],
+   "distratores": [
+    "Molhei a boca com água.",
+    "Bebi água pela boca.",
+    "Fiz um bochecho com água.",
+    "Lavei a boca com água."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "comida"
+   ],
+   "nota": "Mesma imagem do português, com a construção 'se me' do espanhol."
+  },
+  {
+   "id": "f102",
+   "tipo": "frase",
+   "es": "No tengo ni idea.",
+   "pt": "Não faço a menor ideia.",
+   "aceitas": [
+    "nao faco a menor ideia",
+    "nao faco ideia",
+    "nao tenho a menor ideia",
+    "sei la",
+    "nao tenho ideia"
+   ],
+   "distratores": [
+    "Não tenho uma ideia boa.",
+    "Tive uma ideia ruim.",
+    "Não gostei dessa ideia.",
+    "Faltou uma ideia melhor."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "O 'ni' reforça a negação, como o nosso 'a menor'."
+  },
+  {
+   "id": "f103",
+   "tipo": "frase",
+   "es": "Me pilló de sorpresa.",
+   "pt": "Me pegou de surpresa.",
+   "aceitas": [
+    "me pegou de surpresa",
+    "pegou de surpresa",
+    "me surpreendeu",
+    "me pegou desprevenido"
+   ],
+   "distratores": [
+    "Me deu uma surpresa boa.",
+    "Preparou uma surpresa.",
+    "Fiquei surpreso com ele.",
+    "Gostei da surpresa dele."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'Pillar' é o pegar coloquial da Espanha, que já apareceu sozinho."
+  },
+  {
+   "id": "f104",
+   "tipo": "frase",
+   "es": "Está para chuparse los dedos.",
+   "pt": "Está de lamber os dedos.",
+   "aceitas": [
+    "esta de lamber os dedos",
+    "de lamber os beicos",
+    "esta uma delicia",
+    "esta divino"
+   ],
+   "distratores": [
+    "Está sujo nos dedos.",
+    "Está quente nos dedos.",
+    "Está preso nos dedos.",
+    "Está grudado nos dedos."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "comida"
+   ],
+   "nota": "Elogio para comida muito boa."
+  },
+  {
+   "id": "f105",
+   "tipo": "frase",
+   "es": "Le salió el tiro por la culata.",
+   "pt": "O tiro saiu pela culatra.",
+   "aceitas": [
+    "o tiro saiu pela culatra",
+    "saiu pela culatra",
+    "o feitico virou contra o feiticeiro"
+   ],
+   "distratores": [
+    "O tiro passou de raspão.",
+    "O tiro acertou o alvo.",
+    "O tiro errou por pouco.",
+    "O tiro fez muito barulho."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Idêntica ao português: o plano se voltou contra quem o fez."
+  },
+  {
+   "id": "f106",
+   "tipo": "frase",
+   "es": "Se le hizo tarde.",
+   "pt": "Ele acabou se atrasando.",
+   "aceitas": [
+    "ele acabou se atrasando",
+    "ele se atrasou",
+    "ficou tarde para ele",
+    "ele perdeu a hora"
+   ],
+   "distratores": [
+    "Ele fez tudo tarde.",
+    "Ele chegou bem cedo.",
+    "Ele trabalhou até tarde.",
+    "Ele acordou muito tarde."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "A construção 'se le' tira a culpa: aconteceu com ele."
+  },
+  {
+   "id": "f107",
+   "tipo": "frase",
+   "es": "Vale la pena intentarlo.",
+   "pt": "Vale a pena tentar.",
+   "aceitas": [
+    "vale a pena tentar",
+    "vale tentar",
+    "merece uma tentativa",
+    "vale a pena tentar isso"
+   ],
+   "distratores": [
+    "Sinto pena de tentar.",
+    "Dá pena ver a tentativa.",
+    "Tentar custa muita pena.",
+    "A pena vale a tentativa."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "'Valer la pena' = valer a pena, idêntico ao português."
+  },
+  {
+   "id": "f108",
+   "tipo": "frase",
+   "es": "Está hasta las narices.",
+   "pt": "Está de saco cheio.",
+   "aceitas": [
+    "esta de saco cheio",
+    "nao aguenta mais",
+    "esta cheio disso",
+    "esta farto"
+   ],
+   "distratores": [
+    "Está com o nariz entupido.",
+    "Está com o nariz sangrando.",
+    "Está com a cara suja.",
+    "Está com o nariz frio."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão",
+    "Espanha"
+   ],
+   "nota": "Versão educada de uma expressão bem mais grosseira."
+  },
+  {
+   "id": "f109",
+   "tipo": "frase",
+   "es": "Ni fu ni fa.",
+   "pt": "Nem lá nem cá.",
+   "aceitas": [
+    "nem la nem ca",
+    "mais ou menos",
+    "nem bom nem ruim",
+    "assim assim",
+    "nem oito nem oitenta"
+   ],
+   "distratores": [
+    "Nem um nem outro veio.",
+    "Nem hoje nem amanhã.",
+    "Nem eu nem você sabia.",
+    "Nem antes nem depois disso."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Indiferença: nem bom nem ruim, tanto faz."
+  },
+  {
+   "id": "f110",
+   "tipo": "frase",
+   "es": "Me da corte preguntar.",
+   "pt": "Fico com vergonha de perguntar.",
+   "aceitas": [
+    "fico com vergonha de perguntar",
+    "tenho vergonha de perguntar",
+    "da vergonha perguntar",
+    "morro de vergonha de perguntar"
+   ],
+   "distratores": [
+    "Me irrita ter que perguntar.",
+    "Me custa caro perguntar.",
+    "Me atrasa muito perguntar.",
+    "Me obriga a ter que perguntar."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "Espanha"
+   ],
+   "nota": "'Dar corte' = dar vergonha, na Espanha. 'Cortado' é o envergonhado."
+  },
+  {
+   "id": "f111",
+   "tipo": "frase",
+   "es": "A ojo de buen cubero.",
+   "pt": "No olhômetro.",
+   "aceitas": [
+    "no olhometro",
+    "por alto",
+    "a olho",
+    "de olho",
+    "por estimativa"
+   ],
+   "distratores": [
+    "Com olhar experiente.",
+    "De olho aberto.",
+    "Sob olhares alheios.",
+    "Com um olho."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Calcular por estimativa, sem medir. O 'cubero' fazia barris a olho."
+  },
+  {
+   "id": "f112",
+   "tipo": "frase",
+   "es": "Más vale maña que fuerza.",
+   "pt": "Mais vale jeito que força.",
+   "aceitas": [
+    "mais vale jeito que forca",
+    "melhor jeito do que forca",
+    "vale mais a manha que a forca"
+   ],
+   "distratores": [
+    "Mais vale força que jeito.",
+    "Mais vale tarde que nunca.",
+    "Mais vale prevenir que remediar.",
+    "Mais vale pouco que nada."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "provérbio"
+   ],
+   "nota": "'Maña' é a habilidade, o jeito. Não confunda com 'mañana'."
   }
  ]
 };

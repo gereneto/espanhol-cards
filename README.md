@@ -3,8 +3,8 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **249 cards** — 99 palavras e 150 frases, sendo 33 falsos amigos
-(`embarazada`, `exquisito`, `oficina`, `cena`, `polvo`…) e 50 de conjugação
+São **361 cards** — 200 palavras e 161 frases, sendo 53 falsos amigos
+(`embarazada`, `exquisito`, `oficina`, `suceso`, `postre`…) e 50 de conjugação
 verbal, quase todos irregulares.
 
 ## Como funciona
