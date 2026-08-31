@@ -9,7 +9,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <title>Espanhol Cards</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇸</text></svg>">
-<link rel="stylesheet" href="style.css?v=5a1337f4">
+<link rel="stylesheet" href="style.css?v=e471d95c">
 </head>
 <body>
 
@@ -18,6 +18,7 @@
   <div class="placar" id="placar"></div>
   <nav class="acoes-topo">
     <button class="icone" id="btn-inicio" title="Página inicial">🏠</button>
+    <button class="icone" id="btn-cards" title="Todos os cards">🗂️</button>
     <button class="icone" id="btn-painel" title="Estatísticas">📊</button>
     <button class="icone" id="btn-config" title="Configurações">⚙️</button>
   </nav>
@@ -113,6 +114,45 @@
     </div>
   </section>
 
+  <!-- ══════════ TODOS OS CARDS ══════════ -->
+  <section id="tela-cards" class="tela oculto">
+    <h2>Todos os cards</h2>
+
+    <div class="filtros">
+      <input type="search" id="busca-cards" autocomplete="off"
+             placeholder="buscar em espanhol, português, tema ou nota…">
+      <div class="linha-filtros">
+        <label class="filtro">Tipo
+          <select id="filtro-tipo">
+            <option value="">todos</option>
+            <option value="palavra">palavras</option>
+            <option value="frase">frases</option>
+          </select>
+        </label>
+        <label class="filtro">Nível
+          <select id="filtro-nivel"><option value="">todos</option></select>
+        </label>
+        <label class="filtro">Tema
+          <select id="filtro-tag"><option value="">todos</option></select>
+        </label>
+        <label class="filtro">Situação
+          <select id="filtro-estado">
+            <option value="">todas</option>
+            <option value="novo">ainda não apareceu</option>
+            <option value="andamento">em andamento</option>
+            <option value="invertido">já na volta (pt → es)</option>
+            <option value="dominado">dominado</option>
+            <option value="errei">já errei alguma vez</option>
+          </select>
+        </label>
+      </div>
+      <p class="contagem" id="contagem-cards"></p>
+    </div>
+
+    <div id="lista-cards" class="lista-cards"></div>
+    <button class="secundario" data-voltar>Voltar</button>
+  </section>
+
   <!-- ══════════ PAINEL ══════════ -->
   <section id="tela-painel" class="tela oculto">
     <h2>Como você está indo</h2>
@@ -176,9 +216,9 @@
   <span id="rodape-sync">•</span>
 </footer>
 
-<script src="data/cards.js?v=5a1337f4"></script>
-<script src="js/motor.js?v=5a1337f4"></script>
-<script src="js/github.js?v=5a1337f4"></script>
-<script src="js/app.js?v=5a1337f4"></script>
+<script src="data/cards.js?v=e471d95c"></script>
+<script src="js/motor.js?v=e471d95c"></script>
+<script src="js/github.js?v=e471d95c"></script>
+<script src="js/app.js?v=e471d95c"></script>
 </body>
 </html>

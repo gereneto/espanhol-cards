@@ -264,3 +264,59 @@ label input:focus{outline:0;border-color:var(--acento)}
 }
 .link-contestar:hover{border-color:var(--acento);color:var(--acento)}
 .aviso-contestado{margin:9px 0 0;font-size:13px;color:var(--ok)}
+
+/* ── lista de todos os cards ── */
+.filtros{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;
+  padding:14px;margin-bottom:16px;position:sticky;top:66px;z-index:5;
+}
+#busca-cards{
+  width:100%;background:var(--fundo);border:1px solid var(--borda);
+  color:var(--texto);border-radius:10px;padding:11px 13px;font-size:15px;
+}
+#busca-cards:focus{outline:0;border-color:var(--acento)}
+.linha-filtros{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}
+.filtro{
+  display:flex;flex-direction:column;gap:4px;margin:0;flex:1;min-width:132px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--texto-2);
+}
+.filtro select{
+  background:var(--fundo);border:1px solid var(--borda);color:var(--texto);
+  border-radius:9px;padding:8px 9px;font:inherit;font-size:13.5px;text-transform:none;
+  letter-spacing:normal;
+}
+.filtro select:focus{outline:0;border-color:var(--acento)}
+.contagem{margin:11px 0 0;font-size:13px;color:var(--texto-2)}
+.contagem b{color:var(--texto)}
+
+.lista-cards{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.card-linha{
+  background:var(--fundo-2);border:1px solid var(--borda);
+  border-left:3px solid var(--borda);border-radius:10px;padding:12px 14px;
+}
+.card-linha.visto{border-left-color:var(--acento)}
+.card-linha.dominado{border-left-color:var(--ok)}
+.card-linha-topo{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+.card-linha .es{font-weight:650;color:#fff;font-size:16px}
+.card-linha .seta{color:var(--texto-2);font-size:13px}
+.card-linha .pt{color:var(--texto)}
+.card-linha-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.selo{
+  font-size:11px;border-radius:999px;padding:2px 9px;
+  border:1px solid var(--borda);color:var(--texto-2);background:var(--fundo-3);
+}
+.selo.nivel{color:var(--acento);border-color:rgba(255,179,71,.3);background:rgba(255,179,71,.12)}
+.selo.situacao.novo{opacity:.7}
+.selo.situacao.andamento{color:var(--acento)}
+.selo.situacao.invertido{color:var(--quase);border-color:rgba(255,209,102,.35)}
+.selo.situacao.dominado{color:var(--ok);border-color:rgba(61,220,151,.35)}
+.card-linha-nota{
+  color:var(--texto-2);font-size:13px;margin:9px 0 0;
+  border-left:2px solid var(--borda);padding-left:10px;
+}
+.vazio{color:var(--texto-2);text-align:center;padding:30px 0}
+
+@media (max-width:520px){
+  .filtros{position:static}
+  .filtro{min-width:calc(50% - 5px)}
+}

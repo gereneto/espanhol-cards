@@ -195,9 +195,22 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 | `1`–`3` | responde "já conhecia?" |
 | `1` / `2` | no quase-certo, "Acertei" / "Errei" |
 
-No topo, 🏠 volta para a página inicial de qualquer tela, 📊 abre as
-estatísticas e ⚙️ as configurações. O cabeçalho é fixo, então esses botões
+No topo, 🏠 volta para a página inicial de qualquer tela, 🗂️ abre a lista de
+todos os cards, 📊 as estatísticas e ⚙️ as configurações. O cabeçalho é fixo, então esses botões
 ficam sempre à mão.
+
+## Vendo o baralho inteiro
+
+O 🗂️ abre a lista completa, com busca e filtros por tipo, nível, tema e
+situação. A busca varre espanhol, português, tema e a nota — e usa a mesma
+normalização das respostas, então acento e plural não atrapalham. Vários termos
+somam: buscar `falso comida` traz só o que tem os dois.
+
+Cada linha mostra em que pé o card está: **ainda não apareceu**, **múltipla
+escolha**, **escrevendo em português**, **na volta (você produz o espanhol)** ou
+**dominado**, com o placar de certas e erradas. A barra colorida à esquerda dá o
+mesmo recado de relance — cinza para o que nunca saiu, laranja para o que está
+em curso, verde para o que já foi vencido nas duas direções.
 
 ## Estrutura
 

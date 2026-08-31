@@ -13,8 +13,10 @@
   const $ = s => document.querySelector(s);
   const el = {};
   [
-    'placar', 'btn-inicio', 'btn-painel', 'btn-config', 'resumo-inicio', 'btn-comecar',
-    'tela-inicio', 'tela-card', 'tela-painel', 'tela-config',
+    'placar', 'btn-inicio', 'btn-cards', 'btn-painel', 'btn-config', 'resumo-inicio', 'btn-comecar',
+    'tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards',
+    'busca-cards', 'filtro-tipo', 'filtro-nivel', 'filtro-tag', 'filtro-estado',
+    'contagem-cards', 'lista-cards',
     'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
@@ -99,7 +101,7 @@
   /* ═══════════════ telas ═══════════════ */
 
   function mostrar(tela) {
-    ['tela-inicio', 'tela-card', 'tela-painel', 'tela-config']
+    ['tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards']
       .forEach(t => el[t].classList.toggle('oculto', t !== tela));
   }
 
@@ -645,6 +647,101 @@
       '<th class="num">Acerto</th><th></th></tr>' + linhas + '</table>';
   }
 
+  /* ═══════════════ todos os cards ═══════════════ */
+
+  /* Situação de cada card, do jeito que interessa a quem está olhando a
+     lista: não pelo nome interno da etapa, mas pelo que falta fazer. */
+  function situacaoDe(id) {
+    const e = progresso.cards[id];
+    if (!e || !e.vistas) return { chave: 'novo', rotulo: 'ainda não apareceu' };
+    if (e.etapa === 'dominado') return { chave: 'dominado', rotulo: 'dominado nas duas direções' };
+    if (Motor.direcaoDe(e) === 'pt-es') return { chave: 'invertido', rotulo: 'na volta: você produz o espanhol' };
+    return {
+      chave: 'andamento',
+      rotulo: Motor.modoDe(e) === 'escrita' ? 'escrevendo em português' : 'múltipla escolha'
+    };
+  }
+
+  function montarFiltros() {
+    const niveis = Motor.NIVEIS.filter(n => CARDS.some(c => c.nivel === n));
+    niveis.forEach(n => {
+      el['filtro-nivel'].insertAdjacentHTML('beforeend',
+        '<option value="' + n + '">' + n + '</option>');
+    });
+
+    const conta = {};
+    CARDS.forEach(c => (c.tags || []).forEach(t => { conta[t] = (conta[t] || 0) + 1; }));
+    Object.keys(conta).sort((a, b) => conta[b] - conta[a] || a.localeCompare(b, 'pt'))
+      .forEach(t => {
+        el['filtro-tag'].insertAdjacentHTML('beforeend',
+          '<option value="' + escapar(t) + '">' + escapar(t) + ' (' + conta[t] + ')</option>');
+      });
+  }
+
+  function abrirCards() {
+    renderizarCards();
+    mostrar('tela-cards');
+  }
+
+  function renderizarCards() {
+    const busca = Motor.normalizar(el['busca-cards'].value);
+    const tipo = el['filtro-tipo'].value;
+    const nivel = el['filtro-nivel'].value;
+    const tag = el['filtro-tag'].value;
+    const estado = el['filtro-estado'].value;
+
+    const visiveis = CARDS.filter(c => {
+      if (tipo && c.tipo !== tipo) return false;
+      if (nivel && c.nivel !== nivel) return false;
+      if (tag && !(c.tags || []).includes(tag)) return false;
+
+      if (estado) {
+        const e = progresso.cards[c.id];
+        if (estado === 'errei') { if (!e || !e.erros) return false; }
+        else if (situacaoDe(c.id).chave !== estado) return false;
+      }
+
+      if (busca) {
+        const alvo = Motor.normalizar(
+          [c.es, c.pt, c.nota, (c.aceitas || []).join(' '), (c.tags || []).join(' ')].join(' '));
+        if (!busca.split(' ').every(termo => alvo.includes(termo))) return false;
+      }
+      return true;
+    });
+
+    el['contagem-cards'].innerHTML = visiveis.length === CARDS.length
+      ? 'Mostrando todos os <b>' + CARDS.length + '</b> cards.'
+      : 'Mostrando <b>' + visiveis.length + '</b> de ' + CARDS.length + ' cards.';
+
+    if (!visiveis.length) {
+      el['lista-cards'].innerHTML = '<p class="vazio">Nenhum card com esses filtros.</p>';
+      return;
+    }
+
+    el['lista-cards'].innerHTML = visiveis.map(c => {
+      const s = situacaoDe(c.id);
+      const e = progresso.cards[c.id];
+      const placar = e && e.vistas
+        ? '<span class="selo">' + e.acertos + ' certas · ' + e.erros + ' erradas</span>' : '';
+
+      return '<div class="card-linha ' + (s.chave === 'dominado' ? 'dominado' : s.chave !== 'novo' ? 'visto' : '') + '">' +
+        '<div class="card-linha-topo">' +
+          '<span class="es">' + escapar(c.es) + '</span>' +
+          '<span class="seta">→</span>' +
+          '<span class="pt">' + escapar(c.pt) + '</span>' +
+        '</div>' +
+        '<div class="card-linha-meta">' +
+          '<span class="selo nivel">' + escapar(c.nivel) + '</span>' +
+          '<span class="selo">' + c.tipo + '</span>' +
+          '<span class="selo situacao ' + s.chave + '">' + s.rotulo + '</span>' +
+          placar +
+          (c.tags || []).map(t => '<span class="selo">' + escapar(t) + '</span>').join('') +
+        '</div>' +
+        (c.nota ? '<p class="card-linha-nota">' + escapar(c.nota) + '</p>' : '') +
+      '</div>';
+    }).join('');
+  }
+
   /* ═══════════════ sincronização ═══════════════ */
 
   function statusSync(texto, classe) {
@@ -951,7 +1048,17 @@
   }
 
   el['btn-inicio'].addEventListener('click', irParaInicio);
+  el['btn-cards'].addEventListener('click', abrirCards);
   el['btn-painel'].addEventListener('click', abrirPainel);
+
+  ['filtro-tipo', 'filtro-nivel', 'filtro-tag', 'filtro-estado'].forEach(f => {
+    el[f].addEventListener('change', renderizarCards);
+  });
+  let esperaBusca = null;
+  el['busca-cards'].addEventListener('input', () => {
+    clearTimeout(esperaBusca);
+    esperaBusca = setTimeout(renderizarCards, 120);
+  });
   el['btn-config'].addEventListener('click', abrirConfig);
   document.querySelectorAll('[data-voltar]').forEach(b => {
     b.addEventListener('click', () => mostrar(cardAtual ? 'tela-card' : 'tela-inicio'));
@@ -1035,6 +1142,8 @@
   });
 
   /* ═══════════════ arranque ═══════════════ */
+
+  montarFiltros();
 
   progresso.totais.sessoes = (progresso.totais.sessoes || 0) + 1;
   salvarProgresso();
