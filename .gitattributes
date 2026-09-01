@@ -1,0 +1,8 @@
+# O fonte/build.js grava sempre com LF e calcula o ?v= dos assets a partir
+# dos bytes em disco. Com autocrlf o git devolveria CRLF no checkout, e aí
+# o mesmo conteúdo daria um carimbo diferente — clonar o repositório e
+# rodar o build sujava a árvore sem nada ter mudado.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
