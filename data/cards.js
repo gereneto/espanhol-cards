@@ -9,9 +9,16 @@ window.CARDS_RAW = {
    "tipo": "palavra",
    "es": "embarazada",
    "pt": "grávida",
+   "en": "pregnant",
    "aceitas": [
     "gravida",
     "prenha"
+   ],
+   "aceitasEn": [
+    "pregnant",
+    "expecting",
+    "with child",
+    "expecting a baby"
    ],
    "distratores": [
     "envergonhada",
@@ -19,17 +26,25 @@ window.CARDS_RAW = {
     "confusa",
     "embaraçada (cabelo)"
    ],
+   "distratoresEn": [
+    "embarrassed",
+    "exhausted",
+    "clumsy",
+    "furious"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Clássico falso amigo. 'Embarazada' = grávida. Envergonhada = 'avergonzada'."
+   "nota": "Clássico falso amigo. 'Embarazada' = grávida. Envergonhada = 'avergonzada'.",
+   "notaEn": "'Embarazada' means pregnant. To say you are embarrassed, use 'avergonzado' or turn it around with 'me da vergüenza'."
   },
   {
    "id": "p002",
    "tipo": "palavra",
    "es": "exquisito",
    "pt": "delicioso / requintado",
+   "en": "delicious",
    "aceitas": [
     "delicioso",
     "requintado",
@@ -37,23 +52,40 @@ window.CARDS_RAW = {
     "saboroso",
     "primoroso"
    ],
+   "aceitasEn": [
+    "delicious",
+    "exquisite",
+    "superb",
+    "delightful",
+    "lovely",
+    "refined",
+    "tasty"
+   ],
    "distratores": [
     "esquisito / estranho",
     "exigente / cheio de manias",
     "escasso / raro",
     "exausto / esgotado"
    ],
+   "distratoresEn": [
+    "fussy",
+    "scarce",
+    "strange",
+    "expensive"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Exquisito' é elogio: delicioso, requintado. Esquisito = 'raro' ou 'extraño'."
+   "nota": "'Exquisito' é elogio: delicioso, requintado. Esquisito = 'raro' ou 'extraño'.",
+   "notaEn": "'Exquisito' is praise, above all at the table: '¡Está exquisito!' is what you say when a meal is superb. It also covers refined taste or manners. Something strange is 'raro' or 'extraño'."
   },
   {
    "id": "p003",
    "tipo": "palavra",
    "es": "un rato",
    "pt": "um momento / um tempinho",
+   "en": "a while",
    "aceitas": [
     "um momento",
     "momento",
@@ -62,27 +94,52 @@ window.CARDS_RAW = {
     "instante",
     "um pouco"
    ],
+   "aceitasEn": [
+    "a while",
+    "a moment",
+    "a bit",
+    "a short while",
+    "a little while",
+    "a minute",
+    "while",
+    "moment"
+   ],
    "distratores": [
     "um rato / um camundongo",
     "um roubo / um furto",
     "um susto / um sobressalto",
     "um mouse / um ratinho"
    ],
+   "distratoresEn": [
+    "a rat",
+    "a robbery",
+    "a scare",
+    "a mouse"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Espera un rato' = espera um pouquinho. O animal rato = 'ratón'."
+   "nota": "'Espera un rato' = espera um pouquinho. O animal rato = 'ratón'.",
+   "notaEn": "'Espera un rato' = wait a while. It looks like 'rat' and is not: the animal is 'una rata', and the small one is 'un ratón'."
   },
   {
    "id": "p004",
    "tipo": "palavra",
    "es": "borracho",
    "pt": "bêbado",
+   "en": "drunk",
    "aceitas": [
     "bebado",
     "embriagado",
     "bebum"
+   ],
+   "aceitasEn": [
+    "drunk",
+    "drunken",
+    "intoxicated",
+    "wasted",
+    "plastered"
    ],
    "distratores": [
     "borracha de apagar",
@@ -90,21 +147,35 @@ window.CARDS_RAW = {
     "borrado, apagado",
     "mangueira"
    ],
+   "distratoresEn": [
+    "blurry",
+    "erased",
+    "dizzy",
+    "grumpy"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Borracho' = bêbado. Borracha de apagar = 'goma de borrar'."
+   "nota": "'Borracho' = bêbado. Borracha de apagar = 'goma de borrar'.",
+   "notaEn": "'Borracho' = drunk. Keep it apart from 'borroso' (blurry) and 'borrado' (erased), which come from 'borrar', to rub out."
   },
   {
    "id": "p005",
    "tipo": "palavra",
    "es": "la oficina",
    "pt": "o escritório",
+   "en": "the office",
    "aceitas": [
     "escritorio",
     "reparticao",
     "reparticão"
+   ],
+   "aceitasEn": [
+    "office",
+    "the office",
+    "workplace",
+    "the workplace"
    ],
    "distratores": [
     "a oficina mecânica",
@@ -112,22 +183,40 @@ window.CARDS_RAW = {
     "o ofício",
     "a oficina de arte"
    ],
+   "distratoresEn": [
+    "the workshop",
+    "the factory",
+    "the warehouse",
+    "the counter"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Oficina' = escritório. Oficina mecânica = 'taller'."
+   "nota": "'Oficina' = escritório. Oficina mecânica = 'taller'.",
+   "notaEn": "'La oficina' is the office where people work at desks. The place a car gets fixed is 'el taller', and a factory is 'la fábrica'."
   },
   {
    "id": "p006",
    "tipo": "palavra",
    "es": "el taller",
    "pt": "a oficina (mecânica) / o ateliê",
+   "en": "the workshop",
    "aceitas": [
     "oficina",
     "atelie",
     "oficina mecanica",
     "workshop"
+   ],
+   "aceitasEn": [
+    "workshop",
+    "the workshop",
+    "garage",
+    "the garage",
+    "repair shop",
+    "studio",
+    "the studio",
+    "atelier"
    ],
    "distratores": [
     "o talher (de mesa) / o garfo",
@@ -135,21 +224,38 @@ window.CARDS_RAW = {
     "o armazém (de secos) / o depósito",
     "o talho (de carnes) / o açougue"
    ],
+   "distratoresEn": [
+    "the tall one",
+    "the cutlery",
+    "the boutique",
+    "the warehouse"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Taller' = oficina, ateliê, também workshop. Talher = 'cubierto'."
+   "nota": "'Taller' = oficina, ateliê, também workshop. Talher = 'cubierto'.",
+   "notaEn": "'Taller' covers the mechanic's garage, an artist's studio and a hands-on training workshop. It has nothing to do with height — taller in that sense is 'más alto'."
   },
   {
    "id": "p007",
    "tipo": "palavra",
    "es": "el cachorro",
    "pt": "o filhote",
+   "en": "the puppy",
    "aceitas": [
     "filhote",
     "filhotinho",
     "cria"
+   ],
+   "aceitasEn": [
+    "puppy",
+    "the puppy",
+    "pup",
+    "the pup",
+    "cub",
+    "the cub",
+    "young animal"
    ],
    "distratores": [
     "o cachorro adulto",
@@ -157,20 +263,34 @@ window.CARDS_RAW = {
     "o caçador",
     "o cacho"
    ],
+   "distratoresEn": [
+    "the grown dog",
+    "the kennel",
+    "the leash",
+    "the litter"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Cachorro' = filhote (de qualquer animal). Cachorro (cão) = 'perro'."
+   "nota": "'Cachorro' = filhote (de qualquer animal). Cachorro (cão) = 'perro'.",
+   "notaEn": "'Cachorro' is the young of an animal — a puppy, a cub, a pup. A grown dog is 'el perro'."
   },
   {
    "id": "p008",
    "tipo": "palavra",
    "es": "el polvo",
    "pt": "o pó / a poeira",
+   "en": "the dust",
    "aceitas": [
     "po",
     "poeira"
+   ],
+   "aceitasEn": [
+    "dust",
+    "the dust",
+    "powder",
+    "the powder"
    ],
    "distratores": [
     "o polvo / o molusco",
@@ -178,21 +298,36 @@ window.CARDS_RAW = {
     "o povo / a gente",
     "o polo / o eixo"
    ],
+   "distratoresEn": [
+    "the octopus",
+    "the pulse",
+    "the pole",
+    "the crowd"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Polvo' = pó/poeira. O animal polvo = 'pulpo'."
+   "nota": "'Polvo' = pó/poeira. O animal polvo = 'pulpo'.",
+   "notaEn": "'Polvo' is dust on a shelf, or powder in a recipe. The octopus is 'el pulpo' — one letter apart, and easy to swap by accident."
   },
   {
    "id": "p009",
    "tipo": "palavra",
    "es": "la cena",
    "pt": "o jantar",
+   "en": "the dinner",
    "aceitas": [
     "jantar",
     "janta",
     "ceia"
+   ],
+   "aceitasEn": [
+    "dinner",
+    "the dinner",
+    "supper",
+    "the supper",
+    "evening meal"
    ],
    "distratores": [
     "a cena (de filme)",
@@ -200,19 +335,32 @@ window.CARDS_RAW = {
     "o cenário",
     "a cerimônia"
    ],
+   "distratoresEn": [
+    "the scene",
+    "the ash",
+    "the ceremony",
+    "the lunch"
+   ],
    "nivel": "A1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Cena' = jantar; 'cenar' = jantar (verbo). Cena de filme = 'escena'."
+   "nota": "'Cena' = jantar; 'cenar' = jantar (verbo). Cena de filme = 'escena'.",
+   "notaEn": "'La cena' is dinner, the evening meal, and 'cenar' is the verb that goes with it. Mind the neighbours: 'la escena' is a scene and 'la ceniza' is ash."
   },
   {
    "id": "p010",
    "tipo": "palavra",
    "es": "la escoba",
    "pt": "a vassoura",
+   "en": "the broom",
    "aceitas": [
     "vassoura"
+   ],
+   "aceitasEn": [
+    "broom",
+    "the broom",
+    "sweeping brush"
    ],
    "distratores": [
     "a escova",
@@ -220,21 +368,39 @@ window.CARDS_RAW = {
     "o esfregão",
     "a escória"
    ],
+   "distratoresEn": [
+    "the brush",
+    "the mop",
+    "the dustpan",
+    "the bucket"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Escoba' = vassoura. Escova = 'cepillo'."
+   "nota": "'Escoba' = vassoura. Escova = 'cepillo'.",
+   "notaEn": "'Escoba' = broom. Its neighbours in the cupboard: 'el cepillo' is a brush, 'la fregona' the mop, 'el recogedor' the dustpan."
   },
   {
    "id": "p011",
    "tipo": "palavra",
    "es": "la cola",
    "pt": "o rabo / a fila",
+   "en": "the tail / the queue",
    "aceitas": [
     "rabo",
     "fila",
     "cauda"
+   ],
+   "aceitasEn": [
+    "tail",
+    "queue",
+    "line",
+    "the tail",
+    "the queue",
+    "the line",
+    "tail or queue",
+    "tail or line"
    ],
    "distratores": [
     "a cola / o grude",
@@ -242,19 +408,33 @@ window.CARDS_RAW = {
     "o colar / o pingente",
     "a coluna / a espinha"
    ],
+   "distratoresEn": [
+    "the glue / the paste",
+    "the collar / the leash",
+    "the neck / the throat",
+    "the corner / the edge"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Cola' = rabo/cauda e também fila ('hacer cola'). Cola de colar = 'pegamento'."
+   "nota": "'Cola' = rabo/cauda e também fila ('hacer cola'). Cola de colar = 'pegamento'.",
+   "notaEn": "'Cola' is both a tail and a queue — 'hacer cola' is to queue up, or to stand in line. Glue is 'el pegamento'."
   },
   {
    "id": "p012",
    "tipo": "palavra",
    "es": "el vaso",
    "pt": "o copo",
+   "en": "the glass",
    "aceitas": [
     "copo"
+   ],
+   "aceitasEn": [
+    "glass",
+    "the glass",
+    "drinking glass",
+    "tumbler"
    ],
    "distratores": [
     "o vaso de flores",
@@ -262,20 +442,32 @@ window.CARDS_RAW = {
     "a vasilha",
     "o vasilhame"
    ],
+   "distratoresEn": [
+    "the vase",
+    "the toilet",
+    "the bowl",
+    "the jug"
+   ],
    "nivel": "A1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Vaso' = copo. Vaso de flores = 'jarrón' ou 'florero'."
+   "nota": "'Vaso' = copo. Vaso de flores = 'jarrón' ou 'florero'.",
+   "notaEn": "'Un vaso de agua' is a glass of water. A vase for flowers is 'un jarrón' or 'un florero', and a wine glass is 'una copa'."
   },
   {
    "id": "p013",
    "tipo": "palavra",
    "es": "largo",
    "pt": "comprido / longo",
+   "en": "long",
    "aceitas": [
     "comprido",
     "longo"
+   ],
+   "aceitasEn": [
+    "long",
+    "lengthy"
    ],
    "distratores": [
     "largo / amplo",
@@ -283,20 +475,32 @@ window.CARDS_RAW = {
     "farto / abundante",
     "folgado / frouxo"
    ],
+   "distratoresEn": [
+    "large",
+    "wide",
+    "narrow",
+    "loose"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Largo' = comprido. Largo (em largura) = 'ancho'."
+   "nota": "'Largo' = comprido. Largo (em largura) = 'ancho'.",
+   "notaEn": "'Largo' means long, in extension. Large in size is 'grande'; wide is 'ancho'. The pair 'largo/ancho' is length against width."
   },
   {
    "id": "p014",
    "tipo": "palavra",
    "es": "ancho",
    "pt": "largo (em largura)",
+   "en": "wide",
    "aceitas": [
     "largo",
     "amplo"
+   ],
+   "aceitasEn": [
+    "wide",
+    "broad"
    ],
    "distratores": [
     "comprido (em extensão)",
@@ -304,21 +508,38 @@ window.CARDS_RAW = {
     "alto (em altura)",
     "apertado (sem folga)"
    ],
+   "distratoresEn": [
+    "long",
+    "narrow",
+    "tall",
+    "tight"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Par do anterior: 'ancho' = largo; 'largo' = comprido."
+   "nota": "Par do anterior: 'ancho' = largo; 'largo' = comprido.",
+   "notaEn": "'Ancho' is wide — width, not length. Length is 'largo'. The nouns are 'la anchura' and 'la longitud'."
   },
   {
    "id": "p015",
    "tipo": "palavra",
    "es": "brincar",
    "pt": "pular / saltar",
+   "en": "to jump",
    "aceitas": [
     "pular",
     "saltar",
     "dar pulos"
+   ],
+   "aceitasEn": [
+    "to jump",
+    "jump",
+    "to leap",
+    "leap",
+    "to hop",
+    "hop",
+    "to bounce"
    ],
    "distratores": [
     "brincar / se divertir",
@@ -326,19 +547,35 @@ window.CARDS_RAW = {
     "provocar / cutucar",
     "dançar / rodopiar"
    ],
+   "distratoresEn": [
+    "to play",
+    "to run",
+    "to dance",
+    "to crawl"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Brincar' = pular. Brincar = 'jugar'."
+   "nota": "'Brincar' = pular. Brincar = 'jugar'.",
+   "notaEn": "'Brincar' is to jump or leap: 'el niño brincaba de alegría'. To play is 'jugar' — a different verb altogether."
   },
   {
    "id": "p016",
    "tipo": "palavra",
    "es": "el apellido",
    "pt": "o sobrenome",
+   "en": "the surname",
    "aceitas": [
     "sobrenome"
+   ],
+   "aceitasEn": [
+    "surname",
+    "the surname",
+    "last name",
+    "the last name",
+    "family name",
+    "the family name"
    ],
    "distratores": [
     "o apelido",
@@ -346,20 +583,34 @@ window.CARDS_RAW = {
     "a alcunha",
     "o pseudônimo"
    ],
+   "distratoresEn": [
+    "the nickname",
+    "the first name",
+    "the signature",
+    "the title"
+   ],
    "nivel": "A1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Apellido' = sobrenome. Apelido = 'apodo' ou 'sobrenombre'."
+   "nota": "'Apellido' = sobrenome. Apelido = 'apodo' ou 'sobrenombre'.",
+   "notaEn": "'Apellido' is the family name. In Spain and much of Latin America people carry two: the father's first, then the mother's. A nickname is 'un apodo'."
   },
   {
    "id": "p017",
    "tipo": "palavra",
    "es": "la propina",
    "pt": "a gorjeta",
+   "en": "the tip",
    "aceitas": [
     "gorjeta",
     "caixinha"
+   ],
+   "aceitasEn": [
+    "tip",
+    "the tip",
+    "gratuity",
+    "the gratuity"
    ],
    "distratores": [
     "a propina, o suborno",
@@ -367,22 +618,36 @@ window.CARDS_RAW = {
     "a multa",
     "a taxa"
    ],
+   "distratoresEn": [
+    "the bribe",
+    "the bill",
+    "the fine",
+    "the fee"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Propina' = gorjeta. Propina/suborno = 'soborno'."
+   "nota": "'Propina' = gorjeta. Propina/suborno = 'soborno'.",
+   "notaEn": "'La propina' is the tip you leave for service. A bribe is 'un soborno' — a very different transaction. In Spain tipping is modest and often skipped."
   },
   {
    "id": "p018",
    "tipo": "palavra",
    "es": "presunto",
    "pt": "suposto / presumido",
+   "en": "alleged",
    "aceitas": [
     "suposto",
     "presumido",
     "presumivel",
     "alegado"
+   ],
+   "aceitasEn": [
+    "alleged",
+    "presumed",
+    "supposed",
+    "suspected"
    ],
    "distratores": [
     "presunto / fiambre",
@@ -390,20 +655,36 @@ window.CARDS_RAW = {
     "preciso / exato",
     "presente / atual"
    ],
+   "distratoresEn": [
+    "presumptuous",
+    "precise",
+    "present",
+    "prosecuted"
+   ],
    "nivel": "B2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'El presunto asesino' = o suposto assassino. Presunto (comida) = 'jamón'."
+   "nota": "'El presunto asesino' = o suposto assassino. Presunto (comida) = 'jamón'.",
+   "notaEn": "'El presunto asesino' is the alleged killer — the word the police and the papers use before a conviction. It comes from 'presumir', to presume."
   },
   {
    "id": "p019",
    "tipo": "palavra",
    "es": "la crianza",
    "pt": "a criação / a educação (dos filhos)",
+   "en": "the upbringing",
    "aceitas": [
     "criacao",
     "educacao"
+   ],
+   "aceitasEn": [
+    "upbringing",
+    "the upbringing",
+    "raising",
+    "the raising",
+    "child rearing",
+    "parenting"
    ],
    "distratores": [
     "a criança / o menino (de colo)",
@@ -411,21 +692,35 @@ window.CARDS_RAW = {
     "o criado / o empregado (da casa)",
     "a criancice / a bobagem (de criança)"
    ],
+   "distratoresEn": [
+    "the childhood",
+    "the newborn",
+    "the nursery",
+    "the offspring"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Crianza' = criação/educação. Criança = 'niño' ou 'niña'."
+   "nota": "'Crianza' = criação/educação. Criança = 'niño' ou 'niña'.",
+   "notaEn": "'La crianza' is the raising of a child — how someone was brought up. It also names the ageing of wine: 'un vino de crianza'. The verb is 'criar'."
   },
   {
    "id": "p020",
    "tipo": "palavra",
    "es": "el aula",
    "pt": "a sala de aula",
+   "en": "the classroom",
    "aceitas": [
     "sala de aula",
     "sala",
     "classe"
+   ],
+   "aceitasEn": [
+    "classroom",
+    "the classroom",
+    "lecture room",
+    "the lecture room"
    ],
    "distratores": [
     "a aula de espanhol",
@@ -433,22 +728,36 @@ window.CARDS_RAW = {
     "o curso de idiomas",
     "o auditório da escola"
    ],
+   "distratoresEn": [
+    "the lesson",
+    "the lecture",
+    "the school",
+    "the desk"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Aula' = sala. Aula (lição) = 'clase'."
+   "nota": "'Aula' = sala. Aula (lição) = 'clase'.",
+   "notaEn": "'El aula' is the room, not the lesson — a lesson is 'una clase'. Mind the article: 'aula' is feminine but takes 'el' in the singular, because it opens with a stressed a. Plural, 'las aulas'."
   },
   {
    "id": "p021",
    "tipo": "palavra",
    "es": "acordarse",
    "pt": "lembrar-se",
+   "en": "to remember",
    "aceitas": [
     "lembrar",
     "lembrar-se",
     "recordar",
     "se lembrar"
+   ],
+   "aceitasEn": [
+    "to remember",
+    "remember",
+    "to recall",
+    "recall"
    ],
    "distratores": [
     "acordar, despertar",
@@ -456,19 +765,31 @@ window.CARDS_RAW = {
     "combinar",
     "adormecer"
    ],
+   "distratoresEn": [
+    "to wake up",
+    "to agree",
+    "to arrange",
+    "to notice"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Me acuerdo de ti' = lembro de você. Acordar = 'despertarse'."
+   "nota": "'Me acuerdo de ti' = lembro de você. Acordar = 'despertarse'.",
+   "notaEn": "'Me acuerdo de ti' = I remember you. It is reflexive and takes 'de'. Keep it apart from 'despertarse', to wake up, and from plain 'acordar', to agree on something."
   },
   {
    "id": "p022",
    "tipo": "palavra",
    "es": "todavía",
    "pt": "ainda",
+   "en": "still",
    "aceitas": [
     "ainda"
+   ],
+   "aceitasEn": [
+    "still",
+    "yet"
    ],
    "distratores": [
     "todavia, no entanto",
@@ -476,21 +797,36 @@ window.CARDS_RAW = {
     "sempre",
     "nunca mais"
    ],
+   "distratoresEn": [
+    "however",
+    "always",
+    "already",
+    "soon"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Todavía no' = ainda não. Todavia (contudo) = 'sin embargo'."
+   "nota": "'Todavía no' = ainda não. Todavia (contudo) = 'sin embargo'.",
+   "notaEn": "'Todavía' = still, and 'todavía no' = not yet. Its opposite number is 'ya': 'ya llegó' (he's here already) against 'todavía no llega'."
   },
   {
    "id": "p023",
    "tipo": "palavra",
    "es": "luego",
    "pt": "depois / mais tarde",
+   "en": "later",
    "aceitas": [
     "depois",
     "mais tarde",
     "em seguida"
+   ],
+   "aceitasEn": [
+    "later",
+    "afterwards",
+    "then",
+    "after that",
+    "next"
    ],
    "distratores": [
     "logo / imediatamente",
@@ -498,21 +834,39 @@ window.CARDS_RAW = {
     "longe / distante",
     "antes / previamente"
    ],
+   "distratoresEn": [
+    "immediately",
+    "before",
+    "far",
+    "meanwhile"
+   ],
    "nivel": "A1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Hasta luego' = até mais. Não é 'logo' no sentido de imediatamente."
+   "nota": "'Hasta luego' = até mais. Não é 'logo' no sentido de imediatamente.",
+   "notaEn": "'Hasta luego' is the everyday goodbye — see you later. It is not immediate: right away is 'ahora mismo' or 'enseguida'. In writing, 'luego' can also mean therefore."
   },
   {
    "id": "p024",
    "tipo": "palavra",
    "es": "el sitio",
    "pt": "o lugar",
+   "en": "the place",
    "aceitas": [
     "lugar",
     "local",
     "espaco"
+   ],
+   "aceitasEn": [
+    "place",
+    "the place",
+    "room",
+    "the room",
+    "space",
+    "the space",
+    "spot",
+    "the spot"
    ],
    "distratores": [
     "o site (internet)",
@@ -520,19 +874,34 @@ window.CARDS_RAW = {
     "o cerco",
     "a situação"
    ],
+   "distratoresEn": [
+    "the website",
+    "the siege",
+    "the situation",
+    "the farm"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'No hay sitio' = não tem lugar. Site = 'sitio web' ou 'página web'."
+   "nota": "'No hay sitio' = não tem lugar. Site = 'sitio web' ou 'página web'.",
+   "notaEn": "'No hay sitio' = there's no room. A website is 'un sitio web', the one place the English sense survives. 'Sitio' also means a siege, as in 'el sitio de Numancia'."
   },
   {
    "id": "p025",
    "tipo": "palavra",
    "es": "la salsa",
    "pt": "o molho",
+   "en": "the sauce",
    "aceitas": [
     "molho"
+   ],
+   "aceitasEn": [
+    "sauce",
+    "the sauce",
+    "gravy",
+    "the gravy",
+    "dressing"
    ],
    "distratores": [
     "a salsa (erva)",
@@ -540,20 +909,35 @@ window.CARDS_RAW = {
     "a salada",
     "o sal"
    ],
+   "distratoresEn": [
+    "the sausage",
+    "the salad",
+    "the parsley",
+    "the vinegar"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Salsa' = molho. A erva salsa = 'perejil'."
+   "nota": "'Salsa' = molho. A erva salsa = 'perejil'.",
+   "notaEn": "'La salsa' is any sauce — 'salsa de tomate', 'salsa verde'. The herb parsley is 'el perejil'. And yes, it is also the music and the dance."
   },
   {
    "id": "p026",
    "tipo": "palavra",
    "es": "zurdo",
    "pt": "canhoto",
+   "en": "left-handed",
    "aceitas": [
     "canhoto",
     "esquerdino"
+   ],
+   "aceitasEn": [
+    "left-handed",
+    "lefthanded",
+    "left handed",
+    "lefty",
+    "a lefty"
    ],
    "distratores": [
     "surdo",
@@ -561,20 +945,35 @@ window.CARDS_RAW = {
     "mudo",
     "torto"
    ],
+   "distratoresEn": [
+    "deaf",
+    "right-handed",
+    "clumsy",
+    "cross-eyed"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Zurdo' = canhoto. Surdo = 'sordo'."
+   "nota": "'Zurdo' = canhoto. Surdo = 'sordo'.",
+   "notaEn": "'Zurdo' = left-handed; the right-handed one is 'diestro'. Careful with 'sordo', deaf, which sits one letter away."
   },
   {
    "id": "p027",
    "tipo": "palavra",
    "es": "la cadera",
    "pt": "o quadril",
+   "en": "the hip",
    "aceitas": [
     "quadril",
     "anca"
+   ],
+   "aceitasEn": [
+    "hip",
+    "the hip",
+    "hips",
+    "the hips",
+    "hipbone"
    ],
    "distratores": [
     "a cadeira",
@@ -582,21 +981,37 @@ window.CARDS_RAW = {
     "a coluna",
     "a costela"
    ],
+   "distratoresEn": [
+    "the waist",
+    "the spine",
+    "the rib",
+    "the shoulder"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo",
     "corpo"
    ],
-   "nota": "'Cadera' = quadril. Cadeira = 'silla'."
+   "nota": "'Cadera' = quadril. Cadeira = 'silla'.",
+   "notaEn": "'La cadera' is the hip — the joint, and the shelf you rest a child on. The waist just above it is 'la cintura'."
   },
   {
    "id": "p028",
    "tipo": "palavra",
    "es": "la muñeca",
    "pt": "o pulso / a boneca",
+   "en": "the wrist / the doll",
    "aceitas": [
     "pulso",
     "boneca"
+   ],
+   "aceitasEn": [
+    "wrist",
+    "doll",
+    "the wrist",
+    "the doll",
+    "wrist or doll",
+    "the wrist or the doll"
    ],
    "distratores": [
     "o punho / a manga",
@@ -604,17 +1019,25 @@ window.CARDS_RAW = {
     "a moeda / o troco",
     "a mancha / o borrão"
    ],
+   "distratoresEn": [
+    "the fist / the glove",
+    "the elbow / the cushion",
+    "the ankle / the sock",
+    "the thumb / the ring"
+   ],
    "nivel": "B1",
    "tags": [
     "corpo"
    ],
-   "nota": "Tem os dois sentidos: a parte do braço e o brinquedo."
+   "nota": "Tem os dois sentidos: a parte do braço e o brinquedo.",
+   "notaEn": "'Muñeca' carries both: the wrist on your arm and a doll to play with. 'Me duele la muñeca' or 'una muñeca de trapo' — same word, and no thread joining them."
   },
   {
    "id": "p029",
    "tipo": "palavra",
    "es": "enfadado",
    "pt": "bravo / chateado",
+   "en": "angry",
    "aceitas": [
     "bravo",
     "chateado",
@@ -622,27 +1045,52 @@ window.CARDS_RAW = {
     "zangado",
     "com raiva"
    ],
+   "aceitasEn": [
+    "angry",
+    "cross",
+    "annoyed",
+    "mad",
+    "upset",
+    "irritated"
+   ],
    "distratores": [
     "enfadonho / chato",
     "cansado / exausto",
     "entediado / sem graça",
     "desanimado / pra baixo"
    ],
+   "distratoresEn": [
+    "bored",
+    "tired",
+    "annoying",
+    "discouraged"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Estoy enfadado' = estou bravo. Na América Latina usa-se mais 'enojado'."
+   "nota": "'Estoy enfadado' = estou bravo. Na América Latina usa-se mais 'enojado'.",
+   "notaEn": "'Estoy enfadado' = I'm angry. In Spain that is the everyday word; across Latin America you will hear 'enojado' far more often."
   },
   {
    "id": "p030",
    "tipo": "palavra",
    "es": "quitar",
    "pt": "tirar / remover",
+   "en": "to remove",
    "aceitas": [
     "tirar",
     "remover",
     "retirar"
+   ],
+   "aceitasEn": [
+    "to remove",
+    "remove",
+    "to take off",
+    "take off",
+    "to take away",
+    "take away",
+    "to get rid of"
    ],
    "distratores": [
     "quitar / saldar",
@@ -650,22 +1098,40 @@ window.CARDS_RAW = {
     "aquietar / acalmar",
     "desistir / abandonar"
    ],
+   "distratoresEn": [
+    "to pay off",
+    "to want",
+    "to calm",
+    "to give up"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "verbo"
    ],
-   "nota": "'Quítate de ahí' = sai daí. Quitar dívida = 'saldar' ou 'liquidar'."
+   "nota": "'Quítate de ahí' = sai daí. Quitar dívida = 'saldar' ou 'liquidar'.",
+   "notaEn": "'Quítate de ahí' = get out of the way. 'Quitar' is to take away or take off: 'quítate el abrigo', take off your coat. Reflexive, 'quitarse' is what you do to your own clothes."
   },
   {
    "id": "p031",
    "tipo": "palavra",
    "es": "tirar",
    "pt": "jogar fora / puxar",
+   "en": "to throw away / to pull",
    "aceitas": [
     "jogar fora",
     "puxar",
     "jogar"
+   ],
+   "aceitasEn": [
+    "to throw away",
+    "throw away",
+    "to pull",
+    "pull",
+    "to throw out",
+    "throw out",
+    "to chuck",
+    "pull or throw away"
    ],
    "distratores": [
     "tirar / remover",
@@ -673,22 +1139,38 @@ window.CARDS_RAW = {
     "esticar / alongar",
     "empurrar / apertar"
    ],
+   "distratoresEn": [
+    "to remove / to take off",
+    "to shoot / to fire",
+    "to stretch / to lengthen",
+    "to push / to press"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "verbo"
    ],
-   "nota": "Na porta, 'tirar' = puxar e 'empujar' = empurrar. Tirar (remover) = 'quitar'."
+   "nota": "Na porta, 'tirar' = puxar e 'empujar' = empurrar. Tirar (remover) = 'quitar'.",
+   "notaEn": "On a door, 'tirar' means pull and 'empujar' means push — worth learning before you shove. Elsewhere it is to throw away: 'tira eso a la basura'."
   },
   {
    "id": "p032",
    "tipo": "palavra",
    "es": "la pantalla",
    "pt": "a tela",
+   "en": "the screen",
    "aceitas": [
     "tela",
     "monitor",
     "ecra"
+   ],
+   "aceitasEn": [
+    "screen",
+    "the screen",
+    "display",
+    "the display",
+    "monitor",
+    "the monitor"
    ],
    "distratores": [
     "a calça",
@@ -696,21 +1178,37 @@ window.CARDS_RAW = {
     "a cortina",
     "o painel de controle"
    ],
+   "distratoresEn": [
+    "the trousers",
+    "the curtain",
+    "the keyboard",
+    "the poster"
+   ],
    "nivel": "A2",
    "tags": [
     "tecnologia"
    ],
-   "nota": "Tela de pintura = 'lienzo'. Cuidado para não confundir com 'pantalón'."
+   "nota": "Tela de pintura = 'lienzo'. Cuidado para não confundir com 'pantalón'.",
+   "notaEn": "'La pantalla' is the screen — of a phone, a television, or a cinema. Keep it apart from 'el pantalón', trousers, which it echoes. A painter's canvas is 'un lienzo'."
   },
   {
    "id": "p033",
    "tipo": "palavra",
    "es": "la asignatura",
    "pt": "a matéria / a disciplina",
+   "en": "the subject",
    "aceitas": [
     "materia",
     "disciplina",
     "cadeira"
+   ],
+   "aceitasEn": [
+    "subject",
+    "the subject",
+    "school subject",
+    "course",
+    "the course",
+    "module"
    ],
    "distratores": [
     "a assinatura / a rubrica",
@@ -718,23 +1216,40 @@ window.CARDS_RAW = {
     "a designação / a nomeação",
     "a atribuição / a tarefa"
    ],
+   "distratoresEn": [
+    "the signature",
+    "the assignment",
+    "the topic",
+    "the degree"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo",
     "escola"
    ],
-   "nota": "Assinatura (rubrica) = 'firma'."
+   "nota": "Assinatura (rubrica) = 'firma'.",
+   "notaEn": "'La asignatura' is a school or university subject. 'Asignatura pendiente' is one you still have to pass — and, figuratively, any unfinished business. A signature is 'una firma'."
   },
   {
    "id": "p034",
    "tipo": "palavra",
    "es": "la carrera",
    "pt": "o curso universitário / a corrida",
+   "en": "the degree / the race",
    "aceitas": [
     "curso",
     "curso universitario",
     "corrida",
     "graduacao"
+   ],
+   "aceitasEn": [
+    "degree",
+    "the degree",
+    "degree course",
+    "university course",
+    "race",
+    "the race",
+    "degree or race"
    ],
    "distratores": [
     "a carreira profissional / o cargo",
@@ -742,17 +1257,25 @@ window.CARDS_RAW = {
     "a estrada principal / a rodovia",
     "o carro de corrida / o automóvel"
    ],
+   "distratoresEn": [
+    "the career / the profession",
+    "the highway / the main road",
+    "the carriage / the cart",
+    "the racetrack / the circuit"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Estudio la carrera de Derecho' = curso Direito."
+   "nota": "'Estudio la carrera de Derecho' = curso Direito.",
+   "notaEn": "'Estudio la carrera de Derecho' = I'm doing a law degree. It is also a race: 'una carrera de caballos'. A career in the English sense is closer to 'la trayectoria profesional'."
   },
   {
    "id": "p035",
    "tipo": "palavra",
    "es": "el billete",
    "pt": "a passagem / a cédula",
+   "en": "the ticket / the banknote",
    "aceitas": [
     "passagem",
     "cedula",
@@ -760,27 +1283,54 @@ window.CARDS_RAW = {
     "bilhete",
     "ingresso"
    ],
+   "aceitasEn": [
+    "ticket",
+    "the ticket",
+    "banknote",
+    "the banknote",
+    "bill",
+    "note",
+    "fare",
+    "ticket or banknote"
+   ],
    "distratores": [
     "o bilhetinho / o recado",
     "o boleto / a fatura",
     "o bolso / a algibeira",
     "a bilheteria / a fila"
    ],
+   "distratoresEn": [
+    "the note / the message",
+    "the invoice / the bill",
+    "the wallet / the purse",
+    "the box office / the ticket queue"
+   ],
    "nivel": "A2",
    "tags": [
     "viagem"
    ],
-   "nota": "'Billete de tren' = passagem de trem; 'billete de 50 euros' = nota de 50."
+   "nota": "'Billete de tren' = passagem de trem; 'billete de 50 euros' = nota de 50.",
+   "notaEn": "'Billete de tren' is a train ticket; 'billete de 50 euros' is a fifty-euro note. Across much of Latin America the travel ticket is 'el boleto' instead."
   },
   {
    "id": "p036",
    "tipo": "palavra",
    "es": "madrugar",
    "pt": "acordar cedo",
+   "en": "to get up early",
    "aceitas": [
     "acordar cedo",
     "levantar cedo",
     "madrugar"
+   ],
+   "aceitasEn": [
+    "to get up early",
+    "get up early",
+    "to rise early",
+    "rise early",
+    "to wake up early",
+    "wake up early",
+    "to be an early riser"
    ],
    "distratores": [
     "virar a noite",
@@ -788,22 +1338,38 @@ window.CARDS_RAW = {
     "amadurecer",
     "atrasar-se"
    ],
+   "distratoresEn": [
+    "to stay up late",
+    "to sleep in",
+    "to grow older",
+    "to run late"
+   ],
    "nivel": "B1",
    "tags": [
     "verbo"
    ],
-   "nota": "'A quien madruga, Dios le ayuda' = Deus ajuda quem cedo madruga."
+   "nota": "'A quien madruga, Dios le ayuda' = Deus ajuda quem cedo madruga.",
+   "notaEn": "'A quien madruga, Dios le ayuda' — God helps the one who rises early. The noun is 'la madrugada', the small hours before dawn."
   },
   {
    "id": "p037",
    "tipo": "palavra",
    "es": "trasnochar",
    "pt": "virar a noite / dormir tarde",
+   "en": "to stay up all night",
    "aceitas": [
     "virar a noite",
     "dormir tarde",
     "passar a noite acordado",
     "varar a noite"
+   ],
+   "aceitasEn": [
+    "to stay up all night",
+    "stay up all night",
+    "to stay up late",
+    "stay up late",
+    "to be up all night",
+    "to pull an all nighter"
    ],
    "distratores": [
     "acordar cedo / madrugar",
@@ -811,20 +1377,35 @@ window.CARDS_RAW = {
     "sonhar / ter pesadelos",
     "trocar de turno / revezar"
    ],
+   "distratoresEn": [
+    "to get up early",
+    "to take a nap",
+    "to have nightmares",
+    "to work the night shift"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "Oposto de 'madrugar'."
+   "nota": "Oposto de 'madrugar'.",
+   "notaEn": "The opposite of 'madrugar'. 'Anoche trasnoché' = I was up all night. Someone who makes a habit of it is 'un trasnochador'."
   },
   {
    "id": "p038",
    "tipo": "palavra",
    "es": "friolero",
    "pt": "friorento",
+   "en": "sensitive to cold",
    "aceitas": [
     "friorento",
     "friolento"
+   ],
+   "aceitasEn": [
+    "sensitive to cold",
+    "cold sensitive",
+    "someone who feels the cold",
+    "who feels the cold",
+    "always cold"
    ],
    "distratores": [
     "gelado",
@@ -832,22 +1413,37 @@ window.CARDS_RAW = {
     "frígido",
     "indiferente"
    ],
+   "distratoresEn": [
+    "freezing cold",
+    "frozen stiff",
+    "cold hearted",
+    "immune to cold"
+   ],
    "nivel": "B1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Pessoa que sente muito frio. Na América Latina: 'friolento'."
+   "nota": "Pessoa que sente muito frio. Na América Latina: 'friolento'.",
+   "notaEn": "'Friolero' describes the person, not the weather: someone who feels the cold badly. 'Soy muy friolera' = I'm always cold. Across Latin America, 'friolento'."
   },
   {
    "id": "p039",
    "tipo": "palavra",
    "es": "empalagoso",
    "pt": "enjoativo (muito doce)",
+   "en": "sickly sweet",
    "aceitas": [
     "enjoativo",
     "enjoado",
     "empalagoso",
     "doce demais"
+   ],
+   "aceitasEn": [
+    "sickly sweet",
+    "too sweet",
+    "cloying",
+    "sickeningly sweet",
+    "overly sweet"
    ],
    "distratores": [
     "insosso (sem sal)",
@@ -855,17 +1451,25 @@ window.CARDS_RAW = {
     "azedo (como limão)",
     "apimentado (que arde)"
    ],
+   "distratoresEn": [
+    "bland",
+    "bitter",
+    "sour",
+    "spicy"
+   ],
    "nivel": "B2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Também se usa para pessoas melosas demais."
+   "nota": "Também se usa para pessoas melosas demais.",
+   "notaEn": "'Empalagoso' is too sweet to finish — the cake that defeats you halfway. It also describes a person who is cloying, all sugar and no substance."
   },
   {
    "id": "p040",
    "tipo": "palavra",
    "es": "soso",
    "pt": "sem sal / sem graça",
+   "en": "bland",
    "aceitas": [
     "sem sal",
     "sem graca",
@@ -873,23 +1477,39 @@ window.CARDS_RAW = {
     "sem tempero",
     "insipido"
    ],
+   "aceitasEn": [
+    "bland",
+    "tasteless",
+    "dull",
+    "insipid",
+    "boring",
+    "unsalted"
+   ],
    "distratores": [
     "salgado demais / forte",
     "apimentado / ardido",
     "engraçado / divertido",
     "suave / delicado"
    ],
+   "distratoresEn": [
+    "salty",
+    "spicy",
+    "funny",
+    "delicate"
+   ],
    "nivel": "B1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Vale para comida e para pessoas: 'es un chico soso' = é um cara sem graça."
+   "nota": "Vale para comida e para pessoas: 'es un chico soso' = é um cara sem graça.",
+   "notaEn": "'Soso' is unsalted, and by extension dull: 'es un chico soso' is he's a bit of a bore. At the table its opposite is 'salado'."
   },
   {
    "id": "p041",
    "tipo": "palavra",
    "es": "cutre",
    "pt": "cafona / de má qualidade",
+   "en": "shabby",
    "aceitas": [
     "cafona",
     "de ma qualidade",
@@ -898,28 +1518,53 @@ window.CARDS_RAW = {
     "mixuruca",
     "pao-duro"
    ],
+   "aceitasEn": [
+    "shabby",
+    "tacky",
+    "cheap",
+    "grotty",
+    "seedy",
+    "naff",
+    "crummy",
+    "tatty"
+   ],
    "distratores": [
     "elegante / de bom gosto",
     "caríssimo / de luxo",
     "cortante / afiado",
     "cuidadoso / caprichado"
    ],
+   "distratoresEn": [
+    "elegant",
+    "luxurious",
+    "sharp",
+    "meticulous"
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Un bar cutre' = um bar caindo aos pedaços. Também: sovina."
+   "nota": "'Un bar cutre' = um bar caindo aos pedaços. Também: sovina.",
+   "notaEn": "'Un bar cutre' is a dive — grimy, cheap, coming apart. Of a person it means stingy. Very Spanish, and always dismissive."
   },
   {
    "id": "p042",
    "tipo": "palavra",
    "es": "currar",
    "pt": "trabalhar",
+   "en": "to work",
    "aceitas": [
     "trabalhar",
     "ralar",
     "labutar"
+   ],
+   "aceitasEn": [
+    "to work",
+    "work",
+    "to graft",
+    "graft",
+    "to slog"
    ],
    "distratores": [
     "curar",
@@ -927,18 +1572,26 @@ window.CARDS_RAW = {
     "cursar",
     "estudar"
    ],
+   "distratoresEn": [
+    "to heal",
+    "to run",
+    "to study",
+    "to rush"
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'El curro' = o trampo. Muito comum na Espanha."
+   "nota": "'El curro' = o trampo. Muito comum na Espanha.",
+   "notaEn": "Spanish slang for working: 'me voy al curro' = I'm off to work. 'El curro' is the job itself. Standard Spanish is 'trabajar'."
   },
   {
    "id": "p043",
    "tipo": "palavra",
    "es": "majo",
    "pt": "simpático / legal",
+   "en": "nice",
    "aceitas": [
     "simpatico",
     "legal",
@@ -949,24 +1602,40 @@ window.CARDS_RAW = {
     "gente boa mesmo",
     "boa gente"
    ],
+   "aceitasEn": [
+    "nice",
+    "lovely",
+    "kind",
+    "friendly",
+    "pleasant",
+    "a nice person"
+   ],
    "distratores": [
     "chato / insuportável",
     "mau / malvado",
     "maduro / adulto",
     "maior / mais velho"
    ],
+   "distratoresEn": [
+    "annoying",
+    "wicked",
+    "grown-up",
+    "older"
+   ],
    "nivel": "B2",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Es muy maja' = ela é muito gente boa."
+   "nota": "'Es muy maja' = ela é muito gente boa.",
+   "notaEn": "'Es muy maja' = she's really nice. Heard all over Spain for someone pleasant and easy to be around; it can also mean good-looking."
   },
   {
    "id": "p044",
    "tipo": "palavra",
    "es": "entrañable",
    "pt": "querido / muito caro (afetivamente)",
+   "en": "dearly loved",
    "aceitas": [
     "querido",
     "caro",
@@ -974,23 +1643,40 @@ window.CARDS_RAW = {
     "afetuoso",
     "adoravel"
    ],
+   "aceitasEn": [
+    "dearly loved",
+    "beloved",
+    "dear",
+    "very dear",
+    "close and dear",
+    "endearing",
+    "much loved"
+   ],
    "distratores": [
     "estranho / muito esquisito (de propósito)",
     "insuportável / muito chato (de perto)",
     "distante / muito frio (no trato)",
     "entranhado / bem preso (na rocha)"
    ],
+   "distratoresEn": [
+    "deliberately odd",
+    "hard to bear",
+    "cold in manner",
+    "firmly embedded"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Un amigo entrañable' = um amigo muito querido."
+   "nota": "'Un amigo entrañable' = um amigo muito querido.",
+   "notaEn": "'Un amigo entrañable' is a friend held deep inside — from 'las entrañas', the guts. Warmer and more intimate than plain 'querido'."
   },
   {
    "id": "p045",
    "tipo": "palavra",
    "es": "añorar",
    "pt": "sentir saudade",
+   "en": "to miss",
    "aceitas": [
     "sentir saudade",
     "sentir saudades",
@@ -1001,28 +1687,53 @@ window.CARDS_RAW = {
     "saudade",
     "saudades"
    ],
+   "aceitasEn": [
+    "to miss",
+    "miss",
+    "to long for",
+    "long for",
+    "to yearn for",
+    "yearn for",
+    "to pine for"
+   ],
    "distratores": [
     "envelhecer",
     "anotar",
     "adorar",
     "anunciar"
    ],
+   "distratoresEn": [
+    "to age",
+    "to note",
+    "to adore",
+    "to announce"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "Sinônimo mais coloquial: 'echar de menos'."
+   "nota": "Sinônimo mais coloquial: 'echar de menos'.",
+   "notaEn": "'Añoro mi casa' = I miss home. It leans literary and wistful; day to day you will hear 'echar de menos', or 'extrañar' in Latin America."
   },
   {
    "id": "p046",
    "tipo": "palavra",
    "es": "la sobremesa",
    "pt": "a conversa depois da refeição",
+   "en": "the talk after a meal",
    "aceitas": [
     "conversa depois da refeicao",
     "sobremesa (conversa)",
     "conversa a mesa",
     "papo pos-almoco"
+   ],
+   "aceitasEn": [
+    "the talk after a meal",
+    "talk after a meal",
+    "after dinner conversation",
+    "the after dinner conversation",
+    "lingering at the table",
+    "after dinner chat"
    ],
    "distratores": [
     "a sobremesa (doce)",
@@ -1030,22 +1741,39 @@ window.CARDS_RAW = {
     "o aperitivo",
     "o cardápio"
    ],
+   "distratoresEn": [
+    "the dessert after dinner",
+    "the cloth on the table",
+    "the drink before eating",
+    "the list of dishes"
+   ],
    "nivel": "B2",
    "tags": [
     "falso-amigo",
     "cultura"
    ],
-   "nota": "Falso amigo. A sobremesa (doce) = 'el postre'."
+   "nota": "Falso amigo. A sobremesa (doce) = 'el postre'.",
+   "notaEn": "'La sobremesa' is the stretch of talk that keeps everyone at the table long after the plates are cleared — an institution in Spain. Dessert is 'el postre'."
   },
   {
    "id": "p047",
    "tipo": "palavra",
    "es": "estrenar",
    "pt": "estrear / usar pela primeira vez",
+   "en": "to use for the first time",
    "aceitas": [
     "estrear",
     "usar pela primeira vez",
     "inaugurar"
+   ],
+   "aceitasEn": [
+    "to use for the first time",
+    "use for the first time",
+    "to wear for the first time",
+    "to premiere",
+    "premiere",
+    "to debut",
+    "to break in"
    ],
    "distratores": [
     "treinar / repetir muitas vezes",
@@ -1053,17 +1781,25 @@ window.CARDS_RAW = {
     "apertar / deixar mais justo",
     "esticar / alongar aos poucos"
    ],
+   "distratoresEn": [
+    "to train over and over",
+    "to find odd at first",
+    "to take in a garment",
+    "to stretch out slowly"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Estreno zapatos' = estou usando sapatos novos pela primeira vez."
+   "nota": "'Estreno zapatos' = estou usando sapatos novos pela primeira vez.",
+   "notaEn": "'Estreno zapatos' = I'm wearing these shoes for the first time. It is also what a film does on opening night: 'la película se estrena mañana'."
   },
   {
    "id": "p048",
    "tipo": "palavra",
    "es": "apañárselas",
    "pt": "virar-se / dar um jeito",
+   "en": "to manage somehow",
    "aceitas": [
     "se virar",
     "virar-se",
@@ -1071,29 +1807,59 @@ window.CARDS_RAW = {
     "desenrascar",
     "se arranjar"
    ],
+   "aceitasEn": [
+    "to manage somehow",
+    "manage somehow",
+    "to get by",
+    "get by",
+    "to manage",
+    "manage",
+    "to make do",
+    "make do",
+    "to cope",
+    "to sort it out"
+   ],
    "distratores": [
     "apanhar / levar uma surra",
     "apadrinhar / dar apoio",
     "colher / juntar as frutas",
     "apressar-se / correr contra o tempo"
    ],
+   "distratoresEn": [
+    "to take a beating",
+    "to back someone up",
+    "to pick the fruit",
+    "to race the clock"
+   ],
    "nivel": "C1",
    "tags": [
     "expressão",
     "verbo"
    ],
-   "nota": "'Ya me las apañaré' = eu me viro."
+   "nota": "'Ya me las apañaré' = eu me viro.",
+   "notaEn": "'Ya me las apañaré' = I'll manage. Always with 'las' stuck to the end, and it comes with a shrug: whatever it takes, I'll sort it out."
   },
   {
    "id": "p049",
    "tipo": "palavra",
    "es": "la chapuza",
    "pt": "a gambiarra / o trabalho malfeito",
+   "en": "the botched job",
    "aceitas": [
     "gambiarra",
     "trabalho malfeito",
     "porcaria",
     "servico porco"
+   ],
+   "aceitasEn": [
+    "the botched job",
+    "botched job",
+    "a botched job",
+    "botch job",
+    "shoddy work",
+    "the shoddy work",
+    "a bodge",
+    "bodge job"
    ],
    "distratores": [
     "a chapa / a placa de metal",
@@ -1101,17 +1867,25 @@ window.CARDS_RAW = {
     "a chapada / o terreno alto",
     "o capricho / o trabalho benfeito"
    ],
+   "distratoresEn": [
+    "the metal plate",
+    "the straw hat",
+    "the high plateau",
+    "the careful work"
+   ],
    "nivel": "C1",
    "tags": [
     "gíria"
    ],
-   "nota": "Também pode significar 'bico', trabalho pequeno."
+   "nota": "Também pode significar 'bico', trabalho pequeno.",
+   "notaEn": "'Vaya chapuza' = what a mess of a job. It can also mean a small odd job on the side, and the person who does them is 'un chapuzas'."
   },
   {
    "id": "p050",
    "tipo": "palavra",
    "es": "quisquilloso",
    "pt": "implicante / melindroso",
+   "en": "touchy",
    "aceitas": [
     "implicante",
     "melindroso",
@@ -1119,28 +1893,52 @@ window.CARDS_RAW = {
     "suscetivel",
     "exigente demais"
    ],
+   "aceitasEn": [
+    "touchy",
+    "fussy",
+    "picky",
+    "nitpicky",
+    "prickly",
+    "easily offended",
+    "finicky"
+   ],
    "distratores": [
     "esquisito / estranho",
     "curioso / abelhudo",
     "quieto / calado",
     "fofoqueiro / linguarudo"
    ],
+   "distratoresEn": [
+    "odd",
+    "nosy",
+    "quiet",
+    "gossipy"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Pessoa que se ofende ou reclama de coisinhas."
+   "nota": "Pessoa que se ofende ou reclama de coisinhas.",
+   "notaEn": "'Quisquilloso' is the person who takes offence at nothing and picks at details. 'No seas quisquilloso' = don't be so touchy."
   },
   {
    "id": "p051",
    "tipo": "palavra",
    "es": "tozudo",
    "pt": "teimoso",
+   "en": "stubborn",
    "aceitas": [
     "teimoso",
     "cabeca-dura",
     "obstinado",
     "cabecudo"
+   ],
+   "aceitasEn": [
+    "stubborn",
+    "obstinate",
+    "pigheaded",
+    "headstrong",
+    "bullheaded"
    ],
    "distratores": [
     "tosco",
@@ -1148,17 +1946,25 @@ window.CARDS_RAW = {
     "tímido",
     "tolo"
    ],
+   "distratoresEn": [
+    "crude",
+    "dazed",
+    "shy",
+    "foolish"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Sinônimos: 'terco', 'cabezota'."
+   "nota": "Sinônimos: 'terco', 'cabezota'.",
+   "notaEn": "'Tozudo' = stubborn, and rarely a compliment. Its companions are 'terco' and, more colloquially, 'cabezota' — big-headed in the mule sense."
   },
   {
    "id": "p052",
    "tipo": "palavra",
    "es": "la desidia",
    "pt": "o desleixo / a negligência",
+   "en": "the neglect",
    "aceitas": [
     "desleixo",
     "negligencia",
@@ -1166,28 +1972,56 @@ window.CARDS_RAW = {
     "desinteresse",
     "preguica"
    ],
+   "aceitasEn": [
+    "the neglect",
+    "neglect",
+    "negligence",
+    "the negligence",
+    "apathy",
+    "the apathy",
+    "slackness"
+   ],
    "distratores": [
     "o desejo / a vontade",
     "a decisão / a escolha",
     "a dissidência / a divergência",
     "o desatino / a loucura"
    ],
+   "distratoresEn": [
+    "the desire",
+    "the decision",
+    "the dissent",
+    "the madness"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "Falta de cuidado e de vontade de fazer as coisas."
+   "nota": "Falta de cuidado e de vontade de fazer as coisas.",
+   "notaEn": "'La desidia' is neglect born of not caring enough to act — apathy with consequences. 'La desidia de las autoridades' is standard newspaper Spanish."
   },
   {
    "id": "p053",
    "tipo": "palavra",
    "es": "mermar",
    "pt": "diminuir / reduzir",
+   "en": "to shrink",
    "aceitas": [
     "diminuir",
     "reduzir",
     "minguar",
     "encolher"
+   ],
+   "aceitasEn": [
+    "to shrink",
+    "shrink",
+    "to diminish",
+    "diminish",
+    "to dwindle",
+    "dwindle",
+    "to reduce",
+    "to decrease",
+    "to fall"
    ],
    "distratores": [
     "aumentar / crescer",
@@ -1195,17 +2029,25 @@ window.CARDS_RAW = {
     "murmurar / sussurrar",
     "marcar / assinalar"
    ],
+   "distratoresEn": [
+    "to grow",
+    "to blend",
+    "to mutter",
+    "to mark"
+   ],
    "nivel": "C1",
    "tags": [
     "verbo"
    ],
-   "nota": "'La producción ha mermado' = a produção diminuiu."
+   "nota": "'La producción ha mermado' = a produção diminuiu.",
+   "notaEn": "'La producción ha mermado' = output has fallen. It suggests loss by wearing away rather than a sudden drop. The noun 'la merma' is the shortfall itself."
   },
   {
    "id": "p054",
    "tipo": "palavra",
    "es": "socavar",
    "pt": "minar / solapar",
+   "en": "to undermine",
    "aceitas": [
     "minar",
     "solapar",
@@ -1213,23 +2055,40 @@ window.CARDS_RAW = {
     "corroer",
     "enfraquecer"
    ],
+   "aceitasEn": [
+    "to undermine",
+    "undermine",
+    "to erode",
+    "erode",
+    "to sap",
+    "sap",
+    "to weaken"
+   ],
    "distratores": [
     "escavar / cavoucar",
     "sacudir / chacoalhar",
     "socar / esmurrar",
     "salvar / resgatar"
    ],
+   "distratoresEn": [
+    "to dig out",
+    "to shake",
+    "to punch",
+    "to rescue"
+   ],
    "nivel": "C1",
    "tags": [
     "verbo"
    ],
-   "nota": "'Socavar la confianza' = minar a confiança."
+   "nota": "'Socavar la confianza' = minar a confiança.",
+   "notaEn": "'Socavar la confianza' = to undermine trust. Literally it is to dig away underneath until the thing gives; the figurative sense is the common one."
   },
   {
    "id": "p055",
    "tipo": "palavra",
    "es": "soslayar",
    "pt": "contornar / evitar",
+   "en": "to sidestep",
    "aceitas": [
     "contornar",
     "evitar",
@@ -1237,23 +2096,42 @@ window.CARDS_RAW = {
     "driblar",
     "ignorar"
    ],
+   "aceitasEn": [
+    "to sidestep",
+    "sidestep",
+    "to avoid",
+    "avoid",
+    "to dodge",
+    "dodge",
+    "to get around",
+    "to skirt",
+    "to circumvent"
+   ],
    "distratores": [
     "destacar / realçar",
     "enfrentar / encarar",
     "assoalhar / atapetar",
     "suavizar / amenizar"
    ],
+   "distratoresEn": [
+    "to highlight",
+    "to confront",
+    "to carpet",
+    "to soften"
+   ],
    "nivel": "C2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Soslayar el problema' = fugir do problema. 'De soslayo' = de esguelha."
+   "nota": "'Soslayar el problema' = fugir do problema. 'De soslayo' = de esguelha.",
+   "notaEn": "'Soslayar el problema' = to dodge the problem. From 'de soslayo', sideways — the glance you give something without turning your head."
   },
   {
    "id": "p056",
    "tipo": "palavra",
    "es": "baladí",
    "pt": "trivial / sem importância",
+   "en": "trivial",
    "aceitas": [
     "trivial",
     "sem importancia",
@@ -1261,23 +2139,39 @@ window.CARDS_RAW = {
     "irrelevante",
     "insignificante"
    ],
+   "aceitasEn": [
+    "trivial",
+    "trifling",
+    "unimportant",
+    "insignificant",
+    "of no importance",
+    "petty"
+   ],
    "distratores": [
     "valioso / de muito valor",
     "balido / som da ovelha",
     "balançado / em desequilíbrio",
     "urgente / de máxima prioridade"
    ],
+   "distratoresEn": [
+    "valuable",
+    "bleating",
+    "unsteady",
+    "urgent"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'No es asunto baladí' = não é assunto de somenos importância."
+   "nota": "'No es asunto baladí' = não é assunto de somenos importância.",
+   "notaEn": "'No es asunto baladí' = it's no trifling matter — and it turns up far more often in the negative than in the positive. An Arabic borrowing, from 'baladi', local or homegrown."
   },
   {
    "id": "p057",
    "tipo": "palavra",
    "es": "fehaciente",
    "pt": "fidedigno / comprovado",
+   "en": "conclusive",
    "aceitas": [
     "fidedigno",
     "comprovado",
@@ -1285,29 +2179,55 @@ window.CARDS_RAW = {
     "cabal",
     "que faz fe"
    ],
+   "aceitasEn": [
+    "conclusive",
+    "irrefutable",
+    "reliable",
+    "authoritative",
+    "incontrovertible",
+    "trustworthy",
+    "credible"
+   ],
    "distratores": [
     "fedorento / malcheiroso",
     "recente / atual",
     "apressado / malfeito",
     "duvidoso / contestável"
    ],
+   "distratoresEn": [
+    "smelly",
+    "recent",
+    "hasty",
+    "doubtful"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo",
     "jurídico"
    ],
-   "nota": "'Prueba fehaciente' = prova cabal. Comum na linguagem jurídica."
+   "nota": "'Prueba fehaciente' = prova cabal. Comum na linguagem jurídica.",
+   "notaEn": "'Prueba fehaciente' = conclusive proof. Legal and formal register, built from 'fe' (faith) and 'hacer' — something that makes you believe."
   },
   {
    "id": "p058",
    "tipo": "palavra",
    "es": "perentorio",
    "pt": "peremptório / urgente e improrrogável",
+   "en": "urgent and final",
    "aceitas": [
     "peremptorio",
     "urgente",
     "improrrogavel",
     "impreterivel"
+   ],
+   "aceitasEn": [
+    "urgent and final",
+    "peremptory",
+    "final",
+    "pressing",
+    "non extendable",
+    "urgent",
+    "binding and urgent"
    ],
    "distratores": [
     "perene / contínuo e duradouro",
@@ -1315,18 +2235,26 @@ window.CARDS_RAW = {
     "pertinente / adequado e oportuno",
     "opcional / livre e dispensável"
    ],
+   "distratoresEn": [
+    "lasting and continuous",
+    "fixed and permanent",
+    "fitting and timely",
+    "free and optional"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo",
     "jurídico"
    ],
-   "nota": "'Plazo perentorio' = prazo improrrogável."
+   "nota": "'Plazo perentorio' = prazo improrrogável.",
+   "notaEn": "'Plazo perentorio' = a deadline that will not be extended. Legal and formal, carrying both urgency and finality: once it passes, the right is gone."
   },
   {
    "id": "p059",
    "tipo": "palavra",
    "es": "el atisbo",
    "pt": "o indício / o vislumbre",
+   "en": "the glimmer",
    "aceitas": [
     "indicio",
     "vislumbre",
@@ -1334,28 +2262,62 @@ window.CARDS_RAW = {
     "lampejo",
     "sombra"
    ],
+   "aceitasEn": [
+    "the glimmer",
+    "glimmer",
+    "a glimmer",
+    "the hint",
+    "hint",
+    "a hint",
+    "the trace",
+    "trace",
+    "the glimpse",
+    "glimpse",
+    "the inkling",
+    "inkling"
+   ],
    "distratores": [
     "o atiçamento / a provocação",
     "o abismo / o precipício",
     "o arbusto / a moita",
     "o atestado / o comprovante"
    ],
+   "distratoresEn": [
+    "the taunt",
+    "the abyss",
+    "the shrub",
+    "the certificate"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Ni un atisbo de duda' = nem uma sombra de dúvida."
+   "nota": "'Ni un atisbo de duda' = nem uma sombra de dúvida.",
+   "notaEn": "'Ni un atisbo de duda' = not a shadow of a doubt. An 'atisbo' is the first faint sign of something, from 'atisbar', to catch sight of."
   },
   {
    "id": "p060",
    "tipo": "palavra",
    "es": "la zozobra",
    "pt": "a aflição / a angústia",
+   "en": "the dread",
    "aceitas": [
     "aflicao",
     "angustia",
     "inquietacao",
     "desassossego"
+   ],
+   "aceitasEn": [
+    "the dread",
+    "dread",
+    "the anguish",
+    "anguish",
+    "the anxiety",
+    "anxiety",
+    "the distress",
+    "distress",
+    "the unease",
+    "unease"
    ],
    "distratores": [
     "a sobra / o resto",
@@ -1363,22 +2325,38 @@ window.CARDS_RAW = {
     "a calmaria / a serenidade",
     "a zombaria / o deboche"
    ],
+   "distratoresEn": [
+    "the leftover",
+    "the shipwreck",
+    "the calm",
+    "the mockery"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "Vem de 'zozobrar' (naufragar): a angústia de quem está prestes a afundar."
+   "nota": "Vem de 'zozobrar' (naufragar): a angústia de quem está prestes a afundar.",
+   "notaEn": "From 'zozobrar', to capsize: 'la zozobra' is the anguish of someone about to go under. Heavier and more literary than plain 'angustia'."
   },
   {
    "id": "p061",
    "tipo": "palavra",
    "es": "el hacinamiento",
    "pt": "a superlotação",
+   "en": "the overcrowding",
    "aceitas": [
     "superlotacao",
     "aglomeracao",
     "amontoamento",
     "lotacao excessiva"
+   ],
+   "aceitasEn": [
+    "the overcrowding",
+    "overcrowding",
+    "the crowding",
+    "crowding",
+    "cramming",
+    "the cramming"
    ],
    "distratores": [
     "o assentamento",
@@ -1386,18 +2364,26 @@ window.CARDS_RAW = {
     "o esvaziamento",
     "a fazenda"
    ],
+   "distratoresEn": [
+    "the settlement",
+    "the funding",
+    "the emptying",
+    "the farmland"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo",
     "social"
    ],
-   "nota": "'Hacinamiento carcelario' = superlotação carcerária."
+   "nota": "'Hacinamiento carcelario' = superlotação carcerária.",
+   "notaEn": "'Hacinamiento carcelario' = prison overcrowding. From 'hacinar', to pile up — people stacked into a space too small for them."
   },
   {
    "id": "p062",
    "tipo": "palavra",
    "es": "el menoscabo",
    "pt": "o prejuízo / o detrimento",
+   "en": "the detriment",
    "aceitas": [
     "prejuizo",
     "detrimento",
@@ -1405,23 +2391,41 @@ window.CARDS_RAW = {
     "menoscabo",
     "deterioracao"
    ],
+   "aceitasEn": [
+    "the detriment",
+    "detriment",
+    "the harm",
+    "harm",
+    "the impairment",
+    "impairment",
+    "the damage",
+    "damage"
+   ],
    "distratores": [
     "o menosprezo / o desdém",
     "o acabamento / o remate",
     "o benefício / a vantagem",
     "o cabimento / a pertinência"
    ],
+   "distratoresEn": [
+    "the contempt",
+    "the finishing",
+    "the benefit",
+    "the relevance"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'En menoscabo de' = em detrimento de."
+   "nota": "'En menoscabo de' = em detrimento de.",
+   "notaEn": "'En menoscabo de' = to the detriment of. It names damage that reduces something's worth or standing — a property's value, a person's reputation."
   },
   {
    "id": "p063",
    "tipo": "palavra",
    "es": "pergeñar",
    "pt": "esboçar / rascunhar",
+   "en": "to sketch out",
    "aceitas": [
     "esbocar",
     "rascunhar",
@@ -1429,28 +2433,54 @@ window.CARDS_RAW = {
     "arquitetar",
     "tracar"
    ],
+   "aceitasEn": [
+    "to sketch out",
+    "sketch out",
+    "to sketch",
+    "sketch",
+    "to draft",
+    "draft",
+    "to rough out",
+    "to knock together",
+    "to throw together"
+   ],
    "distratores": [
     "persuadir / convencer",
     "pentear / ajeitar",
     "perfurar / furar",
     "aperfeiçoar / apurar"
    ],
+   "distratoresEn": [
+    "to persuade",
+    "to comb",
+    "to drill",
+    "to refine"
+   ],
    "nivel": "C2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Pergeñar un plan' = bolar um plano às pressas."
+   "nota": "'Pergeñar un plan' = bolar um plano às pressas.",
+   "notaEn": "'Pergeñar un plan' = to throw a plan together. The word hints that it was done quickly and roughly, which is half its charm."
   },
   {
    "id": "p064",
    "tipo": "palavra",
    "es": "el ademán",
    "pt": "o gesto",
+   "en": "the gesture",
    "aceitas": [
     "gesto",
     "aceno",
     "meneio",
     "movimento"
+   ],
+   "aceitasEn": [
+    "the gesture",
+    "gesture",
+    "a gesture",
+    "the motion",
+    "motion"
    ],
    "distratores": [
     "a demanda",
@@ -1458,22 +2488,38 @@ window.CARDS_RAW = {
     "o adiantamento",
     "a atitude mental"
    ],
+   "distratoresEn": [
+    "the demand",
+    "the beyond",
+    "the advance",
+    "the mindset"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Hizo ademán de irse' = fez menção de ir embora."
+   "nota": "'Hizo ademán de irse' = fez menção de ir embora.",
+   "notaEn": "'Hizo ademán de irse' = he made as if to leave. An 'ademán' is a movement of the body that signals intent, often one that stops short of the act."
   },
   {
    "id": "p065",
    "tipo": "palavra",
    "es": "el albedrío",
    "pt": "o arbítrio",
+   "en": "free will",
    "aceitas": [
     "arbitrio",
     "livre-arbitrio",
     "vontade",
     "livre arbitrio"
+   ],
+   "aceitasEn": [
+    "free will",
+    "the free will",
+    "will",
+    "the will",
+    "discretion",
+    "one's own will"
    ],
    "distratores": [
     "o alvedrio da manhã",
@@ -1481,18 +2527,26 @@ window.CARDS_RAW = {
     "o alvitre do juiz",
     "o alvo"
    ],
+   "distratoresEn": [
+    "morning light",
+    "cheap lodging",
+    "a judge's ruling",
+    "a chosen target"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo",
     "filosofia"
    ],
-   "nota": "'Libre albedrío' = livre-arbítrio."
+   "nota": "'Libre albedrío' = livre-arbítrio.",
+   "notaEn": "'Libre albedrío' = free will, the term used in theology and philosophy. On its own, 'a su albedrío' means as one pleases, at one's own discretion."
   },
   {
    "id": "p066",
    "tipo": "palavra",
    "es": "el engendro",
    "pt": "a aberração / a monstruosidade",
+   "en": "the monstrosity",
    "aceitas": [
     "aberracao",
     "monstruosidade",
@@ -1500,23 +2554,41 @@ window.CARDS_RAW = {
     "aborto",
     "porcaria"
    ],
+   "aceitasEn": [
+    "the monstrosity",
+    "monstrosity",
+    "the freak",
+    "freak",
+    "the abomination",
+    "abomination",
+    "the monster",
+    "monster"
+   ],
    "distratores": [
     "o engenho / a criatividade",
     "o gênero / a categoria",
     "o gênio / a genialidade",
     "a engenharia / a construção"
    ],
+   "distratoresEn": [
+    "the ingenuity",
+    "the category",
+    "the genius",
+    "the engineering"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "Usado também para obras horríveis: 'un engendro de película'."
+   "nota": "Usado também para obras horríveis: 'un engendro de película'.",
+   "notaEn": "'Un engendro' is something misshapen — a freak, or by extension an awful piece of work: 'un engendro de película'. From 'engendrar', to beget."
   },
   {
    "id": "p067",
    "tipo": "palavra",
    "es": "desvelarse",
    "pt": "perder o sono / não conseguir dormir",
+   "en": "to lie awake all night",
    "aceitas": [
     "perder o sono",
     "ficar sem sono",
@@ -1524,23 +2596,40 @@ window.CARDS_RAW = {
     "desvelar-se",
     "dedicar-se"
    ],
+   "aceitasEn": [
+    "to lie awake all night",
+    "lie awake all night",
+    "to lie awake",
+    "lie awake",
+    "to be unable to sleep",
+    "to stay awake",
+    "to lose sleep"
+   ],
    "distratores": [
     "revelar um segredo / contar tudo",
     "despertar cedo / levantar de madrugada",
     "dormir profundamente / apagar de vez",
     "velar um morto / passar a noite ao lado"
    ],
+   "distratoresEn": [
+    "to give the secret away",
+    "to get up before dawn",
+    "to sleep like a log",
+    "to sit with the dead"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "Dois sentidos: não conseguir dormir e dedicar-se muito a alguém."
+   "nota": "Dois sentidos: não conseguir dormir e dedicar-se muito a alguém.",
+   "notaEn": "Two senses. 'Me desvelé anoche' = I lay awake all night. And 'desvelarse por alguien' is to put yourself out for someone, losing sleep over them."
   },
   {
    "id": "p068",
    "tipo": "palavra",
    "es": "pillar",
    "pt": "pegar / flagrar",
+   "en": "to catch",
    "aceitas": [
     "pegar",
     "flagrar",
@@ -1548,24 +2637,42 @@ window.CARDS_RAW = {
     "sacar",
     "entender"
    ],
+   "aceitasEn": [
+    "to catch",
+    "catch",
+    "to catch out",
+    "catch out",
+    "to get",
+    "to nab",
+    "to grab",
+    "to catch red handed"
+   ],
    "distratores": [
     "pilhar / saquear",
     "pilotar / dirigir",
     "empilhar / amontoar",
     "pisar / calcar"
    ],
+   "distratoresEn": [
+    "to loot",
+    "to steer",
+    "to stack",
+    "to tread"
+   ],
    "nivel": "B2",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Me pilló mintiendo' = me flagrou mentindo. '¿Lo pillas?' = tá sacando?"
+   "nota": "'Me pilló mintiendo' = me flagrou mentindo. '¿Lo pillas?' = tá sacando?",
+   "notaEn": "'Me pilló mintiendo' = he caught me lying. Spanish slang, and it stretches: '¿lo pillas?' is do you get it, and 'me pilla lejos' is it's out of my way."
   },
   {
    "id": "p069",
    "tipo": "palavra",
    "es": "el atardecer",
    "pt": "o entardecer / o pôr do sol",
+   "en": "the dusk",
    "aceitas": [
     "entardecer",
     "por do sol",
@@ -1573,28 +2680,55 @@ window.CARDS_RAW = {
     "fim de tarde",
     "crepusculo"
    ],
+   "aceitasEn": [
+    "the dusk",
+    "dusk",
+    "the sunset",
+    "sunset",
+    "the evening",
+    "evening",
+    "nightfall",
+    "the nightfall",
+    "late afternoon"
+   ],
    "distratores": [
     "o amanhecer / o nascer do sol",
     "a madrugada / o meio da noite",
     "o meio-dia / o sol a pino",
     "o atraso / a demora na chegada"
    ],
+   "distratoresEn": [
+    "the dawn",
+    "the small hours",
+    "the midday sun",
+    "the late arrival"
+   ],
    "nivel": "B1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Al atardecer' = ao entardecer."
+   "nota": "'Al atardecer' = ao entardecer.",
+   "notaEn": "'Al atardecer' = at dusk, as the light goes. Built like its neighbours: 'el amanecer' is daybreak, 'el anochecer' is nightfall."
   },
   {
    "id": "p070",
    "tipo": "palavra",
    "es": "ufano",
    "pt": "orgulhoso / envaidecido",
+   "en": "proud",
    "aceitas": [
     "orgulhoso",
     "ufano",
     "envaidecido",
     "satisfeito"
+   ],
+   "aceitasEn": [
+    "proud",
+    "self satisfied",
+    "pleased with himself",
+    "smug",
+    "boastful",
+    "chuffed"
    ],
    "distratores": [
     "humilde / modesto",
@@ -1602,17 +2736,25 @@ window.CARDS_RAW = {
     "cansado / esgotado",
     "arrependido / pesaroso"
    ],
+   "distratoresEn": [
+    "humble",
+    "furious",
+    "exhausted",
+    "regretful"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Ufano de sus logros' = orgulhoso de suas conquistas."
+   "nota": "'Ufano de sus logros' = orgulhoso de suas conquistas.",
+   "notaEn": "'Ufano de sus logros' = proud of his achievements. The pride is visible and a little puffed up — pleased with oneself, and showing it."
   },
   {
    "id": "f001",
    "tipo": "frase",
    "es": "Me da igual.",
    "pt": "Tanto faz.",
+   "en": "I don't mind.",
    "aceitas": [
     "tanto faz",
     "da na mesma",
@@ -1624,23 +2766,43 @@ window.CARDS_RAW = {
     "pouco importa",
     "que seja"
    ],
+   "aceitasEn": [
+    "i dont mind",
+    "i don t mind",
+    "it doesnt matter",
+    "it does not matter",
+    "either way",
+    "whatever",
+    "i dont care",
+    "it makes no difference to me",
+    "its all the same to me",
+    "it is all the same to me"
+   ],
    "distratores": [
     "Me dê o mesmo.",
     "É tudo igual aqui.",
     "Eu dou o troco.",
     "Somos iguais."
    ],
+   "distratoresEn": [
+    "Give me one too.",
+    "We are all equal.",
+    "It's the same price.",
+    "I'll give you change."
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Variante: 'me da lo mismo'."
+   "nota": "Variante: 'me da lo mismo'.",
+   "notaEn": "'Me da igual' = I don't mind, either way. Variant: 'me da lo mismo'. Said flatly enough, it tips over into I couldn't care less."
   },
   {
    "id": "f002",
    "tipo": "frase",
    "es": "No pasa nada.",
    "pt": "Não tem problema. / Tudo bem.",
+   "en": "No worries.",
    "aceitas": [
     "nao tem problema",
     "tudo bem",
@@ -1653,23 +2815,44 @@ window.CARDS_RAW = {
     "nao aconteceu nada",
     "tranquilo"
    ],
+   "aceitasEn": [
+    "no worries",
+    "its fine",
+    "it is fine",
+    "its ok",
+    "it s ok",
+    "no harm done",
+    "dont worry about it",
+    "never mind",
+    "thats all right",
+    "it doesnt matter",
+    "no problem"
+   ],
    "distratores": [
     "Nada passa por aqui. / Está parado.",
     "Nada acontece nunca. / É sempre igual.",
     "Não vai dar certo. / Vai falhar.",
     "Não passe por aí. / Evite o lugar."
    ],
+   "distratoresEn": [
+    "Nothing moves here.",
+    "Nothing ever happens.",
+    "It won't work out.",
+    "Don't go that way."
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Resposta padrão quando alguém pede desculpas."
+   "nota": "Resposta padrão quando alguém pede desculpas.",
+   "notaEn": "The standard reply when someone apologises: no harm done. It also works as plain reassurance — 'no pasa nada, seguimos'."
   },
   {
    "id": "f003",
    "tipo": "frase",
    "es": "Estoy harto de esperar.",
    "pt": "Estou de saco cheio de esperar.",
+   "en": "I'm fed up with waiting.",
    "aceitas": [
     "estou de saco cheio de esperar",
     "cansei de esperar",
@@ -1680,23 +2863,40 @@ window.CARDS_RAW = {
     "estou cansado de esperar",
     "enjoei de esperar"
    ],
+   "aceitasEn": [
+    "im fed up with waiting",
+    "i m fed up with waiting",
+    "i am fed up with waiting",
+    "im sick of waiting",
+    "i am sick of waiting",
+    "im tired of waiting",
+    "ive had enough of waiting"
+   ],
    "distratores": [
     "Estou cheio de comida agora.",
     "Espero ficar farto de comer.",
     "Estou disposto a esperar mais.",
     "Tenho bastante tempo para esperar."
    ],
+   "distratoresEn": [
+    "I am full of food now.",
+    "I hope to eat my fill.",
+    "I am willing to wait longer.",
+    "I have plenty of time to wait."
+   ],
    "nivel": "B1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Estar harto de' = estar de saco cheio de."
+   "nota": "'Estar harto de' = estar de saco cheio de.",
+   "notaEn": "'Estar harto de' = to be fed up with. Literally to be stuffed, and the food sense is still alive: 'me harté de paella'."
   },
   {
    "id": "f004",
    "tipo": "frase",
    "es": "Échame una mano.",
    "pt": "Me dá uma mão. / Me ajuda.",
+   "en": "Give me a hand.",
    "aceitas": [
     "me da uma mao",
     "me ajuda",
@@ -1707,23 +2907,38 @@ window.CARDS_RAW = {
     "pode me ajudar",
     "me da uma ajuda"
    ],
+   "aceitasEn": [
+    "give me a hand",
+    "lend me a hand",
+    "help me out",
+    "give me a hand with this",
+    "can you help me"
+   ],
    "distratores": [
     "Me jogue a mão. / Me arremesse.",
     "Solte a minha mão. / Me largue.",
     "Levante a mão. / Peça a palavra.",
     "Me dê a mão. / Vamos atravessar."
    ],
+   "distratoresEn": [
+    "Throw me the ball.",
+    "Let go of me.",
+    "Put your hand up.",
+    "Take my hand."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Echar una mano' = dar uma ajuda."
+   "nota": "'Echar una mano' = dar uma ajuda.",
+   "notaEn": "'Echar una mano' = to lend a hand. 'Echar' is the workhorse verb for throwing or putting, and it turns up in dozens of set phrases."
   },
   {
    "id": "f005",
    "tipo": "frase",
    "es": "Se me hace tarde.",
    "pt": "Estou ficando atrasado.",
+   "en": "I'm running late.",
    "aceitas": [
     "estou ficando atrasado",
     "esta ficando tarde para mim",
@@ -1733,23 +2948,39 @@ window.CARDS_RAW = {
     "esta ficando tarde",
     "vou acabar me atrasando"
    ],
+   "aceitasEn": [
+    "im running late",
+    "i m running late",
+    "i am running late",
+    "its getting late for me",
+    "im getting late",
+    "it is getting late"
+   ],
    "distratores": [
     "Ele me atrasou.",
     "Faço isso mais tarde.",
     "Me deixou tarde.",
     "Cheguei tarde."
    ],
+   "distratoresEn": [
+    "He made me late.",
+    "I'll do it later.",
+    "He left me behind.",
+    "I arrived late."
+   ],
    "nivel": "B1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Construção com 'se me' muito comum em espanhol."
+   "nota": "Construção com 'se me' muito comum em espanhol.",
+   "notaEn": "The 'se me' construction puts the event beyond your control — it is getting late on me. Same shape as 'se me olvidó' (I forgot) and 'se me cayó' (I dropped it)."
   },
   {
    "id": "f006",
    "tipo": "frase",
    "es": "Ni de coña.",
    "pt": "De jeito nenhum. / Nem a pau.",
+   "en": "Not a chance.",
    "aceitas": [
     "de jeito nenhum",
     "nem a pau",
@@ -1761,24 +2992,41 @@ window.CARDS_RAW = {
     "de maneira nenhuma",
     "nem ferrando"
    ],
+   "aceitasEn": [
+    "not a chance",
+    "no way",
+    "not a hope",
+    "absolutely not",
+    "no chance",
+    "not on your life",
+    "you must be joking"
+   ],
    "distratores": [
     "Nem de brincadeira. / Sem graça nenhuma.",
     "Que piada boa. / Muito engraçado.",
     "Nem que fosse grátis. / Não vale a pena.",
     "Só de sacanagem. / Para irritar."
    ],
+   "distratoresEn": [
+    "Not even joking.",
+    "What a good joke.",
+    "Not even for free.",
+    "Just to annoy you."
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "Vulgar-ish na Espanha. Versão neutra: 'ni de broma', 'ni hablar'."
+   "nota": "Vulgar-ish na Espanha. Versão neutra: 'ni de broma', 'ni hablar'.",
+   "notaEn": "Emphatic refusal, and a shade crude in Spain. The neutral versions are 'ni de broma' and 'ni hablar'. 'De coña' on its own means as a joke."
   },
   {
    "id": "f007",
    "tipo": "frase",
    "es": "Está en las nubes.",
    "pt": "Está no mundo da lua.",
+   "en": "He has his head in the clouds.",
    "aceitas": [
     "esta no mundo da lua",
     "esta distraido",
@@ -1790,23 +3038,40 @@ window.CARDS_RAW = {
     "esta com a cabeca longe",
     "esta desligado"
    ],
+   "aceitasEn": [
+    "he has his head in the clouds",
+    "hes got his head in the clouds",
+    "head in the clouds",
+    "he is daydreaming",
+    "hes daydreaming",
+    "he is miles away",
+    "hes away with the fairies"
+   ],
    "distratores": [
     "Está chovendo muito.",
     "Está voando de avião.",
     "Está muito feliz.",
     "Está com a cabeça nas alturas do sucesso."
    ],
+   "distratoresEn": [
+    "It is raining very hard.",
+    "He is flying on a plane.",
+    "He is extremely happy.",
+    "He is riding high on success."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão"
    ],
-   "nota": "Sinônimo: 'estar en Babia'."
+   "nota": "Sinônimo: 'estar en Babia'.",
+   "notaEn": "'Estar en las nubes' = to be off with your thoughts, not paying attention. Its Spanish twin is 'estar en Babia'."
   },
   {
    "id": "f008",
    "tipo": "frase",
    "es": "Me suena.",
    "pt": "Me parece familiar. / Já ouvi isso.",
+   "en": "It rings a bell.",
    "aceitas": [
     "me parece familiar",
     "ja ouvi isso",
@@ -1817,23 +3082,39 @@ window.CARDS_RAW = {
     "ja ouvi falar",
     "me lembra alguma coisa"
    ],
+   "aceitasEn": [
+    "it rings a bell",
+    "that rings a bell",
+    "it sounds familiar",
+    "that sounds familiar",
+    "it seems familiar",
+    "ive heard that before"
+   ],
    "distratores": [
     "Está tocando. / O som saiu.",
     "Me soa mal. / Não gostei.",
     "Toca para mim. / Faça um som.",
     "Estou sonhando. / Não é real."
    ],
+   "distratoresEn": [
+    "The sound came out.",
+    "I did not like it.",
+    "Play something for me.",
+    "This is not real."
+   ],
    "nivel": "B1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'No me suena' = nunca ouvi falar."
+   "nota": "'No me suena' = nunca ouvi falar.",
+   "notaEn": "'Me suena' = it rings a bell. The negative is the more useful one: 'no me suena' = never heard of it."
   },
   {
    "id": "f009",
    "tipo": "frase",
    "es": "A lo mejor voy.",
    "pt": "Talvez eu vá.",
+   "en": "Maybe I'll go.",
    "aceitas": [
     "talvez eu va",
     "quem sabe eu va",
@@ -1844,23 +3125,40 @@ window.CARDS_RAW = {
     "pode ser que va",
     "quem sabe va"
    ],
+   "aceitasEn": [
+    "maybe ill go",
+    "maybe i ll go",
+    "maybe i will go",
+    "perhaps ill go",
+    "perhaps i will go",
+    "i might go",
+    "i may go"
+   ],
    "distratores": [
     "Vou da melhor forma.",
     "Vou para o melhor lugar.",
     "No melhor dos casos, fui.",
     "Vou o quanto antes."
    ],
+   "distratoresEn": [
+    "I go the best way.",
+    "At best, I went.",
+    "I go there often.",
+    "I will go first."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática"
    ],
-   "nota": "'A lo mejor' + indicativo = talvez. Já 'quizás' costuma pedir subjuntivo."
+   "nota": "'A lo mejor' + indicativo = talvez. Já 'quizás' costuma pedir subjuntivo.",
+   "notaEn": "'A lo mejor' means maybe and — unlike 'quizás' or 'tal vez' — it takes the indicative, never the subjunctive: 'a lo mejor viene', not 'venga'."
   },
   {
    "id": "f010",
    "tipo": "frase",
    "es": "Llevo dos años aquí.",
    "pt": "Estou há dois anos aqui.",
+   "en": "I've been here two years.",
    "aceitas": [
     "estou ha dois anos aqui",
     "faz dois anos que estou aqui",
@@ -1870,23 +3168,39 @@ window.CARDS_RAW = {
     "tem dois anos que estou aqui",
     "estou aqui faz dois anos"
    ],
+   "aceitasEn": [
+    "ive been here two years",
+    "i ve been here two years",
+    "i have been here two years",
+    "ive been here for two years",
+    "i have been here for two years",
+    "ive lived here two years"
+   ],
    "distratores": [
     "Levo dois anos daqui.",
     "Levarei dois anos.",
     "Trouxe dois anos aqui.",
     "Passei por aqui há dois anos."
    ],
+   "distratoresEn": [
+    "I take two years from here.",
+    "It will take me two years.",
+    "I brought two years here.",
+    "I came by here two years ago."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática"
    ],
-   "nota": "'Llevar + tempo' é o jeito espanhol de dizer 'estar há'."
+   "nota": "'Llevar + tempo' é o jeito espanhol de dizer 'estar há'.",
+   "notaEn": "'Llevar + time' is how Spanish says how long something has been going on: 'llevo dos años aquí', 'lleva una hora esperando'. English reaches for the present perfect; Spanish stays in the present."
   },
   {
    "id": "f011",
    "tipo": "frase",
    "es": "Acabo de llegar.",
    "pt": "Acabei de chegar.",
+   "en": "I've just arrived.",
    "aceitas": [
     "acabei de chegar",
     "cheguei agora",
@@ -1896,23 +3210,39 @@ window.CARDS_RAW = {
     "acabei de chegar agora",
     "cheguei ha pouco"
    ],
+   "aceitasEn": [
+    "ive just arrived",
+    "i ve just arrived",
+    "i have just arrived",
+    "i just arrived",
+    "ive just got here",
+    "i just got here"
+   ],
    "distratores": [
     "Acabo de sair.",
     "Vou acabar chegando.",
     "Terminei a chegada.",
     "Chego no final."
    ],
+   "distratoresEn": [
+    "I have just left.",
+    "I will arrive eventually.",
+    "I finished the arrival.",
+    "I arrive at the end."
+   ],
    "nivel": "A2",
    "tags": [
     "gramática"
    ],
-   "nota": "'Acabar de + infinitivo' = acabar de fazer algo."
+   "nota": "'Acabar de + infinitivo' = acabar de fazer algo.",
+   "notaEn": "'Acabar de + infinitive' = to have just done something. In the present it means the action is barely over: 'acabo de comer', I've just eaten."
   },
   {
    "id": "f012",
    "tipo": "frase",
    "es": "Me cae bien.",
    "pt": "Eu simpatizo com ele. / Acho ele gente boa.",
+   "en": "I get on well with him.",
    "aceitas": [
     "eu simpatizo com ele",
     "acho ele gente boa",
@@ -1924,23 +3254,40 @@ window.CARDS_RAW = {
     "ele me agrada",
     "gosto dele como pessoa"
    ],
+   "aceitasEn": [
+    "i get on well with him",
+    "i get along well with him",
+    "i like him",
+    "hes a nice guy",
+    "he seems nice",
+    "i think hes nice",
+    "i get on with him"
+   ],
    "distratores": [
     "Ele caiu bem. / A roupa ficou boa.",
     "Ele caiu em cima de mim. / Me derrubou.",
     "Eu caio bem ali. / O lugar me serve.",
     "Ele me faz bem. / Melhora minha saúde."
    ],
+   "distratoresEn": [
+    "He fell down well.",
+    "He knocked me over.",
+    "I fit in well there.",
+    "He is good for my health."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Caer bien/mal' fala de simpatia, não de amor. 'Me gusta' pode soar romântico."
+   "nota": "'Caer bien/mal' fala de simpatia, não de amor. 'Me gusta' pode soar romântico.",
+   "notaEn": "'Caer bien' is about liking someone as a person. Keep it apart from 'me gusta', which about a person reads as attraction. The opposite is 'me cae mal'."
   },
   {
    "id": "f013",
    "tipo": "frase",
    "es": "Meter la pata.",
    "pt": "Dar uma mancada. / Pisar na bola.",
+   "en": "To put your foot in it.",
    "aceitas": [
     "dar uma mancada",
     "pisar na bola",
@@ -1951,23 +3298,41 @@ window.CARDS_RAW = {
     "dar um fora",
     "meter os pes pelas maos"
    ],
+   "aceitasEn": [
+    "to put your foot in it",
+    "put your foot in it",
+    "to put ones foot in it",
+    "to mess up",
+    "mess up",
+    "to blunder",
+    "to drop a clanger",
+    "to slip up"
+   ],
    "distratores": [
     "Meter o pé na porta. / Forçar a entrada.",
     "Enfiar o pé na jaca. / Exagerar na bebida.",
     "Botar a pata no chão. / Firmar o passo.",
     "Bater o pé. / Insistir na teimosia."
    ],
+   "distratoresEn": [
+    "To get your foot in the door.",
+    "To drink far too much.",
+    "To plant your feet firmly.",
+    "To dig your heels in."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "'Metí la pata' = falei/fiz besteira."
+   "nota": "'Metí la pata' = falei/fiz besteira.",
+   "notaEn": "'Metí la pata' = I put my foot in it, I said the wrong thing. 'La pata' is an animal's leg, which makes the picture clumsier still."
   },
   {
    "id": "f014",
    "tipo": "frase",
    "es": "Estar en el quinto pino.",
    "pt": "Ficar no fim do mundo. / Ser longe pra caramba.",
+   "en": "To be in the middle of nowhere.",
    "aceitas": [
     "no fim do mundo",
     "muito longe",
@@ -1978,24 +3343,40 @@ window.CARDS_RAW = {
     "la longe",
     "no fim da picada"
    ],
+   "aceitasEn": [
+    "to be in the middle of nowhere",
+    "in the middle of nowhere",
+    "to be miles away",
+    "to be out in the sticks",
+    "to be in the back of beyond",
+    "to be a long way out"
+   ],
    "distratores": [
     "Estar no quinto andar. / Subir mais um pouco.",
     "Estar entre os pinheiros. / Ficar dentro da mata.",
     "Estar em quinto lugar. / Quase chegar ao pódio.",
     "Estar bem no ponto certo. / Acertar o alvo."
    ],
+   "distratoresEn": [
+    "To be up on the fifth floor.",
+    "To be deep inside the pine wood.",
+    "To be in fifth place overall.",
+    "To be exactly on the right spot."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "Sinônimo: 'en el quinto infierno', 'donde Cristo perdió el gorro'."
+   "nota": "Sinônimo: 'en el quinto infierno', 'donde Cristo perdió el gorro'.",
+   "notaEn": "'Vive en el quinto pino' = he lives miles out. Spain has funnier versions of the same idea: 'en el quinto infierno', 'donde Cristo perdió el gorro'."
   },
   {
    "id": "f015",
    "tipo": "frase",
    "es": "Tirar la toalla.",
    "pt": "Jogar a toalha. / Desistir.",
+   "en": "To throw in the towel.",
    "aceitas": [
     "jogar a toalha",
     "desistir",
@@ -2005,23 +3386,40 @@ window.CARDS_RAW = {
     "desistir de vez",
     "atirar a toalha"
    ],
+   "aceitasEn": [
+    "to throw in the towel",
+    "throw in the towel",
+    "to give up",
+    "give up",
+    "to quit",
+    "quit",
+    "to call it a day"
+   ],
    "distratores": [
     "Puxar a toalha. / Arrastar.",
     "Estender a toalha. / Secar ao sol.",
     "Lavar a roupa suja. / Brigar em casa.",
     "Secar as mãos. / Se limpar."
    ],
+   "distratoresEn": [
+    "To pull on the towel.",
+    "To hang the towel out.",
+    "To wash the dirty linen.",
+    "To dry off your hands."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Cuidado: 'tirar' aqui é jogar, não puxar."
+   "nota": "Cuidado: 'tirar' aqui é jogar, não puxar.",
+   "notaEn": "The same image as in English, straight from boxing. Mind the verb: here 'tirar' is to throw, though on a door the very same word means pull."
   },
   {
    "id": "f016",
    "tipo": "frase",
    "es": "No tiene pelos en la lengua.",
    "pt": "Não tem papas na língua.",
+   "en": "He doesn't mince his words.",
    "aceitas": [
     "nao tem papas na lingua",
     "fala o que pensa",
@@ -2031,23 +3429,40 @@ window.CARDS_RAW = {
     "diz o que pensa",
     "fala na lata"
    ],
+   "aceitasEn": [
+    "he doesnt mince his words",
+    "he does not mince his words",
+    "he doesn t mince his words",
+    "he speaks his mind",
+    "he tells it like it is",
+    "he says what he thinks",
+    "he pulls no punches"
+   ],
    "distratores": [
     "Tem a língua presa.",
     "Não fala nada.",
     "É muito educado.",
     "Fala pelos cotovelos."
    ],
+   "distratoresEn": [
+    "He has a speech impediment.",
+    "He never says anything at all.",
+    "He is extremely polite.",
+    "He talks nineteen to the dozen."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Diz o que pensa sem filtro."
+   "nota": "Diz o que pensa sem filtro.",
+   "notaEn": "'No tener pelos en la lengua' = to say what you think without softening it. The picture is a tongue with nothing in the way."
   },
   {
    "id": "f017",
    "tipo": "frase",
    "es": "Es pan comido.",
    "pt": "É moleza. / É sopa.",
+   "en": "It's a piece of cake.",
    "aceitas": [
     "e moleza",
     "e sopa",
@@ -2058,23 +3473,41 @@ window.CARDS_RAW = {
     "e facil demais",
     "e tranquilo"
    ],
+   "aceitasEn": [
+    "its a piece of cake",
+    "it s a piece of cake",
+    "it is a piece of cake",
+    "piece of cake",
+    "its easy",
+    "its dead easy",
+    "its a doddle",
+    "its a breeze"
+   ],
    "distratores": [
     "O pão acabou. / Comeram tudo.",
     "É comida boa. / Alimenta bem.",
     "É pão-duro. / Não gasta nada.",
     "Já foi consumido. / Não sobrou."
    ],
+   "distratoresEn": [
+    "The bread has run out.",
+    "It is very good food.",
+    "He is a real skinflint.",
+    "It has all been eaten."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Equivale a 'é canja'."
+   "nota": "Equivale a 'é canja'.",
+   "notaEn": "'Es pan comido' = it's bread already eaten, so there's no effort left in it. English reaches for cake, Spanish for bread."
   },
   {
    "id": "f018",
    "tipo": "frase",
    "es": "Cuesta un ojo de la cara.",
    "pt": "Custa os olhos da cara.",
+   "en": "It costs an arm and a leg.",
    "aceitas": [
     "custa os olhos da cara",
     "e carissimo",
@@ -2083,23 +3516,39 @@ window.CARDS_RAW = {
     "custa caro pra caramba",
     "sai os olhos da cara"
    ],
+   "aceitasEn": [
+    "it costs an arm and a leg",
+    "costs an arm and a leg",
+    "it costs a fortune",
+    "its very expensive",
+    "it costs the earth",
+    "its extortionate"
+   ],
    "distratores": [
     "Custa um olho roxo.",
     "Dói o olho.",
     "Vale a pena olhar.",
     "Custa pouco."
    ],
+   "distratoresEn": [
+    "It gives you a black eye.",
+    "My eye is really hurting.",
+    "It is well worth a look.",
+    "It costs almost nothing."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão"
    ],
-   "nota": "Quase idêntica ao português, mas no singular: 'un ojo'."
+   "nota": "Quase idêntica ao português, mas no singular: 'un ojo'.",
+   "notaEn": "Spanish pays with an eye where English pays with an arm and a leg: 'cuesta un ojo de la cara'. Note the singular — one eye, not both."
   },
   {
    "id": "f019",
    "tipo": "frase",
    "es": "Está como una cabra.",
    "pt": "É doido varrido.",
+   "en": "He is completely out of his mind.",
    "aceitas": [
     "e doido varrido",
     "e maluco",
@@ -2110,24 +3559,43 @@ window.CARDS_RAW = {
     "e biruta",
     "esta pirado"
    ],
+   "aceitasEn": [
+    "he is completely out of his mind",
+    "hes completely out of his mind",
+    "hes out of his mind",
+    "hes completely crazy",
+    "hes nuts",
+    "hes mad",
+    "hes barking mad",
+    "hes off his rocker",
+    "hes bonkers"
+   ],
    "distratores": [
     "É teimoso como uma cabra.",
     "Come como uma cabra.",
     "Está magro.",
     "Sobe que nem cabra."
    ],
+   "distratoresEn": [
+    "He is as stubborn as a mule.",
+    "He eats like a horse.",
+    "He is very thin indeed.",
+    "He climbs like a mountain goat."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "Sinônimo: 'está chiflado', 'le falta un tornillo'."
+   "nota": "Sinônimo: 'está chiflado', 'le falta un tornillo'.",
+   "notaEn": "'Está como una cabra' = he's mad as a goat. Spain has plenty more: 'está chiflado', or 'le falta un tornillo' — he's missing a screw."
   },
   {
    "id": "f020",
    "tipo": "frase",
    "es": "Dar en el clavo.",
    "pt": "Acertar em cheio.",
+   "en": "To hit the nail on the head.",
    "aceitas": [
     "acertar em cheio",
     "acertar na mosca",
@@ -2137,23 +3605,38 @@ window.CARDS_RAW = {
     "dar em cheio",
     "acertar direitinho"
    ],
+   "aceitasEn": [
+    "to hit the nail on the head",
+    "hit the nail on the head",
+    "to get it exactly right",
+    "to be spot on",
+    "youve hit the nail on the head"
+   ],
    "distratores": [
     "Bater o prego.",
     "Pregar o prego.",
     "Ficar preso.",
     "Errar o alvo."
    ],
+   "distratoresEn": [
+    "To hammer the nail right in.",
+    "To nail the loose board down.",
+    "To get yourself completely stuck.",
+    "To miss the target by miles."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "'Diste en el clavo' = você acertou em cheio."
+   "nota": "'Diste en el clavo' = você acertou em cheio.",
+   "notaEn": "'Diste en el clavo' = you hit the nail on the head. The same picture in both languages, and 'dar en' is the verb for striking a target."
   },
   {
    "id": "f021",
    "tipo": "frase",
    "es": "Ponte las pilas.",
    "pt": "Se liga. / Corre atrás.",
+   "en": "Get your act together.",
    "aceitas": [
     "se liga",
     "corre atras",
@@ -2165,23 +3648,40 @@ window.CARDS_RAW = {
     "poe as pilhas",
     "va a luta"
    ],
+   "aceitasEn": [
+    "get your act together",
+    "get a move on",
+    "buck up",
+    "pull your socks up",
+    "get going",
+    "get cracking",
+    "shape up"
+   ],
    "distratores": [
     "Ponha as pilhas. / Troque a bateria.",
     "Ligue o aparelho. / Aperte o botão.",
     "Empilhe tudo. / Organize as caixas.",
     "Descanse um pouco. / Recarregue as forças."
    ],
+   "distratoresEn": [
+    "Put the batteries in.",
+    "Switch the machine on.",
+    "Stack all the boxes up.",
+    "Take a rest and recharge."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Cobrança de esforço e atenção."
+   "nota": "Cobrança de esforço e atenção.",
+   "notaEn": "'Ponte las pilas' = put your batteries in: get moving, pay attention. Said to somebody who is coasting."
   },
   {
    "id": "f022",
    "tipo": "frase",
    "es": "Hacer la vista gorda.",
    "pt": "Fazer vista grossa.",
+   "en": "To turn a blind eye.",
    "aceitas": [
     "fazer vista grossa",
     "fingir que nao viu",
@@ -2190,23 +3690,38 @@ window.CARDS_RAW = {
     "fechar os olhos",
     "ignorar de proposito"
    ],
+   "aceitasEn": [
+    "to turn a blind eye",
+    "turn a blind eye",
+    "to look the other way",
+    "look the other way",
+    "to pretend not to notice"
+   ],
    "distratores": [
     "Engordar os olhos.",
     "Olhar com atenção.",
     "Encarar de frente.",
     "Ver de longe."
    ],
+   "distratoresEn": [
+    "To look at it very closely.",
+    "To stare it straight down.",
+    "To watch from a distance.",
+    "To keep both eyes wide open."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Quase igual ao português, mas 'gorda' e não 'grossa'."
+   "nota": "Quase igual ao português, mas 'gorda' e não 'grossa'.",
+   "notaEn": "'Hacer la vista gorda' = to make your gaze fat, or blurry — to pretend not to see. English shuts one eye instead."
   },
   {
    "id": "f023",
    "tipo": "frase",
    "es": "Vamos al grano.",
    "pt": "Vamos direto ao ponto.",
+   "en": "Let's get to the point.",
    "aceitas": [
     "vamos direto ao ponto",
     "vamos ao que interessa",
@@ -2216,23 +3731,39 @@ window.CARDS_RAW = {
     "vamos ao assunto",
     "chega de rodeios"
    ],
+   "aceitasEn": [
+    "lets get to the point",
+    "let s get to the point",
+    "let us get to the point",
+    "lets cut to the chase",
+    "get to the point",
+    "lets get down to business"
+   ],
    "distratores": [
     "Vamos ao grão de café.",
     "Vamos plantar.",
     "Vamos com calma.",
     "Vamos ao mercado."
    ],
+   "distratoresEn": [
+    "Let's go and buy coffee.",
+    "Let's plant the seeds now.",
+    "Let's take it slowly.",
+    "Let's go to the market."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Oposto: 'andarse por las ramas' (enrolar)."
+   "nota": "Oposto: 'andarse por las ramas' (enrolar).",
+   "notaEn": "'Vamos al grano' = let's get to the grain, the kernel of the thing. Its opposite is 'andarse por las ramas', to wander off into the branches."
   },
   {
    "id": "f024",
    "tipo": "frase",
    "es": "Estoy hecho polvo.",
    "pt": "Estou acabado. / Estou exausto.",
+   "en": "I'm completely worn out.",
    "aceitas": [
     "estou acabado",
     "estou exausto",
@@ -2243,23 +3774,41 @@ window.CARDS_RAW = {
     "estou arrasado",
     "nao aguento mais"
    ],
+   "aceitasEn": [
+    "im completely worn out",
+    "i m completely worn out",
+    "i am completely worn out",
+    "im shattered",
+    "im exhausted",
+    "im knackered",
+    "im wiped out",
+    "im dead tired"
+   ],
    "distratores": [
     "Estou empoeirado. / Estou sujo.",
     "Fiz uma poeira. / Levantei pó.",
     "Estou de mau humor. / Estou irritado.",
     "Fiquei todo sujo. / Preciso de banho."
    ],
+   "distratoresEn": [
+    "I am covered in dust.",
+    "I kicked up a dust cloud.",
+    "I am in a foul mood.",
+    "I got myself filthy dirty."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Lembre que 'polvo' = pó."
+   "nota": "Lembre que 'polvo' = pó.",
+   "notaEn": "'Hecho polvo' = reduced to dust. It works for people (exhausted) and for things (wrecked): 'el coche está hecho polvo'."
   },
   {
    "id": "f025",
    "tipo": "frase",
    "es": "Por si las moscas.",
    "pt": "Por via das dúvidas.",
+   "en": "Just in case.",
    "aceitas": [
     "por via das duvidas",
     "so por garantia",
@@ -2270,23 +3819,38 @@ window.CARDS_RAW = {
     "so por seguranca",
     "caso aconteca algo"
    ],
+   "aceitasEn": [
+    "just in case",
+    "to be on the safe side",
+    "just to be safe",
+    "in case",
+    "better safe than sorry"
+   ],
    "distratores": [
     "Por causa das moscas.",
     "Se houver moscas.",
     "Para espantar as moscas.",
     "Sem mais nem menos."
    ],
+   "distratoresEn": [
+    "Because of the flies.",
+    "If the flies come.",
+    "To keep the flies off.",
+    "Out of the blue."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Sinônimo: 'por si acaso'."
+   "nota": "Sinônimo: 'por si acaso'.",
+   "notaEn": "'Por si las moscas' = just in case. The flies are pure decoration; the plain version is 'por si acaso'."
   },
   {
    "id": "f026",
    "tipo": "frase",
    "es": "De buenas a primeras.",
    "pt": "De uma hora para outra. / Sem mais nem menos.",
+   "en": "Out of the blue.",
    "aceitas": [
     "de uma hora para outra",
     "sem mais nem menos",
@@ -2297,23 +3861,39 @@ window.CARDS_RAW = {
     "assim do nada",
     "sem aviso"
    ],
+   "aceitasEn": [
+    "out of the blue",
+    "all of a sudden",
+    "out of nowhere",
+    "without warning",
+    "just like that",
+    "suddenly"
+   ],
    "distratores": [
     "Das boas às primeiras. / Bem na ordem certa.",
     "Em primeiro lugar de todos. / Antes de tudo.",
     "Com as melhores intenções. / De coração bem aberto.",
     "Aos poucos e com muita calma. / Bem devagar."
    ],
+   "distratoresEn": [
+    "In exactly the right order.",
+    "Before anything else at all.",
+    "With the very best intentions.",
+    "Slowly and very carefully."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Indica algo súbito e sem preparação."
+   "nota": "Indica algo súbito e sem preparação.",
+   "notaEn": "'De buenas a primeras' = with no warning and no run-up. It often carries a hint of complaint: you sprang it on me."
   },
   {
    "id": "f027",
    "tipo": "frase",
    "es": "Le dio calabazas.",
    "pt": "Ela deu um fora nele. / Rejeitou.",
+   "en": "She turned him down.",
    "aceitas": [
     "deu um fora nele",
     "rejeitou",
@@ -2324,23 +3904,39 @@ window.CARDS_RAW = {
     "deu o fora nele",
     "recusou ele"
    ],
+   "aceitasEn": [
+    "she turned him down",
+    "she rejected him",
+    "she knocked him back",
+    "she gave him the brush off",
+    "she said no to him",
+    "she dumped him"
+   ],
    "distratores": [
     "Ela deu abóboras a ele. / Presenteou.",
     "Ela cozinhou para ele. / Fez o jantar.",
     "Ela deu um presente. / Foi generosa.",
     "Ela deu uma bronca. / Ficou brava."
    ],
+   "distratoresEn": [
+    "She gave him some pumpkins.",
+    "She cooked dinner for him.",
+    "She bought him a present.",
+    "She told him off sharply."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Dar calabazas' = rejeitar alguém (ou reprovar em prova)."
+   "nota": "'Dar calabazas' = rejeitar alguém (ou reprovar em prova).",
+   "notaEn": "'Dar calabazas' = to turn someone down. It also means to fail a student: 'me dieron calabazas en física'."
   },
   {
    "id": "f028",
    "tipo": "frase",
    "es": "No da pie con bola.",
    "pt": "Não acerta uma.",
+   "en": "He can't get anything right.",
    "aceitas": [
     "nao acerta uma",
     "nao faz nada certo",
@@ -2350,23 +3946,39 @@ window.CARDS_RAW = {
     "erra todas",
     "nao consegue acertar"
    ],
+   "aceitasEn": [
+    "he cant get anything right",
+    "he can t get anything right",
+    "he cannot get anything right",
+    "he gets everything wrong",
+    "hes getting it all wrong",
+    "he cant do anything right"
+   ],
    "distratores": [
     "Não chuta a bola.",
     "Não pega no pé.",
     "Não sai do lugar.",
     "Não joga futebol."
    ],
+   "distratoresEn": [
+    "He never kicks the ball.",
+    "He will not budge at all.",
+    "He does not play football.",
+    "He never gets in the way."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Usado para quem está errando tudo naquele dia."
+   "nota": "Usado para quem está errando tudo naquele dia.",
+   "notaEn": "'No dar pie con bola' = to get nothing right all day. The picture comes from football: foot and ball never meeting."
   },
   {
    "id": "f029",
    "tipo": "frase",
    "es": "¡Vaya chollo!",
    "pt": "Que pechincha!",
+   "en": "What a bargain!",
    "aceitas": [
     "que pechincha",
     "que barganha",
@@ -2376,24 +3988,40 @@ window.CARDS_RAW = {
     "que baita negocio",
     "que preco bom"
    ],
+   "aceitasEn": [
+    "what a bargain",
+    "what a steal",
+    "what a deal",
+    "what a find",
+    "bargain",
+    "real bargain"
+   ],
    "distratores": [
     "Que chatice!",
     "Que choro!",
     "Que bagunça!",
     "Que caro!"
    ],
+   "distratoresEn": [
+    "What a nuisance!",
+    "What a racket!",
+    "What a mess!",
+    "What a rip-off!"
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Chollo' = coisa muito boa por pouco dinheiro."
+   "nota": "'Chollo' = coisa muito boa por pouco dinheiro.",
+   "notaEn": "'Un chollo' is a lot for very little — a bargain, or a cushy job. Common in Spain, less so elsewhere."
   },
   {
    "id": "f030",
    "tipo": "frase",
    "es": "Se le fue la olla.",
    "pt": "Ele perdeu a cabeça. / Pirou.",
+   "en": "He lost the plot.",
    "aceitas": [
     "perdeu a cabeca",
     "pirou",
@@ -2404,24 +4032,40 @@ window.CARDS_RAW = {
     "deu um piti",
     "perdeu o juizo"
    ],
+   "aceitasEn": [
+    "he lost the plot",
+    "he lost his head",
+    "he went mad",
+    "he flipped out",
+    "he lost it",
+    "he went off the deep end"
+   ],
    "distratores": [
     "A panela dele caiu. / Quebrou.",
     "Ele esqueceu a panela. / Queimou tudo.",
     "Ele deixou a comida queimar. / Estragou.",
     "Ele ficou com fome. / Não comeu."
    ],
+   "distratoresEn": [
+    "He dropped his cooking pot.",
+    "He left the pot on the stove.",
+    "He let the food burn.",
+    "He went completely hungry."
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Olla' = panela; a imagem é a de quem 'perdeu a cuca'."
+   "nota": "'Olla' = panela; a imagem é a de quem 'perdeu a cuca'.",
+   "notaEn": "'La olla' is the cooking pot, and here it stands for the head: 'se le fue la olla' = his pot went, he lost the plot."
   },
   {
    "id": "f031",
    "tipo": "frase",
    "es": "Le puso verde.",
    "pt": "Falou muito mal dele.",
+   "en": "She tore him to pieces.",
    "aceitas": [
     "falou mal dele",
     "detonou ele",
@@ -2432,24 +4076,42 @@ window.CARDS_RAW = {
     "acabou com ele",
     "desceu a lenha nele"
    ],
+   "aceitasEn": [
+    "she tore him to pieces",
+    "she slagged him off",
+    "she badmouthed him",
+    "she ran him down",
+    "she tore into him",
+    "she laid into him",
+    "she criticised him harshly",
+    "she trashed him"
+   ],
    "distratores": [
     "Pintou de verde.",
     "Fez ele passar mal.",
     "Deixou ele com inveja.",
     "Elogiou muito."
    ],
+   "distratoresEn": [
+    "She painted him green.",
+    "She made him feel ill.",
+    "She made him very jealous.",
+    "She praised him to the skies."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "'Poner verde a alguien' = falar mal, criticar duramente."
+   "nota": "'Poner verde a alguien' = falar mal, criticar duramente.",
+   "notaEn": "'Poner verde a alguien' = to tear into someone, usually behind their back. Green here is the colour of the abuse, not of envy."
   },
   {
    "id": "f032",
    "tipo": "frase",
    "es": "Montó un pollo.",
    "pt": "Fez um escândalo. / Armou um barraco.",
+   "en": "He made a scene.",
    "aceitas": [
     "fez um escandalo",
     "armou um barraco",
@@ -2460,24 +4122,40 @@ window.CARDS_RAW = {
     "armou um escandalo",
     "deu um showzinho"
    ],
+   "aceitasEn": [
+    "he made a scene",
+    "he kicked up a fuss",
+    "he caused a scene",
+    "he made a fuss",
+    "he threw a fit",
+    "he created a scene"
+   ],
    "distratores": [
     "Montou um galinheiro. / Criou galinhas.",
     "Assou um frango. / Fez o almoço.",
     "Montou um negócio. / Abriu empresa.",
     "Cavalgou um pônei. / Andou a cavalo."
    ],
+   "distratoresEn": [
+    "He built a chicken coop.",
+    "He roasted a whole chicken.",
+    "He set up a small business.",
+    "He went riding on a pony."
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Montar un pollo' = fazer cena em público."
+   "nota": "'Montar un pollo' = fazer cena em público.",
+   "notaEn": "'Montar un pollo' = to kick up a fuss in public. Very Spanish. 'Montar' here is to stage or set up; the chicken is anyone's guess."
   },
   {
    "id": "f033",
    "tipo": "frase",
    "es": "Me importa un pepino.",
    "pt": "Não estou nem aí.",
+   "en": "I couldn't care less.",
    "aceitas": [
     "nao estou nem ai",
     "pouco me importa",
@@ -2488,23 +4166,40 @@ window.CARDS_RAW = {
     "nao ligo",
     "nao faz diferenca para mim"
    ],
+   "aceitasEn": [
+    "i couldnt care less",
+    "i could not care less",
+    "i couldn t care less",
+    "i dont care at all",
+    "i dont give a damn",
+    "it means nothing to me",
+    "i dont care"
+   ],
    "distratores": [
     "Importo pepinos.",
     "Gosto muito de pepino.",
     "Isso me preocupa.",
     "É um problema sério."
    ],
+   "distratoresEn": [
+    "I import cucumbers.",
+    "I really like cucumbers.",
+    "That worries me a lot.",
+    "It is a serious problem."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Variantes: 'un pimiento', 'un rábano', 'un comino'."
+   "nota": "Variantes: 'un pimiento', 'un rábano', 'un comino'.",
+   "notaEn": "'Me importa un pepino' = it matters to me about as much as a cucumber does. Swap the vegetable freely: 'un pimiento', 'un rábano', 'un comino'."
   },
   {
    "id": "f034",
    "tipo": "frase",
    "es": "En un abrir y cerrar de ojos.",
    "pt": "Num piscar de olhos.",
+   "en": "In the blink of an eye.",
    "aceitas": [
     "num piscar de olhos",
     "num instante",
@@ -2514,23 +4209,39 @@ window.CARDS_RAW = {
     "num abrir e fechar de olhos",
     "rapidissimo"
    ],
+   "aceitasEn": [
+    "in the blink of an eye",
+    "in a blink",
+    "in the twinkling of an eye",
+    "in no time at all",
+    "in a flash",
+    "in an instant"
+   ],
    "distratores": [
     "Abrindo e fechando a porta.",
     "Com os olhos fechados.",
     "Devagar e sempre.",
     "Sem ver nada."
    ],
+   "distratoresEn": [
+    "Opening and closing the door.",
+    "With your eyes fully shut.",
+    "Slowly but very surely.",
+    "Without seeing a thing."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Quase literal, mas o português usa 'piscar'."
+   "nota": "Quase literal, mas o português usa 'piscar'.",
+   "notaEn": "'En un abrir y cerrar de ojos' = in the time it takes to open and shut your eyes. English blinks instead, but the measure is the same."
   },
   {
    "id": "f035",
    "tipo": "frase",
    "es": "Se hizo el sueco.",
    "pt": "Fez-se de desentendido.",
+   "en": "He played dumb.",
    "aceitas": [
     "fez-se de desentendido",
     "fingiu que nao entendeu",
@@ -2541,24 +4252,41 @@ window.CARDS_RAW = {
     "fingiu nao entender",
     "se fez de sonso"
    ],
+   "aceitasEn": [
+    "he played dumb",
+    "he pretended not to understand",
+    "he pretended not to hear",
+    "he acted innocent",
+    "he feigned ignorance",
+    "he played the innocent",
+    "he turned a deaf ear"
+   ],
    "distratores": [
     "Virou sueco.",
     "Aprendeu sueco.",
     "Foi para a Suécia.",
     "Ficou loiro."
    ],
+   "distratoresEn": [
+    "He became a Swede.",
+    "He learned Swedish quickly.",
+    "He moved to Sweden.",
+    "He dyed his hair blond."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "'Hacerse el sueco' = fingir que não entende ou não ouve."
+   "nota": "'Hacerse el sueco' = fingir que não entende ou não ouve.",
+   "notaEn": "'Hacerse el sueco' = to pretend you didn't hear or didn't understand. The 'sueco' is probably not the Swede but 'soccus', the clown's shoe of Roman comedy."
   },
   {
    "id": "f036",
    "tipo": "frase",
    "es": "¿Qué tal?",
    "pt": "Como vai? / E aí?",
+   "en": "How's it going?",
    "aceitas": [
     "como vai",
     "e ai",
@@ -2569,23 +4297,41 @@ window.CARDS_RAW = {
     "beleza",
     "como e que vai"
    ],
+   "aceitasEn": [
+    "hows it going",
+    "how s it going",
+    "how is it going",
+    "how are you",
+    "whats up",
+    "how are things",
+    "how goes it",
+    "alright"
+   ],
    "distratores": [
     "Que tal isso? / Gostou?",
     "Qual deles? / Escolha um.",
     "O que é isso? / Explique.",
     "Quanto custa? / Qual o preço?"
    ],
+   "distratoresEn": [
+    "How do you like it?",
+    "Which one is it?",
+    "What on earth is that?",
+    "How much does it cost?"
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Cumprimento informal padrão."
+   "nota": "Cumprimento informal padrão.",
+   "notaEn": "The standard informal greeting. '¿Qué tal?' on its own is how are you; put a noun after it and it asks how something went: '¿qué tal el viaje?'"
   },
   {
    "id": "f037",
    "tipo": "frase",
    "es": "Tengo ganas de dormir.",
    "pt": "Estou com vontade de dormir.",
+   "en": "I feel like sleeping.",
    "aceitas": [
     "estou com vontade de dormir",
     "tenho vontade de dormir",
@@ -2595,23 +4341,39 @@ window.CARDS_RAW = {
     "estou com sono",
     "deu vontade de dormir"
    ],
+   "aceitasEn": [
+    "i feel like sleeping",
+    "i feel like going to sleep",
+    "i want to sleep",
+    "im in the mood to sleep",
+    "i fancy a sleep",
+    "i feel sleepy"
+   ],
    "distratores": [
     "Tenho que ir dormir agora.",
     "Consegui dormir bem essa noite.",
     "Ganhei uma soneca de brinde.",
     "Estou dormindo neste exato momento."
    ],
+   "distratoresEn": [
+    "I have to go to sleep.",
+    "I slept well last night.",
+    "I won a free nap.",
+    "I am asleep right now."
+   ],
    "nivel": "A2",
    "tags": [
     "gramática"
    ],
-   "nota": "'Tener ganas de' = estar com vontade de."
+   "nota": "'Tener ganas de' = estar com vontade de.",
+   "notaEn": "'Tener ganas de' + infinitive = to feel like doing something. 'Las ganas' are the urge itself: 'me quedé con las ganas' means I never got to."
   },
   {
    "id": "f038",
    "tipo": "frase",
    "es": "Hace mucho frío.",
    "pt": "Está muito frio.",
+   "en": "It's very cold.",
    "aceitas": [
     "esta muito frio",
     "faz muito frio",
@@ -2619,23 +4381,39 @@ window.CARDS_RAW = {
     "esta fazendo muito frio",
     "que frio"
    ],
+   "aceitasEn": [
+    "its very cold",
+    "it s very cold",
+    "it is very cold",
+    "its freezing",
+    "its really cold",
+    "the weather is very cold"
+   ],
    "distratores": [
     "Faz frio há muito tempo.",
     "Fez frio ontem.",
     "Estou com muito frio.",
     "Vai fazer frio."
    ],
+   "distratoresEn": [
+    "It has been cold for ages.",
+    "It was cold yesterday.",
+    "I am very cold.",
+    "It will get cold."
+   ],
    "nivel": "A1",
    "tags": [
     "gramática"
    ],
-   "nota": "Clima em espanhol usa 'hacer': 'hace calor', 'hace sol'."
+   "nota": "Clima em espanhol usa 'hacer': 'hace calor', 'hace sol'.",
+   "notaEn": "Spanish weather runs on 'hacer': 'hace frío', 'hace calor', 'hace sol'. Careful — 'tengo frío' is about you, not the weather: I'm cold."
   },
   {
    "id": "f039",
    "tipo": "frase",
    "es": "Tengo que irme.",
    "pt": "Tenho que ir embora.",
+   "en": "I have to go.",
    "aceitas": [
     "tenho que ir embora",
     "preciso ir",
@@ -2645,23 +4423,39 @@ window.CARDS_RAW = {
     "tenho que vazar",
     "devo ir embora"
    ],
+   "aceitasEn": [
+    "i have to go",
+    "i have to leave",
+    "i must go",
+    "i must be off",
+    "i need to go",
+    "ive got to go"
+   ],
    "distratores": [
     "Tenho que ir aí.",
     "Tenho ido.",
     "Vou levar isso.",
     "Deixe-me entrar."
    ],
+   "distratoresEn": [
+    "I have to go there.",
+    "I have been going.",
+    "I will take that.",
+    "Let me come in."
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Irse' (pronominal) = ir embora; 'ir' = ir a um lugar."
+   "nota": "'Irse' (pronominal) = ir embora; 'ir' = ir a um lugar.",
+   "notaEn": "'Irse' is to leave, to go away; plain 'ir' is to go somewhere. 'Me voy' = I'm off. 'Voy' = I'm on my way there."
   },
   {
    "id": "f040",
    "tipo": "frase",
    "es": "Se me olvidó.",
    "pt": "Eu esqueci.",
+   "en": "I forgot.",
    "aceitas": [
     "eu esqueci",
     "esqueci",
@@ -2671,23 +4465,38 @@ window.CARDS_RAW = {
     "me deu um branco",
     "acabou me escapando"
    ],
+   "aceitasEn": [
+    "i forgot",
+    "i forgot it",
+    "it slipped my mind",
+    "i have forgotten",
+    "id forgotten"
+   ],
    "distratores": [
     "Ele me esqueceu.",
     "Fui esquecido.",
     "Vou esquecer.",
     "Não lembro dele."
    ],
+   "distratoresEn": [
+    "He forgot me.",
+    "I was forgotten.",
+    "I will forget.",
+    "I don't remember him."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática"
    ],
-   "nota": "O espanhol prefere a forma 'se me olvidó' (o esquecimento 'aconteceu' comigo)."
+   "nota": "O espanhol prefere a forma 'se me olvidó' (o esquecimento 'aconteceu' comigo).",
+   "notaEn": "Spanish prefers 'se me olvidó' — the forgetting happened to me — over plain 'olvidé'. The construction spreads the blame around, and it is everywhere: 'se me cayó', 'se me rompió'."
   },
   {
    "id": "f041",
    "tipo": "frase",
    "es": "Me quedan dos.",
    "pt": "Ainda tenho dois. / Sobraram dois.",
+   "en": "I have two left.",
    "aceitas": [
     "ainda tenho dois",
     "sobraram dois",
@@ -2697,23 +4506,39 @@ window.CARDS_RAW = {
     "ficaram dois",
     "tem dois ainda"
    ],
+   "aceitasEn": [
+    "i have two left",
+    "ive got two left",
+    "two are left",
+    "there are two left",
+    "i still have two",
+    "two remain"
+   ],
    "distratores": [
     "Fico com dois. / Escolhi esses.",
     "Faltam dois para mim. / Preciso de dois.",
     "Dei dois embora. / Me livrei deles.",
     "Quero dois. / Me traga dois."
    ],
+   "distratoresEn": [
+    "I will keep two.",
+    "I need two more.",
+    "I gave two away.",
+    "I want two of them."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática"
    ],
-   "nota": "'Quedar' com pronome = restar, sobrar."
+   "nota": "'Quedar' com pronome = restar, sobrar.",
+   "notaEn": "'Quedar' with an indirect pronoun means to be left over: 'me quedan dos'. Without the pronoun, 'quedarse' is to stay: 'me quedo aquí'."
   },
   {
    "id": "f042",
    "tipo": "frase",
    "es": "Está al caer.",
    "pt": "Está para chegar a qualquer momento.",
+   "en": "It's about to happen.",
    "aceitas": [
     "esta para chegar",
     "chega a qualquer momento",
@@ -2723,23 +4548,40 @@ window.CARDS_RAW = {
     "esta prestes a chegar",
     "chega ja ja"
    ],
+   "aceitasEn": [
+    "its about to happen",
+    "it s about to happen",
+    "it is about to happen",
+    "its due any minute",
+    "hes about to arrive",
+    "its imminent",
+    "any moment now"
+   ],
    "distratores": [
     "Está caindo no chão neste momento.",
     "Vai cair de um momento para outro.",
     "Está deitado no chão faz tempo.",
     "Está prestes a desistir de tudo."
    ],
+   "distratoresEn": [
+    "It is falling right now.",
+    "It has been lying there for ages.",
+    "It fell over yesterday.",
+    "He is about to give up."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Usado para algo iminente: pessoa, notícia, evento."
+   "nota": "Usado para algo iminente: pessoa, notícia, evento.",
+   "notaEn": "'Estar al caer' = to be imminent — a person about to arrive, news about to break. 'Al + infinitive' generally marks the moment of an action: 'al llegar', on arriving."
   },
   {
    "id": "f043",
    "tipo": "frase",
    "es": "Que yo sepa, no.",
    "pt": "Que eu saiba, não.",
+   "en": "Not as far as I know.",
    "aceitas": [
     "que eu saiba nao",
     "ate onde sei nao",
@@ -2747,23 +4589,38 @@ window.CARDS_RAW = {
     "que eu saiba que nao",
     "ao que eu saiba nao"
    ],
+   "aceitasEn": [
+    "not as far as i know",
+    "not that i know of",
+    "not that i am aware of",
+    "as far as i know no",
+    "not to my knowledge"
+   ],
    "distratores": [
     "Eu não sei nada.",
     "Não quero saber.",
     "Só eu sei.",
     "Sei que não."
    ],
+   "distratoresEn": [
+    "I don't know anything.",
+    "I don't want to know.",
+    "Only I know that.",
+    "I know it isn't so."
+   ],
    "nivel": "B2",
    "tags": [
     "gramática"
    ],
-   "nota": "'Que yo sepa' pede subjuntivo, igual ao português."
+   "nota": "'Que yo sepa' pede subjuntivo, igual ao português.",
+   "notaEn": "'Que yo sepa' takes the subjunctive and hedges whatever follows: as far as I know. It works on its own too — '¿vino? Que yo sepa, no.'"
   },
   {
    "id": "f044",
    "tipo": "frase",
    "es": "A ver si nos vemos.",
    "pt": "Vamos ver se a gente se encontra.",
+   "en": "Let's try to meet up sometime.",
    "aceitas": [
     "vamos ver se a gente se encontra",
     "quem sabe a gente se ve",
@@ -2773,23 +4630,39 @@ window.CARDS_RAW = {
     "quem sabe nos vemos",
     "vamos ver se rola de se ver"
    ],
+   "aceitasEn": [
+    "lets try to meet up sometime",
+    "lets meet up sometime",
+    "hope to see you soon",
+    "lets catch up sometime",
+    "we should meet up",
+    "see you around"
+   ],
    "distratores": [
     "Vá ver se ele consegue nos ver.",
     "Estamos nos vendo neste exato momento.",
     "Vamos assistir ao filme juntos hoje.",
     "Vou ver você amanhã sem falta."
    ],
+   "distratoresEn": [
+    "Go and see if he sees us.",
+    "We are looking at each other now.",
+    "Let's watch the film together today.",
+    "I will see you tomorrow for sure."
+   ],
    "nivel": "B2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Despedida vaga e amistosa, muito comum."
+   "nota": "Despedida vaga e amistosa, muito comum.",
+   "notaEn": "A warm, vague goodbye — nobody is committing to a date. 'A ver si' + subjunctive is the standard way to float a loose intention."
   },
   {
    "id": "f045",
    "tipo": "frase",
    "es": "Ojalá viniera mañana.",
    "pt": "Quem me dera que ele viesse amanhã.",
+   "en": "If only he would come tomorrow.",
    "aceitas": [
     "quem me dera que ele viesse amanha",
     "quem dera que ele viesse amanha",
@@ -2799,24 +4672,40 @@ window.CARDS_RAW = {
     "oxala ele viesse amanha",
     "quisera que ele viesse amanha"
    ],
+   "aceitasEn": [
+    "if only he would come tomorrow",
+    "if only he came tomorrow",
+    "i wish he would come tomorrow",
+    "i wish he came tomorrow",
+    "would that he came tomorrow",
+    "if he would only come tomorrow"
+   ],
    "distratores": [
     "Tomara que ele venha amanhã.",
     "Espero que ele chegue amanhã cedo.",
     "Ele disse que viria amanhã.",
     "Antes ele tivesse vindo ontem."
    ],
+   "distratoresEn": [
+    "I hope he comes tomorrow.",
+    "I hope he arrives early tomorrow.",
+    "He said he would come tomorrow.",
+    "If only he had come yesterday."
+   ],
    "nivel": "C1",
    "tags": [
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Ojalá' + imperfeito do subjuntivo é desejo pouco provável; com o presente ('venga'), desejo plausível. Em português o par não é simétrico: 'tomara' é forma fossilizada (antigo mais-que-perfeito de 'tomar') e praticamente só admite presente do subjuntivo — 'tomara que ele venha' é natural, 'tomara que ele viesse' soa estranho. O desejo improvável sai por outro caminho: 'quem me dera que ele viesse', 'se ao menos ele viesse', 'eu queria que ele viesse' ou 'oxalá ele viesse' (mais literário, e cognato direto de 'ojalá' — ambos vêm do árabe law šāʾ Allāh)."
+   "nota": "'Ojalá' + imperfeito do subjuntivo é desejo pouco provável; com o presente ('venga'), desejo plausível. Em português o par não é simétrico: 'tomara' é forma fossilizada (antigo mais-que-perfeito de 'tomar') e praticamente só admite presente do subjuntivo — 'tomara que ele venha' é natural, 'tomara que ele viesse' soa estranho. O desejo improvável sai por outro caminho: 'quem me dera que ele viesse', 'se ao menos ele viesse', 'eu queria que ele viesse' ou 'oxalá ele viesse' (mais literário, e cognato direto de 'ojalá' — ambos vêm do árabe law šāʾ Allāh).",
+   "notaEn": "'Ojalá' + imperfect subjunctive is the wish you don't expect to be granted: if only. Swap in the present subjunctive — 'ojalá venga mañana' — and it becomes a real hope. The word is Arabic, from 'law šāʾ Allāh', if God wills."
   },
   {
    "id": "f046",
    "tipo": "frase",
    "es": "De haberlo sabido, no habría venido.",
    "pt": "Se eu soubesse, não teria vindo.",
+   "en": "Had I known, I wouldn't have come.",
    "aceitas": [
     "se eu soubesse nao teria vindo",
     "se tivesse sabido nao teria vindo",
@@ -2824,24 +4713,39 @@ window.CARDS_RAW = {
     "se eu tivesse sabido nao teria vindo",
     "caso soubesse nao teria vindo"
    ],
+   "aceitasEn": [
+    "had i known i wouldnt have come",
+    "had i known i would not have come",
+    "if i had known i wouldnt have come",
+    "if id known i would not have come",
+    "if i had known i would not have come"
+   ],
    "distratores": [
     "Por ter sabido, não vim.",
     "Ao saber, não venho.",
     "Sabendo disso, virei.",
     "Não soube e não vim."
    ],
+   "distratoresEn": [
+    "Because I knew, I did not come.",
+    "On finding out, I do not come.",
+    "Knowing that, I will come.",
+    "I did not know and did not come."
+   ],
    "nivel": "C1",
    "tags": [
     "gramática",
     "condicional"
    ],
-   "nota": "'De + infinitivo composto' equivale a uma condicional: 'si lo hubiera sabido'."
+   "nota": "'De + infinitivo composto' equivale a uma condicional: 'si lo hubiera sabido'.",
+   "notaEn": "'De + perfect infinitive' is a compact conditional, equal to 'si lo hubiera sabido'. Formal and rather elegant; you will meet it in writing more than in speech."
   },
   {
    "id": "f047",
    "tipo": "frase",
    "es": "Por más que lo intente, no lo logra.",
    "pt": "Por mais que tente, ele não consegue.",
+   "en": "However hard he tries, he doesn't manage it.",
    "aceitas": [
     "por mais que tente nao consegue",
     "por mais que ele tente nao consegue",
@@ -2849,24 +4753,39 @@ window.CARDS_RAW = {
     "por mais que se esforce nao consegue",
     "tenta e nao consegue"
    ],
+   "aceitasEn": [
+    "however hard he tries he doesnt manage it",
+    "however hard he tries he cant do it",
+    "no matter how hard he tries he doesnt manage",
+    "try as he might he cannot manage it",
+    "however much he tries he doesnt succeed"
+   ],
    "distratores": [
     "Quanto mais ele tenta, mais consegue.",
     "Ele só vai conseguir se tentar de novo.",
     "Ele tentou bastante e acabou conseguindo.",
     "Ele não tenta e por isso não consegue."
    ],
+   "distratoresEn": [
+    "The harder he tries, the better he does.",
+    "He will only manage it if he tries again.",
+    "He tried very hard and finally managed it.",
+    "He does not try, and so he does not manage."
+   ],
    "nivel": "B2",
    "tags": [
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Lograr' = conseguir, alcançar."
+   "nota": "'Lograr' = conseguir, alcançar.",
+   "notaEn": "'Por más que' + subjunctive = however much, no matter how much. 'Lograr' is to manage or achieve, and it takes the thing achieved directly: 'lo logró'."
   },
   {
    "id": "f048",
    "tipo": "frase",
    "es": "Como si nada hubiera pasado.",
    "pt": "Como se nada tivesse acontecido.",
+   "en": "As if nothing had happened.",
    "aceitas": [
     "como se nada tivesse acontecido",
     "como se nada tivesse ocorrido",
@@ -2874,24 +4793,38 @@ window.CARDS_RAW = {
     "como se nada tivesse se passado",
     "como se nada fosse"
    ],
+   "aceitasEn": [
+    "as if nothing had happened",
+    "like nothing had happened",
+    "as though nothing had happened",
+    "as if nothing ever happened"
+   ],
    "distratores": [
     "Como se nada acontecesse.",
     "Como nada aconteceu.",
     "Assim que nada passou.",
     "Como se nada fosse acontecer."
    ],
+   "distratoresEn": [
+    "As if nothing were happening.",
+    "Since nothing has happened.",
+    "As soon as everything passed.",
+    "As if nothing were going to happen."
+   ],
    "nivel": "B2",
    "tags": [
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Como si' sempre pede imperfeito ou mais-que-perfeito do subjuntivo."
+   "nota": "'Como si' sempre pede imperfeito ou mais-que-perfeito do subjuntivo.",
+   "notaEn": "'Como si' always takes the imperfect or the pluperfect subjunctive, never the present — 'como si fuera', 'como si hubiera pasado'. There is no exception worth learning."
   },
   {
    "id": "f049",
    "tipo": "frase",
    "es": "Aunque llueva, iré.",
    "pt": "Mesmo que chova, eu irei.",
+   "en": "Even if it rains, I'll go.",
    "aceitas": [
     "mesmo que chova eu irei",
     "ainda que chova eu vou",
@@ -2900,24 +4833,39 @@ window.CARDS_RAW = {
     "mesmo chovendo eu vou",
     "mesmo que chova eu vou"
    ],
+   "aceitasEn": [
+    "even if it rains ill go",
+    "even if it rains i will go",
+    "ill go even if it rains",
+    "i will go even if it rains",
+    "rain or not ill go"
+   ],
    "distratores": [
     "Embora chovesse, fui.",
     "Se chover, eu vou.",
     "Como chove, eu vou.",
     "Ainda que chovia, eu ia."
    ],
+   "distratoresEn": [
+    "Although it was raining, I went.",
+    "If it rains, I am going.",
+    "Since it is raining, I go.",
+    "Even though it rained, I went."
+   ],
    "nivel": "B2",
    "tags": [
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Aunque' + subjuntivo = concessão hipotética; + indicativo = fato conhecido."
+   "nota": "'Aunque' + subjuntivo = concessão hipotética; + indicativo = fato conhecido.",
+   "notaEn": "'Aunque' + subjunctive = even if, a hypothesis. 'Aunque' + indicative = even though, a known fact: 'aunque llueve, iré' means it is raining and I'm going anyway."
   },
   {
    "id": "f051",
    "tipo": "frase",
    "es": "Se lo dije ayer.",
    "pt": "Eu disse isso a ele ontem.",
+   "en": "I told him that yesterday.",
    "aceitas": [
     "eu disse isso a ele ontem",
     "eu falei isso pra ele ontem",
@@ -2927,24 +4875,39 @@ window.CARDS_RAW = {
     "eu disse a ele ontem",
     "contei isso a ele ontem"
    ],
+   "aceitasEn": [
+    "i told him that yesterday",
+    "i told him yesterday",
+    "i said that to him yesterday",
+    "i told her that yesterday",
+    "i told them that yesterday"
+   ],
    "distratores": [
     "Ele me disse ontem.",
     "Eu disse a ele hoje.",
     "Disseram-me ontem.",
     "Ele disse isso ontem."
    ],
+   "distratoresEn": [
+    "He told me that yesterday.",
+    "I told him that today.",
+    "They told me yesterday.",
+    "He said that yesterday."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática",
     "pronomes"
    ],
-   "nota": "'Le lo' vira 'se lo'. Ordem: pronome indireto antes do direto."
+   "nota": "'Le lo' vira 'se lo'. Ordem: pronome indireto antes do direto.",
+   "notaEn": "'Le lo' is impossible in Spanish, so the indirect pronoun turns into 'se': 'se lo dije'. Indirect always comes before direct."
   },
   {
    "id": "f052",
    "tipo": "frase",
    "es": "Hay que hacerlo ya.",
    "pt": "É preciso fazer isso agora.",
+   "en": "It has to be done now.",
    "aceitas": [
     "e preciso fazer isso agora",
     "e necessario fazer isso agora",
@@ -2956,23 +4919,38 @@ window.CARDS_RAW = {
     "deve ser feito agora",
     "e necessario fazer agora"
    ],
+   "aceitasEn": [
+    "it has to be done now",
+    "it needs to be done now",
+    "we have to do it now",
+    "it must be done now",
+    "weve got to do it now"
+   ],
    "distratores": [
     "Há quem faça isso.",
     "Vamos fazer depois.",
     "Já foi feito.",
     "Pode-se fazer depois."
    ],
+   "distratoresEn": [
+    "There are people who do it.",
+    "Let us do it later.",
+    "It has been done already.",
+    "One could do it later."
+   ],
    "nivel": "A2",
    "tags": [
     "gramática"
    ],
-   "nota": "'Hay que' = obrigação impessoal; 'tener que' = obrigação pessoal. 'Ya' = agora/já."
+   "nota": "'Hay que' = obrigação impessoal; 'tener que' = obrigação pessoal. 'Ya' = agora/já.",
+   "notaEn": "'Hay que' states an impersonal obligation — somebody has to. 'Tener que' pins it on a person: 'tengo que hacerlo'. And 'ya' here means now, not already."
   },
   {
    "id": "f053",
    "tipo": "frase",
    "es": "Llevo tres años estudiando español.",
    "pt": "Estudo espanhol há três anos.",
+   "en": "I've been studying Spanish for three years.",
    "aceitas": [
     "estudo espanhol ha tres anos",
     "faz tres anos que estudo espanhol",
@@ -2982,23 +4960,37 @@ window.CARDS_RAW = {
     "venho estudando espanhol ha tres anos",
     "tem tres anos que estudo espanhol"
    ],
+   "aceitasEn": [
+    "ive been studying spanish for three years",
+    "i have been studying spanish for three years",
+    "ive been studying spanish for 3 years",
+    "ive studied spanish for three years"
+   ],
    "distratores": [
     "Levei três anos estudando espanhol.",
     "Vou estudar espanhol por três anos.",
     "Estudei espanhol três anos atrás.",
     "Terminei o espanhol em três anos."
    ],
+   "distratoresEn": [
+    "It took me three years to study Spanish.",
+    "I will study Spanish for three years.",
+    "I studied Spanish three years ago.",
+    "I finished Spanish in three years."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática"
    ],
-   "nota": "'Llevar + tempo + gerúndio' = ação que continua até agora."
+   "nota": "'Llevar + tempo + gerúndio' = ação que continua até agora.",
+   "notaEn": "'Llevar + time + gerund' describes something still going on: 'llevo tres años estudiando'. Spanish holds it in the present where English needs a perfect."
   },
   {
    "id": "f054",
    "tipo": "frase",
    "es": "No hay mal que por bien no venga.",
    "pt": "Há males que vêm para bem.",
+   "en": "Every cloud has a silver lining.",
    "aceitas": [
     "ha males que vem para bem",
     "tudo tem um lado bom",
@@ -3006,28 +4998,49 @@ window.CARDS_RAW = {
     "existe males que vem para bem",
     "todo mal traz algum bem"
    ],
+   "aceitasEn": [
+    "every cloud has a silver lining",
+    "every cloud has its silver lining",
+    "its a blessing in disguise",
+    "theres always a silver lining",
+    "good comes out of bad"
+   ],
    "distratores": [
     "Não há mal nenhum.",
     "O bem não vem do mal.",
     "Todo mal é bem-vindo.",
     "Nem tudo que vem é bom."
    ],
+   "distratoresEn": [
+    "There is no evil at all here.",
+    "Good never comes out of evil.",
+    "Every misfortune is welcome.",
+    "Not all that comes is good."
+   ],
    "nivel": "B2",
    "tags": [
     "provérbio"
    ],
-   "nota": "Provérbio quase idêntico ao nosso, mas com estrutura invertida."
+   "nota": "Provérbio quase idêntico ao nosso, mas com estrutura invertida.",
+   "notaEn": "A double negative that means the opposite of how it looks: there is no misfortune that does not arrive for some good. Common in speech, usually as consolation."
   },
   {
    "id": "f055",
    "tipo": "frase",
    "es": "A quien madruga, Dios le ayuda.",
    "pt": "Deus ajuda quem cedo madruga.",
+   "en": "The early bird catches the worm.",
    "aceitas": [
     "deus ajuda quem cedo madruga",
     "deus ajuda quem acorda cedo",
     "quem madruga deus ajuda",
     "a quem madruga deus ajuda"
+   ],
+   "aceitasEn": [
+    "the early bird catches the worm",
+    "early bird catches the worm",
+    "god helps those who rise early",
+    "the early riser gets ahead"
    ],
    "distratores": [
     "Deus ajuda a quem se ajuda.",
@@ -3035,17 +5048,25 @@ window.CARDS_RAW = {
     "Deus escreve certo por linhas tortas.",
     "Quem espera sempre alcança."
    ],
+   "distratoresEn": [
+    "God helps those who help themselves.",
+    "Early to bed, early to rise.",
+    "God writes straight with crooked lines.",
+    "Good things come to those who wait."
+   ],
    "nivel": "B1",
    "tags": [
     "provérbio"
    ],
-   "nota": "Mesma ideia do provérbio português."
+   "nota": "Mesma ideia do provérbio português.",
+   "notaEn": "Literally, God helps the one who rises early. English swaps God for a bird, but the moral is identical: get up and get going."
   },
   {
    "id": "f056",
    "tipo": "frase",
    "es": "El que mucho abarca, poco aprieta.",
    "pt": "Quem muito quer, nada tem.",
+   "en": "Don't bite off more than you can chew.",
    "aceitas": [
     "quem muito quer nada tem",
     "quem abraca demais nao aperta nada",
@@ -3053,23 +5074,38 @@ window.CARDS_RAW = {
     "quem muito abarca pouco aperta",
     "quem quer tudo fica sem nada"
    ],
+   "aceitasEn": [
+    "dont bite off more than you can chew",
+    "do not bite off more than you can chew",
+    "dont spread yourself too thin",
+    "jack of all trades master of none",
+    "grasp all lose all"
+   ],
    "distratores": [
     "Quem aperta muito, perde.",
     "Quem abraça, aperta pouco.",
     "Quem tem pouco, quer muito.",
     "Quem cala consente."
    ],
+   "distratoresEn": [
+    "He who squeezes hard will lose it.",
+    "A tight embrace holds very little.",
+    "Those with little always want more.",
+    "Silence gives consent to everything."
+   ],
    "nivel": "C1",
    "tags": [
     "provérbio"
    ],
-   "nota": "Sobre querer fazer coisas demais ao mesmo tempo."
+   "nota": "Sobre querer fazer coisas demais ao mesmo tempo.",
+   "notaEn": "'Abarcar' is to take in or encompass; 'apretar' is to grip tight. Reach for too much and you hold none of it firmly."
   },
   {
    "id": "f057",
    "tipo": "frase",
    "es": "Le dieron gato por liebre.",
    "pt": "Venderam gato por lebre a ele.",
+   "en": "He was sold a fake.",
    "aceitas": [
     "venderam gato por lebre",
     "deram gato por lebre",
@@ -3078,23 +5114,39 @@ window.CARDS_RAW = {
     "venderam gato por lebre a ele",
     "aplicaram um golpe nele"
    ],
+   "aceitasEn": [
+    "he was sold a fake",
+    "they sold him a fake",
+    "they sold him a pup",
+    "he got ripped off",
+    "they swindled him",
+    "he was taken for a ride"
+   ],
    "distratores": [
     "Deram um gato a ele.",
     "Trocaram o gato pela lebre dele.",
     "Presentearam com um coelho.",
     "Ele comprou um gato."
    ],
+   "distratoresEn": [
+    "They gave him a cat.",
+    "They swapped his cat over.",
+    "They gave him a rabbit.",
+    "He bought himself a cat."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Idêntica ao português: foi enganado na compra."
+   "nota": "Idêntica ao português: foi enganado na compra.",
+   "notaEn": "'Dar gato por liebre' = to pass off cat as hare, selling someone something worse than what was promised. The image is old; the complaint is still current."
   },
   {
    "id": "f058",
    "tipo": "frase",
    "es": "Son uña y carne.",
    "pt": "São unha e carne. / São inseparáveis.",
+   "en": "They are inseparable.",
    "aceitas": [
     "sao unha e carne",
     "sao inseparaveis",
@@ -3103,23 +5155,39 @@ window.CARDS_RAW = {
     "sao grudados",
     "sao inseparaveis mesmo"
    ],
+   "aceitasEn": [
+    "they are inseparable",
+    "theyre inseparable",
+    "theyre as thick as thieves",
+    "theyre joined at the hip",
+    "theyre the best of friends",
+    "they are very close"
+   ],
    "distratores": [
     "Estão brigados. / Não se falam.",
     "São parentes. / Têm o mesmo sangue.",
     "São iguaizinhos. / Parecem gêmeos.",
     "São rivais. / Vivem competindo."
    ],
+   "distratoresEn": [
+    "They are not speaking.",
+    "They are blood relatives.",
+    "They look exactly alike.",
+    "They are constant rivals."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Amizade muito próxima."
+   "nota": "Amizade muito próxima.",
+   "notaEn": "'Uña y carne' — nail and flesh, which you cannot pull apart without hurting both. Said of friends who are always together."
   },
   {
    "id": "f059",
    "tipo": "frase",
    "es": "No te andes por las ramas.",
    "pt": "Não fique enrolando. / Vá direto ao ponto.",
+   "en": "Don't beat about the bush.",
    "aceitas": [
     "nao fique enrolando",
     "va direto ao ponto",
@@ -3130,23 +5198,39 @@ window.CARDS_RAW = {
     "nao enrola",
     "chega de enrolacao"
    ],
+   "aceitasEn": [
+    "dont beat about the bush",
+    "dont beat around the bush",
+    "do not beat around the bush",
+    "get to the point",
+    "stop stalling",
+    "dont waffle"
+   ],
    "distratores": [
     "Não suba nos galhos. / Pode quebrar.",
     "Não ande pelo mato. / É perigoso.",
     "Não se ramifique. / Siga um caminho.",
     "Não corte os galhos. / Deixe a árvore."
    ],
+   "distratoresEn": [
+    "Don't climb up the branches.",
+    "Don't walk through the woods.",
+    "Don't spread yourself too thin.",
+    "Don't cut the branches off."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Oposto de 'ir al grano'."
+   "nota": "Oposto de 'ir al grano'.",
+   "notaEn": "'Andarse por las ramas' = to wander off into the branches instead of going for the trunk. Its opposite is 'ir al grano'."
   },
   {
    "id": "f060",
    "tipo": "frase",
    "es": "Siempre se sale con la suya.",
    "pt": "Ele sempre consegue o que quer.",
+   "en": "He always gets his own way.",
    "aceitas": [
     "ele sempre consegue o que quer",
     "sempre faz o que quer",
@@ -3155,23 +5239,38 @@ window.CARDS_RAW = {
     "sempre da um jeito de conseguir",
     "sempre impoe a vontade dele"
    ],
+   "aceitasEn": [
+    "he always gets his own way",
+    "he always gets his way",
+    "he always has it his way",
+    "he always wins in the end",
+    "he always gets what he wants"
+   ],
    "distratores": [
     "Ele sempre sai sozinho.",
     "Ele sempre sai com a namorada.",
     "Ele sempre se dá mal.",
     "Ele sempre sai perdendo."
    ],
+   "distratoresEn": [
+    "He always goes out alone.",
+    "He always leaves with his girlfriend.",
+    "He always comes off badly.",
+    "He always ends up losing."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Salirse con la suya' = fazer prevalecer a própria vontade."
+   "nota": "'Salirse con la suya' = fazer prevalecer a própria vontade.",
+   "notaEn": "'Salirse con la suya' = to get one's own way, usually against opposition. 'La suya' stands in for 'su voluntad' — his will, left unspoken."
   },
   {
    "id": "f061",
    "tipo": "frase",
    "es": "Está de mala leche.",
    "pt": "Está de mau humor.",
+   "en": "He's in a foul mood.",
    "aceitas": [
     "esta de mau humor",
     "ta de mau humor",
@@ -3181,24 +5280,40 @@ window.CARDS_RAW = {
     "esta de cara feia",
     "esta azedo"
    ],
+   "aceitasEn": [
+    "hes in a foul mood",
+    "he is in a foul mood",
+    "hes in a bad mood",
+    "hes in a filthy mood",
+    "hes grumpy",
+    "hes in a mood"
+   ],
    "distratores": [
     "Está com leite estragado.",
     "Está passando mal.",
     "Está com sorte.",
     "Está de bem com a vida."
    ],
+   "distratoresEn": [
+    "He has some spoiled milk.",
+    "He is feeling quite unwell.",
+    "He is having a lucky day.",
+    "He is happy with his life."
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "'Tener mala leche' também pode significar ter má índole."
+   "nota": "'Tener mala leche' também pode significar ter má índole.",
+   "notaEn": "'Estar de mala leche' is a passing mood; 'tener mala leche' is a permanent streak of nastiness. Milk turns up all over Spanish slang, rarely politely."
   },
   {
    "id": "f062",
    "tipo": "frase",
    "es": "Me quedé de piedra.",
    "pt": "Fiquei pasmo. / Fiquei chocado.",
+   "en": "I was stunned.",
    "aceitas": [
     "fiquei pasmo",
     "fiquei chocado",
@@ -3209,23 +5324,40 @@ window.CARDS_RAW = {
     "fiquei abismado",
     "fiquei gelado"
    ],
+   "aceitasEn": [
+    "i was stunned",
+    "i was speechless",
+    "i was gobsmacked",
+    "i was flabbergasted",
+    "i was left speechless",
+    "i froze",
+    "i was shocked"
+   ],
    "distratores": [
     "Fiquei na pedra. / Sentei ali.",
     "Peguei uma pedra. / Levantei do chão.",
     "Fiquei duro. / Sem dinheiro nenhum.",
     "Fiquei firme. / Não mudei de ideia."
    ],
+   "distratoresEn": [
+    "I sat down on the rock.",
+    "I picked up a stone.",
+    "I was completely broke.",
+    "I stood my ground firmly."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Surpresa que deixa a pessoa sem reação."
+   "nota": "Surpresa que deixa a pessoa sem reação.",
+   "notaEn": "'Quedarse de piedra' = to be turned to stone by surprise. 'Quedarse' + adjective is a whole family: 'me quedé helado', 'se quedó en blanco'."
   },
   {
    "id": "f063",
    "tipo": "frase",
    "es": "Estoy de bajón.",
    "pt": "Estou pra baixo. / Estou desanimado.",
+   "en": "I'm feeling low.",
    "aceitas": [
     "estou pra baixo",
     "estou desanimado",
@@ -3236,23 +5368,40 @@ window.CARDS_RAW = {
     "estou cabisbaixo",
     "estou desmotivado"
    ],
+   "aceitasEn": [
+    "im feeling low",
+    "i m feeling low",
+    "i am feeling low",
+    "im feeling down",
+    "im down",
+    "im in a slump",
+    "im feeling a bit flat"
+   ],
    "distratores": [
     "Estou descendo. / Vou de elevador.",
     "Estou de baixa. / Afastado do trabalho.",
     "Estou no fundo do poço. / Sem dinheiro.",
     "Estou animado. / Cheio de energia."
    ],
+   "distratoresEn": [
+    "I am going down now.",
+    "I am off sick from work.",
+    "I am completely broke.",
+    "I am full of energy."
+   ],
    "nivel": "B2",
    "tags": [
     "gíria"
    ],
-   "nota": "'Bajón' = queda de ânimo."
+   "nota": "'Bajón' = queda de ânimo.",
+   "notaEn": "'Un bajón' is a sudden drop — in mood, in energy, in blood sugar. 'Me dio un bajón' = I suddenly crashed."
   },
   {
    "id": "f064",
    "tipo": "frase",
    "es": "Echar leña al fuego.",
    "pt": "Botar lenha na fogueira.",
+   "en": "To add fuel to the fire.",
    "aceitas": [
     "botar lenha na fogueira",
     "por lenha na fogueira",
@@ -3261,23 +5410,39 @@ window.CARDS_RAW = {
     "atiçar a briga",
     "aumentar o fogo"
    ],
+   "aceitasEn": [
+    "to add fuel to the fire",
+    "add fuel to the fire",
+    "to add fuel to the flames",
+    "to pour petrol on the fire",
+    "to make things worse",
+    "to stir the pot"
+   ],
    "distratores": [
     "Apagar o fogo.",
     "Acender a lareira.",
     "Jogar água fria.",
     "Cozinhar na lenha."
    ],
+   "distratoresEn": [
+    "To put the fire out.",
+    "To light the fireplace up.",
+    "To pour cold water on it.",
+    "To cook over a wood fire."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Agravar um conflito de propósito."
+   "nota": "Agravar um conflito de propósito.",
+   "notaEn": "'Echar leña al fuego' = to throw firewood on the fire, making a quarrel worse on purpose."
   },
   {
    "id": "f065",
    "tipo": "frase",
    "es": "Lo hizo a troche y moche.",
    "pt": "Fez de qualquer jeito. / A torto e a direito.",
+   "en": "He did it any old how.",
    "aceitas": [
     "fez de qualquer jeito",
     "a torto e a direito",
@@ -3287,23 +5452,39 @@ window.CARDS_RAW = {
     "fez as pressas e mal",
     "fez sem cuidado nenhum"
    ],
+   "aceitasEn": [
+    "he did it any old how",
+    "he did it any which way",
+    "he did it haphazardly",
+    "he did it carelessly",
+    "he did it every which way",
+    "he threw it together"
+   ],
    "distratores": [
     "Fez com muito cuidado. / Com todo o capricho.",
     "Fez aos poucos. / Um pedaço a cada dia.",
     "Fez tudo em dobro. / Duas vezes bem seguidas.",
     "Fez durante a noite. / Quando todos já dormiam."
    ],
+   "distratoresEn": [
+    "He did it with great care.",
+    "He did it bit by bit.",
+    "He did it all twice over.",
+    "He did it during the night."
+   ],
    "nivel": "C2",
    "tags": [
     "expressão"
    ],
-   "nota": "Sem ordem nem critério."
+   "nota": "Sem ordem nem critério.",
+   "notaEn": "'A troche y moche' = wildly, with no order and no judgement. Neither word means anything on its own any more; the phrase carries the whole sense."
   },
   {
    "id": "f066",
    "tipo": "frase",
    "es": "Sigue erre que erre.",
    "pt": "Continua teimando na mesma. / Insiste sem parar.",
+   "en": "He keeps stubbornly at it.",
    "aceitas": [
     "continua teimando",
     "insiste sem parar",
@@ -3313,24 +5494,40 @@ window.CARDS_RAW = {
     "continua teimando na mesma",
     "nao larga o osso"
    ],
+   "aceitasEn": [
+    "he keeps stubbornly at it",
+    "he keeps on and on",
+    "he wont let it drop",
+    "he keeps banging on about it",
+    "he goes on and on",
+    "hes still at it"
+   ],
    "distratores": [
     "Continua errando tudo. / Não acerta uma.",
     "Continua repetindo a letra. / Treina o erre.",
     "Já desistiu de tudo. / Largou de mão.",
     "Continua com raiva. / Não esfriou a cabeça."
    ],
+   "distratoresEn": [
+    "He keeps getting everything wrong.",
+    "He keeps practising the letter R.",
+    "He has already given up entirely.",
+    "He is still angry about it."
+   ],
    "nivel": "C2",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "Insistência obstinada em algo."
+   "nota": "Insistência obstinada em algo.",
+   "notaEn": "'Erre que erre' — the rolled R repeated over and over, like someone who will not stop. It marks obstinate, wearying insistence."
   },
   {
    "id": "f067",
    "tipo": "frase",
    "es": "A duras penas conseguí terminar.",
    "pt": "A muito custo consegui terminar.",
+   "en": "I only just managed to finish.",
    "aceitas": [
     "a muito custo consegui terminar",
     "a duras penas consegui terminar",
@@ -3339,23 +5536,38 @@ window.CARDS_RAW = {
     "consegui terminar com muito custo",
     "foi dificil mas terminei"
    ],
+   "aceitasEn": [
+    "i only just managed to finish",
+    "i barely managed to finish",
+    "i just about managed to finish",
+    "i hardly managed to finish",
+    "i scraped through to the end"
+   ],
    "distratores": [
     "Com facilidade terminei.",
     "Nem consegui terminar.",
     "Terminei com pena.",
     "Terminei duro de cansaço."
    ],
+   "distratoresEn": [
+    "I finished the whole thing easily.",
+    "I did not manage to finish it.",
+    "I finished it out of pity.",
+    "I finished, stiff with exhaustion."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "'A duras penas' = com muita dificuldade."
+   "nota": "'A duras penas' = com muita dificuldade.",
+   "notaEn": "'A duras penas' = barely, with great difficulty. 'Las penas' here are hardships rather than sorrows."
   },
   {
    "id": "f068",
    "tipo": "frase",
    "es": "¡Es la leche!",
    "pt": "É incrível! / É demais!",
+   "en": "It's amazing!",
    "aceitas": [
     "e incrivel",
     "e demais",
@@ -3366,24 +5578,41 @@ window.CARDS_RAW = {
     "e show",
     "e espetacular"
    ],
+   "aceitasEn": [
+    "its amazing",
+    "it s amazing",
+    "it is amazing",
+    "its incredible",
+    "its unbelievable",
+    "its the best",
+    "its something else"
+   ],
    "distratores": [
     "É leite puro! / Sem mistura!",
     "Que nojo! / Não dá para olhar!",
     "É muito ruim! / Uma porcaria!",
     "É indiferente! / Dá na mesma!"
    ],
+   "distratoresEn": [
+    "It's pure milk!",
+    "That's disgusting!",
+    "It's absolutely terrible!",
+    "It makes no difference!"
+   ],
    "nivel": "C1",
    "tags": [
     "gíria",
     "Espanha"
    ],
-   "nota": "Ambíguo: pelo contexto pode ser elogio ou reclamação."
+   "nota": "Ambíguo: pelo contexto pode ser elogio ou reclamação.",
+   "notaEn": "'Ser la leche' can go either way: astonishing good or astonishing bad. Tone and context carry the whole meaning — 'este tío es la leche' could be praise or despair."
   },
   {
    "id": "f069",
    "tipo": "frase",
    "es": "Vale, quedamos a las ocho.",
    "pt": "Beleza, a gente se encontra às oito.",
+   "en": "OK, let's meet at eight.",
    "aceitas": [
     "beleza a gente se encontra as oito",
     "ok combinado as oito",
@@ -3392,24 +5621,40 @@ window.CARDS_RAW = {
     "beleza fica combinado as oito",
     "ta certo a gente se ve as oito"
    ],
+   "aceitasEn": [
+    "ok lets meet at eight",
+    "okay lets meet at eight",
+    "right lets meet at eight",
+    "fine well meet at eight",
+    "ok were meeting at eight",
+    "sure lets meet at eight"
+   ],
    "distratores": [
     "Tudo bem, isso vale oito reais.",
     "Beleza, a gente fica até as oito.",
     "Certo, sobraram oito lugares para nós.",
     "Combinado, vale a pena chegar às oito."
    ],
+   "distratoresEn": [
+    "Fine, that is worth eight euros.",
+    "OK, we will stay until eight.",
+    "Right, eight places are left for us.",
+    "Agreed, it is worth arriving at eight."
+   ],
    "nivel": "B1",
    "tags": [
     "cotidiano",
     "Espanha"
    ],
-   "nota": "'Quedar' = marcar/combinar encontro. 'Vale' = ok (Espanha)."
+   "nota": "'Quedar' = marcar/combinar encontro. 'Vale' = ok (Espanha).",
+   "notaEn": "'Quedar' here is to arrange to meet: 'hemos quedado a las ocho'. 'Vale' is the all-purpose OK in Spain — in Latin America you would hear 'listo', 'dale' or 'bueno'."
   },
   {
    "id": "f070",
    "tipo": "frase",
    "es": "Menos mal que llegaste.",
    "pt": "Ainda bem que você chegou.",
+   "en": "Thank goodness you arrived.",
    "aceitas": [
     "ainda bem que voce chegou",
     "que bom que voce chegou",
@@ -3418,26 +5663,48 @@ window.CARDS_RAW = {
     "menos mal que voce chegou",
     "ate que enfim voce chegou"
    ],
+   "aceitasEn": [
+    "thank goodness you arrived",
+    "thank goodness you came",
+    "thank god you arrived",
+    "just as well you arrived",
+    "its a good thing you arrived",
+    "thankfully you arrived"
+   ],
    "distratores": [
     "Pior que você chegou.",
     "Menos mal do que parecia.",
     "Você chegou mal.",
     "Faltou pouco para você chegar."
    ],
+   "distratoresEn": [
+    "It is worse that you arrived.",
+    "Less bad than it looked.",
+    "You arrived in bad shape.",
+    "You very nearly arrived."
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Menos mal que' = ainda bem que."
+   "nota": "'Menos mal que' = ainda bem que.",
+   "notaEn": "'Menos mal que' = thank goodness, just as well. Literally less bad, and it always introduces relief at a near miss."
   },
   {
    "id": "p071",
    "tipo": "palavra",
    "es": "la calle",
    "pt": "a rua",
+   "en": "the street",
    "aceitas": [
     "rua",
     "via"
+   ],
+   "aceitasEn": [
+    "street",
+    "the street",
+    "road",
+    "the road"
    ],
    "distratores": [
     "a calha",
@@ -3445,20 +5712,32 @@ window.CARDS_RAW = {
     "a colina",
     "a caleira"
    ],
+   "distratoresEn": [
+    "the gutter",
+    "the alley",
+    "the hill",
+    "the pavement"
+   ],
    "nivel": "A1",
    "tags": [
     "cidade"
    ],
-   "nota": "'Salir a la calle' = sair na rua. Cuidado com a pronúncia do 'll'."
+   "nota": "'Salir a la calle' = sair na rua. Cuidado com a pronúncia do 'll'.",
+   "notaEn": "'Salir a la calle' = to go outside. Mind the 'll' — in most of Spain it sounds like the y in yes; in Argentina it turns into a sh."
   },
   {
    "id": "p072",
    "tipo": "palavra",
    "es": "la ventana",
    "pt": "a janela",
+   "en": "the window",
    "aceitas": [
     "janela",
     "vitrine"
+   ],
+   "aceitasEn": [
+    "window",
+    "the window"
    ],
    "distratores": [
     "o ventilador",
@@ -3466,21 +5745,35 @@ window.CARDS_RAW = {
     "o vento",
     "a ventania"
    ],
+   "distratoresEn": [
+    "the fan",
+    "the balcony",
+    "the wind",
+    "the shutter"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "Do mesmo grupo: 'puerta' = porta, 'pared' = parede."
+   "nota": "Do mesmo grupo: 'puerta' = porta, 'pared' = parede.",
+   "notaEn": "House vocabulary travels in packs: 'la puerta' is the door, 'la pared' the wall, 'el techo' the ceiling. A shop window is 'el escaparate'."
   },
   {
    "id": "p073",
    "tipo": "palavra",
    "es": "el suelo",
    "pt": "o chão",
+   "en": "the floor",
    "aceitas": [
     "chao",
     "piso",
     "solo"
+   ],
+   "aceitasEn": [
+    "floor",
+    "the floor",
+    "ground",
+    "the ground"
    ],
    "distratores": [
     "o sono",
@@ -3488,19 +5781,31 @@ window.CARDS_RAW = {
     "o teto",
     "o sol"
    ],
+   "distratoresEn": [
+    "the ceiling",
+    "the sun",
+    "the upper storey",
+    "the roof"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "Cuidado: 'suelo' também é a forma de 'soler' (costumar) na primeira pessoa."
+   "nota": "Cuidado: 'suelo' também é a forma de 'soler' (costumar) na primeira pessoa.",
+   "notaEn": "'El suelo' is the floor indoors and the ground outside. It is also the first person of 'soler': 'suelo ir' = I usually go."
   },
   {
    "id": "p074",
    "tipo": "palavra",
    "es": "la llave",
    "pt": "a chave",
+   "en": "the key",
    "aceitas": [
     "chave"
+   ],
+   "aceitasEn": [
+    "key",
+    "the key"
    ],
    "distratores": [
     "a chuva",
@@ -3508,21 +5813,35 @@ window.CARDS_RAW = {
     "a chama",
     "a nave"
    ],
+   "distratoresEn": [
+    "the rain",
+    "the flame",
+    "the wash",
+    "the lock"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "O 'll' espanhol soa como o nosso 'lh' ou 'j', dependendo da região."
+   "nota": "O 'll' espanhol soa como o nosso 'lh' ou 'j', dependendo da região.",
+   "notaEn": "'La llave' is the key, and across much of Latin America the tap as well. 'Echar la llave' = to lock up."
   },
   {
    "id": "p075",
    "tipo": "palavra",
    "es": "la tienda",
    "pt": "a loja",
+   "en": "the shop",
    "aceitas": [
     "loja",
     "mercearia",
     "barraca"
+   ],
+   "aceitasEn": [
+    "shop",
+    "the shop",
+    "store",
+    "the store"
    ],
    "distratores": [
     "a tenda de circo",
@@ -3530,20 +5849,34 @@ window.CARDS_RAW = {
     "a toalha",
     "a tinta"
    ],
+   "distratoresEn": [
+    "the circus tent",
+    "the trend",
+    "the towel",
+    "the paint"
+   ],
    "nivel": "A1",
    "tags": [
     "cidade"
    ],
-   "nota": "Também significa barraca de acampar: 'tienda de campaña'."
+   "nota": "Também significa barraca de acampar: 'tienda de campaña'.",
+   "notaEn": "'La tienda' is the shop, and also the tent you camp in: 'tienda de campaña'. In Latin America you will also hear 'el negocio'."
   },
   {
    "id": "p076",
    "tipo": "palavra",
    "es": "el pájaro",
    "pt": "o pássaro",
+   "en": "the bird",
    "aceitas": [
     "passaro",
     "ave"
+   ],
+   "aceitasEn": [
+    "bird",
+    "the bird",
+    "little bird",
+    "small bird"
    ],
    "distratores": [
     "o papagaio",
@@ -3551,21 +5884,37 @@ window.CARDS_RAW = {
     "o parceiro",
     "o palhaço"
    ],
+   "distratoresEn": [
+    "the parrot",
+    "the payment",
+    "the partner",
+    "the clown"
+   ],
    "nivel": "A1",
    "tags": [
     "animais"
    ],
-   "nota": "O 'j' espanhol tem som de 'r' forte do português."
+   "nota": "O 'j' espanhol tem som de 'r' forte do português.",
+   "notaEn": "'El pájaro' is a small bird; 'el ave' is the wider word, taking in eagles and hens alike. The Spanish j rasps at the back of the throat."
   },
   {
    "id": "p077",
    "tipo": "palavra",
    "es": "la carpeta",
    "pt": "a pasta",
+   "en": "the folder",
    "aceitas": [
     "pasta",
     "pasta de arquivos",
     "fichario"
+   ],
+   "aceitasEn": [
+    "folder",
+    "the folder",
+    "file",
+    "the file",
+    "binder",
+    "the binder"
    ],
    "distratores": [
     "o carpete",
@@ -3573,21 +5922,35 @@ window.CARDS_RAW = {
     "a carteira",
     "a carroça"
    ],
+   "distratoresEn": [
+    "the carpet",
+    "the carpenter",
+    "the wallet",
+    "the cart"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "escritório"
    ],
-   "nota": "Falso amigo. Carpete = 'moqueta' ou 'alfombra'."
+   "nota": "Falso amigo. Carpete = 'moqueta' ou 'alfombra'.",
+   "notaEn": "'La carpeta' is a folder, on a desk or on a screen. A carpet is 'la moqueta' or 'la alfombra' — the resemblance is a trap."
   },
   {
    "id": "p078",
    "tipo": "palavra",
    "es": "la firma",
    "pt": "a assinatura",
+   "en": "the signature",
    "aceitas": [
     "assinatura",
     "rubrica"
+   ],
+   "aceitasEn": [
+    "signature",
+    "the signature",
+    "autograph",
+    "the autograph"
    ],
    "distratores": [
     "a firma comercial",
@@ -3595,21 +5958,37 @@ window.CARDS_RAW = {
     "a forma",
     "a fila"
    ],
+   "distratoresEn": [
+    "the business firm",
+    "the firmness",
+    "the shape",
+    "the queue"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Falso amigo. Firma (empresa) = 'empresa'. E 'firmar' = assinar."
+   "nota": "Falso amigo. Firma (empresa) = 'empresa'. E 'firmar' = assinar.",
+   "notaEn": "'La firma' is the signature, and 'firmar' is to sign. A firm in the business sense is 'la empresa', though 'la firma' can stretch that way in formal writing."
   },
   {
    "id": "p079",
    "tipo": "palavra",
    "es": "la nevera",
    "pt": "a geladeira",
+   "en": "the fridge",
    "aceitas": [
     "geladeira",
     "frigorifico",
     "refrigerador"
+   ],
+   "aceitasEn": [
+    "fridge",
+    "the fridge",
+    "refrigerator",
+    "the refrigerator",
+    "icebox",
+    "cool box"
    ],
    "distratores": [
     "a neve",
@@ -3617,19 +5996,33 @@ window.CARDS_RAW = {
     "a caldeira",
     "a neblina"
    ],
+   "distratoresEn": [
+    "the snow",
+    "the blizzard",
+    "the boiler",
+    "the mist"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "Vem de 'nieve' (neve). Também se diz 'frigorífico' na Espanha."
+   "nota": "Vem de 'nieve' (neve). Também se diz 'frigorífico' na Espanha.",
+   "notaEn": "From 'la nieve', snow. In Spain you will also hear 'el frigorífico'; in Latin America, 'el refrigerador' or 'la heladera'."
   },
   {
    "id": "p080",
    "tipo": "palavra",
    "es": "el grifo",
    "pt": "a torneira",
+   "en": "the tap",
    "aceitas": [
     "torneira"
+   ],
+   "aceitasEn": [
+    "tap",
+    "the tap",
+    "faucet",
+    "the faucet"
    ],
    "distratores": [
     "o grifo do texto",
@@ -3637,20 +6030,38 @@ window.CARDS_RAW = {
     "o grito",
     "o grampo"
    ],
+   "distratoresEn": [
+    "the griffin",
+    "the label",
+    "the shout",
+    "the staple"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "Na América Latina também se diz 'la llave' ou 'el caño'."
+   "nota": "Na América Latina também se diz 'la llave' ou 'el caño'.",
+   "notaEn": "'El grifo' is the tap — and also the griffin, the beast whose head was carved on old fountains. In Latin America the tap is 'la llave' or 'el caño'."
   },
   {
    "id": "p081",
    "tipo": "palavra",
    "es": "la basura",
    "pt": "o lixo",
+   "en": "the rubbish",
    "aceitas": [
     "lixo",
     "sujeira"
+   ],
+   "aceitasEn": [
+    "rubbish",
+    "the rubbish",
+    "garbage",
+    "the garbage",
+    "trash",
+    "the trash",
+    "waste",
+    "litter"
    ],
    "distratores": [
     "a bagunça",
@@ -3658,21 +6069,38 @@ window.CARDS_RAW = {
     "a bassoura",
     "a batida"
    ],
+   "distratoresEn": [
+    "the mess",
+    "the base",
+    "the broom",
+    "the beat"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "'Sacar la basura' = levar o lixo para fora."
+   "nota": "'Sacar la basura' = levar o lixo para fora.",
+   "notaEn": "'Sacar la basura' = to take the rubbish out. The bin is 'el cubo de la basura' in Spain, 'el bote' or 'el tacho' elsewhere."
   },
   {
    "id": "p082",
    "tipo": "palavra",
    "es": "soler",
    "pt": "costumar",
+   "en": "to be in the habit of",
    "aceitas": [
     "costumar",
     "ter o costume de",
     "ter o habito de"
+   ],
+   "aceitasEn": [
+    "to be in the habit of",
+    "to usually do something",
+    "to usually do",
+    "usually",
+    "to be used to doing",
+    "to tend to",
+    "tend to"
    ],
    "distratores": [
     "soltar",
@@ -3680,22 +6108,40 @@ window.CARDS_RAW = {
     "soar",
     "soletrar"
    ],
+   "distratoresEn": [
+    "to let go of it",
+    "to work the problem out",
+    "to sound like something",
+    "to spell the word out"
+   ],
    "nivel": "B1",
    "tags": [
     "verbo"
    ],
-   "nota": "Verbo sem equivalente direto: 'suelo ir' = costumo ir. Muito frequente."
+   "nota": "Verbo sem equivalente direto: 'suelo ir' = costumo ir. Muito frequente.",
+   "notaEn": "Spanish packs 'usually' into a verb: 'suelo ir' = I usually go, 'solía ir' = I used to go. English has no equivalent verb, so it comes out as an adverb instead."
   },
   {
    "id": "p083",
    "tipo": "palavra",
    "es": "enterarse",
    "pt": "ficar sabendo",
+   "en": "to find out",
    "aceitas": [
     "ficar sabendo",
     "tomar conhecimento",
     "descobrir",
     "saber"
+   ],
+   "aceitasEn": [
+    "to find out",
+    "find out",
+    "to hear about",
+    "hear about",
+    "to learn",
+    "learn",
+    "to get to know",
+    "to become aware"
    ],
    "distratores": [
     "enterrar",
@@ -3703,21 +6149,39 @@ window.CARDS_RAW = {
     "entrar",
     "enternecer-se"
    ],
+   "distratoresEn": [
+    "to bury",
+    "to enter",
+    "to count up",
+    "to be moved"
+   ],
    "nivel": "B1",
    "tags": [
     "verbo"
    ],
-   "nota": "'Me enteré ayer' = fiquei sabendo ontem."
+   "nota": "'Me enteré ayer' = fiquei sabendo ontem.",
+   "notaEn": "'Me enteré ayer' = I found out yesterday. '¿Te enteras?' is do you get it — and '¡no me entero!' is the cry of someone lost in a conversation."
   },
   {
    "id": "p084",
    "tipo": "palavra",
    "es": "el atasco",
    "pt": "o engarrafamento",
+   "en": "the traffic jam",
    "aceitas": [
     "engarrafamento",
     "congestionamento",
     "transito parado"
+   ],
+   "aceitasEn": [
+    "traffic jam",
+    "the traffic jam",
+    "jam",
+    "the jam",
+    "gridlock",
+    "the gridlock",
+    "tailback",
+    "holdup"
    ],
    "distratores": [
     "o ataque",
@@ -3725,20 +6189,35 @@ window.CARDS_RAW = {
     "o tacho",
     "o atraso do voo"
    ],
+   "distratoresEn": [
+    "the sudden attack",
+    "the short cut",
+    "the cooking pot",
+    "the flight delay"
+   ],
    "nivel": "B1",
    "tags": [
     "cidade"
    ],
-   "nota": "De 'atascarse' (entupir, emperrar). Também: 'embotellamiento'."
+   "nota": "De 'atascarse' (entupir, emperrar). Também: 'embotellamiento'.",
+   "notaEn": "From 'atascarse', to get stuck or clogged; it also names a blockage in a pipe. In Latin America you would say 'el embotellamiento' or 'el trancón'."
   },
   {
    "id": "p085",
    "tipo": "palavra",
    "es": "la huelga",
    "pt": "a greve",
+   "en": "the strike",
    "aceitas": [
     "greve",
     "paralisacao"
+   ],
+   "aceitasEn": [
+    "strike",
+    "the strike",
+    "industrial action",
+    "walkout",
+    "the walkout"
    ],
    "distratores": [
     "a folga",
@@ -3746,20 +6225,34 @@ window.CARDS_RAW = {
     "a horta",
     "a huella"
    ],
+   "distratoresEn": [
+    "the day off",
+    "the escape",
+    "the vegetable patch",
+    "the footprint"
+   ],
    "nivel": "B1",
    "tags": [
     "trabalho"
    ],
-   "nota": "'Estar en huelga' = estar em greve. Cuidado: 'folga' = 'descanso'."
+   "nota": "'Estar en huelga' = estar em greve. Cuidado: 'folga' = 'descanso'.",
+   "notaEn": "'Estar en huelga' = to be on strike. It comes from 'holgar', to rest or be idle, which also gives 'holgazán', a layabout."
   },
   {
    "id": "p086",
    "tipo": "palavra",
    "es": "el reto",
    "pt": "o desafio",
+   "en": "the challenge",
    "aceitas": [
     "desafio",
     "provacao"
+   ],
+   "aceitasEn": [
+    "challenge",
+    "the challenge",
+    "dare",
+    "the dare"
    ],
    "distratores": [
     "o resto",
@@ -3767,21 +6260,38 @@ window.CARDS_RAW = {
     "o retoque",
     "o reitor"
    ],
+   "distratoresEn": [
+    "the remainder",
+    "the account",
+    "the touch-up",
+    "the rector"
+   ],
    "nivel": "B1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Retar a alguien' = desafiar alguém."
+   "nota": "'Retar a alguien' = desafiar alguém.",
+   "notaEn": "'Un reto' is a challenge, and 'retar a alguien' is to challenge them. In the Southern Cone 'retar' also means to tell someone off."
   },
   {
    "id": "p087",
    "tipo": "palavra",
    "es": "tardar",
    "pt": "demorar",
+   "en": "to take time",
    "aceitas": [
     "demorar",
     "levar tempo",
     "atrasar"
+   ],
+   "aceitasEn": [
+    "to take time",
+    "take time",
+    "to take long",
+    "to be long",
+    "to take a while",
+    "to delay",
+    "to be slow"
    ],
    "distratores": [
     "tardear",
@@ -3789,21 +6299,36 @@ window.CARDS_RAW = {
     "tratar",
     "tostar"
    ],
+   "distratoresEn": [
+    "to swap",
+    "to deal with",
+    "to toast",
+    "to grow late"
+   ],
    "nivel": "B1",
    "tags": [
     "verbo"
    ],
-   "nota": "'¿Cuánto tardas?' = quanto tempo você demora?"
+   "nota": "'¿Cuánto tardas?' = quanto tempo você demora?",
+   "notaEn": "'¿Cuánto tardas?' = how long will you be? It measures duration, not lateness — to arrive late is 'llegar tarde'."
   },
   {
    "id": "p088",
    "tipo": "palavra",
    "es": "el hito",
    "pt": "o marco",
+   "en": "the milestone",
    "aceitas": [
     "marco",
     "marco historico",
     "divisor de aguas"
+   ],
+   "aceitasEn": [
+    "milestone",
+    "the milestone",
+    "landmark",
+    "the landmark",
+    "turning point"
    ],
    "distratores": [
     "o fio",
@@ -3811,22 +6336,38 @@ window.CARDS_RAW = {
     "o hábito",
     "o hectare"
    ],
+   "distratoresEn": [
+    "the thread",
+    "the myth",
+    "the habit",
+    "the hectare"
+   ],
    "nivel": "B2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Un hito histórico' = um marco histórico."
+   "nota": "'Un hito histórico' = um marco histórico.",
+   "notaEn": "'Un hito histórico' = a historic milestone. The original 'hito' was the boundary stone driven into the ground to mark a limit."
   },
   {
    "id": "p089",
    "tipo": "palavra",
    "es": "el sesgo",
    "pt": "o viés",
+   "en": "the bias",
    "aceitas": [
     "vies",
     "tendencia",
     "enviesamento",
     "inclinacao"
+   ],
+   "aceitasEn": [
+    "bias",
+    "the bias",
+    "slant",
+    "the slant",
+    "skew",
+    "the skew"
    ],
    "distratores": [
     "o segredo",
@@ -3834,22 +6375,41 @@ window.CARDS_RAW = {
     "o segmento",
     "o sossego"
    ],
+   "distratoresEn": [
+    "the secret",
+    "the insurance",
+    "the segment",
+    "the calm"
+   ],
    "nivel": "B2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Sesgo cognitivo' = viés cognitivo. Também: corte na diagonal."
+   "nota": "'Sesgo cognitivo' = viés cognitivo. Também: corte na diagonal.",
+   "notaEn": "'Sesgo cognitivo' = cognitive bias. Its first meaning is a slant or a diagonal cut, and the figurative sense grew straight out of it."
   },
   {
    "id": "p090",
    "tipo": "palavra",
    "es": "el auge",
    "pt": "o apogeu",
+   "en": "the peak",
    "aceitas": [
     "apogeu",
     "auge",
     "pico",
     "apice"
+   ],
+   "aceitasEn": [
+    "peak",
+    "the peak",
+    "height",
+    "the height",
+    "heyday",
+    "the heyday",
+    "boom",
+    "the boom",
+    "climax"
    ],
    "distratores": [
     "o aumento",
@@ -3857,17 +6417,25 @@ window.CARDS_RAW = {
     "o alcance",
     "o abismo"
    ],
+   "distratoresEn": [
+    "the increase",
+    "the omen",
+    "the reach",
+    "the abyss"
+   ],
    "nivel": "B2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'En pleno auge' = no auge."
+   "nota": "'En pleno auge' = no auge.",
+   "notaEn": "'En pleno auge' = at its height. It also names an economic boom: 'el auge de los años veinte'."
   },
   {
    "id": "p091",
    "tipo": "palavra",
    "es": "la brecha",
    "pt": "a lacuna",
+   "en": "the gap",
    "aceitas": [
     "lacuna",
     "brecha",
@@ -3875,23 +6443,41 @@ window.CARDS_RAW = {
     "abismo",
     "distancia"
    ],
+   "aceitasEn": [
+    "gap",
+    "the gap",
+    "breach",
+    "the breach",
+    "divide",
+    "the divide",
+    "gulf",
+    "rift"
+   ],
    "distratores": [
     "a brasa",
     "a bretanha",
     "a brincadeira",
     "a broca"
    ],
+   "distratoresEn": [
+    "the ember",
+    "the joke",
+    "the drill bit",
+    "the branch"
+   ],
    "nivel": "B2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Brecha salarial' = diferença salarial."
+   "nota": "'Brecha salarial' = diferença salarial.",
+   "notaEn": "'Brecha salarial' = the pay gap. Its first sense is a breach in a wall, and 'seguir en la brecha' means to still be in the thick of it."
   },
   {
    "id": "p092",
    "tipo": "palavra",
    "es": "plantear",
    "pt": "propor",
+   "en": "to raise",
    "aceitas": [
     "propor",
     "colocar",
@@ -3899,28 +6485,58 @@ window.CARDS_RAW = {
     "apresentar",
     "formular"
    ],
+   "aceitasEn": [
+    "to raise",
+    "raise",
+    "to put forward",
+    "put forward",
+    "to pose",
+    "pose",
+    "to set out",
+    "to propose",
+    "to bring up"
+   ],
    "distratores": [
     "plantar",
     "planejar",
     "aplainar",
     "plastificar"
    ],
+   "distratoresEn": [
+    "to plant",
+    "to plan",
+    "to flatten",
+    "to laminate"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Plantear una pregunta' = fazer uma pergunta. 'Plantearse' = considerar."
+   "nota": "'Plantear una pregunta' = fazer uma pergunta. 'Plantearse' = considerar.",
+   "notaEn": "'Plantear una pregunta' = to raise a question; 'plantear un problema' is to set one out. Reflexive, 'plantearse' is to consider doing something."
   },
   {
    "id": "p093",
    "tipo": "palavra",
    "es": "el hastío",
    "pt": "o tédio",
+   "en": "the weariness",
    "aceitas": [
     "tedio",
     "enfado",
     "fastio",
     "aborrecimento"
+   ],
+   "aceitasEn": [
+    "weariness",
+    "the weariness",
+    "tedium",
+    "the tedium",
+    "ennui",
+    "the ennui",
+    "boredom",
+    "the boredom",
+    "world weariness"
    ],
    "distratores": [
     "o asco",
@@ -3928,17 +6544,25 @@ window.CARDS_RAW = {
     "o hospício",
     "o hábito"
    ],
+   "distratoresEn": [
+    "the disgust",
+    "the flag-raising",
+    "the asylum",
+    "the habit"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "Tédio profundo, com um quê de repulsa. De 'hastiar'."
+   "nota": "Tédio profundo, com um quê de repulsa. De 'hastiar'.",
+   "notaEn": "'El hastío' is boredom gone sour — tedium with a curl of disgust in it. From 'hastiar', to sicken. Heavier than plain 'aburrimiento'."
   },
   {
    "id": "p094",
    "tipo": "palavra",
    "es": "descabellado",
    "pt": "absurdo",
+   "en": "preposterous",
    "aceitas": [
     "absurdo",
     "despropositado",
@@ -3946,28 +6570,52 @@ window.CARDS_RAW = {
     "sem cabimento",
     "maluco"
    ],
+   "aceitasEn": [
+    "preposterous",
+    "absurd",
+    "outlandish",
+    "far fetched",
+    "crazy",
+    "hare brained",
+    "wild"
+   ],
    "distratores": [
     "descabelado",
     "descalço",
     "descartado",
     "descolorido"
    ],
+   "distratoresEn": [
+    "dishevelled",
+    "barefoot",
+    "discarded",
+    "faded"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Una idea descabellada' = uma ideia sem pé nem cabeça."
+   "nota": "'Una idea descabellada' = uma ideia sem pé nem cabeça.",
+   "notaEn": "'Una idea descabellada' = a wild, half-baked idea. Literally hairless, as though the thing had lost its head."
   },
   {
    "id": "p095",
    "tipo": "palavra",
    "es": "acuciante",
    "pt": "premente",
+   "en": "pressing",
    "aceitas": [
     "premente",
     "urgente",
     "inadiavel",
     "apremiante"
+   ],
+   "aceitasEn": [
+    "pressing",
+    "urgent",
+    "compelling",
+    "acute",
+    "insistent"
    ],
    "distratores": [
     "acusador",
@@ -3975,22 +6623,37 @@ window.CARDS_RAW = {
     "acolhedor",
     "acanhado"
    ],
+   "distratoresEn": [
+    "accusing",
+    "sharpened",
+    "welcoming",
+    "timid"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Una necesidad acuciante' = uma necessidade premente."
+   "nota": "'Una necesidad acuciante' = uma necessidade premente.",
+   "notaEn": "'Una necesidad acuciante' = a pressing need. From 'acuciar', to urge on — the word has a push behind it."
   },
   {
    "id": "p096",
    "tipo": "palavra",
    "es": "a regañadientes",
    "pt": "a contragosto",
+   "en": "grudgingly",
    "aceitas": [
     "a contragosto",
     "contrariado",
     "de ma vontade",
     "resmungando"
+   ],
+   "aceitasEn": [
+    "grudgingly",
+    "reluctantly",
+    "unwillingly",
+    "against ones will",
+    "with bad grace"
    ],
    "distratores": [
     "de bom grado",
@@ -3998,17 +6661,25 @@ window.CARDS_RAW = {
     "com pressa",
     "de mãos dadas"
    ],
+   "distratoresEn": [
+    "willingly",
+    "secretly",
+    "hurriedly",
+    "hand in hand"
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Literalmente 'rangendo os dentes'. Fazer algo sem querer."
+   "nota": "Literalmente 'rangendo os dentes'. Fazer algo sem querer.",
+   "notaEn": "Literally with grinding teeth: doing the thing while making plain you would rather not. 'Aceptó a regañadientes'."
   },
   {
    "id": "p097",
    "tipo": "palavra",
    "es": "taimado",
    "pt": "matreiro",
+   "en": "sly",
    "aceitas": [
     "matreiro",
     "astuto",
@@ -4016,28 +6687,53 @@ window.CARDS_RAW = {
     "dissimulado",
     "velhaco"
    ],
+   "aceitasEn": [
+    "sly",
+    "crafty",
+    "cunning",
+    "wily",
+    "devious",
+    "shifty"
+   ],
    "distratores": [
     "tímido",
     "tolhido",
     "tacanho",
     "teimoso"
    ],
+   "distratoresEn": [
+    "shy",
+    "stiff",
+    "stingy",
+    "stubborn"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Esperteza com má intenção. Não confundir com 'teimoso' = 'tozudo'."
+   "nota": "Esperteza com má intenção. Não confundir com 'teimoso' = 'tozudo'.",
+   "notaEn": "'Taimado' is cleverness with bad intent — cunning that is planning something. Plain stubbornness is 'tozudo'."
   },
   {
    "id": "p098",
    "tipo": "palavra",
    "es": "prolijo",
    "pt": "prolixo",
+   "en": "long-winded",
    "aceitas": [
     "prolixo",
     "detalhado demais",
     "minucioso",
     "cansativo"
+   ],
+   "aceitasEn": [
+    "long-winded",
+    "long winded",
+    "longwinded",
+    "verbose",
+    "prolix",
+    "wordy",
+    "overlong"
    ],
    "distratores": [
     "prolífico",
@@ -4045,17 +6741,25 @@ window.CARDS_RAW = {
     "propício",
     "prodigioso"
    ],
+   "distratoresEn": [
+    "prolific",
+    "nearby",
+    "favourable",
+    "prodigious"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Na Espanha é pejorativo (longo demais); no Cone Sul pode ser elogio (caprichado)."
+   "nota": "Na Espanha é pejorativo (longo demais); no Cone Sul pode ser elogio (caprichado).",
+   "notaEn": "In Spain 'prolijo' is a complaint: it goes on far too long. In Argentina and Uruguay it flips into praise — neat, tidy, carefully done."
   },
   {
    "id": "p099",
    "tipo": "palavra",
    "es": "adusto",
    "pt": "austero",
+   "en": "stern",
    "aceitas": [
     "austero",
     "severo",
@@ -4063,23 +6767,39 @@ window.CARDS_RAW = {
     "rispido",
     "carrancudo"
    ],
+   "aceitasEn": [
+    "stern",
+    "austere",
+    "severe",
+    "grim",
+    "forbidding",
+    "dour"
+   ],
    "distratores": [
     "adulto",
     "ajustado",
     "adulado",
     "abusado"
    ],
+   "distratoresEn": [
+    "adult",
+    "adjusted",
+    "flattered",
+    "insolent"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Un rostro adusto' = um rosto fechado, sem simpatia."
+   "nota": "'Un rostro adusto' = um rosto fechado, sem simpatia.",
+   "notaEn": "'Un rostro adusto' = a stern, closed face. It describes manner more than character: severe, unsmiling, hard to approach."
   },
   {
    "id": "p100",
    "tipo": "palavra",
    "es": "soterrar",
    "pt": "enterrar",
+   "en": "to bury",
    "aceitas": [
     "enterrar",
     "soterrar",
@@ -4087,28 +6807,51 @@ window.CARDS_RAW = {
     "encobrir",
     "ocultar"
    ],
+   "aceitasEn": [
+    "to bury",
+    "bury",
+    "to put underground",
+    "to bury underground",
+    "to shelve",
+    "to hide away"
+   ],
    "distratores": [
     "soltar",
     "sortear",
     "socorrer",
     "sobrar"
    ],
+   "distratoresEn": [
+    "to release",
+    "to raffle",
+    "to rescue",
+    "to be left over"
+   ],
    "nivel": "C2",
    "tags": [
     "verbo"
    ],
-   "nota": "Também no sentido figurado: 'soterrar un proyecto' = engavetar um projeto."
+   "nota": "Também no sentido figurado: 'soterrar un proyecto' = engavetar um projeto.",
+   "notaEn": "'Soterrar' is to put underground — cables, pipes, a body. Figuratively it buries a project or a piece of news: 'soterrar el informe'."
   },
   {
    "id": "f071",
    "tipo": "frase",
    "es": "¿Cómo te llamas?",
    "pt": "Como você se chama?",
+   "en": "What's your name?",
    "aceitas": [
     "como voce se chama",
     "qual e o seu nome",
     "como e o seu nome",
     "como tu te chamas"
+   ],
+   "aceitasEn": [
+    "whats your name",
+    "what s your name",
+    "what is your name",
+    "how are you called",
+    "what do they call you"
    ],
    "distratores": [
     "Como você se chateia?",
@@ -4116,21 +6859,38 @@ window.CARDS_RAW = {
     "Por que você chamou?",
     "Quando você chamou?"
    ],
+   "distratoresEn": [
+    "What is annoying you?",
+    "What did you call me?",
+    "Why did you call?",
+    "When did you call?"
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Llamarse' = chamar-se. Resposta: 'me llamo…'."
+   "nota": "'Llamarse' = chamar-se. Resposta: 'me llamo…'.",
+   "notaEn": "'Llamarse' is literally to call oneself. The answer comes back in the same shape: 'me llamo Ana'."
   },
   {
    "id": "f072",
    "tipo": "frase",
    "es": "¿Dónde está el baño?",
    "pt": "Onde fica o banheiro?",
+   "en": "Where's the toilet?",
    "aceitas": [
     "onde fica o banheiro",
     "onde e o banheiro",
     "onde esta o banheiro"
+   ],
+   "aceitasEn": [
+    "wheres the toilet",
+    "where s the toilet",
+    "where is the toilet",
+    "wheres the bathroom",
+    "where is the bathroom",
+    "wheres the restroom",
+    "where is the loo"
    ],
    "distratores": [
     "Onde fica a banheira?",
@@ -4138,22 +6898,38 @@ window.CARDS_RAW = {
     "De onde vem o banho?",
     "Como chego ao banho?"
    ],
+   "distratoresEn": [
+    "Where is the bathtub?",
+    "When does the bathroom open?",
+    "Where does the bath come from?",
+    "How do I get a bath?"
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano",
     "viagem"
    ],
-   "nota": "Na América Latina se diz mais 'el baño'; na Espanha, 'el servicio'."
+   "nota": "Na América Latina se diz mais 'el baño'; na Espanha, 'el servicio'.",
+   "notaEn": "In Latin America ask for 'el baño'; in Spain, 'el servicio' or 'los aseos'. In a bar, '¿dónde están los servicios?' is the polite version."
   },
   {
    "id": "f073",
    "tipo": "frase",
    "es": "No entiendo nada.",
    "pt": "Não entendo nada.",
+   "en": "I don't understand a thing.",
    "aceitas": [
     "nao entendo nada",
     "nao estou entendendo nada",
     "nao compreendo nada"
+   ],
+   "aceitasEn": [
+    "i dont understand a thing",
+    "i don t understand a thing",
+    "i dont understand anything",
+    "i understand nothing",
+    "i dont get it at all",
+    "i havent a clue"
    ],
    "distratores": [
     "Não pretendo nada.",
@@ -4161,21 +6937,35 @@ window.CARDS_RAW = {
     "Não entendi ontem.",
     "Não entrego nada."
    ],
+   "distratoresEn": [
+    "I don't intend anything.",
+    "I don't serve anyone.",
+    "I didn't understand yesterday.",
+    "I don't deliver anything."
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Entender' e 'comprender' funcionam igual aqui."
+   "nota": "'Entender' e 'comprender' funcionam igual aqui.",
+   "notaEn": "'Entender' and 'comprender' both work here. The double negative is compulsory: 'no entiendo nada', never 'entiendo nada'."
   },
   {
    "id": "f074",
    "tipo": "frase",
    "es": "¿Cuánto cuesta?",
    "pt": "Quanto custa?",
+   "en": "How much does it cost?",
    "aceitas": [
     "quanto custa",
     "qual e o preco",
     "quanto e"
+   ],
+   "aceitasEn": [
+    "how much does it cost",
+    "how much is it",
+    "whats the price",
+    "how much"
    ],
    "distratores": [
     "Quanto cabe?",
@@ -4183,22 +6973,37 @@ window.CARDS_RAW = {
     "Quando custou?",
     "Quanto pesa?"
    ],
+   "distratoresEn": [
+    "How much fits in?",
+    "How much does it count?",
+    "When did it cost that?",
+    "How much does it weigh?"
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano",
     "viagem"
    ],
-   "nota": "'Costar' também significa 'ser difícil': 'me cuesta entenderlo'."
+   "nota": "'Costar' também significa 'ser difícil': 'me cuesta entenderlo'.",
+   "notaEn": "'Costar' also means to be hard: 'me cuesta entenderlo' = I find it hard to understand. Same verb, quite a different bill."
   },
   {
    "id": "f075",
    "tipo": "frase",
    "es": "Tengo hambre.",
    "pt": "Estou com fome.",
+   "en": "I'm hungry.",
    "aceitas": [
     "estou com fome",
     "to com fome",
     "tenho fome"
+   ],
+   "aceitasEn": [
+    "im hungry",
+    "i m hungry",
+    "i am hungry",
+    "im starving",
+    "i feel hungry"
    ],
    "distratores": [
     "Estou com sede.",
@@ -4206,20 +7011,34 @@ window.CARDS_RAW = {
     "Estou com frio.",
     "Estou com pressa."
    ],
+   "distratoresEn": [
+    "I'm thirsty.",
+    "I'm sleepy.",
+    "I'm cold.",
+    "I'm in a hurry."
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Em espanhol se 'tem' fome; em português se 'está com' fome."
+   "nota": "Em espanhol se 'tem' fome; em português se 'está com' fome.",
+   "notaEn": "Spanish has hunger rather than being hungry: 'tengo hambre', 'tengo sed', 'tengo frío', 'tengo sueño'. Learn the pattern once and it covers all of them."
   },
   {
    "id": "f076",
    "tipo": "frase",
    "es": "Hasta mañana.",
    "pt": "Até amanhã.",
+   "en": "See you tomorrow.",
    "aceitas": [
     "ate amanha",
     "nos vemos amanha"
+   ],
+   "aceitasEn": [
+    "see you tomorrow",
+    "until tomorrow",
+    "till tomorrow",
+    "see you in the morning"
    ],
    "distratores": [
     "Até de manhã.",
@@ -4227,22 +7046,38 @@ window.CARDS_RAW = {
     "Até mais tarde.",
     "Boa manhã."
    ],
+   "distratoresEn": [
+    "Until the morning.",
+    "Starting tomorrow.",
+    "See you later.",
+    "Good morning."
+   ],
    "nivel": "A1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Mañana' é amanhã; 'la mañana' é a manhã. O artigo muda tudo."
+   "nota": "'Mañana' é amanhã; 'la mañana' é a manhã. O artigo muda tudo.",
+   "notaEn": "'Mañana' with no article is tomorrow; 'la mañana' with one is the morning. 'Mañana por la mañana' = tomorrow morning, and it is not a joke."
   },
   {
    "id": "f077",
    "tipo": "frase",
    "es": "Estoy de acuerdo.",
    "pt": "Eu concordo.",
+   "en": "I agree.",
    "aceitas": [
     "eu concordo",
     "concordo",
     "estou de acordo",
     "penso igual"
+   ],
+   "aceitasEn": [
+    "i agree",
+    "i am in agreement",
+    "im in agreement",
+    "i concur",
+    "agreed",
+    "i think so too"
    ],
    "distratores": [
     "Eu acordei agora.",
@@ -4250,21 +7085,37 @@ window.CARDS_RAW = {
     "Eu combinei antes.",
     "Eu acordo cedo."
    ],
+   "distratoresEn": [
+    "I just woke up.",
+    "I remember that.",
+    "I arranged it before.",
+    "I wake up early."
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Cuidado com 'acordar', que em espanhol é combinar, não despertar."
+   "nota": "Cuidado com 'acordar', que em espanhol é combinar, não despertar.",
+   "notaEn": "'Estar de acuerdo' = to agree. 'Un acuerdo' is an agreement and 'acordar' is to agree on something — not to wake up, which is 'despertarse'."
   },
   {
    "id": "f078",
    "tipo": "frase",
    "es": "No me acuerdo.",
    "pt": "Não me lembro.",
+   "en": "I don't remember.",
    "aceitas": [
     "nao me lembro",
     "nao lembro",
     "nao me recordo"
+   ],
+   "aceitasEn": [
+    "i dont remember",
+    "i don t remember",
+    "i do not remember",
+    "i cant remember",
+    "i dont recall",
+    "it escapes me"
    ],
    "distratores": [
     "Não acordo cedo.",
@@ -4272,22 +7123,37 @@ window.CARDS_RAW = {
     "Não combinei nada.",
     "Não me acordaram."
    ],
+   "distratoresEn": [
+    "I don't get up early.",
+    "I don't agree with that.",
+    "I arranged nothing.",
+    "Nobody woke me up."
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Par do card 'acordarse': lembrar-se, e não despertar."
+   "nota": "Par do card 'acordarse': lembrar-se, e não despertar.",
+   "notaEn": "'Acordarse de' = to remember. Reflexive, and with 'de': 'no me acuerdo de su nombre'. The plain verb 'acordar' means something else entirely."
   },
   {
    "id": "f079",
    "tipo": "frase",
    "es": "¿Me puedes echar una mano?",
    "pt": "Você pode me ajudar?",
+   "en": "Can you give me a hand?",
    "aceitas": [
     "voce pode me ajudar",
     "me ajuda",
     "pode me dar uma mao",
     "pode me ajudar"
+   ],
+   "aceitasEn": [
+    "can you give me a hand",
+    "could you give me a hand",
+    "can you help me",
+    "can you lend me a hand",
+    "would you give me a hand"
    ],
    "distratores": [
     "Você pode me dar a mão?",
@@ -4295,22 +7161,39 @@ window.CARDS_RAW = {
     "Você pode soltar a mão?",
     "Você pode erguer a mão?"
    ],
+   "distratoresEn": [
+    "Can you hold my hand?",
+    "Can you wash your hands?",
+    "Can you let go of my hand?",
+    "Can you raise your hand?"
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Echar una mano' = dar uma ajuda, e não estender a mão."
+   "nota": "'Echar una mano' = dar uma ajuda, e não estender a mão.",
+   "notaEn": "'Echar una mano' is to help out, not to hold out a hand. Taking someone's hand is 'dar la mano'."
   },
   {
    "id": "f080",
    "tipo": "frase",
    "es": "Está lloviendo a cántaros.",
    "pt": "Está chovendo canivete.",
+   "en": "It's raining cats and dogs.",
    "aceitas": [
     "esta chovendo canivete",
     "esta chovendo muito",
     "chove torrencialmente",
     "esta caindo o mundo"
+   ],
+   "aceitasEn": [
+    "its raining cats and dogs",
+    "it s raining cats and dogs",
+    "its pouring",
+    "its bucketing down",
+    "its pouring down",
+    "its chucking it down",
+    "its raining hard"
    ],
    "distratores": [
     "Está chovendo devagar.",
@@ -4318,22 +7201,38 @@ window.CARDS_RAW = {
     "Está garoando bem pouco.",
     "Está prestes a chover."
    ],
+   "distratoresEn": [
+    "It is raining very slowly.",
+    "It is raining into jugs.",
+    "It is drizzling a little.",
+    "It is about to start raining."
+   ],
    "nivel": "A2",
    "tags": [
     "expressão"
    ],
-   "nota": "'A cántaros' = aos baldes. Chuva muito forte."
+   "nota": "'A cántaros' = aos baldes. Chuva muito forte.",
+   "notaEn": "'A cántaros' = by the pitcherful. Spanish pours water where English drops animals, and both mean the same downpour."
   },
   {
    "id": "f081",
    "tipo": "frase",
    "es": "No te preocupes.",
    "pt": "Não se preocupe.",
+   "en": "Don't worry.",
    "aceitas": [
     "nao se preocupe",
     "fica tranquilo",
     "relaxa",
     "nao esquenta"
+   ],
+   "aceitasEn": [
+    "dont worry",
+    "don t worry",
+    "do not worry",
+    "never mind",
+    "dont worry about it",
+    "no need to worry"
    ],
    "distratores": [
     "Não se apresse.",
@@ -4341,22 +7240,37 @@ window.CARDS_RAW = {
     "Não se ocupe disso.",
     "Não se prepare ainda."
    ],
+   "distratoresEn": [
+    "Don't rush.",
+    "Don't bother coming.",
+    "Don't deal with it.",
+    "Don't get ready yet."
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "Resposta comum: 'no te preocupes, no pasa nada'."
+   "nota": "Resposta comum: 'no te preocupes, no pasa nada'.",
+   "notaEn": "'Preocuparse' is reflexive: you worry yourself. The full reassurance runs 'no te preocupes, no pasa nada'."
   },
   {
    "id": "f082",
    "tipo": "frase",
    "es": "Suelo levantarme temprano.",
    "pt": "Costumo acordar cedo.",
+   "en": "I usually get up early.",
    "aceitas": [
     "costumo acordar cedo",
     "costumo levantar cedo",
     "geralmente acordo cedo",
     "tenho o costume de acordar cedo"
+   ],
+   "aceitasEn": [
+    "i usually get up early",
+    "i normally get up early",
+    "i tend to get up early",
+    "i generally get up early",
+    "i usually wake up early"
    ],
    "distratores": [
     "Consigo acordar cedo.",
@@ -4364,23 +7278,39 @@ window.CARDS_RAW = {
     "Quero acordar cedo.",
     "Detesto acordar cedo."
    ],
+   "distratoresEn": [
+    "I manage to get up early.",
+    "I need to get up early.",
+    "I want to get up early.",
+    "I hate getting up early."
+   ],
    "nivel": "B1",
    "tags": [
     "gramática",
     "verbo"
    ],
-   "nota": "'Soler + infinitivo' = costumar. Não existe equivalente direto em português."
+   "nota": "'Soler + infinitivo' = costumar. Não existe equivalente direto em português.",
+   "notaEn": "'Soler + infinitive' carries the 'usually' inside the verb. English has to spell it out with an adverb; Spanish just conjugates 'soler'."
   },
   {
    "id": "f083",
    "tipo": "frase",
    "es": "¿Te apetece un café?",
    "pt": "Você está a fim de um café?",
+   "en": "Do you fancy a coffee?",
    "aceitas": [
     "voce esta a fim de um cafe",
     "quer um cafe",
     "voce aceita um cafe",
     "topa um cafe"
+   ],
+   "aceitasEn": [
+    "do you fancy a coffee",
+    "do you feel like a coffee",
+    "would you like a coffee",
+    "fancy a coffee",
+    "are you up for a coffee",
+    "do you want a coffee"
    ],
    "distratores": [
     "Você aguenta mais um café hoje?",
@@ -4388,23 +7318,38 @@ window.CARDS_RAW = {
     "Você prepara um café para mim?",
     "Você prefere um café ou chá?"
    ],
+   "distratoresEn": [
+    "Can you manage another coffee?",
+    "Have you had a coffee today?",
+    "Will you make me a coffee?",
+    "Do you prefer coffee or tea?"
+   ],
    "nivel": "B1",
    "tags": [
     "cotidiano",
     "Espanha"
    ],
-   "nota": "'Apetecer' = dar vontade. Na América Latina: '¿se te antoja?'."
+   "nota": "'Apetecer' = dar vontade. Na América Latina: '¿se te antoja?'.",
+   "notaEn": "'Apetecer' works backwards, like 'gustar': the coffee appeals to you. Very Spanish — in Latin America you would hear '¿se te antoja un café?'"
   },
   {
    "id": "f084",
    "tipo": "frase",
    "es": "Me enteré ayer.",
    "pt": "Fiquei sabendo ontem.",
+   "en": "I found out yesterday.",
    "aceitas": [
     "fiquei sabendo ontem",
     "soube ontem",
     "descobri ontem",
     "tomei conhecimento ontem"
+   ],
+   "aceitasEn": [
+    "i found out yesterday",
+    "i heard about it yesterday",
+    "i only found out yesterday",
+    "i learned about it yesterday",
+    "i got to know yesterday"
    ],
    "distratores": [
     "Enterrei isso ontem.",
@@ -4412,21 +7357,36 @@ window.CARDS_RAW = {
     "Entreguei tudo ontem.",
     "Entendi isso ontem."
    ],
+   "distratoresEn": [
+    "I buried it yesterday.",
+    "I went in there yesterday.",
+    "I handed it all in yesterday.",
+    "I understood it yesterday."
+   ],
    "nivel": "B1",
    "tags": [
     "verbo"
    ],
-   "nota": "'Enterarse de algo' = ficar sabendo de algo."
+   "nota": "'Enterarse de algo' = ficar sabendo de algo.",
+   "notaEn": "'Enterarse de algo' = to find out about something. It marks the moment the news reached you, not the studying of it."
   },
   {
    "id": "f085",
    "tipo": "frase",
    "es": "Tardé dos horas en llegar.",
    "pt": "Demorei duas horas para chegar.",
+   "en": "It took me two hours to arrive.",
    "aceitas": [
     "demorei duas horas para chegar",
     "levei duas horas para chegar",
     "gastei duas horas ate chegar"
+   ],
+   "aceitasEn": [
+    "it took me two hours to arrive",
+    "it took me two hours to get there",
+    "it took me two hours",
+    "i took two hours to arrive",
+    "it took two hours to get there"
    ],
    "distratores": [
     "Cheguei duas horas atrasado.",
@@ -4434,22 +7394,38 @@ window.CARDS_RAW = {
     "Fiquei duas horas por lá.",
     "Saí duas horas mais cedo."
    ],
+   "distratoresEn": [
+    "I arrived two hours late.",
+    "I waited two hours to leave.",
+    "I spent two hours over there.",
+    "I left two hours earlier."
+   ],
    "nivel": "B1",
    "tags": [
     "verbo"
    ],
-   "nota": "'Tardar en + infinitivo' = demorar para fazer algo."
+   "nota": "'Tardar en + infinitivo' = demorar para fazer algo.",
+   "notaEn": "'Tardar en + infinitive' = to take time to do something. 'Tardé dos horas' says how long it took, with no complaint about lateness attached."
   },
   {
    "id": "f086",
    "tipo": "frase",
    "es": "Se me da bien cocinar.",
    "pt": "Tenho jeito para cozinhar.",
+   "en": "I'm good at cooking.",
    "aceitas": [
     "tenho jeito para cozinhar",
     "sou bom de cozinha",
     "me dou bem cozinhando",
     "levo jeito para cozinhar"
+   ],
+   "aceitasEn": [
+    "im good at cooking",
+    "i m good at cooking",
+    "i am good at cooking",
+    "cooking comes easily to me",
+    "im a good cook",
+    "i have a knack for cooking"
    ],
    "distratores": [
     "Me faz bem cozinhar.",
@@ -4457,21 +7433,36 @@ window.CARDS_RAW = {
     "Me custa caro cozinhar.",
     "Me dá trabalho cozinhar."
    ],
+   "distratoresEn": [
+    "Cooking does me good.",
+    "Cooking makes me hungry.",
+    "Cooking costs me a lot.",
+    "Cooking is hard work for me."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Dársele bien algo a alguien' = ter facilidade para algo."
+   "nota": "'Dársele bien algo a alguien' = ter facilidade para algo.",
+   "notaEn": "'Dársele bien algo a alguien' = to be good at something, with the skill doing the giving: cooking goes well for me. Its opposite is 'se me da mal'."
   },
   {
    "id": "f087",
    "tipo": "frase",
    "es": "A fin de cuentas, da igual.",
    "pt": "No fim das contas, tanto faz.",
+   "en": "At the end of the day, it doesn't matter.",
    "aceitas": [
     "no fim das contas tanto faz",
     "afinal tanto faz",
     "no final das contas da na mesma"
+   ],
+   "aceitasEn": [
+    "at the end of the day it doesnt matter",
+    "in the end it doesnt matter",
+    "ultimately it doesnt matter",
+    "when all is said and done it doesnt matter",
+    "after all it makes no difference"
    ],
    "distratores": [
     "No fim do mês, pago tudo.",
@@ -4479,22 +7470,37 @@ window.CARDS_RAW = {
     "Em resumo, conte comigo.",
     "Para fechar a conta, tanto faz."
    ],
+   "distratoresEn": [
+    "At the end of the month, I pay.",
+    "Once the bill is settled, we pay.",
+    "In short, you can count on me.",
+    "To close the account, it doesn't matter."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Conector muito usado para concluir um raciocínio."
+   "nota": "Conector muito usado para concluir um raciocínio.",
+   "notaEn": "'A fin de cuentas' is the connector that wraps an argument up: when the accounts are settled. Its neighbours are 'al fin y al cabo' and 'en definitiva'."
   },
   {
    "id": "f088",
    "tipo": "frase",
    "es": "Por lo visto, no vendrá.",
    "pt": "Pelo visto, ele não virá.",
+   "en": "Apparently, he won't come.",
    "aceitas": [
     "pelo visto ele nao vira",
     "ao que parece ele nao vem",
     "pelo jeito nao vem",
     "aparentemente nao vira"
+   ],
+   "aceitasEn": [
+    "apparently he wont come",
+    "apparently he will not come",
+    "by the looks of it he wont come",
+    "it seems he wont be coming",
+    "evidently he wont come"
    ],
    "distratores": [
     "Pelo que vi, ele veio.",
@@ -4502,21 +7508,35 @@ window.CARDS_RAW = {
     "Já que foi visto, não virá.",
     "Pelo visto, ele vendeu."
    ],
+   "distratoresEn": [
+    "From what I saw, he came.",
+    "In his view, he won't sell.",
+    "Since he was seen, he won't come.",
+    "Apparently, he sold it."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "'Por lo visto' = ao que tudo indica."
+   "nota": "'Por lo visto' = ao que tudo indica.",
+   "notaEn": "'Por lo visto' = by all appearances, apparently. It hedges: you are reporting how things look, not what you know."
   },
   {
    "id": "f089",
    "tipo": "frase",
    "es": "Con tal de que vengas, me da igual.",
    "pt": "Contanto que você venha, tanto faz.",
+   "en": "As long as you come, I don't mind.",
    "aceitas": [
     "contanto que voce venha tanto faz",
     "desde que voce venha tanto faz",
     "se voce vier tanto faz"
+   ],
+   "aceitasEn": [
+    "as long as you come i dont mind",
+    "provided you come i dont mind",
+    "so long as you come i dont mind",
+    "as long as you come it doesnt matter"
    ],
    "distratores": [
     "Com o tal que veio, tanto faz.",
@@ -4524,22 +7544,37 @@ window.CARDS_RAW = {
     "Com tudo que você trouxe, tanto faz.",
     "Conte que você virá, tanto faz."
    ],
+   "distratoresEn": [
+    "With that man who came, I don't mind.",
+    "Counting on you coming, I will go.",
+    "With all you brought, I don't mind.",
+    "Tell me you will come, I don't mind."
+   ],
    "nivel": "B2",
    "tags": [
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Con tal de que' + subjuntivo = contanto que."
+   "nota": "'Con tal de que' + subjuntivo = contanto que.",
+   "notaEn": "'Con tal de que' + subjunctive = as long as, provided that. The whole point is the condition, so the subjunctive is not optional."
   },
   {
    "id": "f090",
    "tipo": "frase",
    "es": "Dicho sea de paso, tenía razón.",
    "pt": "Aliás, ele tinha razão.",
+   "en": "Incidentally, he was right.",
    "aceitas": [
     "alias ele tinha razao",
     "por sinal ele tinha razao",
     "diga-se de passagem ele tinha razao"
+   ],
+   "aceitasEn": [
+    "incidentally he was right",
+    "by the way he was right",
+    "as it happens he was right",
+    "in passing he was right",
+    "it should be said he was right"
    ],
    "distratores": [
     "Dito isso, ele saiu.",
@@ -4547,22 +7582,37 @@ window.CARDS_RAW = {
     "De passagem, ele disse a razão.",
     "Ao dizer isso, ele passou."
    ],
+   "distratoresEn": [
+    "Having said that, he left.",
+    "Speaking quietly, he was right.",
+    "In passing, he gave the reason.",
+    "On saying that, he passed."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Equivale ao nosso 'diga-se de passagem'."
+   "nota": "Equivale ao nosso 'diga-se de passagem'.",
+   "notaEn": "'Dicho sea de paso' = let it be said in passing. A fixed formula with the subjunctive frozen inside it, used to slip a remark in sideways."
   },
   {
    "id": "f091",
    "tipo": "frase",
    "es": "No tiene desperdicio.",
    "pt": "Não tem nada para jogar fora.",
+   "en": "Every bit of it is worth it.",
    "aceitas": [
     "nao tem nada para jogar fora",
     "e bom do inicio ao fim",
     "vale a pena inteiro",
     "tudo nele presta"
+   ],
+   "aceitasEn": [
+    "every bit of it is worth it",
+    "its all worth it",
+    "theres not a wasted moment in it",
+    "its good from start to finish",
+    "not a word of it is wasted"
    ],
    "distratores": [
     "Não produz nenhum tipo de lixo.",
@@ -4570,22 +7620,38 @@ window.CARDS_RAW = {
     "Não desperdiça nem um centavo à toa.",
     "Não tem valor nenhum para nós."
    ],
+   "distratoresEn": [
+    "It produces no waste at all.",
+    "There was nothing left of it.",
+    "It does not waste a single penny.",
+    "It has no value for us at all."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Elogio: tudo naquilo é aproveitável, do começo ao fim."
+   "nota": "Elogio: tudo naquilo é aproveitável, do começo ao fim.",
+   "notaEn": "A compliment: there is nothing in it you would throw away. Said of a book, a film, a speech — good all the way through."
   },
   {
    "id": "f092",
    "tipo": "frase",
    "es": "Me está dando largas.",
    "pt": "Ele está me enrolando.",
+   "en": "He keeps stalling me.",
    "aceitas": [
     "ele esta me enrolando",
     "esta me empurrando com a barriga",
     "esta adiando comigo",
     "esta me fazendo esperar"
+   ],
+   "aceitasEn": [
+    "he keeps stalling me",
+    "hes stalling me",
+    "hes fobbing me off",
+    "hes stringing me along",
+    "hes putting me off",
+    "hes giving me the runaround"
    ],
    "distratores": [
     "Ele está me alongando.",
@@ -4593,17 +7659,25 @@ window.CARDS_RAW = {
     "Ele está me dando folga.",
     "Ele está me esticando."
    ],
+   "distratoresEn": [
+    "He is stretching me out.",
+    "He is giving me space.",
+    "He is giving me time off.",
+    "He is lengthening my hours."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Dar largas a algo' = adiar sem dizer não."
+   "nota": "'Dar largas a algo' = adiar sem dizer não.",
+   "notaEn": "'Dar largas' = to put someone off without ever saying no. The delay is the answer, and everybody knows it."
   },
   {
    "id": "f093",
    "tipo": "frase",
    "es": "Se fue de rositas.",
    "pt": "Ele saiu impune.",
+   "en": "He got off scot-free.",
    "aceitas": [
     "ele saiu impune",
     "escapou sem punicao",
@@ -4611,24 +7685,40 @@ window.CARDS_RAW = {
     "saiu ileso",
     "nao pagou por nada"
    ],
+   "aceitasEn": [
+    "he got off scot-free",
+    "he got off scot free",
+    "he got away with it",
+    "he walked away unpunished",
+    "he got off lightly",
+    "he got off without a scratch"
+   ],
    "distratores": [
     "Ele saiu com rosas.",
     "Ele saiu bem cedo.",
     "Ele saiu de fininho.",
     "Ele saiu bem feliz."
    ],
+   "distratoresEn": [
+    "He left with some roses.",
+    "He left very early on.",
+    "He slipped quietly away.",
+    "He left in high spirits."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "Escapar de um castigo merecido sem nenhuma consequência."
+   "nota": "Escapar de um castigo merecido sem nenhuma consequência.",
+   "notaEn": "'Irse de rositas' = to walk away from a deserved punishment with nothing sticking to you at all. Spanish, and heavy with resentment."
   },
   {
    "id": "f094",
    "tipo": "frase",
    "es": "Aquí hay gato encerrado.",
    "pt": "Aqui tem coisa errada.",
+   "en": "There is something fishy going on here.",
    "aceitas": [
     "aqui tem coisa errada",
     "tem algo estranho aqui",
@@ -4636,27 +7726,50 @@ window.CARDS_RAW = {
     "aqui tem gato",
     "isso esta mal contado"
    ],
+   "aceitasEn": [
+    "there is something fishy going on here",
+    "theres something fishy going on here",
+    "theres something fishy here",
+    "somethings not right here",
+    "theres more to this than meets the eye",
+    "i smell a rat"
+   ],
    "distratores": [
     "Aqui tem gato preso.",
     "Aqui mora um gato.",
     "Aqui entrou um gato.",
     "Aqui falta um gato."
    ],
+   "distratoresEn": [
+    "There is a cat shut in here.",
+    "A cat lives here with us.",
+    "A cat has got in here.",
+    "There is a cat missing here."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Desconfiança de que algo está escondido. Como 'aqui tem dedo de gente'."
+   "nota": "Desconfiança de que algo está escondido. Como 'aqui tem dedo de gente'.",
+   "notaEn": "'Gato encerrado' = a cat shut away where you cannot see it. Somebody is hiding something, and you can tell."
   },
   {
    "id": "f095",
    "tipo": "frase",
    "es": "Habida cuenta de ello, renunció.",
    "pt": "Tendo isso em vista, ele renunciou.",
+   "en": "In view of that, he resigned.",
    "aceitas": [
     "tendo isso em vista ele renunciou",
     "diante disso ele renunciou",
     "considerando isso ele renunciou"
+   ],
+   "aceitasEn": [
+    "in view of that he resigned",
+    "in light of that he resigned",
+    "given that he resigned",
+    "taking that into account he resigned",
+    "that being so he resigned"
    ],
    "distratores": [
     "Tendo pago a conta, ele renunciou.",
@@ -4664,22 +7777,37 @@ window.CARDS_RAW = {
     "Tendo contas a pagar, ele renunciou.",
     "Feita a contagem, ele renunciou."
    ],
+   "distratoresEn": [
+    "Having paid the bill, he resigned.",
+    "Having told the whole story, he resigned.",
+    "With bills to pay, he resigned.",
+    "Once the count was made, he resigned."
+   ],
    "nivel": "C2",
    "tags": [
     "expressão",
     "formal"
    ],
-   "nota": "Registro formal e jurídico. Equivale a 'tendo em vista'."
+   "nota": "Registro formal e jurídico. Equivale a 'tendo em vista'.",
+   "notaEn": "'Habida cuenta de' = in view of, taking into account. Formal and legal register; you will meet it in rulings and reports, not in the bar."
   },
   {
    "id": "f096",
    "tipo": "frase",
    "es": "So pena de multa.",
    "pt": "Sob pena de multa.",
+   "en": "Under penalty of a fine.",
    "aceitas": [
     "sob pena de multa",
     "sujeito a multa",
     "com risco de multa"
+   ],
+   "aceitasEn": [
+    "under penalty of a fine",
+    "under penalty of fine",
+    "on pain of a fine",
+    "subject to a fine",
+    "or else a fine"
    ],
    "distratores": [
     "Sem pena de multa.",
@@ -4687,22 +7815,37 @@ window.CARDS_RAW = {
     "Só a pena da multa.",
     "Sobre a pena de multa."
    ],
+   "distratoresEn": [
+    "Without penalty of a fine.",
+    "For pity of the fine.",
+    "Only the fine itself.",
+    "About the fine imposed."
+   ],
    "nivel": "C2",
    "tags": [
     "jurídico",
     "formal"
    ],
-   "nota": "'So' aqui é 'sob', preposição arcaica que sobrevive em fórmulas jurídicas."
+   "nota": "'So' aqui é 'sob', preposição arcaica que sobrevive em fórmulas jurídicas.",
+   "notaEn": "'So' here is an archaic 'bajo', under. It survives only in frozen legal formulas: 'so pena de', 'so pretexto de'."
   },
   {
    "id": "f097",
    "tipo": "frase",
    "es": "A la sazón vivía en Madrid.",
    "pt": "Naquela época ele morava em Madri.",
+   "en": "At that time he lived in Madrid.",
    "aceitas": [
     "naquela epoca ele morava em madri",
     "na ocasiao ele morava em madri",
     "por entao morava em madri"
+   ],
+   "aceitasEn": [
+    "at that time he lived in madrid",
+    "at the time he lived in madrid",
+    "back then he lived in madrid",
+    "in those days he lived in madrid",
+    "he was living in madrid at the time"
    ],
    "distratores": [
     "Por sorte ele morava em Madri.",
@@ -4710,21 +7853,36 @@ window.CARDS_RAW = {
     "Na estação ele morava em Madri.",
     "Por acaso ele morava em Madri."
    ],
+   "distratoresEn": [
+    "Luckily he lived in Madrid.",
+    "He cooked with spices in Madrid.",
+    "In that season he lived in Madrid.",
+    "By chance he lived in Madrid."
+   ],
    "nivel": "C2",
    "tags": [
     "formal"
    ],
-   "nota": "'A la sazón' = naquele tempo. Literário. Cuidado: 'sazón' também é tempero."
+   "nota": "'A la sazón' = naquele tempo. Literário. Cuidado: 'sazón' também é tempero.",
+   "notaEn": "'A la sazón' = at that time. Literary and dated. 'La sazón' on its own is seasoning, and 'sazonar' is to season food — the two senses have drifted a long way apart."
   },
   {
    "id": "f098",
    "tipo": "frase",
    "es": "Amén de costoso, es lento.",
    "pt": "Além de caro, é lento.",
+   "en": "Besides being expensive, it is slow.",
    "aceitas": [
     "alem de caro e lento",
     "fora ser caro e lento",
     "nao bastasse ser caro e lento"
+   ],
+   "aceitasEn": [
+    "besides being expensive it is slow",
+    "as well as being expensive its slow",
+    "not only is it expensive its slow",
+    "on top of being expensive its slow",
+    "apart from being expensive its slow"
    ],
    "distratores": [
     "Amanhã, se caro, será lento.",
@@ -4732,22 +7890,38 @@ window.CARDS_RAW = {
     "Apesar de caro, é lento.",
     "Por ser caro, é lento."
    ],
+   "distratoresEn": [
+    "Tomorrow, if expensive, it will be slow.",
+    "Just like the expensive one, it is slow.",
+    "Despite being expensive, it is slow.",
+    "Because it is expensive, it is slow."
+   ],
    "nivel": "C2",
    "tags": [
     "formal"
    ],
-   "nota": "'Amén de' = além de. Nada a ver com o 'amém' religioso."
+   "nota": "'Amén de' = além de. Nada a ver com o 'amém' religioso.",
+   "notaEn": "'Amén de' = besides, in addition to. Formal, and unrelated in use to the amen said at the end of a prayer, though they share a root."
   },
   {
    "id": "f099",
    "tipo": "frase",
    "es": "No da su brazo a torcer.",
    "pt": "Ele não dá o braço a torcer.",
+   "en": "He won't back down.",
    "aceitas": [
     "ele nao da o braco a torcer",
     "nao admite que errou",
     "nao cede nunca",
     "nao volta atras"
+   ],
+   "aceitasEn": [
+    "he wont back down",
+    "he will not back down",
+    "he wont give in",
+    "he wont admit he was wrong",
+    "he refuses to budge",
+    "he never gives an inch"
    ],
    "distratores": [
     "Ele não torce o braço de ninguém.",
@@ -4755,20 +7929,33 @@ window.CARDS_RAW = {
     "Ele não dá a mão para ninguém.",
     "Ele não quebra o braço de novo."
    ],
+   "distratoresEn": [
+    "He never twists anyone's arm.",
+    "He does not stretch his right arm.",
+    "He does not shake hands with anyone.",
+    "He will not break his arm again."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Idêntica ao português: não reconhece que errou nem cede."
+   "nota": "Idêntica ao português: não reconhece que errou nem cede.",
+   "notaEn": "'Dar el brazo a torcer' = to let your arm be twisted, to give in. Almost always heard in the negative, about someone who will not admit an error."
   },
   {
    "id": "f100",
    "tipo": "frase",
    "es": "Más vale tarde que nunca.",
    "pt": "Antes tarde do que nunca.",
+   "en": "Better late than never.",
    "aceitas": [
     "antes tarde do que nunca",
     "melhor tarde do que nunca"
+   ],
+   "aceitasEn": [
+    "better late than never",
+    "its better late than never",
+    "late is better than never"
    ],
    "distratores": [
     "Mais vale cedo do que tarde.",
@@ -4776,27 +7963,48 @@ window.CARDS_RAW = {
     "Melhor nunca do que atrasado.",
     "Tanto faz cedo ou tarde."
    ],
+   "distratoresEn": [
+    "Better early than late.",
+    "Better never than late.",
+    "Better never than delayed.",
+    "Early or late, it's the same."
+   ],
    "nivel": "A2",
    "tags": [
     "provérbio"
    ],
-   "nota": "Provérbio quase idêntico, só muda a ordem das palavras."
+   "nota": "Provérbio quase idêntico, só muda a ordem das palavras.",
+   "notaEn": "Word for word the same proverb as in English, and used the same way — gently, when somebody finally turns up."
   },
   {
    "id": "v001",
    "tipo": "frase",
    "es": "Yo no sabía.",
    "pt": "Eu não sabia.",
+   "en": "I didn't know.",
    "aceitas": [
     "nao sabia",
     "eu nao sabia",
     "nao fazia ideia"
+   ],
+   "aceitasEn": [
+    "i didnt know",
+    "i did not know",
+    "i didn t know",
+    "i had no idea",
+    "i wasnt aware"
    ],
    "distratores": [
     "Eu não sei.",
     "Eu não soube.",
     "Eu não saberia.",
     "Eu não saberei."
+   ],
+   "distratoresEn": [
+    "I don't know.",
+    "I found out.",
+    "I won't know.",
+    "I wouldn't know."
    ],
    "nivel": "A2",
    "tags": [
@@ -4806,11 +8014,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Sabía' é imperfeito. O pretérito seria 'supe' (fiquei sabendo), que é bem diferente.",
+   "notaEn": "'Sabía' is the imperfect: a state of not knowing that lasted. The preterite 'supe' is a single instant — I found out. English needs two different verbs for what Spanish does with two tenses.",
    "formasEs": {
     "Yo no sé": "presente",
     "Yo no supe": "pretérito",
     "Yo no sabré": "futuro",
     "Yo no sabría": "condicional"
+   },
+   "formasEsEn": {
+    "Yo no sé": "present",
+    "Yo no supe": "preterite",
+    "Yo no sabré": "future",
+    "Yo no sabría": "conditional"
    }
   },
   {
@@ -4818,17 +8033,31 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ayer lo supe.",
    "pt": "Ontem eu fiquei sabendo.",
+   "en": "Yesterday I found that out.",
    "aceitas": [
     "ontem eu fiquei sabendo",
     "ontem fiquei sabendo",
     "ontem eu soube",
     "ontem soube disso"
    ],
+   "aceitasEn": [
+    "yesterday i found that out",
+    "yesterday i found out",
+    "i found out yesterday",
+    "i found that out yesterday",
+    "i learned of it yesterday"
+   ],
    "distratores": [
     "Ontem eu já sabia.",
     "Ontem eu não sabia.",
     "Ontem eu vou saber.",
     "Ontem eu saberia disso."
+   ],
+   "distratoresEn": [
+    "Yesterday I already knew it.",
+    "Yesterday I did not know it.",
+    "Tomorrow I will know it.",
+    "I would have known it."
    ],
    "nivel": "B1",
    "tags": [
@@ -4838,11 +8067,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Saber' no pretérito muda de sentido: 'supe' = fiquei sabendo, não 'sabia'.",
+   "notaEn": "'Saber' shifts meaning in the preterite: 'supe' is not I knew but I found out, the moment the knowledge arrived. The imperfect 'sabía' is the ongoing state.",
    "formasEs": {
     "Ayer lo sabía": "imperfeito",
     "Ayer lo sé": "presente",
     "Ayer lo sabré": "futuro",
     "Ayer lo sabría": "condicional"
+   },
+   "formasEsEn": {
+    "Ayer lo sabía": "imperfect",
+    "Ayer lo sé": "present",
+    "Ayer lo sabré": "future",
+    "Ayer lo sabría": "conditional"
    }
   },
   {
@@ -4850,15 +8086,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ella tuvo un hijo.",
    "pt": "Ela teve um filho.",
+   "en": "She had a child.",
    "aceitas": [
     "ela teve um filho",
     "teve um filho"
+   ],
+   "aceitasEn": [
+    "she had a child",
+    "she had a son",
+    "she had a baby",
+    "she gave birth to a child"
    ],
    "distratores": [
     "Ela tem um filho.",
     "Ela tinha um filho.",
     "Ela terá um filho.",
     "Ela teria um filho."
+   ],
+   "distratoresEn": [
+    "She has a child.",
+    "She used to have a child.",
+    "She will have a child.",
+    "She would have a child."
    ],
    "nivel": "A2",
    "tags": [
@@ -4868,11 +8117,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Tener' é irregular no pretérito: tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron.",
+   "notaEn": "'Tener' is irregular in the preterite: tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron. With 'un hijo' the preterite means she gave birth.",
    "formasEs": {
     "Ella tiene un hijo": "presente",
     "Ella tenía un hijo": "imperfeito",
     "Ella tendrá un hijo": "futuro",
     "Ella tendría un hijo": "condicional"
+   },
+   "formasEsEn": {
+    "Ella tiene un hijo": "present",
+    "Ella tenía un hijo": "imperfect",
+    "Ella tendrá un hijo": "future",
+    "Ella tendría un hijo": "conditional"
    }
   },
   {
@@ -4880,17 +8136,31 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo tengo prisa.",
    "pt": "Eu estou com pressa.",
+   "en": "I'm in a hurry.",
    "aceitas": [
     "estou com pressa",
     "eu estou com pressa",
     "to com pressa",
     "tenho pressa"
    ],
+   "aceitasEn": [
+    "im in a hurry",
+    "i m in a hurry",
+    "i am in a hurry",
+    "im in a rush",
+    "im rushed"
+   ],
    "distratores": [
     "Eu tinha pressa.",
     "Eu tive pressa.",
     "Eu terei pressa.",
     "Eu teria pressa."
+   ],
+   "distratoresEn": [
+    "I was in a hurry.",
+    "I had been in a hurry.",
+    "I will be in a hurry.",
+    "I would be in a hurry."
    ],
    "nivel": "A1",
    "tags": [
@@ -4900,11 +8170,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Tengo' com g irregular. E 'tener prisa' = estar com pressa, não 'ter pressa'.",
+   "notaEn": "'Tengo' takes an irregular g in the first person, like 'pongo' and 'salgo'. And Spanish has hurry rather than being in one: 'tener prisa'.",
    "formasEs": {
     "Yo tuve prisa": "pretérito",
     "Yo tenía prisa": "imperfeito",
     "Yo tendré prisa": "futuro",
     "Yo tendría prisa": "condicional"
+   },
+   "formasEsEn": {
+    "Yo tuve prisa": "preterite",
+    "Yo tenía prisa": "imperfect",
+    "Yo tendré prisa": "future",
+    "Yo tendría prisa": "conditional"
    }
   },
   {
@@ -4912,15 +8189,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ellos hicieron todo.",
    "pt": "Eles fizeram tudo.",
+   "en": "They did everything.",
    "aceitas": [
     "eles fizeram tudo",
     "fizeram tudo"
+   ],
+   "aceitasEn": [
+    "they did everything",
+    "they did it all",
+    "they made everything"
    ],
    "distratores": [
     "Eles fazem tudo.",
     "Eles faziam tudo.",
     "Eles farão tudo.",
     "Eles fariam tudo."
+   ],
+   "distratoresEn": [
+    "They do everything.",
+    "They used to do everything.",
+    "They will do everything.",
+    "They would do everything."
    ],
    "nivel": "A2",
    "tags": [
@@ -4930,11 +8219,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Hacer' no pretérito: hice, hiciste, hizo, hicimos, hicisteis, hicieron. Note o 'z' em 'hizo'.",
+   "notaEn": "'Hacer' in the preterite: hice, hiciste, hizo, hicimos, hicisteis, hicieron. Watch the z in 'hizo' — it keeps the sound when the vowel changes.",
    "formasEs": {
     "Ellos hacen todo": "presente",
     "Ellos hacían todo": "imperfeito",
     "Ellos harán todo": "futuro",
     "Ellos harían todo": "condicional"
+   },
+   "formasEsEn": {
+    "Ellos hacen todo": "present",
+    "Ellos hacían todo": "imperfect",
+    "Ellos harán todo": "future",
+    "Ellos harían todo": "conditional"
    }
   },
   {
@@ -4942,16 +8238,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Él hizo la cena.",
    "pt": "Ele fez o jantar.",
+   "en": "He made dinner.",
    "aceitas": [
     "ele fez o jantar",
     "fez o jantar",
     "ele preparou o jantar"
+   ],
+   "aceitasEn": [
+    "he made dinner",
+    "he made the dinner",
+    "he cooked dinner",
+    "he made supper"
    ],
    "distratores": [
     "Ele faz o jantar.",
     "Ele fazia o jantar.",
     "Ele fará o jantar.",
     "Ele faria o jantar."
+   ],
+   "distratoresEn": [
+    "He makes dinner.",
+    "He used to make dinner.",
+    "He will make dinner.",
+    "He would make dinner."
    ],
    "nivel": "A2",
    "tags": [
@@ -4961,11 +8270,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Terceira pessoa vira 'hizo', com z. E 'cena' = jantar.",
+   "notaEn": "The third person preterite is 'hizo', with a z: a c would go hard before an o. 'La cena' is dinner, and 'cenar' is the verb.",
    "formasEs": {
     "Él hace la cena": "presente",
     "Él hacía la cena": "imperfeito",
     "Él hará la cena": "futuro",
     "Él haría la cena": "condicional"
+   },
+   "formasEsEn": {
+    "Él hace la cena": "present",
+    "Él hacía la cena": "imperfect",
+    "Él hará la cena": "future",
+    "Él haría la cena": "conditional"
    }
   },
   {
@@ -4973,16 +8289,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo hago la comida.",
    "pt": "Eu faço a comida.",
+   "en": "I make the food.",
    "aceitas": [
     "eu faco a comida",
     "faco a comida",
     "eu preparo a comida"
+   ],
+   "aceitasEn": [
+    "i make the food",
+    "i make food",
+    "i cook the food",
+    "i do the cooking",
+    "i make the meal"
    ],
    "distratores": [
     "Eu fiz a comida.",
     "Eu fazia a comida.",
     "Eu farei a comida.",
     "Eu faria a comida."
+   ],
+   "distratoresEn": [
+    "I made the food.",
+    "I used to make the food.",
+    "I will make the food.",
+    "I would make the food."
    ],
    "nivel": "A1",
    "tags": [
@@ -4992,11 +8322,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Hago' com g, como 'tengo', 'pongo', 'salgo', 'digo'.",
+   "notaEn": "'Hago' with a g, like 'tengo', 'pongo', 'salgo', 'digo'. The g shows up only in the first person singular; the rest of the present is regular.",
    "formasEs": {
     "Yo hice la comida": "pretérito",
     "Yo hacía la comida": "imperfeito",
     "Yo haré la comida": "futuro",
     "Yo haría la comida": "condicional"
+   },
+   "formasEsEn": {
+    "Yo hice la comida": "preterite",
+    "Yo hacía la comida": "imperfect",
+    "Yo haré la comida": "future",
+    "Yo haría la comida": "conditional"
    }
   },
   {
@@ -5004,15 +8341,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo fui al médico.",
    "pt": "Eu fui ao médico.",
+   "en": "I went to the doctor.",
    "aceitas": [
     "eu fui ao medico",
     "fui ao medico"
+   ],
+   "aceitasEn": [
+    "i went to the doctor",
+    "i went to the doctors",
+    "i went to see the doctor"
    ],
    "distratores": [
     "Eu vou ao médico.",
     "Eu ia ao médico.",
     "Eu irei ao médico.",
     "Eu iria ao médico."
+   ],
+   "distratoresEn": [
+    "I go to the doctor.",
+    "I used to go to the doctor.",
+    "I will go to the doctor.",
+    "I would go to the doctor."
    ],
    "nivel": "A2",
    "tags": [
@@ -5022,11 +8371,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Cuidado: 'fui' serve para 'ir' e para 'ser'. O contexto decide.",
+   "notaEn": "'Fui' belongs to both 'ir' and 'ser' — their preterites are identical. Only the sentence tells you which: 'fui al médico' is going, 'fui profesor' is being.",
    "formasEs": {
     "Yo voy al médico": "presente",
     "Yo iba al médico": "imperfeito",
     "Yo iré al médico": "futuro",
     "Yo iría al médico": "condicional"
+   },
+   "formasEsEn": {
+    "Yo voy al médico": "present",
+    "Yo iba al médico": "imperfect",
+    "Yo iré al médico": "future",
+    "Yo iría al médico": "conditional"
    }
   },
   {
@@ -5034,15 +8390,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo fui profesor.",
    "pt": "Eu fui professor.",
+   "en": "I was a teacher.",
    "aceitas": [
     "eu fui professor",
     "fui professor"
+   ],
+   "aceitasEn": [
+    "i was a teacher",
+    "i was a professor",
+    "i was a schoolteacher",
+    "i worked as a teacher"
    ],
    "distratores": [
     "Eu sou professor.",
     "Eu era professor.",
     "Eu serei professor.",
     "Eu seria professor."
+   ],
+   "distratoresEn": [
+    "I am a teacher.",
+    "I used to be a teacher.",
+    "I will be a teacher.",
+    "I would be a teacher."
    ],
    "nivel": "A2",
    "tags": [
@@ -5052,11 +8421,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Mesmo 'fui' do verbo 'ir'. Aqui é 'ser', porque vem seguido de profissão.",
+   "notaEn": "The same 'fui' as in 'ir', but here it is 'ser'. A profession after it settles the question. The imperfect 'era profesor' would stress the years rather than the fact.",
    "formasEs": {
     "Yo soy profesor": "presente",
     "Yo era profesor": "imperfeito",
     "Yo seré profesor": "futuro",
     "Yo sería profesor": "condicional"
+   },
+   "formasEsEn": {
+    "Yo soy profesor": "present",
+    "Yo era profesor": "imperfect",
+    "Yo seré profesor": "future",
+    "Yo sería profesor": "conditional"
    }
   },
   {
@@ -5064,16 +8440,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Antes yo iba mucho.",
    "pt": "Antes eu ia muito.",
+   "en": "I used to go a lot.",
    "aceitas": [
     "antes eu ia muito",
     "antes ia muito",
     "eu ia muito antes"
+   ],
+   "aceitasEn": [
+    "i used to go a lot",
+    "i used to go there a lot",
+    "before i used to go a lot",
+    "i often went",
+    "i went a lot back then"
    ],
    "distratores": [
     "Antes eu vou muito.",
     "Antes eu fui muito.",
     "Antes eu irei muito.",
     "Antes eu iria muito."
+   ],
+   "distratoresEn": [
+    "I go there a lot.",
+    "I went there once.",
+    "I will go a lot.",
+    "I would go a lot."
    ],
    "nivel": "A2",
    "tags": [
@@ -5083,11 +8473,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Ir' tem imperfeito irregular: iba, ibas, iba, íbamos, ibais, iban.",
+   "notaEn": "'Ir' has one of only three irregular imperfects in Spanish: iba, ibas, iba, íbamos, ibais, iban. The other two belong to 'ser' and 'ver'.",
    "formasEs": {
     "Antes yo voy mucho": "presente",
     "Antes yo fui mucho": "pretérito",
     "Antes yo iré mucho": "futuro",
     "Antes yo iría mucho": "condicional"
+   },
+   "formasEsEn": {
+    "Antes yo voy mucho": "present",
+    "Antes yo fui mucho": "preterite",
+    "Antes yo iré mucho": "future",
+    "Antes yo iría mucho": "conditional"
    }
   },
   {
@@ -5095,16 +8492,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Nosotros éramos amigos.",
    "pt": "Nós éramos amigos.",
+   "en": "We were friends.",
    "aceitas": [
     "nos eramos amigos",
     "eramos amigos",
     "a gente era amiga"
+   ],
+   "aceitasEn": [
+    "we were friends",
+    "we used to be friends"
    ],
    "distratores": [
     "Nós somos amigos.",
     "Nós fomos amigos.",
     "Nós seremos amigos.",
     "Nós seríamos amigos."
+   ],
+   "distratoresEn": [
+    "We are friends.",
+    "We became friends.",
+    "We will be friends.",
+    "We would be friends."
    ],
    "nivel": "A2",
    "tags": [
@@ -5114,11 +8522,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Ser' no imperfeito: era, eras, era, éramos, erais, eran.",
+   "notaEn": "'Ser' in the imperfect: era, eras, era, éramos, erais, eran. 'Éramos amigos' describes a state that lasted; 'fuimos amigos' would close it off.",
    "formasEs": {
     "Nosotros somos amigos": "presente",
     "Nosotros fuimos amigos": "pretérito",
     "Nosotros seremos amigos": "futuro",
     "Nosotros seríamos amigos": "condicional"
+   },
+   "formasEsEn": {
+    "Nosotros somos amigos": "present",
+    "Nosotros fuimos amigos": "preterite",
+    "Nosotros seremos amigos": "future",
+    "Nosotros seríamos amigos": "conditional"
    }
   },
   {
@@ -5126,16 +8541,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo estuve allí.",
    "pt": "Eu estive lá.",
+   "en": "I was there.",
    "aceitas": [
     "eu estive la",
     "estive la",
     "eu estive ali"
+   ],
+   "aceitasEn": [
+    "i was there",
+    "i went there",
+    "i was there at the time"
    ],
    "distratores": [
     "Eu estou lá.",
     "Eu estava lá.",
     "Eu estarei lá.",
     "Eu estaria lá."
+   ],
+   "distratoresEn": [
+    "I am there.",
+    "I used to be there.",
+    "I will be there.",
+    "I would be there."
    ],
    "nivel": "A2",
    "tags": [
@@ -5145,11 +8572,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Estar' no pretérito: estuve, estuviste, estuvo. Segue o padrão de 'tuve'.",
+   "notaEn": "'Estar' in the preterite: estuve, estuviste, estuvo — the same -uv- pattern as 'tuve'. 'Estuve allí' says I went and was there; 'estaba allí' sets a scene.",
    "formasEs": {
     "Yo estoy allí": "presente",
     "Yo estaba allí": "imperfeito",
     "Yo estaré allí": "futuro",
     "Yo estaría allí": "condicional"
+   },
+   "formasEsEn": {
+    "Yo estoy allí": "present",
+    "Yo estaba allí": "imperfect",
+    "Yo estaré allí": "future",
+    "Yo estaría allí": "conditional"
    }
   },
   {
@@ -5157,16 +8591,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Él dijo la verdad.",
    "pt": "Ele disse a verdade.",
+   "en": "He told the truth.",
    "aceitas": [
     "ele disse a verdade",
     "disse a verdade",
     "ele falou a verdade"
+   ],
+   "aceitasEn": [
+    "he told the truth",
+    "he spoke the truth",
+    "he said the truth"
    ],
    "distratores": [
     "Ele diz a verdade.",
     "Ele dizia a verdade.",
     "Ele dirá a verdade.",
     "Ele diria a verdade."
+   ],
+   "distratoresEn": [
+    "He tells the truth.",
+    "He used to tell the truth.",
+    "He will tell the truth.",
+    "He would tell the truth."
    ],
    "nivel": "A2",
    "tags": [
@@ -5176,11 +8622,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Decir': dije, dijiste, dijo, dijimos, dijisteis, dijeron. Note 'dijeron', sem i.",
+   "notaEn": "'Decir': dije, dijiste, dijo, dijimos, dijisteis, dijeron. Note 'dijeron' with no i — after a j, the i of the ending drops away.",
    "formasEs": {
     "Él dice la verdad": "presente",
     "Él decía la verdad": "imperfeito",
     "Él dirá la verdad": "futuro",
     "Él diría la verdad": "condicional"
+   },
+   "formasEsEn": {
+    "Él dice la verdad": "present",
+    "Él decía la verdad": "imperfect",
+    "Él dirá la verdad": "future",
+    "Él diría la verdad": "conditional"
    }
   },
   {
@@ -5188,15 +8641,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo digo que sí.",
    "pt": "Eu digo que sim.",
+   "en": "I say yes.",
    "aceitas": [
     "eu digo que sim",
     "digo que sim"
+   ],
+   "aceitasEn": [
+    "i say yes",
+    "i say so",
+    "i am saying yes",
+    "i say that yes"
    ],
    "distratores": [
     "Eu disse que sim.",
     "Eu dizia que sim.",
     "Eu direi que sim.",
     "Eu diria que sim."
+   ],
+   "distratoresEn": [
+    "I said yes.",
+    "I used to say yes.",
+    "I will say yes.",
+    "I would say yes."
    ],
    "nivel": "A1",
    "tags": [
@@ -5206,11 +8672,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Decir' no presente muda o e por i: digo, dices, dice, decimos, decís, dicen.",
+   "notaEn": "'Decir' changes e to i in the present: digo, dices, dice, decimos, decís, dicen. The 'nosotros' and 'vosotros' forms keep the e.",
    "formasEs": {
     "Yo dije que sí": "pretérito",
     "Yo decía que sí": "imperfeito",
     "Yo diré que sí": "futuro",
     "Yo diría que sí": "condicional"
+   },
+   "formasEsEn": {
+    "Yo dije que sí": "preterite",
+    "Yo decía que sí": "imperfect",
+    "Yo diré que sí": "future",
+    "Yo diría que sí": "conditional"
    }
   },
   {
@@ -5218,15 +8691,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ellos vinieron ayer.",
    "pt": "Eles vieram ontem.",
+   "en": "They came yesterday.",
    "aceitas": [
     "eles vieram ontem",
     "vieram ontem"
+   ],
+   "aceitasEn": [
+    "they came yesterday",
+    "they arrived yesterday",
+    "they got here yesterday"
    ],
    "distratores": [
     "Eles vêm ontem.",
     "Eles vinham ontem.",
     "Eles virão ontem.",
     "Eles viriam ontem."
+   ],
+   "distratoresEn": [
+    "They come yesterday.",
+    "They used to come yesterday.",
+    "They will come yesterday.",
+    "They would come yesterday."
    ],
    "nivel": "B1",
    "tags": [
@@ -5236,11 +8721,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Venir': vine, viniste, vino, vinimos, vinisteis, vinieron.",
+   "notaEn": "'Venir': vine, viniste, vino, vinimos, vinisteis, vinieron. With 'ayer' only the preterite works; every other tense clashes with the adverb.",
    "formasEs": {
     "Ellos vienen ayer": "presente",
     "Ellos venían ayer": "imperfeito",
     "Ellos vendrán ayer": "futuro",
     "Ellos vendrían ayer": "condicional"
+   },
+   "formasEsEn": {
+    "Ellos vienen ayer": "present",
+    "Ellos venían ayer": "imperfect",
+    "Ellos vendrán ayer": "future",
+    "Ellos vendrían ayer": "conditional"
    }
   },
   {
@@ -5248,16 +8740,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Él vino solo.",
    "pt": "Ele veio sozinho.",
+   "en": "He came alone.",
    "aceitas": [
     "ele veio sozinho",
     "veio sozinho",
     "ele veio so"
+   ],
+   "aceitasEn": [
+    "he came alone",
+    "he came by himself",
+    "he came on his own"
    ],
    "distratores": [
     "Ele vem sozinho.",
     "Ele vinha sozinho.",
     "Ele virá sozinho.",
     "Ele viria sozinho."
+   ],
+   "distratoresEn": [
+    "He comes alone.",
+    "He used to come alone.",
+    "He will come alone.",
+    "He would come alone."
    ],
    "nivel": "A2",
    "tags": [
@@ -5267,11 +8771,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Vino' é 'veio' — e também é 'vinho'. O contexto separa.",
+   "notaEn": "'Vino' is he came — and also wine. The sentence keeps them apart, but the coincidence has fuelled a thousand jokes.",
    "formasEs": {
     "Él viene solo": "presente",
     "Él venía solo": "imperfeito",
     "Él vendrá solo": "futuro",
     "Él vendría solo": "condicional"
+   },
+   "formasEsEn": {
+    "Él viene solo": "present",
+    "Él venía solo": "imperfect",
+    "Él vendrá solo": "future",
+    "Él vendría solo": "conditional"
    }
   },
   {
@@ -5279,17 +8790,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo puse la mesa.",
    "pt": "Eu pus a mesa.",
+   "en": "I set the table.",
    "aceitas": [
     "eu pus a mesa",
     "pus a mesa",
     "eu coloquei a mesa",
     "botei a mesa"
    ],
+   "aceitasEn": [
+    "i set the table",
+    "i laid the table",
+    "i set the table then"
+   ],
    "distratores": [
     "Eu ponho a mesa.",
     "Eu punha a mesa.",
     "Eu porei a mesa.",
     "Eu poria a mesa."
+   ],
+   "distratoresEn": [
+    "I am setting the table.",
+    "I used to set the table.",
+    "I will set the table.",
+    "I would set the table."
    ],
    "nivel": "B1",
    "tags": [
@@ -5299,11 +8822,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Poner': puse, pusiste, puso, pusimos, pusisteis, pusieron.",
+   "notaEn": "'Poner': puse, pusiste, puso, pusimos, pusisteis, pusieron. 'Poner la mesa' is to lay the table, and 'ponerse' is to put clothes on.",
    "formasEs": {
     "Yo pongo la mesa": "presente",
     "Yo ponía la mesa": "imperfeito",
     "Yo pondré la mesa": "futuro",
     "Yo pondría la mesa": "condicional"
+   },
+   "formasEsEn": {
+    "Yo pongo la mesa": "present",
+    "Yo ponía la mesa": "imperfect",
+    "Yo pondré la mesa": "future",
+    "Yo pondría la mesa": "conditional"
    }
   },
   {
@@ -5311,16 +8841,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo no pude ir.",
    "pt": "Eu não pude ir.",
+   "en": "I couldn't go.",
    "aceitas": [
     "eu nao pude ir",
     "nao pude ir",
     "nao consegui ir"
+   ],
+   "aceitasEn": [
+    "i couldnt go",
+    "i could not go",
+    "i couldn t go",
+    "i wasnt able to go",
+    "i couldnt make it"
    ],
    "distratores": [
     "Eu não posso ir.",
     "Eu não podia ir.",
     "Eu não poderei ir.",
     "Eu não poderia ir."
+   ],
+   "distratoresEn": [
+    "I cannot go.",
+    "I could never go.",
+    "I will not be able to go.",
+    "I would not be able to go."
    ],
    "nivel": "A2",
    "tags": [
@@ -5330,11 +8874,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Poder': pude, pudiste, pudo, pudimos, pudisteis, pudieron.",
+   "notaEn": "'Poder': pude, pudiste, pudo, pudimos, pudisteis, pudieron. 'No pude ir' means I tried and failed; 'no podía ir' means going was never open to me.",
    "formasEs": {
     "Yo no puedo ir": "presente",
     "Yo no podía ir": "imperfeito",
     "Yo no podré ir": "futuro",
     "Yo no podría ir": "condicional"
+   },
+   "formasEsEn": {
+    "Yo no puedo ir": "present",
+    "Yo no podía ir": "imperfect",
+    "Yo no podré ir": "future",
+    "Yo no podría ir": "conditional"
    }
   },
   {
@@ -5342,15 +8893,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ella quiso ayudar.",
    "pt": "Ela quis ajudar.",
+   "en": "She wanted to help.",
    "aceitas": [
     "ela quis ajudar",
     "quis ajudar"
+   ],
+   "aceitasEn": [
+    "she wanted to help",
+    "she tried to help",
+    "she meant to help"
    ],
    "distratores": [
     "Ela quer ajudar.",
     "Ela queria ajudar.",
     "Ela quererá ajudar.",
     "Ela quereria ajudar."
+   ],
+   "distratoresEn": [
+    "She wants to help.",
+    "She used to want to help.",
+    "She will want to help.",
+    "She would want to help."
    ],
    "nivel": "B1",
    "tags": [
@@ -5360,11 +8923,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Querer': quise, quisiste, quiso. No negativo, 'no quiso' = se recusou.",
+   "notaEn": "'Querer': quise, quisiste, quiso. In the preterite it leans towards she tried; in the negative, 'no quiso' means she flatly refused.",
    "formasEs": {
     "Ella quiere ayudar": "presente",
     "Ella quería ayudar": "imperfeito",
     "Ella querrá ayudar": "futuro",
     "Ella querría ayudar": "condicional"
+   },
+   "formasEsEn": {
+    "Ella quiere ayudar": "present",
+    "Ella quería ayudar": "imperfect",
+    "Ella querrá ayudar": "future",
+    "Ella querría ayudar": "conditional"
    }
   },
   {
@@ -5372,15 +8942,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo quiero agua.",
    "pt": "Eu quero água.",
+   "en": "I want water.",
    "aceitas": [
     "eu quero agua",
     "quero agua"
+   ],
+   "aceitasEn": [
+    "i want water",
+    "i want some water",
+    "id like water"
    ],
    "distratores": [
     "Eu quis água.",
     "Eu queria água.",
     "Eu quererei água.",
     "Eu quereria água."
+   ],
+   "distratoresEn": [
+    "I wanted water.",
+    "I used to want water.",
+    "I will want water.",
+    "I would want water."
    ],
    "nivel": "A1",
    "tags": [
@@ -5390,11 +8972,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Verbo de mudança e→ie: quiero, quieres, quiere, queremos, queréis, quieren.",
+   "notaEn": "An e→ie stem changer: quiero, quieres, quiere, queremos, queréis, quieren. The change vanishes when the stress moves off the stem.",
    "formasEs": {
     "Yo quise agua": "pretérito",
     "Yo quería agua": "imperfeito",
     "Yo querré agua": "futuro",
     "Yo querría agua": "condicional"
+   },
+   "formasEsEn": {
+    "Yo quise agua": "preterite",
+    "Yo quería agua": "imperfect",
+    "Yo querré agua": "future",
+    "Yo querría agua": "conditional"
    }
   },
   {
@@ -5402,17 +8991,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Nosotros anduvimos mucho.",
    "pt": "Nós andamos muito.",
+   "en": "We walked a lot.",
    "aceitas": [
     "nos andamos muito",
     "andamos muito",
     "a gente andou muito",
     "caminhamos muito"
    ],
+   "aceitasEn": [
+    "we walked a lot",
+    "we walked a great deal",
+    "we did a lot of walking",
+    "we walked far"
+   ],
    "distratores": [
     "Nós andaríamos muito.",
     "Nós andávamos muito.",
     "Nós andaremos muito.",
     "Nós andaremos bastante."
+   ],
+   "distratoresEn": [
+    "We would walk a lot.",
+    "We used to walk a lot.",
+    "We will walk a lot.",
+    "We will walk a great deal."
    ],
    "nivel": "B1",
    "tags": [
@@ -5422,11 +9024,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Pega muita gente: 'andar' é irregular no pretérito — anduve, anduviste, anduvo.",
+   "notaEn": "This one catches people out: 'andar' looks regular and is not. The preterite runs anduve, anduviste, anduvo — the same -uv- as 'tener' and 'estar'.",
    "formasEs": {
     "Nosotros andamos mucho": "presente",
     "Nosotros andábamos mucho": "imperfeito",
     "Nosotros andaremos mucho": "futuro",
     "Nosotros andaríamos mucho": "condicional"
+   },
+   "formasEsEn": {
+    "Nosotros andamos mucho": "present",
+    "Nosotros andábamos mucho": "imperfect",
+    "Nosotros andaremos mucho": "future",
+    "Nosotros andaríamos mucho": "conditional"
    }
   },
   {
@@ -5434,15 +9043,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Él trajo el libro.",
    "pt": "Ele trouxe o livro.",
+   "en": "He brought the book.",
    "aceitas": [
     "ele trouxe o livro",
     "trouxe o livro"
+   ],
+   "aceitasEn": [
+    "he brought the book",
+    "he brought the book with him",
+    "he brought it"
    ],
    "distratores": [
     "Ele traz o livro.",
     "Ele trazia o livro.",
     "Ele trará o livro.",
     "Ele traria o livro."
+   ],
+   "distratoresEn": [
+    "He brings the book.",
+    "He used to bring the book.",
+    "He will bring the book.",
+    "He would bring the book."
    ],
    "nivel": "B1",
    "tags": [
@@ -5452,11 +9073,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Traer': traje, trajiste, trajo, trajimos, trajisteis, trajeron.",
+   "notaEn": "'Traer': traje, trajiste, trajo, trajimos, trajisteis, trajeron. Like 'dijeron', the third person plural drops the i after the j.",
    "formasEs": {
     "Él trae el libro": "presente",
     "Él traía el libro": "imperfeito",
     "Él traerá el libro": "futuro",
     "Él traería el libro": "condicional"
+   },
+   "formasEsEn": {
+    "Él trae el libro": "present",
+    "Él traía el libro": "imperfect",
+    "Él traerá el libro": "future",
+    "Él traería el libro": "conditional"
    }
   },
   {
@@ -5464,17 +9092,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo le di el dinero.",
    "pt": "Eu dei o dinheiro a ele.",
+   "en": "I gave him the money.",
    "aceitas": [
     "eu dei o dinheiro a ele",
     "dei o dinheiro a ele",
     "dei o dinheiro pra ele",
     "eu dei a ele o dinheiro"
    ],
+   "aceitasEn": [
+    "i gave him the money",
+    "i gave her the money",
+    "i gave them the money",
+    "i gave him money"
+   ],
    "distratores": [
     "Eu dou o dinheiro a ele.",
     "Eu dava o dinheiro a ele.",
     "Eu darei o dinheiro a ele.",
     "Eu daria o dinheiro a ele."
+   ],
+   "distratoresEn": [
+    "I give him the money.",
+    "I used to give him the money.",
+    "I will give him the money.",
+    "I would give him the money."
    ],
    "nivel": "A2",
    "tags": [
@@ -5484,11 +9125,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Dar' no pretérito toma forma de -er/-ir: di, diste, dio, dimos, disteis, dieron.",
+   "notaEn": "'Dar' borrows the -er/-ir endings in the preterite: di, diste, dio, dimos, disteis, dieron. No written accents at all, which surprises people.",
    "formasEs": {
     "Yo le doy el dinero": "presente",
     "Yo le daba el dinero": "imperfeito",
     "Yo le daré el dinero": "futuro",
     "Yo le daría el dinero": "condicional"
+   },
+   "formasEsEn": {
+    "Yo le doy el dinero": "present",
+    "Yo le daba el dinero": "imperfect",
+    "Yo le daré el dinero": "future",
+    "Yo le daría el dinero": "conditional"
    }
   },
   {
@@ -5496,17 +9144,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo lo vi ayer.",
    "pt": "Eu o vi ontem.",
+   "en": "I saw him yesterday.",
    "aceitas": [
     "eu o vi ontem",
     "vi ele ontem",
     "eu vi ele ontem",
     "o vi ontem"
    ],
+   "aceitasEn": [
+    "i saw him yesterday",
+    "i saw it yesterday",
+    "i saw him last night"
+   ],
    "distratores": [
     "Eu o vejo ontem.",
     "Eu o via ontem.",
     "Eu o verei ontem.",
     "Eu o veria ontem."
+   ],
+   "distratoresEn": [
+    "I see him yesterday.",
+    "I used to see him yesterday.",
+    "I will see him yesterday.",
+    "I would see him yesterday."
    ],
    "nivel": "A2",
    "tags": [
@@ -5516,11 +9176,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Ver': vi, viste, vio, vimos, visteis, vieron. Sem acento em 'vi' e 'vio'.",
+   "notaEn": "'Ver': vi, viste, vio, vimos, visteis, vieron. 'Vi' and 'vio' carry no written accent, unlike most preterites of their shape.",
    "formasEs": {
     "Yo lo veo ayer": "presente",
     "Yo lo veía ayer": "imperfeito",
     "Yo lo veré ayer": "futuro",
     "Yo lo vería ayer": "condicional"
+   },
+   "formasEsEn": {
+    "Yo lo veo ayer": "present",
+    "Yo lo veía ayer": "imperfect",
+    "Yo lo veré ayer": "future",
+    "Yo lo vería ayer": "conditional"
    }
   },
   {
@@ -5528,16 +9195,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Antes yo veía más.",
    "pt": "Antes eu via mais.",
+   "en": "I used to see more.",
    "aceitas": [
     "antes eu via mais",
     "antes via mais",
     "eu via mais antes"
+   ],
+   "aceitasEn": [
+    "i used to see more",
+    "before i used to see more",
+    "i saw more back then",
+    "i could see more before"
    ],
    "distratores": [
     "Antes eu vejo mais.",
     "Antes eu vi mais.",
     "Antes eu verei mais.",
     "Antes eu veria mais."
+   ],
+   "distratoresEn": [
+    "I see more now.",
+    "I saw more once.",
+    "I will see more.",
+    "I would see more."
    ],
    "nivel": "A2",
    "tags": [
@@ -5547,11 +9227,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Ver' tem imperfeito irregular: veía, veías, veía, veíamos, veíais, veían.",
+   "notaEn": "'Ver' keeps the e of its stem in the imperfect: veía, veías, veía, veíamos, veíais, veían. One of the three irregular imperfects, alongside 'ser' and 'ir'.",
    "formasEs": {
     "Antes yo veo más": "presente",
     "Antes yo vi más": "pretérito",
     "Antes yo veré más": "futuro",
     "Antes yo vería más": "condicional"
+   },
+   "formasEsEn": {
+    "Antes yo veo más": "present",
+    "Antes yo vi más": "preterite",
+    "Antes yo veré más": "future",
+    "Antes yo vería más": "conditional"
    }
   },
   {
@@ -5559,16 +9246,31 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo salgo ahora.",
    "pt": "Eu saio agora.",
+   "en": "I'm leaving now.",
    "aceitas": [
     "eu saio agora",
     "saio agora",
     "estou saindo agora"
+   ],
+   "aceitasEn": [
+    "im leaving now",
+    "i m leaving now",
+    "i am leaving now",
+    "im going out now",
+    "i leave now",
+    "im off now"
    ],
    "distratores": [
     "Eu saí agora.",
     "Eu saía agora.",
     "Eu sairei agora.",
     "Eu sairia agora."
+   ],
+   "distratoresEn": [
+    "I left just now.",
+    "I used to leave now.",
+    "I will leave now.",
+    "I would leave now."
    ],
    "nivel": "A1",
    "tags": [
@@ -5578,11 +9280,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Salgo' com g. O futuro também é irregular: saldré.",
+   "notaEn": "'Salgo' with a g, like 'tengo' and 'pongo'. The future is irregular too: saldré, saldrás, saldrá.",
    "formasEs": {
     "Yo salí ahora": "pretérito",
     "Yo salía ahora": "imperfeito",
     "Yo saldré ahora": "futuro",
     "Yo saldría ahora": "condicional"
+   },
+   "formasEsEn": {
+    "Yo salí ahora": "preterite",
+    "Yo salía ahora": "imperfect",
+    "Yo saldré ahora": "future",
+    "Yo saldría ahora": "conditional"
    }
   },
   {
@@ -5590,16 +9299,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo conozco a Ana.",
    "pt": "Eu conheço a Ana.",
+   "en": "I know Ana.",
    "aceitas": [
     "eu conheco a ana",
     "conheco a ana",
     "eu conheco ana"
+   ],
+   "aceitasEn": [
+    "i know ana",
+    "i am acquainted with ana",
+    "i know ana personally"
    ],
    "distratores": [
     "Eu conheci a Ana.",
     "Eu conhecia a Ana.",
     "Eu conhecerei a Ana.",
     "Eu conheceria a Ana."
+   ],
+   "distratoresEn": [
+    "I met Ana.",
+    "I used to know Ana.",
+    "I will meet Ana.",
+    "I would know Ana."
    ],
    "nivel": "A2",
    "tags": [
@@ -5609,11 +9330,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Verbos em -cer ganham z: conozco, parezco, agradezco, merezco.",
+   "notaEn": "Verbs in -cer take a z in the first person: conozco, parezco, agradezco, merezco. And 'conocer' is knowing a person; 'saber' is knowing a fact.",
    "formasEs": {
     "Yo conocí a Ana": "pretérito",
     "Yo conocía a Ana": "imperfeito",
     "Yo conoceré a Ana": "futuro",
     "Yo conocería a Ana": "condicional"
+   },
+   "formasEsEn": {
+    "Yo conocí a Ana": "preterite",
+    "Yo conocía a Ana": "imperfect",
+    "Yo conoceré a Ana": "future",
+    "Yo conocería a Ana": "conditional"
    }
   },
   {
@@ -5621,16 +9349,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo oigo música.",
    "pt": "Eu ouço música.",
+   "en": "I hear music.",
    "aceitas": [
     "eu ouco musica",
     "ouco musica",
     "escuto musica"
+   ],
+   "aceitasEn": [
+    "i hear music",
+    "i can hear music",
+    "i am hearing music",
+    "i hear some music"
    ],
    "distratores": [
     "Eu ouvi música.",
     "Eu ouvia música.",
     "Eu ouvirei música.",
     "Eu ouviria música."
+   ],
+   "distratoresEn": [
+    "I heard music.",
+    "I used to hear music.",
+    "I will hear music.",
+    "I would hear music."
    ],
    "nivel": "A2",
    "tags": [
@@ -5640,11 +9381,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Oír': oigo, oyes, oye, oímos, oís, oyen. O y aparece do nada.",
+   "notaEn": "'Oír': oigo, oyes, oye, oímos, oís, oyen. A y appears from nowhere in the middle of the paradigm. Listening on purpose is 'escuchar'.",
    "formasEs": {
     "Yo oí música": "pretérito",
     "Yo oía música": "imperfeito",
     "Yo oiré música": "futuro",
     "Yo oiría música": "condicional"
+   },
+   "formasEsEn": {
+    "Yo oí música": "preterite",
+    "Yo oía música": "imperfect",
+    "Yo oiré música": "future",
+    "Yo oiría música": "conditional"
    }
   },
   {
@@ -5652,15 +9400,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ellos durmieron bien.",
    "pt": "Eles dormiram bem.",
+   "en": "They slept well.",
    "aceitas": [
     "eles dormiram bem",
     "dormiram bem"
+   ],
+   "aceitasEn": [
+    "they slept well",
+    "they had a good sleep",
+    "they slept soundly"
    ],
    "distratores": [
     "Eles dormem bem.",
     "Eles dormiam bem.",
     "Eles dormirão bem.",
     "Eles dormiriam bem."
+   ],
+   "distratoresEn": [
+    "They sleep well.",
+    "They used to sleep well.",
+    "They will sleep well.",
+    "They would sleep well."
    ],
    "nivel": "B1",
    "tags": [
@@ -5670,11 +9430,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Na 3ª pessoa o o vira u: durmió, durmieron. No presente vira ue: duermo.",
+   "notaEn": "In the third person of the preterite the o turns into u: durmió, durmieron. In the present it turns into ue instead: duermo.",
    "formasEs": {
     "Ellos duermen bien": "presente",
     "Ellos dormían bien": "imperfeito",
     "Ellos dormirán bien": "futuro",
     "Ellos dormirían bien": "condicional"
+   },
+   "formasEsEn": {
+    "Ellos duermen bien": "present",
+    "Ellos dormían bien": "imperfect",
+    "Ellos dormirán bien": "future",
+    "Ellos dormirían bien": "conditional"
    }
   },
   {
@@ -5682,15 +9449,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo duermo poco.",
    "pt": "Eu durmo pouco.",
+   "en": "I sleep very little.",
    "aceitas": [
     "eu durmo pouco",
     "durmo pouco"
+   ],
+   "aceitasEn": [
+    "i sleep very little",
+    "i sleep little",
+    "i dont sleep much",
+    "i do not sleep much",
+    "i get little sleep"
    ],
    "distratores": [
     "Eu dormi pouco.",
     "Eu dormia pouco.",
     "Eu dormirei pouco.",
     "Eu dormiria pouco."
+   ],
+   "distratoresEn": [
+    "I slept very little.",
+    "I used to sleep little.",
+    "I will sleep little.",
+    "I would sleep little."
    ],
    "nivel": "A1",
    "tags": [
@@ -5700,11 +9481,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Mudança o→ue: duermo, duermes, duerme, dormimos, dormís, duermen.",
+   "notaEn": "An o→ue stem change: duermo, duermes, duerme, dormimos, dormís, duermen. The 'nosotros' and 'vosotros' forms keep the plain o.",
    "formasEs": {
     "Yo dormí poco": "pretérito",
     "Yo dormía poco": "imperfeito",
     "Yo dormiré poco": "futuro",
     "Yo dormiría poco": "condicional"
+   },
+   "formasEsEn": {
+    "Yo dormí poco": "preterite",
+    "Yo dormía poco": "imperfect",
+    "Yo dormiré poco": "future",
+    "Yo dormiría poco": "conditional"
    }
   },
   {
@@ -5712,15 +9500,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Él pidió la cuenta.",
    "pt": "Ele pediu a conta.",
+   "en": "He asked for the bill.",
    "aceitas": [
     "ele pediu a conta",
     "pediu a conta"
+   ],
+   "aceitasEn": [
+    "he asked for the bill",
+    "he asked for the check",
+    "he requested the bill",
+    "he called for the bill"
    ],
    "distratores": [
     "Ele pede a conta.",
     "Ele pedia a conta.",
     "Ele pedirá a conta.",
     "Ele pediria a conta."
+   ],
+   "distratoresEn": [
+    "He asks for the bill.",
+    "He used to ask for the bill.",
+    "He will ask for the bill.",
+    "He would ask for the bill."
    ],
    "nivel": "B1",
    "tags": [
@@ -5730,11 +9531,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Na 3ª pessoa o e vira i: pidió, pidieron. Cuidado: 'pedir' não é 'perguntar'.",
+   "notaEn": "In the third person of the preterite the e becomes i: pidió, pidieron. And 'pedir' is to ask for something; asking a question is 'preguntar'.",
    "formasEs": {
     "Él pide la cuenta": "presente",
     "Él pedía la cuenta": "imperfeito",
     "Él pedirá la cuenta": "futuro",
     "Él pediría la cuenta": "condicional"
+   },
+   "formasEsEn": {
+    "Él pide la cuenta": "present",
+    "Él pedía la cuenta": "imperfect",
+    "Él pedirá la cuenta": "future",
+    "Él pediría la cuenta": "conditional"
    }
   },
   {
@@ -5742,16 +9550,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo juego al fútbol.",
    "pt": "Eu jogo futebol.",
+   "en": "I play football.",
    "aceitas": [
     "eu jogo futebol",
     "jogo futebol",
     "eu jogo bola"
+   ],
+   "aceitasEn": [
+    "i play football",
+    "i play soccer",
+    "i play football regularly"
    ],
    "distratores": [
     "Eu joguei futebol.",
     "Eu jogava futebol.",
     "Eu jogarei futebol.",
     "Eu jogaria futebol."
+   ],
+   "distratoresEn": [
+    "I played football.",
+    "I used to play football.",
+    "I will play football.",
+    "I would play football."
    ],
    "nivel": "A1",
    "tags": [
@@ -5761,11 +9581,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Único verbo com u→ue: juego, juegas, juega, jugamos, jugáis, juegan.",
+   "notaEn": "'Jugar' is the only Spanish verb with a u→ue change: juego, juegas, juega, jugamos, jugáis, juegan. Note the 'al': 'jugar al fútbol'.",
    "formasEs": {
     "Yo jugué al fútbol": "pretérito",
     "Yo jugaba al fútbol": "imperfeito",
     "Yo jugaré al fútbol": "futuro",
     "Yo jugaría al fútbol": "condicional"
+   },
+   "formasEsEn": {
+    "Yo jugué al fútbol": "preterite",
+    "Yo jugaba al fútbol": "imperfect",
+    "Yo jugaré al fútbol": "future",
+    "Yo jugaría al fútbol": "conditional"
    }
   },
   {
@@ -5773,17 +9600,32 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Empieza a llover.",
    "pt": "Começa a chover.",
+   "en": "It's starting to rain.",
    "aceitas": [
     "comeca a chover",
     "esta comecando a chover",
     "comeca a chuva",
     "ja comeca a chover"
    ],
+   "aceitasEn": [
+    "its starting to rain",
+    "it s starting to rain",
+    "it is starting to rain",
+    "it begins to rain",
+    "its beginning to rain",
+    "it starts to rain"
+   ],
    "distratores": [
     "Começou a chover.",
     "Começava a chover.",
     "Começará a chover.",
     "Começaria a chover."
+   ],
+   "distratoresEn": [
+    "It started to rain.",
+    "It used to start raining.",
+    "It will start to rain.",
+    "It would start to rain."
    ],
    "nivel": "A2",
    "tags": [
@@ -5793,11 +9635,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Mudança e→ie: empiezo, empiezas, empieza. No pretérito: empecé, com c.",
+   "notaEn": "An e→ie change: empiezo, empiezas, empieza. In the preterite the z turns into a c to keep the sound: 'empecé'.",
    "formasEs": {
     "Empezó a llover": "pretérito",
     "Empezaba a llover": "imperfeito",
     "Empezará a llover": "futuro",
     "Empezaría a llover": "condicional"
+   },
+   "formasEsEn": {
+    "Empezó a llover": "preterite",
+    "Empezaba a llover": "imperfect",
+    "Empezará a llover": "future",
+    "Empezaría a llover": "conditional"
    }
   },
   {
@@ -5805,17 +9654,31 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ojalá venga mañana.",
    "pt": "Tomara que ele venha amanhã.",
+   "en": "I hope he comes tomorrow.",
    "aceitas": [
     "tomara que ele venha amanha",
     "tomara que venha amanha",
     "oxala ele venha amanha",
     "quem dera ele venha amanha"
    ],
+   "aceitasEn": [
+    "i hope he comes tomorrow",
+    "hopefully he comes tomorrow",
+    "i hope he arrives tomorrow",
+    "lets hope he comes tomorrow",
+    "god willing he comes tomorrow"
+   ],
    "distratores": [
     "Tomara que ele viesse amanhã.",
     "Tomara que ele vem amanhã.",
     "Tomara que ele virá amanhã.",
     "Tomara que ele viria amanhã."
+   ],
+   "distratoresEn": [
+    "If only he came tomorrow.",
+    "I hope he is coming tomorrow.",
+    "I hope he will come tomorrow.",
+    "I hope he would come tomorrow."
    ],
    "nivel": "B2",
    "tags": [
@@ -5825,10 +9688,16 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Presente do subjuntivo de 'venir' sai do 'vengo': venga, vengas, venga.",
+   "notaEn": "The present subjunctive of 'venir' is built off 'vengo': venga, vengas, venga. 'Ojalá' always takes the subjunctive — with the present it is a real hope, with the imperfect a wish you do not expect to be granted.",
    "formasEs": {
     "Ojalá viniera mañana": "imperfeito do subjuntivo",
     "Ojalá viene mañana": "indicativo, onde o subjuntivo é obrigatório",
     "Ojalá vendrá mañana": "futuro do indicativo, que aqui não cabe"
+   },
+   "formasEsEn": {
+    "Ojalá viniera mañana": "imperfect subjunctive",
+    "Ojalá viene mañana": "indicative, where the subjunctive is required",
+    "Ojalá vendrá mañana": "future indicative, which does not fit here"
    }
   },
   {
@@ -5836,16 +9705,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "No creo que sea fácil.",
    "pt": "Não acho que seja fácil.",
+   "en": "I don't think it's easy.",
    "aceitas": [
     "nao acho que seja facil",
     "nao creio que seja facil",
     "nao acredito que seja facil"
+   ],
+   "aceitasEn": [
+    "i dont think its easy",
+    "i don t think it s easy",
+    "i do not think it is easy",
+    "i dont believe its easy",
+    "i dont think it is easy"
    ],
    "distratores": [
     "Não acho que era fácil.",
     "Não acho que fosse fácil.",
     "Não acho que será fácil.",
     "Não acho que seria fácil."
+   ],
+   "distratoresEn": [
+    "I don't think it was easy.",
+    "I don't think it had been easy.",
+    "I don't think it will be easy.",
+    "I don't think it would be easy."
    ],
    "nivel": "B1",
    "tags": [
@@ -5855,10 +9738,16 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Ser' no subjuntivo: sea, seas, sea, seamos, seáis, sean.",
+   "notaEn": "'Ser' in the present subjunctive: sea, seas, sea, seamos, seáis, sean. 'No creer que' triggers the subjunctive; a plain 'creo que' does not.",
    "formasEs": {
     "No creo que es fácil": "indicativo, onde o subjuntivo é obrigatório",
     "No creo que fuera fácil": "imperfeito do subjuntivo",
     "No creo que será fácil": "futuro do indicativo, que aqui não cabe"
+   },
+   "formasEsEn": {
+    "No creo que es fácil": "indicative, where the subjunctive is required",
+    "No creo que fuera fácil": "imperfect subjunctive",
+    "No creo que será fácil": "future indicative, which does not fit here"
    }
   },
   {
@@ -5866,16 +9755,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Cuando tengas tiempo.",
    "pt": "Quando você tiver tempo.",
+   "en": "When you have time.",
    "aceitas": [
     "quando voce tiver tempo",
     "quando tiver tempo",
     "quando voce tiver um tempo"
+   ],
+   "aceitasEn": [
+    "when you have time",
+    "whenever you have time",
+    "when you get a chance",
+    "when you have the time",
+    "when you get time"
    ],
    "distratores": [
     "Quando você tem tempo.",
     "Quando você tinha tempo.",
     "Quando você terá tempo.",
     "Quando você teria tempo."
+   ],
+   "distratoresEn": [
+    "When you have the time now.",
+    "When you used to have time.",
+    "When you will have time.",
+    "When you had time."
    ],
    "nivel": "B2",
    "tags": [
@@ -5885,11 +9788,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Futuro incerto pede subjuntivo nas duas línguas: 'cuando tengas' = quando tiver.",
+   "notaEn": "'Cuando' pointing at an uncertain future takes the subjunctive: 'cuando tengas tiempo'. Pointing at a habit, it takes the indicative: 'cuando tienes tiempo, lees'.",
    "formasEs": {
     "Cuando tienes tiempo": "presente do indicativo",
     "Cuando tenías tiempo": "imperfeito",
     "Cuando tendrás tiempo": "futuro",
     "Cuando tuviste tiempo": "pretérito"
+   },
+   "formasEsEn": {
+    "Cuando tienes tiempo": "present indicative",
+    "Cuando tenías tiempo": "imperfect",
+    "Cuando tendrás tiempo": "future",
+    "Cuando tuviste tiempo": "preterite"
    }
   },
   {
@@ -5897,16 +9807,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "¡Ven aquí!",
    "pt": "Venha aqui!",
+   "en": "Come here!",
    "aceitas": [
     "venha aqui",
     "vem aqui",
     "chega aqui"
+   ],
+   "aceitasEn": [
+    "come here",
+    "come over here",
+    "get over here",
+    "come here now"
    ],
    "distratores": [
     "Veio aqui!",
     "Virá aqui!",
     "Vinha aqui!",
     "Viria aqui!"
+   ],
+   "distratoresEn": [
+    "He came here!",
+    "He will come here!",
+    "He used to come here!",
+    "He would come here!"
    ],
    "nivel": "A2",
    "tags": [
@@ -5916,11 +9839,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Imperativos curtos e irregulares: ven, ten, haz, di, sal, pon, sé, ve.",
+   "notaEn": "Spanish keeps a short irregular imperative for its commonest verbs: ven, ten, haz, di, sal, pon, sé, ve. All one syllable, and worth memorising as a set.",
    "formasEs": {
     "Viene aquí": "presente",
     "Vino aquí": "pretérito",
     "Vendrá aquí": "futuro",
     "Venía aquí": "imperfeito"
+   },
+   "formasEsEn": {
+    "Viene aquí": "present",
+    "Vino aquí": "preterite",
+    "Vendrá aquí": "future",
+    "Venía aquí": "imperfect"
    }
   },
   {
@@ -5928,16 +9858,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "¡Haz lo que quieras!",
    "pt": "Faça o que você quiser!",
+   "en": "Do whatever you want!",
    "aceitas": [
     "faca o que voce quiser",
     "faca o que quiser",
     "faz o que quiser"
+   ],
+   "aceitasEn": [
+    "do whatever you want",
+    "do as you please",
+    "do what you want",
+    "do whatever you like",
+    "suit yourself"
    ],
    "distratores": [
     "Fez o que você quis!",
     "Fazia o que você queria!",
     "Fará o que você quiser!",
     "Faria o que você quisesse!"
+   ],
+   "distratoresEn": [
+    "He did what he wanted!",
+    "He used to do what he wanted!",
+    "He will do what he wants!",
+    "He would do what he wanted!"
    ],
    "nivel": "B2",
    "tags": [
@@ -5947,11 +9891,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Haz' é o imperativo de 'hacer'. Note o subjuntivo 'quieras' depois.",
+   "notaEn": "'Haz' is the imperative of 'hacer'. Note the subjunctive that follows: 'lo que quieras', whatever you may want, because the wanting is left open.",
    "formasEs": {
     "Hace lo que quiere": "presente",
     "Hizo lo que quiso": "pretérito",
     "Hará lo que quiera": "futuro",
     "Haría lo que quisiera": "condicional"
+   },
+   "formasEsEn": {
+    "Hace lo que quiere": "present",
+    "Hizo lo que quiso": "preterite",
+    "Hará lo que quiera": "future",
+    "Haría lo que quisiera": "conditional"
    }
   },
   {
@@ -5959,16 +9910,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Si tuviera dinero, viajaría.",
    "pt": "Se eu tivesse dinheiro, viajaria.",
+   "en": "If I had money, I would travel.",
    "aceitas": [
     "se eu tivesse dinheiro viajaria",
     "se tivesse dinheiro viajaria",
     "se eu tivesse dinheiro eu viajaria"
+   ],
+   "aceitasEn": [
+    "if i had money i would travel",
+    "if i had money id travel",
+    "if i had the money i would travel",
+    "were i to have money i would travel"
    ],
    "distratores": [
     "Se eu tiver dinheiro, viajarei.",
     "Se eu tinha dinheiro, viajava.",
     "Se eu tive dinheiro, viajei.",
     "Se eu tenho dinheiro, viajo."
+   ],
+   "distratoresEn": [
+    "If I have money, I will travel.",
+    "If I had money, I travelled.",
+    "When I had money, I used to travel.",
+    "I have money, so I travel."
    ],
    "nivel": "B2",
    "tags": [
@@ -5978,11 +9942,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "Imperfeito do subjuntivo + condicional, igual ao português.",
+   "notaEn": "The unreal conditional: imperfect subjunctive in the 'si' clause, conditional in the other. Never a future after 'si' — 'si tendré' is simply ungrammatical.",
    "formasEs": {
     "Si tengo dinero, viajo": "presente",
     "Si tenía dinero, viajaba": "imperfeito",
     "Si tuve dinero, viajé": "pretérito",
     "Si tendré dinero, viajaré": "futuro"
+   },
+   "formasEsEn": {
+    "Si tengo dinero, viajo": "present",
+    "Si tenía dinero, viajaba": "imperfect",
+    "Si tuve dinero, viajé": "preterite",
+    "Si tendré dinero, viajaré": "future"
    }
   },
   {
@@ -5990,16 +9961,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Habría venido antes.",
    "pt": "Eu teria vindo antes.",
+   "en": "I would have come earlier.",
    "aceitas": [
     "eu teria vindo antes",
     "teria vindo antes",
     "tinha vindo antes"
+   ],
+   "aceitasEn": [
+    "i would have come earlier",
+    "i would have come sooner",
+    "i would have arrived earlier",
+    "he would have come earlier"
    ],
    "distratores": [
     "Eu tenho vindo antes.",
     "Eu havia vindo antes.",
     "Eu virei antes.",
     "Eu venho antes."
+   ],
+   "distratoresEn": [
+    "I have come here before.",
+    "I had come earlier than that.",
+    "I will come earlier.",
+    "I come earlier than him."
    ],
    "nivel": "C1",
    "tags": [
@@ -6009,11 +9993,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "'Haber' no condicional: habría, habrías, habría. Serve para o 'teria feito'.",
+   "notaEn": "'Haber' in the conditional: habría, habrías, habría. With a past participle it builds the conditional perfect — the thing that would have happened and did not.",
    "formasEs": {
     "He venido antes": "pretérito perfeito",
     "Había venido antes": "mais-que-perfeito",
     "Habré venido antes": "futuro perfeito",
     "Vendré antes": "futuro simples"
+   },
+   "formasEsEn": {
+    "He venido antes": "present perfect",
+    "Había venido antes": "pluperfect",
+    "Habré venido antes": "future perfect",
+    "Vendré antes": "simple future"
    }
   },
   {
@@ -6021,15 +10012,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo hablo español.",
    "pt": "Eu falo espanhol.",
+   "en": "I speak Spanish.",
    "aceitas": [
     "eu falo espanhol",
     "falo espanhol"
+   ],
+   "aceitasEn": [
+    "i speak spanish",
+    "i can speak spanish",
+    "i do speak spanish"
    ],
    "distratores": [
     "Eu falei espanhol.",
     "Eu falava espanhol.",
     "Eu falarei espanhol.",
     "Eu falaria espanhol."
+   ],
+   "distratoresEn": [
+    "I spoke Spanish.",
+    "I used to speak Spanish.",
+    "I will speak Spanish.",
+    "I would speak Spanish."
    ],
    "nivel": "A1",
    "tags": [
@@ -6038,11 +10041,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "Regular em -ar: hablo, hablas, habla, hablamos, habláis, hablan.",
+   "notaEn": "A model regular -ar verb: hablo, hablas, habla, hablamos, habláis, hablan. Learn this one and thousands of others come free.",
    "formasEs": {
     "Yo hablé español": "pretérito",
     "Yo hablaba español": "imperfeito",
     "Yo hablaré español": "futuro",
     "Yo hablaría español": "condicional"
+   },
+   "formasEsEn": {
+    "Yo hablé español": "preterite",
+    "Yo hablaba español": "imperfect",
+    "Yo hablaré español": "future",
+    "Yo hablaría español": "conditional"
    }
   },
   {
@@ -6050,15 +10060,27 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ella comió temprano.",
    "pt": "Ela comeu cedo.",
+   "en": "She ate early.",
    "aceitas": [
     "ela comeu cedo",
     "comeu cedo"
+   ],
+   "aceitasEn": [
+    "she ate early",
+    "she had an early meal",
+    "she ate early on"
    ],
    "distratores": [
     "Ela come cedo.",
     "Ela comia cedo.",
     "Ela comerá cedo.",
     "Ela comeria cedo."
+   ],
+   "distratoresEn": [
+    "She eats early.",
+    "She used to eat early.",
+    "She will eat early.",
+    "She would eat early."
    ],
    "nivel": "A2",
    "tags": [
@@ -6067,11 +10089,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "Regular em -er: comí, comiste, comió, comimos, comisteis, comieron.",
+   "notaEn": "A regular -er verb in the preterite: comí, comiste, comió, comimos, comisteis, comieron. Only the first and third persons carry a written accent.",
    "formasEs": {
     "Ella come temprano": "presente",
     "Ella comía temprano": "imperfeito",
     "Ella comerá temprano": "futuro",
     "Ella comería temprano": "condicional"
+   },
+   "formasEsEn": {
+    "Ella come temprano": "present",
+    "Ella comía temprano": "imperfect",
+    "Ella comerá temprano": "future",
+    "Ella comería temprano": "conditional"
    }
   },
   {
@@ -6079,17 +10108,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Nosotros vivimos aquí.",
    "pt": "Nós moramos aqui.",
+   "en": "We live here.",
    "aceitas": [
     "nos moramos aqui",
     "moramos aqui",
     "a gente mora aqui",
     "vivemos aqui"
    ],
+   "aceitasEn": [
+    "we live here",
+    "we are living here",
+    "this is where we live"
+   ],
    "distratores": [
     "Nós morávamos aqui.",
     "Nós moraremos aqui.",
     "Nós moraríamos aqui.",
     "Nós teríamos morado aqui."
+   ],
+   "distratoresEn": [
+    "We used to live here.",
+    "We will live here.",
+    "We would live here.",
+    "We would have lived here."
    ],
    "nivel": "A1",
    "tags": [
@@ -6098,10 +10139,16 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "Em -ir, presente e pretérito de 'nosotros' são iguais: vivimos. O contexto decide.",
+   "notaEn": "In -ir verbs the 'nosotros' present and preterite are the same word: 'vivimos' is both we live and we lived. Only context tells them apart.",
    "formasEs": {
     "Nosotros vivíamos aquí": "imperfeito",
     "Nosotros viviremos aquí": "futuro",
     "Nosotros viviríamos aquí": "condicional"
+   },
+   "formasEsEn": {
+    "Nosotros vivíamos aquí": "imperfect",
+    "Nosotros viviremos aquí": "future",
+    "Nosotros viviríamos aquí": "conditional"
    }
   },
   {
@@ -6109,15 +10156,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo trabajaba mucho.",
    "pt": "Eu trabalhava muito.",
+   "en": "I used to work a lot.",
    "aceitas": [
     "eu trabalhava muito",
     "trabalhava muito"
+   ],
+   "aceitasEn": [
+    "i used to work a lot",
+    "i used to work hard",
+    "i worked a lot back then",
+    "i would work a lot in those days"
    ],
    "distratores": [
     "Eu trabalho muito.",
     "Eu trabalhei muito.",
     "Eu trabalharei muito.",
     "Eu trabalharia muito."
+   ],
+   "distratoresEn": [
+    "I work a lot.",
+    "I worked a lot once.",
+    "I will work a lot.",
+    "I would work a lot."
    ],
    "nivel": "A2",
    "tags": [
@@ -6126,11 +10186,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "Imperfeito regular em -ar: -aba, -abas, -aba, -ábamos, -abais, -aban.",
+   "notaEn": "The regular -ar imperfect: -aba, -abas, -aba, -ábamos, -abais, -aban. It describes what used to go on, with no beginning or end in view.",
    "formasEs": {
     "Yo trabajo mucho": "presente",
     "Yo trabajé mucho": "pretérito",
     "Yo trabajaré mucho": "futuro",
     "Yo trabajaría mucho": "condicional"
+   },
+   "formasEsEn": {
+    "Yo trabajo mucho": "present",
+    "Yo trabajé mucho": "preterite",
+    "Yo trabajaré mucho": "future",
+    "Yo trabajaría mucho": "conditional"
    }
   },
   {
@@ -6138,16 +10205,28 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Ellos estudiarán mañana.",
    "pt": "Eles estudarão amanhã.",
+   "en": "They will study tomorrow.",
    "aceitas": [
     "eles estudarao amanha",
     "estudarao amanha",
     "vao estudar amanha"
+   ],
+   "aceitasEn": [
+    "they will study tomorrow",
+    "theyll study tomorrow",
+    "they are going to study tomorrow"
    ],
    "distratores": [
     "Eles estudam amanhã.",
     "Eles estudaram amanhã.",
     "Eles estudavam amanhã.",
     "Eles estudariam amanhã."
+   ],
+   "distratoresEn": [
+    "They study tomorrow.",
+    "They studied tomorrow.",
+    "They used to study tomorrow.",
+    "They would study tomorrow."
    ],
    "nivel": "A2",
    "tags": [
@@ -6156,11 +10235,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "O futuro regular junta a terminação ao infinitivo inteiro: estudar + án.",
+   "notaEn": "The regular future glues the ending onto the whole infinitive: estudiar + án. That is why every form but 'nosotros' carries a written accent.",
    "formasEs": {
     "Ellos estudian mañana": "presente",
     "Ellos estudiaron mañana": "pretérito",
     "Ellos estudiaban mañana": "imperfeito",
     "Ellos estudiarían mañana": "condicional"
+   },
+   "formasEsEn": {
+    "Ellos estudian mañana": "present",
+    "Ellos estudiaron mañana": "preterite",
+    "Ellos estudiaban mañana": "imperfect",
+    "Ellos estudiarían mañana": "conditional"
    }
   },
   {
@@ -6168,17 +10254,31 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Yo bebería un café.",
    "pt": "Eu tomaria um café.",
+   "en": "I would have a coffee.",
    "aceitas": [
     "eu tomaria um cafe",
     "tomaria um cafe",
     "eu beberia um cafe",
     "beberia um cafe"
    ],
+   "aceitasEn": [
+    "i would have a coffee",
+    "i would drink a coffee",
+    "id have a coffee",
+    "i could go for a coffee",
+    "i would like a coffee"
+   ],
    "distratores": [
     "Eu tomei um café.",
     "Eu tomava um café.",
     "Eu tomarei um café.",
     "Eu tomo um café."
+   ],
+   "distratoresEn": [
+    "I had a coffee.",
+    "I used to have a coffee.",
+    "I will have a coffee.",
+    "I am having a coffee."
    ],
    "nivel": "B1",
    "tags": [
@@ -6187,11 +10287,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "Condicional regular: infinitivo + ía. Em português usamos mais 'tomar' que 'beber'.",
+   "notaEn": "The regular conditional adds -ía to the full infinitive: beber + ía. The same endings serve -ar, -er and -ir alike.",
    "formasEs": {
     "Yo bebo un café": "presente",
     "Yo bebí un café": "pretérito",
     "Yo bebía un café": "imperfeito",
     "Yo beberé un café": "futuro"
+   },
+   "formasEsEn": {
+    "Yo bebo un café": "present",
+    "Yo bebí un café": "preterite",
+    "Yo bebía un café": "imperfect",
+    "Yo beberé un café": "future"
    }
   },
   {
@@ -6199,17 +10306,31 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Hemos terminado.",
    "pt": "Nós terminamos.",
+   "en": "We have finished.",
    "aceitas": [
     "nos terminamos",
     "terminamos",
     "ja terminamos",
     "a gente terminou"
    ],
+   "aceitasEn": [
+    "we have finished",
+    "weve finished",
+    "we are done",
+    "we have ended",
+    "we finished"
+   ],
    "distratores": [
     "Nós terminávamos.",
     "Nós terminaremos.",
     "Nós terminaríamos.",
     "Nós tínhamos terminado."
+   ],
+   "distratoresEn": [
+    "We used to finish.",
+    "We will finish.",
+    "We would finish.",
+    "We had finished."
    ],
    "nivel": "A2",
    "tags": [
@@ -6219,11 +10340,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "O espanhol usa muito o 'he/has/ha/hemos + particípio' onde o português usa o passado simples.",
+   "notaEn": "'He/has/ha/hemos + participle' is the present perfect, and Spain reaches for it constantly for anything that happened today. Latin America leans on the simple preterite instead.",
    "formasEs": {
     "Habíamos terminado": "mais-que-perfeito",
     "Habremos terminado": "futuro perfeito",
     "Habríamos terminado": "condicional",
     "Terminamos": "pretérito simples"
+   },
+   "formasEsEn": {
+    "Habíamos terminado": "pluperfect",
+    "Habremos terminado": "future perfect",
+    "Habríamos terminado": "conditional perfect",
+    "Terminamos": "simple preterite"
    }
   },
   {
@@ -6231,15 +10359,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Estoy comiendo.",
    "pt": "Estou comendo.",
+   "en": "I'm eating.",
    "aceitas": [
     "estou comendo",
     "to comendo"
+   ],
+   "aceitasEn": [
+    "im eating",
+    "i m eating",
+    "i am eating",
+    "im having a meal",
+    "im eating right now"
    ],
    "distratores": [
     "Estava comendo.",
     "Estarei comendo.",
     "Estaria comendo.",
     "Tinha comido."
+   ],
+   "distratoresEn": [
+    "I was eating.",
+    "I will be eating.",
+    "I would be eating.",
+    "I had eaten."
    ],
    "nivel": "A1",
    "tags": [
@@ -6248,11 +10390,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "Gerúndio em -ando/-iendo. Igual ao português, mas o espanhol usa menos.",
+   "notaEn": "The gerund ends in -ando or -iendo. Spanish uses the continuous far less than English does: 'como a las dos' already covers I'm eating at two.",
    "formasEs": {
     "Estaba comiendo": "imperfeito",
     "Estaré comiendo": "futuro",
     "Estaría comiendo": "condicional",
     "He comido": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "Estaba comiendo": "imperfect",
+    "Estaré comiendo": "future",
+    "Estaría comiendo": "conditional",
+    "He comido": "present perfect"
    }
   },
   {
@@ -6260,15 +10409,29 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "No me gusta esperar.",
    "pt": "Eu não gosto de esperar.",
+   "en": "I don't like waiting.",
    "aceitas": [
     "eu nao gosto de esperar",
     "nao gosto de esperar"
+   ],
+   "aceitasEn": [
+    "i dont like waiting",
+    "i don t like waiting",
+    "i do not like waiting",
+    "i hate waiting",
+    "i dont like to wait"
    ],
    "distratores": [
     "Eu não gostei de esperar.",
     "Eu não gostava de esperar.",
     "Eu não gostarei de esperar.",
     "Eu não gostaria de esperar."
+   ],
+   "distratoresEn": [
+    "I didn't like waiting.",
+    "I used to dislike waiting.",
+    "I will not like waiting.",
+    "I would not like waiting."
    ],
    "nivel": "A1",
    "tags": [
@@ -6278,11 +10441,18 @@ window.CARDS_RAW = {
     "regular"
    ],
    "nota": "'Gustar' inverte: quem gosta vira objeto indireto. 'Me gusta' = a mim agrada.",
+   "notaEn": "'Gustar' runs backwards: the thing liked is the subject and you are the indirect object. 'Me gusta esperar' is literally waiting pleases me.",
    "formasEs": {
     "No me gustó esperar": "pretérito",
     "No me gustaba esperar": "imperfeito",
     "No me gustará esperar": "futuro",
     "No me gustaría esperar": "condicional"
+   },
+   "formasEsEn": {
+    "No me gustó esperar": "preterite",
+    "No me gustaba esperar": "imperfect",
+    "No me gustará esperar": "future",
+    "No me gustaría esperar": "conditional"
    }
   },
   {
@@ -6290,17 +10460,30 @@ window.CARDS_RAW = {
    "tipo": "frase",
    "es": "Se me cayó el vaso.",
    "pt": "O copo caiu da minha mão.",
+   "en": "I dropped the glass.",
    "aceitas": [
     "o copo caiu da minha mao",
     "deixei o copo cair",
     "o copo me caiu",
     "caiu o copo da minha mao"
    ],
+   "aceitasEn": [
+    "i dropped the glass",
+    "the glass slipped out of my hand",
+    "i dropped the glass by accident",
+    "the glass fell out of my hand"
+   ],
    "distratores": [
     "Eu joguei o copo fora.",
     "Eu quebrei o copo assim.",
     "Eu peguei o copo rápido.",
     "Eu enchi o copo de novo."
+   ],
+   "distratoresEn": [
+    "I threw the glass away.",
+    "I broke the glass deliberately.",
+    "I caught the glass quickly.",
+    "I filled the glass again."
    ],
    "nivel": "B2",
    "tags": [
@@ -6310,11 +10493,18 @@ window.CARDS_RAW = {
     "irregular"
    ],
    "nota": "O 'se me' tira a culpa: não foi você que derrubou, aconteceu. E 'vaso' = copo.",
+   "notaEn": "'Se me cayó' takes the blame off you: the glass fell on me, it was not my doing. Saying 'tiré el vaso' would admit you threw it. And 'el vaso' is a drinking glass.",
    "formasEs": {
     "Se me cae el vaso": "presente",
     "Se me caía el vaso": "imperfeito",
     "Se me caerá el vaso": "futuro",
     "Se me caería el vaso": "condicional"
+   },
+   "formasEsEn": {
+    "Se me cae el vaso": "present",
+    "Se me caía el vaso": "imperfect",
+    "Se me caerá el vaso": "future",
+    "Se me caería el vaso": "conditional"
    }
   },
   {
@@ -6322,9 +10512,17 @@ window.CARDS_RAW = {
    "tipo": "palavra",
    "es": "la goma de borrar",
    "pt": "a borracha de apagar",
+   "en": "the eraser",
    "aceitas": [
     "borracha",
     "borracha de apagar"
+   ],
+   "aceitasEn": [
+    "eraser",
+    "the eraser",
+    "rubber",
+    "the rubber",
+    "pencil eraser"
    ],
    "distratores": [
     "a goma de mascar",
@@ -6332,22 +10530,38 @@ window.CARDS_RAW = {
     "a fita de medir",
     "a tinta de escrever"
    ],
+   "distratoresEn": [
+    "the chewing gum",
+    "the paper glue",
+    "the measuring tape",
+    "the writing ink"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "escola"
    ],
-   "nota": "Par de 'borracho' (bêbado). Aqui o material é 'goma'; na América Latina, 'borrador'."
+   "nota": "Par de 'borracho' (bêbado). Aqui o material é 'goma'; na América Latina, 'borrador'.",
+   "notaEn": "'Goma' is the rubber itself, so 'goma de borrar' is the thing you rub out with. In Latin America it is 'el borrador' — which in Spain means a rough draft."
   },
   {
    "id": "p102",
    "tipo": "palavra",
    "es": "el pegamento",
    "pt": "a cola",
+   "en": "the glue",
    "aceitas": [
     "cola",
     "grude",
     "adesivo"
+   ],
+   "aceitasEn": [
+    "glue",
+    "the glue",
+    "paste",
+    "the paste",
+    "adhesive",
+    "the adhesive"
    ],
    "distratores": [
     "o pagamento",
@@ -6355,23 +10569,37 @@ window.CARDS_RAW = {
     "o pedaço",
     "o pente"
    ],
+   "distratoresEn": [
+    "the payment",
+    "the pigment",
+    "the fragment",
+    "the comb"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "escola"
    ],
-   "nota": "'Cola' em espanhol é rabo ou fila. A cola de colar é 'pegamento'."
+   "nota": "'Cola' em espanhol é rabo ou fila. A cola de colar é 'pegamento'.",
+   "notaEn": "From 'pegar', to stick. Watch out for 'la cola', which in Spanish is a tail or a queue, never the stuff in the tube."
   },
   {
    "id": "p103",
    "tipo": "palavra",
    "es": "el jarrón",
    "pt": "o vaso de flores",
+   "en": "the vase",
    "aceitas": [
     "vaso",
     "vaso de flores",
     "jarro",
     "floreira"
+   ],
+   "aceitasEn": [
+    "vase",
+    "the vase",
+    "flower vase",
+    "the flower vase"
    ],
    "distratores": [
     "o copo de água",
@@ -6379,22 +10607,36 @@ window.CARDS_RAW = {
     "o prato de sopa",
     "o balde de areia"
    ],
+   "distratoresEn": [
+    "the glass",
+    "the jug",
+    "the soup bowl",
+    "the sand bucket"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "casa"
    ],
-   "nota": "Par de 'vaso' (copo). O vaso de flores é 'jarrón' ou 'florero'."
+   "nota": "Par de 'vaso' (copo). O vaso de flores é 'jarrón' ou 'florero'.",
+   "notaEn": "'El jarrón' is the ornamental vase; 'el florero' is the one you actually put flowers in. Neither is 'el vaso', which you drink from."
   },
   {
    "id": "p104",
    "tipo": "palavra",
    "es": "el ratón",
    "pt": "o rato",
+   "en": "the mouse",
    "aceitas": [
     "rato",
     "camundongo",
     "mouse"
+   ],
+   "aceitasEn": [
+    "mouse",
+    "the mouse",
+    "computer mouse",
+    "the computer mouse"
    ],
    "distratores": [
     "o rastro",
@@ -6402,22 +10644,38 @@ window.CARDS_RAW = {
     "o rincão",
     "o rodo"
    ],
+   "distratoresEn": [
+    "the trail",
+    "the return",
+    "the corner",
+    "the mop"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "animais"
    ],
-   "nota": "Par de 'un rato' (um tempinho). O animal é 'ratón' — e o do computador também."
+   "nota": "Par de 'un rato' (um tempinho). O animal é 'ratón' — e o do computador também.",
+   "notaEn": "'El ratón' is the mouse, animal or computer alike. The bigger rat is 'la rata'. And 'un rato', with no n, is a short while."
   },
   {
    "id": "p105",
    "tipo": "palavra",
    "es": "la clase",
    "pt": "a aula",
+   "en": "the lesson",
    "aceitas": [
     "aula",
     "licao",
     "materia"
+   ],
+   "aceitasEn": [
+    "lesson",
+    "the lesson",
+    "class",
+    "the class",
+    "lecture",
+    "the lecture"
    ],
    "distratores": [
     "a classe social",
@@ -6425,22 +10683,39 @@ window.CARDS_RAW = {
     "a cláusula",
     "a clareira"
    ],
+   "distratoresEn": [
+    "the social class",
+    "the key",
+    "the clause",
+    "the clearing"
+   ],
    "nivel": "A1",
    "tags": [
     "falso-amigo",
     "escola"
    ],
-   "nota": "Par de 'aula' (sala). A aula em si é 'clase'."
+   "nota": "Par de 'aula' (sala). A aula em si é 'clase'.",
+   "notaEn": "'La clase' is the lesson, and also the kind or sort of a thing: '¿qué clase de pregunta es esa?'. The room it happens in is 'el aula'."
   },
   {
    "id": "p106",
    "tipo": "palavra",
    "es": "el niño",
    "pt": "a criança",
+   "en": "the child",
    "aceitas": [
     "crianca",
     "menino",
     "garoto"
+   ],
+   "aceitasEn": [
+    "child",
+    "the child",
+    "boy",
+    "the boy",
+    "kid",
+    "the kid",
+    "little boy"
    ],
    "distratores": [
     "o ninho",
@@ -6448,21 +10723,37 @@ window.CARDS_RAW = {
     "o ninguém",
     "o nível"
    ],
+   "distratoresEn": [
+    "the nest",
+    "the nerve",
+    "the level",
+    "the nephew"
+   ],
    "nivel": "A1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Par de 'crianza' (criação). Criança é 'niño' ou 'niña'."
+   "nota": "Par de 'crianza' (criação). Criança é 'niño' ou 'niña'.",
+   "notaEn": "'El niño' is a boy, 'la niña' a girl, 'los niños' children of either sort. The raising of them is 'la crianza'."
   },
   {
    "id": "p107",
    "tipo": "palavra",
    "es": "el soborno",
    "pt": "o suborno",
+   "en": "the bribe",
    "aceitas": [
     "suborno",
     "propina ilegal",
     "corrupcao"
+   ],
+   "aceitasEn": [
+    "bribe",
+    "the bribe",
+    "bribery",
+    "the bribery",
+    "backhander",
+    "kickback"
    ],
    "distratores": [
     "o sobrenome",
@@ -6470,20 +10761,34 @@ window.CARDS_RAW = {
     "o soborno de festa",
     "o sobressalto"
    ],
+   "distratoresEn": [
+    "the surname",
+    "the two-storey house",
+    "the party leftover",
+    "the sudden start"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Par de 'propina' (gorjeta). O suborno é 'soborno'."
+   "nota": "Par de 'propina' (gorjeta). O suborno é 'soborno'.",
+   "notaEn": "'El soborno' is the bribe and 'sobornar' is to bribe. Keep it well apart from 'la propina', the tip you leave a waiter."
   },
   {
    "id": "p108",
    "tipo": "palavra",
    "es": "el jamón",
    "pt": "o presunto",
+   "en": "the ham",
    "aceitas": [
     "presunto",
     "fiambre"
+   ],
+   "aceitasEn": [
+    "ham",
+    "the ham",
+    "cured ham",
+    "the cured ham"
    ],
    "distratores": [
     "o jarro",
@@ -6491,22 +10796,38 @@ window.CARDS_RAW = {
     "o jaleco",
     "o jasmim"
    ],
+   "distratoresEn": [
+    "the jug",
+    "the dinner",
+    "the lab coat",
+    "the jasmine"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "comida"
    ],
-   "nota": "Par de 'presunto' (suposto). O embutido é 'jamón'."
+   "nota": "Par de 'presunto' (suposto). O embutido é 'jamón'.",
+   "notaEn": "'El jamón' is ham, and in Spain a national obsession: 'jamón serrano', 'jamón ibérico'. Nothing to do with 'presunto', which means alleged."
   },
   {
    "id": "p109",
    "tipo": "palavra",
    "es": "despertarse",
    "pt": "acordar",
+   "en": "to wake up",
    "aceitas": [
     "acordar",
     "despertar",
     "levantar"
+   ],
+   "aceitasEn": [
+    "to wake up",
+    "wake up",
+    "to wake",
+    "wake",
+    "to awaken",
+    "to get up"
    ],
    "distratores": [
     "desistir",
@@ -6514,22 +10835,36 @@ window.CARDS_RAW = {
     "despachar",
     "desprezar"
    ],
+   "distratoresEn": [
+    "to give up",
+    "to dismiss",
+    "to dispatch",
+    "to despise"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "verbo"
    ],
-   "nota": "Par de 'acordarse' (lembrar-se). Acordar do sono é 'despertarse'."
+   "nota": "Par de 'acordarse' (lembrar-se). Acordar do sono é 'despertarse'.",
+   "notaEn": "'Despertarse' is to wake up; 'despertar' without the pronoun is to wake somebody else. Do not reach for 'acordarse', which is to remember."
   },
   {
    "id": "p110",
    "tipo": "palavra",
    "es": "la escena",
    "pt": "a cena",
+   "en": "the scene",
    "aceitas": [
     "cena",
     "cena de filme",
     "sequencia"
+   ],
+   "aceitasEn": [
+    "scene",
+    "the scene",
+    "stage",
+    "the stage"
    ],
    "distratores": [
     "a escada",
@@ -6537,21 +10872,35 @@ window.CARDS_RAW = {
     "a esquina",
     "a escova"
    ],
+   "distratoresEn": [
+    "the staircase",
+    "the school",
+    "the corner",
+    "the brush"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Par de 'cena' (jantar). A cena de filme é 'escena'."
+   "nota": "Par de 'cena' (jantar). A cena de filme é 'escena'.",
+   "notaEn": "'La escena' is the scene of a film or a crime, and 'el escenario' is the stage. Watch the e at the front: without it, 'la cena' is dinner."
   },
   {
    "id": "p111",
    "tipo": "palavra",
    "es": "el apodo",
    "pt": "o apelido",
+   "en": "the nickname",
    "aceitas": [
     "apelido",
     "alcunha",
     "codinome"
+   ],
+   "aceitasEn": [
+    "nickname",
+    "the nickname",
+    "byname",
+    "the byname"
    ],
    "distratores": [
     "o apoio",
@@ -6559,21 +10908,36 @@ window.CARDS_RAW = {
     "o apogeu",
     "o apetite"
    ],
+   "distratoresEn": [
+    "the support",
+    "the bedroom",
+    "the appetite",
+    "the summit"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Par de 'apellido' (sobrenome). O apelido é 'apodo' ou 'sobrenombre'."
+   "nota": "Par de 'apellido' (sobrenome). O apelido é 'apodo' ou 'sobrenombre'.",
+   "notaEn": "'El apodo' is the nickname; 'el apellido' is the family name. Latin America also says 'el sobrenombre' for the nickname."
   },
   {
    "id": "p112",
    "tipo": "palavra",
    "es": "el éxito",
    "pt": "o sucesso",
+   "en": "the success",
    "aceitas": [
     "sucesso",
     "exito",
     "triunfo"
+   ],
+   "aceitasEn": [
+    "success",
+    "the success",
+    "hit",
+    "the hit",
+    "achievement"
    ],
    "distratores": [
     "a saída",
@@ -6581,22 +10945,39 @@ window.CARDS_RAW = {
     "o exílio",
     "o exército"
    ],
+   "distratoresEn": [
+    "the exit",
+    "the exam",
+    "the exile",
+    "the army"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Não confunda com 'salida' (saída). E sucesso em espanhol não é 'suceso'."
+   "nota": "Não confunda com 'salida' (saída). E sucesso em espanhol não é 'suceso'.",
+   "notaEn": "'El éxito' is success — the exit is 'la salida', and the resemblance has embarrassed many travellers. 'Tener éxito' = to succeed."
   },
   {
    "id": "p113",
    "tipo": "palavra",
    "es": "el suceso",
    "pt": "o acontecimento",
+   "en": "the event",
    "aceitas": [
     "acontecimento",
     "ocorrencia",
     "fato",
     "evento"
+   ],
+   "aceitasEn": [
+    "event",
+    "the event",
+    "incident",
+    "the incident",
+    "occurrence",
+    "the occurrence",
+    "happening"
    ],
    "distratores": [
     "o sucesso",
@@ -6604,22 +10985,39 @@ window.CARDS_RAW = {
     "o suspiro",
     "o sustento"
    ],
+   "distratoresEn": [
+    "the success",
+    "the successor",
+    "the sigh",
+    "the livelihood"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Falso amigo perigoso: 'suceso' é acontecimento, às vezes ruim. Sucesso é 'éxito'."
+   "nota": "Falso amigo perigoso: 'suceso' é acontecimento, às vezes ruim. Sucesso é 'éxito'.",
+   "notaEn": "'Un suceso' is an event, often an unpleasant one — the crime pages of a Spanish paper are 'la sección de sucesos'. Success is 'el éxito'."
   },
   {
    "id": "p114",
    "tipo": "palavra",
    "es": "el disgusto",
    "pt": "o aborrecimento",
+   "en": "the upset",
    "aceitas": [
     "aborrecimento",
     "desgosto",
     "desagrado",
     "chateacao"
+   ],
+   "aceitasEn": [
+    "upset",
+    "the upset",
+    "annoyance",
+    "the annoyance",
+    "displeasure",
+    "the displeasure",
+    "trouble"
    ],
    "distratores": [
     "o desgaste",
@@ -6627,21 +11025,39 @@ window.CARDS_RAW = {
     "o descuido",
     "o desfecho"
    ],
+   "distratoresEn": [
+    "the wear",
+    "the discount",
+    "the oversight",
+    "the outcome"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Llevarse un disgusto' = levar um desgosto. Não é 'nojo', que é 'asco'."
+   "nota": "'Llevarse un disgusto' = levar um desgosto. Não é 'nojo', que é 'asco'.",
+   "notaEn": "'Llevarse un disgusto' = to get bad news, to be upset. It is annoyance and distress, not revulsion — disgust in that sense is 'el asco'."
   },
   {
    "id": "p115",
    "tipo": "palavra",
    "es": "la copa",
    "pt": "a taça",
+   "en": "the wine glass",
    "aceitas": [
     "taca",
     "calice",
     "copo de vinho"
+   ],
+   "aceitasEn": [
+    "wine glass",
+    "the wine glass",
+    "glass",
+    "the glass",
+    "goblet",
+    "the goblet",
+    "cup",
+    "the cup"
    ],
    "distratores": [
     "a copa da casa",
@@ -6649,22 +11065,40 @@ window.CARDS_RAW = {
     "a cópia",
     "a coroa"
    ],
+   "distratoresEn": [
+    "the back kitchen",
+    "the cover",
+    "the copy",
+    "the crown"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "casa"
    ],
-   "nota": "Par de 'vaso' (copo). A taça é 'copa' — e a Copa do Mundo também."
+   "nota": "Par de 'vaso' (copo). A taça é 'copa' — e a Copa do Mundo também.",
+   "notaEn": "'Una copa' is a stemmed glass, and 'tomar una copa' is to go out for a drink. It is also the trophy: 'la Copa del Mundo'."
   },
   {
    "id": "p116",
    "tipo": "palavra",
    "es": "la tasa",
    "pt": "a taxa",
+   "en": "the rate",
    "aceitas": [
     "taxa",
     "indice",
     "alíquota"
+   ],
+   "aceitasEn": [
+    "rate",
+    "the rate",
+    "levy",
+    "the levy",
+    "charge",
+    "the charge",
+    "fee",
+    "the fee"
    ],
    "distratores": [
     "a tábua",
@@ -6672,20 +11106,37 @@ window.CARDS_RAW = {
     "a tarefa",
     "a torre"
    ],
+   "distratoresEn": [
+    "the board",
+    "the lid",
+    "the task",
+    "the tower"
+   ],
    "nivel": "B1",
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Tasa de interés' = taxa de juros. Não confunda com 'taza' (xícara)."
+   "nota": "'Tasa de interés' = taxa de juros. Não confunda com 'taza' (xícara).",
+   "notaEn": "'Tasa de interés' = interest rate; 'tasa de paro' = unemployment rate. One letter away sits 'la taza', a cup — and they sound identical across most of the Spanish world."
   },
   {
    "id": "p117",
    "tipo": "palavra",
    "es": "el postre",
    "pt": "a sobremesa",
+   "en": "the dessert",
    "aceitas": [
     "sobremesa",
     "doce"
+   ],
+   "aceitasEn": [
+    "dessert",
+    "the dessert",
+    "pudding",
+    "the pudding",
+    "sweet",
+    "the sweet",
+    "afters"
    ],
    "distratores": [
     "o posto",
@@ -6693,22 +11144,36 @@ window.CARDS_RAW = {
     "o pôster",
     "o portão"
    ],
+   "distratoresEn": [
+    "the post",
+    "the lamppost",
+    "the poster",
+    "the gate"
+   ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "comida"
    ],
-   "nota": "Par de 'sobremesa' (conversa após a refeição). O doce é 'postre'."
+   "nota": "Par de 'sobremesa' (conversa após a refeição). O doce é 'postre'.",
+   "notaEn": "'De postre' = for dessert. It is what comes after the meal, whereas 'la sobremesa' is the talk that comes after that."
   },
   {
    "id": "p118",
    "tipo": "palavra",
    "es": "el techo",
    "pt": "o teto",
+   "en": "the ceiling",
    "aceitas": [
     "teto",
     "forro",
     "telhado"
+   ],
+   "aceitasEn": [
+    "ceiling",
+    "the ceiling",
+    "roof",
+    "the roof"
    ],
    "distratores": [
     "o trecho",
@@ -6716,20 +11181,34 @@ window.CARDS_RAW = {
     "o tédio",
     "o termo"
    ],
+   "distratoresEn": [
+    "the stretch",
+    "the fabric",
+    "the tedium",
+    "the term"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "'Techo' é o teto; o telhado por fora é 'tejado'."
+   "nota": "'Techo' é o teto; o telhado por fora é 'tejado'.",
+   "notaEn": "'El techo' is the ceiling you see from inside; 'el tejado' is the roof you see from the street. Figuratively it is also a ceiling on prices."
   },
   {
    "id": "p119",
    "tipo": "palavra",
    "es": "la pared",
    "pt": "a parede",
+   "en": "the wall",
    "aceitas": [
     "parede",
     "muro"
+   ],
+   "aceitasEn": [
+    "wall",
+    "the wall",
+    "inside wall",
+    "the inside wall"
    ],
    "distratores": [
     "a parada",
@@ -6737,20 +11216,34 @@ window.CARDS_RAW = {
     "a paridade",
     "a paróquia"
    ],
+   "distratoresEn": [
+    "the stop",
+    "the departure",
+    "the parity",
+    "the parish"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "Muro externo é 'muro'; parede de dentro é 'pared'."
+   "nota": "Muro externo é 'muro'; parede de dentro é 'pared'.",
+   "notaEn": "'La pared' is an interior wall; 'el muro' is the outside one that surrounds a property; 'la muralla' is the wall around a city."
   },
   {
    "id": "p120",
    "tipo": "palavra",
    "es": "la silla",
    "pt": "a cadeira",
+   "en": "the chair",
    "aceitas": [
     "cadeira",
     "assento"
+   ],
+   "aceitasEn": [
+    "chair",
+    "the chair",
+    "seat",
+    "the seat"
    ],
    "distratores": [
     "a sela",
@@ -6758,19 +11251,33 @@ window.CARDS_RAW = {
     "a silhueta",
     "a sirene"
    ],
+   "distratoresEn": [
+    "the saddle",
+    "the syllable",
+    "the silhouette",
+    "the siren"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "Lembre que 'cadera' é quadril. 'Silla' é a cadeira de sentar."
+   "nota": "Lembre que 'cadera' é quadril. 'Silla' é a cadeira de sentar.",
+   "notaEn": "'La silla' is the chair you sit on, and 'el sillón' the armchair. Do not confuse it with 'la cadera', which is your hip."
   },
   {
    "id": "p121",
    "tipo": "palavra",
    "es": "el cuchillo",
    "pt": "a faca",
+   "en": "the knife",
    "aceitas": [
     "faca"
+   ],
+   "aceitasEn": [
+    "knife",
+    "the knife",
+    "table knife",
+    "the table knife"
    ],
    "distratores": [
     "a colher",
@@ -6778,20 +11285,34 @@ window.CARDS_RAW = {
     "o cochilo",
     "o cacho"
    ],
+   "distratoresEn": [
+    "the spoon",
+    "the pipe",
+    "the nap",
+    "the bunch"
+   ],
    "nivel": "A1",
    "tags": [
     "casa",
     "comida"
    ],
-   "nota": "Talheres: cuchillo (faca), tenedor (garfo), cuchara (colher)."
+   "nota": "Talheres: cuchillo (faca), tenedor (garfo), cuchara (colher).",
+   "notaEn": "The place setting: 'cuchillo' the knife, 'tenedor' the fork, 'cuchara' the spoon. All three together are 'los cubiertos'."
   },
   {
    "id": "p122",
    "tipo": "palavra",
    "es": "el tenedor",
    "pt": "o garfo",
+   "en": "the fork",
    "aceitas": [
     "garfo"
+   ],
+   "aceitasEn": [
+    "fork",
+    "the fork",
+    "table fork",
+    "the table fork"
    ],
    "distratores": [
     "o tenente",
@@ -6799,21 +11320,35 @@ window.CARDS_RAW = {
     "o tenor",
     "o teor"
    ],
+   "distratoresEn": [
+    "the lieutenant",
+    "the tendon",
+    "the tenor",
+    "the content"
+   ],
    "nivel": "A1",
    "tags": [
     "casa",
     "comida"
    ],
-   "nota": "De 'tener' (segurar). Cuidado: 'cubierto' é o talher em geral."
+   "nota": "De 'tener' (segurar). Cuidado: 'cubierto' é o talher em geral.",
+   "notaEn": "From 'tener', to hold: the fork is the holder. In finance the same word means a holder of securities — 'el tenedor de bonos'."
   },
   {
    "id": "p123",
    "tipo": "palavra",
    "es": "la cuchara",
    "pt": "a colher",
+   "en": "the spoon",
    "aceitas": [
     "colher",
     "colherada"
+   ],
+   "aceitasEn": [
+    "spoon",
+    "the spoon",
+    "tablespoon",
+    "the tablespoon"
    ],
    "distratores": [
     "a cachoeira",
@@ -6821,20 +11356,34 @@ window.CARDS_RAW = {
     "a cortina",
     "a cabana"
    ],
+   "distratoresEn": [
+    "the waterfall",
+    "the casserole",
+    "the curtain",
+    "the hut"
+   ],
    "nivel": "A1",
    "tags": [
     "casa",
     "comida"
    ],
-   "nota": "A colher de chá é 'cucharita' ou 'cucharilla'."
+   "nota": "A colher de chá é 'cucharita' ou 'cucharilla'.",
+   "notaEn": "'La cuchara' is the spoon, and the small one is 'la cucharita' or 'la cucharilla'. A spoonful is 'una cucharada'."
   },
   {
    "id": "p124",
    "tipo": "palavra",
    "es": "la servilleta",
    "pt": "o guardanapo",
+   "en": "the napkin",
    "aceitas": [
     "guardanapo"
+   ],
+   "aceitasEn": [
+    "napkin",
+    "the napkin",
+    "serviette",
+    "the serviette"
    ],
    "distratores": [
     "a serventia",
@@ -6842,20 +11391,34 @@ window.CARDS_RAW = {
     "a serpente",
     "a sobrancelha"
    ],
+   "distratoresEn": [
+    "the usefulness",
+    "the brewery",
+    "the serpent",
+    "the eyebrow"
+   ],
    "nivel": "A2",
    "tags": [
     "comida"
    ],
-   "nota": "De 'servir'. Nada a ver com 'servil'."
+   "nota": "De 'servir'. Nada a ver com 'servil'.",
+   "notaEn": "From 'servir', to serve. The paper one is 'una servilleta de papel'; the cloth one, 'de tela'."
   },
   {
    "id": "p125",
    "tipo": "palavra",
    "es": "el zumo",
    "pt": "o suco",
+   "en": "the juice",
    "aceitas": [
     "suco",
     "sumo"
+   ],
+   "aceitasEn": [
+    "juice",
+    "the juice",
+    "fruit juice",
+    "the fruit juice"
    ],
    "distratores": [
     "o zumbido",
@@ -6863,20 +11426,32 @@ window.CARDS_RAW = {
     "o zinco",
     "o zunido"
    ],
+   "distratoresEn": [
+    "the buzz",
+    "the zeal",
+    "the zinc",
+    "the hum"
+   ],
    "nivel": "A1",
    "tags": [
     "comida",
     "Espanha"
    ],
-   "nota": "Na Espanha é 'zumo'; na América Latina, 'jugo'."
+   "nota": "Na Espanha é 'zumo'; na América Latina, 'jugo'.",
+   "notaEn": "In Spain, 'zumo de naranja'. Across Latin America it is 'el jugo' — ask for 'zumo' in Mexico and you may get a puzzled look."
   },
   {
    "id": "p126",
    "tipo": "palavra",
    "es": "el melocotón",
    "pt": "o pêssego",
+   "en": "the peach",
    "aceitas": [
     "pessego"
+   ],
+   "aceitasEn": [
+    "peach",
+    "the peach"
    ],
    "distratores": [
     "o melão",
@@ -6884,20 +11459,32 @@ window.CARDS_RAW = {
     "o mamão",
     "o morango"
    ],
+   "distratoresEn": [
+    "the melon",
+    "the quince",
+    "the papaya",
+    "the strawberry"
+   ],
    "nivel": "A2",
    "tags": [
     "comida"
    ],
-   "nota": "Na América Latina se diz 'durazno'."
+   "nota": "Na América Latina se diz 'durazno'.",
+   "notaEn": "'El melocotón' in Spain, 'el durazno' across most of Latin America. Both mean the same fruit; the word marks where you learned your Spanish."
   },
   {
    "id": "p127",
    "tipo": "palavra",
    "es": "la piña",
    "pt": "o abacaxi",
+   "en": "the pineapple",
    "aceitas": [
     "abacaxi",
     "ananas"
+   ],
+   "aceitasEn": [
+    "pineapple",
+    "the pineapple"
    ],
    "distratores": [
     "a pinha",
@@ -6905,19 +11492,31 @@ window.CARDS_RAW = {
     "a pinça",
     "a pintura"
    ],
+   "distratoresEn": [
+    "the pine cone",
+    "the pepper",
+    "the tweezers",
+    "the painting"
+   ],
    "nivel": "A1",
    "tags": [
     "comida"
    ],
-   "nota": "Vem do formato de pinha. 'Piña colada' é literalmente abacaxi coado."
+   "nota": "Vem do formato de pinha. 'Piña colada' é literalmente abacaxi coado.",
+   "notaEn": "Named for its resemblance to a pine cone, which is also 'una piña'. 'Piña colada' is literally strained pineapple."
   },
   {
    "id": "p128",
    "tipo": "palavra",
    "es": "la sandía",
    "pt": "a melancia",
+   "en": "the watermelon",
    "aceitas": [
     "melancia"
+   ],
+   "aceitasEn": [
+    "watermelon",
+    "the watermelon"
    ],
    "distratores": [
     "a sandália",
@@ -6925,19 +11524,31 @@ window.CARDS_RAW = {
     "a sanfona",
     "a santidade"
    ],
+   "distratoresEn": [
+    "the sandal",
+    "the sardine",
+    "the accordion",
+    "the sainthood"
+   ],
    "nivel": "A2",
    "tags": [
     "comida"
    ],
-   "nota": "Do árabe. Não confunda com 'sandalia' (sandália)."
+   "nota": "Do árabe. Não confunda com 'sandalia' (sandália).",
+   "notaEn": "An Arabic borrowing, from 'sindiyya', the fruit of Sindh. Keep it apart from 'la sandalia', which goes on your foot."
   },
   {
    "id": "p129",
    "tipo": "palavra",
    "es": "la mantequilla",
    "pt": "a manteiga",
+   "en": "the butter",
    "aceitas": [
     "manteiga"
+   ],
+   "aceitasEn": [
+    "butter",
+    "the butter"
    ],
    "distratores": [
     "a mantilha",
@@ -6945,20 +11556,33 @@ window.CARDS_RAW = {
     "a maquilagem",
     "a mandíbula"
    ],
+   "distratoresEn": [
+    "the blanket",
+    "the shawl",
+    "the makeup",
+    "the jawbone"
+   ],
    "nivel": "A2",
    "tags": [
     "comida"
    ],
-   "nota": "Na Argentina e no Uruguai se diz 'manteca'."
+   "nota": "Na Argentina e no Uruguai se diz 'manteca'.",
+   "notaEn": "'La mantequilla' in Spain and most of Latin America; in Argentina and Uruguay it is 'la manteca', which elsewhere means lard."
   },
   {
    "id": "p130",
    "tipo": "palavra",
    "es": "el pollo",
    "pt": "o frango",
+   "en": "the chicken",
    "aceitas": [
     "frango",
     "galinha"
+   ],
+   "aceitasEn": [
+    "chicken",
+    "the chicken",
+    "the chicken meat"
    ],
    "distratores": [
     "o polvo",
@@ -6966,19 +11590,33 @@ window.CARDS_RAW = {
     "o poço",
     "o pólen"
    ],
+   "distratoresEn": [
+    "the octopus",
+    "the pigeon",
+    "the well",
+    "the pollen"
+   ],
    "nivel": "A1",
    "tags": [
     "comida"
    ],
-   "nota": "Cuidado com 'polvo' (pó) e 'pulpo' (polvo). 'Pollo' é frango."
+   "nota": "Cuidado com 'polvo' (pó) e 'pulpo' (polvo). 'Pollo' é frango.",
+   "notaEn": "Three lookalikes to keep straight: 'el pollo' is chicken, 'el polvo' is dust, 'el pulpo' is octopus. Mixing them up makes for memorable menus."
   },
   {
    "id": "p131",
    "tipo": "palavra",
    "es": "el conejo",
    "pt": "o coelho",
+   "en": "the rabbit",
    "aceitas": [
     "coelho"
+   ],
+   "aceitasEn": [
+    "rabbit",
+    "the rabbit",
+    "bunny",
+    "the bunny"
    ],
    "distratores": [
     "o conselho",
@@ -6986,19 +11624,31 @@ window.CARDS_RAW = {
     "o condado",
     "o consumo"
    ],
+   "distratoresEn": [
+    "the advice",
+    "the convent",
+    "the county",
+    "the consumption"
+   ],
    "nivel": "A2",
    "tags": [
     "animais"
    ],
-   "nota": "Cuidado: 'consejo' é conselho. 'Conejo' é o bicho."
+   "nota": "Cuidado: 'consejo' é conselho. 'Conejo' é o bicho.",
+   "notaEn": "Careful with 'el consejo', which is advice or a council. One letter and one syllable away from the animal."
   },
   {
    "id": "p132",
    "tipo": "palavra",
    "es": "el zorro",
    "pt": "a raposa",
+   "en": "the fox",
    "aceitas": [
     "raposa"
+   ],
+   "aceitasEn": [
+    "fox",
+    "the fox"
    ],
    "distratores": [
     "o zangão",
@@ -7006,19 +11656,33 @@ window.CARDS_RAW = {
     "o zumbido",
     "o zíper"
    ],
+   "distratoresEn": [
+    "the drone",
+    "the zebu",
+    "the buzz",
+    "the zip"
+   ],
    "nivel": "B1",
    "tags": [
     "animais"
    ],
-   "nota": "Também vira adjetivo: 'ser un zorro' = ser esperto."
+   "nota": "Também vira adjetivo: 'ser un zorro' = ser esperto.",
+   "notaEn": "'El zorro' is the fox, and 'ser un zorro' is to be a sly one. The female, 'la zorra', is far coarser as an insult — use with care."
   },
   {
    "id": "p133",
    "tipo": "palavra",
    "es": "la abeja",
    "pt": "a abelha",
+   "en": "the bee",
    "aceitas": [
     "abelha"
+   ],
+   "aceitasEn": [
+    "bee",
+    "the bee",
+    "honeybee",
+    "the honeybee"
    ],
    "distratores": [
     "a ovelha",
@@ -7026,19 +11690,31 @@ window.CARDS_RAW = {
     "a abóbada",
     "a azeitona"
    ],
+   "distratoresEn": [
+    "the sheep",
+    "the oats",
+    "the vault",
+    "the olive"
+   ],
    "nivel": "A2",
    "tags": [
     "animais"
    ],
-   "nota": "Cuidado: 'oveja' é ovelha. Uma letra separa as duas."
+   "nota": "Cuidado: 'oveja' é ovelha. Uma letra separa as duas.",
+   "notaEn": "One letter separates 'la abeja', the bee, from 'la oveja', the sheep. The hive is 'la colmena' and honey is 'la miel'."
   },
   {
    "id": "p134",
    "tipo": "palavra",
    "es": "la mariposa",
    "pt": "a borboleta",
+   "en": "the butterfly",
    "aceitas": [
     "borboleta"
+   ],
+   "aceitasEn": [
+    "butterfly",
+    "the butterfly"
    ],
    "distratores": [
     "a mariquinha",
@@ -7046,19 +11722,31 @@ window.CARDS_RAW = {
     "a marina",
     "a maravilha"
    ],
+   "distratoresEn": [
+    "the ladybird",
+    "the daisy",
+    "the marina",
+    "the marvel"
+   ],
    "nivel": "A2",
    "tags": [
     "animais"
    ],
-   "nota": "Também é o nado borboleta."
+   "nota": "Também é o nado borboleta.",
+   "notaEn": "'La mariposa' is the butterfly, and also the butterfly stroke in swimming. A moth is 'la polilla'."
   },
   {
    "id": "p135",
    "tipo": "palavra",
    "es": "la hormiga",
    "pt": "a formiga",
+   "en": "the ant",
    "aceitas": [
     "formiga"
+   ],
+   "aceitasEn": [
+    "ant",
+    "the ant"
    ],
    "distratores": [
     "a fôrma",
@@ -7066,19 +11754,31 @@ window.CARDS_RAW = {
     "a fumaça",
     "a farinha"
    ],
+   "distratoresEn": [
+    "the mould",
+    "the vegetable patch",
+    "the smoke",
+    "the flour"
+   ],
    "nivel": "A2",
    "tags": [
     "animais"
    ],
-   "nota": "O f- do português virou h- mudo em espanhol: formiga/hormiga, fazer/hacer."
+   "nota": "O f- do português virou h- mudo em espanhol: formiga/hormiga, fazer/hacer.",
+   "notaEn": "Latin f- turned into a silent Spanish h-: formica became 'hormiga', facere became 'hacer', filius became 'hijo'. The h is written and never pronounced."
   },
   {
    "id": "p136",
    "tipo": "palavra",
    "es": "la araña",
    "pt": "a aranha",
+   "en": "the spider",
    "aceitas": [
     "aranha"
+   ],
+   "aceitasEn": [
+    "spider",
+    "the spider"
    ],
    "distratores": [
     "a arara",
@@ -7086,20 +11786,32 @@ window.CARDS_RAW = {
     "a armadilha",
     "a arruela"
    ],
+   "distratoresEn": [
+    "the macaw",
+    "the sand",
+    "the trap",
+    "the washer"
+   ],
    "nivel": "A2",
    "tags": [
     "animais"
    ],
-   "nota": "O 'ñ' faz o som do nosso 'nh'."
+   "nota": "O 'ñ' faz o som do nosso 'nh'.",
+   "notaEn": "The ñ is a letter in its own right, with its own place in the alphabet, sounding like the ni in onion. A spider's web is 'una telaraña'."
   },
   {
    "id": "p137",
    "tipo": "palavra",
    "es": "el bolsillo",
    "pt": "o bolso",
+   "en": "the pocket",
    "aceitas": [
     "bolso",
     "algibeira"
+   ],
+   "aceitasEn": [
+    "pocket",
+    "the pocket"
    ],
    "distratores": [
     "a bolsa de mão",
@@ -7107,21 +11819,33 @@ window.CARDS_RAW = {
     "o boliche",
     "o bolso de viagem"
    ],
+   "distratoresEn": [
+    "the handbag",
+    "the small cake",
+    "the bowling alley",
+    "the travel bag"
+   ],
    "nivel": "A2",
    "tags": [
     "roupa"
    ],
-   "nota": "'Bolsa' é a bolsa; 'bolsillo' é o bolso da roupa."
+   "nota": "'Bolsa' é a bolsa; 'bolsillo' é o bolso da roupa.",
+   "notaEn": "'El bolsillo' is the pocket in your clothes; 'el bolso' is a handbag and 'la bolsa' a bag or the stock exchange. The -illo ending is a diminutive."
   },
   {
    "id": "p138",
    "tipo": "palavra",
    "es": "el cinturón",
    "pt": "o cinto",
+   "en": "the belt",
    "aceitas": [
     "cinto",
     "cinturao",
     "faixa"
+   ],
+   "aceitasEn": [
+    "belt",
+    "the belt"
    ],
    "distratores": [
     "o cintilar",
@@ -7129,19 +11853,33 @@ window.CARDS_RAW = {
     "o cimento",
     "o cilindro"
    ],
+   "distratoresEn": [
+    "the flicker",
+    "the cinema",
+    "the cement",
+    "the cylinder"
+   ],
    "nivel": "A2",
    "tags": [
     "roupa"
    ],
-   "nota": "'Cinturón de seguridad' = cinto de segurança."
+   "nota": "'Cinturón de seguridad' = cinto de segurança.",
+   "notaEn": "'Cinturón de seguridad' = seat belt. 'La cintura' is the waist it goes around, and 'apretarse el cinturón' tightens the belt in the money sense too."
   },
   {
    "id": "p139",
    "tipo": "palavra",
    "es": "la corbata",
    "pt": "a gravata",
+   "en": "the tie",
    "aceitas": [
     "gravata"
+   ],
+   "aceitasEn": [
+    "tie",
+    "the tie",
+    "necktie",
+    "the necktie"
    ],
    "distratores": [
     "a corveta",
@@ -7149,21 +11887,33 @@ window.CARDS_RAW = {
     "a cortina",
     "a coroa"
    ],
+   "distratoresEn": [
+    "the corvette",
+    "the rope",
+    "the curtain",
+    "the crown"
+   ],
    "nivel": "A2",
    "tags": [
     "roupa"
    ],
-   "nota": "Vem de 'croata', pelo lenço que os croatas usavam no pescoço."
+   "nota": "Vem de 'croata', pelo lenço que os croatas usavam no pescoço.",
+   "notaEn": "From 'croata', Croat: the scarf Croatian soldiers wore at the neck gave Europe the necktie. A bow tie is 'una pajarita'."
   },
   {
    "id": "p140",
    "tipo": "palavra",
    "es": "los calcetines",
    "pt": "as meias",
+   "en": "the socks",
    "aceitas": [
     "meias",
     "meia",
     "soquetes"
+   ],
+   "aceitasEn": [
+    "socks",
+    "the socks"
    ],
    "distratores": [
     "os calçados",
@@ -7171,20 +11921,36 @@ window.CARDS_RAW = {
     "os calcanhares",
     "os cálculos"
    ],
+   "distratoresEn": [
+    "the shoes",
+    "the trousers",
+    "the heels",
+    "the calculations"
+   ],
    "nivel": "A2",
    "tags": [
     "roupa"
    ],
-   "nota": "Meia-calça é 'medias' — justamente o falso amigo."
+   "nota": "Meia-calça é 'medias' — justamente o falso amigo.",
+   "notaEn": "'Los calcetines' are socks. Watch out for 'las medias', which are stockings or tights — though in parts of Latin America they mean socks after all."
   },
   {
    "id": "p141",
    "tipo": "palavra",
    "es": "las gafas",
    "pt": "os óculos",
+   "en": "the glasses",
    "aceitas": [
     "oculos",
     "lentes"
+   ],
+   "aceitasEn": [
+    "glasses",
+    "the glasses",
+    "spectacles",
+    "the spectacles",
+    "eyeglasses",
+    "specs"
    ],
    "distratores": [
     "as gavetas",
@@ -7192,21 +11958,35 @@ window.CARDS_RAW = {
     "as garrafas",
     "as galochas"
    ],
+   "distratoresEn": [
+    "the drawers",
+    "the cages",
+    "the bottles",
+    "the wellies"
+   ],
    "nivel": "A2",
    "tags": [
     "roupa"
    ],
-   "nota": "Na América Latina se diz 'lentes' ou 'anteojos'."
+   "nota": "Na América Latina se diz 'lentes' ou 'anteojos'.",
+   "notaEn": "'Las gafas' in Spain; 'los lentes' or 'los anteojos' across Latin America. Sunglasses are 'las gafas de sol'."
   },
   {
    "id": "p142",
    "tipo": "palavra",
    "es": "el paraguas",
    "pt": "o guarda-chuva",
+   "en": "the umbrella",
    "aceitas": [
     "guarda-chuva",
     "guarda chuva",
     "sombrinha"
+   ],
+   "aceitasEn": [
+    "umbrella",
+    "the umbrella",
+    "brolly",
+    "the brolly"
    ],
    "distratores": [
     "o para-brisa",
@@ -7214,20 +11994,33 @@ window.CARDS_RAW = {
     "o parapeito",
     "o paraquedas"
    ],
+   "distratoresEn": [
+    "the windscreen",
+    "the whereabouts",
+    "the parapet",
+    "the parachute"
+   ],
    "nivel": "A2",
    "tags": [
     "objetos"
    ],
-   "nota": "Literalmente 'para águas'. O de sol é 'sombrilla'."
+   "nota": "Literalmente 'para águas'. O de sol é 'sombrilla'.",
+   "notaEn": "Literally stop-waters, built like 'parabrisas' and 'paracaídas'. The one you carry against the sun is 'la sombrilla'."
   },
   {
    "id": "p143",
    "tipo": "palavra",
    "es": "el jabón",
    "pt": "o sabonete",
+   "en": "the soap",
    "aceitas": [
     "sabonete",
     "sabao"
+   ],
+   "aceitasEn": [
+    "soap",
+    "the soap",
+    "bar of soap"
    ],
    "distratores": [
     "o jarro",
@@ -7235,21 +12028,33 @@ window.CARDS_RAW = {
     "o jantar",
     "o javali"
    ],
+   "distratoresEn": [
+    "the jug",
+    "the tortoise",
+    "the dinner",
+    "the wild boar"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "O mesmo 'j' com som de r forte. Sabão em pó é 'detergente'."
+   "nota": "O mesmo 'j' com som de r forte. Sabão em pó é 'detergente'.",
+   "notaEn": "'El jabón' is soap, and the j rasps at the back of the throat. Washing powder is 'el detergente'."
   },
   {
    "id": "p144",
    "tipo": "palavra",
    "es": "la ducha",
    "pt": "o chuveiro",
+   "en": "the shower",
    "aceitas": [
     "chuveiro",
     "banho",
     "ducha"
+   ],
+   "aceitasEn": [
+    "shower",
+    "the shower"
    ],
    "distratores": [
     "a dúvida",
@@ -7257,19 +12062,32 @@ window.CARDS_RAW = {
     "a doçura",
     "a dobra"
    ],
+   "distratoresEn": [
+    "the doubt",
+    "the dozen",
+    "the sweetness",
+    "the fold"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "'Darse una ducha' = tomar banho."
+   "nota": "'Darse una ducha' = tomar banho.",
+   "notaEn": "'Darse una ducha' or plain 'ducharse' = to have a shower. The bath you lie in is 'la bañera'."
   },
   {
    "id": "p145",
    "tipo": "palavra",
    "es": "el espejo",
    "pt": "o espelho",
+   "en": "the mirror",
    "aceitas": [
     "espelho"
+   ],
+   "aceitasEn": [
+    "mirror",
+    "the mirror",
+    "looking glass"
    ],
    "distratores": [
     "o espeto",
@@ -7277,20 +12095,32 @@ window.CARDS_RAW = {
     "o espanto",
     "o esporte"
    ],
+   "distratoresEn": [
+    "the skewer",
+    "the fright",
+    "the sport",
+    "the spine"
+   ],
    "nivel": "A1",
    "tags": [
     "casa"
    ],
-   "nota": "O 'j' espanhol soa como r forte: es-pe-ro."
+   "nota": "O 'j' espanhol soa como r forte: es-pe-ro.",
+   "notaEn": "'El espejo' is the mirror. Note the Spanish habit of putting an e in front of s + consonant: espejo, escuela, España, especial."
   },
   {
    "id": "p146",
    "tipo": "palavra",
    "es": "la almohada",
    "pt": "o travesseiro",
+   "en": "the pillow",
    "aceitas": [
     "travesseiro",
     "almofada de dormir"
+   ],
+   "aceitasEn": [
+    "pillow",
+    "the pillow"
    ],
    "distratores": [
     "a almofada de sofá",
@@ -7298,19 +12128,34 @@ window.CARDS_RAW = {
     "a amêndoa",
     "a armadura"
    ],
+   "distratoresEn": [
+    "the sofa cushion",
+    "the lever",
+    "the almond",
+    "the armour"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "Do árabe, como quase toda palavra espanhola que começa com 'al-'."
+   "nota": "Do árabe, como quase toda palavra espanhola que começa com 'al-'.",
+   "notaEn": "Arabic, like nearly every Spanish word beginning in al-: almohada, almacén, alcalde, algodón. Eight centuries of Al-Andalus left them behind."
   },
   {
    "id": "p147",
    "tipo": "palavra",
    "es": "la sábana",
    "pt": "o lençol",
+   "en": "the bedsheet",
    "aceitas": [
     "lencol"
+   ],
+   "aceitasEn": [
+    "bedsheet",
+    "the bedsheet",
+    "sheet",
+    "the sheet",
+    "bed sheet"
    ],
    "distratores": [
     "a savana",
@@ -7318,19 +12163,31 @@ window.CARDS_RAW = {
     "a saboneteira",
     "a sacola"
    ],
+   "distratoresEn": [
+    "the savannah",
+    "the wisdom",
+    "the soap dish",
+    "the shopping bag"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "Acento na primeira sílaba: SÁ-ba-na. 'Sabana' sem acento é savana."
+   "nota": "Acento na primeira sílaba: SÁ-ba-na. 'Sabana' sem acento é savana.",
+   "notaEn": "Stress on the first syllable: SÁ-ba-na. Move it and you get 'sabana', the savannah — the written accent is the only thing keeping them apart."
   },
   {
    "id": "p148",
    "tipo": "palavra",
    "es": "el cajón",
    "pt": "a gaveta",
+   "en": "the drawer",
    "aceitas": [
     "gaveta"
+   ],
+   "aceitasEn": [
+    "drawer",
+    "the drawer"
    ],
    "distratores": [
     "o caixão",
@@ -7338,21 +12195,40 @@ window.CARDS_RAW = {
     "o calção",
     "o cachorro"
    ],
+   "distratoresEn": [
+    "the coffin",
+    "the crate",
+    "the shorts",
+    "the puppy"
+   ],
    "nivel": "A2",
    "tags": [
     "casa"
    ],
-   "nota": "Caixão de defunto é 'ataúd'. 'Cajón' é a gaveta."
+   "nota": "Caixão de defunto é 'ataúd'. 'Cajón' é a gaveta.",
+   "notaEn": "'El cajón' is a drawer, and 'la caja' the box it grew out of. A coffin is 'el ataúd'. In the Andes a 'cajón' can also be a narrow gorge."
   },
   {
    "id": "p149",
    "tipo": "palavra",
    "es": "el enchufe",
    "pt": "a tomada",
+   "en": "the plug socket",
    "aceitas": [
     "tomada",
     "plugue",
     "interruptor"
+   ],
+   "aceitasEn": [
+    "plug socket",
+    "the plug socket",
+    "socket",
+    "the socket",
+    "power socket",
+    "outlet",
+    "the outlet",
+    "plug",
+    "the plug"
    ],
    "distratores": [
     "o encaixe",
@@ -7360,19 +12236,34 @@ window.CARDS_RAW = {
     "o enredo",
     "o engate"
    ],
+   "distratoresEn": [
+    "the slot",
+    "the charm",
+    "the plot",
+    "the coupling"
+   ],
    "nivel": "B1",
    "tags": [
     "casa"
    ],
-   "nota": "'Tener enchufe' também significa ter pistolão, ter QI."
+   "nota": "'Tener enchufe' também significa ter pistolão, ter QI.",
+   "notaEn": "'El enchufe' is the socket and 'enchufar' is to plug in. Figuratively, 'tener enchufe' means having connections in the right places."
   },
   {
    "id": "p150",
    "tipo": "palavra",
    "es": "la bombilla",
    "pt": "a lâmpada",
+   "en": "the light bulb",
    "aceitas": [
     "lampada"
+   ],
+   "aceitasEn": [
+    "light bulb",
+    "the light bulb",
+    "bulb",
+    "the bulb",
+    "lightbulb"
    ],
    "distratores": [
     "a bomba",
@@ -7380,21 +12271,37 @@ window.CARDS_RAW = {
     "a borboleta",
     "a bússola"
    ],
+   "distratoresEn": [
+    "the bomb",
+    "the compass",
+    "the butterfly",
+    "the wide trouser"
+   ],
    "nivel": "B1",
    "tags": [
     "casa"
    ],
-   "nota": "Na Argentina, 'bombilla' é o canudo do chimarrão."
+   "nota": "Na Argentina, 'bombilla' é o canudo do chimarrão.",
+   "notaEn": "'La bombilla' is the light bulb in Spain; in Latin America you may hear 'el foco' or 'la bombita'. In Argentina a 'bombilla' is the metal straw for mate."
   },
   {
    "id": "p151",
    "tipo": "palavra",
    "es": "el mando",
    "pt": "o controle remoto",
+   "en": "the remote control",
    "aceitas": [
     "controle remoto",
     "controle",
     "comando"
+   ],
+   "aceitasEn": [
+    "remote control",
+    "the remote control",
+    "remote",
+    "the remote",
+    "clicker",
+    "tv remote"
    ],
    "distratores": [
     "o mandado judicial",
@@ -7402,20 +12309,34 @@ window.CARDS_RAW = {
     "o manuseio do aparelho",
     "o manual de instruções"
    ],
+   "distratoresEn": [
+    "the court order",
+    "the mayor's term",
+    "the handling of it",
+    "the instruction manual"
+   ],
    "nivel": "B1",
    "tags": [
     "casa"
    ],
-   "nota": "'Mando a distancia'. Também significa comando, chefia."
+   "nota": "'Mando a distancia'. Também significa comando, chefia.",
+   "notaEn": "Short for 'mando a distancia'. On its own, 'el mando' is command or authority: 'estar al mando' is to be in charge."
   },
   {
    "id": "p152",
    "tipo": "palavra",
    "es": "la cerradura",
    "pt": "a fechadura",
+   "en": "the lock",
    "aceitas": [
     "fechadura",
     "tranca"
+   ],
+   "aceitasEn": [
+    "lock",
+    "the lock",
+    "door lock",
+    "the door lock"
    ],
    "distratores": [
     "a serradura",
@@ -7423,19 +12344,33 @@ window.CARDS_RAW = {
     "a cerimônia",
     "a cerveja"
    ],
+   "distratoresEn": [
+    "the sawdust",
+    "the border",
+    "the ceremony",
+    "the beer"
+   ],
    "nivel": "B1",
    "tags": [
     "casa"
    ],
-   "nota": "De 'cerrar' (fechar). Serragem é 'serrín'."
+   "nota": "De 'cerrar' (fechar). Serragem é 'serrín'.",
+   "notaEn": "From 'cerrar', to close. The key that opens it is 'la llave', and the keyhole is 'el ojo de la cerradura' — the eye of the lock."
   },
   {
    "id": "p153",
    "tipo": "palavra",
    "es": "el tornillo",
    "pt": "o parafuso",
+   "en": "the screw",
    "aceitas": [
     "parafuso"
+   ],
+   "aceitasEn": [
+    "screw",
+    "the screw",
+    "bolt",
+    "the bolt"
    ],
    "distratores": [
     "o torno",
@@ -7443,19 +12378,31 @@ window.CARDS_RAW = {
     "o tornozelo",
     "o torrão"
    ],
+   "distratoresEn": [
+    "the lathe",
+    "the tournament",
+    "the ankle",
+    "the clod"
+   ],
    "nivel": "B1",
    "tags": [
     "objetos"
    ],
-   "nota": "'Le falta un tornillo' = falta um parafuso, é meio doido."
+   "nota": "'Le falta un tornillo' = falta um parafuso, é meio doido.",
+   "notaEn": "'Le falta un tornillo' = he's got a screw loose. A nut is 'la tuerca' and a screwdriver is 'el destornillador'."
   },
   {
    "id": "p154",
    "tipo": "palavra",
    "es": "el martillo",
    "pt": "o martelo",
+   "en": "the hammer",
    "aceitas": [
     "martelo"
+   ],
+   "aceitasEn": [
+    "hammer",
+    "the hammer"
    ],
    "distratores": [
     "o martírio",
@@ -7463,19 +12410,31 @@ window.CARDS_RAW = {
     "o mármore",
     "o marfim"
    ],
+   "distratoresEn": [
+    "the martyrdom",
+    "the marker",
+    "the marble",
+    "the ivory"
+   ],
    "nivel": "B1",
    "tags": [
     "objetos"
    ],
-   "nota": "Mesmo padrão de 'tornillo', 'bolsillo': o -illo é diminutivo."
+   "nota": "Mesmo padrão de 'tornillo', 'bolsillo': o -illo é diminutivo.",
+   "notaEn": "The same -illo ending as 'tornillo' and 'bolsillo' — originally a diminutive, long since frozen into the word itself."
   },
   {
    "id": "p155",
    "tipo": "palavra",
    "es": "el ladrillo",
    "pt": "o tijolo",
+   "en": "the brick",
    "aceitas": [
     "tijolo"
+   ],
+   "aceitasEn": [
+    "brick",
+    "the brick"
    ],
    "distratores": [
     "o ladrão",
@@ -7483,19 +12442,33 @@ window.CARDS_RAW = {
     "o lado",
     "o lamento"
    ],
+   "distratoresEn": [
+    "the thief",
+    "the floor tile",
+    "the side",
+    "the lament"
+   ],
    "nivel": "B1",
    "tags": [
     "objetos"
    ],
-   "nota": "Cuidado: ladrilho de piso é 'baldosa' ou 'azulejo'."
+   "nota": "Cuidado: ladrilho de piso é 'baldosa' ou 'azulejo'.",
+   "notaEn": "'El ladrillo' is a building brick. A floor or wall tile is 'la baldosa' or 'el azulejo'. Careful with 'el ladrón', the thief."
   },
   {
    "id": "p156",
    "tipo": "palavra",
    "es": "el ascensor",
    "pt": "o elevador",
+   "en": "the lift",
    "aceitas": [
     "elevador"
+   ],
+   "aceitasEn": [
+    "lift",
+    "the lift",
+    "elevator",
+    "the elevator"
    ],
    "distratores": [
     "o ascendente",
@@ -7503,20 +12476,36 @@ window.CARDS_RAW = {
     "o assento",
     "o acesso"
    ],
+   "distratoresEn": [
+    "the ancestor",
+    "the accessory",
+    "the seat",
+    "the access"
+   ],
    "nivel": "A2",
    "tags": [
     "cidade"
    ],
-   "nota": "De 'ascender'. Na Colômbia e no México se diz 'elevador'."
+   "nota": "De 'ascender'. Na Colômbia e no México se diz 'elevador'.",
+   "notaEn": "From 'ascender', to go up. Spain says 'el ascensor'; Mexico and Colombia say 'el elevador'."
   },
   {
    "id": "p157",
    "tipo": "palavra",
    "es": "la acera",
    "pt": "a calçada",
+   "en": "the pavement",
    "aceitas": [
     "calcada",
     "passeio"
+   ],
+   "aceitasEn": [
+    "pavement",
+    "the pavement",
+    "sidewalk",
+    "the sidewalk",
+    "footpath",
+    "the footpath"
    ],
    "distratores": [
     "a aceitação",
@@ -7524,20 +12513,38 @@ window.CARDS_RAW = {
     "a açucena",
     "a acidez"
    ],
+   "distratoresEn": [
+    "the acceptance",
+    "the acerola",
+    "the lily",
+    "the acidity"
+   ],
    "nivel": "B1",
    "tags": [
     "cidade"
    ],
-   "nota": "Na Argentina, 'vereda'. No México, 'banqueta'."
+   "nota": "Na Argentina, 'vereda'. No México, 'banqueta'.",
+   "notaEn": "'La acera' in Spain, 'la vereda' in Argentina, 'la banqueta' in Mexico. Same strip of concrete, three different words."
   },
   {
    "id": "p158",
    "tipo": "palavra",
    "es": "el barrio",
    "pt": "o bairro",
+   "en": "the neighbourhood",
    "aceitas": [
     "bairro",
     "vizinhanca"
+   ],
+   "aceitasEn": [
+    "neighbourhood",
+    "the neighbourhood",
+    "neighborhood",
+    "the neighborhood",
+    "district",
+    "the district",
+    "quarter",
+    "the quarter"
    ],
    "distratores": [
     "o barro",
@@ -7545,21 +12552,38 @@ window.CARDS_RAW = {
     "o barco",
     "o barulho"
    ],
+   "distratoresEn": [
+    "the mud",
+    "the barrel",
+    "the boat",
+    "the noise"
+   ],
    "nivel": "A2",
    "tags": [
     "cidade"
    ],
-   "nota": "'Barro' em espanhol é lama. O bairro é 'barrio'."
+   "nota": "'Barro' em espanhol é lama. O bairro é 'barrio'.",
+   "notaEn": "'El barrio' is your neighbourhood, and it carries real warmth: 'la gente del barrio'. Careful with 'el barro', which is mud or clay."
   },
   {
    "id": "p159",
    "tipo": "palavra",
    "es": "el buzón",
    "pt": "a caixa de correio",
+   "en": "the letterbox",
    "aceitas": [
     "caixa de correio",
     "caixa postal",
     "caixa de mensagens"
+   ],
+   "aceitasEn": [
+    "letterbox",
+    "the letterbox",
+    "postbox",
+    "the postbox",
+    "mailbox",
+    "the mailbox",
+    "letter box"
    ],
    "distratores": [
     "a caixa de sapato",
@@ -7567,21 +12591,35 @@ window.CARDS_RAW = {
     "a caixa registradora",
     "a caixa de música"
    ],
+   "distratoresEn": [
+    "the shoe box",
+    "the tool box",
+    "the cash register",
+    "the music box"
+   ],
    "nivel": "B1",
    "tags": [
     "cidade"
    ],
-   "nota": "'Buzón de voz' = caixa postal do telefone."
+   "nota": "'Buzón de voz' = caixa postal do telefone.",
+   "notaEn": "'El buzón' is the postbox on the street or the letterbox at your door. 'Buzón de voz' is a voicemail box."
   },
   {
    "id": "p160",
    "tipo": "palavra",
    "es": "el andén",
    "pt": "a plataforma",
+   "en": "the platform",
    "aceitas": [
     "plataforma",
     "plataforma de embarque",
     "gare"
+   ],
+   "aceitasEn": [
+    "platform",
+    "the platform",
+    "railway platform",
+    "the railway platform"
    ],
    "distratores": [
     "o andar do prédio",
@@ -7589,20 +12627,36 @@ window.CARDS_RAW = {
     "o andamento",
     "o anexo"
    ],
+   "distratoresEn": [
+    "the building floor",
+    "the scaffolding",
+    "the progress",
+    "the annexe"
+   ],
    "nivel": "B1",
    "tags": [
     "viagem"
    ],
-   "nota": "A plataforma da estação de trem ou metrô."
+   "nota": "A plataforma da estação de trem ou metrô.",
+   "notaEn": "'El andén' is the platform at a railway or metro station: 'el tren sale del andén cuatro'. In Colombia it also means the pavement."
   },
   {
    "id": "p161",
    "tipo": "palavra",
    "es": "la maleta",
    "pt": "a mala",
+   "en": "the suitcase",
    "aceitas": [
     "mala",
     "valise"
+   ],
+   "aceitasEn": [
+    "suitcase",
+    "the suitcase",
+    "case",
+    "the case",
+    "bag",
+    "the bag"
    ],
    "distratores": [
     "a maleta de médico",
@@ -7610,20 +12664,34 @@ window.CARDS_RAW = {
     "a maçaneta",
     "a maquete"
    ],
+   "distratoresEn": [
+    "the doctor's bag",
+    "the wickedness",
+    "the door handle",
+    "the scale model"
+   ],
    "nivel": "A2",
    "tags": [
     "viagem"
    ],
-   "nota": "'Hacer la maleta' = fazer as malas."
+   "nota": "'Hacer la maleta' = fazer as malas.",
+   "notaEn": "'Hacer la maleta' = to pack. The small one is 'el maletín', a briefcase, and the car boot in Spain is 'el maletero'."
   },
   {
    "id": "p162",
    "tipo": "palavra",
    "es": "el equipaje",
    "pt": "a bagagem",
+   "en": "the luggage",
    "aceitas": [
     "bagagem",
     "malas"
+   ],
+   "aceitasEn": [
+    "luggage",
+    "the luggage",
+    "baggage",
+    "the baggage"
    ],
    "distratores": [
     "o equipamento",
@@ -7631,21 +12699,33 @@ window.CARDS_RAW = {
     "o equívoco",
     "o esquadro"
    ],
+   "distratoresEn": [
+    "the equipment",
+    "the team",
+    "the mistake",
+    "the set square"
+   ],
    "nivel": "A2",
    "tags": [
     "viagem"
    ],
-   "nota": "Cuidado: 'equipo' é equipe ou equipamento. 'Equipaje' é bagagem."
+   "nota": "Cuidado: 'equipo' é equipe ou equipamento. 'Equipaje' é bagagem.",
+   "notaEn": "Careful with 'el equipo', which is a team or a set of equipment. 'El equipaje' is only what you travel with: 'equipaje de mano' is hand luggage."
   },
   {
    "id": "p163",
    "tipo": "palavra",
    "es": "el fontanero",
    "pt": "o encanador",
+   "en": "the plumber",
    "aceitas": [
     "encanador",
     "bombeiro hidraulico",
     "canalizador"
+   ],
+   "aceitasEn": [
+    "plumber",
+    "the plumber"
    ],
    "distratores": [
     "o fazendeiro",
@@ -7653,20 +12733,36 @@ window.CARDS_RAW = {
     "o fabricante",
     "o faxineiro"
    ],
+   "distratoresEn": [
+    "the farmer",
+    "the tinsmith",
+    "the manufacturer",
+    "the cleaner"
+   ],
    "nivel": "B1",
    "tags": [
     "profissões"
    ],
-   "nota": "Na América Latina, 'plomero'. De 'fontana' (fonte)."
+   "nota": "Na América Latina, 'plomero'. De 'fontana' (fonte).",
+   "notaEn": "From 'fontana', a spring or fountain. Spain says 'fontanero'; most of Latin America says 'plomero', after the lead in old pipes."
   },
   {
    "id": "p164",
    "tipo": "palavra",
    "es": "el albañil",
    "pt": "o pedreiro",
+   "en": "the bricklayer",
    "aceitas": [
     "pedreiro",
     "construtor"
+   ],
+   "aceitasEn": [
+    "bricklayer",
+    "the bricklayer",
+    "builder",
+    "the builder",
+    "mason",
+    "the mason"
    ],
    "distratores": [
     "o alfaiate",
@@ -7674,20 +12770,32 @@ window.CARDS_RAW = {
     "o almirante",
     "o alpinista"
    ],
+   "distratoresEn": [
+    "the tailor",
+    "the ensign",
+    "the admiral",
+    "the mountaineer"
+   ],
    "nivel": "B1",
    "tags": [
     "profissões"
    ],
-   "nota": "Do árabe 'al-banni' (construtor)."
+   "nota": "Do árabe 'al-banni' (construtor).",
+   "notaEn": "Arabic again, from 'al-bannā', the builder. It covers bricklayers and general builders alike."
   },
   {
    "id": "p165",
    "tipo": "palavra",
    "es": "el cerrajero",
    "pt": "o chaveiro",
+   "en": "the locksmith",
    "aceitas": [
     "chaveiro",
     "serralheiro"
+   ],
+   "aceitasEn": [
+    "locksmith",
+    "the locksmith"
    ],
    "distratores": [
     "o cervejeiro",
@@ -7695,21 +12803,38 @@ window.CARDS_RAW = {
     "o cozinheiro",
     "o costureiro"
    ],
+   "distratoresEn": [
+    "the brewer",
+    "the carpenter",
+    "the cook",
+    "the tailor"
+   ],
    "nivel": "B1",
    "tags": [
     "profissões"
    ],
-   "nota": "De 'cerradura' (fechadura). O objeto chaveiro é 'llavero'."
+   "nota": "De 'cerradura' (fechadura). O objeto chaveiro é 'llavero'.",
+   "notaEn": "From 'la cerradura', the lock. The keyring you carry is 'el llavero' — different word, same trade."
   },
   {
    "id": "p166",
    "tipo": "palavra",
    "es": "el sueldo",
    "pt": "o salário",
+   "en": "the salary",
    "aceitas": [
     "salario",
     "ordenado",
     "remuneracao"
+   ],
+   "aceitasEn": [
+    "salary",
+    "the salary",
+    "wage",
+    "the wage",
+    "wages",
+    "pay",
+    "the pay"
    ],
    "distratores": [
     "o solo",
@@ -7717,21 +12842,35 @@ window.CARDS_RAW = {
     "o sussurro",
     "o suplemento"
    ],
+   "distratoresEn": [
+    "the soil",
+    "the dream",
+    "the whisper",
+    "the supplement"
+   ],
    "nivel": "B1",
    "tags": [
     "trabalho"
    ],
-   "nota": "Também 'salario'. 'Sueldo mínimo' = salário mínimo."
+   "nota": "Também 'salario'. 'Sueldo mínimo' = salário mínimo.",
+   "notaEn": "'El sueldo' is the wage you draw each month; 'el salario' works too, and 'el sueldo mínimo' is the minimum wage."
   },
   {
    "id": "p167",
    "tipo": "palavra",
    "es": "la jubilación",
    "pt": "a aposentadoria",
+   "en": "the retirement",
    "aceitas": [
     "aposentadoria",
     "aposentacao",
     "reforma"
+   ],
+   "aceitasEn": [
+    "retirement",
+    "the retirement",
+    "pension",
+    "the pension"
    ],
    "distratores": [
     "a jubilação escolar",
@@ -7739,21 +12878,36 @@ window.CARDS_RAW = {
     "a juventude",
     "a jurisdição"
    ],
+   "distratoresEn": [
+    "the school expulsion",
+    "the jubilation",
+    "the youth",
+    "the jurisdiction"
+   ],
    "nivel": "B1",
    "tags": [
     "trabalho"
    ],
-   "nota": "'Jubilarse' = aposentar-se. Vem de júbilo, a alegria de parar."
+   "nota": "'Jubilarse' = aposentar-se. Vem de júbilo, a alegria de parar.",
+   "notaEn": "'Jubilarse' = to retire. It shares a root with 'júbilo', joy — the language is optimistic about the moment you stop."
   },
   {
    "id": "p168",
    "tipo": "palavra",
    "es": "el paro",
    "pt": "o desemprego",
+   "en": "the unemployment",
    "aceitas": [
     "desemprego",
     "desocupacao",
     "greve"
+   ],
+   "aceitasEn": [
+    "unemployment",
+    "the unemployment",
+    "joblessness",
+    "the dole",
+    "being out of work"
    ],
    "distratores": [
     "o parapeito",
@@ -7761,22 +12915,40 @@ window.CARDS_RAW = {
     "o parecer",
     "o parentesco"
    ],
+   "distratoresEn": [
+    "the parapet",
+    "the whereabouts",
+    "the opinion",
+    "the kinship"
+   ],
    "nivel": "B1",
    "tags": [
     "trabalho",
     "Espanha"
    ],
-   "nota": "'Estar en el paro' = estar desempregado. Também significa paralisação."
+   "nota": "'Estar en el paro' = estar desempregado. Também significa paralisação.",
+   "notaEn": "'Estar en el paro' = to be out of work, in Spain. It also means a stoppage or a strike: 'un paro general'. Latin America says 'el desempleo'."
   },
   {
    "id": "p169",
    "tipo": "palavra",
    "es": "el despido",
    "pt": "a demissão",
+   "en": "the dismissal",
    "aceitas": [
     "demissao",
     "dispensa",
     "desligamento"
+   ],
+   "aceitasEn": [
+    "dismissal",
+    "the dismissal",
+    "sacking",
+    "the sacking",
+    "firing",
+    "the firing",
+    "redundancy",
+    "layoff"
    ],
    "distratores": [
     "a despedida",
@@ -7784,21 +12956,38 @@ window.CARDS_RAW = {
     "o despacho",
     "o desprezo"
    ],
+   "distratoresEn": [
+    "the farewell",
+    "the awakening",
+    "the office",
+    "the contempt"
+   ],
    "nivel": "B1",
    "tags": [
     "trabalho"
    ],
-   "nota": "Cuidado: 'despedida' é a despedida. 'Despido' é ser demitido."
+   "nota": "Cuidado: 'despedida' é a despedida. 'Despido' é ser demitido.",
+   "notaEn": "'El despido' is being sacked; 'despedir a alguien' is to fire them. Careful with 'la despedida', which is a goodbye — and 'despedirse' is to say one."
   },
   {
    "id": "p170",
    "tipo": "palavra",
    "es": "la beca",
    "pt": "a bolsa de estudos",
+   "en": "the scholarship",
    "aceitas": [
     "bolsa de estudos",
     "bolsa",
     "auxilio"
+   ],
+   "aceitasEn": [
+    "scholarship",
+    "the scholarship",
+    "grant",
+    "the grant",
+    "bursary",
+    "the bursary",
+    "studentship"
    ],
    "distratores": [
     "a caixa de livros",
@@ -7806,21 +12995,36 @@ window.CARDS_RAW = {
     "a carga de matérias",
     "a prova de seleção"
    ],
+   "distratoresEn": [
+    "the box of books",
+    "the waiting list",
+    "the course load",
+    "the entrance exam"
+   ],
    "nivel": "B1",
    "tags": [
     "escola"
    ],
-   "nota": "'Becario' é o bolsista, e também o estagiário."
+   "nota": "'Becario' é o bolsista, e também o estagiário.",
+   "notaEn": "'Una beca' is a grant or scholarship, and 'un becario' is the person on one — which in Spain also means an intern, often unpaid."
   },
   {
    "id": "p171",
    "tipo": "palavra",
    "es": "el borrador",
    "pt": "o rascunho",
+   "en": "the draft",
    "aceitas": [
     "rascunho",
     "esboco",
     "minuta"
+   ],
+   "aceitasEn": [
+    "draft",
+    "the draft",
+    "rough draft",
+    "the rough draft",
+    "first draft"
    ],
    "distratores": [
     "o bordado",
@@ -7828,21 +13032,34 @@ window.CARDS_RAW = {
     "o botão",
     "o boletim"
    ],
+   "distratoresEn": [
+    "the embroidery",
+    "the smudge",
+    "the button",
+    "the report"
+   ],
    "nivel": "B1",
    "tags": [
     "escola"
    ],
-   "nota": "De 'borrar' (apagar). Na América Latina também é a borracha de apagar."
+   "nota": "De 'borrar' (apagar). Na América Latina também é a borracha de apagar.",
+   "notaEn": "From 'borrar', to rub out — a draft is what you will still be erasing. In Latin America the same word also names the rubber you erase with."
   },
   {
    "id": "p172",
    "tipo": "palavra",
    "es": "el titular",
    "pt": "a manchete",
+   "en": "the headline",
    "aceitas": [
     "manchete",
     "cabecalho",
     "titulo"
+   ],
+   "aceitasEn": [
+    "headline",
+    "the headline",
+    "news headline"
    ],
    "distratores": [
     "o titulado",
@@ -7850,21 +13067,35 @@ window.CARDS_RAW = {
     "o timbre",
     "o tratado"
    ],
+   "distratoresEn": [
+    "the graduate",
+    "the tutor",
+    "the stamp",
+    "the treaty"
+   ],
    "nivel": "B2",
    "tags": [
     "mídia"
    ],
-   "nota": "Também é o titular de um cargo ou de uma conta."
+   "nota": "Também é o titular de um cargo ou de uma conta.",
+   "notaEn": "'El titular' is a newspaper headline, and also the holder of a post or an account: 'el titular de la cuenta'. As a verb it means to entitle."
   },
   {
    "id": "p173",
    "tipo": "palavra",
    "es": "el guion",
    "pt": "o roteiro",
+   "en": "the script",
    "aceitas": [
     "roteiro",
     "script",
     "argumento"
+   ],
+   "aceitasEn": [
+    "script",
+    "the script",
+    "screenplay",
+    "the screenplay"
    ],
    "distratores": [
     "o guia turístico",
@@ -7872,21 +13103,38 @@ window.CARDS_RAW = {
     "o guisado",
     "o guindaste"
    ],
+   "distratoresEn": [
+    "the tour guide",
+    "the guard",
+    "the stew",
+    "the crane"
+   ],
    "nivel": "B2",
    "tags": [
     "mídia"
    ],
-   "nota": "Também é o hífen na escrita. 'Guionista' é o roteirista."
+   "nota": "Também é o hífen na escrita. 'Guionista' é o roteirista.",
+   "notaEn": "'El guion' is a film or television script, and 'el guionista' the writer of it. In punctuation the same word means a hyphen."
   },
   {
    "id": "p174",
    "tipo": "palavra",
    "es": "el estreno",
    "pt": "a estreia",
+   "en": "the premiere",
    "aceitas": [
     "estreia",
     "lancamento",
     "abertura"
+   ],
+   "aceitasEn": [
+    "premiere",
+    "the premiere",
+    "opening night",
+    "the opening night",
+    "first showing",
+    "debut",
+    "the debut"
    ],
    "distratores": [
     "o estranho",
@@ -7894,21 +13142,35 @@ window.CARDS_RAW = {
     "o estrago",
     "o estilo"
    ],
+   "distratoresEn": [
+    "the stranger",
+    "the crash",
+    "the damage",
+    "the style"
+   ],
    "nivel": "B2",
    "tags": [
     "mídia"
    ],
-   "nota": "De 'estrenar' (usar pela primeira vez), que já apareceu como verbo."
+   "nota": "De 'estrenar' (usar pela primeira vez), que já apareceu como verbo.",
+   "notaEn": "'El estreno' is the opening night. It comes from 'estrenar', to use something for the very first time — a film, a pair of shoes, a flat."
   },
   {
    "id": "p175",
    "tipo": "palavra",
    "es": "la gira",
    "pt": "a turnê",
+   "en": "the tour",
    "aceitas": [
     "turne",
     "excursao",
     "tour"
+   ],
+   "aceitasEn": [
+    "tour",
+    "the tour",
+    "concert tour",
+    "the concert tour"
    ],
    "distratores": [
     "a girândola",
@@ -7916,22 +13178,42 @@ window.CARDS_RAW = {
     "a gíria",
     "a guirlanda"
    ],
+   "distratoresEn": [
+    "the firework",
+    "the giraffe",
+    "the slang",
+    "the garland"
+   ],
    "nivel": "B2",
    "tags": [
     "mídia"
    ],
-   "nota": "De 'girar', rodar. 'Estar de gira' = estar em turnê."
+   "nota": "De 'girar', rodar. 'Estar de gira' = estar em turnê.",
+   "notaEn": "From 'girar', to turn or go round. 'Estar de gira' = to be on tour. A sightseeing tour is 'una visita' or 'un recorrido' instead."
   },
   {
    "id": "p176",
    "tipo": "palavra",
    "es": "el repunte",
    "pt": "a alta",
+   "en": "the upturn",
    "aceitas": [
     "alta",
     "recuperacao",
     "retomada",
     "subida"
+   ],
+   "aceitasEn": [
+    "upturn",
+    "the upturn",
+    "rebound",
+    "the rebound",
+    "upswing",
+    "the upswing",
+    "recovery",
+    "the recovery",
+    "rise",
+    "the rise"
    ],
    "distratores": [
     "o repique",
@@ -7939,22 +13221,40 @@ window.CARDS_RAW = {
     "o repouso",
     "o repasse"
    ],
+   "distratoresEn": [
+    "the peal",
+    "the repair",
+    "the rest",
+    "the transfer"
+   ],
    "nivel": "B2",
    "tags": [
     "economia"
    ],
-   "nota": "'Repunte económico' = retomada da economia. O oposto é 'caída'."
+   "nota": "'Repunte económico' = retomada da economia. O oposto é 'caída'.",
+   "notaEn": "'Repunte económico' = economic upturn. It marks a rise after a fall; the opposite is 'la caída'."
   },
   {
    "id": "p177",
    "tipo": "palavra",
    "es": "el desplome",
    "pt": "o desabamento",
+   "en": "the collapse",
    "aceitas": [
     "desabamento",
     "despencada",
     "colapso",
     "queda brusca"
+   ],
+   "aceitasEn": [
+    "collapse",
+    "the collapse",
+    "crash",
+    "the crash",
+    "slump",
+    "the slump",
+    "plunge",
+    "the plunge"
    ],
    "distratores": [
     "o desdobramento",
@@ -7962,21 +13262,37 @@ window.CARDS_RAW = {
     "o desperdício",
     "o desconforto"
    ],
+   "distratoresEn": [
+    "the unfolding",
+    "the displacement",
+    "the waste",
+    "the discomfort"
+   ],
    "nivel": "B2",
    "tags": [
     "economia"
    ],
-   "nota": "Serve para prédio que cai e para bolsa que despenca."
+   "nota": "Serve para prédio que cai e para bolsa que despenca.",
+   "notaEn": "'El desplome' works for a building coming down and for a market falling out of the sky: 'el desplome de la bolsa'."
   },
   {
    "id": "p178",
    "tipo": "palavra",
    "es": "la injerencia",
    "pt": "a ingerência",
+   "en": "the interference",
    "aceitas": [
     "ingerencia",
     "interferencia",
     "intromissao"
+   ],
+   "aceitasEn": [
+    "interference",
+    "the interference",
+    "meddling",
+    "the meddling",
+    "intrusion",
+    "the intrusion"
    ],
    "distratores": [
     "a ingestão",
@@ -7984,20 +13300,34 @@ window.CARDS_RAW = {
     "a indigência",
     "a insurgência"
    ],
+   "distratoresEn": [
+    "the ingestion",
+    "the intelligence",
+    "the destitution",
+    "the insurgency"
+   ],
    "nivel": "C1",
    "tags": [
     "política"
    ],
-   "nota": "Cuidado com a grafia: injerencia com j, de 'injerir' (intrometer-se)."
+   "nota": "Cuidado com a grafia: injerencia com j, de 'injerir' (intrometer-se).",
+   "notaEn": "Spelled with a j, from 'injerirse', to meddle. 'Injerencia extranjera' = foreign interference. Do not confuse it with 'ingerir', to swallow."
   },
   {
    "id": "p179",
    "tipo": "palavra",
    "es": "el atajo",
    "pt": "o atalho",
+   "en": "the shortcut",
    "aceitas": [
     "atalho",
     "caminho curto"
+   ],
+   "aceitasEn": [
+    "shortcut",
+    "the shortcut",
+    "short cut",
+    "the short cut"
    ],
    "distratores": [
     "o ataque",
@@ -8005,22 +13335,39 @@ window.CARDS_RAW = {
     "o atraso",
     "o ateísmo"
    ],
+   "distratoresEn": [
+    "the attack",
+    "the bundle",
+    "the delay",
+    "the atheism"
+   ],
    "nivel": "B2",
    "tags": [
     "cidade"
    ],
-   "nota": "De 'atajar' (cortar caminho). Não confunda com 'ataque'."
+   "nota": "De 'atajar' (cortar caminho). Não confunda com 'ataque'.",
+   "notaEn": "From 'atajar', to cut across. 'Coger un atajo' = to take a shortcut. Careful with 'el ataque', which is an attack."
   },
   {
    "id": "p180",
    "tipo": "palavra",
    "es": "el embuste",
    "pt": "a mentira",
+   "en": "the lie",
    "aceitas": [
     "mentira",
     "lorota",
     "embuste",
     "peta"
+   ],
+   "aceitasEn": [
+    "lie",
+    "the lie",
+    "falsehood",
+    "the falsehood",
+    "fib",
+    "the fib",
+    "tall tale"
    ],
    "distratores": [
     "o embarque",
@@ -8028,22 +13375,40 @@ window.CARDS_RAW = {
     "o embrulho",
     "o emblema"
    ],
+   "distratoresEn": [
+    "the boarding",
+    "the cold cut",
+    "the parcel",
+    "the emblem"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Embustero' é o mentiroso contumaz."
+   "nota": "'Embustero' é o mentiroso contumaz.",
+   "notaEn": "'Un embuste' is a lie built to deceive, more elaborate than a plain 'mentira'. 'Un embustero' is the habitual liar who tells them."
   },
   {
    "id": "p181",
    "tipo": "palavra",
    "es": "el ahínco",
    "pt": "o afinco",
+   "en": "the determination",
    "aceitas": [
     "afinco",
     "empenho",
     "dedicacao",
     "garra"
+   ],
+   "aceitasEn": [
+    "determination",
+    "the determination",
+    "earnestness",
+    "zeal",
+    "the zeal",
+    "eagerness",
+    "perseverance",
+    "effort"
    ],
    "distratores": [
     "o afogamento",
@@ -8051,22 +13416,38 @@ window.CARDS_RAW = {
     "o agrado",
     "o arremate"
    ],
+   "distratoresEn": [
+    "the drowning",
+    "the encouragement",
+    "the pleasure",
+    "the finishing touch"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Con ahínco' = com afinco. O h é mudo: a-ÍN-co."
+   "nota": "'Con ahínco' = com afinco. O h é mudo: a-ÍN-co.",
+   "notaEn": "'Con ahínco' = with determination, doggedly. The h is silent, as always: a-ÍN-co, with the stress in the middle."
   },
   {
    "id": "p182",
    "tipo": "palavra",
    "es": "la mesura",
    "pt": "a moderação",
+   "en": "the restraint",
    "aceitas": [
     "moderacao",
     "comedimento",
     "mesura",
     "equilibrio"
+   ],
+   "aceitasEn": [
+    "restraint",
+    "the restraint",
+    "moderation",
+    "the moderation",
+    "measure",
+    "temperance"
    ],
    "distratores": [
     "a medição",
@@ -8074,22 +13455,40 @@ window.CARDS_RAW = {
     "a mestria",
     "a mistura"
    ],
+   "distratoresEn": [
+    "the measurement",
+    "the message",
+    "the mastery",
+    "the mixture"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Sin mesura' = sem moderação. Não é a mesura de reverência."
+   "nota": "'Sin mesura' = sem moderação. Não é a mesura de reverência.",
+   "notaEn": "'Sin mesura' = without restraint. It names moderation and self-control, not the act of measuring, which is 'la medición'."
   },
   {
    "id": "p183",
    "tipo": "palavra",
    "es": "el óbice",
    "pt": "o empecilho",
+   "en": "the obstacle",
    "aceitas": [
     "empecilho",
     "obice",
     "obstaculo",
     "impedimento"
+   ],
+   "aceitasEn": [
+    "obstacle",
+    "the obstacle",
+    "impediment",
+    "the impediment",
+    "bar",
+    "the bar",
+    "hindrance",
+    "the hindrance"
    ],
    "distratores": [
     "o ofício",
@@ -8097,23 +13496,41 @@ window.CARDS_RAW = {
     "o obelisco",
     "o obituário"
    ],
+   "distratoresEn": [
+    "the trade",
+    "the orifice",
+    "the obelisk",
+    "the obituary"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo",
     "jurídico"
    ],
-   "nota": "'No es óbice para' = não impede que. Bem formal."
+   "nota": "'No es óbice para' = não impede que. Bem formal.",
+   "notaEn": "Almost always in one formula: 'no es óbice para', it is no bar to. Formal and legal, and rarely met anywhere else."
   },
   {
    "id": "p184",
    "tipo": "palavra",
    "es": "la inquina",
    "pt": "a antipatia",
+   "en": "the ill will",
    "aceitas": [
     "antipatia",
     "ojeriza",
     "birra",
     "rancor"
+   ],
+   "aceitasEn": [
+    "ill will",
+    "the ill will",
+    "animosity",
+    "the animosity",
+    "grudge",
+    "the grudge",
+    "ill feeling",
+    "antipathy"
    ],
    "distratores": [
     "a inquietude",
@@ -8121,22 +13538,40 @@ window.CARDS_RAW = {
     "a indagação",
     "a insígnia"
    ],
+   "distratoresEn": [
+    "the restlessness",
+    "the tenant",
+    "the enquiry",
+    "the insignia"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Tenerle inquina a alguien' = ter ojeriza de alguém."
+   "nota": "'Tenerle inquina a alguien' = ter ojeriza de alguém.",
+   "notaEn": "'Tenerle inquina a alguien' = to have it in for somebody. It is a settled, personal dislike, not a passing irritation."
   },
   {
    "id": "p185",
    "tipo": "palavra",
    "es": "el escarnio",
    "pt": "o escárnio",
+   "en": "the mockery",
    "aceitas": [
     "escarnio",
     "zombaria",
     "deboche",
     "humilhacao"
+   ],
+   "aceitasEn": [
+    "mockery",
+    "the mockery",
+    "derision",
+    "the derision",
+    "ridicule",
+    "the ridicule",
+    "scorn",
+    "the scorn"
    ],
    "distratores": [
     "o escarcéu",
@@ -8144,22 +13579,42 @@ window.CARDS_RAW = {
     "o escalão",
     "o escrutínio"
    ],
+   "distratoresEn": [
+    "the outcry",
+    "the pigeonhole",
+    "the rank",
+    "the scrutiny"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "Zombaria cruel, feita em público."
+   "nota": "Zombaria cruel, feita em público.",
+   "notaEn": "'El escarnio' is cruel mockery made in public, meant to humiliate. Heavier than 'la burla', which can still be affectionate."
   },
   {
    "id": "p186",
    "tipo": "palavra",
    "es": "el sosiego",
    "pt": "o sossego",
+   "en": "the calm",
    "aceitas": [
     "sossego",
     "tranquilidade",
     "calma",
     "serenidade"
+   ],
+   "aceitasEn": [
+    "calm",
+    "the calm",
+    "calmness",
+    "the calmness",
+    "tranquillity",
+    "serenity",
+    "the serenity",
+    "peace",
+    "the peace",
+    "quiet"
    ],
    "distratores": [
     "o socorro",
@@ -8167,22 +13622,41 @@ window.CARDS_RAW = {
     "o sortilégio",
     "o sobressalto"
    ],
+   "distratoresEn": [
+    "the rescue",
+    "the hiccup",
+    "the spell",
+    "the shock"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "'Sosegado' é o sossegado. Note o -ie- que o português não tem."
+   "nota": "'Sosegado' é o sossegado. Note o -ie- que o português não tem.",
+   "notaEn": "'El sosiego' is settled quiet, of a place or of a mind. 'Sosegado' is the person who has it, and 'sosegar' is to calm somebody down."
   },
   {
    "id": "p187",
    "tipo": "palavra",
    "es": "el arrojo",
    "pt": "a ousadia",
+   "en": "the daring",
    "aceitas": [
     "ousadia",
     "coragem",
     "destemor",
     "arrojo"
+   ],
+   "aceitasEn": [
+    "daring",
+    "the daring",
+    "boldness",
+    "the boldness",
+    "nerve",
+    "the nerve",
+    "courage",
+    "the courage",
+    "audacity"
    ],
    "distratores": [
     "o arroio",
@@ -8190,22 +13664,40 @@ window.CARDS_RAW = {
     "o arrocho",
     "o arrepio"
    ],
+   "distratoresEn": [
+    "the stream",
+    "the arrangement",
+    "the squeeze",
+    "the shiver"
+   ],
    "nivel": "C1",
    "tags": [
     "substantivo"
    ],
-   "nota": "De 'arrojarse' (lançar-se). 'Arroyo' com y é riacho."
+   "nota": "De 'arrojarse' (lançar-se). 'Arroyo' com y é riacho.",
+   "notaEn": "From 'arrojarse', to throw oneself in. It is courage of the headlong kind. Spelled with a y, 'el arroyo' is a stream — quite another thing."
   },
   {
    "id": "p188",
    "tipo": "palavra",
    "es": "la pesadumbre",
    "pt": "o pesar",
+   "en": "the sorrow",
    "aceitas": [
     "pesar",
     "tristeza",
     "aflicao",
     "desgosto"
+   ],
+   "aceitasEn": [
+    "sorrow",
+    "the sorrow",
+    "grief",
+    "the grief",
+    "heaviness of heart",
+    "sadness",
+    "the sadness",
+    "affliction"
    ],
    "distratores": [
     "a pesagem",
@@ -8213,22 +13705,40 @@ window.CARDS_RAW = {
     "a pesquisa",
     "a peçonha"
    ],
+   "distratoresEn": [
+    "the weighing",
+    "the fishing",
+    "the research",
+    "the venom"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "Tristeza pesada e duradoura. Mesmo sufixo de 'muchedumbre' (multidão)."
+   "nota": "Tristeza pesada e duradoura. Mesmo sufixo de 'muchedumbre' (multidão).",
+   "notaEn": "Grief with weight to it, from 'pesado', heavy — sadness that settles and stays. Same -umbre ending as 'muchedumbre', a crowd."
   },
   {
    "id": "p189",
    "tipo": "palavra",
    "es": "el marasmo",
    "pt": "o marasmo",
+   "en": "the stagnation",
    "aceitas": [
     "marasmo",
     "estagnacao",
     "apatia",
     "paralisia"
+   ],
+   "aceitasEn": [
+    "stagnation",
+    "the stagnation",
+    "torpor",
+    "the torpor",
+    "paralysis",
+    "the paralysis",
+    "standstill",
+    "the standstill"
    ],
    "distratores": [
     "o mecanismo",
@@ -8236,22 +13746,40 @@ window.CARDS_RAW = {
     "o materialismo",
     "o militarismo"
    ],
+   "distratoresEn": [
+    "the mechanism",
+    "the magnetism",
+    "the materialism",
+    "the militarism"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "Estagnação total, sem energia nem movimento."
+   "nota": "Estagnação total, sem energia nem movimento.",
+   "notaEn": "'El marasmo' is total stagnation, with neither energy nor movement left in it. Used of economies, institutions and moods alike."
   },
   {
    "id": "p190",
    "tipo": "palavra",
    "es": "la argucia",
    "pt": "o sofisma",
+   "en": "the sophistry",
    "aceitas": [
     "sofisma",
     "argucia",
     "artimanha",
     "subterfugio"
+   ],
+   "aceitasEn": [
+    "sophistry",
+    "the sophistry",
+    "specious argument",
+    "the specious argument",
+    "quibble",
+    "the quibble",
+    "subterfuge",
+    "sophism"
    ],
    "distratores": [
     "a angústia",
@@ -8259,22 +13787,39 @@ window.CARDS_RAW = {
     "a ambiguidade",
     "a artimanha honesta"
    ],
+   "distratoresEn": [
+    "the anguish",
+    "the arrogance",
+    "the ambiguity",
+    "the honest trick"
+   ],
    "nivel": "C2",
    "tags": [
     "substantivo"
    ],
-   "nota": "Argumento esperto mas falso, feito para enganar."
+   "nota": "Argumento esperto mas falso, feito para enganar.",
+   "notaEn": "'Una argucia' is a clever argument that is false on purpose — reasoning bent to deceive. Related to 'agudo', sharp."
   },
   {
    "id": "p191",
    "tipo": "palavra",
    "es": "remilgado",
    "pt": "melindroso",
+   "en": "prissy",
    "aceitas": [
     "melindroso",
     "fresco",
     "cheio de dedos",
     "afetado"
+   ],
+   "aceitasEn": [
+    "prissy",
+    "fussy",
+    "finicky",
+    "squeamish",
+    "prim",
+    "affected",
+    "precious"
    ],
    "distratores": [
     "remendado",
@@ -8282,22 +13827,39 @@ window.CARDS_RAW = {
     "remoto",
     "remanescente"
    ],
+   "distratoresEn": [
+    "patched",
+    "remedied",
+    "remote",
+    "remaining"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Remilgos' são os melindres, o fricote."
+   "nota": "'Remilgos' são os melindres, o fricote.",
+   "notaEn": "'Remilgado' is fussy and easily put out, with a show of delicacy about it. 'Los remilgos' are the airs themselves: 'déjate de remilgos'."
   },
   {
    "id": "p192",
    "tipo": "palavra",
    "es": "escueto",
    "pt": "sucinto",
+   "en": "concise",
    "aceitas": [
     "sucinto",
     "conciso",
     "enxuto",
     "breve"
+   ],
+   "aceitasEn": [
+    "concise",
+    "succinct",
+    "terse",
+    "curt",
+    "brief",
+    "plain",
+    "bare"
    ],
    "distratores": [
     "escuro",
@@ -8305,22 +13867,40 @@ window.CARDS_RAW = {
     "esculpido",
     "escorado"
    ],
+   "distratoresEn": [
+    "dark",
+    "scarce",
+    "sculpted",
+    "propped"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Una respuesta escueta' = uma resposta seca, sem rodeios."
+   "nota": "'Una respuesta escueta' = uma resposta seca, sem rodeios.",
+   "notaEn": "'Una respuesta escueta' = a bare, curt answer. It means concise, sometimes to the point of coldness — no ornament, no padding."
   },
   {
    "id": "p193",
    "tipo": "palavra",
    "es": "aciago",
    "pt": "aziago",
+   "en": "ill-fated",
    "aceitas": [
     "aziago",
     "funesto",
     "infeliz",
     "de mau agouro"
+   ],
+   "aceitasEn": [
+    "ill-fated",
+    "ill fated",
+    "fateful",
+    "unlucky",
+    "ominous",
+    "fatal",
+    "disastrous",
+    "black"
    ],
    "distratores": [
     "acinzentado",
@@ -8328,22 +13908,39 @@ window.CARDS_RAW = {
     "acalorado",
     "acanhado"
    ],
+   "distratoresEn": [
+    "greyish",
+    "uneven",
+    "heated",
+    "shy"
+   ],
    "nivel": "C2",
    "tags": [
     "adjetivo"
    ],
-   "nota": "'Un día aciago' = um dia funesto, de má sorte."
+   "nota": "'Un día aciago' = um dia funesto, de má sorte.",
+   "notaEn": "'Un día aciago' = a fateful, unlucky day. Literary, and always about misfortune: the word carries the omen along with it."
   },
   {
    "id": "p194",
    "tipo": "palavra",
    "es": "huraño",
    "pt": "arredio",
+   "en": "unsociable",
    "aceitas": [
     "arredio",
     "esquivo",
     "insociavel",
     "fechado"
+   ],
+   "aceitasEn": [
+    "unsociable",
+    "withdrawn",
+    "aloof",
+    "standoffish",
+    "reclusive",
+    "surly",
+    "shy of company"
    ],
    "distratores": [
     "huguenote",
@@ -8351,17 +13948,25 @@ window.CARDS_RAW = {
     "hurrah",
     "hospitaleiro"
    ],
+   "distratoresEn": [
+    "huguenot",
+    "humble",
+    "hospitable",
+    "hoarse"
+   ],
    "nivel": "C1",
    "tags": [
     "adjetivo"
    ],
-   "nota": "Quem foge do convívio. Não confunda com 'huracán'."
+   "nota": "Quem foge do convívio. Não confunda com 'huracán'.",
+   "notaEn": "'Huraño' describes the person who avoids company — shyness shading into surliness. The h is silent: u-RA-ño."
   },
   {
    "id": "p195",
    "tipo": "palavra",
    "es": "acaparar",
    "pt": "açambarcar",
+   "en": "to hoard",
    "aceitas": [
     "acambarcar",
     "monopolizar",
@@ -8369,28 +13974,53 @@ window.CARDS_RAW = {
     "abocanhar",
     "estocar"
    ],
+   "aceitasEn": [
+    "to hoard",
+    "hoard",
+    "to monopolise",
+    "to monopolize",
+    "to corner",
+    "to hog",
+    "to stockpile"
+   ],
    "distratores": [
     "acalentar",
     "acamparar",
     "acautelar",
     "acalorar"
    ],
+   "distratoresEn": [
+    "to soothe",
+    "to camp out",
+    "to take care",
+    "to warm up"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Acaparar la atención' = monopolizar a atenção."
+   "nota": "'Acaparar la atención' = monopolizar a atenção.",
+   "notaEn": "'Acaparar' is to corner a supply, or to take up more than your share: 'acaparar la atención' is to hog the limelight."
   },
   {
    "id": "p196",
    "tipo": "palavra",
    "es": "esmerarse",
    "pt": "caprichar",
+   "en": "to take great care",
    "aceitas": [
     "caprichar",
     "esmerar-se",
     "caprichar no trabalho",
     "esforcar-se"
+   ],
+   "aceitasEn": [
+    "to take great care",
+    "take great care",
+    "to take pains",
+    "to do it properly",
+    "to go to great lengths",
+    "to make an effort"
    ],
    "distratores": [
     "esmagar-se",
@@ -8398,22 +14028,40 @@ window.CARDS_RAW = {
     "esmiuçar-se",
     "espalhar-se"
    ],
+   "distratoresEn": [
+    "to be crushed",
+    "to lose heart",
+    "to go into detail",
+    "to spread out"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Esmerarse en algo' = caprichar em algo. 'Esmero' é o capricho."
+   "nota": "'Esmerarse en algo' = caprichar em algo. 'Esmero' é o capricho.",
+   "notaEn": "'Esmerarse en algo' = to take real care over something, to do it properly. The noun 'el esmero' is that care itself."
   },
   {
    "id": "p197",
    "tipo": "palavra",
    "es": "rehuir",
    "pt": "esquivar-se",
+   "en": "to shun",
    "aceitas": [
     "esquivar-se",
     "evitar",
     "fugir de",
     "escapar de"
+   ],
+   "aceitasEn": [
+    "to shun",
+    "shun",
+    "to avoid",
+    "avoid",
+    "to evade",
+    "evade",
+    "to shy away from",
+    "to dodge"
    ],
    "distratores": [
     "reunir",
@@ -8421,22 +14069,40 @@ window.CARDS_RAW = {
     "reluzir",
     "rebuscar"
    ],
+   "distratoresEn": [
+    "to gather",
+    "to flow back",
+    "to shine",
+    "to search again"
+   ],
    "nivel": "C1",
    "tags": [
     "verbo"
    ],
-   "nota": "'Rehuir la mirada' = desviar o olhar. O h é mudo: re-u-ÍR."
+   "nota": "'Rehuir la mirada' = desviar o olhar. O h é mudo: re-u-ÍR.",
+   "notaEn": "'Rehuir la mirada' = to avoid someone's eye. The h is silent and the word runs to three syllables: re-u-ÍR."
   },
   {
    "id": "p198",
    "tipo": "palavra",
    "es": "acatar",
    "pt": "acatar",
+   "en": "to comply with",
    "aceitas": [
     "acatar",
     "obedecer",
     "cumprir",
     "respeitar"
+   ],
+   "aceitasEn": [
+    "to comply with",
+    "comply with",
+    "to obey",
+    "obey",
+    "to abide by",
+    "abide by",
+    "to observe",
+    "to respect"
    ],
    "distratores": [
     "atacar",
@@ -8444,22 +14110,40 @@ window.CARDS_RAW = {
     "apartar",
     "acautelar"
    ],
+   "distratoresEn": [
+    "to attack",
+    "to knock down",
+    "to set apart",
+    "to take care"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "'Acatar una orden' = cumprir uma ordem. Cuidado com 'atacar'."
+   "nota": "'Acatar una orden' = cumprir uma ordem. Cuidado com 'atacar'.",
+   "notaEn": "'Acatar una orden' = to obey an order, whether you agree with it or not. Do not let it slide into 'atacar', which is to attack."
   },
   {
    "id": "p199",
    "tipo": "palavra",
    "es": "vislumbrar",
    "pt": "vislumbrar",
+   "en": "to glimpse",
    "aceitas": [
     "vislumbrar",
     "entrever",
     "antever",
     "perceber"
+   ],
+   "aceitasEn": [
+    "to glimpse",
+    "glimpse",
+    "to make out",
+    "make out",
+    "to discern",
+    "discern",
+    "to catch sight of",
+    "to foresee"
    ],
    "distratores": [
     "visitar",
@@ -8467,17 +14151,25 @@ window.CARDS_RAW = {
     "vituperar",
     "vivificar"
    ],
+   "distratoresEn": [
+    "to visit",
+    "to inspect",
+    "to revile",
+    "to enliven"
+   ],
    "nivel": "B2",
    "tags": [
     "verbo"
    ],
-   "nota": "Ver de forma vaga, ou pressentir. Combina com 'atisbo'."
+   "nota": "Ver de forma vaga, ou pressentir. Combina com 'atisbo'.",
+   "notaEn": "To make something out faintly, or to sense it coming: 'vislumbrar una solución'. Its noun cousin is 'un atisbo'."
   },
   {
    "id": "p200",
    "tipo": "palavra",
    "es": "zanjar",
    "pt": "resolver",
+   "en": "to settle",
    "aceitas": [
     "resolver",
     "encerrar",
@@ -8485,28 +14177,52 @@ window.CARDS_RAW = {
     "dirimir",
     "por fim a"
    ],
+   "aceitasEn": [
+    "to settle",
+    "settle",
+    "to resolve",
+    "resolve",
+    "to put an end to",
+    "to close",
+    "to end"
+   ],
    "distratores": [
     "zangar",
     "zarpar",
     "zunir",
     "zombar"
    ],
+   "distratoresEn": [
+    "to get angry",
+    "to set sail",
+    "to buzz",
+    "to mock"
+   ],
    "nivel": "C1",
    "tags": [
     "verbo"
    ],
-   "nota": "'Zanjar una discusión' = encerrar de vez uma discussão. De 'zanja' (vala)."
+   "nota": "'Zanjar una discusión' = encerrar de vez uma discussão. De 'zanja' (vala).",
+   "notaEn": "'Zanjar una discusión' = to settle an argument for good. From 'una zanja', a ditch — you dig the thing to a close."
   },
   {
    "id": "f101",
    "tipo": "frase",
    "es": "Se me hace agua la boca.",
    "pt": "Estou com água na boca.",
+   "en": "My mouth is watering.",
    "aceitas": [
     "estou com agua na boca",
     "fiquei com agua na boca",
     "me da agua na boca",
     "da agua na boca"
+   ],
+   "aceitasEn": [
+    "my mouth is watering",
+    "it makes my mouth water",
+    "my mouth waters",
+    "that makes my mouth water",
+    "it is mouth watering"
    ],
    "distratores": [
     "Molhei a boca com água.",
@@ -8514,18 +14230,26 @@ window.CARDS_RAW = {
     "Fiz um bochecho com água.",
     "Lavei a boca com água."
    ],
+   "distratoresEn": [
+    "I wet my mouth with water.",
+    "I drank water through my mouth.",
+    "I rinsed my mouth out.",
+    "I washed my mouth with water."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão",
     "comida"
    ],
-   "nota": "Mesma imagem do português, com a construção 'se me' do espanhol."
+   "nota": "Mesma imagem do português, com a construção 'se me' do espanhol.",
+   "notaEn": "The same picture English uses, built with the Spanish 'se me': the mouth waters on me, with no effort of my own."
   },
   {
    "id": "f102",
    "tipo": "frase",
    "es": "No tengo ni idea.",
    "pt": "Não faço a menor ideia.",
+   "en": "I haven't the faintest idea.",
    "aceitas": [
     "nao faco a menor ideia",
     "nao faco ideia",
@@ -8533,28 +14257,52 @@ window.CARDS_RAW = {
     "sei la",
     "nao tenho ideia"
    ],
+   "aceitasEn": [
+    "i havent the faintest idea",
+    "i have no idea",
+    "i havent a clue",
+    "i dont have a clue",
+    "not the faintest idea",
+    "no idea at all",
+    "i havent the foggiest"
+   ],
    "distratores": [
     "Não tenho uma ideia boa.",
     "Tive uma ideia ruim.",
     "Não gostei dessa ideia.",
     "Faltou uma ideia melhor."
    ],
+   "distratoresEn": [
+    "I don't have a good idea.",
+    "I had a bad idea.",
+    "I did not like that idea.",
+    "A better idea was missing."
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "O 'ni' reforça a negação, como o nosso 'a menor'."
+   "nota": "O 'ni' reforça a negação, como o nosso 'a menor'.",
+   "notaEn": "'Ni' sharpens the negative: not so much as an idea. The same trick runs through 'ni un céntimo' and 'ni por asomo'."
   },
   {
    "id": "f103",
    "tipo": "frase",
    "es": "Me pilló de sorpresa.",
    "pt": "Me pegou de surpresa.",
+   "en": "It caught me by surprise.",
    "aceitas": [
     "me pegou de surpresa",
     "pegou de surpresa",
     "me surpreendeu",
     "me pegou desprevenido"
+   ],
+   "aceitasEn": [
+    "it caught me by surprise",
+    "he caught me by surprise",
+    "it took me by surprise",
+    "it caught me off guard",
+    "i was caught off guard"
    ],
    "distratores": [
     "Me deu uma surpresa boa.",
@@ -8562,22 +14310,38 @@ window.CARDS_RAW = {
     "Fiquei surpreso com ele.",
     "Gostei da surpresa dele."
    ],
+   "distratoresEn": [
+    "He gave me a nice surprise.",
+    "He prepared a surprise.",
+    "I was surprised by him.",
+    "I liked his surprise."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão"
    ],
-   "nota": "'Pillar' é o pegar coloquial da Espanha, que já apareceu sozinho."
+   "nota": "'Pillar' é o pegar coloquial da Espanha, que já apareceu sozinho.",
+   "notaEn": "'Pillar' is the everyday Spanish verb for catching, and 'pillar de sorpresa' is to catch someone off guard."
   },
   {
    "id": "f104",
    "tipo": "frase",
    "es": "Está para chuparse los dedos.",
    "pt": "Está de lamber os dedos.",
+   "en": "It's good enough to lick your fingers.",
    "aceitas": [
     "esta de lamber os dedos",
     "de lamber os beicos",
     "esta uma delicia",
     "esta divino"
+   ],
+   "aceitasEn": [
+    "its good enough to lick your fingers",
+    "its finger licking good",
+    "its delicious",
+    "its mouthwatering",
+    "you could lick your fingers",
+    "its absolutely delicious"
    ],
    "distratores": [
     "Está sujo nos dedos.",
@@ -8585,22 +14349,37 @@ window.CARDS_RAW = {
     "Está preso nos dedos.",
     "Está grudado nos dedos."
    ],
+   "distratoresEn": [
+    "It is dirty on the fingers.",
+    "It is hot on the fingers.",
+    "It is stuck to the fingers.",
+    "It is glued to the fingers."
+   ],
    "nivel": "B1",
    "tags": [
     "expressão",
     "comida"
    ],
-   "nota": "Elogio para comida muito boa."
+   "nota": "Elogio para comida muito boa.",
+   "notaEn": "'Para chuparse los dedos' = so good you lick your fingers. Reserved for food, and always a compliment."
   },
   {
    "id": "f105",
    "tipo": "frase",
    "es": "Le salió el tiro por la culata.",
    "pt": "O tiro saiu pela culatra.",
+   "en": "It backfired on him.",
    "aceitas": [
     "o tiro saiu pela culatra",
     "saiu pela culatra",
     "o feitico virou contra o feiticeiro"
+   ],
+   "aceitasEn": [
+    "it backfired on him",
+    "it backfired",
+    "the plan backfired",
+    "it blew up in his face",
+    "it came back to bite him"
    ],
    "distratores": [
     "O tiro passou de raspão.",
@@ -8608,22 +14387,37 @@ window.CARDS_RAW = {
     "O tiro errou por pouco.",
     "O tiro fez muito barulho."
    ],
+   "distratoresEn": [
+    "The shot only grazed him.",
+    "The shot hit the target.",
+    "The shot narrowly missed.",
+    "The shot made a lot of noise."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão"
    ],
-   "nota": "Idêntica ao português: o plano se voltou contra quem o fez."
+   "nota": "Idêntica ao português: o plano se voltou contra quem o fez.",
+   "notaEn": "'La culata' is the butt of a gun: the shot came out of the wrong end. The plan turned on the person who made it."
   },
   {
    "id": "f106",
    "tipo": "frase",
    "es": "Se le hizo tarde.",
    "pt": "Ele acabou se atrasando.",
+   "en": "He ended up running late.",
    "aceitas": [
     "ele acabou se atrasando",
     "ele se atrasou",
     "ficou tarde para ele",
     "ele perdeu a hora"
+   ],
+   "aceitasEn": [
+    "he ended up running late",
+    "he ended up late",
+    "it got late on him",
+    "he was running late",
+    "he ran late"
    ],
    "distratores": [
     "Ele fez tudo tarde.",
@@ -8631,22 +14425,38 @@ window.CARDS_RAW = {
     "Ele trabalhou até tarde.",
     "Ele acordou muito tarde."
    ],
+   "distratoresEn": [
+    "He did everything late.",
+    "He arrived very early.",
+    "He worked until late.",
+    "He woke up very late."
+   ],
    "nivel": "B1",
    "tags": [
     "cotidiano"
    ],
-   "nota": "A construção 'se le' tira a culpa: aconteceu com ele."
+   "nota": "A construção 'se le' tira a culpa: aconteceu com ele.",
+   "notaEn": "The 'se le' construction again: it got late on him. Nobody is quite to blame, which is half the point of the form."
   },
   {
    "id": "f107",
    "tipo": "frase",
    "es": "Vale la pena intentarlo.",
    "pt": "Vale a pena tentar.",
+   "en": "It's worth a try.",
    "aceitas": [
     "vale a pena tentar",
     "vale tentar",
     "merece uma tentativa",
     "vale a pena tentar isso"
+   ],
+   "aceitasEn": [
+    "its worth a try",
+    "it s worth a try",
+    "it is worth a try",
+    "its worth trying",
+    "its worth the trouble",
+    "its worth it"
    ],
    "distratores": [
     "Sinto pena de tentar.",
@@ -8654,22 +14464,38 @@ window.CARDS_RAW = {
     "Tentar custa muita pena.",
     "A pena vale a tentativa."
    ],
+   "distratoresEn": [
+    "I feel sorry for trying.",
+    "It is sad to watch the attempt.",
+    "Trying carries a heavy penalty.",
+    "The penalty is worth the attempt."
+   ],
    "nivel": "A2",
    "tags": [
     "cotidiano"
    ],
-   "nota": "'Valer la pena' = valer a pena, idêntico ao português."
+   "nota": "'Valer la pena' = valer a pena, idêntico ao português.",
+   "notaEn": "'Valer la pena' = to be worth the trouble. 'La pena' here is the effort or sorrow it costs you, not a punishment."
   },
   {
    "id": "f108",
    "tipo": "frase",
    "es": "Está hasta las narices.",
    "pt": "Está de saco cheio.",
+   "en": "He's had it up to here.",
    "aceitas": [
     "esta de saco cheio",
     "nao aguenta mais",
     "esta cheio disso",
     "esta farto"
+   ],
+   "aceitasEn": [
+    "hes had it up to here",
+    "he s had it up to here",
+    "hes fed up",
+    "hes had enough",
+    "hes sick of it",
+    "hes had it up to the eyeballs"
    ],
    "distratores": [
     "Está com o nariz entupido.",
@@ -8677,18 +14503,26 @@ window.CARDS_RAW = {
     "Está com a cara suja.",
     "Está com o nariz frio."
    ],
+   "distratoresEn": [
+    "He has a blocked nose.",
+    "His nose is bleeding.",
+    "His face is dirty.",
+    "His nose is cold."
+   ],
    "nivel": "B2",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "Versão educada de uma expressão bem mais grosseira."
+   "nota": "Versão educada de uma expressão bem mais grosseira.",
+   "notaEn": "'Hasta las narices' = fed up right up to the nose. It is the polite version of a considerably ruder Spanish phrase."
   },
   {
    "id": "f109",
    "tipo": "frase",
    "es": "Ni fu ni fa.",
    "pt": "Nem lá nem cá.",
+   "en": "Neither one thing nor the other.",
    "aceitas": [
     "nem la nem ca",
     "mais ou menos",
@@ -8696,28 +14530,52 @@ window.CARDS_RAW = {
     "assim assim",
     "nem oito nem oitenta"
    ],
+   "aceitasEn": [
+    "neither one thing nor the other",
+    "neither good nor bad",
+    "so so",
+    "nothing special",
+    "it was neither here nor there",
+    "meh"
+   ],
    "distratores": [
     "Nem um nem outro veio.",
     "Nem hoje nem amanhã.",
     "Nem eu nem você sabia.",
     "Nem antes nem depois disso."
    ],
+   "distratoresEn": [
+    "Neither one of them came.",
+    "Neither today nor tomorrow.",
+    "Neither you nor I knew.",
+    "Neither before nor after that."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão"
    ],
-   "nota": "Indiferença: nem bom nem ruim, tanto faz."
+   "nota": "Indiferença: nem bom nem ruim, tanto faz.",
+   "notaEn": "'Ni fu ni fa' is a shrug: it was neither good nor bad. The two syllables mean nothing on their own — the phrase is pure sound."
   },
   {
    "id": "f110",
    "tipo": "frase",
    "es": "Me da corte preguntar.",
    "pt": "Fico com vergonha de perguntar.",
+   "en": "I'm too embarrassed to ask.",
    "aceitas": [
     "fico com vergonha de perguntar",
     "tenho vergonha de perguntar",
     "da vergonha perguntar",
     "morro de vergonha de perguntar"
+   ],
+   "aceitasEn": [
+    "im too embarrassed to ask",
+    "i m too embarrassed to ask",
+    "i am too embarrassed to ask",
+    "im too shy to ask",
+    "it embarrasses me to ask",
+    "i cant bring myself to ask"
    ],
    "distratores": [
     "Me irrita ter que perguntar.",
@@ -8725,18 +14583,26 @@ window.CARDS_RAW = {
     "Me atrasa muito perguntar.",
     "Me obriga a ter que perguntar."
    ],
+   "distratoresEn": [
+    "It irritates me to have to ask.",
+    "It costs me a lot to ask.",
+    "It really delays me to ask.",
+    "It forces me to have to ask."
+   ],
    "nivel": "C1",
    "tags": [
     "expressão",
     "Espanha"
    ],
-   "nota": "'Dar corte' = dar vergonha, na Espanha. 'Cortado' é o envergonhado."
+   "nota": "'Dar corte' = dar vergonha, na Espanha. 'Cortado' é o envergonhado.",
+   "notaEn": "'Dar corte' = to make you feel awkward, in Spain. 'Estar cortado' is to be tongue-tied — and 'un cortado' at the bar is a coffee."
   },
   {
    "id": "f111",
    "tipo": "frase",
    "es": "A ojo de buen cubero.",
    "pt": "No olhômetro.",
+   "en": "By rough guesswork.",
    "aceitas": [
     "no olhometro",
     "por alto",
@@ -8744,27 +14610,51 @@ window.CARDS_RAW = {
     "de olho",
     "por estimativa"
    ],
+   "aceitasEn": [
+    "by rough guesswork",
+    "by guesswork",
+    "by eye",
+    "roughly",
+    "at a rough guess",
+    "by rule of thumb",
+    "give or take"
+   ],
    "distratores": [
     "Com olhar experiente.",
     "De olho aberto.",
     "Sob olhares alheios.",
     "Com um olho."
    ],
+   "distratoresEn": [
+    "With an expert eye.",
+    "With your eyes open.",
+    "Under the eyes of others.",
+    "With only one eye."
+   ],
    "nivel": "C2",
    "tags": [
     "expressão"
    ],
-   "nota": "Calcular por estimativa, sem medir. O 'cubero' fazia barris a olho."
+   "nota": "Calcular por estimativa, sem medir. O 'cubero' fazia barris a olho.",
+   "notaEn": "'El cubero' was the barrel maker, who sized his casks by eye. The phrase now covers any rough estimate made without measuring."
   },
   {
    "id": "f112",
    "tipo": "frase",
    "es": "Más vale maña que fuerza.",
    "pt": "Mais vale jeito que força.",
+   "en": "Brain beats brawn.",
    "aceitas": [
     "mais vale jeito que forca",
     "melhor jeito do que forca",
     "vale mais a manha que a forca"
+   ],
+   "aceitasEn": [
+    "brain beats brawn",
+    "skill beats strength",
+    "brains over brawn",
+    "better skill than strength",
+    "cunning beats force"
    ],
    "distratores": [
     "Mais vale força que jeito.",
@@ -8772,11 +14662,18 @@ window.CARDS_RAW = {
     "Mais vale prevenir que remediar.",
     "Mais vale pouco que nada."
    ],
+   "distratoresEn": [
+    "Brawn beats brain.",
+    "Better late than never.",
+    "Prevention beats cure.",
+    "Something beats nothing."
+   ],
    "nivel": "B2",
    "tags": [
     "provérbio"
    ],
-   "nota": "'Maña' é a habilidade, o jeito. Não confunda com 'mañana'."
+   "nota": "'Maña' é a habilidade, o jeito. Não confunda com 'mañana'.",
+   "notaEn": "'La maña' is skill and knack; 'la fuerza' is raw strength. Do not confuse 'maña' with 'mañana' — one letter and a world apart."
   }
  ]
 };
