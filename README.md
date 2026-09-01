@@ -289,22 +289,42 @@ O app de estudo e as páginas de revisão usam **tokens diferentes**, guardados 
 chaves separadas (`espanhol-cards:github` e `espanhol-cards:github-revisao`), de
 modo que os dois convivem no mesmo navegador sem brigar.
 
+### O token, e por que ele é emprestado
+
+Um **fine-grained token só alcança recursos de um único dono** — você mesmo ou
+uma organização. A documentação do GitHub é explícita: ele *não* serve para
+repositório onde a pessoa é apenas colaboradora. Como `espanhol-cards-revisao`
+está numa conta pessoal, um token que o Yoisser criasse na conta dele nunca
+enxergaria esse repositório. As saídas seriam um token *classic* com escopo
+`repo` (que alcança tudo o que ele tem), mover o repositório para uma
+organização, ou emprestar o token.
+
+Optamos por **emprestar**: um único fine-grained token, criado por mim, com
+acesso **apenas** a `espanhol-cards-revisao` e permissão **Contents: Read and
+write**, usado nas duas páginas. O repositório não guarda nada sensível — só as
+decisões da revisão — e se o token vazar é só revogar e gerar outro. Em troca, o
+Yoisser não precisa nem criar conta no GitHub.
+
+Criar o token: `github.com/settings/personal-access-tokens/new` →
+**Repository access: Only select repositories** → `espanhol-cards-revisao` →
+**Permissions: Contents = Read and write**.
+
 ### O que passar ao Yoisser
 
 > Abre esta página: `gereneto.github.io/espanhol-cards/revisar-es-en.html`
 >
-> Abajo del todo hay un desplegable, «Conexión con GitHub». Necesitas un token
-> para que tus revisiones se guarden. Entra en
-> `github.com/settings/personal-access-tokens/new`, crea un **fine-grained
-> token**, dale acceso **solo** al repositorio `gereneto/espanhol-cards-revisao`
-> y permiso **Contents: Read and write**. Pega el token ahí y pulsa Guardar.
-> Ese token se queda solo en tu ordenador.
+> Abajo del todo hay un desplegable, «Conexión con GitHub». Pega ahí el token
+> que te mando aparte y pulsa Guardar — se queda solo en tu ordenador. No hace
+> falta que crees ninguna cuenta.
 >
-> Si no consigues crear el token, no pasa nada: revisa igual y pulsa
-> **Descargar archivo** al terminar — me mandas el `.json` y yo lo cargo.
+> Si el token te da problemas, revisa igual y pulsa **Descargar archivo** al
+> terminar: me mandas el `.json` y yo lo cargo.
 
 O botão **Importar arquivo** da página do Gere reconhece os dois formatos pelo
 campo `revisor`, então esse caminho manual funciona ponta a ponta sem token.
+
+Os cards que eu acrescentar depois chegam nele sozinhos: a página carrega o
+`data/cards.js` do próprio site, então basta dar push e pedir que recarregue.
 
 ## Estrutura
 
