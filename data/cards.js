@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-08-31",
+ "gerado_em": "2026-09-01",
  "total": 361,
  "cards": [
   {
@@ -2789,26 +2789,28 @@ window.CARDS_RAW = {
    "id": "f045",
    "tipo": "frase",
    "es": "Ojalá viniera mañana.",
-   "pt": "Tomara que ele viesse amanhã.",
+   "pt": "Quem me dera que ele viesse amanhã.",
    "aceitas": [
-    "tomara que ele viesse amanha",
+    "quem me dera que ele viesse amanha",
+    "quem dera que ele viesse amanha",
     "quem dera ele viesse amanha",
-    "oxala ele viesse amanha",
     "se ao menos ele viesse amanha",
+    "eu queria que ele viesse amanha",
+    "oxala ele viesse amanha",
     "quisera que ele viesse amanha"
    ],
    "distratores": [
-    "Tomara que ele venha amanhã (bem provável).",
-    "Ele virá amanhã.",
-    "Ele veio amanhã.",
-    "Ele deve vir amanhã."
+    "Tomara que ele venha amanhã.",
+    "Espero que ele chegue amanhã cedo.",
+    "Ele disse que viria amanhã.",
+    "Antes ele tivesse vindo ontem."
    ],
    "nivel": "C1",
    "tags": [
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Ojalá' + imperfeito do subjuntivo indica desejo pouco provável. Com presente do subjuntivo ('venga') seria mais provável."
+   "nota": "'Ojalá' + imperfeito do subjuntivo é desejo pouco provável; com o presente ('venga'), desejo plausível. Em português o par não é simétrico: 'tomara' é forma fossilizada (antigo mais-que-perfeito de 'tomar') e praticamente só admite presente do subjuntivo — 'tomara que ele venha' é natural, 'tomara que ele viesse' soa estranho. O desejo improvável sai por outro caminho: 'quem me dera que ele viesse', 'se ao menos ele viesse', 'eu queria que ele viesse' ou 'oxalá ele viesse' (mais literário, e cognato direto de 'ojalá' — ambos vêm do árabe law šāʾ Allāh)."
   },
   {
    "id": "f046",
