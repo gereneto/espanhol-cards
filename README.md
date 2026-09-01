@@ -123,16 +123,43 @@ Os cards ficam em `fonte/cards/*.json`. Cada um é assim:
   "tipo": "palavra",
   "es": "embarazada",
   "pt": "grávida",
+  "en": "pregnant",
   "aceitas": ["gravida", "prenha"],
+  "aceitasEn": ["pregnant", "expecting", "with child"],
   "distratores": ["envergonhada", "atrapalhada", "confusa", "embaraçada (cabelo)"],
+  "distratoresEn": ["embarrassed", "exhausted", "clumsy", "furious"],
   "nivel": "A2",
   "tags": ["falso-amigo"],
-  "nota": "Clássico falso amigo. 'Embarazada' = grávida. Envergonhada = 'avergonzada'."
+  "nota": "Clássico falso amigo. 'Embarazada' = grávida. Envergonhada = 'avergonzada'.",
+  "notaEn": "'Embarazada' means pregnant. To say you are embarrassed, use 'avergonzado'."
 }
 ```
 
 `pt` é a resposta mostrada; `aceitas` são as **outras maneiras de dizer a mesma
 coisa**, e é lá que se resolve a variação de tradução.
+
+### O lado inglês
+
+Cada card carrega também `en`, `aceitasEn`, `distratoresEn` e `notaEn` — e, nos
+cinquenta de conjugação, `formasEsEn`. É a base do site em inglês, e por
+enquanto serve à revisão (adiante). Três regras, que o `build.js` cobra:
+
+- **O inglês é tradução do espanhol, não do português.** Se saísse do `pt`, o
+  inglês herdaria justamente o erro que a revisão existe para pegar.
+- **Cada língua tem o seu formato.** O `en` tem a forma que o inglês pede, não a
+  que o `pt` tem: se uma palavra basta, é uma palavra. Barra só quando o
+  espanhol carrega mesmo dois sentidos (`cola` = "the tail / the queue"). E os
+  `distratoresEn` acompanham o `en`, não o `pt`.
+- **A `notaEn` não menciona o português.** Quem estuda em inglês não o tem como
+  referência: onde a nota portuguesa aponta um vizinho luso, a inglesa aponta os
+  vizinhos dentro do próprio espanhol (`polvo`/`pulpo`, `cena`/`escena`).
+
+Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
+infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
+
+As checagens de formato do lado inglês (contagem de `/`, parênteses,
+comprimento) saem como **aviso**, não como erro: em inglês elas são mais
+ruidosas, e quem decide de fato é a revisão.
 
 A resposta escrita cai em um de três baldes.
 
@@ -212,15 +239,90 @@ escolha**, **escrevendo em português**, **na volta (você produz o espanhol)** 
 mesmo recado de relance — cinza para o que nunca saiu, laranja para o que está
 em curso, verde para o que já foi vencido nas duas direções.
 
+## O circuito de revisão
+
+A tradução portuguesa nunca tinha passado por um falante nativo de espanhol, e o
+card `f045` mostrou como o erro entra: a resposta era um decalque do espanhol
+(«tomara que ele viesse») que soa estranho em português. A revisão usa o inglês
+como língua-ponte, em duas etapas independentes:
+
+1. **Yoisser** (venezuelano, professor de espanhol) confere `es → en`. Ele julga
+   se o inglês diz o que o espanhol diz. **Não vê o português** — é isso que
+   torna a conferência dele uma medida independente da tradução auditada.
+2. **Gere** confere `en → pt`, com o inglês já validado como referência.
+
+São duas páginas soltas, **não ligadas a partir do `index.html`**: só se chega
+por URL, e as duas levam `noindex`.
+
+| Quem | URL |
+|---|---|
+| Yoisser | `gereneto.github.io/espanhol-cards/revisar-es-en.html` |
+| Gere | `gereneto.github.io/espanhol-cards/revisar-en-pt.html` |
+
+Um card por vez. O Yoisser corrige a resposta, as variantes, os quatro
+distratores e a nota **nos próprios campos**, e decide entre *Aceptar todo*,
+*Guardar sugerencia* e *Proponer eliminar*, com um comentário livre em qualquer
+dos três casos. A tela dele é toda em espanhol.
+
+Na página do Gere aparecem **só os cards que o Yoisser já decidiu**: o espanhol,
+o inglês validado (com o que ele mudou marcado e o original riscado ao lado), e
+então o português a julgar — `pt`, `aceitas`, os quatro `distratores` e a `nota`.
+Marca-se **ok**, **rever** ou **apagar**, com observação. Há filtros para ver só
+os pendentes, só os que ele alterou, só os que ele quer excluir ou só os que ele
+comentou.
+
+### Onde os dados ficam
+
+Repositório **[espanhol-cards-revisao](https://github.com/gereneto/espanhol-cards-revisao)**,
+separado do de progresso:
+
+- `revisao-es-en.json` — o que o Yoisser decidiu. Guarda **só os campos que ele
+  mudou**, então o arquivo diz exatamente onde ele meteu a mão.
+- `revisao-en-pt.json` — o que o Gere marcou. O campo `base_en` guarda o inglês
+  que estava na tela na hora; se o Yoisser reeditar depois, a página avisa que o
+  inglês mudou desde a marcação.
+
+Cada decisão vai para o `localStorage` na hora e sobe ao GitHub a cada oito, mais
+ao fechar a aba. Nada se perde se a rede cair.
+
+O app de estudo e as páginas de revisão usam **tokens diferentes**, guardados em
+chaves separadas (`espanhol-cards:github` e `espanhol-cards:github-revisao`), de
+modo que os dois convivem no mesmo navegador sem brigar.
+
+### O que passar ao Yoisser
+
+> Abre esta página: `gereneto.github.io/espanhol-cards/revisar-es-en.html`
+>
+> Abajo del todo hay un desplegable, «Conexión con GitHub». Necesitas un token
+> para que tus revisiones se guarden. Entra en
+> `github.com/settings/personal-access-tokens/new`, crea un **fine-grained
+> token**, dale acceso **solo** al repositorio `gereneto/espanhol-cards-revisao`
+> y permiso **Contents: Read and write**. Pega el token ahí y pulsa Guardar.
+> Ese token se queda solo en tu ordenador.
+>
+> Si no consigues crear el token, no pasa nada: revisa igual y pulsa
+> **Descargar archivo** al terminar — me mandas el `.json` y yo lo cargo.
+
+O botão **Importar arquivo** da página do Gere reconhece os dois formatos pelo
+campo `revisor`, então esse caminho manual funciona ponta a ponta sem token.
+
 ## Estrutura
 
 ```
-index.html          telas
+index.html            telas do app de estudo
+revisar-es-en.html    revisão do Yoisser (só por URL)
+revisar-en-pt.html    revisão do Gere (só por URL)
 style.css
-js/motor.js         fila, tempos, conferência das respostas
-js/github.js        gravação no repositório de dados
-js/app.js           fluxo, painel, relatórios
-fonte/build.js      valida e gera o baralho
-fonte/cards/*.json  os cards
-data/cards.js       gerado — é o que o app carrega
+style-revisao.css     as telas de revisão
+js/motor.js           fila, tempos, conferência das respostas
+js/github.js          fábrica de clientes: GH (dados) e GH_REV (revisão)
+js/app.js             fluxo, painel, relatórios
+js/revisao.js         o que as duas páginas de revisão têm em comum
+js/revisar-es-en.js   a tela do Yoisser
+js/revisar-en-pt.js   a tela do Gere
+fonte/build.js        valida e gera o baralho, nas duas línguas
+fonte/cards/*.json    os cards
+fonte/tags.json       os temas em pt/en/es
+data/cards.js         gerado — é o que as páginas carregam
+data/tags.js          gerado
 ```

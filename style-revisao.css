@@ -1,0 +1,210 @@
+/* ────────────────────────────────────────────────────────────────
+   style-revisao.css — as duas telas de revisão.
+   Carregado depois de style.css, de onde herda o tema e as cores.
+   ──────────────────────────────────────────────────────────────── */
+
+.rev-topo{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:10px 16px;background:var(--fundo-2);border-bottom:1px solid var(--borda);
+  position:sticky;top:0;z-index:10;
+}
+.rev-topo .marca{font-weight:700;letter-spacing:.2px}
+.rev-topo .marca span{color:var(--acento)}
+.rev-progresso{
+  margin-left:auto;display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--texto-2);white-space:nowrap;
+}
+.rev-barra{
+  width:120px;height:6px;border-radius:999px;background:var(--fundo-3);overflow:hidden;
+}
+.rev-barra i{display:block;height:100%;background:var(--ok);width:0;transition:width .25s}
+
+.rev-corpo{max-width:760px;margin:0 auto;padding:20px 16px 60px;width:100%}
+
+/* ── instruções ── */
+.rev-instrucoes{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;
+  padding:14px 16px;margin-bottom:18px;
+}
+.rev-instrucoes summary{cursor:pointer;font-weight:600;font-size:15px}
+.rev-instrucoes[open] summary{margin-bottom:10px}
+.rev-instrucoes p{margin:8px 0;font-size:14px;line-height:1.6;color:var(--texto-2)}
+.rev-instrucoes strong{color:var(--texto)}
+.rev-instrucoes ul{margin:8px 0;padding-left:20px;font-size:14px;line-height:1.6;color:var(--texto-2)}
+.rev-instrucoes li{margin:5px 0}
+
+/* ── o card em revisão ── */
+.rev-card{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:var(--raio);
+  padding:20px;box-shadow:var(--sombra);
+}
+.rev-meta{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.rev-id{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+  color:var(--texto-2);background:var(--fundo);border:1px solid var(--borda);
+  border-radius:6px;padding:2px 7px;
+}
+
+.rev-origem{
+  background:var(--fundo);border:1px solid var(--borda);border-left:3px solid var(--acento-2);
+  border-radius:10px;padding:14px 16px;margin-bottom:18px;
+}
+.rev-origem .rev-rotulo{margin-bottom:6px}
+.rev-es{font-size:26px;font-weight:600;line-height:1.3}
+
+.rev-rotulo{
+  display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--texto-2);font-weight:600;
+}
+
+.rev-secao{margin-bottom:18px}
+.rev-secao > .rev-rotulo{margin-bottom:7px}
+
+.rev-campo{margin-bottom:12px}
+.rev-campo label{display:block;font-size:13px;color:var(--texto-2);margin-bottom:5px}
+.rev-campo input[type=text],
+.rev-campo textarea{
+  width:100%;background:var(--fundo);border:1px solid var(--borda);color:var(--texto);
+  border-radius:9px;padding:10px 12px;font:inherit;font-size:15px;
+}
+.rev-campo textarea{resize:vertical;min-height:74px;line-height:1.55}
+.rev-campo input[type=text]:focus,
+.rev-campo textarea:focus{outline:none;border-color:var(--acento)}
+/* campo que o revisor alterou nesta sessão */
+.rev-campo.mexido input[type=text],
+.rev-campo.mexido textarea{border-color:var(--acento);background:rgba(255,179,71,.06)}
+
+.rev-distratores{display:grid;gap:8px}
+.rev-distratores .rev-campo{margin:0}
+
+/* ── leitura, sem edição (a página do Gere) ── */
+.rev-leitura{
+  background:var(--fundo);border:1px solid var(--borda);border-radius:10px;
+  padding:12px 14px;margin-bottom:12px;
+}
+.rev-leitura .rev-rotulo{margin-bottom:6px}
+.rev-valor{font-size:17px;line-height:1.45}
+.rev-lista{margin:6px 0 0;padding-left:20px;font-size:14.5px;line-height:1.7;color:var(--texto-2)}
+.rev-lista li{margin:2px 0}
+.rev-nota{font-size:14px;line-height:1.65;color:var(--texto-2);margin:6px 0 0}
+
+/* inglês que o Yoisser corrigiu: mostra o antes ao lado do depois */
+.rev-alterado{border-left:3px solid var(--acento);background:rgba(255,179,71,.05)}
+.rev-antes{
+  margin:7px 0 0;font-size:13.5px;color:var(--texto-2);
+  text-decoration:line-through;text-decoration-color:var(--erro);
+}
+.rev-selo-alterado{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;
+  color:var(--acento);border:1px solid var(--acento);border-radius:999px;padding:2px 8px;
+}
+.rev-selo-apagar{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;
+  color:var(--erro);border:1px solid var(--erro);border-radius:999px;padding:2px 8px;
+}
+.rev-comentario-revisor{
+  background:rgba(255,179,71,.07);border:1px solid rgba(255,179,71,.35);
+  border-radius:10px;padding:11px 13px;margin-bottom:12px;
+}
+.rev-comentario-revisor .rev-rotulo{color:var(--acento);margin-bottom:5px}
+.rev-comentario-revisor p{margin:0;font-size:14.5px;line-height:1.6}
+
+/* ── barra de decisão ── */
+.rev-decisao{
+  display:flex;gap:9px;flex-wrap:wrap;margin-top:20px;
+  padding-top:18px;border-top:1px solid var(--borda);
+}
+.rev-decisao button{
+  flex:1 1 150px;border-radius:10px;padding:12px 14px;font:inherit;font-size:15px;
+  font-weight:600;cursor:pointer;border:1px solid var(--borda);
+  background:var(--fundo-3);color:var(--texto);transition:border-color .12s,background .12s;
+}
+.rev-decisao button:hover{border-color:var(--texto-2)}
+.rev-decisao .aceitar{border-color:rgba(61,220,151,.5);color:var(--ok);background:rgba(61,220,151,.08)}
+.rev-decisao .aceitar:hover{border-color:var(--ok);background:rgba(61,220,151,.16)}
+.rev-decisao .sugerir{border-color:rgba(255,179,71,.5);color:var(--acento);background:rgba(255,179,71,.08)}
+.rev-decisao .sugerir:hover{border-color:var(--acento);background:rgba(255,179,71,.16)}
+.rev-decisao .apagar{border-color:rgba(255,107,107,.45);color:var(--erro);background:rgba(255,107,107,.08)}
+.rev-decisao .apagar:hover{border-color:var(--erro);background:rgba(255,107,107,.16)}
+
+/* o que já foi decidido neste card */
+.rev-ja{
+  margin-top:14px;font-size:13.5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.rev-ja .estado{font-weight:600}
+.rev-ja .estado.aceito,.rev-ja .estado.ok{color:var(--ok)}
+.rev-ja .estado.sugerido,.rev-ja .estado.rever{color:var(--acento)}
+.rev-ja .estado.apagar{color:var(--erro)}
+.rev-ja button{
+  background:none;border:none;color:var(--texto-2);text-decoration:underline;
+  cursor:pointer;font:inherit;font-size:13px;padding:0;
+}
+.rev-ja button:hover{color:var(--texto)}
+
+/* ── navegação ── */
+.rev-nav{display:flex;gap:9px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.rev-nav button{
+  background:var(--fundo-2);border:1px solid var(--borda);color:var(--texto);
+  border-radius:9px;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer;
+}
+.rev-nav button:hover:not(:disabled){border-color:var(--texto-2)}
+.rev-nav button:disabled{opacity:.4;cursor:default}
+.rev-nav .espaco{margin-left:auto}
+.rev-nav input[type=number]{
+  width:74px;background:var(--fundo);border:1px solid var(--borda);color:var(--texto);
+  border-radius:9px;padding:9px 10px;font:inherit;font-size:14px;
+}
+
+/* ── filtros (só na página do Gere) ── */
+.rev-filtros{
+  display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;
+  padding:12px 14px;margin-bottom:16px;font-size:14px;
+}
+.rev-filtros label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--texto-2)}
+.rev-filtros select{
+  background:var(--fundo);border:1px solid var(--borda);color:var(--texto);
+  border-radius:8px;padding:8px 10px;font:inherit;font-size:14px;
+}
+
+/* ── rodapé com o token ── */
+.rev-config{
+  max-width:760px;margin:26px auto 0;padding:0 16px 40px;width:100%;
+}
+.rev-config details{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;padding:14px 16px;
+}
+.rev-config summary{cursor:pointer;font-size:14px;color:var(--texto-2)}
+.rev-config[data-pronto=nao] summary{color:var(--acento)}
+.rev-config .ajuda{font-size:13.5px;line-height:1.65;color:var(--texto-2);margin:10px 0}
+.rev-config label{display:block;margin:10px 0;font-size:13px;color:var(--texto-2)}
+.rev-config input{
+  width:100%;margin-top:5px;background:var(--fundo);border:1px solid var(--borda);
+  color:var(--texto);border-radius:9px;padding:10px 12px;font:inherit;font-size:14px;
+}
+.rev-config .linha-botoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.rev-config button{
+  background:var(--fundo-3);border:1px solid var(--borda);color:var(--texto);
+  border-radius:9px;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer;
+}
+.rev-config button:hover{border-color:var(--texto-2)}
+.rev-config code{
+  background:var(--fundo);border:1px solid var(--borda);border-radius:5px;
+  padding:1px 5px;font-size:13px;
+}
+
+.rev-estado{margin-top:12px;font-size:13.5px;min-height:1.2em;color:var(--texto-2)}
+.rev-estado.ok{color:var(--ok)}
+.rev-estado.erro{color:var(--erro)}
+
+.rev-vazio{
+  text-align:center;color:var(--texto-2);font-size:15.5px;line-height:1.7;
+  padding:48px 20px;background:var(--fundo-2);border:1px solid var(--borda);
+  border-radius:var(--raio);
+}
+
+@media (max-width:560px){
+  .rev-es{font-size:22px}
+  .rev-decisao button{flex:1 1 100%}
+  .rev-progresso{width:100%;margin-left:0}
+}

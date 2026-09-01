@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12141c">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<title>Revisión español · inglés</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇪</text></svg>">
+<link rel="stylesheet" href="style.css?v=aeb4671f">
+<link rel="stylesheet" href="style-revisao.css?v=aeb4671f">
+</head>
+<body>
+
+<header class="rev-topo">
+  <div class="marca">Revisión <span>ES → EN</span></div>
+  <div class="rev-progresso">
+    <span id="contagem">…</span>
+    <span class="rev-barra"><i id="barra"></i></span>
+  </div>
+</header>
+
+<main class="rev-corpo">
+
+  <details class="rev-instrucoes" id="instrucoes" open>
+    <summary>Cómo funciona esto</summary>
+    <p>
+      Esto es un mazo de <strong>fichas de vocabulario español</strong> para
+      estudiantes. Cada ficha muestra una palabra o una frase en español y pide
+      su traducción. La traducción inglesa la escribí yo, y necesito que la
+      revises: <strong>¿dice el inglés lo mismo que dice el español?</strong>
+    </p>
+    <p>Cada ficha tiene cuatro partes, y las cuatro se pueden corregir aquí mismo:</p>
+    <ul>
+      <li><strong>La respuesta</strong> — la traducción que el estudiante tiene que dar.</li>
+      <li><strong>Las variantes aceptadas</strong> — otras maneras de decir lo mismo,
+        que el programa también dará por buenas. Van en minúsculas y sin puntuación.</li>
+      <li><strong>Los cuatro distractores</strong> — las opciones falsas del test.
+        Tienen que ser <em>creíbles pero inequívocamente incorrectas</em>: si una
+        pudiera defenderse como correcta, hay que cambiarla. Además deben tener
+        la misma forma que la respuesta (parecido número de palabras, y barra «/»
+        solo si la respuesta también la lleva), para que no se acierte por
+        descarte.</li>
+      <li><strong>La nota</strong> — lo que el estudiante lee después de responder.
+        Habla del español: uso, matiz, en qué países se dice de otra manera,
+        y qué palabras españolas se confunden entre sí.</li>
+    </ul>
+    <p>
+      Corrige lo que haga falta y pulsa <strong>Guardar sugerencia</strong>. Si la
+      ficha está bien tal cual, <strong>Aceptar todo</strong>. Y si la ficha entera
+      te parece mala, confusa o no vale la pena enseñarla,
+      <strong>Proponer eliminar</strong>. Puedes dejar un comentario en cualquiera
+      de los tres casos.
+    </p>
+    <p>
+      No hace falta terminar de una vez: todo queda guardado en este navegador y
+      se sube solo. Puedes cerrar y volver cuando quieras.
+    </p>
+  </details>
+
+  <div id="tela"></div>
+
+  <div class="rev-nav" id="nav">
+    <button id="btn-anterior" type="button">← Anterior</button>
+    <button id="btn-proximo" type="button">Siguiente →</button>
+    <button id="btn-pendente" type="button">Saltar a la primera sin revisar</button>
+    <span class="espaco"></span>
+    <input type="number" id="ir-para" min="1" placeholder="nº">
+    <button id="btn-ir" type="button">Ir</button>
+  </div>
+
+</main>
+
+<div class="rev-config" id="config" data-pronto="nao">
+  <details id="det-config">
+    <summary id="resumo-config">Conexión con GitHub — pulsa aquí para configurarla</summary>
+    <p class="ajuda">
+      Tus revisiones se guardan en el repositorio
+      <code>gereneto/espanhol-cards-revisao</code>. Para poder escribir ahí, el
+      navegador necesita un <em>token</em> tuyo, que se queda solo en este
+      ordenador y no se envía a ningún otro sitio.
+    </p>
+    <p class="ajuda">
+      Crea un <strong>fine-grained token</strong> en
+      <code>github.com/settings/personal-access-tokens/new</code>, dale acceso
+      <strong>únicamente</strong> a ese repositorio y permiso
+      <strong>Contents: Read and write</strong>. Pega el token abajo y pulsa Guardar.
+    </p>
+    <label>Repositorio
+      <input type="text" id="cfg-repo" placeholder="gereneto/espanhol-cards-revisao">
+    </label>
+    <label>Token
+      <input type="password" id="cfg-token" placeholder="github_pat_…" autocomplete="off">
+    </label>
+    <div class="linha-botoes">
+      <button id="btn-salvar-cfg" type="button">Guardar</button>
+      <button id="btn-enviar" type="button">Subir ahora</button>
+      <button id="btn-baixar" type="button">Traer lo ya revisado</button>
+      <button id="btn-exportar" type="button">Descargar archivo</button>
+      <button id="btn-importar" type="button">Cargar archivo</button>
+      <input type="file" id="arquivo-importar" accept="application/json" hidden>
+    </div>
+    <p class="rev-estado" id="estado"></p>
+  </details>
+</div>
+
+<script src="data/cards.js?v=aeb4671f"></script>
+<script src="data/tags.js?v=aeb4671f"></script>
+<script src="js/github.js?v=aeb4671f"></script>
+<script src="js/revisao.js?v=aeb4671f"></script>
+<script src="js/revisar-es-en.js?v=aeb4671f"></script>
+</body>
+</html>

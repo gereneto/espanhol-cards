@@ -1,14 +1,21 @@
 /* ────────────────────────────────────────────────────────────────
-   github.js — grava os resultados no repositório de dados.
+   github.js — lê e grava arquivos num repositório do GitHub.
 
    O token fica só no localStorage deste navegador. Use um
-   fine-grained token com acesso apenas ao repositório de dados e
+   fine-grained token com acesso apenas ao repositório em questão e
    permissão Contents: Read and write.
-   ──────────────────────────────────────────────────────────────── */
-window.GH = (function () {
 
-  const CHAVE = 'espanhol-cards:github';
-  const PADRAO = { repo: 'gereneto/espanhol-cards-dados', token: '', auto: true };
+   São dois repositórios diferentes, cada um com sua chave no
+   localStorage, para as configurações não brigarem entre si quando o
+   app de estudo e as páginas de revisão rodam no mesmo navegador:
+
+     GH      → espanhol-cards-dados    (progresso do estudo)
+     GH_REV  → espanhol-cards-revisao  (a revisão es-en e en-pt)
+   ──────────────────────────────────────────────────────────────── */
+function criarGH(opcoesGH) {
+
+  const CHAVE = opcoesGH.chave;
+  const PADRAO = { repo: opcoesGH.repoPadrao, token: '', auto: true };
 
   function cfg() {
     try {
@@ -115,4 +122,16 @@ window.GH = (function () {
   }
 
   return { cfg, salvarCfg, configurado, ler, escrever, paraBase64, deBase64 };
-})();
+}
+
+window.criarGH = criarGH;
+
+window.GH = criarGH({
+  chave: 'espanhol-cards:github',
+  repoPadrao: 'gereneto/espanhol-cards-dados'
+});
+
+window.GH_REV = criarGH({
+  chave: 'espanhol-cards:github-revisao',
+  repoPadrao: 'gereneto/espanhol-cards-revisao'
+});

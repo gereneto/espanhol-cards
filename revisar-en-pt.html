@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12141c">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<title>Revisão inglês · português</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇧🇷</text></svg>">
+<link rel="stylesheet" href="style.css?v=aeb4671f">
+<link rel="stylesheet" href="style-revisao.css?v=aeb4671f">
+</head>
+<body>
+
+<header class="rev-topo">
+  <div class="marca">Revisão <span>EN → PT</span></div>
+  <div class="rev-progresso">
+    <span id="contagem">…</span>
+    <span class="rev-barra"><i id="barra"></i></span>
+  </div>
+</header>
+
+<main class="rev-corpo">
+
+  <details class="rev-instrucoes" id="instrucoes" open>
+    <summary>Como esta página funciona</summary>
+    <p>
+      Aqui só aparecem os cards que o <strong>Yoisser já conferiu</strong> do lado
+      espanhol-inglês. O inglês que você lê é a versão aprovada por ele — quando
+      ele corrigiu alguma coisa, o card vem marcado e mostra o que estava antes.
+    </p>
+    <p>
+      Seu trabalho é o <strong>português</strong>: lendo o espanhol e o inglês
+      validado, a tradução portuguesa diz a mesma coisa? Os distratores continuam
+      plausíveis e inequivocamente errados? A nota está certa?
+    </p>
+    <p>
+      Marque <strong>ok</strong>, <strong>rever</strong> ou <strong>apagar</strong>,
+      com uma observação quando fizer diferença. Os cards que o Yoisser propôs
+      excluir chegam sinalizados, para você confirmar ou manter.
+    </p>
+  </details>
+
+  <div class="rev-filtros" id="filtros">
+    <label>Mostrar
+      <select id="filtro-situacao">
+        <option value="pendentes">só os que ainda não marquei</option>
+        <option value="todos">todos os revisados pelo Yoisser</option>
+        <option value="alterados">só os que ele alterou</option>
+        <option value="apagar">só os que ele quer excluir</option>
+        <option value="comentario">só os que ele comentou</option>
+        <option value="rever">só os que eu marquei para rever</option>
+      </select>
+    </label>
+    <label>Tipo
+      <select id="filtro-tipo">
+        <option value="">todos</option>
+        <option value="palavra">palavras</option>
+        <option value="frase">frases</option>
+      </select>
+    </label>
+    <label>Nível
+      <select id="filtro-nivel"><option value="">todos</option></select>
+    </label>
+  </div>
+
+  <div id="tela"></div>
+
+  <div class="rev-nav" id="nav">
+    <button id="btn-anterior" type="button">← Anterior</button>
+    <button id="btn-proximo" type="button">Próximo →</button>
+    <button id="btn-pendente" type="button">Pular para o primeiro sem marca</button>
+    <span class="espaco"></span>
+    <input type="number" id="ir-para" min="1" placeholder="nº">
+    <button id="btn-ir" type="button">Ir</button>
+  </div>
+
+</main>
+
+<div class="rev-config" id="config" data-pronto="nao">
+  <details id="det-config">
+    <summary id="resumo-config">Conexão com o GitHub — clique para configurar</summary>
+    <p class="ajuda">
+      Esta página lê <code>revisao-es-en.json</code> e grava
+      <code>revisao-en-pt.json</code> em
+      <code>gereneto/espanhol-cards-revisao</code>. É um token diferente do que o
+      app de estudo usa, guardado numa chave própria — os dois não brigam.
+    </p>
+    <label>Repositório
+      <input type="text" id="cfg-repo" placeholder="gereneto/espanhol-cards-revisao">
+    </label>
+    <label>Token do GitHub
+      <input type="password" id="cfg-token" placeholder="github_pat_…" autocomplete="off">
+    </label>
+    <div class="linha-botoes">
+      <button id="btn-salvar-cfg" type="button">Salvar</button>
+      <button id="btn-enviar" type="button">Enviar agora</button>
+      <button id="btn-baixar" type="button">Recarregar do GitHub</button>
+      <button id="btn-exportar" type="button">Exportar arquivo</button>
+      <button id="btn-importar" type="button">Importar arquivo</button>
+      <input type="file" id="arquivo-importar" accept="application/json" hidden>
+    </div>
+    <p class="ajuda">
+      Se o Yoisser ainda não conseguiu configurar o token dele, peça o arquivo
+      <code>revisao-es-en.json</code> exportado e carregue aqui em
+      <strong>Importar arquivo</strong> — a página reconhece os dois formatos.
+    </p>
+    <p class="rev-estado" id="estado"></p>
+  </details>
+</div>
+
+<script src="data/cards.js?v=aeb4671f"></script>
+<script src="data/tags.js?v=aeb4671f"></script>
+<script src="js/github.js?v=aeb4671f"></script>
+<script src="js/revisao.js?v=aeb4671f"></script>
+<script src="js/revisar-en-pt.js?v=aeb4671f"></script>
+</body>
+</html>
