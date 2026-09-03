@@ -1,9 +1,12 @@
 /* ────────────────────────────────────────────────────────────────
    motor.js — estado dos cards e gestão da fila.
 
-   Não há repetição espaçada por datas: existe uma fila única.
-   Ao responder, o card é reinserido mais adiante na fila.
-   Quanto mais fácil foi a resposta, mais longe ele vai.
+   Existe uma fila única. Ao responder, o card é reinserido mais adiante
+   nela; quanto mais fácil foi a resposta, mais longe ele vai.
+
+   A única exceção é o card já dominado nas duas direções: esse ganha uma
+   data de retorno, que cresce a cada revisão certa. Nunca sai do baralho —
+   só espera mais (ver DIAS_DOMINADO).
    ──────────────────────────────────────────────────────────────── */
 window.Motor = (function () {
 
@@ -333,8 +336,43 @@ window.Motor = (function () {
       errosSeguidos: 0,    // erros consecutivos
       conhecia: null,      // última resposta à pergunta "já conhecia?"
       ultima: null,        // ISO da última vez que apareceu
+      revisoes: 0,         // revisões certas já feitas depois de dominado
+      voltaEm: null,       // ISO: só o card dominado espera uma data
+      porModo: contadoresPorModo(),
       historico: []        // últimas 12 respostas
     };
+  }
+
+  /* O histórico guarda só as últimas 12 respostas — bom para mostrar o
+     percurso recente, ruim para somar. Estes contadores não truncam, e é
+     deles que o painel tira "escolher x escrever". */
+  function contadoresPorModo() {
+    return { multipla: { n: 0, certas: 0 }, escrita: { n: 0, certas: 0 } };
+  }
+
+  /* ── o intervalo do card maduro ──
+     Dominado não quer dizer aposentado. Acertar três vezes seguidas com o
+     card voltando de dois em dois dias não prova memória de longo prazo —
+     prova que ele ainda estava fresco. Então o card continua no baralho para
+     sempre, e o que cresce é a espera: 3 dias, 1 semana, 2, 1 mês, 3 meses,
+     meio ano. Errar devolve ao começo da escada, e o card sai de dominado.
+
+     É a única parte do app que olha o calendário, e só para os maduros. A
+     fila tem 361 cards e todo card respondido volta para ela, então sem data
+     o intervalo máximo seria uma passada pelo baralho — perto demais. */
+  const DIAS_DOMINADO = [3, 7, 14, 30, 90, 180];
+
+  function proximaVolta(revisoes, agora) {
+    const dias = DIAS_DOMINADO[Math.min(revisoes || 0, DIAS_DOMINADO.length - 1)];
+    const d = agora ? new Date(agora) : new Date();
+    d.setDate(d.getDate() + dias);
+    return d.toISOString();
+  }
+
+  /* O card ainda está de molho? Só o dominado tem voltaEm. */
+  function esperando(est, agora) {
+    if (!est || !est.voltaEm) return false;
+    return est.voltaEm > (agora || new Date().toISOString());
   }
 
   /* Quantas posições à frente o card volta para a fila.
@@ -356,8 +394,12 @@ window.Motor = (function () {
       if (r.velocidade === 'lento') base = 35;
       else if (r.velocidade === 'medio') base = 60;
       else base = 110;
-      if (est.seguidas >= 3) base *= 2;   // já está dominado
+      if (est.seguidas >= 3) base *= 2;   // acabou de fechar a direção
     }
+
+    /* O maduro vai para o fim da fila e espera a data dele. A distância aqui
+       só evita que ele fique rondando a frente entre uma espera e outra. */
+    if (est.etapa === 'dominado') base = Math.max(base, 400);
 
     if (r.acertou) {
       if (r.conhecia === 'sim') base *= 1.3;
@@ -381,6 +423,19 @@ window.Motor = (function () {
     est.vistas++;
     est.ultima = new Date().toISOString();
 
+    /* Progresso gravado antes destes contadores existirem não os tem. Semeia
+       com o que o histórico ainda guarda — é menos do que houve, mas é o que
+       sobrou, e daqui para a frente a conta passa a ser exata. */
+    if (!est.porModo) {
+      est.porModo = contadoresPorModo();
+      (est.historico || []).forEach(h => {
+        const x = est.porModo[h.modo];
+        if (x) { x.n++; if (h.acertou) x.certas++; }
+      });
+    }
+    const noModo = est.porModo[r.modo];
+    if (noModo) { noModo.n++; if (r.acertou) noModo.certas++; }
+
     if (r.acertou) {
       est.acertos++;
       est.seguidas++;
@@ -396,19 +451,31 @@ window.Motor = (function () {
        direção. Errar devolve para a múltipla escolha da direção em que está
        — quem já provou o espanhol→português não volta à estaca zero. */
     const inversa = r.direcao === 'pt-es';
+    const jaDominado = est.etapa === 'dominado';
     if (r.acertou) {
-      if (r.modo === 'multipla') {
+      if (jaDominado) {
+        /* Card maduro que voltou depois da espera e foi acertado: continua
+           dominado, e a próxima espera fica mais longa. Antes ele caía para
+           'inversa-escrita' e precisava reconquistar as três seguidas — o
+           contador de dominados encolhia justamente quando se acertava. */
+        est.revisoes = (est.revisoes || 0) + 1;
+      } else if (r.modo === 'multipla') {
         if (inversa) est.etapa = 'inversa-escrita';
         else est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
       } else if (est.seguidas >= 3) {
         est.etapa = inversa ? 'dominado' : 'inversa-multipla';
         est.seguidas = 0;   // a direção nova começa do zero
+        if (inversa) est.revisoes = 0;   // acabou de amadurecer: escada do zero
       } else {
         est.etapa = inversa ? 'inversa-escrita' : 'escrita';
       }
     } else {
       est.etapa = inversa ? 'inversa-multipla' : 'multipla';
+      est.revisoes = 0;
     }
+
+    /* Só o maduro espera por data; qualquer outro volta pela fila e mais nada. */
+    est.voltaEm = est.etapa === 'dominado' ? proximaVolta(est.revisoes, est.ultima) : null;
 
     // a estreia é a única medida limpa do que já se sabia antes do app
     if (est.vistas === 1) est.primeiraCerta = !!r.acertou;
@@ -614,7 +681,8 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     linguaDaPergunta, linguaDaResposta,
-    distanciaNaFila, montarFila, alternativas, embaralhar,
+    distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
+    montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
   };

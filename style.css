@@ -207,6 +207,8 @@ table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:22px}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--borda)}
 th{color:var(--texto-2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* a linha de totais fecha a tabela: sem borda embaixo e um pouco mais firme */
+tr.soma td{border-bottom:none;border-top:1px solid var(--borda);font-weight:600;color:var(--texto)}
 .barra{height:6px;background:var(--fundo-3);border-radius:99px;overflow:hidden;min-width:60px}
 .barra i{display:block;height:100%;background:var(--ok)}
 

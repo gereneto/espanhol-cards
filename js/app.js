@@ -129,7 +129,21 @@
   function proximoCard() {
     if (!progresso.fila.length) progresso.fila = Motor.montarFila(CARDS);
 
-    const id = progresso.fila.shift();
+    /* O card dominado espera a data dele. Pego o primeiro da fila que já
+       venceu, sem remexer na ordem dos outros. Se todos estiverem de molho
+       — baralho pequeno, ou você estudou tudo hoje — vai o de data mais
+       próxima: ficar sem card nenhum seria pior do que adiantar um. */
+    const agora = new Date().toISOString();
+    let i = progresso.fila.findIndex(id => !Motor.esperando(progresso.cards[id], agora));
+    if (i < 0) {
+      i = 0;
+      progresso.fila.forEach((id, k) => {
+        const atual = progresso.cards[progresso.fila[i]], outro = progresso.cards[id];
+        if (outro && atual && outro.voltaEm < atual.voltaEm) i = k;
+      });
+    }
+
+    const id = progresso.fila.splice(i, 1)[0];
     cardAtual = PORID[id];
     if (!cardAtual) return proximoCard();
 
@@ -487,18 +501,12 @@
     const sabiaMesmo = dePrimeira.filter(id => progresso.cards[id].conhecia !== 'nao');
     const deduziu = dePrimeira.length - sabiaMesmo.length;
 
-    const tempos = [];
-    ids.forEach(id => (progresso.cards[id].historico || []).forEach(h => {
-      if (!h.pausado) tempos.push(h.ms);
-    }));
-    const mediaSeg = tempos.length
-      ? (tempos.reduce((a, b) => a + b, 0) / tempos.length / 1000).toFixed(1) : '—';
-
     const etapaDe = id => progresso.cards[id].etapa;
     const dominados = ids.filter(id => etapaDe(id) === 'dominado').length;
     const naInversa = ids.filter(id => ['consolidado', 'inversa-multipla', 'inversa-escrita'].includes(etapaDe(id))).length;
 
-    /* Aprendido aqui: você não conhecia, e hoje já escreve certo. */
+    /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
+       separado do que você já trazia de casa. */
     const aprendidos = ids.filter(id => {
       const e = progresso.cards[id];
       return e.conhecia === 'nao' && e.acertos > 0 && e.etapa !== 'multipla';
@@ -507,11 +515,10 @@
     let html = '<div class="grade">' +
       metrica(ids.length + '/' + CARDS.length, 'cards já vistos') +
       metrica(pctDe(dePrimeira.length, estreados.length), 'acertou de primeira') +
-      metrica(taxa + '%', 'acerto geral') +
-      metrica(aprendidos, 'aprendidos aqui') +
+      metrica(taxa + '%', 'acerto geral (' + t.respostas + ' respostas)') +
+      metrica(aprendidos, 'não conhecia e hoje acerta') +
       metrica(naInversa, 'já indo para o espanhol') +
       metrica(dominados, 'dominados nas duas direções') +
-      metrica(mediaSeg + 's', 'tempo médio') +
       '</div>';
 
     if (estreados.length) {
@@ -521,10 +528,10 @@
         '</b> cards que ainda não apareceram.</p>';
     }
 
+    html += tabelaEtapas();
     html += tabelaNivel();
     html += tabelaModo();
     html += tabelaPor('Por tipo', c => c.tipo, ['palavra', 'frase']);
-    html += tabelaTema();
 
     el['painel-conteudo'].innerHTML = html;
     mostrar('tela-painel');
@@ -539,8 +546,66 @@
       '</div><div class="rotulo">' + rotulo + '</div></div>';
   }
 
+  /* Em que pé estão os cards de cada nível. É a foto do baralho: quantos
+     ainda não saíram, quantos estão no meio do caminho e quantos já
+     venceram as duas direções. */
+  const ETAPAS = [
+    { chave: 'novo',       rotulo: 'Inéditos'   },
+    { chave: 'multipla',   rotulo: 'Múltipla'   },
+    { chave: 'escrita',    rotulo: 'Escrevendo' },
+    { chave: 'invertido',  rotulo: 'Na volta'   },
+    { chave: 'dominado',   rotulo: 'Dominados'  }
+  ];
+
+  function tabelaEtapas() {
+    const g = {};
+    Motor.NIVEIS.forEach(n => {
+      g[n] = { total: 0 };
+      ETAPAS.forEach(e => (g[n][e.chave] = 0));
+    });
+
+    CARDS.forEach(c => {
+      const x = g[c.nivel]; if (!x) return;
+      x.total++;
+      const e = progresso.cards[c.id];
+      if (!e || !e.vistas) { x.novo++; return; }
+      if (e.etapa === 'dominado') { x.dominado++; return; }
+      if (Motor.direcaoDe(e) === 'pt-es') { x.invertido++; return; }
+      if (Motor.modoDe(e) === 'escrita') { x.escrita++; return; }
+      x.multipla++;
+    });
+
+    const niveis = Motor.NIVEIS.filter(n => g[n].total);
+    if (!niveis.length) return '';
+
+    const soma = ch => niveis.reduce((a, n) => a + g[n][ch], 0);
+    const celula = v => '<td class="num">' + (v || '·') + '</td>';
+
+    const linhas = niveis.map(n =>
+      '<tr><td>' + n + '</td>' +
+      ETAPAS.map(e => celula(g[n][e.chave])).join('') +
+      '<td class="num">' + g[n].total + '</td></tr>'
+    ).join('');
+
+    return '<h3>Em que pé está cada nível</h3>' +
+      '<p class="legenda">Cada card percorre múltipla escolha, escrita em português, ' +
+      'a volta em que você produz o espanhol, e por fim dominado — que não é ' +
+      'aposentadoria: ele continua voltando, só que cada vez mais espaçado.</p>' +
+      '<table><tr><th>Nível</th>' +
+      ETAPAS.map(e => '<th class="num">' + e.rotulo + '</th>').join('') +
+      '<th class="num">Total</th></tr>' + linhas +
+      '<tr class="soma"><td>Todos</td>' +
+      ETAPAS.map(e => celula(soma(e.chave))).join('') +
+      '<td class="num">' + soma('total') + '</td></tr></table>';
+  }
+
   /* Por nível, separando a estreia das respostas seguintes: a estreia diz
-     o que você já trazia, o resto diz o quanto está fixando. */
+     o que você já trazia, o resto diz o quanto está fixando.
+
+     Os números saem dos contadores do card (vistas, acertos, primeiraCerta),
+     e não do histórico: o histórico guarda só as últimas 12 respostas, então
+     em card muito praticado o historico[0] já não é a estreia — e era isso
+     que fazia a coluna "de primeira" mentir justamente onde havia mais dado. */
   function tabelaNivel() {
     const g = {};
     Motor.NIVEIS.forEach(n => (g[n] = { vistos: 0, estreias: 0, certasEstreia: 0, depois: 0, certasDepois: 0 }));
@@ -549,11 +614,15 @@
       const c = PORID[id]; if (!c) return;
       const e = progresso.cards[id];
       const x = g[c.nivel];
+      if (!e.vistas) return;
       x.vistos++;
-      (e.historico || []).forEach((h, i) => {
-        if (i === 0) { x.estreias++; if (h.acertou) x.certasEstreia++; }
-        else { x.depois++; if (h.acertou) x.certasDepois++; }
-      });
+      if (e.primeiraCerta !== undefined) {
+        x.estreias++;
+        if (e.primeiraCerta) x.certasEstreia++;
+      }
+      /* tudo o que veio depois da estreia */
+      x.depois += Math.max(0, e.vistas - 1);
+      x.certasDepois += Math.max(0, e.acertos - (e.primeiraCerta ? 1 : 0));
     });
 
     const linhas = Motor.NIVEIS.filter(n => g[n].vistos).map(n => {
@@ -575,50 +644,24 @@
 
   /* Escolher entre cinco é bem mais fácil que escrever do zero. */
   function tabelaModo() {
-    const g = { multipla: { n: 0, certas: 0, ms: 0, msN: 0 }, escrita: { n: 0, certas: 0, ms: 0, msN: 0 } };
+    const g = { multipla: { n: 0, certas: 0 }, escrita: { n: 0, certas: 0 } };
     Object.keys(progresso.cards).forEach(id => {
-      (progresso.cards[id].historico || []).forEach(h => {
-        const x = g[h.modo]; if (!x) return;
-        x.n++; if (h.acertou) x.certas++;
-        if (!h.pausado) { x.ms += h.ms; x.msN++; }
+      const pm = progresso.cards[id].porModo || {};
+      Object.keys(g).forEach(k => {
+        if (!pm[k]) return;
+        g[k].n += pm[k].n;
+        g[k].certas += pm[k].certas;
       });
     });
     const rotulos = { multipla: 'escolhendo entre 5', escrita: 'escrevendo' };
     const linhas = Object.keys(g).filter(k => g[k].n).map(k => {
       const x = g[k];
       return '<tr><td>' + rotulos[k] + '</td><td class="num">' + x.n + '</td>' +
-        '<td class="num">' + pctDe(x.certas, x.n) + '</td>' +
-        '<td class="num">' + (x.msN ? (x.ms / x.msN / 1000).toFixed(1) + 's' : '—') + '</td></tr>';
+        '<td class="num">' + pctDe(x.certas, x.n) + '</td></tr>';
     }).join('');
     if (!linhas) return '';
     return '<h3>Escolher x escrever</h3><table><tr><th>Modo</th><th class="num">Respostas</th>' +
-      '<th class="num">Acerto</th><th class="num">Tempo médio</th></tr>' + linhas + '</table>';
-  }
-
-  function tabelaTema() {
-    const g = {};
-    Object.keys(progresso.cards).forEach(id => {
-      const c = PORID[id]; if (!c) return;
-      (c.tags || []).forEach(tag => {
-        const x = g[tag] || (g[tag] = { cards: 0, certas: 0, total: 0 });
-        x.cards++;
-        (progresso.cards[id].historico || []).forEach(h => {
-          x.total++; if (h.acertou) x.certas++;
-        });
-      });
-    });
-    const temas = Object.keys(g).filter(k => g[k].total >= 3)
-      .sort((a, b) => (g[a].certas / g[a].total) - (g[b].certas / g[b].total));
-    if (!temas.length) return '';
-    const linhas = temas.map(k => {
-      const pct = Math.round(100 * g[k].certas / g[k].total);
-      return '<tr><td>' + escapar(k) + '</td><td class="num">' + g[k].cards + '</td>' +
-        '<td class="num">' + pct + '%</td>' +
-        '<td><div class="barra"><i style="width:' + pct + '%"></i></div></td></tr>';
-    }).join('');
-    return '<h3>Por tema</h3><p class="legenda">Do mais difícil para o mais fácil.</p>' +
-      '<table><tr><th>Tema</th><th class="num">Cards</th><th class="num">Acerto</th><th></th></tr>' +
-      linhas + '</table>';
+      '<th class="num">Acerto</th></tr>' + linhas + '</table>';
   }
 
   function tabelaPor(titulo, chave, ordem) {
@@ -627,10 +670,12 @@
       const c = PORID[id]; if (!c) return;
       const k = chave(c);
       const g = grupos[k] || (grupos[k] = { certas: 0, total: 0, cards: 0 });
+      const e = progresso.cards[id];
+      if (!e.vistas) return;
       g.cards++;
-      (progresso.cards[id].historico || []).forEach(h => {
-        g.total++; if (h.acertou) g.certas++;
-      });
+      /* contadores do card, e não o histórico: este guarda só as últimas 12 */
+      g.total += e.vistas;
+      g.certas += e.acertos;
     });
 
     const linhas = (ordem || Object.keys(grupos)).filter(k => grupos[k]).map(k => {

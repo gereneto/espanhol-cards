@@ -19,7 +19,8 @@ verbal, quase todos irregulares.
    mostrar o português e a pedir o espanhol, de novo primeiro escolhendo e
    depois escrevendo. Uma **🇪🇸** e uma **🇧🇷** marcam a direção — uma ao lado
    da pergunta, outra ao lado da resposta — para não haver dúvida de que lado
-   traduzir. Só depois de vencer as duas direções o card sai de circulação.
+   traduzir. Vencer as duas direções não aposenta o card: ele passa a voltar
+   cada vez mais espaçado, mas nunca sai do baralho.
 4. O app cronometra cada resposta e classifica em **rápido / médio / lento**,
    com limiares diferentes para palavra e frase, e para escolher e escrever.
 5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
@@ -58,8 +59,8 @@ irregular em tudo. Então `Yo tengo prisa` é **A1**, `Él dijo la verdad` é **
 `Habría venido antes` é **C1** (condicional composto).
 
 Que o card é de conjugação, e se o verbo é regular ou irregular, fica nas
-etiquetas (`conjugação`, `irregular`, `pretérito`, `tener`). O painel mostra o
-acerto por tema, então dá para ver como você vai nos irregulares sem que isso
+etiquetas (`conjugação`, `irregular`, `pretérito`, `tener`) — que a lista do
+🗂️ filtra, então dá para ver como você vai nos irregulares sem que isso
 contamine a nota do nível.
 
 A curva de peso tem pico no domínio intermediário e um piso, de modo que
@@ -68,8 +69,8 @@ nível em que você erra tudo desanima.
 
 ### A fila
 
-Não há repetição espaçada por datas. Existe **uma fila só**: ao responder,
-o card volta para a fila mais adiante, e a distância depende de como foi:
+Existe **uma fila só**: ao responder, o card volta para a fila mais adiante, e
+a distância depende de como foi:
 
 | Situação | Volta em ~ |
 |---|---:|
@@ -78,11 +79,37 @@ o card volta para a fila mais adiante, e a distância depende de como foi:
 | Acertou na múltipla, rápido | 32 |
 | Acertou escrevendo, devagar | 35 |
 | Acertou escrevendo, rápido | 110 |
-| Acertou escrevendo 3× seguidas, rápido | 220 — sai de circulação |
+| Acertou escrevendo 3× seguidas | 220 — fecha a direção |
 
 Dizer "já conhecia bem" empurra mais para o fim; "não conhecia" segura mais perto.
 Acerto lento em algo que você disse não conhecer é tratado como possível chute:
 o card continua na múltipla escolha.
+
+### O card dominado, e a única data do app
+
+A fila tem 361 cards e todo card respondido volta para ela, então o intervalo
+máximo que ela consegue dar é **uma passada pelo baralho** — uns poucos dias.
+Acertar três vezes seguidas com o card voltando a cada dois dias não prova
+memória de longo prazo; prova que ele ainda estava fresco.
+
+Por isso o card que venceu as duas direções — e **só ele** — ganha uma data de
+retorno, que cresce a cada revisão certa:
+
+| Revisões certas depois de dominado | Volta em |
+|---:|---:|
+| 1ª | 3 dias |
+| 2ª | 1 semana |
+| 3ª | 2 semanas |
+| 4ª | 1 mês |
+| 5ª | 3 meses |
+| daí em diante | 6 meses |
+
+Enquanto a data não chega, o app pula o card e pega o seguinte da fila. Errar
+devolve ao começo da escada e tira o card de dominado, de volta à múltipla
+escolha da volta. Se **todos** os cards estiverem esperando, entra o de data
+mais próxima — ficar sem card nenhum seria pior do que adiantar um.
+
+O card nunca sai do baralho. Ele só espera mais.
 
 
 ## Onde roda
