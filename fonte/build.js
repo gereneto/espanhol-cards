@@ -17,6 +17,27 @@ const normalizar = s => s
   .normalize('NFD').replace(/[̀-ͯ]/g, '')
   .toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
 
+/* ── a régua do app, e não uma parecida ──
+   Este normalizar() daqui de cima serve para achar card repetido: ele quer
+   saber se dois textos são o MESMO texto. Já para saber se um distrator é,
+   na prática, a resposta certa, quem decide tem de ser o motor — porque é
+   ele que vai conferir a resposta de verdade, e ele descarta artigo, pronome
+   e plural. Uma régua própria aqui deixaria passar "Ele disse isso ontem."
+   contra "Eu disse isso a ele ontem.", que o app aceita como a mesma coisa. */
+const arqMotor = path.join(raiz, 'js', 'motor.js');
+const janela = {};
+try {
+  new Function('window', fs.readFileSync(arqMotor, 'utf8'))(janela);
+} catch (e) {
+  console.error('\n  não consegui carregar js/motor.js: ' + e.message + '\n');
+  process.exit(1);
+}
+const Motor = janela.Motor;
+if (!Motor || typeof Motor.respostasAceitas !== 'function') {
+  console.error('\n  js/motor.js carregou mas não expôs o Motor esperado\n');
+  process.exit(1);
+}
+
 const arquivos = fs.readdirSync(pastaCards).filter(f => f.endsWith('.json')).sort();
 let cards = [];
 for (const f of arquivos) {
@@ -76,6 +97,33 @@ function checarFormato(certa, distratores, onde, coletar) {
   }
 }
 
+/* Nenhum distrator pode ser, para o motor, a resposta certa — nem repetir
+   outro distrator. Vale nas duas pontas: na múltipla escolha apareceriam
+   duas alternativas certas, e na escrita o texto do distrator seria aceito.
+   Roda em toda direção que o card sustenta; o espanhol entra porque o
+   baralho pode trazer distratoresEs, ainda que hoje nenhum card traga. */
+function checarDistratores(c, direcao, campo, onde, coletar) {
+  const lista = c[campo];
+  if (!Array.isArray(lista) || !lista.length) return;
+
+  const lingua = Motor.linguaDaResposta(direcao);
+  const certas = new Set(Motor.respostasAceitas(c, direcao));
+  const vistos = new Map();
+
+  for (const d of lista) {
+    const chave = Motor.normalizar(d, lingua);
+    if (certas.has(chave)) {
+      coletar('distrator que o motor lê como a resposta certa: ' + onde +
+        ' → ' + d + '  (vira "' + chave + '")');
+    }
+    if (vistos.has(chave)) {
+      coletar('dois distratores que o motor lê igual: ' + onde +
+        ' → ' + vistos.get(chave) + ' / ' + d + '  (viram "' + chave + '")');
+    }
+    vistos.set(chave, d);
+  }
+}
+
 for (const c of cards) {
   const onde = c.id + ' (' + c.es + ')';
 
@@ -96,22 +144,16 @@ for (const c of cards) {
   if (!Array.isArray(c.aceitas) || !c.aceitas.length) erros.push('sem respostas aceitas: ' + onde);
   if (!Array.isArray(c.tags) || !c.tags.length) erros.push('sem tags: ' + onde);
 
-  // nenhum distrator pode ser, na prática, a resposta certa
-  const certas = new Set([c.pt, ...c.pt.split('/'), ...(c.aceitas || [])].map(normalizar));
-  for (const d of c.distratores || []) {
-    if (certas.has(normalizar(d))) erros.push('distrator igual à resposta: ' + onde + ' → ' + d);
-  }
+  checarDistratores(c, 'es-pt', 'distratores', onde, e => erros.push(e));
+  checarDistratores(c, 'pt-es', 'distratoresEs', onde, e => erros.push(e));
+
   /* uma forma verbal alternativa nunca pode coincidir com a resposta certa */
   if (c.formasEs) {
-    const semArtigo = t => normalizar(String(t).replace(/^(el|la|los|las|un|una|unos|unas)\s+/i, ''));
-    const certa = semArtigo(c.es);
+    const certas = new Set(Motor.respostasAceitas(c, 'pt-es'));
     for (const f of Object.keys(c.formasEs)) {
-      if (semArtigo(f) === certa) erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);
+      if (certas.has(Motor.normalizarEs(f))) erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);
     }
   }
-
-  const vistos = new Set((c.distratores || []).map(normalizar));
-  if (vistos.size !== (c.distratores || []).length) erros.push('distratores repetidos entre si: ' + onde);
 
   checarFormato(c.pt, c.distratores, onde, e => erros.push(e));
 
@@ -128,18 +170,15 @@ for (const c of cards) {
     }
     if (!Array.isArray(c.aceitasEn) || !c.aceitasEn.length) erros.push('sem aceitasEn: ' + ondeEn);
 
+    /* fora do "tem en?" de propósito: dois distratoresEn iguais entre si são
+       erro mesmo enquanto a tradução da resposta ainda não chegou */
+    checarDistratores(c, 'es-en', 'distratoresEn', ondeEn, e => erros.push(e));
+
     if (typeof c.en === 'string' && c.en.trim()) {
-      const certasEn = new Set([c.en, ...c.en.split('/'), ...(c.aceitasEn || [])].map(normalizar));
-      for (const d of c.distratoresEn || []) {
-        if (certasEn.has(normalizar(d))) erros.push('distratorEn igual à resposta: ' + ondeEn + ' → ' + d);
-      }
       /* as heurísticas de formato são só aviso em inglês: quem decide de fato
          é a revisão, e barrar o build travaria tradução legítima */
       checarFormato(c.en, c.distratoresEn, ondeEn, a => avisos.push(a));
     }
-
-    const vistosEn = new Set((c.distratoresEn || []).map(normalizar));
-    if (vistosEn.size !== (c.distratoresEn || []).length) erros.push('distratoresEn repetidos entre si: ' + ondeEn);
 
     /* formasEsEn tem de rotular exatamente as mesmas formas de formasEs */
     if (c.formasEs || c.formasEsEn) {

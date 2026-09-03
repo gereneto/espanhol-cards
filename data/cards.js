@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-09-01",
+ "gerado_em": "2026-09-03",
  "total": 361,
  "cards": [
   {
@@ -4886,7 +4886,7 @@ window.CARDS_RAW = {
     "Ele me disse ontem.",
     "Eu disse a ele hoje.",
     "Disseram-me ontem.",
-    "Ele disse isso ontem."
+    "Eu disse isso para você ontem."
    ],
    "distratoresEn": [
     "He told me that yesterday.",
@@ -7156,7 +7156,7 @@ window.CARDS_RAW = {
     "would you give me a hand"
    ],
    "distratores": [
-    "Você pode me dar a mão?",
+    "Você pode me estender a mão?",
     "Você pode lavar as mãos?",
     "Você pode soltar a mão?",
     "Você pode erguer a mão?"

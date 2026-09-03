@@ -22,12 +22,18 @@ window.Motor = (function () {
 
   /* ── normalização de texto para comparar respostas ──
      Aqui só entra o que é a MESMA resposta escrita de outro jeito: acento,
-     plural, número por extenso, contração, artigo e pronome-sujeito, que o
-     português dispensa. Nada que possa fazer uma resposta errada colar na
+     plural, número por extenso, contração, artigo e pronome-sujeito, que a
+     língua dispensa. Nada que possa fazer uma resposta errada colar na
      certa — negação, preposição, verbo e substantivo ficam intactos.
-     Sinônimo de verdade entra pela lista "aceitas" de cada card. */
+     Sinônimo de verdade entra pela lista "aceitas" de cada card.
 
-  const NUMEROS = {
+     O que conta como "o mesmo escrito de outro jeito" muda de língua para
+     língua, então cada uma traz suas próprias tabelas e o normalizador
+     escolhe pela língua da resposta (ver LINGUAS, no fim do bloco). Quem
+     responde em português não escreve "the office", e quem responde em
+     inglês não escreve "3" esperando casar com "três". */
+
+  const NUMEROS_PT = {
     '0': 'zero', '1': 'um', '2': 'dois', '3': 'tres', '4': 'quatro',
     '5': 'cinco', '6': 'seis', '7': 'sete', '8': 'oito', '9': 'nove',
     '10': 'dez', '11': 'onze', '12': 'doze', '13': 'treze', '14': 'quatorze',
@@ -35,43 +41,166 @@ window.Motor = (function () {
     '19': 'dezenove', '20': 'vinte', '30': 'trinta', '50': 'cinquenta', '100': 'cem'
   };
 
-  /* Contrações e grafias alternativas da mesma palavra. */
-  const GRAFIAS = {
+  const NUMEROS_EN = {
+    '0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four',
+    '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine',
+    '10': 'ten', '11': 'eleven', '12': 'twelve', '13': 'thirteen',
+    '14': 'fourteen', '15': 'fifteen', '16': 'sixteen', '17': 'seventeen',
+    '18': 'eighteen', '19': 'nineteen', '20': 'twenty', '30': 'thirty',
+    '40': 'forty', '50': 'fifty', '60': 'sixty', '70': 'seventy',
+    '80': 'eighty', '90': 'ninety', '100': 'hundred'
+  };
+
+  /* Contrações e grafias alternativas da mesma palavra. O valor pode trazer
+     mais de uma palavra: cada uma volta para o funil e é conferida sozinha,
+     então "im" vira "i am" e o "i" ainda cai como pronome-sujeito. */
+  const GRAFIAS_PT = {
     pra: 'para', pro: 'para', to: 'estou', ta: 'esta', tao: 'estao',
     duas: 'dois', vc: 'voce', catorze: 'quatorze'
+  };
+
+  /* Em inglês a contração não é desleixo, é a forma corrente: "I don't mind"
+     e "I do not mind" são a mesma frase. O apóstrofo já caiu antes (ver o
+     "pre" do inglês), por isso as chaves aqui vêm sem ele.
+
+     Ficam de fora as contrações cuja forma sem apóstrofo é outra palavra do
+     inglês: ill (I'll / doente), well (we'll / bem), were (we're / were),
+     shed (she'd / galpão), shell, lets (let's / he lets). O baralho usa as
+     duas: tem "maybe ill go" e tem "She made him feel ill". Desfazer essas
+     mudaria o sentido de uma resposta legítima, que é justamente o que a
+     normalização não pode fazer — quando as duas leituras existem, o jeito
+     é a variante entrar na lista "aceitasEn" do card. */
+  const GRAFIAS_EN = {
+    im: 'i am', ive: 'i have', id: 'i would',
+    its: 'it is', thats: 'that is', theres: 'there is', heres: 'here is',
+    hes: 'he is', shes: 'she is', whats: 'what is', whos: 'who is',
+    wheres: 'where is', hows: 'how is',
+    youre: 'you are', theyre: 'they are',
+    weve: 'we have', youve: 'you have', theyve: 'they have',
+    youll: 'you will', theyll: 'they will',
+    hed: 'he would', theyd: 'they would',
+    cant: 'cannot', wont: 'will not', dont: 'do not', doesnt: 'does not',
+    didnt: 'did not', isnt: 'is not', arent: 'are not', wasnt: 'was not',
+    werent: 'were not', havent: 'have not', hasnt: 'has not',
+    hadnt: 'had not', wouldnt: 'would not', couldnt: 'could not',
+    shouldnt: 'should not', mustnt: 'must not',
+    gonna: 'going to', wanna: 'want to', gotta: 'got to'
   };
 
   /* Palavras que o português põe ou tira sem mudar nada: artigos e
      pronomes-sujeito (as duas línguas dispensam o sujeito), mais o "já"
      aspectual. Nenhuma negação e nenhuma preposição entram aqui. */
-  const OMISSIVEIS = new Set([
+  const OMISSIVEIS_PT = new Set([
     'o', 'a', 'os', 'as', 'um', 'uma', 'uns', 'umas',
     'eu', 'ele', 'ela', 'eles', 'elas', 'voce', 'voces', 'tu', 'nos',
-    'ja',
-    /* o espanhol dispensa o sujeito tanto quanto o português: "no sabía"
-       é tão correto quanto "yo no sabía". Quem carrega a pessoa é o verbo
-       conjugado, que continua entrando inteiro na comparação. */
+    'ja'
+  ]);
+
+  /* O espanhol dispensa o sujeito tanto quanto o português: "no sabía" é tão
+     correto quanto "yo no sabía". Quem carrega a pessoa é o verbo conjugado,
+     que continua entrando inteiro na comparação. O artigo espanhol não entra
+     na lista — só o da frente cai, no "pre" da língua. */
+  const OMISSIVEIS_ES = new Set([
+    ...OMISSIVEIS_PT,
     'yo', 'el', 'ella', 'ellos', 'ellas',
     'nosotros', 'nosotras', 'vosotros', 'usted', 'ustedes'
   ]);
 
-  function normalizar(txt) {
-    const bruto = (txt || '')
+  /* O inglês é o oposto do português: exige o sujeito e exige o artigo. Quem
+     responde escreve "the office" e o card pode trazer só "office" — ou o
+     contrário. Nenhum dos dois diz nada sobre saber a palavra espanhola, que
+     é o que o card cobra. Nada além de artigo e pronome-sujeito entra aqui. */
+  const OMISSIVEIS_EN = new Set([
+    'the', 'a', 'an',
+    'i', 'he', 'she', 'it', 'they', 'we', 'you'
+  ]);
+
+  /* Plural = singular. Em português basta tirar o "s".
+
+     Em inglês o "es" é ambíguo: "boxes" é "box"+es, mas "houses" é "house"+s.
+     Sem saber qual é qual, não dá para escolher — então as duas formas são
+     levadas ao MESMO lugar: tira-se o "s" e, depois, o "e" que sobrar atrás
+     de sibilante. "boxes" → "boxe" → "box", e "box" já era "box"; "houses" →
+     "house" → "hous", e "house" também vira "hous". O resultado não é
+     palavra de dicionário, e não precisa ser: precisa só ser o mesmo dos
+     dois lados da comparação. O "ss" fica de fora ("glass" não é plural),
+     mas "glasses" chega a "glass" pelo mesmo caminho. */
+  function pluralPt(p) {
+    return p.replace(/^(\w{3,})s$/, '$1');
+  }
+  function pluralEn(p) {
+    if (/^\w{3,}ies$/.test(p)) p = p.slice(0, -3) + 'y';                // babies → baby
+    else if (/^\w{3,}s$/.test(p) && !/ss$/.test(p)) p = p.slice(0, -1); // cats → cat
+    return p.replace(/(s|x|z|ch|sh)e$/, '$1');                          // boxe → box
+  }
+
+  /* O espanhol dispensa o artigo do mesmo jeito que o português: quem
+     responde "oficina" acertou tanto quanto quem responde "la oficina". */
+  const ARTIGOS_ES = /^(el|la|los|las|un|una|unos|unas)\s+/;
+
+  /* Ajustes que precisam do texto ainda inteiro, antes de a pontuação virar
+     espaço. É onde o inglês desfaz o apóstrofo: se ele virasse espaço,
+     "I don't mind" seria "i don t mind" e nunca casaria com "i dont mind". */
+  function preEn(s) {
+    return s
+      .replace(/['’´`]/g, '')                       // don't → dont
+      .replace(/\bcan not\b/g, 'cannot')
+      .replace(/\bone (hundred|thousand|million)\b/g, '$1');  // 100 = a hundred
+  }
+
+  const LINGUAS = {
+    pt: {
+      omissiveis: OMISSIVEIS_PT, numeros: NUMEROS_PT,
+      grafias: GRAFIAS_PT, plural: pluralPt
+    },
+    es: {
+      omissiveis: OMISSIVEIS_ES, numeros: NUMEROS_PT,
+      grafias: GRAFIAS_PT, plural: pluralPt,
+      pre: s => s.trim().replace(ARTIGOS_ES, '')
+    },
+    en: {
+      omissiveis: OMISSIVEIS_EN, numeros: NUMEROS_EN,
+      grafias: GRAFIAS_EN, plural: pluralEn, pre: preEn
+    }
+  };
+
+  /* Português é o padrão: quem já chamava normalizar(txt) continua igual. */
+  function normalizar(txt, lingua) {
+    const L = LINGUAS[lingua] || LINGUAS.pt;
+
+    let texto = (txt || '')
       .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // tira acentos
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, ' ');                      // tira pontuação
+      .toLowerCase();
+    if (L.pre) texto = L.pre(texto);                      // contração, artigo da frente
+    const bruto = texto.replace(/[^a-z0-9\s]/g, ' ');     // tira pontuação
 
     const saida = [];
-    for (let p of bruto.split(/\s+/)) {
-      if (!p) continue;
-      if (OMISSIVEIS.has(p)) continue;                    // antes de mexer na palavra
-      if (NUMEROS[p]) p = NUMEROS[p];                     // "3 anos" = "três anos"
-      if (GRAFIAS[p]) p = GRAFIAS[p];
-      p = p.replace(/^(\w{3,})s$/, '$1');                 // plural = singular
-      if (OMISSIVEIS.has(p)) continue;                    // e de novo, para "eles" → "ele"
-      saida.push(p);
+    for (const bruta of bruto.split(/\s+/)) {
+      if (!bruta) continue;
+      /* a grafia vem primeiro porque pode render mais de uma palavra, e cada
+         uma tem de descer o resto do funil como se tivesse sido escrita */
+      for (let p of (L.grafias[bruta] || bruta).split(' ')) {
+        if (L.omissiveis.has(p)) continue;                // antes de mexer na palavra
+        if (L.numeros[p]) p = L.numeros[p];               // "3 anos" = "três anos"
+        p = L.plural(p);                                  // plural = singular
+        if (L.omissiveis.has(p)) continue;                // e de novo, para "eles" → "ele"
+        saida.push(p);
+      }
     }
     return saida.join(' ');
+  }
+
+  /* ── que língua cada direção usa ──
+     A direção é sempre "pergunta-resposta": 'es-pt' mostra o espanhol e cobra
+     o português, 'es-en' vai cobrar o inglês, 'en-es' vai cobrar o espanhol.
+     É daqui que o conferidor tira em que língua a resposta está sendo dada. */
+  function linguaDaPergunta(direcao) {
+    const l = String(direcao || 'es-pt').split('-')[0];
+    return LINGUAS[l] ? l : 'es';
+  }
+  function linguaDaResposta(direcao) {
+    const l = String(direcao || 'es-pt').split('-')[1];
+    return LINGUAS[l] ? l : 'pt';
   }
   /* distância de Levenshtein, só para deslize de digitação em palavra única */
   function distancia(a, b) {
@@ -93,20 +222,31 @@ window.Motor = (function () {
     return ant[n];
   }
 
-  /* O espanhol dispensa o artigo do mesmo jeito que o português: quem
-     responde "oficina" acertou tanto quanto quem responde "la oficina". */
-  const ARTIGOS_ES = /^(el|la|los|las|un|una|unos|unas)\s+/i;
-  function normalizarEs(txt) {
-    return normalizar(String(txt || '').trim().replace(ARTIGOS_ES, ''));
-  }
+  /* Atalhos por língua, para quem já sabe em qual está mexendo. */
+  function normalizarEs(txt) { return normalizar(txt, 'es'); }
+  function normalizarEn(txt) { return normalizar(txt, 'en'); }
 
-  /* Todas as formas aceitas como resposta certa, na direção pedida. */
+  /* Todas as formas aceitas como resposta certa, na direção pedida.
+     Quem manda é a língua da resposta, não a direção: 'en-es' e 'pt-es'
+     cobram o mesmo espanhol, e cada língua tem seu par de campos no card. */
+  const CAMPOS = {
+    pt: { certa: 'pt', aceitas: 'aceitas' },
+    es: { certa: 'es', aceitas: 'aceitasEs' },
+    en: { certa: 'en', aceitas: 'aceitasEn' }
+  };
   function respostasAceitas(card, direcao) {
-    if (direcao === 'pt-es') {
-      return [card.es, ...(card.aceitasEs || [])].map(normalizarEs).filter(Boolean);
-    }
-    const lista = [card.pt, ...card.pt.split('/'), ...(card.aceitas || [])];
-    return lista.map(normalizar).filter(Boolean);
+    const lingua = linguaDaResposta(direcao);
+    const campo = CAMPOS[lingua];
+    const certa = String(card[campo.certa] || '');
+    const extras = card[campo.aceitas] || [];
+
+    /* No espanhol a barra não separa duas respostas: o card traz uma forma
+       só, e as variantes vêm por aceitasEs. */
+    const lista = lingua === 'es'
+      ? [certa, ...extras]
+      : [certa, ...certa.split('/'), ...extras];
+
+    return lista.map(t => normalizar(t, lingua)).filter(Boolean);
   }
 
   /* Confere a resposta escrita. Devolve 'certo' | 'quase' | 'errado'.
@@ -120,7 +260,8 @@ window.Motor = (function () {
      trocada, uma palavra fora do lugar. Se for deslize, ela diz que
      acertou; se o sentido mudou, ela diz que errou. */
   function conferir(card, texto, direcao) {
-    const dado = direcao === 'pt-es' ? normalizarEs(texto) : normalizar(texto);
+    const lingua = linguaDaResposta(direcao);
+    const dado = normalizar(texto, lingua);
     if (!dado) return 'errado';
 
     const aceitas = respostasAceitas(card, direcao);
@@ -131,17 +272,23 @@ window.Motor = (function () {
        que é justamente o que o card cobra. Erro seco, sem perguntar. */
     if (formaReconhecida(card, texto, direcao)) return 'errado';
 
-    if (aceitas.some(alvo => parecido(dado, alvo, direcao))) return 'quase';
+    if (aceitas.some(alvo => parecido(dado, alvo, lingua))) return 'quase';
     return 'errado';
   }
 
   /* Quando a resposta coincide com outra forma verbal do card, devolve qual
      é, para o feedback poder dizer o que ele escreveu de fato. */
   function formaReconhecida(card, texto, direcao) {
-    if (direcao !== 'pt-es' || !card.formasEs) return null;
+    if (linguaDaResposta(direcao) !== 'es' || !card.formasEs) return null;
+
+    /* as formas são sempre as mesmas; o rótulo é que sai na língua de quem
+       está lendo a pergunta — formasEsEn quando o card foi perguntado em inglês */
+    const rotulos = linguaDaPergunta(direcao) === 'en' && card.formasEsEn
+      ? card.formasEsEn : card.formasEs;
+
     const dado = normalizarEs(texto);
     for (const forma of Object.keys(card.formasEs)) {
-      if (normalizarEs(forma) === dado) return { forma, rotulo: card.formasEs[forma] };
+      if (normalizarEs(forma) === dado) return { forma, rotulo: rotulos[forma] };
     }
     return null;
   }
@@ -150,15 +297,16 @@ window.Motor = (function () {
 
      Escrevendo em espanhol a régua é mais dura: a grafia é parte do que se
      está aprendendo, então uma letra fora do lugar pode ser exatamente a
-     lacuna, não um deslize de teclado. Em português, que ele já domina,
-     errar uma tecla não diz nada sobre saber a palavra. */
-  function parecido(a, b, direcao) {
+     lacuna, não um deslize de teclado. Escrevendo na língua de casa —
+     português ou inglês —, errar uma tecla não diz nada sobre saber a
+     palavra. Por isso quem decide é a língua da resposta, não a direção. */
+  function parecido(a, b, lingua) {
     const maior = Math.max(a.length, b.length);
     if (maior < 4) return false;
 
     const d = distancia(a, b);
     if (!d) return true;
-    const inversa = direcao === 'pt-es';
+    const inversa = lingua === 'es';
 
     if (!a.includes(' ') && !b.includes(' ')) {
       return inversa ? (d === 1 && maior >= 6) : d <= (maior >= 8 ? 2 : 1);
@@ -464,7 +612,8 @@ window.Motor = (function () {
     NIVEIS, ROTULO_NIVEL, LIMIARES,
     normalizar, conferir, velocidade,
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
-    pergunta, resposta, normalizarEs, formaReconhecida,
+    pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
+    linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
