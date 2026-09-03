@@ -2,7 +2,7 @@
 window.CARDS_RAW = {
  "versao": 1,
  "gerado_em": "2026-09-03",
- "total": 421,
+ "total": 419,
  "cards": [
   {
    "id": "p001",
@@ -3080,7 +3080,10 @@ window.CARDS_RAW = {
     "conheco de algum lugar",
     "soa familiar",
     "ja ouvi falar",
-    "me lembra alguma coisa"
+    "me lembra alguma coisa",
+    "me lembra algo",
+    "me lembra de algo",
+    "isso me lembra algo"
    ],
    "aceitasEn": [
     "it rings a bell",
@@ -3252,7 +3255,8 @@ window.CARDS_RAW = {
     "simpatizo com ele",
     "acho ele legal",
     "ele me agrada",
-    "gosto dele como pessoa"
+    "gosto dele como pessoa",
+    "eu vou com a cara dele"
    ],
    "aceitasEn": [
     "i get on well with him",
@@ -3427,7 +3431,8 @@ window.CARDS_RAW = {
     "fala sem rodeios",
     "nao tem pelos na lingua",
     "diz o que pensa",
-    "fala na lata"
+    "fala na lata",
+    "ele fala o que pensa"
    ],
    "aceitasEn": [
     "he doesnt mince his words",
@@ -4164,7 +4169,8 @@ window.CARDS_RAW = {
     "estou pouco me lixando",
     "nao me importo nem um pouco",
     "nao ligo",
-    "nao faz diferenca para mim"
+    "nao faz diferenca para mim",
+    "nao me importo"
    ],
    "aceitasEn": [
     "i couldnt care less",
@@ -4614,48 +4620,6 @@ window.CARDS_RAW = {
    ],
    "nota": "'Que yo sepa' pede subjuntivo, igual ao português.",
    "notaEn": "'Que yo sepa' takes the subjunctive and hedges whatever follows: as far as I know. It works on its own too — '¿vino? Que yo sepa, no.'"
-  },
-  {
-   "id": "f044",
-   "tipo": "frase",
-   "es": "A ver si nos vemos.",
-   "pt": "Vamos ver se a gente se encontra.",
-   "en": "Let's try to meet up sometime.",
-   "aceitas": [
-    "vamos ver se a gente se encontra",
-    "quem sabe a gente se ve",
-    "vamos marcar",
-    "a ver si nos vemos",
-    "vamos ver se nos encontramos",
-    "quem sabe nos vemos",
-    "vamos ver se rola de se ver"
-   ],
-   "aceitasEn": [
-    "lets try to meet up sometime",
-    "lets meet up sometime",
-    "hope to see you soon",
-    "lets catch up sometime",
-    "we should meet up",
-    "see you around"
-   ],
-   "distratores": [
-    "Vá ver se ele consegue nos ver.",
-    "Estamos nos vendo neste exato momento.",
-    "Vamos assistir ao filme juntos hoje.",
-    "Vou ver você amanhã sem falta."
-   ],
-   "distratoresEn": [
-    "Go and see if he sees us.",
-    "We are looking at each other now.",
-    "Let's watch the film together today.",
-    "I will see you tomorrow for sure."
-   ],
-   "nivel": "B2",
-   "tags": [
-    "cotidiano"
-   ],
-   "nota": "Despedida vaga e amistosa, muito comum.",
-   "notaEn": "A warm, vague goodbye — nobody is committing to a date. 'A ver si' + subjunctive is the standard way to float a loose intention."
   },
   {
    "id": "f045",
@@ -5492,7 +5456,10 @@ window.CARDS_RAW = {
     "bate na mesma tecla",
     "teima e teima",
     "continua teimando na mesma",
-    "nao larga o osso"
+    "nao larga o osso",
+    "segue teimando na mesma",
+    "segue insistindo",
+    "segue na mesma"
    ],
    "aceitasEn": [
     "he keeps stubbornly at it",
@@ -6131,7 +6098,10 @@ window.CARDS_RAW = {
     "ficar sabendo",
     "tomar conhecimento",
     "descobrir",
-    "saber"
+    "saber",
+    "inteirar-se",
+    "inteirar se",
+    "se inteirar"
    ],
    "aceitasEn": [
     "to find out",
@@ -7596,44 +7566,6 @@ window.CARDS_RAW = {
    "notaEn": "'Dicho sea de paso' = let it be said in passing. A fixed formula with the subjunctive frozen inside it, used to slip a remark in sideways."
   },
   {
-   "id": "f091",
-   "tipo": "frase",
-   "es": "No tiene desperdicio.",
-   "pt": "Não tem nada para jogar fora.",
-   "en": "Every bit of it is worth it.",
-   "aceitas": [
-    "nao tem nada para jogar fora",
-    "e bom do inicio ao fim",
-    "vale a pena inteiro",
-    "tudo nele presta"
-   ],
-   "aceitasEn": [
-    "every bit of it is worth it",
-    "its all worth it",
-    "theres not a wasted moment in it",
-    "its good from start to finish",
-    "not a word of it is wasted"
-   ],
-   "distratores": [
-    "Não produz nenhum tipo de lixo.",
-    "Não sobrou nada dele no fim.",
-    "Não desperdiça nem um centavo à toa.",
-    "Não tem valor nenhum para nós."
-   ],
-   "distratoresEn": [
-    "It produces no waste at all.",
-    "There was nothing left of it.",
-    "It does not waste a single penny.",
-    "It has no value for us at all."
-   ],
-   "nivel": "C1",
-   "tags": [
-    "expressão"
-   ],
-   "nota": "Elogio: tudo naquilo é aproveitável, do começo ao fim.",
-   "notaEn": "A compliment: there is nothing in it you would throw away. Said of a book, a film, a speech — good all the way through."
-  },
-  {
    "id": "f092",
    "tipo": "frase",
    "es": "Me está dando largas.",
@@ -8038,7 +7970,10 @@ window.CARDS_RAW = {
     "ontem eu fiquei sabendo",
     "ontem fiquei sabendo",
     "ontem eu soube",
-    "ontem soube disso"
+    "ontem soube disso",
+    "fiquei sabendo ontem",
+    "soube ontem",
+    "vim a saber ontem"
    ],
    "aceitasEn": [
     "yesterday i found that out",

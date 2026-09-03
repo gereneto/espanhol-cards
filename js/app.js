@@ -68,6 +68,15 @@
     p.cards = p.cards || {};
     const naFila = new Set(p.fila);
     p.fila = p.fila.filter(id => PORID[id]);
+
+    /* Card apagado do baralho deixa para trás o estado dele. Sem varrer, ele
+       continuaria contando em "cards já vistos" e nas tabelas do painel, e
+       viajaria para sempre no progresso.json. A guarda do CARDS.length evita
+       o desastre de apagar tudo se o data/cards.js não tiver carregado. */
+    if (CARDS.length) {
+      Object.keys(p.cards).forEach(id => { if (!PORID[id]) delete p.cards[id]; });
+    }
+
     const faltando = CARDS.filter(c => !naFila.has(c.id)).map(c => c.id);
     if (faltando.length) {
       p.fila = p.fila.concat(Motor.montarFila(faltando.map(id => PORID[id])));
