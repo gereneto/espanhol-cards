@@ -266,8 +266,11 @@
   /* Mostra o feedback. Grava na hora, salvo quando a resposta caiu na
      tolerância — aí quem decide é você, e só então grava. */
   function concluir(r) {
-    r.velocidade = Motor.velocidade(cardAtual, r.modo, r.ms);
-    r.pausado = pausou;
+    /* "pausado" quer dizer tempo não confiável, e há duas maneiras de
+       chegar lá: sair da aba, ou demorar tanto que é evidente que o card
+       ficou sozinho na tela. Nos dois casos o número não mede nada. */
+    r.pausado = pausou || r.ms >= Motor.MS_ABANDONO;
+    r.velocidade = Motor.velocidade(cardAtual, r.modo, r.ms, r.pausado);
     respostaPendente = r;
     estreiaPendente = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
 
@@ -281,7 +284,10 @@
       '<span class="medida"><b>' + (r.ms / 1000).toFixed(1) + 's</b> — ' + rotuloVel + '</span>' +
       '<span class="medida">' + escapar(Motor.ROTULO_NIVEL[cardAtual.nivel] || cardAtual.nivel) + '</span>' +
       (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
-      (r.pausado ? '<span class="medida">tempo não contado (você saiu da aba)</span>' : '');
+      (r.pausado
+        ? '<span class="medida">tempo não contado (' +
+          (pausou ? 'você saiu da aba' : 'demorou demais, o card ficou parado') + ')</span>'
+        : '');
 
     el['area-conhecia'].classList.add('oculto');
     [...document.querySelectorAll('.opcao-conhecia')].forEach(b => {

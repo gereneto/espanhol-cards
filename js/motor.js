@@ -317,7 +317,21 @@ window.Motor = (function () {
     return 1 - d / maior >= (inversa ? 0.92 : 0.82);
   }
 
-  function velocidade(card, modo, ms) {
+  /* Acima disto ninguém está mais olhando o card: largou o celular, foi
+     fazer outra coisa e voltou. O relógio continuou correndo, mas o número
+     não mede nada — nem pensar demorado, nem dificuldade. Três minutos é
+     folgado até para a frase mais longa escrita com calma. */
+  const MS_ABANDONO = 180000;
+
+  function tempoConfiavel(ms, saiuDaAba) {
+    return !saiuDaAba && ms < MS_ABANDONO;
+  }
+
+  /* Tempo que não é confiável não pode virar "lento": lento empurra o card
+     de volta mais cedo e alimenta a suspeita de chute. Na dúvida, o meio,
+     que não pune nem premia. */
+  function velocidade(card, modo, ms, saiuDaAba) {
+    if (!tempoConfiavel(ms, saiuDaAba)) return 'medio';
     const [rapido, lento] = LIMIARES[card.tipo][modo];
     if (ms <= rapido) return 'rapido';
     if (ms >= lento) return 'lento';
@@ -390,6 +404,12 @@ window.Motor = (function () {
       else if (r.velocidade === 'lento') base = 14;
       else if (r.velocidade === 'medio') base = 22;
       else base = 32;
+
+      /* Na volta, acertar entre cinco e ir escrever logo depois não prova
+         nada: a grafia espanhola acabou de passar na frente dos olhos, e o
+         que se recupera é a memória da tela, não a da palavra. O card só
+         reaparece bem mais adiante, quando a imagem já não sirva de muleta. */
+      if (r.acertou && r.direcao === 'pt-es') base = Math.max(base, 90);
     } else {
       if (r.velocidade === 'lento') base = 35;
       else if (r.velocidade === 'medio') base = 60;
@@ -682,6 +702,7 @@ window.Motor = (function () {
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
+    tempoConfiavel, MS_ABANDONO,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
