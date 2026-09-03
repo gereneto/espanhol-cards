@@ -70,11 +70,29 @@
     p.fila = p.fila.filter(id => PORID[id]);
     const faltando = CARDS.filter(c => !naFila.has(c.id)).map(c => c.id);
     if (faltando.length) {
-      // cards novos entram intercalados pelo nível, logo à frente
-      const ordem = Motor.montarFila(faltando.map(id => PORID[id]));
-      p.fila = p.fila.concat(ordem);
+      p.fila = p.fila.concat(Motor.montarFila(faltando.map(id => PORID[id])));
+      /* Entrar no fim da fila é o mesmo que não entrar: numa leva de 60, os
+         últimos só apareceriam depois de uma passada inteira pelo baralho.
+         Espalhar aqui os coloca em circulação já na primeira sessão. */
+      espalharIneditos(p);
     }
     return p;
+  }
+
+  /* Redistribui os cards que ainda não apareceram pelas posições que já são
+     de card não aparecido, na ordem que o desempenho pede. Quem já foi visto
+     fica exatamente onde está — ali é onde a própria resposta o colocou. */
+  function espalharIneditos(p) {
+    const posicoes = [];
+    const novos = [];
+    p.fila.forEach((id, i) => {
+      if (!p.cards[id]) { posicoes.push(i); novos.push(id); }
+    });
+    if (novos.length < 2) return;
+
+    const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, p.cards));
+    const ordem = Motor.ordenarNovos(novos, pesos, PORID);
+    posicoes.forEach((pos, k) => { p.fila[pos] = ordem[k]; });
   }
 
   function salvarProgresso() {
@@ -431,16 +449,7 @@
      ritmo de entrada de cards novos continua igual, muda apenas de que
      nível é o próximo, conforme o seu desempenho. */
   function reordenarNovos() {
-    const posicoes = [];
-    const novos = [];
-    progresso.fila.forEach((id, i) => {
-      if (!progresso.cards[id]) { posicoes.push(i); novos.push(id); }
-    });
-    if (novos.length < 2) return;
-
-    const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, progresso.cards));
-    const ordem = Motor.ordenarNovos(novos, pesos, PORID);
-    posicoes.forEach((pos, k) => { progresso.fila[pos] = ordem[k]; });
+    espalharIneditos(progresso);
   }
 
   /* Escreveu, foi contado como erro, mas acha que a resposta valia. O card
