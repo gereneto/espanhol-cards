@@ -168,8 +168,7 @@ window.CARDS_RAW = {
    "en": "the office",
    "aceitas": [
     "escritorio",
-    "reparticao",
-    "reparticão"
+    "reparticao"
    ],
    "aceitasEn": [
     "office",
@@ -3123,7 +3122,6 @@ window.CARDS_RAW = {
     "quem sabe eu va",
     "pode ser que eu va",
     "capaz que eu va",
-    "talvez eu vada",
     "talvez va",
     "pode ser que va",
     "quem sabe va"
@@ -6851,7 +6849,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "onde fica o banheiro",
     "onde e o banheiro",
-    "onde esta o banheiro"
+    "onde esta o banheiro",
+    "onde tem banheiro",
+    "cade o banheiro"
    ],
    "aceitasEn": [
     "wheres the toilet",
@@ -6891,7 +6891,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "nao entendo nada",
     "nao estou entendendo nada",
-    "nao compreendo nada"
+    "nao compreendo nada",
+    "nao entendo nada disso"
    ],
    "aceitasEn": [
     "i dont understand a thing",
@@ -6929,7 +6930,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "quanto custa",
     "qual e o preco",
-    "quanto e"
+    "quanto e",
+    "qual o preco",
+    "quanto que custa"
    ],
    "aceitasEn": [
     "how much does it cost",
@@ -6966,7 +6969,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "estou com fome",
     "to com fome",
-    "tenho fome"
+    "tenho fome",
+    "estou faminto"
    ],
    "aceitasEn": [
     "im hungry",
@@ -7002,7 +7006,9 @@ window.CARDS_RAW = {
    "en": "See you tomorrow.",
    "aceitas": [
     "ate amanha",
-    "nos vemos amanha"
+    "nos vemos amanha",
+    "ate amanha entao",
+    "te vejo amanha"
    ],
    "aceitasEn": [
     "see you tomorrow",
@@ -7039,7 +7045,8 @@ window.CARDS_RAW = {
     "eu concordo",
     "concordo",
     "estou de acordo",
-    "penso igual"
+    "penso igual",
+    "eu concordo com isso"
    ],
    "aceitasEn": [
     "i agree",
@@ -7077,7 +7084,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "nao me lembro",
     "nao lembro",
-    "nao me recordo"
+    "nao me recordo",
+    "nao consigo lembrar"
    ],
    "aceitasEn": [
     "i dont remember",
@@ -7349,7 +7357,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "demorei duas horas para chegar",
     "levei duas horas para chegar",
-    "gastei duas horas ate chegar"
+    "gastei duas horas ate chegar",
+    "demorei duas horas ate chegar",
+    "gastei duas horas para chegar"
    ],
    "aceitasEn": [
     "it took me two hours to arrive",
@@ -7425,7 +7435,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "no fim das contas tanto faz",
     "afinal tanto faz",
-    "no final das contas da na mesma"
+    "no final das contas da na mesma",
+    "no final das contas tanto faz",
+    "afinal de contas tanto faz",
+    "no fim tanto faz"
    ],
    "aceitasEn": [
     "at the end of the day it doesnt matter",
@@ -7537,7 +7550,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "alias ele tinha razao",
     "por sinal ele tinha razao",
-    "diga-se de passagem ele tinha razao"
+    "diga-se de passagem ele tinha razao",
+    "a proposito ele tinha razao"
    ],
    "aceitasEn": [
     "incidentally he was right",
@@ -7694,7 +7708,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "tendo isso em vista ele renunciou",
     "diante disso ele renunciou",
-    "considerando isso ele renunciou"
+    "considerando isso ele renunciou",
+    "em vista disso ele renunciou",
+    "por causa disso ele renunciou"
    ],
    "aceitasEn": [
     "in view of that he resigned",
@@ -7770,7 +7786,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "naquela epoca ele morava em madri",
     "na ocasiao ele morava em madri",
-    "por entao morava em madri"
+    "por entao morava em madri",
+    "naquele tempo ele morava em madri",
+    "na epoca ele morava em madri",
+    "ele morava em madri naquela epoca"
    ],
    "aceitasEn": [
     "at that time he lived in madrid",
@@ -7807,7 +7826,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "alem de caro e lento",
     "fora ser caro e lento",
-    "nao bastasse ser caro e lento"
+    "nao bastasse ser caro e lento",
+    "e caro e ainda lento",
+    "fora de caro e lento"
    ],
    "aceitasEn": [
     "besides being expensive it is slow",
@@ -7882,7 +7903,9 @@ window.CARDS_RAW = {
    "en": "Better late than never.",
    "aceitas": [
     "antes tarde do que nunca",
-    "melhor tarde do que nunca"
+    "melhor tarde do que nunca",
+    "mais vale tarde do que nunca",
+    "antes tarde que nunca"
    ],
    "aceitasEn": [
     "better late than never",
@@ -7917,7 +7940,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "nao sabia",
     "eu nao sabia",
-    "nao fazia ideia"
+    "nao fazia ideia",
+    "eu nao sabia disso",
+    "eu nao fazia ideia"
    ],
    "aceitasEn": [
     "i didnt know",
@@ -7973,7 +7998,9 @@ window.CARDS_RAW = {
     "ontem soube disso",
     "fiquei sabendo ontem",
     "soube ontem",
-    "vim a saber ontem"
+    "vim a saber ontem",
+    "ontem vim a saber",
+    "ontem descobri"
    ],
    "aceitasEn": [
     "yesterday i found that out",
@@ -8024,7 +8051,10 @@ window.CARDS_RAW = {
    "en": "She had a child.",
    "aceitas": [
     "ela teve um filho",
-    "teve um filho"
+    "teve um filho",
+    "ela teve um bebe",
+    "ela deu a luz",
+    "ela deu a luz um filho"
    ],
    "aceitasEn": [
     "she had a child",
@@ -8076,7 +8106,10 @@ window.CARDS_RAW = {
     "estou com pressa",
     "eu estou com pressa",
     "to com pressa",
-    "tenho pressa"
+    "tenho pressa",
+    "eu to com pressa",
+    "estou apressado",
+    "eu tenho pressa"
    ],
    "aceitasEn": [
     "im in a hurry",
@@ -8127,7 +8160,9 @@ window.CARDS_RAW = {
    "en": "They did everything.",
    "aceitas": [
     "eles fizeram tudo",
-    "fizeram tudo"
+    "fizeram tudo",
+    "eles fizeram tudo isso",
+    "eles fizeram todas as coisas"
    ],
    "aceitasEn": [
     "they did everything",
@@ -8177,7 +8212,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "ele fez o jantar",
     "fez o jantar",
-    "ele preparou o jantar"
+    "ele preparou o jantar",
+    "ele fez a janta",
+    "ele cozinhou o jantar"
    ],
    "aceitasEn": [
     "he made dinner",
@@ -8228,7 +8265,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu faco a comida",
     "faco a comida",
-    "eu preparo a comida"
+    "eu preparo a comida",
+    "eu cozinho",
+    "eu faco o almoco"
    ],
    "aceitasEn": [
     "i make the food",
@@ -8279,7 +8318,11 @@ window.CARDS_RAW = {
    "en": "I went to the doctor.",
    "aceitas": [
     "eu fui ao medico",
-    "fui ao medico"
+    "fui ao medico",
+    "eu fui no medico",
+    "fui no medico",
+    "eu fui ate o medico",
+    "fui consultar o medico"
    ],
    "aceitasEn": [
     "i went to the doctor",
@@ -8328,7 +8371,9 @@ window.CARDS_RAW = {
    "en": "I was a teacher.",
    "aceitas": [
     "eu fui professor",
-    "fui professor"
+    "fui professor",
+    "eu fui professora",
+    "trabalhei como professor"
    ],
    "aceitasEn": [
     "i was a teacher",
@@ -8379,7 +8424,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "antes eu ia muito",
     "antes ia muito",
-    "eu ia muito antes"
+    "eu ia muito antes",
+    "antes eu costumava ir muito",
+    "antes eu ia bastante"
    ],
    "aceitasEn": [
     "i used to go a lot",
@@ -8431,7 +8478,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "nos eramos amigos",
     "eramos amigos",
-    "a gente era amiga"
+    "a gente era amiga",
+    "a gente era amigo",
+    "nos eramos amigos antes"
    ],
    "aceitasEn": [
     "we were friends",
@@ -8480,7 +8529,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu estive la",
     "estive la",
-    "eu estive ali"
+    "eu estive ali",
+    "eu fui la",
+    "eu estive naquele lugar",
+    "estive por la"
    ],
    "aceitasEn": [
     "i was there",
@@ -8530,7 +8582,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "ele disse a verdade",
     "disse a verdade",
-    "ele falou a verdade"
+    "ele falou a verdade",
+    "ele contou a verdade"
    ],
    "aceitasEn": [
     "he told the truth",
@@ -8579,7 +8632,9 @@ window.CARDS_RAW = {
    "en": "I say yes.",
    "aceitas": [
     "eu digo que sim",
-    "digo que sim"
+    "digo que sim",
+    "eu falo que sim",
+    "eu acho que sim"
    ],
    "aceitasEn": [
     "i say yes",
@@ -8629,7 +8684,9 @@ window.CARDS_RAW = {
    "en": "They came yesterday.",
    "aceitas": [
     "eles vieram ontem",
-    "vieram ontem"
+    "vieram ontem",
+    "eles chegaram ontem",
+    "eles apareceram ontem"
    ],
    "aceitasEn": [
     "they came yesterday",
@@ -8679,7 +8736,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "ele veio sozinho",
     "veio sozinho",
-    "ele veio so"
+    "ele veio so",
+    "ele chegou sozinho"
    ],
    "aceitasEn": [
     "he came alone",
@@ -8730,7 +8788,9 @@ window.CARDS_RAW = {
     "eu pus a mesa",
     "pus a mesa",
     "eu coloquei a mesa",
-    "botei a mesa"
+    "botei a mesa",
+    "eu botei a mesa",
+    "eu arrumei a mesa"
    ],
    "aceitasEn": [
     "i set the table",
@@ -8780,7 +8840,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu nao pude ir",
     "nao pude ir",
-    "nao consegui ir"
+    "nao consegui ir",
+    "eu nao consegui ir",
+    "eu nao tive como ir"
    ],
    "aceitasEn": [
     "i couldnt go",
@@ -8831,7 +8893,8 @@ window.CARDS_RAW = {
    "en": "She wanted to help.",
    "aceitas": [
     "ela quis ajudar",
-    "quis ajudar"
+    "quis ajudar",
+    "ela tentou ajudar"
    ],
    "aceitasEn": [
     "she wanted to help",
@@ -8880,7 +8943,8 @@ window.CARDS_RAW = {
    "en": "I want water.",
    "aceitas": [
     "eu quero agua",
-    "quero agua"
+    "quero agua",
+    "me ve uma agua"
    ],
    "aceitasEn": [
     "i want water",
@@ -8931,7 +8995,9 @@ window.CARDS_RAW = {
     "nos andamos muito",
     "andamos muito",
     "a gente andou muito",
-    "caminhamos muito"
+    "caminhamos muito",
+    "nos caminhamos muito",
+    "caminhamos bastante"
    ],
    "aceitasEn": [
     "we walked a lot",
@@ -8981,7 +9047,9 @@ window.CARDS_RAW = {
    "en": "He brought the book.",
    "aceitas": [
     "ele trouxe o livro",
-    "trouxe o livro"
+    "trouxe o livro",
+    "ele levou o livro",
+    "ele trouxe um livro"
    ],
    "aceitasEn": [
     "he brought the book",
@@ -9032,7 +9100,8 @@ window.CARDS_RAW = {
     "eu dei o dinheiro a ele",
     "dei o dinheiro a ele",
     "dei o dinheiro pra ele",
-    "eu dei a ele o dinheiro"
+    "eu dei a ele o dinheiro",
+    "eu dei o dinheiro para ele"
    ],
    "aceitasEn": [
     "i gave him the money",
@@ -9084,7 +9153,9 @@ window.CARDS_RAW = {
     "eu o vi ontem",
     "vi ele ontem",
     "eu vi ele ontem",
-    "o vi ontem"
+    "o vi ontem",
+    "eu o vi na ultima vez ontem",
+    "eu vi ela ontem"
    ],
    "aceitasEn": [
     "i saw him yesterday",
@@ -9134,7 +9205,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "antes eu via mais",
     "antes via mais",
-    "eu via mais antes"
+    "eu via mais antes",
+    "antes eu enxergava mais",
+    "antes eu via bem mais"
    ],
    "aceitasEn": [
     "i used to see more",
@@ -9185,7 +9258,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu saio agora",
     "saio agora",
-    "estou saindo agora"
+    "estou saindo agora",
+    "eu vou sair agora",
+    "eu saio ja"
    ],
    "aceitasEn": [
     "im leaving now",
@@ -9238,7 +9313,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu conheco a ana",
     "conheco a ana",
-    "eu conheco ana"
+    "eu conheco ana",
+    "eu conheco Ana",
+    "conheco a Ana",
+    "eu conheco a Ana pessoalmente"
    ],
    "aceitasEn": [
     "i know ana",
@@ -9288,7 +9366,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu ouco musica",
     "ouco musica",
-    "escuto musica"
+    "escuto musica",
+    "eu escuto musica",
+    "eu ouco uma musica"
    ],
    "aceitasEn": [
     "i hear music",
@@ -9338,7 +9418,9 @@ window.CARDS_RAW = {
    "en": "They slept well.",
    "aceitas": [
     "eles dormiram bem",
-    "dormiram bem"
+    "dormiram bem",
+    "eles dormiram bem essa noite",
+    "eles tiveram uma boa noite"
    ],
    "aceitasEn": [
     "they slept well",
@@ -9387,7 +9469,9 @@ window.CARDS_RAW = {
    "en": "I sleep very little.",
    "aceitas": [
     "eu durmo pouco",
-    "durmo pouco"
+    "durmo pouco",
+    "eu durmo mal",
+    "eu nao durmo muito"
    ],
    "aceitasEn": [
     "i sleep very little",
@@ -9438,7 +9522,9 @@ window.CARDS_RAW = {
    "en": "He asked for the bill.",
    "aceitas": [
     "ele pediu a conta",
-    "pediu a conta"
+    "pediu a conta",
+    "ele pediu a conta ao garcom",
+    "ele chamou a conta"
    ],
    "aceitasEn": [
     "he asked for the bill",
@@ -9489,7 +9575,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu jogo futebol",
     "jogo futebol",
-    "eu jogo bola"
+    "eu jogo bola",
+    "eu jogo futebol sempre"
    ],
    "aceitasEn": [
     "i play football",
@@ -9540,7 +9627,9 @@ window.CARDS_RAW = {
     "comeca a chover",
     "esta comecando a chover",
     "comeca a chuva",
-    "ja comeca a chover"
+    "ja comeca a chover",
+    "comeca a chover agora",
+    "ta comecando a chover"
    ],
    "aceitasEn": [
     "its starting to rain",
@@ -9594,7 +9683,9 @@ window.CARDS_RAW = {
     "tomara que ele venha amanha",
     "tomara que venha amanha",
     "oxala ele venha amanha",
-    "quem dera ele venha amanha"
+    "quem dera ele venha amanha",
+    "espero que ele venha amanha",
+    "que ele venha amanha"
    ],
    "aceitasEn": [
     "i hope he comes tomorrow",
@@ -9644,7 +9735,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "nao acho que seja facil",
     "nao creio que seja facil",
-    "nao acredito que seja facil"
+    "nao acredito que seja facil",
+    "nao acho que e facil",
+    "eu nao acho que seja facil"
    ],
    "aceitasEn": [
     "i dont think its easy",
@@ -9694,7 +9787,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "quando voce tiver tempo",
     "quando tiver tempo",
-    "quando voce tiver um tempo"
+    "quando voce tiver um tempo",
+    "quando voce puder",
+    "quando der tempo"
    ],
    "aceitasEn": [
     "when you have time",
@@ -9746,7 +9841,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "venha aqui",
     "vem aqui",
-    "chega aqui"
+    "chega aqui",
+    "vem ca",
+    "venha ca"
    ],
    "aceitasEn": [
     "come here",
@@ -9797,7 +9894,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "faca o que voce quiser",
     "faca o que quiser",
-    "faz o que quiser"
+    "faz o que quiser",
+    "faz o que voce quiser",
+    "faca como quiser",
+    "faz como voce quiser"
    ],
    "aceitasEn": [
     "do whatever you want",
@@ -9849,7 +9949,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "se eu tivesse dinheiro viajaria",
     "se tivesse dinheiro viajaria",
-    "se eu tivesse dinheiro eu viajaria"
+    "se eu tivesse dinheiro eu viajaria",
+    "se eu tivesse grana viajaria"
    ],
    "aceitasEn": [
     "if i had money i would travel",
@@ -9900,7 +10001,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "eu teria vindo antes",
     "teria vindo antes",
-    "tinha vindo antes"
+    "tinha vindo antes",
+    "eu teria chegado antes",
+    "eu teria vindo mais cedo"
    ],
    "aceitasEn": [
     "i would have come earlier",
@@ -9950,7 +10053,9 @@ window.CARDS_RAW = {
    "en": "I speak Spanish.",
    "aceitas": [
     "eu falo espanhol",
-    "falo espanhol"
+    "falo espanhol",
+    "eu falo em espanhol",
+    "eu falo o espanhol"
    ],
    "aceitasEn": [
     "i speak spanish",
@@ -9998,7 +10103,9 @@ window.CARDS_RAW = {
    "en": "She ate early.",
    "aceitas": [
     "ela comeu cedo",
-    "comeu cedo"
+    "comeu cedo",
+    "ela comeu mais cedo",
+    "ela almocou cedo"
    ],
    "aceitasEn": [
     "she ate early",
@@ -10048,7 +10155,8 @@ window.CARDS_RAW = {
     "nos moramos aqui",
     "moramos aqui",
     "a gente mora aqui",
-    "vivemos aqui"
+    "vivemos aqui",
+    "nos vivemos aqui"
    ],
    "aceitasEn": [
     "we live here",
@@ -10094,7 +10202,9 @@ window.CARDS_RAW = {
    "en": "I used to work a lot.",
    "aceitas": [
     "eu trabalhava muito",
-    "trabalhava muito"
+    "trabalhava muito",
+    "eu costumava trabalhar muito",
+    "eu trabalhava bastante"
    ],
    "aceitasEn": [
     "i used to work a lot",
@@ -10144,7 +10254,8 @@ window.CARDS_RAW = {
    "aceitas": [
     "eles estudarao amanha",
     "estudarao amanha",
-    "vao estudar amanha"
+    "vao estudar amanha",
+    "eles vao estudar amanha"
    ],
    "aceitasEn": [
     "they will study tomorrow",
@@ -10194,7 +10305,8 @@ window.CARDS_RAW = {
     "eu tomaria um cafe",
     "tomaria um cafe",
     "eu beberia um cafe",
-    "beberia um cafe"
+    "beberia um cafe",
+    "eu tomaria um cafezinho"
    ],
    "aceitasEn": [
     "i would have a coffee",
@@ -10246,7 +10358,8 @@ window.CARDS_RAW = {
     "nos terminamos",
     "terminamos",
     "ja terminamos",
-    "a gente terminou"
+    "a gente terminou",
+    "nos acabamos"
    ],
    "aceitasEn": [
     "we have finished",
@@ -10297,7 +10410,9 @@ window.CARDS_RAW = {
    "en": "I'm eating.",
    "aceitas": [
     "estou comendo",
-    "to comendo"
+    "to comendo",
+    "eu estou comendo agora",
+    "estou almocando"
    ],
    "aceitasEn": [
     "im eating",
@@ -10347,7 +10462,9 @@ window.CARDS_RAW = {
    "en": "I don't like waiting.",
    "aceitas": [
     "eu nao gosto de esperar",
-    "nao gosto de esperar"
+    "nao gosto de esperar",
+    "eu odeio esperar",
+    "nao gosto de ficar esperando"
    ],
    "aceitasEn": [
     "i dont like waiting",
@@ -10400,7 +10517,9 @@ window.CARDS_RAW = {
     "o copo caiu da minha mao",
     "deixei o copo cair",
     "o copo me caiu",
-    "caiu o copo da minha mao"
+    "caiu o copo da minha mao",
+    "o copo escorregou da minha mao",
+    "eu deixei cair o copo"
    ],
    "aceitasEn": [
     "i dropped the glass",
@@ -14307,7 +14426,9 @@ window.CARDS_RAW = {
    "aceitas": [
     "o tiro saiu pela culatra",
     "saiu pela culatra",
-    "o feitico virou contra o feiticeiro"
+    "o feitico virou contra o feiticeiro",
+    "o tiro saiu pela culatra dele",
+    "acabou se voltando contra ele"
    ],
    "aceitasEn": [
     "it backfired on him",
@@ -14582,7 +14703,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "mais vale jeito que forca",
     "melhor jeito do que forca",
-    "vale mais a manha que a forca"
+    "vale mais a manha que a forca",
+    "mais vale jeito do que forca",
+    "melhor jeito que forca",
+    "vale mais o jeito que a forca"
    ],
    "aceitasEn": [
     "brain beats brawn",
