@@ -120,6 +120,11 @@ window.TAGS_RAW = {
   "es": "falso amigo",
   "cards": 53
  },
+ "família": {
+  "en": "family",
+  "es": "familia",
+  "cards": 0
+ },
  "filosofia": {
   "en": "philosophy",
   "es": "filosofía",
@@ -284,6 +289,11 @@ window.TAGS_RAW = {
   "en": "salir",
   "es": "salir",
   "cards": 1
+ },
+ "saúde": {
+  "en": "health",
+  "es": "salud",
+  "cards": 0
  },
  "ser": {
   "en": "ser",

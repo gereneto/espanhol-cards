@@ -2,7 +2,7 @@
 window.CARDS_RAW = {
  "versao": 1,
  "gerado_em": "2026-09-03",
- "total": 361,
+ "total": 421,
  "cards": [
   {
    "id": "p001",
@@ -14674,6 +14674,2267 @@ window.CARDS_RAW = {
    ],
    "nota": "'Maña' é a habilidade, o jeito. Não confunda com 'mañana'.",
    "notaEn": "'La maña' is skill and knack; 'la fuerza' is raw strength. Do not confuse 'maña' with 'mañana' — one letter and a world apart."
+  },
+  {
+   "id": "p201",
+   "tipo": "palavra",
+   "es": "asistir",
+   "pt": "comparecer",
+   "en": "to attend",
+   "aceitas": [
+    "comparecer",
+    "estar presente",
+    "frequentar",
+    "ir a"
+   ],
+   "aceitasEn": [
+    "to attend",
+    "attend",
+    "to go to",
+    "to be present at",
+    "to turn up"
+   ],
+   "distratores": [
+    "ver na televisão",
+    "ajudar alguém",
+    "insistir no assunto",
+    "desistir de tudo"
+   ],
+   "distratoresEn": [
+    "to watch",
+    "to assist",
+    "to insist",
+    "to give up"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo",
+    "verbo"
+   ],
+   "nota": "'Asistir a clase' = ir à aula. Não é ver: assistir a um filme é 'ver una película'. E 'asistir' também é socorrer, como em 'asistir a un herido'.",
+   "notaEn": "'Asistir a clase' = to attend class. It looks like 'assist' and is not — helping someone is 'ayudar', though 'asistir a un herido' does mean to give aid."
+  },
+  {
+   "id": "p202",
+   "tipo": "palavra",
+   "es": "contestar",
+   "pt": "responder",
+   "en": "to answer",
+   "aceitas": [
+    "responder",
+    "dar resposta",
+    "retrucar"
+   ],
+   "aceitasEn": [
+    "to answer",
+    "answer",
+    "to reply",
+    "reply",
+    "to respond"
+   ],
+   "distratores": [
+    "discordar",
+    "protestar",
+    "perguntar",
+    "reclamar"
+   ],
+   "distratoresEn": [
+    "to dispute",
+    "to protest",
+    "to ask",
+    "to complain"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "verbo"
+   ],
+   "nota": "'No me contestó' = não me respondeu. Contestar no sentido de discordar é 'impugnar' ou 'rebatir'. O substantivo é 'la contestación', a resposta.",
+   "notaEn": "'No me contestó' = he didn't answer me. Nothing to do with contesting something, which is 'impugnar'. The noun is 'la contestación', the reply."
+  },
+  {
+   "id": "p203",
+   "tipo": "palavra",
+   "es": "cobrar",
+   "pt": "receber (o salário)",
+   "en": "to get paid",
+   "aceitas": [
+    "receber",
+    "receber o salario",
+    "ser pago",
+    "ganhar"
+   ],
+   "aceitasEn": [
+    "to get paid",
+    "get paid",
+    "to be paid",
+    "to collect",
+    "to earn",
+    "to draw a wage"
+   ],
+   "distratores": [
+    "cobrar (a dívida)",
+    "emprestar (o dinheiro)",
+    "gastar (a mesada)",
+    "poupar (o troco)"
+   ],
+   "distratoresEn": [
+    "to charge",
+    "to lend",
+    "to spend",
+    "to save up"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo",
+    "verbo",
+    "trabalho"
+   ],
+   "nota": "'Cobro el día 30' = recebo no dia 30. É o oposto do português: quem 'cobra' em espanhol é quem recebe. Cobrar de alguém é 'cobrar a alguien' — a preposição decide.",
+   "notaEn": "'Cobro el día 30' = I get paid on the 30th. The same verb also means to charge someone: 'me cobraron veinte euros'. Which side you are on depends on the preposition."
+  },
+  {
+   "id": "p204",
+   "tipo": "palavra",
+   "es": "latir",
+   "pt": "bater (o coração)",
+   "en": "to beat",
+   "aceitas": [
+    "bater",
+    "pulsar",
+    "palpitar",
+    "bater o coracao"
+   ],
+   "aceitasEn": [
+    "to beat",
+    "beat",
+    "to throb",
+    "throb",
+    "to pulse"
+   ],
+   "distratores": [
+    "latir (o cachorro)",
+    "lutar (na briga)",
+    "doer (a cabeça)",
+    "cansar (do esforço)"
+   ],
+   "distratoresEn": [
+    "to bark",
+    "to fight",
+    "to ache",
+    "to tire"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "falso-amigo",
+    "verbo",
+    "corpo"
+   ],
+   "nota": "'El corazón le latía muy rápido' = o coração dele batia muito rápido. O cachorro que late 'ladra'. O substantivo é 'el latido', a batida.",
+   "notaEn": "'El corazón le latía muy rápido' = his heart was beating fast. A dog does not do this in Spanish — barking is 'ladrar'. The noun is 'el latido', a heartbeat."
+  },
+  {
+   "id": "p205",
+   "tipo": "palavra",
+   "es": "pretender",
+   "en": "to intend",
+   "pt": "tentar",
+   "aceitas": [
+    "tentar",
+    "ter a intencao",
+    "pretender",
+    "almejar",
+    "querer"
+   ],
+   "aceitasEn": [
+    "to intend",
+    "intend",
+    "to try",
+    "try",
+    "to aim to",
+    "to be after"
+   ],
+   "distratores": [
+    "fingir",
+    "prever",
+    "preferir",
+    "prometer"
+   ],
+   "distratoresEn": [
+    "to pretend",
+    "to foresee",
+    "to prefer",
+    "to promise"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "falso-amigo",
+    "verbo"
+   ],
+   "nota": "'¿Qué pretendes con eso?' = o que você quer com isso? Costuma vir com um quê de desconfiança, como quem pergunta qual é a sua.",
+   "notaEn": "'¿Qué pretendes con eso?' = what are you trying to achieve? It looks like 'pretend' and is not — faking is 'fingir'. It often carries a note of suspicion."
+  },
+  {
+   "id": "p206",
+   "tipo": "palavra",
+   "es": "borrar",
+   "pt": "apagar",
+   "en": "to erase",
+   "aceitas": [
+    "apagar",
+    "deletar",
+    "riscar",
+    "limpar"
+   ],
+   "aceitasEn": [
+    "to erase",
+    "erase",
+    "to delete",
+    "delete",
+    "to rub out",
+    "to wipe"
+   ],
+   "distratores": [
+    "borrar",
+    "manchar",
+    "rabiscar",
+    "sujar"
+   ],
+   "distratoresEn": [
+    "to smudge",
+    "to stain",
+    "to scribble",
+    "to soil"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "verbo",
+    "escola"
+   ],
+   "nota": "'Borra eso' = apaga isso. Borrar no sentido de manchar é 'emborronar' ou 'manchar'. Daí vêm 'la goma de borrar' e 'el borrador'.",
+   "notaEn": "'Borra eso' = rub that out. It gives us 'la goma de borrar', the eraser, and 'el borrador', a rough draft — the thing you will still be erasing."
+  },
+  {
+   "id": "p207",
+   "tipo": "palavra",
+   "es": "fijarse",
+   "pt": "reparar",
+   "en": "to notice",
+   "aceitas": [
+    "reparar",
+    "notar",
+    "perceber",
+    "prestar atencao",
+    "observar"
+   ],
+   "aceitasEn": [
+    "to notice",
+    "notice",
+    "to note",
+    "to pay attention",
+    "to take note"
+   ],
+   "distratores": [
+    "fixar na parede",
+    "firmar o acordo",
+    "fingir surpresa",
+    "fugir do assunto"
+   ],
+   "distratoresEn": [
+    "to fix",
+    "to settle",
+    "to pretend",
+    "to avoid"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "'¡Fíjate!' = repara só! É dos verbos mais usados na conversa espanhola, sempre pronominal e com 'en': 'me fijé en su cara'.",
+   "notaEn": "'¡Fíjate!' = just look at that! One of the most used verbs in Spanish conversation, always reflexive and with 'en': 'me fijé en su cara'."
+  },
+  {
+   "id": "p208",
+   "tipo": "palavra",
+   "es": "la fecha",
+   "pt": "a data",
+   "en": "the date",
+   "aceitas": [
+    "data",
+    "dia",
+    "dia do mes"
+   ],
+   "aceitasEn": [
+    "date",
+    "the date",
+    "calendar date",
+    "day"
+   ],
+   "distratores": [
+    "a flecha",
+    "a fechadura",
+    "a fatia",
+    "a fenda"
+   ],
+   "distratoresEn": [
+    "the arrow",
+    "the lock",
+    "the slice",
+    "the crack"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo"
+   ],
+   "nota": "'¿Qué fecha es hoy?' = que dia é hoje? Nada a ver com fechar: a fechadura é 'la cerradura' e fechar é 'cerrar'. 'La fecha límite' é o prazo final.",
+   "notaEn": "'¿Qué fecha es hoy?' = what's the date today? 'La fecha límite' is the deadline. Do not confuse it with 'la flecha', an arrow — one letter apart."
+  },
+  {
+   "id": "p209",
+   "tipo": "palavra",
+   "es": "la cita",
+   "pt": "a hora marcada",
+   "en": "the appointment",
+   "aceitas": [
+    "hora marcada",
+    "consulta",
+    "compromisso",
+    "encontro marcado",
+    "agendamento"
+   ],
+   "aceitasEn": [
+    "appointment",
+    "the appointment",
+    "the date",
+    "meeting",
+    "the meeting"
+   ],
+   "distratores": [
+    "a menção rápida",
+    "a cidadezinha",
+    "a cadeira baixa",
+    "a certidão velha"
+   ],
+   "distratoresEn": [
+    "the quotation",
+    "the small town",
+    "the low chair",
+    "the certificate"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo",
+    "cotidiano"
+   ],
+   "nota": "'Tengo cita con el médico' = tenho consulta marcada. Também é o encontro amoroso. A citação de um texto é 'la cita' igualmente — o contexto separa os dois.",
+   "notaEn": "'Tengo cita con el médico' = I have a doctor's appointment. It is also a romantic date, and — the one place English agrees — a quotation from a text."
+  },
+  {
+   "id": "p210",
+   "tipo": "palavra",
+   "es": "el pastel",
+   "pt": "o bolo",
+   "en": "the cake",
+   "aceitas": [
+    "bolo",
+    "torta",
+    "doce"
+   ],
+   "aceitasEn": [
+    "cake",
+    "the cake",
+    "pie",
+    "the pie",
+    "pastry"
+   ],
+   "distratores": [
+    "o pastel frito",
+    "o pastelão",
+    "a pasta",
+    "o pastor"
+   ],
+   "distratoresEn": [
+    "the pastel",
+    "the crayon",
+    "the paste",
+    "the shepherd"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "comida"
+   ],
+   "nota": "'Un pastel de cumpleaños' = um bolo de aniversário. Na Espanha o bolo grande costuma ser 'la tarta'; 'pastel' vale mais para o individual.",
+   "notaEn": "'Un pastel de cumpleaños' = a birthday cake. In Spain the big one is usually 'la tarta', while 'pastel' leans towards an individual portion."
+  },
+  {
+   "id": "p211",
+   "tipo": "palavra",
+   "es": "la espalda",
+   "pt": "as costas",
+   "en": "the back",
+   "aceitas": [
+    "costas",
+    "dorso",
+    "lombo"
+   ],
+   "aceitasEn": [
+    "back",
+    "the back",
+    "the upper back",
+    "spine"
+   ],
+   "distratores": [
+    "a espada",
+    "a espátula",
+    "a esperança",
+    "a espuma"
+   ],
+   "distratoresEn": [
+    "the sword",
+    "the spatula",
+    "the hope",
+    "the foam"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "falso-amigo",
+    "corpo"
+   ],
+   "nota": "'Me duele la espalda' = minhas costas doem. Sempre no singular, ao contrário do português. A espada de cortar é 'la espada', sem o L.",
+   "notaEn": "'Me duele la espalda' = my back hurts. Always singular. Keep it apart from 'la espada', a sword — the L is the only thing between them."
+  },
+  {
+   "id": "p212",
+   "tipo": "palavra",
+   "es": "el sótano",
+   "pt": "o porão",
+   "en": "the basement",
+   "aceitas": [
+    "porao",
+    "subsolo",
+    "cave"
+   ],
+   "aceitasEn": [
+    "basement",
+    "the basement",
+    "cellar",
+    "the cellar"
+   ],
+   "distratores": [
+    "o sótão",
+    "o soalho",
+    "o sofá",
+    "o soturno"
+   ],
+   "distratoresEn": [
+    "the attic",
+    "the floorboard",
+    "the sofa",
+    "the gloom"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo",
+    "casa"
+   ],
+   "nota": "'El sótano' fica embaixo. O de cima, debaixo do telhado, é 'el desván' — e é justamente a troca que mais confunde.",
+   "notaEn": "'El sótano' is below the house. The one under the roof is 'el desván'. Learn the pair together or you will swap them."
+  },
+  {
+   "id": "p213",
+   "tipo": "palavra",
+   "es": "el desván",
+   "pt": "o sótão",
+   "en": "the attic",
+   "aceitas": [
+    "sotao",
+    "agua furtada",
+    "porao do telhado"
+   ],
+   "aceitasEn": [
+    "attic",
+    "the attic",
+    "loft",
+    "the loft",
+    "garret"
+   ],
+   "distratores": [
+    "o porão",
+    "o desvão da escada",
+    "o desvio da estrada",
+    "o degrau"
+   ],
+   "distratoresEn": [
+    "the basement",
+    "the stairwell gap",
+    "the detour",
+    "the step"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "falso-amigo",
+    "casa"
+   ],
+   "nota": "Par do anterior, e o mais escorregadio dos dois: 'el desván' é em cima, debaixo do telhado. Na América Latina se diz mais 'el ático' ou 'la buhardilla'.",
+   "notaEn": "The other half of the pair: 'el desván' is up under the roof. Across Latin America you will hear 'el ático' or 'la buhardilla' instead."
+  },
+  {
+   "id": "p214",
+   "tipo": "palavra",
+   "es": "el rincón",
+   "pt": "o canto (de dentro)",
+   "en": "the corner",
+   "aceitas": [
+    "canto",
+    "canto da sala",
+    "canto de dentro",
+    "cantinho"
+   ],
+   "aceitasEn": [
+    "corner",
+    "the corner",
+    "the inside corner",
+    "nook",
+    "the nook"
+   ],
+   "distratores": [
+    "a esquina (da rua)",
+    "o rincão (distante)",
+    "o rim (do corpo)",
+    "o riacho (da mata)"
+   ],
+   "distratoresEn": [
+    "the street corner",
+    "the far country",
+    "the kidney",
+    "the stream"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "falso-amigo",
+    "casa"
+   ],
+   "nota": "O espanhol separa o que o português junta: 'el rincón' é o canto de dentro, onde duas paredes se encontram. O de fora, na rua, é 'la esquina'.",
+   "notaEn": "Spanish splits what English calls one corner: 'el rincón' is the inside one, where two walls meet. The outside one, on the street, is 'la esquina'."
+  },
+  {
+   "id": "p215",
+   "tipo": "palavra",
+   "es": "el pescado",
+   "pt": "o peixe (para comer)",
+   "en": "the fish (as food)",
+   "aceitas": [
+    "peixe",
+    "peixe para comer",
+    "o pescado",
+    "pescado"
+   ],
+   "aceitasEn": [
+    "fish",
+    "the fish",
+    "fish as food",
+    "the fish on the plate"
+   ],
+   "distratores": [
+    "o peixe (nadando)",
+    "o pescador (do barco)",
+    "a pescaria (de domingo)",
+    "o pescoço (do corpo)"
+   ],
+   "distratoresEn": [
+    "the fish (alive)",
+    "the fisherman",
+    "the fishing trip",
+    "the neck"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "comida"
+   ],
+   "nota": "O espanhol distingue: 'el pescado' é o que já foi pescado e vai ao prato; 'el pez' é o que ainda nada. Um peixe vivo nunca é 'pescado'.",
+   "notaEn": "Spanish keeps two words where English has one: 'el pescado' has been caught and is going on the plate; 'el pez' is still swimming."
+  },
+  {
+   "id": "p216",
+   "tipo": "palavra",
+   "es": "la pimienta",
+   "pt": "a pimenta-do-reino",
+   "en": "the black pepper",
+   "aceitas": [
+    "pimenta do reino",
+    "pimenta",
+    "pimenta preta"
+   ],
+   "aceitasEn": [
+    "pepper",
+    "the pepper",
+    "black pepper",
+    "the black pepper",
+    "peppercorn",
+    "ground pepper"
+   ],
+   "distratores": [
+    "o pimentão vermelho",
+    "a pimenta ardida",
+    "a pimenteira do quintal",
+    "a páprica defumada"
+   ],
+   "distratoresEn": [
+    "the sweet pepper",
+    "the chilli pepper",
+    "the pepper plant",
+    "the smoked paprika"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Uma letra separa duas coisas do prato: 'la pimienta' é o pó do moedor; 'el pimiento' é o pimentão inteiro. Pimenta ardida é 'el chile' ou 'la guindilla'.",
+   "notaEn": "One letter apart, two different things: 'la pimienta' is the ground spice; 'el pimiento' is the whole sweet pepper. The hot one is 'el chile' or 'la guindilla'."
+  },
+  {
+   "id": "p217",
+   "tipo": "palavra",
+   "es": "el hermano",
+   "pt": "o irmão",
+   "en": "the brother",
+   "aceitas": [
+    "irmao",
+    "mano"
+   ],
+   "aceitasEn": [
+    "brother",
+    "the brother",
+    "sibling",
+    "the sibling"
+   ],
+   "distratores": [
+    "o herdeiro",
+    "o ermitão",
+    "o vizinho",
+    "o padrinho"
+   ],
+   "distratoresEn": [
+    "the heir",
+    "the hermit",
+    "the neighbour",
+    "the godfather"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "família"
+   ],
+   "nota": "'Mi hermano mayor' = meu irmão mais velho. No plural masculino, 'los hermanos' cobre os dois: irmãos e irmãs juntos.",
+   "notaEn": "'Mi hermano mayor' = my older brother. The masculine plural 'los hermanos' covers a mixed set — brothers and sisters together, siblings."
+  },
+  {
+   "id": "p218",
+   "tipo": "palavra",
+   "es": "los padres",
+   "pt": "os pais",
+   "en": "the parents",
+   "aceitas": [
+    "pais",
+    "meus pais",
+    "pai e mae"
+   ],
+   "aceitasEn": [
+    "parents",
+    "the parents",
+    "mum and dad",
+    "the folks"
+   ],
+   "distratores": [
+    "os padres",
+    "os padrinhos",
+    "os padrastos",
+    "os patrões"
+   ],
+   "distratoresEn": [
+    "the priests",
+    "the godparents",
+    "the stepfathers",
+    "the bosses"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "falso-amigo",
+    "família"
+   ],
+   "nota": "'Mis padres' = meus pais. O padre da igreja é 'el cura' ou 'el sacerdote' — 'padre' sozinho é só o pai de família.",
+   "notaEn": "'Mis padres' = my parents. A priest is 'el cura' or 'el sacerdote'; on its own, 'padre' is simply a father."
+  },
+  {
+   "id": "p219",
+   "tipo": "palavra",
+   "es": "el yerno",
+   "pt": "o genro",
+   "en": "the son-in-law",
+   "aceitas": [
+    "genro"
+   ],
+   "aceitasEn": [
+    "son-in-law",
+    "the son-in-law",
+    "son in law"
+   ],
+   "distratores": [
+    "o sogro",
+    "o cunhado",
+    "o padrasto",
+    "o afilhado"
+   ],
+   "distratoresEn": [
+    "the father-in-law",
+    "the brother-in-law",
+    "the stepfather",
+    "the godson"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "família"
+   ],
+   "nota": "'Mi yerno' = o marido da minha filha. A dupla dele é 'la nuera', a nora. Nenhum dos dois se parece com o que o outro idioma usa.",
+   "notaEn": "'Mi yerno' is my daughter's husband. His counterpart is 'la nuera', the daughter-in-law. Neither word gives away its meaning."
+  },
+  {
+   "id": "p220",
+   "tipo": "palavra",
+   "es": "la nuera",
+   "pt": "a nora",
+   "en": "the daughter-in-law",
+   "aceitas": [
+    "nora"
+   ],
+   "aceitasEn": [
+    "daughter-in-law",
+    "the daughter-in-law",
+    "daughter in law"
+   ],
+   "distratores": [
+    "a sogra",
+    "a cunhada",
+    "a madrasta",
+    "a afilhada"
+   ],
+   "distratoresEn": [
+    "the mother-in-law",
+    "the sister-in-law",
+    "the stepmother",
+    "the goddaughter"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "família"
+   ],
+   "nota": "'Mi nuera' = a mulher do meu filho. Par de 'el yerno'. A sogra é 'la suegra' e o sogro 'el suegro', esses sim transparentes.",
+   "notaEn": "'Mi nuera' is my son's wife, the pair of 'el yerno'. The in-laws above are 'la suegra' and 'el suegro', which are easier to guess."
+  },
+  {
+   "id": "p221",
+   "tipo": "palavra",
+   "es": "el codo",
+   "pt": "o cotovelo",
+   "en": "the elbow",
+   "aceitas": [
+    "cotovelo"
+   ],
+   "aceitasEn": [
+    "elbow",
+    "the elbow"
+   ],
+   "distratores": [
+    "o joelho",
+    "o ombro",
+    "o pulso",
+    "o calcanhar"
+   ],
+   "distratoresEn": [
+    "the knee",
+    "the shoulder",
+    "the wrist",
+    "the heel"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "'Hablar por los codos' = falar pelos cotovelos, idêntico ao português. E 'codo' na América Latina também quer dizer sovina.",
+   "notaEn": "'Hablar por los codos' = to talk nonstop, literally through the elbows. Across parts of Latin America 'codo' also means stingy."
+  },
+  {
+   "id": "p222",
+   "tipo": "palavra",
+   "es": "la rodilla",
+   "pt": "o joelho",
+   "en": "the knee",
+   "aceitas": [
+    "joelho"
+   ],
+   "aceitasEn": [
+    "knee",
+    "the knee"
+   ],
+   "distratores": [
+    "a rótula",
+    "a canela",
+    "a coxa",
+    "a panturrilha"
+   ],
+   "distratoresEn": [
+    "the kneecap",
+    "the shin",
+    "the thigh",
+    "the calf"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "'De rodillas' = de joelhos. A rótula, o ossinho da frente, é 'la rótula' — essa sim transparente.",
+   "notaEn": "'De rodillas' = on your knees. The little bone at the front keeps its Latin name in both languages: 'la rótula', the kneecap."
+  },
+  {
+   "id": "p223",
+   "tipo": "palavra",
+   "es": "el tobillo",
+   "pt": "o tornozelo",
+   "en": "the ankle",
+   "aceitas": [
+    "tornozelo"
+   ],
+   "aceitasEn": [
+    "ankle",
+    "the ankle"
+   ],
+   "distratores": [
+    "o pulso",
+    "o calcanhar",
+    "o joelho",
+    "o quadril"
+   ],
+   "distratoresEn": [
+    "the wrist",
+    "the heel",
+    "the knee",
+    "the hip"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "'Me torcí el tobillo' = torci o tornozelo. Note o -illo, o mesmo de 'tornillo' e 'bolsillo': era diminutivo, virou a palavra.",
+   "notaEn": "'Me torcí el tobillo' = I twisted my ankle. Note the -illo, the same ending as 'tornillo' and 'bolsillo' — once a diminutive, now just the word."
+  },
+  {
+   "id": "p224",
+   "tipo": "palavra",
+   "es": "el muslo",
+   "pt": "a coxa",
+   "en": "the thigh",
+   "aceitas": [
+    "coxa",
+    "perna de cima"
+   ],
+   "aceitasEn": [
+    "thigh",
+    "the thigh",
+    "drumstick",
+    "the drumstick"
+   ],
+   "distratores": [
+    "a panturrilha",
+    "a canela",
+    "o quadril",
+    "o joelho"
+   ],
+   "distratoresEn": [
+    "the calf",
+    "the shin",
+    "the hip",
+    "the knee"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "corpo",
+    "comida"
+   ],
+   "nota": "Vale para gente e para frango: 'muslo de pollo' é a coxa que se come. A panturrilha é 'la pantorrilla'.",
+   "notaEn": "Works for people and for chicken alike: 'muslo de pollo' is what you order at the table. The calf below it is 'la pantorrilla'."
+  },
+  {
+   "id": "p225",
+   "tipo": "palavra",
+   "es": "la barbilla",
+   "pt": "o queixo",
+   "en": "the chin",
+   "aceitas": [
+    "queixo"
+   ],
+   "aceitasEn": [
+    "chin",
+    "the chin"
+   ],
+   "distratores": [
+    "a barba",
+    "o bigode",
+    "a bochecha",
+    "a testa"
+   ],
+   "distratoresEn": [
+    "the beard",
+    "the moustache",
+    "the cheek",
+    "the forehead"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "É o osso, não o pelo: a barba que cresce nele é 'la barba'. Também se diz 'el mentón', mais formal.",
+   "notaEn": "It is the bone, not the hair: what grows on it is 'la barba'. The formal word is 'el mentón'."
+  },
+  {
+   "id": "p226",
+   "tipo": "palavra",
+   "es": "la ceja",
+   "pt": "a sobrancelha",
+   "en": "the eyebrow",
+   "aceitas": [
+    "sobrancelha"
+   ],
+   "aceitasEn": [
+    "eyebrow",
+    "the eyebrow",
+    "brow",
+    "the brow"
+   ],
+   "distratores": [
+    "a pestana",
+    "a pálpebra",
+    "a bochecha",
+    "a orelha"
+   ],
+   "distratoresEn": [
+    "the eyelash",
+    "the eyelid",
+    "the cheek",
+    "the ear"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "'Meterse algo entre ceja y ceja' = enfiar na cabeça, teimar. O cílio ao lado é 'la pestaña' e a pálpebra 'el párpado'.",
+   "notaEn": "'Meterse algo entre ceja y ceja' = to get something fixed in your head. Its neighbours: 'la pestaña' is an eyelash, 'el párpado' an eyelid."
+  },
+  {
+   "id": "p227",
+   "tipo": "palavra",
+   "es": "el hombro",
+   "pt": "o ombro",
+   "en": "the shoulder",
+   "aceitas": [
+    "ombro"
+   ],
+   "aceitasEn": [
+    "shoulder",
+    "the shoulder"
+   ],
+   "distratores": [
+    "o homem",
+    "a sombra",
+    "o cotovelo",
+    "o umbigo"
+   ],
+   "distratoresEn": [
+    "the man",
+    "the shadow",
+    "the elbow",
+    "the navel"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "'Encogerse de hombros' = dar de ombros. Uma letra o separa de 'el hombre', o homem, e o H é mudo nos dois.",
+   "notaEn": "'Encogerse de hombros' = to shrug. One letter from 'el hombre', a man, and the H is silent in both."
+  },
+  {
+   "id": "p228",
+   "tipo": "palavra",
+   "es": "el moretón",
+   "pt": "o roxo (da pancada)",
+   "en": "the bruise",
+   "aceitas": [
+    "roxo",
+    "hematoma",
+    "mancha roxa",
+    "equimose"
+   ],
+   "aceitasEn": [
+    "bruise",
+    "the bruise",
+    "black and blue mark",
+    "the black eye"
+   ],
+   "distratores": [
+    "o corte (da faca)",
+    "o galo (da cabeça)",
+    "a cicatriz (antiga)",
+    "a queimadura (do sol)"
+   ],
+   "distratoresEn": [
+    "the cut",
+    "the lump",
+    "the scar",
+    "the sunburn"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "saúde",
+    "corpo"
+   ],
+   "nota": "De 'morado', roxo. Na Espanha se diz mais 'el cardenal' ou 'el moratón'; na América Latina, 'el moretón'.",
+   "notaEn": "From 'morado', purple. In Spain you will hear 'el cardenal' or 'el moratón'; across Latin America, 'el moretón'."
+  },
+  {
+   "id": "p229",
+   "tipo": "palavra",
+   "es": "la tirita",
+   "pt": "o curativo adesivo",
+   "en": "the plaster",
+   "aceitas": [
+    "curativo",
+    "band aid",
+    "bandaid",
+    "esparadrapo",
+    "curativo adesivo"
+   ],
+   "aceitasEn": [
+    "plaster",
+    "the plaster",
+    "band-aid",
+    "the band-aid",
+    "sticking plaster",
+    "adhesive bandage"
+   ],
+   "distratores": [
+    "a tira de pano",
+    "a gaze da farmácia",
+    "a pomada de arnica",
+    "a atadura de gesso"
+   ],
+   "distratoresEn": [
+    "the strip of cloth",
+    "the gauze pad",
+    "the arnica cream",
+    "the plaster cast"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "saúde"
+   ],
+   "nota": "Diminutivo de 'tira'. É palavra de Espanha; na América Latina se diz 'la curita', que vem da marca Curitas.",
+   "notaEn": "A diminutive of 'tira', a strip. Very much a Spain word — across Latin America it is 'la curita', after the brand."
+  },
+  {
+   "id": "p230",
+   "tipo": "palavra",
+   "es": "urgencias",
+   "pt": "o pronto-socorro",
+   "en": "the emergency room",
+   "aceitas": [
+    "pronto socorro",
+    "emergencia",
+    "pronto atendimento",
+    "sala de emergencia"
+   ],
+   "aceitasEn": [
+    "emergency room",
+    "the emergency room",
+    "A and E",
+    "casualty",
+    "the emergency department",
+    "ER"
+   ],
+   "distratores": [
+    "a sala de espera",
+    "o posto de saúde",
+    "a farmácia de plantão",
+    "o consultório médico"
+   ],
+   "distratoresEn": [
+    "the waiting room",
+    "the health centre",
+    "the night pharmacy",
+    "the doctor's office"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "saúde"
+   ],
+   "nota": "Sempre no plural: 'lo llevaron a urgencias'. O hospital inteiro é 'el hospital'; o postinho de bairro, 'el ambulatorio' ou 'el centro de salud'.",
+   "notaEn": "Always plural: 'lo llevaron a urgencias'. The neighbourhood clinic is 'el ambulatorio' or 'el centro de salud'."
+  },
+  {
+   "id": "p231",
+   "tipo": "palavra",
+   "es": "el quirófano",
+   "pt": "a sala de cirurgia",
+   "en": "the operating theatre",
+   "aceitas": [
+    "sala de cirurgia",
+    "centro cirurgico",
+    "sala de operacao",
+    "bloco cirurgico"
+   ],
+   "aceitasEn": [
+    "operating theatre",
+    "the operating theatre",
+    "operating room",
+    "the operating room",
+    "theatre"
+   ],
+   "distratores": [
+    "a sala de exames",
+    "a ala de internação",
+    "o corredor do hospital",
+    "a recepção da clínica"
+   ],
+   "distratoresEn": [
+    "the examination room",
+    "the hospital ward",
+    "the hospital corridor",
+    "the clinic reception"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "saúde"
+   ],
+   "nota": "Do grego: 'quir-' de mão, o mesmo de quiromancia, mais '-fano' de mostrar. Era o anfiteatro onde se via operar.",
+   "notaEn": "From Greek: 'quir-' for hand, as in chiropractic, plus '-fano', to show. It was the amphitheatre where surgery was watched."
+  },
+  {
+   "id": "p232",
+   "tipo": "palavra",
+   "es": "la baja",
+   "pt": "o afastamento médico",
+   "en": "the sick leave",
+   "aceitas": [
+    "afastamento",
+    "licenca medica",
+    "atestado",
+    "afastamento medico",
+    "licenca"
+   ],
+   "aceitasEn": [
+    "sick leave",
+    "the sick leave",
+    "time off sick",
+    "medical leave",
+    "the medical leave"
+   ],
+   "distratores": [
+    "a queda de preço",
+    "a descida da escada",
+    "a redução do salário",
+    "a saída do emprego"
+   ],
+   "distratoresEn": [
+    "the drop in price",
+    "the way down",
+    "the pay cut",
+    "the resignation"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "saúde",
+    "trabalho"
+   ],
+   "nota": "'Estar de baja' = estar afastado por doença. Vem de 'bajar', e o oposto administrativo é 'el alta', quando o médico libera.",
+   "notaEn": "'Estar de baja' = to be off sick. From 'bajar', to go down. Its opposite is 'el alta', the discharge that sends you back."
+  },
+  {
+   "id": "p233",
+   "tipo": "palavra",
+   "es": "anteayer",
+   "pt": "anteontem",
+   "en": "the day before yesterday",
+   "aceitas": [
+    "anteontem",
+    "antes de ontem"
+   ],
+   "aceitasEn": [
+    "the day before yesterday",
+    "day before yesterday",
+    "two days ago"
+   ],
+   "distratores": [
+    "ontem",
+    "amanhã",
+    "hoje",
+    "sábado"
+   ],
+   "distratoresEn": [
+    "the night before last",
+    "the day after tomorrow",
+    "during last week",
+    "in the month before last"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Uma palavra só, sem hífen. Também se escreve 'antier' em boa parte da América Latina.",
+   "notaEn": "One word in Spanish, where English needs four. Much of Latin America shortens it further, to 'antier'."
+  },
+  {
+   "id": "p234",
+   "tipo": "palavra",
+   "es": "pasado mañana",
+   "pt": "depois de amanhã",
+   "en": "the day after tomorrow",
+   "aceitas": [
+    "depois de amanha",
+    "daqui a dois dias"
+   ],
+   "aceitasEn": [
+    "the day after tomorrow",
+    "day after tomorrow",
+    "in two days"
+   ],
+   "distratores": [
+    "ontem de manhã",
+    "amanhã bem cedo",
+    "na próxima semana",
+    "daqui a um mês"
+   ],
+   "distratoresEn": [
+    "yesterday morning",
+    "early tomorrow morning",
+    "sometime next week",
+    "in about a month"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Literalmente 'passado amanhã' — o dia que vem depois dele. Não confunda com 'mañana por la mañana', que é amanhã de manhã.",
+   "notaEn": "Literally 'past tomorrow'. Careful with 'mañana por la mañana', which is tomorrow morning — same word twice, two different meanings."
+  },
+  {
+   "id": "p235",
+   "tipo": "palavra",
+   "es": "el plazo",
+   "pt": "o prazo",
+   "en": "the deadline",
+   "aceitas": [
+    "prazo",
+    "prazo final",
+    "data limite"
+   ],
+   "aceitasEn": [
+    "deadline",
+    "the deadline",
+    "time limit",
+    "the time limit",
+    "term"
+   ],
+   "distratores": [
+    "o praça",
+    "o prato",
+    "o traço",
+    "o pulso"
+   ],
+   "distratoresEn": [
+    "the square",
+    "the plate",
+    "the stroke",
+    "the pulse"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "'A corto plazo' = a curto prazo. Também é a prestação de uma compra: 'pagar a plazos' é parcelar.",
+   "notaEn": "'A corto plazo' = in the short term. It is also an instalment: 'pagar a plazos' is to pay in stages."
+  },
+  {
+   "id": "p236",
+   "tipo": "palavra",
+   "es": "la madrugada",
+   "pt": "a madrugada",
+   "en": "the small hours",
+   "aceitas": [
+    "madrugada",
+    "altas horas",
+    "de madrugada"
+   ],
+   "aceitasEn": [
+    "the small hours",
+    "small hours",
+    "the early hours",
+    "the middle of the night",
+    "the wee hours"
+   ],
+   "distratores": [
+    "o entardecer",
+    "o meio-dia",
+    "a manhã cedo",
+    "a noite fechada"
+   ],
+   "distratoresEn": [
+    "the dusk",
+    "the midday",
+    "the early morning",
+    "the dead of night"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "'A las tres de la madrugada' = às três da madrugada. Daí saem 'madrugar', acordar cedo, e 'trasnochar', que é chegar nela pelo outro lado.",
+   "notaEn": "'A las tres de la madrugada' = at three in the morning. It gives us 'madrugar', to rise early, and it is where 'trasnochar' ends up."
+  },
+  {
+   "id": "p237",
+   "tipo": "palavra",
+   "es": "el coche",
+   "pt": "o carro",
+   "en": "the car",
+   "aceitas": [
+    "carro",
+    "automovel",
+    "veiculo"
+   ],
+   "aceitasEn": [
+    "car",
+    "the car",
+    "motorcar",
+    "automobile",
+    "the automobile"
+   ],
+   "distratores": [
+    "o coche de praça",
+    "a carruagem",
+    "o vagão do trem",
+    "o caminhão"
+   ],
+   "distratoresEn": [
+    "the horse carriage",
+    "the coach",
+    "the train carriage",
+    "the lorry"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cidade",
+    "viagem"
+   ],
+   "nota": "Palavra de Espanha. Na América Latina se diz 'el carro' ou 'el auto'; 'coche' por lá soa a carruagem ou a carrinho de bebê.",
+   "notaEn": "The Spain word. Across Latin America it is 'el carro' or 'el auto', and 'coche' there suggests a carriage or a pram."
+  },
+  {
+   "id": "p238",
+   "tipo": "palavra",
+   "es": "el carné de conducir",
+   "pt": "a carteira de motorista",
+   "en": "the driving licence",
+   "aceitas": [
+    "carteira de motorista",
+    "habilitacao",
+    "cnh",
+    "carteira de habilitacao"
+   ],
+   "aceitasEn": [
+    "driving licence",
+    "the driving licence",
+    "driver's license",
+    "the driver's license",
+    "driving license"
+   ],
+   "distratores": [
+    "o documento do carro",
+    "o seguro do veículo",
+    "a multa de trânsito",
+    "o cartão de embarque"
+   ],
+   "distratoresEn": [
+    "the car registration",
+    "the vehicle insurance",
+    "the traffic fine",
+    "the boarding pass"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cidade",
+    "viagem"
+   ],
+   "nota": "'El carné' sozinho serve para qualquer carteirinha. Na América Latina se diz 'la licencia de conducir' ou 'el brevete'.",
+   "notaEn": "'El carné' on its own covers any membership card. Latin America says 'la licencia de conducir', or 'el brevete' in Peru."
+  },
+  {
+   "id": "p239",
+   "tipo": "palavra",
+   "es": "la matrícula",
+   "pt": "a placa do carro",
+   "en": "the number plate",
+   "aceitas": [
+    "placa",
+    "placa do carro",
+    "placa do veiculo"
+   ],
+   "aceitasEn": [
+    "number plate",
+    "the number plate",
+    "licence plate",
+    "the license plate",
+    "registration"
+   ],
+   "distratores": [
+    "a matrícula da escola",
+    "a carteira do aluno",
+    "a mensalidade do curso",
+    "a inscrição na prova"
+   ],
+   "distratoresEn": [
+    "the school enrolment",
+    "the student card",
+    "the tuition fee",
+    "the exam sign-up"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "cidade",
+    "escola"
+   ],
+   "nota": "Os dois sentidos convivem: a placa do carro e a matrícula na escola. É o número que registra, seja de veículo ou de aluno.",
+   "notaEn": "Both senses live side by side: the plate on a car and enrolment at a school. It is the number that registers you, either way."
+  },
+  {
+   "id": "p240",
+   "tipo": "palavra",
+   "es": "el maletero",
+   "pt": "o porta-malas",
+   "en": "the boot",
+   "aceitas": [
+    "porta malas",
+    "bagageiro",
+    "mala do carro"
+   ],
+   "aceitasEn": [
+    "boot",
+    "the boot",
+    "trunk",
+    "the trunk",
+    "luggage compartment"
+   ],
+   "distratores": [
+    "o carregador",
+    "o painel",
+    "o armário",
+    "o porta-luvas"
+   ],
+   "distratoresEn": [
+    "the porter",
+    "the bus luggage rack",
+    "the bedroom wardrobe",
+    "the overhead locker"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "viagem",
+    "cidade"
+   ],
+   "nota": "De 'la maleta', a mala. Também é a pessoa que carrega malas no hotel. Na América Latina o do carro é 'el baúl' ou 'la cajuela'.",
+   "notaEn": "From 'la maleta', a suitcase. It also names the porter who carries them. In Latin America the car's is 'el baúl' or 'la cajuela'."
+  },
+  {
+   "id": "p241",
+   "tipo": "palavra",
+   "es": "la esquina",
+   "pt": "a esquina (da rua)",
+   "en": "the street corner",
+   "aceitas": [
+    "esquina",
+    "esquina da rua",
+    "canto da rua",
+    "quina"
+   ],
+   "aceitasEn": [
+    "street corner",
+    "the street corner",
+    "corner",
+    "the corner",
+    "the outside corner"
+   ],
+   "distratores": [
+    "o canto (da sala)",
+    "a calçada (da frente)",
+    "a quadra (do bairro)",
+    "a fachada (do prédio)"
+   ],
+   "distratoresEn": [
+    "the inside corner",
+    "the pavement",
+    "the city block",
+    "the building front"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "Par de 'el rincón': esta é a de fora, onde duas ruas se cruzam. 'A la vuelta de la esquina' = logo ali, virando a esquina.",
+   "notaEn": "The pair of 'el rincón': this is the outside corner, where two streets meet. 'A la vuelta de la esquina' = just round the corner."
+  },
+  {
+   "id": "p242",
+   "tipo": "palavra",
+   "es": "el pimiento",
+   "pt": "o pimentão",
+   "en": "the sweet pepper",
+   "aceitas": [
+    "pimentao",
+    "pimento"
+   ],
+   "aceitasEn": [
+    "sweet pepper",
+    "the sweet pepper",
+    "bell pepper",
+    "the bell pepper",
+    "capsicum",
+    "pepper"
+   ],
+   "distratores": [
+    "a pimenta moída",
+    "a páprica doce",
+    "o pimenteiro grande",
+    "o tempero pronto"
+   ],
+   "distratoresEn": [
+    "the ground pepper",
+    "the sweet paprika",
+    "the pepper plant",
+    "the seasoning mix"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Par de 'la pimienta': o -o é o legume inteiro, o -a é o pó do moedor. 'Me importa un pimiento' = não estou nem aí.",
+   "notaEn": "The pair of 'la pimienta': the -o is the whole vegetable, the -a the ground spice. 'Me importa un pimiento' = I couldn't care less."
+  },
+  {
+   "id": "p243",
+   "tipo": "palavra",
+   "es": "la factura",
+   "pt": "a nota fiscal",
+   "en": "the invoice",
+   "aceitas": [
+    "nota fiscal",
+    "nota",
+    "fatura",
+    "conta"
+   ],
+   "aceitasEn": [
+    "invoice",
+    "the invoice",
+    "bill",
+    "the bill",
+    "receipt"
+   ],
+   "distratores": [
+    "a fratura do osso",
+    "a fábrica de móveis",
+    "a fachada da loja",
+    "a etiqueta do preço"
+   ],
+   "distratoresEn": [
+    "the bone fracture",
+    "the furniture factory",
+    "the shop front",
+    "the price tag"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "economia",
+    "trabalho"
+   ],
+   "nota": "'Pedir factura' = pedir nota fiscal. O comprovante simples do caixa é 'el ticket' ou 'el recibo'; 'facturar' é emitir a nota, e também despachar mala no aeroporto.",
+   "notaEn": "'Pedir factura' = to ask for an invoice. The till slip is 'el ticket' or 'el recibo'. And 'facturar' is also to check in luggage at the airport."
+  },
+  {
+   "id": "p244",
+   "tipo": "palavra",
+   "es": "las rebajas",
+   "pt": "a liquidação",
+   "en": "the sales",
+   "aceitas": [
+    "liquidacao",
+    "promocao",
+    "saldos",
+    "queima de estoque"
+   ],
+   "aceitasEn": [
+    "sales",
+    "the sales",
+    "the seasonal sales",
+    "clearance",
+    "the clearance"
+   ],
+   "distratores": [
+    "a devolução",
+    "a prestação",
+    "a encomenda",
+    "a etiqueta"
+   ],
+   "distratoresEn": [
+    "the returns",
+    "the instalments",
+    "the order",
+    "the label"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "economia",
+    "cidade"
+   ],
+   "nota": "Sempre no plural quando é a época: 'las rebajas de enero'. De 'rebajar', baixar o preço. Um desconto avulso é 'el descuento'.",
+   "notaEn": "Plural when it means the season: 'las rebajas de enero'. From 'rebajar', to lower a price. A single discount is 'el descuento'."
+  },
+  {
+   "id": "p245",
+   "tipo": "palavra",
+   "es": "el efectivo",
+   "pt": "o dinheiro vivo",
+   "en": "the cash",
+   "aceitas": [
+    "dinheiro vivo",
+    "dinheiro em especie",
+    "especie",
+    "dinheiro"
+   ],
+   "aceitasEn": [
+    "cash",
+    "the cash",
+    "hard cash",
+    "notes and coins"
+   ],
+   "distratores": [
+    "o cartão de crédito",
+    "o cheque nominal",
+    "o boleto bancário",
+    "o efeito colateral"
+   ],
+   "distratoresEn": [
+    "the credit card",
+    "the personal cheque",
+    "the bank transfer",
+    "the side effect"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "economia"
+   ],
+   "nota": "'¿En efectivo o con tarjeta?' é a pergunta de todo caixa. Como adjetivo, 'efectivo' é eficaz — o substantivo com artigo é que vira dinheiro.",
+   "notaEn": "'¿En efectivo o con tarjeta?' is what every till asks. As an adjective it means effective; with the article in front, it turns into money."
+  },
+  {
+   "id": "p246",
+   "tipo": "palavra",
+   "es": "el presupuesto",
+   "pt": "o orçamento",
+   "en": "the budget",
+   "aceitas": [
+    "orcamento",
+    "estimativa",
+    "previsao de gastos"
+   ],
+   "aceitasEn": [
+    "budget",
+    "the budget",
+    "estimate",
+    "the estimate",
+    "quote",
+    "the quote"
+   ],
+   "distratores": [
+    "o pressuposto",
+    "o preconceito",
+    "o preparativo",
+    "o prejuízo"
+   ],
+   "distratoresEn": [
+    "the assumption",
+    "the prejudice",
+    "the preparation",
+    "the loss"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "economia",
+    "trabalho"
+   ],
+   "nota": "Serve para os dois: o orçamento que o pedreiro passa e o do Estado. O pressuposto lógico é 'el supuesto', sem o pre-.",
+   "notaEn": "It covers both the quote a builder gives you and a government's budget. A logical assumption is 'el supuesto', without the pre-."
+  },
+  {
+   "id": "p247",
+   "tipo": "palavra",
+   "es": "la ola",
+   "pt": "a onda",
+   "en": "the wave",
+   "aceitas": [
+    "onda",
+    "vaga",
+    "onda do mar"
+   ],
+   "aceitasEn": [
+    "wave",
+    "the wave",
+    "the sea wave",
+    "swell"
+   ],
+   "distratores": [
+    "a ola do estádio",
+    "a maré alta",
+    "a espuma branca",
+    "a corrente forte"
+   ],
+   "distratoresEn": [
+    "the stadium wave",
+    "the high tide",
+    "the white foam",
+    "the strong current"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "'Una ola de calor' = uma onda de calor. Cuidado com 'hola', com H, que é o oi de todo dia — soam exatamente igual.",
+   "notaEn": "'Una ola de calor' = a heat wave. Careful with 'hola', with an H, the everyday hello: the two sound exactly the same."
+  },
+  {
+   "id": "p248",
+   "tipo": "palavra",
+   "es": "la hoja",
+   "pt": "a folha",
+   "en": "the leaf",
+   "aceitas": [
+    "folha",
+    "folha de papel",
+    "folha da arvore",
+    "pagina"
+   ],
+   "aceitasEn": [
+    "leaf",
+    "the leaf",
+    "sheet",
+    "the sheet",
+    "sheet of paper",
+    "page"
+   ],
+   "distratores": [
+    "o galho",
+    "a raiz",
+    "a casca",
+    "a semente"
+   ],
+   "distratoresEn": [
+    "the branch",
+    "the root",
+    "the bark",
+    "the seed"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "escola"
+   ],
+   "nota": "Vale para a árvore e para o papel, como em português. Também é a lâmina: 'la hoja de afeitar' é a gilete. O H não se pronuncia.",
+   "notaEn": "It covers both the tree and the paper. It is also a blade: 'la hoja de afeitar' is a razor blade. The H stays silent."
+  },
+  {
+   "id": "f113",
+   "tipo": "frase",
+   "es": "No me hace gracia.",
+   "pt": "Não acho graça nenhuma.",
+   "en": "I don't find it funny.",
+   "aceitas": [
+    "nao acho graca",
+    "nao tem graca",
+    "nao acho graca nenhuma",
+    "nao me faz rir",
+    "nao estou achando graca"
+   ],
+   "aceitasEn": [
+    "i dont find it funny",
+    "i don t find it funny",
+    "i do not find it funny",
+    "its not funny",
+    "im not amused",
+    "i dont think its funny"
+   ],
+   "distratores": [
+    "Não me faz favor nenhum.",
+    "Não me dá atenção nenhuma.",
+    "Não tenho graça nenhuma.",
+    "Não me agradece de jeito nenhum."
+   ],
+   "distratoresEn": [
+    "It does me no favours.",
+    "He pays me no attention.",
+    "I have no charm at all.",
+    "He never thanks me for it."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "cotidiano"
+   ],
+   "nota": "'Hacer gracia' é achar graça, e quase sempre aparece negado. Também vale para agradar: 'no me hace gracia madrugar' = não me agrada acordar cedo.",
+   "notaEn": "'Hacer gracia' is to find something funny, and it turns up negated more often than not. It also covers not liking an idea: 'no me hace gracia madrugar'."
+  },
+  {
+   "id": "f114",
+   "tipo": "frase",
+   "es": "Voy a por pan.",
+   "pt": "Vou buscar pão.",
+   "en": "I'm going out for bread.",
+   "aceitas": [
+    "vou buscar pao",
+    "vou pegar pao",
+    "vou comprar pao",
+    "vou ali buscar pao"
+   ],
+   "aceitasEn": [
+    "im going out for bread",
+    "i m going out for bread",
+    "i am going out for bread",
+    "im off to get bread",
+    "im going to get some bread",
+    "im going for bread"
+   ],
+   "distratores": [
+    "Vou assar pão.",
+    "Vou levar pão.",
+    "Vou pagar o pão.",
+    "Vou guardar o pão."
+   ],
+   "distratoresEn": [
+    "I am going to bake bread.",
+    "I am taking bread over there.",
+    "I will pay for the bread later.",
+    "I am putting the bread away."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "gramática",
+    "Espanha"
+   ],
+   "nota": "'Ir a por' é a construção espanhola para buscar algo — duas preposições seguidas, que na América Latina viram só 'ir por'. Muita gente na Espanha condena o 'a', e todo mundo usa.",
+   "notaEn": "'Ir a por' is how Spain says to go and fetch something — two prepositions in a row. Latin America drops the 'a'. Purists object; everyone in Spain says it anyway."
+  },
+  {
+   "id": "f115",
+   "tipo": "frase",
+   "es": "¿Me pones un café?",
+   "pt": "Me vê um café?",
+   "en": "Could I get a coffee?",
+   "aceitas": [
+    "me ve um cafe",
+    "me traz um cafe",
+    "um cafe por favor",
+    "me da um cafe",
+    "pode me trazer um cafe"
+   ],
+   "aceitasEn": [
+    "could i get a coffee",
+    "can i get a coffee",
+    "could i have a coffee",
+    "can i have a coffee",
+    "a coffee please",
+    "ill have a coffee"
+   ],
+   "distratores": [
+    "Você põe açúcar no café?",
+    "Onde você pôs meu café?",
+    "Me ensina a fazer café?",
+    "Você já tomou seu café?"
+   ],
+   "distratoresEn": [
+    "Do you take sugar in coffee?",
+    "Where did you put my coffee?",
+    "Will you teach me to make coffee?",
+    "Have you had your coffee yet?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano",
+    "Espanha"
+   ],
+   "nota": "É como se pede no balcão de qualquer bar espanhol. Literalmente 'você me põe', porque o garçom põe a xícara no balcão. Em Portugal e na América Latina soaria estranho.",
+   "notaEn": "This is how you order at any Spanish bar: literally 'will you put me a coffee', because the waiter puts the cup on the counter in front of you."
+  },
+  {
+   "id": "f116",
+   "tipo": "frase",
+   "es": "Me pilla de camino.",
+   "pt": "Fica no meu caminho.",
+   "en": "It's on my way.",
+   "aceitas": [
+    "fica no meu caminho",
+    "e no meu caminho",
+    "pega no caminho",
+    "fica de passagem",
+    "da na minha rota"
+   ],
+   "aceitasEn": [
+    "its on my way",
+    "it s on my way",
+    "it is on my way",
+    "its on the way",
+    "it is on my route"
+   ],
+   "distratores": [
+    "Ele me pegou na estrada.",
+    "Me atrapalha o caminho.",
+    "Fica longe do meu caminho.",
+    "Me pega no meio do trajeto."
+   ],
+   "distratoresEn": [
+    "He caught me on the road.",
+    "It gets in my way.",
+    "It is far off my route.",
+    "It catches me halfway there."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "Espanha"
+   ],
+   "nota": "'Pillar' aqui é ficar situado: 'me pilla lejos' = fica longe para mim. Muito usado para decidir se vale a pena ir a um lugar.",
+   "notaEn": "'Pillar' here means to be located relative to you: 'me pilla lejos' = it's out of my way. Handy for deciding whether a place is worth the trip."
+  },
+  {
+   "id": "f117",
+   "tipo": "frase",
+   "es": "¡Qué morro tienes!",
+   "pt": "Que cara de pau você tem!",
+   "en": "You've got some nerve!",
+   "aceitas": [
+    "que cara de pau",
+    "que cara de pau voce tem",
+    "voce e muito cara de pau",
+    "que petulancia",
+    "que folgado voce e"
+   ],
+   "aceitasEn": [
+    "youve got some nerve",
+    "you ve got some nerve",
+    "you have got some nerve",
+    "what a cheek",
+    "youve got a nerve",
+    "the cheek of you"
+   ],
+   "distratores": [
+    "Que cara feia você tem!",
+    "Que boca grande você tem!",
+    "Que sorte danada você tem!",
+    "Que cara cansada você tem!"
+   ],
+   "distratoresEn": [
+    "What a grumpy face you have!",
+    "What a big mouth you have!",
+    "What amazing luck you have!",
+    "What a tired face you have!"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "gíria",
+    "Espanha"
+   ],
+   "nota": "'El morro' é o focinho do animal, e por extensão o descaramento. 'Tener morro' = ser folgado. Também existe 'tener cara', com a mesma ideia.",
+   "notaEn": "'El morro' is an animal's snout, and by extension sheer cheek. 'Tener morro' = to be brazen. 'Tener cara' works the same way."
+  },
+  {
+   "id": "f118",
+   "tipo": "frase",
+   "es": "No doy abasto.",
+   "pt": "Não estou dando conta.",
+   "en": "I can't keep up.",
+   "aceitas": [
+    "nao dou conta",
+    "nao estou dando conta",
+    "nao consigo dar conta",
+    "estou sem conseguir dar conta",
+    "nao vou dar conta"
+   ],
+   "aceitasEn": [
+    "i cant keep up",
+    "i can t keep up",
+    "i cannot keep up",
+    "im swamped",
+    "i cant cope",
+    "theres too much for me"
+   ],
+   "distratores": [
+    "Não tenho tempo nenhum.",
+    "Não recebo o bastante.",
+    "Não tenho ajuda nenhuma.",
+    "Não entendo mais nada."
+   ],
+   "distratoresEn": [
+    "I have no time at all.",
+    "I do not earn enough.",
+    "I have no help at all.",
+    "I do not understand anything."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'Dar abasto' é dar conta do volume de trabalho, e vive no negativo. 'El abasto' era o abastecimento — quem não dá abasto não consegue abastecer todo mundo.",
+   "notaEn": "'Dar abasto' is to cope with the sheer volume, and it lives in the negative. 'El abasto' was the food supply — you cannot supply everyone."
+  },
+  {
+   "id": "f119",
+   "tipo": "frase",
+   "es": "Me suena a chino.",
+   "pt": "Para mim isso é grego.",
+   "en": "It's all Greek to me.",
+   "aceitas": [
+    "isso e grego para mim",
+    "para mim e grego",
+    "nao entendo nada disso",
+    "e grego",
+    "isso e chines para mim"
+   ],
+   "aceitasEn": [
+    "its all greek to me",
+    "it s all greek to me",
+    "it is all greek to me",
+    "i dont understand a word",
+    "its double dutch to me"
+   ],
+   "distratores": [
+    "Para mim isso é fácil.",
+    "Isso me parece familiar.",
+    "Já ouvi isso em algum lugar.",
+    "Acho que isso é chinês mesmo."
+   ],
+   "distratoresEn": [
+    "That sounds easy to me.",
+    "That seems familiar to me.",
+    "I have heard that somewhere before.",
+    "I think that really is Chinese."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Cada língua escolhe a sua: o espanhol acha o chinês incompreensível, e o inglês, o grego. Não confunda com 'me suena' sozinho, que é justamente o contrário — soa familiar.",
+   "notaEn": "Every language picks a different one: Spanish finds Chinese impenetrable, English picks Greek. Careful — plain 'me suena' means the opposite, that it does ring a bell."
+  },
+  {
+   "id": "f120",
+   "tipo": "frase",
+   "es": "Ni corto ni perezoso.",
+   "pt": "Sem pensar duas vezes.",
+   "en": "Without a moment's hesitation.",
+   "aceitas": [
+    "sem pensar duas vezes",
+    "na hora",
+    "sem titubear",
+    "sem hesitar",
+    "de pronto"
+   ],
+   "aceitasEn": [
+    "without a moments hesitation",
+    "without hesitation",
+    "without thinking twice",
+    "then and there",
+    "without missing a beat"
+   ],
+   "distratores": [
+    "Sem trabalhar por preguiça.",
+    "Sem falar por ser tímido.",
+    "Sem crescer por ser baixo.",
+    "Sem correr por estar cansado."
+   ],
+   "distratoresEn": [
+    "Too lazy to work.",
+    "Too shy to speak.",
+    "Too short to reach.",
+    "Too tired to run."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Literalmente 'nem tímido nem preguiçoso' — 'corto' aqui é acanhado. Descreve quem age na hora, sem rodeio: 'ni corto ni perezoso, se lo dijo en la cara'.",
+   "notaEn": "Literally 'neither shy nor lazy' — 'corto' here means timid. It describes acting on the spot: 'ni corto ni perezoso, se lo dijo en la cara'."
+  },
+  {
+   "id": "f121",
+   "tipo": "frase",
+   "es": "Está hecho un lío.",
+   "pt": "Ele está confuso.",
+   "en": "He's all muddled up.",
+   "aceitas": [
+    "esta confuso",
+    "ele esta confuso",
+    "esta enrolado",
+    "se enrolou todo",
+    "esta perdido"
+   ],
+   "aceitasEn": [
+    "hes all muddled up",
+    "he s all muddled up",
+    "he is all muddled up",
+    "hes confused",
+    "hes in a muddle",
+    "hes all mixed up"
+   ],
+   "distratores": [
+    "Ele está com pressa.",
+    "Ele está muito bravo.",
+    "Ele está bem resolvido.",
+    "Ele está de mau humor."
+   ],
+   "distratoresEn": [
+    "He is in a real hurry.",
+    "He is extremely angry.",
+    "He has it all worked out.",
+    "He is in a foul mood."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'Un lío' é uma confusão, um nó. 'Hacerse un lío' é se embananar; 'armar un lío' é arrumar confusão; e 'tener un lío con alguien' é ter um caso.",
+   "notaEn": "'Un lío' is a tangle. 'Hacerse un lío' is to get muddled, 'armar un lío' is to kick up a fuss, and 'tener un lío con alguien' is to have an affair."
+  },
+  {
+   "id": "f122",
+   "tipo": "frase",
+   "es": "Deja de dar la lata.",
+   "pt": "Para de encher o saco.",
+   "en": "Stop pestering me.",
+   "aceitas": [
+    "para de encher o saco",
+    "para de encher",
+    "chega de encher o saco",
+    "para de amolar",
+    "deixa de encher"
+   ],
+   "aceitasEn": [
+    "stop pestering me",
+    "stop bothering me",
+    "stop going on about it",
+    "give it a rest",
+    "stop nagging"
+   ],
+   "distratores": [
+    "Para de bater na lata.",
+    "Para de abrir a lata.",
+    "Para de jogar a lata fora.",
+    "Para de guardar tudo em lata."
+   ],
+   "distratoresEn": [
+    "Stop banging on the tin.",
+    "Stop opening the tin.",
+    "Stop throwing the tin away.",
+    "Stop keeping it all in tins."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "'La lata' é a lata mesmo, e 'dar la lata' vem do barulho de arrastá-la. 'Qué lata' sozinho é 'que saco'.",
+   "notaEn": "'La lata' is a tin can, and the phrase comes from the racket of dragging one around. On its own, '¡qué lata!' means what a drag."
+  },
+  {
+   "id": "f123",
+   "tipo": "frase",
+   "es": "Nos pusimos morados.",
+   "pt": "Comemos até não poder mais.",
+   "en": "We ate until we burst.",
+   "aceitas": [
+    "comemos ate nao poder mais",
+    "comemos demais",
+    "nos empanturramos",
+    "comemos muito",
+    "enchemos a barriga"
+   ],
+   "aceitasEn": [
+    "we ate until we burst",
+    "we stuffed ourselves",
+    "we ate ourselves silly",
+    "we had a huge feed",
+    "we gorged ourselves"
+   ],
+   "distratores": [
+    "Ficamos roxos de frio.",
+    "Ficamos roxos de raiva.",
+    "Nos vestimos de roxo.",
+    "Pintamos a parede de roxo."
+   ],
+   "distratoresEn": [
+    "We turned blue with cold.",
+    "We went purple with rage.",
+    "We dressed all in purple.",
+    "We painted the wall purple."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "comida",
+    "Espanha"
+   ],
+   "nota": "'Ponerse morado' é comer até ficar roxo. Serve para qualquer excesso prazeroso, mas nasceu à mesa. 'Morado' é roxo, a cor.",
+   "notaEn": "'Ponerse morado' is to eat until you turn purple. It stretches to any pleasurable excess, but it was born at the table."
+  },
+  {
+   "id": "f124",
+   "tipo": "frase",
+   "es": "Hizo de tripas corazón.",
+   "pt": "Ele criou coragem.",
+   "en": "He steeled himself.",
+   "aceitas": [
+    "criou coragem",
+    "tomou coragem",
+    "engoliu o choro",
+    "fez das tripas coracao",
+    "se armou de coragem"
+   ],
+   "aceitasEn": [
+    "he steeled himself",
+    "he plucked up courage",
+    "he gritted his teeth",
+    "he braced himself",
+    "he screwed up his courage"
+   ],
+   "distratores": [
+    "Ele passou muito mal.",
+    "Ele comeu de tudo.",
+    "Ele ficou de coração partido.",
+    "Ele sentiu dor no estômago."
+   ],
+   "distratoresEn": [
+    "He felt terribly unwell.",
+    "He ate absolutely everything.",
+    "He was left broken-hearted.",
+    "He had a pain in his stomach."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão"
+   ],
+   "nota": "Literalmente 'fazer das tripas coração': transformar o medo do estômago em coragem. Usa-se para quem encara o que não queria encarar.",
+   "notaEn": "Literally 'to make a heart out of guts': turning the fear in your stomach into courage. Said of someone facing what they would rather not."
   }
  ]
 };
