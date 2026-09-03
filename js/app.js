@@ -593,13 +593,17 @@
       '<td class="num">' + g[n].total + '</td></tr>'
     ).join('');
 
+    /* Os rótulos vão de pé: são seis colunas de números, e escritos na
+       horizontal eles é que faziam a tabela estourar a largura da tela. */
+    const cabeca = r => '<th class="vert"><span>' + r + '</span></th>';
+
     return '<h3>Em que pé está cada nível</h3>' +
       '<p class="legenda">Cada card percorre múltipla escolha, escrita em português, ' +
       'a volta em que você produz o espanhol, e por fim dominado — que não é ' +
       'aposentadoria: ele continua voltando, só que cada vez mais espaçado.</p>' +
-      '<table><tr><th>Nível</th>' +
-      ETAPAS.map(e => '<th class="num">' + e.rotulo + '</th>').join('') +
-      '<th class="num">Total</th></tr>' + linhas +
+      '<table class="etapas"><tr><th>Nível</th>' +
+      ETAPAS.map(e => cabeca(e.rotulo)).join('') +
+      cabeca('Total') + '</tr>' + linhas +
       '<tr class="soma"><td>Todos</td>' +
       ETAPAS.map(e => celula(soma(e.chave))).join('') +
       '<td class="num">' + soma('total') + '</td></tr></table>';

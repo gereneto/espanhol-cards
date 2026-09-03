@@ -209,6 +209,21 @@ th{color:var(--texto-2);font-weight:600;font-size:12px;text-transform:uppercase;
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 /* a linha de totais fecha a tabela: sem borda embaixo e um pouco mais firme */
 tr.soma td{border-bottom:none;border-top:1px solid var(--borda);font-weight:600;color:var(--texto)}
+
+/* ── tabela de etapas ──
+   São seis colunas de números com rótulos longos ("Escrevendo", "Dominados").
+   Deitados, eles decidiam sozinhos a largura da tabela e estouravam a tela do
+   celular. De pé, cada coluna fica do tamanho do número que carrega. */
+table.etapas th.vert{
+  padding:8px 3px;vertical-align:bottom;text-align:center;
+}
+table.etapas th.vert span{
+  display:inline-block;white-space:nowrap;
+  writing-mode:vertical-rl;transform:rotate(180deg);  /* lê de baixo para cima */
+}
+table.etapas td,table.etapas th{padding-left:4px;padding-right:4px}
+table.etapas td:first-child,table.etapas th:first-child{padding-left:10px;text-align:left}
+table.etapas td{text-align:center;font-variant-numeric:tabular-nums}
 .barra{height:6px;background:var(--fundo-3);border-radius:99px;overflow:hidden;min-width:60px}
 .barra i{display:block;height:100%;background:var(--ok)}
 
