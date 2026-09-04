@@ -80,17 +80,29 @@ olhando a **carga**: quantos cards estão na primeira direção, ainda sendo
 aprendidos. É esse o estoque que custa caro — na volta o card já é conhecido,
 e treinar produção não compete com aprender palavra nova.
 
-| Situação | O que acontece |
-|---|---|
-| Nada em curso | entra inédito |
-| Menos de 3 respostas desde o último inédito | não entra, para não afogar |
-| Carga abaixo de 18 | entra — há espaço para aprender |
-| Carga cheia | espera mais, e a espera cresce com o excesso |
-| Carga muito alta | espera trava em 45 respostas — **nunca deixa de vir** |
+A espera entre um inédito e outro é uma curva só, não uma escada de regras:
 
-O teto de 45 existe porque um limite que pudesse virar "nunca" recriaria a seca
-que a regra veio resolver. O painel mostra a carga ao lado do alvo
-(«aprendendo agora»), então dá para ver o ritmo funcionando.
+| Carga | Espera por um card novo |
+|---:|---:|
+| 0 | imediato |
+| 10 | 6 respostas |
+| 24 | 10 |
+| 30 (o alvo) | 12 |
+| 40 | 22 |
+| 50 ou mais | 25 — o teto |
+
+Nunca deixa de vir: um limite que pudesse virar "nunca" recriaria a seca que a
+regra veio resolver.
+
+Os números saíram de medir um progresso real, e não de palpite. Na primeira
+tentativa o alvo era 18, e um estado com 129 cards em curso — 98 deles já na
+volta, só 24 na primeira direção — gerava espera de 32 respostas. Vinte e quatro
+não é afogamento num baralho de 419: é o regime normal, porque `escrita` é onde
+o card espera emplacar três acertos seguidos. O alvo subiu para 30 e a escalada
+ficou mais mansa.
+
+O painel mostra a carga ao lado do alvo («aprendendo agora») e o intervalo atual
+(«respostas por card novo»), para o ritmo não ser mais invisível.
 
 De quebra, isso equilibra as etapas: sem a enxurrada de inéditos, os cards
 avançam em vez de empilhar na volta.

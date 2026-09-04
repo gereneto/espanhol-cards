@@ -563,6 +563,10 @@
       metrica(naInversa, 'já indo para o espanhol') +
       metrica(dominados, 'dominados nas duas direções') +
       metrica(Motor.cargaInicial(progresso.cards) + '/' + Motor.CARGA_ALVO, 'aprendendo agora') +
+      /* o ritmo dos inéditos era invisível, e sem isso não dava para saber se
+         a demora era regra ou defeito */
+      metrica('~' + Motor.esperaComCarga(Motor.cargaInicial(progresso.cards)),
+              'respostas por card novo') +
       '</div>';
 
     if (estreados.length) {
