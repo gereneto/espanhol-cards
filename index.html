@@ -12,18 +12,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=404058a7">
+<link rel="stylesheet" href="style.css?v=53d6ee3f">
 </head>
 <body>
 
 <header class="topo">
   <div class="marca">Espanhol <span>Cards</span></div>
   <div class="placar" id="placar"></div>
+  <!-- Ícones de traço, herdando a cor da paleta: emoji trazem cor própria e
+       brigavam com o verde-noite. O de «todos os cards» é a própria pilha. -->
   <nav class="acoes-topo">
-    <button class="icone" id="btn-inicio" title="Página inicial">🏠</button>
-    <button class="icone" id="btn-cards" title="Todos os cards">🗂️</button>
-    <button class="icone" id="btn-painel" title="Estatísticas">📊</button>
-    <button class="icone" id="btn-config" title="Configurações">⚙️</button>
+    <button class="icone" id="btn-inicio" title="Página inicial" aria-label="Página inicial">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.6 10.7 12 4.2l8.4 6.5"/>
+        <path d="M6.2 9.6V19.8h11.6V9.6"/>
+        <path d="M10 19.8v-4.6h4v4.6"/>
+      </svg>
+    </button>
+    <button class="icone" id="btn-cards" title="Todos os cards" aria-label="Todos os cards">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="8.2" y="3.4" width="12.4" height="12.4" rx="2.4"/>
+        <path d="M15.8 20.6H5.8a2.4 2.4 0 0 1-2.4-2.4V8.2"/>
+      </svg>
+    </button>
+    <button class="icone" id="btn-painel" title="Estatísticas" aria-label="Estatísticas">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.6 20.4h16.8"/>
+        <path d="M7.4 20.4v-5.6"/>
+        <path d="M12 20.4V9.2"/>
+        <path d="M16.6 20.4v-8.2"/>
+      </svg>
+    </button>
+    <button class="icone" id="btn-config" title="Configurações" aria-label="Configurações">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7.2h16"/><path d="M4 12h16"/><path d="M4 16.8h16"/>
+        <circle cx="9.2" cy="7.2" r="2.3"/>
+        <circle cx="15" cy="12" r="2.3"/>
+        <circle cx="8.2" cy="16.8" r="2.3"/>
+      </svg>
+    </button>
   </nav>
 </header>
 
@@ -222,9 +249,9 @@
   <span id="rodape-sync">•</span>
 </footer>
 
-<script src="data/cards.js?v=404058a7"></script>
-<script src="js/motor.js?v=404058a7"></script>
-<script src="js/github.js?v=404058a7"></script>
-<script src="js/app.js?v=404058a7"></script>
+<script src="data/cards.js?v=53d6ee3f"></script>
+<script src="js/motor.js?v=53d6ee3f"></script>
+<script src="js/github.js?v=53d6ee3f"></script>
+<script src="js/app.js?v=53d6ee3f"></script>
 </body>
 </html>

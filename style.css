@@ -61,10 +61,23 @@ body{
 .placar b{color:var(--texto)}
 .acoes-topo{display:flex;gap:6px}
 .icone{
-  background:transparent;border:1px solid var(--borda);color:var(--texto);
-  border-radius:10px;width:36px;height:36px;font-size:16px;cursor:pointer;
+  background:transparent;border:1px solid var(--borda);color:var(--texto-2);
+  border-radius:10px;width:36px;height:36px;cursor:pointer;
+  display:grid;place-items:center;padding:0;
+  transition:color .12s,border-color .12s,background .12s;
 }
-.icone:hover{background:var(--fundo-3)}
+.icone svg{
+  width:19px;height:19px;display:block;
+  fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+/* os botões dos controles deslizantes são vazados, não riscados pela linha */
+.icone svg circle{fill:var(--fundo)}
+.icone:hover{color:var(--texto);border-color:var(--texto-2);background:var(--fundo-3)}
+.icone:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+/* a tela em que você está fica marcada: saber onde se está é barato */
+.icone.aqui{color:var(--acento);border-color:var(--acento-borda);background:var(--acento-fraco)}
+.icone.aqui svg circle{fill:#1c1a10}
 
 main{flex:1;width:100%;max-width:720px;margin:0 auto;padding:22px 16px 40px}
 

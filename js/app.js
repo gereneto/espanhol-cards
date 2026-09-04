@@ -130,9 +130,18 @@
 
   /* ═══════════════ telas ═══════════════ */
 
+  /* Qual botão do topo corresponde a cada tela. A de card não tem botão:
+     ela é para onde o «começar» leva, não um destino do menu. */
+  const BOTAO_DA_TELA = {
+    'tela-inicio': 'btn-inicio', 'tela-cards': 'btn-cards',
+    'tela-painel': 'btn-painel', 'tela-config': 'btn-config'
+  };
+
   function mostrar(tela) {
     ['tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards']
       .forEach(t => el[t].classList.toggle('oculto', t !== tela));
+    const aceso = BOTAO_DA_TELA[tela];
+    Object.values(BOTAO_DA_TELA).forEach(b => el[b].classList.toggle('aqui', b === aceso));
   }
 
   function atualizarPlacar() {
