@@ -17,7 +17,7 @@
     'tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards',
     'busca-cards', 'filtro-tipo', 'filtro-nivel', 'filtro-tag', 'filtro-estado',
     'contagem-cards', 'lista-cards',
-    'meta-tipo', 'meta-modo', 'meta-nivel', 'enunciado', 'termo',
+    'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
@@ -204,8 +204,10 @@
 
     el['meta-tipo'].textContent = cardAtual.tipo;
     el['meta-modo'].textContent = modoAtual === 'multipla' ? 'múltipla escolha' : 'escreva a resposta';
-    el['meta-nivel'].classList.add('oculto');
-    el['meta-nivel'].textContent = Motor.ROTULO_NIVEL[cardAtual.nivel] || cardAtual.nivel;
+    /* O nível vive na aba do fichário e fica à mostra o tempo todo: saber que
+       o card é A1 ou C2 não entrega resposta nenhuma, e ajuda a calibrar o
+       esforço antes de ler. */
+    el['aba-nivel'].textContent = Motor.ROTULO_NIVEL[cardAtual.nivel] || cardAtual.nivel;
 
     const inversa = direcaoAtual === 'pt-es';
     el.enunciado.textContent = inversa
@@ -322,12 +324,11 @@
     el['resposta-certa'].textContent = alvoAtual;
     el.nota.textContent = cardAtual.nota || '';
     el.nota.classList.toggle('oculto', !cardAtual.nota);
-    el['meta-nivel'].classList.remove('oculto');
 
     const rotuloVel = { rapido: 'rápido', medio: 'no tempo médio', lento: 'devagar' }[r.velocidade];
     el.medidas.innerHTML =
       '<span class="medida"><b>' + (r.ms / 1000).toFixed(1) + 's</b> — ' + rotuloVel + '</span>' +
-      '<span class="medida">' + escapar(Motor.ROTULO_NIVEL[cardAtual.nivel] || cardAtual.nivel) + '</span>' +
+      /* o nível já está na aba do fichário; repeti-lo aqui só ocupa lugar */
       (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
       (r.pausado
         ? '<span class="medida">tempo não contado (' +

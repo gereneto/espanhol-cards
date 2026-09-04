@@ -72,7 +72,7 @@
 .rev-campo textarea:focus{outline:none;border-color:var(--acento)}
 /* campo que o revisor alterou nesta sessão */
 .rev-campo.mexido input[type=text],
-.rev-campo.mexido textarea{border-color:var(--acento);background:rgba(255,179,71,.06)}
+.rev-campo.mexido textarea{border-color:var(--acento);background:var(--acento-fraco)}
 
 .rev-distratores{display:grid;gap:8px}
 .rev-distratores .rev-campo{margin:0}
@@ -89,7 +89,7 @@
 .rev-nota{font-size:14px;line-height:1.65;color:var(--texto-2);margin:6px 0 0}
 
 /* inglês que o Yoisser corrigiu: mostra o antes ao lado do depois */
-.rev-alterado{border-left:3px solid var(--acento);background:rgba(255,179,71,.05)}
+.rev-alterado{border-left:3px solid var(--acento);background:var(--acento-fraco)}
 .rev-antes{
   margin:7px 0 0;font-size:13.5px;color:var(--texto-2);
   text-decoration:line-through;text-decoration-color:var(--erro);
@@ -103,7 +103,7 @@
   color:var(--erro);border:1px solid var(--erro);border-radius:999px;padding:2px 8px;
 }
 .rev-comentario-revisor{
-  background:rgba(255,179,71,.07);border:1px solid rgba(255,179,71,.35);
+  background:var(--acento-fraco);border:1px solid var(--acento-borda);
   border-radius:10px;padding:11px 13px;margin-bottom:12px;
 }
 .rev-comentario-revisor .rev-rotulo{color:var(--acento);margin-bottom:5px}
@@ -120,12 +120,12 @@
   background:var(--fundo-3);color:var(--texto);transition:border-color .12s,background .12s;
 }
 .rev-decisao button:hover{border-color:var(--texto-2)}
-.rev-decisao .aceitar{border-color:rgba(61,220,151,.5);color:var(--ok);background:rgba(61,220,151,.08)}
-.rev-decisao .aceitar:hover{border-color:var(--ok);background:rgba(61,220,151,.16)}
-.rev-decisao .sugerir{border-color:rgba(255,179,71,.5);color:var(--acento);background:rgba(255,179,71,.08)}
-.rev-decisao .sugerir:hover{border-color:var(--acento);background:rgba(255,179,71,.16)}
-.rev-decisao .apagar{border-color:rgba(255,107,107,.45);color:var(--erro);background:rgba(255,107,107,.08)}
-.rev-decisao .apagar:hover{border-color:var(--erro);background:rgba(255,107,107,.16)}
+.rev-decisao .aceitar{border-color:var(--ok-borda);color:var(--ok);background:var(--ok-fraco)}
+.rev-decisao .aceitar:hover{border-color:var(--ok);background:var(--ok-fraco)}
+.rev-decisao .sugerir{border-color:var(--acento-borda);color:var(--acento);background:var(--acento-fraco)}
+.rev-decisao .sugerir:hover{border-color:var(--acento);background:var(--acento-fraco)}
+.rev-decisao .apagar{border-color:var(--erro-borda);color:var(--erro);background:var(--erro-fraco)}
+.rev-decisao .apagar:hover{border-color:var(--erro);background:var(--erro-fraco)}
 
 /* o que já foi decidido neste card */
 .rev-ja{

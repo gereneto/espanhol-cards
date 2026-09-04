@@ -1,27 +1,46 @@
+/* ────────────────────────────────────────────────────────────────
+   Pilha — o baralho como fichário: a caixa é o fundo, a ficha é a
+   superfície erguida, e as fichas que esperam aparecem atrás dela.
+   Verde-noite para a caixa, âmbar para o que exige decisão, verde-água
+   só para o acerto — que por isso é visto.
+
+   Toda cor vive aqui. Os tons translúcidos também têm token, para a
+   próxima repaginação não ter de caçar rgba pelo arquivo inteiro.
+   ──────────────────────────────────────────────────────────────── */
 :root{
-  --fundo:#12141c;
-  --fundo-2:#1a1d28;
-  --fundo-3:#232736;
-  --borda:#2f3446;
-  --texto:#e8eaf2;
-  --texto-2:#9aa1b8;
-  --acento:#ffb347;
+  --fundo:#0d1614;        /* a caixa */
+  --fundo-2:#16211f;      /* a ficha */
+  --fundo-3:#1e2c29;      /* blocos dentro da ficha */
+  --atras-1:#132320;      /* a ficha logo atrás */
+  --atras-2:#101d1b;      /* e a de trás dela */
+  --borda:#25352f;
+  --texto:#e4ebe8;
+  --texto-2:#8ba39d;
+  --acento:#e8b93f;
   --acento-2:#c8102e;
-  --ok:#3ddc97;
-  --erro:#ff6b6b;
-  --quase:#ffd166;
-  --raio:14px;
-  --sombra:0 8px 30px rgba(0,0,0,.35);
+  --ok:#4dd4a0;
+  --erro:#f0796f;
+  --quase:#f2d489;
+
+  --acento-fraco:rgba(232,185,63,.13);
+  --acento-borda:rgba(232,185,63,.34);
+  --ok-fraco:rgba(77,212,160,.13);
+  --ok-borda:rgba(77,212,160,.38);
+  --erro-fraco:rgba(240,121,111,.10);
+  --erro-borda:rgba(240,121,111,.42);
+  --quase-fraco:rgba(242,212,137,.09);
+  --quase-borda:rgba(242,212,137,.34);
+
+  --raio:15px;
+  --sombra:0 1px 0 rgba(255,255,255,.05), 0 10px 26px -12px #000;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  background:
-    radial-gradient(1200px 600px at 80% -10%, #1e2233 0%, transparent 60%),
-    var(--fundo);
+  background:var(--fundo);
   color:var(--texto);
-  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font:400 16px/1.5 "Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;
   min-height:100vh;
   display:flex;flex-direction:column;
   padding-bottom:env(safe-area-inset-bottom);
@@ -33,7 +52,7 @@ body{
 .topo{
   display:flex;align-items:center;gap:12px;
   padding:14px 18px;border-bottom:1px solid var(--borda);
-  background:rgba(18,20,28,.85);backdrop-filter:blur(8px);
+  background:rgba(13,22,20,.88);backdrop-filter:blur(8px);
   position:sticky;top:0;z-index:10;
 }
 .marca{font-weight:700;letter-spacing:.3px}
@@ -79,22 +98,43 @@ button{font:inherit}
 .secundario:hover{border-color:var(--texto-2)}
 .linha-botoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
-/* ── card ── */
+/* ── a ficha, e as que esperam atrás ──
+   A pilha não é enfeite: ela diz o que número nenhum diz tão bem — que há
+   fila, que ela tem tamanho, e que este card saiu de algum lugar e volta
+   para lá. São duas bordas assomando no alto, atrás da ficha. */
+.fichario{position:relative;padding-top:15px}
+.atras{
+  position:absolute;height:46px;
+  border-radius:var(--raio);border:1px solid var(--borda);border-bottom:0;
+}
+.atras.a{top:7px;left:10px;right:10px;background:var(--atras-1)}
+.atras.b{top:0;left:21px;right:21px;background:var(--atras-2)}
+
 .card{
+  position:relative;z-index:1;
   background:var(--fundo-2);border:1px solid var(--borda);
   border-radius:var(--raio);padding:22px;box-shadow:var(--sombra);
 }
-.card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+
+/* a aba do nível sai por cima da ficha, como a lingueta de um fichário */
+.aba{
+  position:absolute;top:0;right:24px;z-index:2;
+  background:var(--acento);color:#1a1405;
+  font-size:11px;font-weight:800;letter-spacing:.9px;
+  padding:6px 11px 7px;border-radius:0 0 8px 8px;
+}
+
+.card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;padding-right:56px}
 .etiqueta{
   font-size:11.5px;text-transform:uppercase;letter-spacing:.7px;font-weight:600;
-  background:rgba(255,179,71,.14);color:var(--acento);
-  border:1px solid rgba(255,179,71,.3);border-radius:999px;padding:3px 11px;
+  background:var(--acento-fraco);color:var(--acento);
+  border:1px solid var(--acento-borda);border-radius:999px;padding:3px 11px;
 }
 .etiqueta.suave{background:var(--fundo-3);color:var(--texto-2);border-color:var(--borda)}
 .enunciado{color:var(--texto-2);font-size:13.5px;margin:0 0 6px}
 .termo-linha{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
 .termo{
-  font-size:30px;font-weight:700;line-height:1.25;
+  font-size:29px;font-weight:800;line-height:1.22;letter-spacing:-.015em;
   color:#fff;overflow-wrap:break-word;flex:1;
 }
 .termo.frase{font-size:23px;font-style:italic}
@@ -118,15 +158,16 @@ button{font:inherit}
   border-radius:11px;padding:13px 15px;cursor:pointer;
   transition:border-color .12s,background .12s;
 }
-.alternativa:hover:not(:disabled){border-color:var(--acento);background:#272c3d}
+.alternativa:hover:not(:disabled){border-color:var(--acento);background:var(--fundo-2)}
 .alternativa:disabled{cursor:default;opacity:.85}
 .alternativa .num{
-  flex:none;width:23px;height:23px;border-radius:6px;background:var(--fundo);
+  flex:none;width:23px;height:23px;border-radius:50%;background:var(--fundo);
   border:1px solid var(--borda);display:grid;place-items:center;
-  font-size:12px;color:var(--texto-2);
+  font-size:12px;font-weight:800;color:var(--acento);
 }
-.alternativa.certa{border-color:var(--ok);background:rgba(61,220,151,.13);opacity:1}
-.alternativa.errada{border-color:var(--erro);background:rgba(255,107,107,.12)}
+.alternativa.certa{border-color:var(--ok);background:var(--ok-fraco);opacity:1}
+.alternativa.certa .num{background:var(--ok);border-color:var(--ok);color:#0a231b}
+.alternativa.errada{border-color:var(--erro);background:var(--erro-fraco)}
 
 /* ── escrita ── */
 #entrada{
@@ -161,7 +202,7 @@ button{font:inherit}
 .medida b{color:var(--texto);font-weight:600}
 
 .resposta-dada{
-  background:rgba(255,209,102,.09);border:1px solid rgba(255,209,102,.32);
+  background:var(--quase-fraco);border:1px solid var(--quase-borda);
   border-radius:11px;padding:12px 15px;margin-bottom:10px;
 }
 .resposta-dada .rotulo{
@@ -180,8 +221,8 @@ button{font:inherit}
   font-size:14.5px;font-weight:600;cursor:pointer;
   background:var(--fundo-3);border:1px solid var(--borda);color:var(--texto);
 }
-.opcao-julgamento.acertei:hover{border-color:var(--ok);color:var(--ok);background:rgba(61,220,151,.1)}
-.opcao-julgamento.errei:hover{border-color:var(--erro);color:var(--erro);background:rgba(255,107,107,.1)}
+.opcao-julgamento.acertei:hover{border-color:var(--ok);color:var(--ok);background:var(--ok-fraco)}
+.opcao-julgamento.errei:hover{border-color:var(--erro);color:var(--erro);background:var(--erro-fraco)}
 
 .conhecia{
   border-top:1px solid var(--borda);margin:0 0 18px;padding-top:16px;
@@ -232,7 +273,7 @@ table.etapas td{text-align:center;font-variant-numeric:tabular-nums}
   background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;
   padding:16px;margin-bottom:16px;
 }
-.grupo.perigo{border-color:rgba(255,107,107,.35)}
+.grupo.perigo{border-color:var(--erro-borda)}
 .grupo.perigo h3{color:var(--erro)}
 .ajuda{color:var(--texto-2);font-size:13px;margin:0 0 14px}
 .ajuda code{background:var(--fundo-3);padding:1px 6px;border-radius:5px;font-size:12px}
@@ -263,7 +304,7 @@ label input:focus{outline:0;border-color:var(--acento)}
 
 /* quando o erro foi de conjugação, o feedback nomeia o que ele escreveu */
 .resposta-dada.conjugacao{
-  background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.32);
+  background:var(--erro-fraco);border-color:var(--erro-borda);
 }
 .resposta-dada.conjugacao .rotulo{color:var(--erro)}
 .forma-rotulo{
@@ -275,11 +316,11 @@ label input:focus{outline:0;border-color:var(--acento)}
 /* contestar: o card pode estar errado, não você */
 .contestar{margin-bottom:16px}
 .link-contestar{
-  background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.45);color:var(--erro);
+  background:var(--erro-fraco);border:1px solid var(--erro-borda);color:var(--erro);
   border-radius:10px;padding:10px 14px;font-size:14px;font-weight:500;cursor:pointer;width:100%;
   text-align:left;transition:border-color .12s,background .12s;
 }
-.link-contestar:hover{border-color:var(--erro);background:rgba(255,107,107,.16)}
+.link-contestar:hover{border-color:var(--erro);background:var(--erro-fraco)}
 .aviso-contestado{margin:9px 0 0;font-size:13px;color:var(--ok)}
 
 /* ── lista de todos os cards ── */
@@ -322,11 +363,11 @@ label input:focus{outline:0;border-color:var(--acento)}
   font-size:11px;border-radius:999px;padding:2px 9px;
   border:1px solid var(--borda);color:var(--texto-2);background:var(--fundo-3);
 }
-.selo.nivel{color:var(--acento);border-color:rgba(255,179,71,.3);background:rgba(255,179,71,.12)}
+.selo.nivel{color:var(--acento);border-color:var(--acento-borda);background:var(--acento-fraco)}
 .selo.situacao.novo{opacity:.7}
 .selo.situacao.andamento{color:var(--acento)}
-.selo.situacao.invertido{color:var(--quase);border-color:rgba(255,209,102,.35)}
-.selo.situacao.dominado{color:var(--ok);border-color:rgba(61,220,151,.35)}
+.selo.situacao.invertido{color:var(--quase);border-color:var(--quase-borda)}
+.selo.situacao.dominado{color:var(--ok);border-color:var(--ok-borda)}
 .card-linha-nota{
   color:var(--texto-2);font-size:13px;margin:9px 0 0;
   border-left:2px solid var(--borda);padding-left:10px;
