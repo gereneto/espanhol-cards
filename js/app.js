@@ -4,7 +4,9 @@
 (function () {
 
   const CHAVE_PROGRESSO = 'espanhol-cards:progresso';
-  const SINCRONIZAR_A_CADA = 8;   // respostas
+  const SINCRONIZAR_A_CADA = 3;   // respostas
+  const SINCRONIZAR_COMPLETO_A_CADA = 8;  // sincronizações
+  const REDE_DE_SEGURANCA = 45000;        // ms parado com resposta pendente
 
   const CARDS = (window.CARDS_RAW && window.CARDS_RAW.cards) || [];
   const PORID = {};
@@ -44,6 +46,8 @@
   let estreiaPendente = false;
   let respostasDesdeSync = 0;
   let sincronizando = false;
+  let sincronizacoes = 0;
+  let temporizadorSync = null;
 
   function progressoVazio() {
     return {
@@ -528,10 +532,28 @@
   }
 
   function talvezSincronizar() {
-    if (++respostasDesdeSync >= SINCRONIZAR_A_CADA && GH.cfg().auto && GH.configurado()) {
+    if (!(GH.cfg().auto && GH.configurado())) return;
+    agendarRedeDeSeguranca();
+    if (++respostasDesdeSync >= SINCRONIZAR_A_CADA) {
       respostasDesdeSync = 0;
-      sincronizar({ silencioso: true });
+      sincronizar({ silencioso: true, completo: (++sincronizacoes % SINCRONIZAR_COMPLETO_A_CADA) === 0 });
     }
+  }
+
+  /* Se você parar no meio — três respostas dadas, a quarta nunca vem — o
+     contador sozinho nunca dispararia. O relógio dispara. */
+  function agendarRedeDeSeguranca() {
+    clearTimeout(temporizadorSync);
+    temporizadorSync = setTimeout(() => {
+      if (respostasDesdeSync && GH.cfg().auto && GH.configurado()) {
+        respostasDesdeSync = 0;
+        sincronizar({ silencioso: true, completo: true });
+      }
+    }, REDE_DE_SEGURANCA);
+  }
+
+  function marcaDeSalvo() {
+    return 'Salvo às ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
   }
 
   function avancar() {
@@ -869,10 +891,34 @@
 
     try {
       const agora = new Date().toISOString();
+
+      /* Ler antes de escrever. Outro aparelho pode ter estudado desde a
+         última subida, e escrever por cima apagaria o que ele fez — foi
+         exatamente assim que 604 respostas viraram 25. Sem rede, sobe o
+         que se tem: perder a mescla é melhor do que perder a resposta. */
+      try {
+        const arq = await GH.ler('progresso.json');
+        if (arq) {
+          const remoto = JSON.parse(arq.texto);
+          progresso = conciliarFila(mesclar(progresso, remoto));
+          salvarProgresso();
+          atualizarPlacar();
+        }
+      } catch (e) { /* segue com o que temos */ }
+
       await GH.escrever('progresso.json',
         JSON.stringify(progresso, null, 1),
         'progresso — ' + agora,
         { keepalive: opcoes.keepalive });
+
+      /* O progresso sobe sempre; sessão, contestações e resumo só de vez em
+         quando. São o registro para calibrar levas, não o seu avanço, e
+         subir os quatro a cada três respostas encheria o repositório de
+         commits sem nenhum ganho. */
+      if (!opcoes.completo) {
+        statusSync(marcaDeSalvo(), 'ok');
+        return;
+      }
 
       if (sessao.eventos.length) {
         await GH.escrever('sessoes/' + sessao.id + '.json',
@@ -897,9 +943,10 @@
       await GH.escrever('resumo.md', gerarResumo(), 'resumo — ' + agora,
         { keepalive: opcoes.keepalive });
 
-      statusSync('Tudo sincronizado às ' + new Date().toLocaleTimeString('pt-BR'), 'ok');
+      statusSync(marcaDeSalvo(), 'ok');
     } catch (e) {
-      statusSync('Falhou: ' + e.message, 'erro');
+      statusSync('Não consegui salvar no GitHub: ' + e.message +
+                 ' — o avanço está guardado neste navegador.', 'erro');
     } finally {
       sincronizando = false;
     }
@@ -1204,7 +1251,7 @@
     });
     statusSync('Configuração salva neste navegador.', 'ok');
   });
-  el['btn-enviar'].addEventListener('click', () => sincronizar({}));
+  el['btn-enviar'].addEventListener('click', () => sincronizar({ completo: true }));
   el['btn-baixar'].addEventListener('click', baixar);
   el['btn-exportar'].addEventListener('click', exportar);
   el['btn-importar'].addEventListener('click', () => el['arquivo-importar'].click());
@@ -1255,13 +1302,13 @@
     if (document.hidden) {
       if (cardAtual && !respostaPendente) pausou = true;
       if (GH.cfg().auto && GH.configurado() && sessao.eventos.length) {
-        sincronizar({ silencioso: true, keepalive: true });
+        sincronizar({ silencioso: true, keepalive: true, completo: true });
       }
     }
   });
   window.addEventListener('pagehide', () => {
     if (GH.cfg().auto && GH.configurado() && sessao.eventos.length) {
-      sincronizar({ silencioso: true, keepalive: true });
+      sincronizar({ silencioso: true, keepalive: true, completo: true });
     }
   });
 
