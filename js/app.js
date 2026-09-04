@@ -22,7 +22,7 @@
     'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
-    'area-feedback', 'veredito', 'resposta-certa', 'nota', 'medidas',
+    'area-feedback', 'veredito', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
     'area-contestar', 'btn-contestar', 'aviso-contestado',
     'btn-proximo', 'painel-conteudo',
@@ -336,6 +336,9 @@
     estreiaPendente = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
 
     el['resposta-certa'].textContent = alvoAtual;
+    /* Neutra por padrão: quem pinta de verde é o veredito, e no caso do
+       "deu quase" ele só chega depois que você julgar. */
+    el['caixa-resposta'].classList.remove('certa');
     el.nota.textContent = cardAtual.nota || '';
     el.nota.classList.toggle('oculto', !cardAtual.nota);
 
@@ -387,11 +390,28 @@
 
     el['area-feedback'].classList.remove('oculto');
     el['btn-proximo'].focus({ preventScroll: true });
-    el.veredito.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    trazerBotaoParaAVista();
+  }
+
+  /* Depois de responder, o feedback empurra o botão de seguir adiante para
+     baixo da dobra, e era preciso rolar à mão a cada card. Puxa a tela o
+     bastante para ele aparecer — e nada além disso, para o espanhol não sair
+     de vista. Quando a resposta ficou por julgar, o alvo são os dois botões
+     de julgamento, que é o que espera decisão naquele momento. */
+  function trazerBotaoParaAVista() {
+    const alvo = el['btn-proximo'].classList.contains('oculto')
+      ? el['area-julgamento'] : el['btn-proximo'];
+    const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* Direto, sem requestAnimationFrame: o scrollIntoView já força o layout
+       de que precisa, e o rAF não dispara com a aba em segundo plano — a
+       rolagem simplesmente não acontecia. */
+    alvo.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'nearest' });
   }
 
   function mostrarVeredito(r) {
     el.veredito.className = 'veredito ' + (r.acertou ? 'ok' : 'erro');
+    /* Acertou: a caixa da resposta fica verde. Desistir não é acerto. */
+    el['caixa-resposta'].classList.toggle('certa', r.acertou && !r.desistiu);
     el.veredito.textContent = r.desistiu ? 'Sem problema — fica para a próxima'
       : r.julgadoPorVoce ? (r.acertou ? 'Certo — você contou como acerto' : 'Contado como erro')
       : r.acertou ? 'Certo!'
@@ -419,6 +439,7 @@
     mostrarPerguntaConhecia(r);
     mostrarContestar(r);
     el['btn-proximo'].focus({ preventScroll: true });
+    trazerBotaoParaAVista();
   }
   /* Grava a resposta e devolve o card para a fila. */
   function registrar(r) {
@@ -579,6 +600,9 @@
     const etapaDe = id => progresso.cards[id].etapa;
     const dominados = ids.filter(id => etapaDe(id) === 'dominado').length;
     const dir = Motor.contarDirecoes(progresso.cards);
+    const faltam = Motor.faltamParaInedito(progresso.cards, progresso.desdeInedito,
+                                           (progresso.ineditos || []).length,
+                                           progresso.fila.length);
 
     /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
        separado do que você já trazia de casa. */
@@ -596,7 +620,12 @@
          por que o card novo às vezes vem depressa e às vezes espera */
       metrica(dir.esPt + ' · ' + dir.ptEs, 'es → pt e pt → es') +
       metrica(dominados, 'dominados nas duas direções') +
-      metrica('~' + Motor.esperaPorInedito(progresso.cards), 'respostas por card novo') +
+      /* Contagem regressiva, não uma taxa: dizer "faltam 7" se entende de
+         cara, e mostra o efeito do equilíbrio entre as duas direções, que é
+         o que decide quando o card novo entra. */
+      metrica(faltam === null ? '—' : faltam,
+              faltam === null ? 'todos os cards já apareceram'
+                              : 'respostas até o próximo card novo') +
       '</div>';
 
     if (estreados.length) {
@@ -674,7 +703,9 @@
       'e depois <b>pt → es</b>, onde produz o espanhol — que é bem mais difícil. ' +
       'Dominado não é aposentadoria: o card continua voltando, só que cada vez ' +
       'mais espaçado. O card novo entra em <b>es → pt</b>, e é por isso que ' +
-      'admiti-los é a única torneira que enche esse lado.</p>' +
+      'admiti-los é a única torneira que enche esse lado. A contagem regressiva ' +
+      'lá em cima sai daqui: com <b>es → pt</b> lotado ela estica, e quando esse ' +
+      'lado esvazia ela encurta e o card novo vem depressa.</p>' +
       '<table class="etapas"><tr><th>Nível</th>' +
       ETAPAS.map(e => cabeca(e.rotulo)).join('') +
       cabeca('Total') + '</tr>' + linhas +

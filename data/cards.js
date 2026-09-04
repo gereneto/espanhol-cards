@@ -12159,7 +12159,7 @@ window.CARDS_RAW = {
    "tags": [
     "casa"
    ],
-   "nota": "O 'j' espanhol soa como r forte: es-pe-ro.",
+   "nota": "O 'j' espanhol soa como r forte: es-pe-rro.",
    "notaEn": "'El espejo' is the mirror. Note the Spanish habit of putting an e in front of s + consonant: espejo, escuela, España, especial."
   },
   {

@@ -104,6 +104,9 @@ button{font:inherit}
 .primario:hover{filter:brightness(1.06)}
 .primario:active{transform:translateY(1px)}
 .grande{width:100%;max-width:340px;padding:15px 22px;font-size:17px}
+/* Ao rolar até eles depois da resposta, param com uma folga da borda de
+   baixo em vez de encostar nela. */
+#btn-proximo,#area-julgamento{scroll-margin-bottom:24px}
 .secundario{
   background:var(--fundo-3);color:var(--texto);border:1px solid var(--borda);
   border-radius:11px;padding:11px 18px;cursor:pointer;
@@ -203,6 +206,9 @@ button{font:inherit}
   color:var(--texto-2);margin-bottom:3px;
 }
 .resposta-certa strong{font-size:19px}
+/* Acertou: a caixa inteira confirma, sem depender de ler o veredito. */
+.resposta-certa.certa{background:var(--ok-fraco);border-color:var(--ok-borda)}
+.resposta-certa.certa .rotulo{color:var(--ok)}
 /* A nota traz pares «🇪🇸 palavra → 🇧🇷 tradução», um por linha, sempre no
    mesmo sentido. Antes ela misturava as duas direções na mesma frase e
    ninguém sabia qual palavra era de qual língua. */
