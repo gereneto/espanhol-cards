@@ -49,7 +49,9 @@
     return {
       versao: 1,
       atualizado_em: new Date().toISOString(),
-      fila: Motor.montarFila(CARDS),
+      fila: [],                                // em circulação: só o que já apareceu
+      ineditos: Motor.montarFila(CARDS),       // baralho à parte, ainda fechado
+      desdeInedito: 0,                         // respostas desde o último card novo
       cards: {},
       totais: { respostas: 0, acertos: 0, sessoes: 0 }
     };
@@ -62,12 +64,12 @@
     return conciliarFila(p);
   }
 
-  /* Garante que a fila contenha exatamente os cards existentes:
-     entram os novos, saem os que deixaram de existir. */
+  /* Mantém os dois baralhos coerentes com o que existe: a fila em circulação
+     só com o que já apareceu, o baralho de inéditos com todo o resto. */
   function conciliarFila(p) {
     p.cards = p.cards || {};
-    const naFila = new Set(p.fila);
-    p.fila = p.fila.filter(id => PORID[id]);
+    p.ineditos = Array.isArray(p.ineditos) ? p.ineditos : [];
+    if (typeof p.desdeInedito !== 'number') p.desdeInedito = 0;
 
     /* Card apagado do baralho deixa para trás o estado dele. Sem varrer, ele
        continuaria contando em "cards já vistos" e nas tabelas do painel, e
@@ -77,31 +79,32 @@
       Object.keys(p.cards).forEach(id => { if (!PORID[id]) delete p.cards[id]; });
     }
 
-    const faltando = CARDS.filter(c => !naFila.has(c.id)).map(c => c.id);
-    if (faltando.length) {
-      p.fila = p.fila.concat(Motor.montarFila(faltando.map(id => PORID[id])));
-      /* Entrar no fim da fila é o mesmo que não entrar: numa leva de 60, os
-         últimos só apareceriam depois de uma passada inteira pelo baralho.
-         Espalhar aqui os coloca em circulação já na primeira sessão. */
-      espalharIneditos(p);
-    }
+    const visto = id => !!p.cards[id];
+
+    /* Migração e faxina numa passada só. Até aqui havia uma fila única, com
+       inéditos misturados aos que já circulam; quem tinha progresso salvo
+       chega com ela. Os inéditos saem da fila e vão para o seu próprio
+       baralho, que é o que resolve a seca de cards novos. */
+    const migrados = p.fila.filter(id => PORID[id] && !visto(id));
+    p.fila = p.fila.filter(id => PORID[id] && visto(id));
+    p.ineditos = p.ineditos.filter(id => PORID[id] && !visto(id));
+
+    const jaTenho = new Set(p.fila.concat(p.ineditos));
+    const entram = migrados.filter(id => !jaTenho.has(id))
+      .concat(CARDS.filter(c => !jaTenho.has(c.id) && !visto(c.id) && !migrados.includes(c.id)).map(c => c.id));
+    if (entram.length) p.ineditos = p.ineditos.concat(entram);
+
+    ordenarIneditos(p);
     return p;
   }
 
-  /* Redistribui os cards que ainda não apareceram pelas posições que já são
-     de card não aparecido, na ordem que o desempenho pede. Quem já foi visto
-     fica exatamente onde está — ali é onde a própria resposta o colocou. */
-  function espalharIneditos(p) {
-    const posicoes = [];
-    const novos = [];
-    p.fila.forEach((id, i) => {
-      if (!p.cards[id]) { posicoes.push(i); novos.push(id); }
-    });
-    if (novos.length < 2) return;
-
+  /* O baralho de inéditos é ordenado pelo desempenho: sai primeiro o nível
+     que você ainda não domina mas já consegue acompanhar. Como agora ele é
+     uma lista à parte, basta reordená-la — não há posição alheia a respeitar. */
+  function ordenarIneditos(p) {
+    if (!p.ineditos || p.ineditos.length < 2) return;
     const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, p.cards));
-    const ordem = Motor.ordenarNovos(novos, pesos, PORID);
-    posicoes.forEach((pos, k) => { p.fila[pos] = ordem[k]; });
+    p.ineditos = Motor.ordenarNovos(p.ineditos, pesos, PORID);
   }
 
   function salvarProgresso() {
@@ -153,8 +156,18 @@
 
   /* ═══════════════ fluxo do card ═══════════════ */
 
-  function proximoCard() {
-    if (!progresso.fila.length) progresso.fila = Motor.montarFila(CARDS);
+  /* Tira o próximo card de um dos dois baralhos. O de inéditos tem a
+     preferência sempre que couber material novo (ver Motor.cabeInedito);
+     fora isso, sai o primeiro da fila em circulação cuja data já venceu. */
+  function tirarProximoId() {
+    const cabe = Motor.cabeInedito(progresso.cards, progresso.desdeInedito, progresso.ineditos.length);
+    if (cabe || !progresso.fila.length) {
+      if (progresso.ineditos.length) {
+        progresso.desdeInedito = 0;
+        return progresso.ineditos.shift();
+      }
+    }
+    if (!progresso.fila.length) return null;
 
     /* O card dominado espera a data dele. Pego o primeiro da fila que já
        venceu, sem remexer na ordem dos outros. Se todos estiverem de molho
@@ -169,8 +182,13 @@
         if (outro && atual && outro.voltaEm < atual.voltaEm) i = k;
       });
     }
+    progresso.desdeInedito++;
+    return progresso.fila.splice(i, 1)[0];
+  }
 
-    const id = progresso.fila.splice(i, 1)[0];
+  function proximoCard() {
+    const id = tirarProximoId();
+    if (!id) { irParaInicio(); return; }
     cardAtual = PORID[id];
     if (!cardAtual) return proximoCard();
 
@@ -458,7 +476,7 @@
      ritmo de entrada de cards novos continua igual, muda apenas de que
      nível é o próximo, conforme o seu desempenho. */
   function reordenarNovos() {
-    espalharIneditos(progresso);
+    ordenarIneditos(progresso);
   }
 
   /* Escreveu, foi contado como erro, mas acha que a resposta valia. O card
@@ -543,6 +561,7 @@
       metrica(aprendidos, 'não conhecia e hoje acerta') +
       metrica(naInversa, 'já indo para o espanhol') +
       metrica(dominados, 'dominados nas duas direções') +
+      metrica(Motor.cargaInicial(progresso.cards) + '/' + Motor.CARGA_ALVO, 'aprendendo agora') +
       '</div>';
 
     if (estreados.length) {
@@ -893,6 +912,8 @@
       versao: 1,
       atualizado_em: new Date().toISOString(),
       fila: (local.fila && local.fila.length) ? local.fila : (remoto.fila || []),
+      ineditos: (local.ineditos && local.ineditos.length) ? local.ineditos : (remoto.ineditos || []),
+      desdeInedito: Math.max(local.desdeInedito || 0, (remoto || {}).desdeInedito || 0),
       contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
       cards: {},
       totais: {
@@ -1108,11 +1129,14 @@
   });
 
   /* Sair de um card sem responder não pode sumir com ele: volta para a
-     frente da fila, para ser o próximo quando você voltar. */
+     frente do baralho de onde saiu, para ser o próximo quando você voltar.
+     Inédito volta para os inéditos — se fosse para a fila, entraria em
+     circulação sem nunca ter sido respondido. */
   function irParaInicio() {
-    if (cardAtual && !respostaPendente && progresso.fila.indexOf(cardAtual.id) < 0) {
-      progresso.fila.unshift(cardAtual.id);
-      salvarProgresso();
+    if (cardAtual && !respostaPendente) {
+      const id = cardAtual.id;
+      const baralho = progresso.cards[id] ? progresso.fila : progresso.ineditos;
+      if (baralho.indexOf(id) < 0) { baralho.unshift(id); salvarProgresso(); }
     }
     cardAtual = null;
     respostaPendente = null;

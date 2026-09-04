@@ -3,9 +3,9 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **361 cards** — 200 palavras e 161 frases, sendo 53 falsos amigos
-(`embarazada`, `exquisito`, `oficina`, `suceso`, `postre`…) e 50 de conjugação
-verbal, quase todos irregulares.
+São **419 cards** — 248 palavras e 171 frases, sendo 67 falsos amigos
+(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 50 de
+conjugação verbal, quase todos irregulares.
 
 ## Como funciona
 
@@ -67,10 +67,38 @@ A curva de peso tem pico no domínio intermediário e um piso, de modo que
 **todos os níveis continuam aparecendo** — nível que você gabarita entedia,
 nível em que você erra tudo desanima.
 
-### A fila
+### Dois baralhos
 
-Existe **uma fila só**: ao responder, o card volta para a fila mais adiante, e
-a distância depende de como foi:
+Card novo e card em revisão **não disputam a mesma fila**. Se disputassem, o
+novo perderia sempre: quem está em múltipla escolha volta a 8-32 posições e
+satura a frente, então quanto mais se revisa, mais raro fica o inédito. Era o
+que acontecia, e a seca chegava a 75 respostas sem nenhum card novo.
+
+Agora há **a fila em circulação**, só com o que já apareceu, e **o baralho de
+inéditos**, à parte. Antes de cada card, o app decide se cabe material novo,
+olhando a **carga**: quantos cards estão na primeira direção, ainda sendo
+aprendidos. É esse o estoque que custa caro — na volta o card já é conhecido,
+e treinar produção não compete com aprender palavra nova.
+
+| Situação | O que acontece |
+|---|---|
+| Nada em curso | entra inédito |
+| Menos de 3 respostas desde o último inédito | não entra, para não afogar |
+| Carga abaixo de 18 | entra — há espaço para aprender |
+| Carga cheia | espera mais, e a espera cresce com o excesso |
+| Carga muito alta | espera trava em 45 respostas — **nunca deixa de vir** |
+
+O teto de 45 existe porque um limite que pudesse virar "nunca" recriaria a seca
+que a regra veio resolver. O painel mostra a carga ao lado do alvo
+(«aprendendo agora»), então dá para ver o ritmo funcionando.
+
+De quebra, isso equilibra as etapas: sem a enxurrada de inéditos, os cards
+avançam em vez de empilhar na volta.
+
+### A fila em circulação
+
+Ao responder, o card volta para a fila mais adiante, e a distância depende de
+como foi:
 
 | Situação | Volta em ~ |
 |---|---:|
@@ -87,7 +115,7 @@ o card continua na múltipla escolha.
 
 ### O card dominado, e a única data do app
 
-A fila tem 361 cards e todo card respondido volta para ela, então o intervalo
+A fila tem centenas de cards e todo card respondido volta para ela, então o intervalo
 máximo que ela consegue dar é **uma passada pelo baralho** — uns poucos dias.
 Acertar três vezes seguidas com o card voltando a cada dois dias não prova
 memória de longo prazo; prova que ele ainda estava fresco.

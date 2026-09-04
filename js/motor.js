@@ -364,6 +364,53 @@ window.Motor = (function () {
     return { multipla: { n: 0, certas: 0 }, escrita: { n: 0, certas: 0 } };
   }
 
+  /* ── quando entra um card inédito ──
+     Card novo e card em revisão não disputam a mesma fila. Se disputassem, o
+     novo perderia sempre: quem está em múltipla escolha volta a 8-32 posições
+     e satura a frente, então quanto mais se revisa, mais raro fica o inédito.
+
+     Aqui a decisão é por carga, não por posição. A carga é o número de cards
+     na PRIMEIRA direção — os que ainda se está aprendendo a reconhecer. É o
+     estoque que custa caro; enquanto ele está cheio, material novo só atrapalha.
+
+     Três regras, nesta ordem:
+       · nunca dois inéditos colados, para não afogar;
+       · com a carga abaixo do alvo, entra — há espaço para aprender;
+       · com a carga cheia, o novo espera mais, mas nunca para de vir. A
+         espera cresce com o excesso e trava no teto: mesmo afogado, cai um
+         card novo a cada 45 respostas. Um limite que pudesse virar "nunca"
+         recriaria exatamente a seca que esta regra existe para acabar. */
+  const CARGA_ALVO = 18;        // cards na primeira direção que já é carga cheia
+  const MIN_ENTRE_INEDITOS = 3; // respostas, no mínimo, entre um inédito e outro
+  const MAX_SEM_INEDITO = 20;   // espera com a carga no alvo
+  const SECA_MAXIMA = 45;       // espera máxima, por mais afogada que esteja a carga
+
+  /* Só a primeira direção conta: na volta o card já é conhecido, o que se
+     treina ali é produzir, e isso não compete com aprender palavra nova. */
+  function cargaInicial(estados) {
+    let n = 0;
+    for (const id in estados) {
+      const e = estados[id];
+      if (e && e.vistas && (e.etapa === 'multipla' || e.etapa === 'escrita')) n++;
+    }
+    return n;
+  }
+
+  function cabeInedito(estados, desdeInedito, quantosIneditos) {
+    if (!quantosIneditos) return false;
+    const carga = cargaInicial(estados);
+    if (!carga) return true;                       // nada em curso: pode vir
+    if (desdeInedito < MIN_ENTRE_INEDITOS) return false;
+    if (carga < CARGA_ALVO) return true;
+    return desdeInedito >= esperaComCarga(carga);
+  }
+
+  /* Quanto se espera por um inédito, dada a carga. No alvo, MAX_SEM_INEDITO;
+     daí para cima cresce duas respostas por card excedente, até travar. */
+  function esperaComCarga(carga) {
+    return Math.min(SECA_MAXIMA, MAX_SEM_INEDITO + (carga - CARGA_ALVO) * 2);
+  }
+
   /* ── o intervalo do card maduro ──
      Dominado não quer dizer aposentado. Acertar três vezes seguidas com o
      card voltando de dois em dois dias não prova memória de longo prazo —
@@ -703,6 +750,7 @@ window.Motor = (function () {
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
+    cabeInedito, cargaInicial, esperaComCarga, CARGA_ALVO, SECA_MAXIMA,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
