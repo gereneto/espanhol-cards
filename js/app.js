@@ -22,6 +22,7 @@
     'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
+    'meta-origem',
     'area-feedback', 'veredito', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
     'area-contestar', 'btn-contestar', 'aviso-contestado',
@@ -84,6 +85,11 @@
     }
 
     const visto = id => !!p.cards[id];
+    /* A frase presa a uma palavra ainda não dominada não entra em baralho
+       nenhum. Não guardo lista de presos: a condição se recalcula aqui a
+       cada carregamento, então dominar a palavra num aparelho destrava a
+       frase em todos, sem nada de novo trafegar no progresso.json. */
+    const solto = id => Motor.liberado(PORID[id], p.cards);
 
     /* Migração e faxina numa passada só. Até aqui havia uma fila única, com
        inéditos misturados aos que já circulam; quem tinha progresso salvo
@@ -91,11 +97,12 @@
        baralho, que é o que resolve a seca de cards novos. */
     const migrados = p.fila.filter(id => PORID[id] && !visto(id));
     p.fila = p.fila.filter(id => PORID[id] && visto(id));
-    p.ineditos = p.ineditos.filter(id => PORID[id] && !visto(id));
+    p.ineditos = p.ineditos.filter(id => PORID[id] && !visto(id) && solto(id));
 
     const jaTenho = new Set(p.fila.concat(p.ineditos));
-    const entram = migrados.filter(id => !jaTenho.has(id))
-      .concat(CARDS.filter(c => !jaTenho.has(c.id) && !visto(c.id) && !migrados.includes(c.id)).map(c => c.id));
+    const entram = migrados.filter(id => !jaTenho.has(id) && solto(id))
+      .concat(CARDS.filter(c => !jaTenho.has(c.id) && !visto(c.id) &&
+                                !migrados.includes(c.id) && solto(c.id)).map(c => c.id));
     if (entram.length) p.ineditos = p.ineditos.concat(entram);
 
     ordenarIneditos(p);
@@ -107,8 +114,17 @@
      uma lista à parte, basta reordená-la — não há posição alheia a respeitar. */
   function ordenarIneditos(p) {
     if (!p.ineditos || p.ineditos.length < 2) return;
+    /* A frase que a palavra acabou de destravar fura a fila. Estar aqui já
+       quer dizer que ela foi liberada — presa nenhuma chega a este ponto —,
+       e a promessa é que ela seja o próximo card novo. Entre duas, primeiro
+       a da palavra vencida mais recentemente. Isso vive na ordenação, e não
+       só no momento de dominar, para sobreviver a recarregar e sincronizar. */
+    const presas = [], resto = [];
+    p.ineditos.forEach(id => ((PORID[id] || {}).requer ? presas : resto).push(id));
+    presas.sort((a, b) => Motor.venceuEm(PORID[b], p.cards) - Motor.venceuEm(PORID[a], p.cards));
+
     const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, p.cards));
-    p.ineditos = Motor.ordenarNovos(p.ineditos, pesos, PORID);
+    p.ineditos = presas.concat(Motor.ordenarNovos(resto, pesos, PORID));
   }
 
   function salvarProgresso() {
@@ -218,6 +234,12 @@
 
     el['meta-tipo'].textContent = cardAtual.tipo;
     el['meta-modo'].textContent = modoAtual === 'multipla' ? 'múltipla escolha' : 'escreva a resposta';
+
+    /* A frase destravada diz de que palavra veio — ela está aqui porque
+       você venceu aquela palavra, e ver as duas juntas é metade da lição. */
+    const palavra = cardAtual.requer && PORID[cardAtual.requer];
+    el['meta-origem'].textContent = palavra ? 'de ' + palavra.es : '';
+    el['meta-origem'].classList.toggle('oculto', !palavra);
     /* O nível vive na aba do fichário e fica à mostra o tempo todo: saber que
        o card é A1 ou C2 não entrega resposta nenhuma, e ajuda a calibrar o
        esforço antes de ler. */
@@ -441,11 +463,27 @@
     el['btn-proximo'].focus({ preventScroll: true });
     trazerBotaoParaAVista();
   }
+  /* Dominou a palavra: as frases que a usam entram na hora, na frente do
+     baralho de inéditos. O ordenarIneditos faria isso no próximo
+     carregamento, mas a graça está em vir agora, na sequência da conquista.
+     Guardo quem já venceu antes: se a frase voltar a ficar presa por causa
+     de um erro futuro, ela sai daqui pelo conciliarFila, não por engano. */
+  function destravarFrases(idPalavra) {
+    const novas = CARDS
+      .filter(c => c.requer === idPalavra && !progresso.cards[c.id] &&
+                   !progresso.ineditos.includes(c.id) && !progresso.fila.includes(c.id))
+      .map(c => c.id);
+    if (novas.length) progresso.ineditos.unshift(...novas);
+    return novas.length;
+  }
+
   /* Grava a resposta e devolve o card para a fila. */
   function registrar(r) {
     const id = cardAtual.id;
     const est = progresso.cards[id] || (progresso.cards[id] = Motor.estadoInicial(id));
+    const etapaAntes = est.etapa;
     Motor.registrar(est, r);
+    if (est.etapa === 'dominado' && etapaAntes !== 'dominado') destravarFrases(id);
 
     const dist = Motor.distanciaNaFila(est, r);
     progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
@@ -603,6 +641,8 @@
     const faltam = Motor.faltamParaInedito(progresso.cards, progresso.desdeInedito,
                                            (progresso.ineditos || []).length,
                                            progresso.fila.length);
+    const presos = CARDS.filter(c => !progresso.cards[c.id] &&
+                                     !Motor.liberado(c, progresso.cards)).length;
 
     /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
        separado do que você já trazia de casa. */
@@ -624,8 +664,9 @@
          cara, e mostra o efeito do equilíbrio entre as duas direções, que é
          o que decide quando o card novo entra. */
       metrica(faltam === null ? '—' : faltam,
-              faltam === null ? 'todos os cards já apareceram'
-                              : 'respostas até o próximo card novo') +
+              faltam !== null ? 'respostas até o próximo card novo'
+                : presos ? 'frases esperando você dominar a palavra'
+                : 'todos os cards já apareceram') +
       '</div>';
 
     if (estreados.length) {
@@ -657,6 +698,7 @@
      ainda não saíram, quantos estão no meio do caminho e quantos já
      venceram as duas direções. */
   const ETAPAS = [
+    { chave: 'preso',    rotulo: 'Presos'    },
     { chave: 'novo',     rotulo: 'Inéditos'  },
     { chave: 'espt',     rotulo: 'es → pt'   },
     { chave: 'ptes',     rotulo: 'pt → es'   },
@@ -674,7 +716,13 @@
       const x = g[c.nivel]; if (!x) return;
       x.total++;
       const e = progresso.cards[c.id];
-      if (!e || !e.vistas) { x.novo++; return; }
+      /* Preso não é inédito: é frase que existe e não pode sair enquanto a
+         palavra dela não estiver dominada. Somá-los prometeria card novo
+         que o baralho não tem como entregar. */
+      if (!e || !e.vistas) {
+        if (Motor.liberado(c, progresso.cards)) x.novo++; else x.preso++;
+        return;
+      }
       if (e.etapa === 'dominado') { x.dominado++; return; }
       /* Escolher entre cinco e escrever são passos da mesma travessia; o que
          separa de verdade é para que lado se traduz. */
@@ -705,7 +753,9 @@
       'mais espaçado. O card novo entra em <b>es → pt</b>, e é por isso que ' +
       'admiti-los é a única torneira que enche esse lado. A contagem regressiva ' +
       'lá em cima sai daqui: com <b>es → pt</b> lotado ela estica, e quando esse ' +
-      'lado esvazia ela encurta e o card novo vem depressa.</p>' +
+      'lado esvazia ela encurta e o card novo vem depressa. ' +
+      '<b>Presos</b> são frases que mostram uma palavra em uso e esperam você ' +
+      'dominar essa palavra: quando ela cai, a frase dela é o próximo card novo.</p>' +
       '<table class="etapas"><tr><th>Nível</th>' +
       ETAPAS.map(e => cabeca(e.rotulo)).join('') +
       cabeca('Total') + '</tr>' + linhas +
@@ -813,7 +863,15 @@
      lista: não pelo nome interno da etapa, mas pelo que falta fazer. */
   function situacaoDe(id) {
     const e = progresso.cards[id];
-    if (!e || !e.vistas) return { chave: 'novo', rotulo: 'ainda não apareceu' };
+    if (!e || !e.vistas) {
+      /* «Ainda não apareceu» sugere que é questão de tempo. A frase presa
+         não é: ela depende de você vencer a palavra, e dizer qual é. */
+      const c = PORID[id];
+      if (!Motor.liberado(c, progresso.cards)) {
+        return { chave: 'preso', rotulo: 'espera você dominar «' + PORID[c.requer].es + '»' };
+      }
+      return { chave: 'novo', rotulo: 'ainda não apareceu' };
+    }
     if (e.etapa === 'dominado') return { chave: 'dominado', rotulo: 'dominado nas duas direções' };
     if (Motor.direcaoDe(e) === 'pt-es') return { chave: 'invertido', rotulo: 'na volta: você produz o espanhol' };
     return {
@@ -884,7 +942,10 @@
       const placar = e && e.vistas
         ? '<span class="selo">' + e.acertos + ' certas · ' + e.erros + ' erradas</span>' : '';
 
-      return '<div class="card-linha ' + (s.chave === 'dominado' ? 'dominado' : s.chave !== 'novo' ? 'visto' : '') + '">' +
+      /* «visto» é para o que já circulou. Preso e inédito nunca apareceram. */
+      const marca = s.chave === 'dominado' ? 'dominado'
+        : (s.chave === 'novo' || s.chave === 'preso') ? '' : 'visto';
+      return '<div class="card-linha ' + marca + '">' +
         '<div class="card-linha-topo">' +
           '<span class="es">' + escapar(c.es) + '</span>' +
           '<span class="seta">→</span>' +

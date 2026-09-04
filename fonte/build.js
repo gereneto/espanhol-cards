@@ -205,11 +205,60 @@ if (TAGS) {
   for (const t of Object.keys(TAGS)) if (!emUso.has(t)) avisos.push('tema em tags.json que nenhum card usa: ' + t);
 }
 
+/* ── a frase presa a uma palavra ──
+   «requer» aponta para o card da palavra que a frase põe em uso. A frase só
+   entra no baralho quando aquela palavra estiver dominada, então um alvo
+   errado deixaria o card preso para sempre, sem nada na tela denunciando. */
+const PORID = new Map(cards.map(c => [c.id, c]));
+for (const c of cards) {
+  if (c.requer === undefined) continue;
+  const onde = c.id + ' (' + c.es + ')';
+  const alvo = PORID.get(c.requer);
+
+  if (typeof c.requer !== 'string' || !alvo) {
+    erros.push('"requer" aponta para card que não existe: ' + onde + ' → ' + c.requer);
+    continue;
+  }
+  if (c.tipo !== 'frase') erros.push('só frase pode ter "requer": ' + onde);
+  if (alvo.tipo !== 'palavra') {
+    erros.push('"requer" tem de apontar para uma palavra: ' + onde + ' → ' + c.requer +
+      ' (' + alvo.tipo + ')');
+  }
+  /* Corrente de dois elos prenderia a segunda frase atrás de outra frase, e
+     frase não chega a "dominado" por um caminho que o usuário veja como tal. */
+  if (alvo.requer) erros.push('"requer" em cadeia: ' + onde + ' → ' + c.requer + ' que também requer');
+  if (c.requer === c.id) erros.push('card que requer a si mesmo: ' + onde);
+
+  /* A frase tem de usar mesmo a palavra. Aviso, e não erro: o espanhol
+     flexiona (el vaso → los vasos, quitar → me quitó), então a comparação é
+     por radical e erra para menos de vez em quando. */
+  if (alvo.tipo === 'palavra') {
+    const limpar = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const nucleo = limpar(alvo.es)
+      .replace(/^(el|la|los|las|un|una)\s+/, '')
+      /* «enterarse» conjugado vira «me enteré», e o radical tem de cortar
+         antes da desinência para sobreviver a isso: enterarse → enter */
+      .replace(/(ar|er|ir)se$/, '')
+      .replace(/(ar|er|ir)$/, '');
+    const radical = nucleo.slice(0, Math.max(4, nucleo.length - 2));
+    if (radical && !limpar(c.es).includes(radical)) {
+      avisos.push('a frase não parece usar a palavra que requer: ' + onde +
+        ' → ' + alvo.es + ' (procurei "' + radical + '")');
+    }
+  }
+}
+
 /* ── estatísticas ── */
 const conta = (f) => cards.reduce((a, c) => { const k = f(c); a[k] = (a[k] || 0) + 1; return a; }, {});
 console.log('\n  total ............ ' + cards.length);
 console.log('  por tipo ......... ' + JSON.stringify(conta(c => c.tipo)));
 console.log('  por nível ........ ' + NIVEIS.map(n => n + ':' + (conta(c => c.nivel)[n] || 0)).join('  '));
+
+const presas = cards.filter(c => c.requer);
+if (presas.length) {
+  const palavras = new Set(presas.map(c => c.requer));
+  console.log('  presas à palavra . ' + presas.length + ' frases, sobre ' + palavras.size + ' palavras');
+}
 
 const traduzidos = cards.filter(c => typeof c.en === 'string' && c.en.trim()).length;
 console.log('  em inglês ........ ' + traduzidos + ' de ' + cards.length +

@@ -147,6 +147,9 @@ button{font:inherit}
   border:1px solid var(--acento-borda);border-radius:999px;padding:3px 11px;
 }
 .etiqueta.suave{background:var(--fundo-3);color:var(--texto-2);border-color:var(--borda)}
+/* a palavra que destravou esta frase: verde, como a conquista que a trouxe */
+.etiqueta.origem{background:var(--ok-fraco);color:var(--ok);border-color:var(--ok-borda);
+  font-style:italic;text-transform:none;letter-spacing:0}
 .enunciado{color:var(--texto-2);font-size:13.5px;margin:0 0 6px}
 .termo-linha{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
 .termo{
@@ -388,6 +391,7 @@ label input:focus{outline:0;border-color:var(--acento)}
 }
 .selo.nivel{color:var(--acento);border-color:var(--acento-borda);background:var(--acento-fraco)}
 .selo.situacao.novo{opacity:.7}
+.selo.situacao.preso{color:var(--texto-2);border-style:dashed;opacity:.85}
 .selo.situacao.andamento{color:var(--acento)}
 .selo.situacao.invertido{color:var(--quase);border-color:var(--quase-borda)}
 .selo.situacao.dominado{color:var(--ok);border-color:var(--ok-borda)}

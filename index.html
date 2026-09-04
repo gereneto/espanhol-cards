@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=545a1555">
+<link rel="stylesheet" href="style.css?v=289cf370">
 </head>
 <body>
 
@@ -75,6 +75,8 @@
       <div class="card-meta">
         <span class="etiqueta" id="meta-tipo">palavra</span>
         <span class="etiqueta suave" id="meta-modo">múltipla escolha</span>
+        <!-- só nas frases presas a uma palavra: diz qual foi -->
+        <span class="etiqueta origem oculto" id="meta-origem"></span>
       </div>
 
       <p class="enunciado" id="enunciado">O que significa em português?</p>
@@ -172,6 +174,7 @@
           <select id="filtro-estado">
             <option value="">todas</option>
             <option value="novo">ainda não apareceu</option>
+            <option value="preso">presos a uma palavra</option>
             <option value="andamento">em andamento</option>
             <option value="invertido">já na volta (pt → es)</option>
             <option value="dominado">dominado</option>
@@ -249,9 +252,9 @@
   <span id="rodape-sync">•</span>
 </footer>
 
-<script src="data/cards.js?v=545a1555"></script>
-<script src="js/motor.js?v=545a1555"></script>
-<script src="js/github.js?v=545a1555"></script>
-<script src="js/app.js?v=545a1555"></script>
+<script src="data/cards.js?v=289cf370"></script>
+<script src="js/motor.js?v=289cf370"></script>
+<script src="js/github.js?v=289cf370"></script>
+<script src="js/app.js?v=289cf370"></script>
 </body>
 </html>

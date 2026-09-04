@@ -441,6 +441,26 @@ window.Motor = (function () {
     return Math.max(0, esperaEfetiva(estados, tamanhoFila) - desdeInedito);
   }
 
+  /* ── a frase presa à palavra ──
+     Um card de frase pode trazer «requer: id-da-palavra». Ele fica fora do
+     baralho até a palavra estar dominada, e só então entra — na frente,
+     enquanto a conquista ainda está fresca. A frase mostra a palavra em uso
+     corrente, que é o que a definição sozinha não ensina: dominar «estrenar»
+     não é saber que é estrear, é saber dizer «estreno zapatos hoy». */
+  function liberado(card, estados) {
+    if (!card || !card.requer) return true;
+    const e = estados && estados[card.requer];
+    return !!e && e.etapa === 'dominado';
+  }
+
+  /* Quando a palavra que abriu esta frase foi vencida. Ordena as frases
+     recém-liberadas: primeiro a da palavra dominada há menos tempo. */
+  function venceuEm(card, estados) {
+    if (!card || !card.requer) return 0;
+    const e = estados && estados[card.requer];
+    return (e && e.ultima) ? (Date.parse(e.ultima) || 0) : 0;
+  }
+
   function cabeInedito(estados, desdeInedito, quantosIneditos, tamanhoFila) {
     if (!quantosIneditos) return false;
     /* Sem nada em circulação só há um lugar de onde tirar card. */
@@ -788,6 +808,7 @@ window.Motor = (function () {
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
     cabeInedito, contarDirecoes, esperaPorInedito, esperaEfetiva, faltamParaInedito,
+    liberado, venceuEm,
     ESPERA_EQUILIBRIO, ESPERA_MAXIMA, FILA_MINIMA,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
