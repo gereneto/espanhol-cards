@@ -75,37 +75,32 @@ satura a frente, então quanto mais se revisa, mais raro fica o inédito. Era o
 que acontecia, e a seca chegava a 75 respostas sem nenhum card novo.
 
 Agora há **a fila em circulação**, só com o que já apareceu, e **o baralho de
-inéditos**, à parte. Antes de cada card, o app decide se cabe material novo,
-olhando a **carga**: quantos cards estão na primeira direção, ainda sendo
-aprendidos. É esse o estoque que custa caro — na volta o card já é conhecido,
-e treinar produção não compete com aprender palavra nova.
+inéditos**, à parte. Antes de cada card, o app decide se cabe material novo.
 
-A espera entre um inédito e outro é uma curva só, não uma escada de regras:
+O que a decisão persegue é o **equilíbrio entre as duas direções**. Todo card
+atravessa `es → pt`, onde você reconhece, e depois `pt → es`, onde produz o
+espanhol. Card novo entra sempre em `es → pt`, então admitir inéditos é a única
+torneira que enche esse lado — e sair do outro exige três acertos seguidos
+escrevendo em espanhol, que é lento. Sem regra nenhuma, `pt → es` incha sozinho:
+um progresso real chegou a **24 contra 98**, quatro para um.
 
-| Carga | Espera por um card novo |
-|---:|---:|
-| 0 | imediato |
-| 10 | 6 respostas |
-| 24 | 10 |
-| 30 (o alvo) | 12 |
-| 40 | 22 |
-| 50 ou mais | 25 — o teto |
+A espera sai da razão entre os dois lados:
+
+| es → pt | pt → es | Espera por um card novo |
+|---:|---:|---:|
+| 24 | 98 | 5 respostas |
+| 40 | 80 | 8 |
+| 50 | 50 | 12 |
+| 70 | 50 | 16 |
+| 120 | 40 | 25 — o teto |
 
 Nunca deixa de vir: um limite que pudesse virar "nunca" recriaria a seca que a
-regra veio resolver.
+regra veio resolver. E há um piso no denominador, porque no começo não existe
+nada na volta e uma razão sobre zero mandaria a espera ao teto justamente quando
+ela devia ser curta.
 
-Os números saíram de medir um progresso real, e não de palpite. Na primeira
-tentativa o alvo era 18, e um estado com 129 cards em curso — 98 deles já na
-volta, só 24 na primeira direção — gerava espera de 32 respostas. Vinte e quatro
-não é afogamento num baralho de 419: é o regime normal, porque `escrita` é onde
-o card espera emplacar três acertos seguidos. O alvo subiu para 30 e a escalada
-ficou mais mansa.
-
-O painel mostra a carga ao lado do alvo («aprendendo agora») e o intervalo atual
+O painel mostra os dois lados («es → pt e pt → es») e o intervalo atual
 («respostas por card novo»), para o ritmo não ser mais invisível.
-
-De quebra, isso equilibra as etapas: sem a enxurrada de inéditos, os cards
-avançam em vez de empilhar na volta.
 
 ### A fila em circulação
 

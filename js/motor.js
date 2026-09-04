@@ -373,46 +373,50 @@ window.Motor = (function () {
      na PRIMEIRA direção — os que ainda se está aprendendo a reconhecer. É o
      estoque que custa caro; enquanto ele está cheio, material novo só atrapalha.
 
-     A espera entre um inédito e outro é uma curva só, e não uma escada de
-     regras: com a carga vazia o card novo vem quase de imediato, com a carga
-     no alvo vem a cada doze respostas, e daí em diante afasta uma resposta
-     por card excedente até travar em vinte e cinco. Nunca deixa de vir.
+     O que a regra persegue é o EQUILÍBRIO entre as duas direções: tantos
+     cards sendo aprendidos (es→pt) quantos já estão na volta (pt→es). Card
+     novo entra em es→pt e, ao amadurecer, migra para pt→es — então admitir
+     inéditos é a única torneira que enche o primeiro lado.
 
-     Os números saíram da medição de um progresso real: 129 cards em curso,
-     dos quais 98 já na volta e só 24 na primeira direção. Vinte e quatro não
-     é afogamento num baralho de 419 — é o regime normal, porque 'escrita' é
-     onde o card espera emplacar três acertos seguidos. Um alvo de 18 tratava
-     esse regime como excesso e secava a novidade. */
-  const CARGA_ALVO = 30;         // carga considerada cheia, na primeira direção
-  const MIN_ENTRE_INEDITOS = 3;  // respostas, no mínimo, entre um inédito e outro
-  const ESPERA_NO_ALVO = 12;     // espera quando a carga está exatamente no alvo
-  const ESPERA_MAXIMA = 25;      // espera máxima, por mais afogada que esteja
+     Sem essa regra a segunda direção incha sozinha, porque sair dela exige
+     três acertos seguidos escrevendo em espanhol. Um progresso real chegou a
+     24 cards em es→pt contra 98 na volta, quatro para um.
 
-  /* Só a primeira direção conta: na volta o card já é conhecido, o que se
-     treina ali é produzir, e isso não compete com aprender palavra nova. */
-  function cargaInicial(estados) {
-    let n = 0;
+     A espera sai da razão entre os dois lados: lado esquerdo vazio dá card
+     novo quase de imediato, lados iguais dão um a cada doze respostas, e o
+     esquerdo maior que o direito afasta até travar em vinte e cinco. Nunca
+     deixa de vir. */
+  const MIN_ENTRE_INEDITOS = 3;   // respostas, no mínimo, entre um inédito e outro
+  const ESPERA_EQUILIBRIO = 12;   // espera quando os dois lados estão iguais
+  const ESPERA_MAXIMA = 25;       // espera máxima, por mais torto que esteja
+  /* No começo não há nada na volta, e uma razão sobre zero mandaria a espera
+     ao teto justamente quando ela devia ser curta. O piso segura isso. */
+  const PISO_VOLTA = 12;
+
+  /* Quantos cards em cada direção, sem contar os dominados: esses já saíram
+     do circuito de aprendizado e só voltam pela data. */
+  function contarDirecoes(estados) {
+    let esPt = 0, ptEs = 0;
     for (const id in estados) {
       const e = estados[id];
-      if (e && e.vistas && (e.etapa === 'multipla' || e.etapa === 'escrita')) n++;
+      if (!e || !e.vistas || e.etapa === 'dominado') continue;
+      if (e.etapa === 'multipla' || e.etapa === 'escrita') esPt++;
+      else ptEs++;
     }
-    return n;
+    return { esPt: esPt, ptEs: ptEs };
   }
 
-  /* Quantas respostas se espera por um inédito, dada a carga. */
-  function esperaComCarga(carga) {
-    if (carga <= 0) return 0;
-    if (carga < CARGA_ALVO) {
-      const t = carga / CARGA_ALVO;
-      return Math.max(MIN_ENTRE_INEDITOS,
-        Math.round(MIN_ENTRE_INEDITOS + (ESPERA_NO_ALVO - MIN_ENTRE_INEDITOS) * t));
-    }
-    return Math.min(ESPERA_MAXIMA, ESPERA_NO_ALVO + (carga - CARGA_ALVO));
+  /* Quantas respostas se espera por um inédito, dado o desequilíbrio. */
+  function esperaPorInedito(estados) {
+    const d = contarDirecoes(estados);
+    const razao = d.esPt / Math.max(d.ptEs, PISO_VOLTA);
+    const bruta = MIN_ENTRE_INEDITOS + (ESPERA_EQUILIBRIO - MIN_ENTRE_INEDITOS) * razao;
+    return Math.max(MIN_ENTRE_INEDITOS, Math.min(ESPERA_MAXIMA, Math.round(bruta)));
   }
 
   function cabeInedito(estados, desdeInedito, quantosIneditos) {
     if (!quantosIneditos) return false;
-    return desdeInedito >= esperaComCarga(cargaInicial(estados));
+    return desdeInedito >= esperaPorInedito(estados);
   }
 
   /* ── o intervalo do card maduro ──
@@ -754,7 +758,7 @@ window.Motor = (function () {
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
-    cabeInedito, cargaInicial, esperaComCarga, CARGA_ALVO, ESPERA_MAXIMA,
+    cabeInedito, contarDirecoes, esperaPorInedito, ESPERA_EQUILIBRIO, ESPERA_MAXIMA,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

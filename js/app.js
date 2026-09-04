@@ -555,7 +555,7 @@
 
     const etapaDe = id => progresso.cards[id].etapa;
     const dominados = ids.filter(id => etapaDe(id) === 'dominado').length;
-    const naInversa = ids.filter(id => ['consolidado', 'inversa-multipla', 'inversa-escrita'].includes(etapaDe(id))).length;
+    const dir = Motor.contarDirecoes(progresso.cards);
 
     /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
        separado do que você já trazia de casa. */
@@ -569,13 +569,11 @@
       metrica(pctDe(dePrimeira.length, estreados.length), 'acertou de primeira') +
       metrica(taxa + '%', 'acerto geral (' + t.respostas + ' respostas)') +
       metrica(aprendidos, 'não conhecia e hoje acerta') +
-      metrica(naInversa, 'já indo para o espanhol') +
+      /* é o equilíbrio que a admissão de inéditos persegue — vê-lo explica
+         por que o card novo às vezes vem depressa e às vezes espera */
+      metrica(dir.esPt + ' · ' + dir.ptEs, 'es → pt e pt → es') +
       metrica(dominados, 'dominados nas duas direções') +
-      metrica(Motor.cargaInicial(progresso.cards) + '/' + Motor.CARGA_ALVO, 'aprendendo agora') +
-      /* o ritmo dos inéditos era invisível, e sem isso não dava para saber se
-         a demora era regra ou defeito */
-      metrica('~' + Motor.esperaComCarga(Motor.cargaInicial(progresso.cards)),
-              'respostas por card novo') +
+      metrica('~' + Motor.esperaPorInedito(progresso.cards), 'respostas por card novo') +
       '</div>';
 
     if (estreados.length) {
@@ -607,11 +605,10 @@
      ainda não saíram, quantos estão no meio do caminho e quantos já
      venceram as duas direções. */
   const ETAPAS = [
-    { chave: 'novo',       rotulo: 'Inéditos'   },
-    { chave: 'multipla',   rotulo: 'Múltipla'   },
-    { chave: 'escrita',    rotulo: 'Escrevendo' },
-    { chave: 'invertido',  rotulo: 'Na volta'   },
-    { chave: 'dominado',   rotulo: 'Dominados'  }
+    { chave: 'novo',     rotulo: 'Inéditos'  },
+    { chave: 'espt',     rotulo: 'es → pt'   },
+    { chave: 'ptes',     rotulo: 'pt → es'   },
+    { chave: 'dominado', rotulo: 'Dominados' }
   ];
 
   function tabelaEtapas() {
@@ -627,9 +624,10 @@
       const e = progresso.cards[c.id];
       if (!e || !e.vistas) { x.novo++; return; }
       if (e.etapa === 'dominado') { x.dominado++; return; }
-      if (Motor.direcaoDe(e) === 'pt-es') { x.invertido++; return; }
-      if (Motor.modoDe(e) === 'escrita') { x.escrita++; return; }
-      x.multipla++;
+      /* Escolher entre cinco e escrever são passos da mesma travessia; o que
+         separa de verdade é para que lado se traduz. */
+      if (Motor.direcaoDe(e) === 'pt-es') { x.ptes++; return; }
+      x.espt++;
     });
 
     const niveis = Motor.NIVEIS.filter(n => g[n].total);
@@ -649,9 +647,11 @@
     const cabeca = r => '<th class="vert"><span>' + r + '</span></th>';
 
     return '<h3>Em que pé está cada nível</h3>' +
-      '<p class="legenda">Cada card percorre múltipla escolha, escrita em português, ' +
-      'a volta em que você produz o espanhol, e por fim dominado — que não é ' +
-      'aposentadoria: ele continua voltando, só que cada vez mais espaçado.</p>' +
+      '<p class="legenda">Cada card atravessa <b>es → pt</b>, onde você reconhece, ' +
+      'e depois <b>pt → es</b>, onde produz o espanhol — que é bem mais difícil. ' +
+      'Dominado não é aposentadoria: o card continua voltando, só que cada vez ' +
+      'mais espaçado. O card novo entra em <b>es → pt</b>, e é por isso que ' +
+      'admiti-los é a única torneira que enche esse lado.</p>' +
       '<table class="etapas"><tr><th>Nível</th>' +
       ETAPAS.map(e => cabeca(e.rotulo)).join('') +
       cabeca('Total') + '</tr>' + linhas +
