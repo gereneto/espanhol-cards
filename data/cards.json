@@ -35,7 +35,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Clássico falso amigo. 'Embarazada' = grávida. Envergonhada = 'avergonzada'.",
+   "nota": "Clássico falso amigo.\n🇪🇸 embarazada → 🇧🇷 grávida\n🇪🇸 avergonzada → 🇧🇷 envergonhada",
    "notaEn": "'Embarazada' means pregnant. To say you are embarrassed, use 'avergonzado' or turn it around with 'me da vergüenza'."
   },
   {
@@ -76,7 +76,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Exquisito' é elogio: delicioso, requintado. Esquisito = 'raro' ou 'extraño'.",
+   "nota": "É sempre elogio, nunca crítica.\n🇪🇸 exquisito → 🇧🇷 delicioso, requintado\n🇪🇸 raro, extraño → 🇧🇷 esquisito, estranho",
    "notaEn": "'Exquisito' is praise, above all at the table: '¡Está exquisito!' is what you say when a meal is superb. It also covers refined taste or manners. Something strange is 'raro' or 'extraño'."
   },
   {
@@ -119,7 +119,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Espera un rato' = espera um pouquinho. O animal rato = 'ratón'.",
+   "nota": "«Espera un rato» é espera um pouquinho.\n🇪🇸 un rato → 🇧🇷 um tempinho\n🇪🇸 el ratón → 🇧🇷 o rato, o camundongo\n🇪🇸 la rata → 🇧🇷 a ratazana",
    "notaEn": "'Espera un rato' = wait a while. It looks like 'rat' and is not: the animal is 'una rata', and the small one is 'un ratón'."
   },
   {
@@ -156,7 +156,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Borracho' = bêbado. Borracha de apagar = 'goma de borrar'.",
+   "nota": "Vem de «borrar», apagar — daí a borracha.\n🇪🇸 borracho → 🇧🇷 bêbado\n🇪🇸 la goma de borrar → 🇧🇷 a borracha de apagar",
    "notaEn": "'Borracho' = drunk. Keep it apart from 'borroso' (blurry) and 'borrado' (erased), which come from 'borrar', to rub out."
   },
   {
@@ -191,7 +191,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Oficina' = escritório. Oficina mecânica = 'taller'.",
+   "nota": "🇪🇸 la oficina → 🇧🇷 o escritório\n🇪🇸 el taller → 🇧🇷 a oficina mecânica",
    "notaEn": "'La oficina' is the office where people work at desks. The place a car gets fixed is 'el taller', and a factory is 'la fábrica'."
   },
   {
@@ -232,7 +232,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Taller' = oficina, ateliê, também workshop. Talher = 'cubierto'.",
+   "nota": "Vale para a garagem do mecânico, o ateliê do artista e o curso prático.\n🇪🇸 el taller → 🇧🇷 a oficina, o ateliê\n🇪🇸 el cubierto → 🇧🇷 o talher",
    "notaEn": "'Taller' covers the mechanic's garage, an artist's studio and a hands-on training workshop. It has nothing to do with height — taller in that sense is 'más alto'."
   },
   {
@@ -271,7 +271,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Cachorro' = filhote (de qualquer animal). Cachorro (cão) = 'perro'.",
+   "nota": "É a cria de qualquer animal, não só do cão.\n🇪🇸 el cachorro → 🇧🇷 o filhote\n🇪🇸 el perro → 🇧🇷 o cachorro, o cão",
    "notaEn": "'Cachorro' is the young of an animal — a puppy, a cub, a pup. A grown dog is 'el perro'."
   },
   {
@@ -306,7 +306,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Polvo' = pó/poeira. O animal polvo = 'pulpo'.",
+   "nota": "🇪🇸 el polvo → 🇧🇷 o pó, a poeira\n🇪🇸 el pulpo → 🇧🇷 o polvo",
    "notaEn": "'Polvo' is dust on a shelf, or powder in a recipe. The octopus is 'el pulpo' — one letter apart, and easy to swap by accident."
   },
   {
@@ -343,7 +343,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Cena' = jantar; 'cenar' = jantar (verbo). Cena de filme = 'escena'.",
+   "nota": "🇪🇸 la cena → 🇧🇷 o jantar\n🇪🇸 cenar → 🇧🇷 jantar\n🇪🇸 la escena → 🇧🇷 a cena de filme",
    "notaEn": "'La cena' is dinner, the evening meal, and 'cenar' is the verb that goes with it. Mind the neighbours: 'la escena' is a scene and 'la ceniza' is ash."
   },
   {
@@ -376,7 +376,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Escoba' = vassoura. Escova = 'cepillo'.",
+   "nota": "🇪🇸 la escoba → 🇧🇷 a vassoura\n🇪🇸 el cepillo → 🇧🇷 a escova\n🇪🇸 la fregona → 🇧🇷 o esfregão",
    "notaEn": "'Escoba' = broom. Its neighbours in the cupboard: 'el cepillo' is a brush, 'la fregona' the mop, 'el recogedor' the dustpan."
   },
   {
@@ -416,7 +416,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Cola' = rabo/cauda e também fila ('hacer cola'). Cola de colar = 'pegamento'.",
+   "nota": "«Hacer cola» é ficar na fila.\n🇪🇸 la cola → 🇧🇷 o rabo, a fila\n🇪🇸 el pegamento → 🇧🇷 a cola de colar",
    "notaEn": "'Cola' is both a tail and a queue — 'hacer cola' is to queue up, or to stand in line. Glue is 'el pegamento'."
   },
   {
@@ -450,7 +450,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Vaso' = copo. Vaso de flores = 'jarrón' ou 'florero'.",
+   "nota": "🇪🇸 el vaso → 🇧🇷 o copo\n🇪🇸 el jarrón, el florero → 🇧🇷 o vaso de flores\n🇪🇸 la copa → 🇧🇷 a taça",
    "notaEn": "'Un vaso de agua' is a glass of water. A vase for flowers is 'un jarrón' or 'un florero', and a wine glass is 'una copa'."
   },
   {
@@ -483,7 +483,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Largo' = comprido. Largo (em largura) = 'ancho'.",
+   "nota": "O par «largo / ancho» é comprimento contra largura.\n🇪🇸 largo → 🇧🇷 comprido, longo\n🇪🇸 ancho → 🇧🇷 largo",
    "notaEn": "'Largo' means long, in extension. Large in size is 'grande'; wide is 'ancho'. The pair 'largo/ancho' is length against width."
   },
   {
@@ -555,7 +555,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Brincar' = pular. Brincar = 'jugar'.",
+   "nota": "🇪🇸 brincar → 🇧🇷 pular, saltar\n🇪🇸 jugar → 🇧🇷 brincar, jogar",
    "notaEn": "'Brincar' is to jump or leap: 'el niño brincaba de alegría'. To play is 'jugar' — a different verb altogether."
   },
   {
@@ -591,7 +591,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Apellido' = sobrenome. Apelido = 'apodo' ou 'sobrenombre'.",
+   "nota": "Na Espanha e em boa parte da América Latina cada um carrega dois: o do pai, depois o da mãe.\n🇪🇸 el apellido → 🇧🇷 o sobrenome\n🇪🇸 el apodo → 🇧🇷 o apelido",
    "notaEn": "'Apellido' is the family name. In Spain and much of Latin America people carry two: the father's first, then the mother's. A nickname is 'un apodo'."
   },
   {
@@ -626,7 +626,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Propina' = gorjeta. Propina/suborno = 'soborno'.",
+   "nota": "🇪🇸 la propina → 🇧🇷 a gorjeta\n🇪🇸 el soborno → 🇧🇷 a propina, o suborno",
    "notaEn": "'La propina' is the tip you leave for service. A bribe is 'un soborno' — a very different transaction. In Spain tipping is modest and often skipped."
   },
   {
@@ -663,7 +663,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'El presunto asesino' = o suposto assassino. Presunto (comida) = 'jamón'.",
+   "nota": "«El presunto asesino» é o suposto assassino — a palavra da polícia antes da condenação.\n🇪🇸 presunto → 🇧🇷 suposto, presumido\n🇪🇸 el jamón → 🇧🇷 o presunto",
    "notaEn": "'El presunto asesino' is the alleged killer — the word the police and the papers use before a conviction. It comes from 'presumir', to presume."
   },
   {
@@ -700,7 +700,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Crianza' = criação/educação. Criança = 'niño' ou 'niña'.",
+   "nota": "Também nomeia o envelhecimento do vinho: «un vino de crianza».\n🇪🇸 la crianza → 🇧🇷 a criação, a educação\n🇪🇸 el niño, la niña → 🇧🇷 a criança",
    "notaEn": "'La crianza' is the raising of a child — how someone was brought up. It also names the ageing of wine: 'un vino de crianza'. The verb is 'criar'."
   },
   {
@@ -736,7 +736,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Aula' = sala. Aula (lição) = 'clase'.",
+   "nota": "«Aula» é feminina, mas leva «el» no singular por começar com a tônico. No plural, «las aulas».\n🇪🇸 el aula → 🇧🇷 a sala de aula\n🇪🇸 la clase → 🇧🇷 a aula, a lição",
    "notaEn": "'El aula' is the room, not the lesson — a lesson is 'una clase'. Mind the article: 'aula' is feminine but takes 'el' in the singular, because it opens with a stressed a. Plural, 'las aulas'."
   },
   {
@@ -773,7 +773,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Me acuerdo de ti' = lembro de você. Acordar = 'despertarse'.",
+   "nota": "É pronominal e pede «de»: «me acuerdo de ti».\n🇪🇸 acordarse → 🇧🇷 lembrar-se\n🇪🇸 despertarse → 🇧🇷 acordar do sono\n🇪🇸 acordar → 🇧🇷 combinar",
    "notaEn": "'Me acuerdo de ti' = I remember you. It is reflexive and takes 'de'. Keep it apart from 'despertarse', to wake up, and from plain 'acordar', to agree on something."
   },
   {
@@ -805,7 +805,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Todavía no' = ainda não. Todavia (contudo) = 'sin embargo'.",
+   "nota": "«Todavía no» é ainda não.\n🇪🇸 todavía → 🇧🇷 ainda\n🇪🇸 sin embargo → 🇧🇷 todavia, contudo",
    "notaEn": "'Todavía' = still, and 'todavía no' = not yet. Its opposite number is 'ya': 'ya llegó' (he's here already) against 'todavía no llega'."
   },
   {
@@ -882,7 +882,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'No hay sitio' = não tem lugar. Site = 'sitio web' ou 'página web'.",
+   "nota": "«No hay sitio» é não tem lugar.\n🇪🇸 el sitio → 🇧🇷 o lugar\n🇪🇸 el sitio web → 🇧🇷 o site",
    "notaEn": "'No hay sitio' = there's no room. A website is 'un sitio web', the one place the English sense survives. 'Sitio' also means a siege, as in 'el sitio de Numancia'."
   },
   {
@@ -917,7 +917,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Salsa' = molho. A erva salsa = 'perejil'.",
+   "nota": "🇪🇸 la salsa → 🇧🇷 o molho\n🇪🇸 el perejil → 🇧🇷 a salsa, a salsinha",
    "notaEn": "'La salsa' is any sauce — 'salsa de tomate', 'salsa verde'. The herb parsley is 'el perejil'. And yes, it is also the music and the dance."
   },
   {
@@ -953,7 +953,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "'Zurdo' = canhoto. Surdo = 'sordo'.",
+   "nota": "🇪🇸 zurdo → 🇧🇷 canhoto\n🇪🇸 diestro → 🇧🇷 destro\n🇪🇸 sordo → 🇧🇷 surdo",
    "notaEn": "'Zurdo' = left-handed; the right-handed one is 'diestro'. Careful with 'sordo', deaf, which sits one letter away."
   },
   {
@@ -990,7 +990,7 @@
     "falso-amigo",
     "corpo"
    ],
-   "nota": "'Cadera' = quadril. Cadeira = 'silla'.",
+   "nota": "🇪🇸 la cadera → 🇧🇷 o quadril\n🇪🇸 la silla → 🇧🇷 a cadeira",
    "notaEn": "'La cadera' is the hip — the joint, and the shelf you rest a child on. The waist just above it is 'la cintura'."
   },
   {
@@ -1107,7 +1107,7 @@
     "falso-amigo",
     "verbo"
    ],
-   "nota": "'Quítate de ahí' = sai daí. Quitar dívida = 'saldar' ou 'liquidar'.",
+   "nota": "«Quítate de ahí» é sai daí; «quítate el abrigo», tire o casaco.\n🇪🇸 quitar → 🇧🇷 tirar, remover\n🇪🇸 saldar, liquidar → 🇧🇷 quitar uma dívida",
    "notaEn": "'Quítate de ahí' = get out of the way. 'Quitar' is to take away or take off: 'quítate el abrigo', take off your coat. Reflexive, 'quitarse' is what you do to your own clothes."
   },
   {
@@ -1148,7 +1148,7 @@
     "falso-amigo",
     "verbo"
    ],
-   "nota": "Na porta, 'tirar' = puxar e 'empujar' = empurrar. Tirar (remover) = 'quitar'.",
+   "nota": "Na porta: «tirar» é puxar, «empujar» é empurrar.\n🇪🇸 tirar → 🇧🇷 jogar fora, puxar\n🇪🇸 quitar → 🇧🇷 tirar, remover",
    "notaEn": "On a door, 'tirar' means pull and 'empujar' means push — worth learning before you shove. Elsewhere it is to throw away: 'tira eso a la basura'."
   },
   {
@@ -1186,7 +1186,7 @@
    "tags": [
     "tecnologia"
    ],
-   "nota": "Tela de pintura = 'lienzo'. Cuidado para não confundir com 'pantalón'.",
+   "nota": "🇪🇸 la pantalla → 🇧🇷 a tela\n🇪🇸 el lienzo → 🇧🇷 a tela de pintura\n🇪🇸 el pantalón → 🇧🇷 a calça",
    "notaEn": "'La pantalla' is the screen — of a phone, a television, or a cinema. Keep it apart from 'el pantalón', trousers, which it echoes. A painter's canvas is 'un lienzo'."
   },
   {
@@ -1225,7 +1225,7 @@
     "falso-amigo",
     "escola"
    ],
-   "nota": "Assinatura (rubrica) = 'firma'.",
+   "nota": "«Asignatura pendiente» é a matéria que falta passar — e, no figurado, assunto malresolvido.\n🇪🇸 la asignatura → 🇧🇷 a matéria, a disciplina\n🇪🇸 la firma → 🇧🇷 a assinatura",
    "notaEn": "'La asignatura' is a school or university subject. 'Asignatura pendiente' is one you still have to pass — and, figuratively, any unfinished business. A signature is 'una firma'."
   },
   {
@@ -1750,7 +1750,7 @@
     "falso-amigo",
     "cultura"
    ],
-   "nota": "Falso amigo. A sobremesa (doce) = 'el postre'.",
+   "nota": "É a conversa que segura todo mundo à mesa depois de recolhidos os pratos.\n🇪🇸 la sobremesa → 🇧🇷 a conversa após a refeição\n🇪🇸 el postre → 🇧🇷 a sobremesa, o doce",
    "notaEn": "'La sobremesa' is the stretch of talk that keeps everyone at the table long after the plates are cleared — an institution in Spain. Dessert is 'el postre'."
   },
   {
@@ -5897,7 +5897,7 @@
     "falso-amigo",
     "escritório"
    ],
-   "nota": "Falso amigo. Carpete = 'moqueta' ou 'alfombra'.",
+   "nota": "🇪🇸 la carpeta → 🇧🇷 a pasta\n🇪🇸 la moqueta, la alfombra → 🇧🇷 o carpete, o tapete",
    "notaEn": "'La carpeta' is a folder, on a desk or on a screen. A carpet is 'la moqueta' or 'la alfombra' — the resemblance is a trap."
   },
   {
@@ -5932,7 +5932,7 @@
    "tags": [
     "falso-amigo"
    ],
-   "nota": "Falso amigo. Firma (empresa) = 'empresa'. E 'firmar' = assinar.",
+   "nota": "🇪🇸 la firma → 🇧🇷 a assinatura\n🇪🇸 firmar → 🇧🇷 assinar\n🇪🇸 la empresa → 🇧🇷 a firma, a empresa",
    "notaEn": "'La firma' is the signature, and 'firmar' is to sign. A firm in the business sense is 'la empresa', though 'la firma' can stretch that way in formal writing."
   },
   {

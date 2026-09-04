@@ -203,9 +203,13 @@ button{font:inherit}
   color:var(--texto-2);margin-bottom:3px;
 }
 .resposta-certa strong{font-size:19px}
+/* A nota traz pares «🇪🇸 palavra → 🇧🇷 tradução», um por linha, sempre no
+   mesmo sentido. Antes ela misturava as duas direções na mesma frase e
+   ninguém sabia qual palavra era de qual língua. */
 .nota{
   color:var(--texto-2);font-size:14px;margin:0 0 12px;
   border-left:2px solid var(--acento);padding-left:12px;
+  white-space:pre-line;line-height:1.7;
 }
 .medidas{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
 .medida{
@@ -384,6 +388,7 @@ label input:focus{outline:0;border-color:var(--acento)}
 .card-linha-nota{
   color:var(--texto-2);font-size:13px;margin:9px 0 0;
   border-left:2px solid var(--borda);padding-left:10px;
+  white-space:pre-line;line-height:1.65;
 }
 .vazio{color:var(--texto-2);text-align:center;padding:30px 0}
 

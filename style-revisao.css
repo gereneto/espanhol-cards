@@ -86,7 +86,7 @@
 .rev-valor{font-size:17px;line-height:1.45}
 .rev-lista{margin:6px 0 0;padding-left:20px;font-size:14.5px;line-height:1.7;color:var(--texto-2)}
 .rev-lista li{margin:2px 0}
-.rev-nota{font-size:14px;line-height:1.65;color:var(--texto-2);margin:6px 0 0}
+.rev-nota{font-size:14px;line-height:1.7;color:var(--texto-2);margin:6px 0 0;white-space:pre-line}
 
 /* inglês que o Yoisser corrigiu: mostra o antes ao lado do depois */
 .rev-alterado{border-left:3px solid var(--acento);background:var(--acento-fraco)}
