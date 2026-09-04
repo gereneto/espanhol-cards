@@ -387,6 +387,11 @@ window.Motor = (function () {
      esquerdo maior que o direito afasta até travar em vinte e cinco. Nunca
      deixa de vir. */
   const MIN_ENTRE_INEDITOS = 3;   // respostas, no mínimo, entre um inédito e outro
+  /* Enquanto a fila em circulação for curta, nenhuma distância cabe nela: o
+     motor pede 110 posições, a fila tem 10, e o card volta em 10. O começo do
+     baralho é isso, e a saída não é espaçar o que não dá — é encher a fila
+     depressa. Abaixo deste tamanho, inédito e revisão se alternam. */
+  const FILA_MINIMA = 40;
   const ESPERA_EQUILIBRIO = 12;   // espera quando os dois lados estão iguais
   const ESPERA_MAXIMA = 25;       // espera máxima, por mais torto que esteja
   /* No começo não há nada na volta, e uma razão sobre zero mandaria a espera
@@ -414,9 +419,19 @@ window.Motor = (function () {
     return Math.max(MIN_ENTRE_INEDITOS, Math.min(ESPERA_MAXIMA, Math.round(bruta)));
   }
 
-  function cabeInedito(estados, desdeInedito, quantosIneditos) {
+  function cabeInedito(estados, desdeInedito, quantosIneditos, tamanhoFila) {
     if (!quantosIneditos) return false;
-    return desdeInedito >= esperaPorInedito(estados);
+    /* Sem nada em circulação só há um lugar de onde tirar card. */
+    if (tamanhoFila === 0) return true;
+    const espera = esperaPorInedito(estados);
+    /* Fila curta demais para espaçar seja o que for. A espera entra de mansinho
+       conforme o baralho enche: com a fila vazia, um inédito a cada resposta;
+       na fila mínima, já a espera cheia. Sem essa rampa haveria um degrau de
+       um card novo a cada duas respostas para um a cada vinte e cinco. */
+    if (tamanhoFila !== undefined && tamanhoFila < FILA_MINIMA) {
+      return desdeInedito >= Math.max(1, Math.round(espera * (tamanhoFila / FILA_MINIMA)));
+    }
+    return desdeInedito >= espera;
   }
 
   /* ── o intervalo do card maduro ──
@@ -758,7 +773,8 @@ window.Motor = (function () {
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
-    cabeInedito, contarDirecoes, esperaPorInedito, ESPERA_EQUILIBRIO, ESPERA_MAXIMA,
+    cabeInedito, contarDirecoes, esperaPorInedito,
+    ESPERA_EQUILIBRIO, ESPERA_MAXIMA, FILA_MINIMA,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

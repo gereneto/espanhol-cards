@@ -169,7 +169,8 @@
      preferência sempre que couber material novo (ver Motor.cabeInedito);
      fora isso, sai o primeiro da fila em circulação cuja data já venceu. */
   function tirarProximoId() {
-    const cabe = Motor.cabeInedito(progresso.cards, progresso.desdeInedito, progresso.ineditos.length);
+    const cabe = Motor.cabeInedito(progresso.cards, progresso.desdeInedito,
+                                   progresso.ineditos.length, progresso.fila.length);
     if (cabe || !progresso.fila.length) {
       if (progresso.ineditos.length) {
         progresso.desdeInedito = 0;
@@ -904,19 +905,31 @@
     }
   }
 
-  async function baixar() {
-    if (!GH.configurado()) { statusSync('Informe o repositório e o token primeiro.', 'erro'); return; }
-    statusSync('Baixando…');
+  async function baixar(op) {
+    op = op || {};
+    if (!GH.configurado()) {
+      if (!op.silencioso) statusSync('Informe o repositório e o token primeiro.', 'erro');
+      return;
+    }
+    if (!op.silencioso) statusSync('Baixando…');
     try {
       const arq = await GH.ler('progresso.json');
-      if (!arq) { statusSync('Ainda não há progresso gravado no GitHub.', 'erro'); return; }
+      if (!arq) {
+        if (!op.silencioso) statusSync('Ainda não há progresso gravado no GitHub.', 'erro');
+        return;
+      }
       const remoto = JSON.parse(arq.texto);
+      const antes = Object.keys(progresso.cards).length;
       progresso = mesclar(progresso, remoto);
       salvarProgresso();
       atualizarPlacar();
-      statusSync('Progresso do GitHub incorporado.', 'ok');
+      const ganhou = Object.keys(progresso.cards).length - antes;
+      statusSync(op.silencioso && !ganhou ? 'Sincronização ligada.'
+        : ganhou ? 'Progresso de outro aparelho incorporado: +' + ganhou + ' cards.'
+                 : 'Progresso do GitHub incorporado.', 'ok');
     } catch (e) {
-      statusSync('Falhou: ' + e.message, 'erro');
+      statusSync((op.silencioso ? 'Não consegui trazer o progresso do GitHub: '
+                                : 'Falhou: ') + e.message, 'erro');
     }
   }
 
@@ -1261,6 +1274,14 @@
   atualizarPlacar();
   statusSync(GH.configurado() ? 'Sincronização ligada.' : 'Sem token — dados só neste navegador.');
   mostrar('tela-inicio');
+
+  /* Trazer antes de mandar. A sincronização só subia sozinha: abrir o app num
+     aparelho novo, com o localStorage vazio, começava do zero e a primeira
+     subida apagava o progresso do outro aparelho. Agora todo arranque com
+     token configurado mescla o que está no GitHub antes de qualquer coisa. */
+  if (GH.configurado()) {
+    baixar({ silencioso: true }).then(() => { conciliarFila(progresso); salvarProgresso(); });
+  }
 
   window.Espanhol = { progresso: () => progresso, sessao: () => sessao, resumo: gerarResumo };
 })();
