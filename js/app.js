@@ -25,7 +25,9 @@
     'meta-origem',
     'area-feedback', 'veredito', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
-    'area-contestar', 'btn-contestar', 'aviso-contestado',
+    'area-contestar', 'btn-contestar', 'aviso-contestado', 'btn-comentar-card',
+    'comentario-fundo', 'comentario-alvo', 'comentario-texto', 'comentario-restam',
+    'btn-comentario-enviar', 'btn-comentario-fechar',
     'btn-proximo', 'painel-conteudo',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
@@ -58,6 +60,8 @@
       ineditos: Motor.montarFila(CARDS),       // baralho à parte, ainda fechado
       desdeInedito: 0,                         // respostas desde o último card novo
       cards: {},
+      contestacoes: [],
+      comentarios: [],
       totais: { respostas: 0, acertos: 0, sessoes: 0 }
     };
   }
@@ -83,6 +87,18 @@
     if (CARDS.length) {
       Object.keys(p.cards).forEach(id => { if (!PORID[id]) delete p.cards[id]; });
     }
+
+    /* Progresso gravado antes de «primeiraCerta» existir não sabe se a
+       estreia foi certa, e a tabela por nível somava esses cards só de um
+       lado da conta: nenhuma estreia, mas todos os acertos em «depois».
+       Dava 110% no A1. O histórico ainda alcança a estreia quando guarda
+       tantas respostas quantas o card teve — aí a resposta [0] é ela. */
+    Object.keys(p.cards).forEach(id => {
+      const e = p.cards[id];
+      if (!e || e.primeiraCerta !== undefined || !e.vistas) return;
+      const h = e.historico || [];
+      if (h.length >= e.vistas && h[0]) e.primeiraCerta = !!h[0].acertou;
+    });
 
     const visto = id => !!p.cards[id];
     /* A frase presa a uma palavra ainda não dominada não entra em baralho
@@ -329,7 +345,9 @@
   function responderEscrita(desistiu) {
     if (respostaPendente) return;
     const ms = tempoGasto();
-    const texto = desistiu ? '' : el.entrada.value;
+    /* o maxlength do campo cobre a digitação; o corte cobre o resto, e é o
+       que garante que nada maior que o teto entre no progresso.json */
+    const texto = desistiu ? '' : Motor.cortar(el.entrada.value, Motor.LIMITES.resposta);
     if (!desistiu && !texto.trim()) { el.entrada.focus(); return; }
 
     const conferencia = desistiu ? 'errado' : Motor.conferir(cardAtual, texto, direcaoAtual);
@@ -381,11 +399,19 @@
     });
 
     /* Escreveu outra conjugação: mostra qual foi, para o erro ensinar algo. */
-    const forma = r.modo === 'escrita' && !r.desistiu
+    const escrevendo = r.modo === 'escrita' && !r.desistiu;
+    const forma = escrevendo
       ? Motor.formaReconhecida(cardAtual, r.resposta, r.direcao) : null;
-    if (forma) {
-      el['texto-dado'].innerHTML = escapar(forma.forma) +
-        ' <span class="forma-rotulo">' + escapar(forma.rotulo) + '</span>';
+    /* Só o artigo saiu errado. Dizer isso ensina mais do que "não foi dessa
+       vez": o que faltou tem nome, e é o gênero. */
+    const genero = escrevendo && !forma
+      ? Motor.erroDeGenero(cardAtual, r.resposta, r.direcao) : null;
+
+    if (forma || genero) {
+      el['texto-dado'].innerHTML = forma
+        ? escapar(forma.forma) + ' <span class="forma-rotulo">' + escapar(forma.rotulo) + '</span>'
+        : escapar(r.resposta) +
+          ' <span class="forma-rotulo">gênero errado — era «' + escapar(genero) + '»</span>';
       el['resposta-dada'].classList.remove('oculto');
       el['resposta-dada'].classList.add('conjugacao');
     } else {
@@ -401,7 +427,7 @@
       el['area-julgamento'].classList.remove('oculto');
       el['btn-proximo'].classList.add('oculto');
     } else {
-      if (!forma) el['resposta-dada'].classList.add('oculto');
+      if (!forma && !genero) el['resposta-dada'].classList.add('oculto');
       el['area-julgamento'].classList.add('oculto');
       el['btn-proximo'].classList.remove('oculto');
       mostrarVeredito(r);
@@ -590,6 +616,58 @@
     if (GH.cfg().auto && GH.configurado()) sincronizar({ silencioso: true });
   }
 
+  /* ── comentário livre sobre um card ──
+     A contestação só cabe quando você escreveu e foi contado como erro. Mas
+     o reparo mais útil costuma vir de outro lugar: distrator que também
+     serve, nota que confunde, frase que ninguém diz. Isso vale para
+     qualquer card, tendo acertado ou não, e vem do card ou da lista. */
+  let comentandoId = null;
+
+  function abrirComentario(id) {
+    const c = PORID[id]; if (!c) return;
+    comentandoId = id;
+    el['comentario-alvo'].textContent = c.es + ' → ' + c.pt;
+    el['comentario-texto'].value = '';
+    contarComentario();
+    el['comentario-fundo'].classList.remove('oculto');
+    el['comentario-texto'].focus();
+  }
+
+  function fecharComentario() {
+    comentandoId = null;
+    el['comentario-fundo'].classList.add('oculto');
+  }
+
+  function contarComentario() {
+    const limite = Motor.LIMITES.comentario;
+    const ta = el['comentario-texto'];
+    /* O maxlength segura a digitação, mas não o que entra por script nem
+       toda colagem de teclado virtual — e aí o contador ia a número
+       negativo. Cortar aqui faz o campo nunca passar do teto. */
+    if (ta.value.length > limite) ta.value = Motor.cortar(ta.value, limite);
+    const restam = limite - ta.value.length;
+    el['comentario-restam'].textContent = restam;
+    el['comentario-restam'].parentElement.classList.toggle('no-fim', restam <= 40);
+  }
+
+  function enviarComentario() {
+    if (!comentandoId) return;
+    const texto = Motor.cortar(el['comentario-texto'].value, Motor.LIMITES.comentario).trim();
+    if (!texto) { fecharComentario(); return; }
+
+    const c = PORID[comentandoId];
+    progresso.comentarios = progresso.comentarios || [];
+    progresso.comentarios.push({
+      em: new Date().toISOString(),
+      card: comentandoId, es: c.es, pt: c.pt, nivel: c.nivel,
+      texto: texto
+    });
+    salvarProgresso();
+    fecharComentario();
+    statusSync('Comentário anotado.', 'ok');
+    if (GH.cfg().auto && GH.configurado()) sincronizar({ silencioso: true, completo: true });
+  }
+
   function talvezSincronizar() {
     if (!(GH.cfg().auto && GH.configurado())) return;
     agendarRedeDeSeguranca();
@@ -773,7 +851,8 @@
      que fazia a coluna "de primeira" mentir justamente onde havia mais dado. */
   function tabelaNivel() {
     const g = {};
-    Motor.NIVEIS.forEach(n => (g[n] = { vistos: 0, estreias: 0, certasEstreia: 0, depois: 0, certasDepois: 0 }));
+    Motor.NIVEIS.forEach(n => (g[n] =
+      { vistos: 0, estreias: 0, certasEstreia: 0, depois: 0, certasDepois: 0, semEstreia: 0 }));
 
     Object.keys(progresso.cards).forEach(id => {
       const c = PORID[id]; if (!c) return;
@@ -781,10 +860,14 @@
       const x = g[c.nivel];
       if (!e.vistas) return;
       x.vistos++;
-      if (e.primeiraCerta !== undefined) {
-        x.estreias++;
-        if (e.primeiraCerta) x.certasEstreia++;
-      }
+      /* Sem saber se a estreia foi certa não dá para separá-la do resto:
+         contar as respostas em «depois» e nenhuma em «de primeira» punha
+         o acerto da estreia num denominador que não o comportava, e a
+         coluna passava de 100%. Card assim fica fora das duas colunas —
+         só as duas descrevendo o mesmo conjunto é que fecham. */
+      if (e.primeiraCerta === undefined) { x.semEstreia++; return; }
+      x.estreias++;
+      if (e.primeiraCerta) x.certasEstreia++;
       /* tudo o que veio depois da estreia */
       x.depois += Math.max(0, e.vistas - 1);
       x.certasDepois += Math.max(0, e.acertos - (e.primeiraCerta ? 1 : 0));
@@ -801,8 +884,13 @@
     }).join('');
 
     if (!linhas) return '';
+    const semEstreia = Motor.NIVEIS.reduce((a, n) => a + g[n].semEstreia, 0);
     return '<h3>Por nível</h3><p class="legenda">A coluna “de primeira” é o que você já sabia; ' +
-      '“depois” é o quanto está fixando com a repetição.</p>' +
+      '“depois” é o quanto está fixando com a repetição.' +
+      (semEstreia ? ' <b>' + semEstreia + '</b> ' + (semEstreia === 1 ? 'card ficou' : 'cards ficaram') +
+        ' fora destas duas colunas: ' + (semEstreia === 1 ? 'ele é' : 'são') +
+        ' de antes de o app anotar a estreia, e o histórico já não alcança tão para trás.' : '') +
+      '</p>' +
       '<table><tr><th>Nível</th><th class="num">Cards</th><th class="num">De primeira</th>' +
       '<th class="num">Depois</th><th></th></tr>' + linhas + '</table>';
   }
@@ -959,6 +1047,7 @@
           (c.tags || []).map(t => '<span class="selo">' + escapar(t) + '</span>').join('') +
         '</div>' +
         (c.nota ? '<p class="card-linha-nota">' + escapar(c.nota) + '</p>' : '') +
+        '<button class="link-comentar na-lista" data-comentar="' + escapar(c.id) + '">Comentar</button>' +
       '</div>';
     }).join('');
   }
@@ -1032,6 +1121,14 @@
           { keepalive: opcoes.keepalive });
       }
 
+      const comentarios = progresso.comentarios || [];
+      if (comentarios.length) {
+        await GH.escrever('comentarios.json',
+          JSON.stringify({ atualizado_em: agora, total: comentarios.length, casos: comentarios }, null, 1),
+          'comentários sobre cards — ' + agora,
+          { keepalive: opcoes.keepalive });
+      }
+
       await GH.escrever('resumo.md', gerarResumo(), 'resumo — ' + agora,
         { keepalive: opcoes.keepalive });
 
@@ -1081,6 +1178,7 @@
       ineditos: (local.ineditos && local.ineditos.length) ? local.ineditos : (remoto.ineditos || []),
       desdeInedito: Math.max(local.desdeInedito || 0, (remoto || {}).desdeInedito || 0),
       contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
+      comentarios: juntarComentarios(local.comentarios, remoto.comentarios),
       cards: {},
       totais: {
         respostas: Math.max(local.totais.respostas, (remoto.totais || {}).respostas || 0),
@@ -1096,6 +1194,21 @@
       saida.cards[id] = (b.vistas > a.vistas) ? b : a;
     });
     return conciliarFila(saida);
+  }
+
+  /* Comentário some do aparelho que não o escreveu, então a mesclagem junta
+     os dois lados. A chave é card + texto: o mesmo reparo anotado duas vezes
+     é um; dois reparos diferentes sobre o mesmo card são dois. */
+  function juntarComentarios(a, b) {
+    const saida = [], vistos = new Set();
+    for (const c of [...(a || []), ...(b || [])]) {
+      if (!c || !c.card) continue;
+      const chave = c.card + '|' + Motor.normalizar(c.texto);
+      if (vistos.has(chave)) continue;
+      vistos.add(chave);
+      saida.push(c);
+    }
+    return saida;
   }
 
   /* Contestação é registro do que ele pensou: nunca se perde numa mesclagem. */
@@ -1216,6 +1329,22 @@
       L.push('');
     }
 
+    const comentados = progresso.comentarios || [];
+    if (comentados.length) {
+      L.push('## Comentários sobre cards (' + comentados.length + ')');
+      L.push('');
+      L.push('**Avaliar um a um antes da próxima leva.** Escrito por ele durante o');
+      L.push('estudo, sobre qualquer card — não só sobre resposta contada como erro.');
+      L.push('');
+      L.push('| Card | Card diz | Comentário |');
+      L.push('|---|---|---|');
+      comentados.forEach(c => {
+        const limpo = String(c.texto || '').replace(/\|/g, '\\|').replace(/\n+/g, ' ');
+        L.push('| `' + c.card + '` | ' + c.es + ' → ' + c.pt + ' | ' + limpo + ' |');
+      });
+      L.push('');
+    }
+
     L.push('---');
     L.push('');
     L.push('_Gerado pelo app. Serve de base para calibrar a próxima leva de cards._');
@@ -1272,6 +1401,24 @@
   el['btn-comecar'].addEventListener('click', proximoCard);
   el['btn-proximo'].addEventListener('click', avancar);
   el['btn-contestar'].addEventListener('click', contestar);
+
+  el['btn-comentar-card'].addEventListener('click', () => cardAtual && abrirComentario(cardAtual.id));
+  /* delegado: a lista se redesenha a cada filtro, e religar ouvinte a ouvinte
+     em 458 linhas seria trabalho à toa */
+  el['lista-cards'].addEventListener('click', e => {
+    const b = e.target.closest('[data-comentar]');
+    if (b) abrirComentario(b.dataset.comentar);
+  });
+  el['btn-comentario-enviar'].addEventListener('click', enviarComentario);
+  el['btn-comentario-fechar'].addEventListener('click', fecharComentario);
+  el['comentario-texto'].addEventListener('input', contarComentario);
+  /* clicar fora fecha; clicar dentro do painel, não */
+  el['comentario-fundo'].addEventListener('click', e => {
+    if (e.target === el['comentario-fundo']) fecharComentario();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !el['comentario-fundo'].classList.contains('oculto')) fecharComentario();
+  });
   el['btn-responder'].addEventListener('click', () => responderEscrita(false));
   el['btn-nao-sei'].addEventListener('click', () => responderEscrita(true));
   el.entrada.addEventListener('keydown', e => {

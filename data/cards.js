@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-09-04",
+ "gerado_em": "2026-09-05",
  "total": 458,
  "cards": [
   {
@@ -4879,7 +4879,10 @@ window.CARDS_RAW = {
     "e preciso fazer agora",
     "tem que fazer isso agora",
     "deve ser feito agora",
-    "e necessario fazer agora"
+    "e necessario fazer agora",
+    "tem que fazer agora",
+    "tem de fazer agora",
+    "tem que fazer ja"
    ],
    "aceitasEn": [
     "it has to be done now",
@@ -5484,7 +5487,7 @@ window.CARDS_RAW = {
     "expressão",
     "Espanha"
    ],
-   "nota": "Insistência obstinada em algo.",
+   "nota": "O «erre» aqui é o nome da letra R, repetida — e não «erro». A imagem é a de quem repete a mesma sílaba sem sair do lugar, teimando na mesma coisa.",
    "notaEn": "'Erre que erre' — the rolled R repeated over and over, like someone who will not stop. It marks obstinate, wearying insistence."
   },
   {
@@ -7124,7 +7127,11 @@ window.CARDS_RAW = {
     "voce pode me ajudar",
     "me ajuda",
     "pode me dar uma mao",
-    "pode me ajudar"
+    "pode me ajudar",
+    "pode me dar uma ajuda",
+    "voce pode me dar uma ajuda",
+    "me da uma ajuda",
+    "me da uma mao"
    ],
    "aceitasEn": [
     "can you give me a hand",
@@ -7789,7 +7796,13 @@ window.CARDS_RAW = {
     "por entao morava em madri",
     "naquele tempo ele morava em madri",
     "na epoca ele morava em madri",
-    "ele morava em madri naquela epoca"
+    "ele morava em madri naquela epoca",
+    "naquela epoca ele morava em madrid",
+    "naquela epoca vivia em madri",
+    "naquela epoca vivia em madrid",
+    "naquela epoca ele vivia em madri",
+    "naquela epoca ele vivia em madrid",
+    "naquele tempo vivia em madrid"
    ],
    "aceitasEn": [
     "at that time he lived in madrid",

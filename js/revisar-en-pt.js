@@ -170,6 +170,7 @@
           '<span class="rev-rotulo">Observação</span>' +
           '<div class="rev-campo">' +
             '<textarea data-campo="observacao" rows="3" ' +
+              'maxlength="' + Motor.LIMITES.comentario + '" ' +
               'placeholder="o que está errado, ou o que você quer conferir depois">' +
               esc(meu.observacao || '') + '</textarea>' +
           '</div>' +
@@ -238,7 +239,7 @@
     const card = porId[fila.atual()];
     const campo = el['tela'].querySelector('[data-campo="observacao"]');
     const registro = { estado: estadoNovo, base_en: inglesValidado(card).en };
-    const obs = campo ? campo.value.trim() : '';
+    const obs = campo ? Motor.cortar(campo.value, Motor.LIMITES.comentario).trim() : '';
     if (obs) registro.observacao = obs;
 
     rev.decidir(card.id, registro);

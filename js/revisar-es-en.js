@@ -149,17 +149,24 @@
        dez linhas, e rolar dentro de um textarea de três é insuportável */
     const linhas = valor.split('\n').length;
     const rows = Math.min(12, Math.max(3, linhas + 1, Math.ceil(valor.length / 70) + 1));
+    /* Teto por campo: a nota é longa por natureza, o resto não. Sem isso,
+       o que vier daqui entra no repositório do tamanho que for. */
+    const teto = multilinha ? Motor.LIMITES.nota : Motor.LIMITES.campoCurto;
     return '<div class="rev-campo">' +
       (ajuda ? '<label>' + ajuda + '</label>' : '') +
       (caixa
-        ? '<textarea data-campo="' + esc(nome) + '" rows="' + rows + '">' + esc(valor) + '</textarea>'
-        : '<input type="text" data-campo="' + esc(nome) + '" value="' + esc(valor) + '">') +
+        ? '<textarea data-campo="' + esc(nome) + '" rows="' + rows + '" maxlength="' + teto + '">' +
+          esc(valor) + '</textarea>'
+        : '<input type="text" maxlength="' + teto + '" data-campo="' + esc(nome) +
+          '" value="' + esc(valor) + '">') +
       '</div>';
   }
 
   function lerCampo(nome) {
     const c = el['tela'].querySelector('[data-campo="' + nome.replace(/"/g, '\\"') + '"]');
-    return c ? c.value : '';
+    if (!c) return '';
+    /* o maxlength segura a digitação; o corte aqui segura o resto */
+    return Motor.cortar(c.value, c.tagName === 'TEXTAREA' ? Motor.LIMITES.nota : Motor.LIMITES.campoCurto);
   }
 
   /* ── guardar la decisión ── */
@@ -168,7 +175,7 @@
     const card = porId[fila.atual()];
     const registro = { estado: estadoNovo };
 
-    const comentario = lerCampo('comentario').trim();
+    const comentario = Motor.cortar(lerCampo('comentario'), Motor.LIMITES.comentario).trim();
     if (comentario) registro.comentario = comentario;
 
     /* solo se guarda lo que de verdad cambió: así el archivo dice

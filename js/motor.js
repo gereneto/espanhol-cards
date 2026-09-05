@@ -237,7 +237,7 @@ window.Motor = (function () {
     es: { certa: 'es', aceitas: 'aceitasEs' },
     en: { certa: 'en', aceitas: 'aceitasEn' }
   };
-  function respostasAceitas(card, direcao) {
+  function formasAceitas(card, direcao) {
     const lingua = linguaDaResposta(direcao);
     const campo = CAMPOS[lingua];
     const certa = String(card[campo.certa] || '');
@@ -245,11 +245,73 @@ window.Motor = (function () {
 
     /* No espanhol a barra não separa duas respostas: o card traz uma forma
        só, e as variantes vêm por aceitasEs. */
-    const lista = lingua === 'es'
+    return lingua === 'es'
       ? [certa, ...extras]
       : [certa, ...certa.split('/'), ...extras];
+  }
 
-    return lista.map(t => normalizar(t, lingua)).filter(Boolean);
+  function respostasAceitas(card, direcao) {
+    const lingua = linguaDaResposta(direcao);
+    return formasAceitas(card, direcao).map(t => normalizar(t, lingua)).filter(Boolean);
+  }
+
+  /* ── teto de cada campo de texto ──
+     Num app de uma pessoa só, campo sem limite nunca incomodou. Com mais
+     gente usando, cada caractere digitado vai parar no progresso.json e
+     sobe para o repositório a cada três respostas — e é o navegador de
+     quem responde que decide o tamanho. Os números saem do baralho, com
+     folga: a maior resposta tem 54 caracteres, a maior nota tem 559. */
+  const LIMITES = {
+    resposta: 120,      // o campo de responder
+    comentario: 500,    // comentário livre sobre um card
+    campoCurto: 200,    // resposta, distrator e variante nas telas de revisão
+    nota: 900           // a nota, nas telas de revisão
+  };
+
+  function cortar(txt, limite) {
+    return String(txt == null ? '' : txt).slice(0, limite);
+  }
+
+  /* ── o gênero do artigo ──
+     Omitir o artigo é permitido: quem responde «vaso» sabe tanto quanto
+     quem responde «el vaso», e é por isso que o artigo cai na normalização.
+     Escrever o artigo errado é outra coisa — não é omitir, é afirmar o
+     gênero errado, e o gênero é metade do que o card de substantivo ensina.
+     «el luna» tem de ser erro.
+
+     Só o artigo da frente entra na conta. Policiar os do meio da frase
+     esbarraria em contração («a la», «del») e daria falso negativo sem
+     ensinar nada — e é na frente que o gênero do substantivo se declara. */
+  const ARTIGOS_GENERO = {
+    es: { el:'m', los:'m', un:'m', unos:'m', la:'f', las:'f', una:'f', unas:'f' },
+    pt: { o:'m', os:'m', um:'m', uns:'m', a:'f', as:'f', uma:'f', umas:'f' },
+    en: {}
+  };
+
+  function generoDaFrente(txt, lingua) {
+    const primeira = String(txt || '')
+      .normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ').trim().split(/\s+/)[0];
+    return (ARTIGOS_GENERO[lingua] || {})[primeira] || null;
+  }
+
+  /* Devolve o artigo que era esperado quando o que ele escreveu bate no
+     resto mas erra o gênero — e null quando não há erro de gênero nenhum. */
+  function erroDeGenero(card, texto, direcao) {
+    const lingua = linguaDaResposta(direcao);
+    const dadoGenero = generoDaFrente(texto, lingua);
+    if (!dadoGenero) return null;              // não escreveu artigo: pode omitir
+
+    const dado = normalizar(texto, lingua);
+    /* Entre as formas aceitas, só interessam as que casam com o que ele
+       escreveu e trazem artigo. Um card pode aceitar sinônimo de outro
+       gênero («o quadril» e «a bacia»), e comparar com a forma canônica
+       reprovaria o sinônimo legítimo. */
+    const candidatas = formasAceitas(card, direcao)
+      .filter(f => normalizar(f, lingua) === dado && generoDaFrente(f, lingua));
+    if (!candidatas.length) return null;       // nenhuma forma aceita traz artigo
+    if (candidatas.some(f => generoDaFrente(f, lingua) === dadoGenero)) return null;
+    return candidatas[0];
   }
 
   /* Confere a resposta escrita. Devolve 'certo' | 'quase' | 'errado'.
@@ -266,6 +328,10 @@ window.Motor = (function () {
     const lingua = linguaDaResposta(direcao);
     const dado = normalizar(texto, lingua);
     if (!dado) return 'errado';
+
+    /* O gênero errado é erro seco, sem passar pelo "deu quase": não foi a
+       mão que escorregou, foi o gênero — que é o que o card ensina. */
+    if (erroDeGenero(card, texto, direcao)) return 'errado';
 
     const aceitas = respostasAceitas(card, direcao);
     if (aceitas.includes(dado)) return 'certo';
@@ -804,6 +870,7 @@ window.Motor = (function () {
     normalizar, conferir, velocidade,
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
+    erroDeGenero, formasAceitas, LIMITES, cortar,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=289cf370">
+<link rel="stylesheet" href="style.css?v=b7c59040">
 </head>
 <body>
 
@@ -96,7 +96,8 @@
       <!-- escrita -->
       <div id="area-escrita" class="oculto">
         <input type="text" id="entrada" autocomplete="off" autocorrect="off"
-               autocapitalize="off" spellcheck="false" placeholder="escreva o significado…">
+               autocapitalize="off" spellcheck="false" maxlength="120"
+               placeholder="escreva o significado…">
         <div class="linha-botoes">
           <button class="primario" id="btn-responder">Responder</button>
           <button class="secundario" id="btn-nao-sei">Não sei</button>
@@ -142,6 +143,11 @@
             Anotado. Vou trazer este caso quando formos atualizar o app.
           </p>
         </div>
+
+        <!-- vale para qualquer card, tendo acertado ou não -->
+        <p class="linha-comentar">
+          <button class="link-comentar" id="btn-comentar-card">Comentar este card</button>
+        </p>
 
         <button class="primario grande" id="btn-proximo">Próximo card</button>
       </div>
@@ -248,13 +254,29 @@
 
 </main>
 
+<!-- Comentar qualquer card, de dentro do card ou da lista. Um painel só,
+     que as duas portas de entrada abrem apontando para um id. -->
+<div class="comentario-fundo oculto" id="comentario-fundo">
+  <div class="comentario-painel" role="dialog" aria-modal="true" aria-labelledby="comentario-titulo">
+    <h3 id="comentario-titulo">Comentar o card</h3>
+    <p class="comentario-alvo" id="comentario-alvo"></p>
+    <textarea id="comentario-texto" rows="4" maxlength="500"
+              placeholder="o que você notou neste card…"></textarea>
+    <p class="comentario-conta"><span id="comentario-restam">500</span> caracteres restantes</p>
+    <div class="linha-botoes">
+      <button class="primario" id="btn-comentario-enviar">Enviar</button>
+      <button class="secundario" id="btn-comentario-fechar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 <footer class="rodape">
   <span id="rodape-sync">•</span>
 </footer>
 
-<script src="data/cards.js?v=289cf370"></script>
-<script src="js/motor.js?v=289cf370"></script>
-<script src="js/github.js?v=289cf370"></script>
-<script src="js/app.js?v=289cf370"></script>
+<script src="data/cards.js?v=b7c59040"></script>
+<script src="js/motor.js?v=b7c59040"></script>
+<script src="js/github.js?v=b7c59040"></script>
+<script src="js/app.js?v=b7c59040"></script>
 </body>
 </html>

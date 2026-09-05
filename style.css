@@ -349,6 +349,40 @@ label input:focus{outline:0;border-color:var(--acento)}
 .link-contestar:hover{border-color:var(--erro);background:var(--erro-fraco)}
 .aviso-contestado{margin:9px 0 0;font-size:13px;color:var(--ok)}
 
+/* ── comentar um card ──
+   Discreto de propósito: é uma saída sempre disponível, não uma ação que
+   o card esteja pedindo. Sublinhado fino, do lado do texto secundário. */
+.linha-comentar{margin:10px 0 16px;text-align:right}
+.link-comentar{
+  background:none;border:none;color:var(--texto-2);font:inherit;font-size:13px;
+  cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:3px;
+  text-decoration-color:var(--borda);
+}
+.link-comentar:hover{color:var(--texto);text-decoration-color:var(--texto-2)}
+.link-comentar.na-lista{margin-top:8px;font-size:12.5px}
+
+.comentario-fundo{
+  position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.comentario-painel{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:var(--raio);
+  box-shadow:var(--sombra);padding:20px;width:100%;max-width:460px;
+}
+.comentario-painel h3{margin:0 0 4px;font-size:17px}
+.comentario-alvo{
+  margin:0 0 14px;font-size:14px;color:var(--texto-2);line-height:1.5;
+  border-left:2px solid var(--acento);padding-left:10px;
+}
+#comentario-texto{
+  width:100%;background:var(--fundo);border:1px solid var(--borda);color:var(--texto);
+  border-radius:10px;padding:11px 13px;font:inherit;font-size:15px;line-height:1.55;
+  resize:vertical;min-height:88px;
+}
+#comentario-texto:focus{outline:none;border-color:var(--acento)}
+.comentario-conta{margin:6px 0 14px;font-size:12.5px;color:var(--texto-2);text-align:right}
+.comentario-conta.no-fim{color:var(--quase)}
+
 /* ── lista de todos os cards ── */
 .filtros{
   background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;
