@@ -240,10 +240,23 @@ for (const c of cards) {
          antes da desinência para sobreviver a isso: enterarse → enter */
       .replace(/(ar|er|ir)se$/, '')
       .replace(/(ar|er|ir)$/, '');
-    const radical = nucleo.slice(0, Math.max(4, nucleo.length - 2));
-    if (radical && !limpar(c.es).includes(radical)) {
+    /* O espanhol muda o radical ao conjugar: «soler» vira «suelo»,
+       «acordarse» vira «me acuerdo», «pedir» vira «pide». Sem prever isso o
+       aviso dispara justamente nos verbos mais irregulares — que são os que
+       mais precisam de uma frase mostrando o uso. */
+    const variantes = new Set([nucleo]);
+    [['o', 'ue'], ['e', 'ie'], ['e', 'i'], ['u', 'ue']].forEach(([de, para]) => {
+      const i = nucleo.lastIndexOf(de);
+      if (i >= 0) variantes.add(nucleo.slice(0, i) + para + nucleo.slice(i + 1));
+    });
+
+    const frase = limpar(c.es);
+    const radicais = [...variantes]
+      .map(v => v.slice(0, Math.max(4, v.length - 2)))
+      .filter(Boolean);
+    if (radicais.length && !radicais.some(r => frase.includes(r))) {
       avisos.push('a frase não parece usar a palavra que requer: ' + onde +
-        ' → ' + alvo.es + ' (procurei "' + radical + '")');
+        ' → ' + alvo.es + ' (procurei ' + radicais.map(r => '"' + r + '"').join(' ou ') + ')');
     }
   }
 }

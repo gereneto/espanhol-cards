@@ -3376,6 +3376,7 @@ window.CARDS_RAW = {
   {
    "id": "f015",
    "tipo": "frase",
+   "requer": "p031",
    "es": "Tirar la toalla.",
    "pt": "Jogar a toalha. / Desistir.",
    "en": "To throw in the towel.",
@@ -3764,6 +3765,7 @@ window.CARDS_RAW = {
   {
    "id": "f024",
    "tipo": "frase",
+   "requer": "p008",
    "es": "Estoy hecho polvo.",
    "pt": "Estou acabado. / Estou exausto.",
    "en": "I'm completely worn out.",
@@ -4112,6 +4114,7 @@ window.CARDS_RAW = {
   {
    "id": "f032",
    "tipo": "frase",
+   "requer": "p130",
    "es": "Montó un pollo.",
    "pt": "Fez um escândalo. / Armou um barraco.",
    "en": "He made a scene.",
@@ -7081,6 +7084,7 @@ window.CARDS_RAW = {
   {
    "id": "f078",
    "tipo": "frase",
+   "requer": "p021",
    "es": "No me acuerdo.",
    "pt": "Não me lembro.",
    "en": "I don't remember.",
@@ -7241,6 +7245,7 @@ window.CARDS_RAW = {
   {
    "id": "f082",
    "tipo": "frase",
+   "requer": "p082",
    "es": "Suelo levantarme temprano.",
    "pt": "Costumo acordar cedo.",
    "en": "I usually get up early.",
@@ -7320,6 +7325,7 @@ window.CARDS_RAW = {
   {
    "id": "f084",
    "tipo": "frase",
+   "requer": "p083",
    "es": "Me enteré ayer.",
    "pt": "Fiquei sabendo ontem.",
    "en": "I found out yesterday.",
@@ -7358,6 +7364,7 @@ window.CARDS_RAW = {
   {
    "id": "f085",
    "tipo": "frase",
+   "requer": "p087",
    "es": "Tardé dos horas en llegar.",
    "pt": "Demorei duas horas para chegar.",
    "en": "It took me two hours to arrive.",
@@ -14355,6 +14362,7 @@ window.CARDS_RAW = {
   {
    "id": "f103",
    "tipo": "frase",
+   "requer": "p068",
    "es": "Me pilló de sorpresa.",
    "pt": "Me pegou de surpresa.",
    "en": "It caught me by surprise.",
@@ -16653,6 +16661,7 @@ window.CARDS_RAW = {
   {
    "id": "f116",
    "tipo": "frase",
+   "requer": "p068",
    "es": "Me pilla de camino.",
    "pt": "Fica no meu caminho.",
    "en": "It's on my way.",
