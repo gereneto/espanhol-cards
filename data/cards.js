@@ -2,7 +2,7 @@
 window.CARDS_RAW = {
  "versao": 1,
  "gerado_em": "2026-09-05",
- "total": 458,
+ "total": 457,
  "cards": [
   {
    "id": "p001",
@@ -3376,7 +3376,6 @@ window.CARDS_RAW = {
   {
    "id": "f015",
    "tipo": "frase",
-   "requer": "p031",
    "es": "Tirar la toalla.",
    "pt": "Jogar a toalha. / Desistir.",
    "en": "To throw in the towel.",
@@ -3765,7 +3764,6 @@ window.CARDS_RAW = {
   {
    "id": "f024",
    "tipo": "frase",
-   "requer": "p008",
    "es": "Estoy hecho polvo.",
    "pt": "Estou acabado. / Estou exausto.",
    "en": "I'm completely worn out.",
@@ -4114,7 +4112,6 @@ window.CARDS_RAW = {
   {
    "id": "f032",
    "tipo": "frase",
-   "requer": "p130",
    "es": "Montó un pollo.",
    "pt": "Fez um escândalo. / Armou um barraco.",
    "en": "He made a scene.",
@@ -7085,41 +7082,43 @@ window.CARDS_RAW = {
    "id": "f078",
    "tipo": "frase",
    "requer": "p021",
-   "es": "No me acuerdo.",
-   "pt": "Não me lembro.",
-   "en": "I don't remember.",
+   "es": "No me acuerdo de su nombre.",
+   "pt": "Não me lembro do nome dele.",
+   "en": "I can't remember his name.",
    "aceitas": [
-    "nao me lembro",
-    "nao lembro",
-    "nao me recordo",
-    "nao consigo lembrar"
+    "nao me lembro do nome dele",
+    "nao lembro do nome dele",
+    "nao me recordo do nome dele",
+    "nao consigo lembrar do nome dele",
+    "nao me lembro do nome dela",
+    "nao me lembro o nome dele"
    ],
    "aceitasEn": [
-    "i dont remember",
-    "i don t remember",
-    "i do not remember",
-    "i cant remember",
-    "i dont recall",
-    "it escapes me"
+    "i cant remember his name",
+    "i dont remember his name",
+    "i do not remember his name",
+    "i cant recall his name",
+    "i cant remember her name"
    ],
    "distratores": [
-    "Não acordo cedo.",
-    "Não concordo com isso.",
-    "Não combinei nada.",
-    "Não me acordaram."
+    "Não concordo com o nome dele.",
+    "Não combinei nada com ele.",
+    "Não me acordaram a tempo.",
+    "Não anotei o nome dele."
    ],
    "distratoresEn": [
-    "I don't get up early.",
-    "I don't agree with that.",
-    "I arranged nothing.",
-    "Nobody woke me up."
+    "I don't agree with his name.",
+    "I arranged nothing with him.",
+    "They didn't wake me in time.",
+    "I didn't write his name down."
    ],
    "nivel": "A2",
    "tags": [
-    "falso-amigo"
+    "falso-amigo",
+    "verbo"
    ],
-   "nota": "Par do card 'acordarse': lembrar-se, e não despertar.",
-   "notaEn": "'Acordarse de' = to remember. Reflexive, and with 'de': 'no me acuerdo de su nombre'. The plain verb 'acordar' means something else entirely."
+   "nota": "«Acordarse» pede «de» antes do que se lembra; sem a preposição a frase soa truncada. O sinônimo «recordar» é o contrário: leva complemento direto.\n🇪🇸 me acuerdo de su nombre → 🇧🇷 lembro do nome dele\n🇪🇸 recuerdo su nombre → 🇧🇷 lembro o nome dele",
+   "notaEn": "'Acordarse' needs 'de' before whatever you remember. Its synonym 'recordar' works the other way and takes a direct object: 'recuerdo su nombre', but 'me acuerdo de su nombre'."
   },
   {
    "id": "f079",
@@ -7321,45 +7320,6 @@ window.CARDS_RAW = {
    ],
    "nota": "'Apetecer' = dar vontade. Na América Latina: '¿se te antoja?'.",
    "notaEn": "'Apetecer' works backwards, like 'gustar': the coffee appeals to you. Very Spanish — in Latin America you would hear '¿se te antoja un café?'"
-  },
-  {
-   "id": "f084",
-   "tipo": "frase",
-   "requer": "p083",
-   "es": "Me enteré ayer.",
-   "pt": "Fiquei sabendo ontem.",
-   "en": "I found out yesterday.",
-   "aceitas": [
-    "fiquei sabendo ontem",
-    "soube ontem",
-    "descobri ontem",
-    "tomei conhecimento ontem"
-   ],
-   "aceitasEn": [
-    "i found out yesterday",
-    "i heard about it yesterday",
-    "i only found out yesterday",
-    "i learned about it yesterday",
-    "i got to know yesterday"
-   ],
-   "distratores": [
-    "Enterrei isso ontem.",
-    "Entrei lá ontem.",
-    "Entreguei tudo ontem.",
-    "Entendi isso ontem."
-   ],
-   "distratoresEn": [
-    "I buried it yesterday.",
-    "I went in there yesterday.",
-    "I handed it all in yesterday.",
-    "I understood it yesterday."
-   ],
-   "nivel": "B1",
-   "tags": [
-    "verbo"
-   ],
-   "nota": "'Enterarse de algo' = ficar sabendo de algo.",
-   "notaEn": "'Enterarse de algo' = to find out about something. It marks the moment the news reached you, not the studying of it."
   },
   {
    "id": "f085",
@@ -16661,7 +16621,6 @@ window.CARDS_RAW = {
   {
    "id": "f116",
    "tipo": "frase",
-   "requer": "p068",
    "es": "Me pilla de camino.",
    "pt": "Fica no meu caminho.",
    "en": "It's on my way.",
