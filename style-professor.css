@@ -1,0 +1,97 @@
+/* ────────────────────────────────────────────────────────────────
+   style-professor.css — a página do Yoisser.
+   Carregada depois de style.css, de onde herda a paleta e a fonte.
+   ──────────────────────────────────────────────────────────────── */
+
+.prof-corpo{max-width:660px;margin:0 auto;padding:36px 20px 64px;width:100%}
+
+/* ── quem é ── */
+.prof-topo{display:flex;gap:20px;align-items:center;margin-bottom:32px}
+.prof-foto{
+  width:112px;height:112px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:2px solid var(--acento-borda);
+}
+.prof-nome{font-size:27px;margin:0 0 5px;line-height:1.15}
+.prof-linha{margin:0;color:var(--texto-2);font-size:14.5px;line-height:1.6}
+.prof-linha .sep{opacity:.45;margin:0 7px}
+
+/* ── as palavras dele ──
+   O espanhol vem primeiro e em corpo maior: quem lê esta página está
+   aprendendo espanhol, então ler o professor na língua dele já diz algo
+   que nenhuma frase de propaganda diria. O português vem abaixo, menor,
+   para quem ainda não alcança. */
+.prof-fala{
+  border-left:2px solid var(--acento);padding-left:16px;margin:0 0 22px;
+}
+.prof-fala p{margin:0 0 4px;font-size:18px;line-height:1.55}
+.prof-fala .pt{
+  margin:0 0 18px;font-size:14.5px;line-height:1.55;color:var(--texto-2);
+}
+.prof-fala p:last-of-type{margin-bottom:0}
+
+.prof-secao{margin:34px 0}
+.prof-secao h2{
+  font-size:13px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--texto-2);font-weight:700;margin:0 0 14px;
+}
+.prof-secao p{margin:0 0 12px;font-size:15.5px;line-height:1.7}
+
+/* ── o método, nas palavras dos episódios dele ── */
+.prof-passos{list-style:none;margin:0;padding:0;counter-reset:passo}
+.prof-passos li{
+  counter-increment:passo;position:relative;padding:9px 0 9px 42px;
+  font-size:15.5px;line-height:1.5;border-bottom:1px solid var(--borda);
+}
+.prof-passos li:last-child{border-bottom:none}
+.prof-passos li::before{
+  content:counter(passo);position:absolute;left:0;top:8px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--acento-fraco);border:1px solid var(--acento-borda);
+  color:var(--acento);font-size:12.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.prof-passos .pt{color:var(--texto-2);font-size:13.5px}
+
+/* ── números, sem alarde ── */
+.prof-numeros{display:flex;gap:10px;flex-wrap:wrap}
+.prof-numero{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:11px;
+  padding:12px 16px;flex:1 1 130px;
+}
+.prof-numero b{display:block;font-size:21px;color:var(--texto);line-height:1.2}
+.prof-numero span{font-size:12.5px;color:var(--texto-2)}
+
+.prof-temas{display:flex;gap:7px;flex-wrap:wrap}
+.prof-tema{
+  font-size:13px;background:var(--fundo-3);border:1px solid var(--borda);
+  border-radius:999px;padding:5px 12px;color:var(--texto-2);
+}
+
+/* ── o convite ── */
+.prof-acao{
+  background:var(--fundo-2);border:1px solid var(--borda);border-radius:var(--raio);
+  padding:22px;margin:36px 0 0;text-align:center;
+}
+.prof-acao p{margin:0 0 15px;font-size:15px;color:var(--texto-2);line-height:1.6}
+.prof-botao{
+  display:inline-block;background:var(--acento);color:#231a05;
+  border-radius:11px;padding:14px 26px;font-size:16.5px;font-weight:700;
+  text-decoration:none;transition:filter .12s;
+}
+.prof-botao:hover{filter:brightness(1.06)}
+.prof-secundario{
+  display:inline-block;margin-top:14px;color:var(--texto-2);font-size:14px;
+}
+.prof-secundario a{color:var(--acento);text-decoration:underline;text-underline-offset:3px}
+
+.prof-rodape{
+  margin-top:40px;padding-top:20px;border-top:1px solid var(--borda);
+  font-size:13px;color:var(--texto-2);line-height:1.7;text-align:center;
+}
+.prof-rodape a{color:var(--texto-2)}
+
+@media (max-width:520px){
+  .prof-topo{flex-direction:column;text-align:center;gap:14px}
+  .prof-nome{font-size:24px}
+  .prof-fala p{font-size:16.5px}
+}

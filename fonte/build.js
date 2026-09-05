@@ -319,7 +319,7 @@ if (TAGS) {
    index.html novo, misturando baralho antigo com código novo. */
 const crypto = require('crypto');
 const assets = [
-  'style.css', 'style-revisao.css',
+  'style.css', 'style-revisao.css', 'style-professor.css',
   'js/motor.js', 'js/github.js', 'js/app.js',
   'js/revisao.js', 'js/revisar-es-en.js', 'js/revisar-en-pt.js',
   'data/cards.js', 'data/tags.js'
