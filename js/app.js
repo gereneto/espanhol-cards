@@ -279,6 +279,8 @@
     el.termo.classList.toggle('frase', cardAtual.tipo === 'frase');
 
     el['area-feedback'].classList.add('oculto');
+    /* o chão criado para o botão subir era daquele card; some com ele */
+    el['area-feedback'].style.paddingBottom = '';
     el['area-conhecia'].classList.add('oculto');
     el['area-julgamento'].classList.add('oculto');
     el['resposta-dada'].classList.add('oculto');
@@ -445,15 +447,60 @@
      baixo da dobra, e era preciso rolar à mão a cada card. Puxa a tela o
      bastante para ele aparecer — e nada além disso, para o espanhol não sair
      de vista. Quando a resposta ficou por julgar, o alvo são os dois botões
-     de julgamento, que é o que espera decisão naquele momento. */
+     de julgamento, que é o que espera decisão naquele momento.
+
+     O scrollIntoView não deu conta, e por dois motivos que só aparecem no
+     aparelho de verdade:
+
+     — no celular o teclado cobre metade da tela sem encolher o innerHeight,
+       então ele conclui que o botão está à vista e não faz nada. Quem sabe
+       o que está coberto é o visualViewport, e é contra ele que a conta é
+       feita aqui;
+     — a rolagem suave é cancelada por qualquer toque na tela, e logo depois
+       de escolher a alternativa o dedo ainda está lá.
+
+     Daí as três passadas. Cada uma recalcula quanto falta a partir da
+     posição atual, então repetir não faz passar do ponto: rolar e o botão
+     subir se cancelam. A do fim é instantânea, porque rolagem suave
+     cancelada no meio do caminho não se recupera sozinha. */
+  const FOLGA_BOTAO = 24;
+
+  /* Quanto ainda falta rolar para o alvo caber na parte de fato visível. */
+  function faltaRolar(alvo) {
+    const r = alvo.getBoundingClientRect();
+    if (!r.height) return 0;
+    const vv = window.visualViewport;
+    const topo = vv ? vv.offsetTop : 0;
+    const altura = vv ? vv.height : window.innerHeight;
+    return Math.max(0, (r.bottom + FOLGA_BOTAO) - (topo + altura));
+  }
+
   function trazerBotaoParaAVista() {
     const alvo = el['btn-proximo'].classList.contains('oculto')
       ? el['area-julgamento'] : el['btn-proximo'];
+    if (!alvo) return;
     const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    /* Direto, sem requestAnimationFrame: o scrollIntoView já força o layout
-       de que precisa, e o rAF não dispara com a aba em segundo plano — a
-       rolagem simplesmente não acontecia. */
-    alvo.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'nearest' });
+
+    const rolar = comportamento => {
+      const falta = faltaRolar(alvo);
+      if (!falta) return;
+      /* Rolar sozinho não resolve: o botão é o último elemento da página, e
+         quando falta subir mais do que ainda há para rolar — teclado
+         aberto, tela baixa —, a página termina antes de ele chegar. Sem
+         isto a rolagem acontecia e o botão continuava embaixo do teclado.
+         Então primeiro se cria chão debaixo dele, e só então se rola. */
+      const podeRolar = document.documentElement.scrollHeight
+        - Math.round(window.scrollY) - window.innerHeight;
+      if (falta > podeRolar) {
+        const atual = parseFloat(el['area-feedback'].style.paddingBottom) || 0;
+        el['area-feedback'].style.paddingBottom = (atual + (falta - podeRolar)) + 'px';
+      }
+      window.scrollBy({ top: falta, behavior: comportamento });
+    };
+
+    rolar(suave ? 'smooth' : 'auto');
+    setTimeout(() => rolar(suave ? 'smooth' : 'auto'), 300);  // o teclado fechou
+    setTimeout(() => rolar('auto'), 700);                     // e se a suave morreu
   }
 
   function mostrarVeredito(r) {
