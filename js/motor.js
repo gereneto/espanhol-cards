@@ -439,30 +439,41 @@ window.Motor = (function () {
      na PRIMEIRA direção — os que ainda se está aprendendo a reconhecer. É o
      estoque que custa caro; enquanto ele está cheio, material novo só atrapalha.
 
-     O que a regra persegue é o EQUILÍBRIO entre as duas direções: tantos
-     cards sendo aprendidos (es→pt) quantos já estão na volta (pt→es). Card
-     novo entra em es→pt e, ao amadurecer, migra para pt→es — então admitir
-     inéditos é a única torneira que enche o primeiro lado.
+     A regra tem TRÊS FASES, e quem manda nelas é quantos cards já foram
+     vistos — não a razão entre as direções, que era a régua antiga.
 
-     Sem essa regra a segunda direção incha sozinha, porque sair dela exige
-     três acertos seguidos escrevendo em espanhol. Um progresso real chegou a
-     24 cards em es→pt contra 98 na volta, quatro para um.
+       1. Baralho ainda pequeno (até VISTOS_RAPIDO): card novo quase toda
+          hora. No começo não há o que revisar, e material é o que falta.
+       2. Desaceleração (até VISTOS_FREIO): a espera cresce em linha reta,
+          de ESPERA_INICIAL até ESPERA_FINAL, conforme o baralho enche.
+       3. Daí em diante manda o equilíbrio: só entra card novo se houver
+          MENOS es→pt do que pt→es. Não é mais uma espera que estica — é
+          uma porta que fecha.
 
-     A espera sai da razão entre os dois lados: lado esquerdo vazio dá card
-     novo quase de imediato, lados iguais dão um a cada doze respostas, e o
-     esquerdo maior que o direito afasta até travar em vinte e cinco. Nunca
-     deixa de vir. */
-  const MIN_ENTRE_INEDITOS = 3;   // respostas, no mínimo, entre um inédito e outro
+     A terceira fase existe porque as duas direções não se enchem pela
+     mesma torneira. Todo card novo entra em es→pt; sair de lá exige três
+     acertos seguidos escrevendo. Com inédito entrando livremente, o lado
+     esquerdo cresce mais rápido do que se esvazia, e a distância só abre.
+     Limitar es→pt pelo tamanho de pt→es fecha a conta: cada inédito
+     admitido tem de ser pago por um card que atravessou para a volta.
+
+     A régua antiga era a razão entre os lados, e afrouxava justamente
+     quando não devia: com 122 contra 112 ela ainda deixava passar. */
   /* Enquanto a fila em circulação for curta, nenhuma distância cabe nela: o
      motor pede 110 posições, a fila tem 10, e o card volta em 10. O começo do
      baralho é isso, e a saída não é espaçar o que não dá — é encher a fila
      depressa. Abaixo deste tamanho, inédito e revisão se alternam. */
   const FILA_MINIMA = 40;
-  const ESPERA_EQUILIBRIO = 12;   // espera quando os dois lados estão iguais
-  const ESPERA_MAXIMA = 25;       // espera máxima, por mais torto que esteja
-  /* No começo não há nada na volta, e uma razão sobre zero mandaria a espera
-     ao teto justamente quando ela devia ser curta. O piso segura isso. */
-  const PISO_VOLTA = 12;
+  const VISTOS_RAPIDO = 60;    // até aqui, card novo quase toda hora
+  const VISTOS_FREIO = 180;    // daqui em diante, quem manda é o equilíbrio
+  const ESPERA_INICIAL = 2;    // respostas entre inéditos na largada
+  const ESPERA_FINAL = 15;     // no fim da desaceleração
+
+  function contarVistos(estados) {
+    let n = 0;
+    for (const id in estados) if (estados[id] && estados[id].vistas) n++;
+    return n;
+  }
 
   /* Quantos cards em cada direção, sem contar os dominados: esses já saíram
      do circuito de aprendizado e só voltam pela data. */
@@ -477,12 +488,32 @@ window.Motor = (function () {
     return { esPt: esPt, ptEs: ptEs };
   }
 
-  /* Quantas respostas se espera por um inédito, dado o desequilíbrio. */
+  /* Quantas respostas se espera por um inédito, pelo tamanho do baralho já
+     visto. Fases 1 e 2; na 3 a espera fica no teto e quem decide é a porta
+     do equilíbrio, logo abaixo. */
   function esperaPorInedito(estados) {
+    const vistos = contarVistos(estados);
+    if (vistos <= VISTOS_RAPIDO) return ESPERA_INICIAL;
+    if (vistos >= VISTOS_FREIO) return ESPERA_FINAL;
+    const t = (vistos - VISTOS_RAPIDO) / (VISTOS_FREIO - VISTOS_RAPIDO);
+    return Math.round(ESPERA_INICIAL + (ESPERA_FINAL - ESPERA_INICIAL) * t);
+  }
+
+  /* A porta da terceira fase: com o baralho já grande, card novo só entra
+     se o lado que se está aprendendo estiver menor que o lado da volta. */
+  function equilibrioPermite(estados) {
+    if (contarVistos(estados) < VISTOS_FREIO) return true;
     const d = contarDirecoes(estados);
-    const razao = d.esPt / Math.max(d.ptEs, PISO_VOLTA);
-    const bruta = MIN_ENTRE_INEDITOS + (ESPERA_EQUILIBRIO - MIN_ENTRE_INEDITOS) * razao;
-    return Math.max(MIN_ENTRE_INEDITOS, Math.min(ESPERA_MAXIMA, Math.round(bruta)));
+    return d.esPt < d.ptEs;
+  }
+
+  /* Quantos cards precisam atravessar para pt→es até a porta reabrir. Cada
+     travessia tira um de um lado e põe no outro, então a diferença cai de
+     dois em dois. Zero quando a porta já está aberta. */
+  function faltamParaEquilibrio(estados) {
+    if (equilibrioPermite(estados)) return 0;
+    const d = contarDirecoes(estados);
+    return Math.floor((d.esPt - d.ptEs) / 2) + 1;
   }
 
   /* A espera que vale agora, já com a rampa do começo aplicada. É este o
@@ -507,6 +538,14 @@ window.Motor = (function () {
     return Math.max(0, esperaEfetiva(estados, tamanhoFila) - desdeInedito);
   }
 
+  function cabeInedito(estados, desdeInedito, quantosIneditos, tamanhoFila) {
+    if (!quantosIneditos) return false;
+    /* Sem nada em circulação só há um lugar de onde tirar card. */
+    if (tamanhoFila === 0) return true;
+    if (!equilibrioPermite(estados)) return false;
+    return desdeInedito >= esperaEfetiva(estados, tamanhoFila);
+  }
+
   /* ── a frase presa à palavra ──
      Um card de frase pode trazer «requer: id-da-palavra». Ele fica fora do
      baralho até a palavra estar dominada, e só então entra — na frente,
@@ -525,13 +564,6 @@ window.Motor = (function () {
     if (!card || !card.requer) return 0;
     const e = estados && estados[card.requer];
     return (e && e.ultima) ? (Date.parse(e.ultima) || 0) : 0;
-  }
-
-  function cabeInedito(estados, desdeInedito, quantosIneditos, tamanhoFila) {
-    if (!quantosIneditos) return false;
-    /* Sem nada em circulação só há um lugar de onde tirar card. */
-    if (tamanhoFila === 0) return true;
-    return desdeInedito >= esperaEfetiva(estados, tamanhoFila);
   }
 
   /* ── o intervalo do card maduro ──
@@ -875,8 +907,10 @@ window.Motor = (function () {
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
     cabeInedito, contarDirecoes, esperaPorInedito, esperaEfetiva, faltamParaInedito,
+    equilibrioPermite, faltamParaEquilibrio, contarVistos,
+    VISTOS_RAPIDO, VISTOS_FREIO,
     liberado, venceuEm,
-    ESPERA_EQUILIBRIO, ESPERA_MAXIMA, FILA_MINIMA,
+    ESPERA_INICIAL, ESPERA_FINAL, FILA_MINIMA,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

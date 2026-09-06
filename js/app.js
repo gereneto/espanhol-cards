@@ -768,6 +768,10 @@
                                            progresso.fila.length);
     const presos = CARDS.filter(c => !progresso.cards[c.id] &&
                                      !Motor.liberado(c, progresso.cards)).length;
+    /* Com o baralho já grande, o que segura card novo não é mais a espera:
+       é a porta do equilíbrio. Mostrar a contagem regressiva nessa hora
+       prometeria um card que não vem. */
+    const paraEquilibrar = Motor.faltamParaEquilibrio(progresso.cards);
 
     /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
        separado do que você já trazia de casa. */
@@ -788,10 +792,12 @@
       /* Contagem regressiva, não uma taxa: dizer "faltam 7" se entende de
          cara, e mostra o efeito do equilíbrio entre as duas direções, que é
          o que decide quando o card novo entra. */
-      metrica(faltam === null ? '—' : faltam,
-              faltam !== null ? 'respostas até o próximo card novo'
-                : presos ? 'frases esperando você dominar a palavra'
-                : 'todos os cards já apareceram') +
+      metrica(faltam === null ? '—' : (paraEquilibrar || faltam),
+              faltam === null
+                ? (presos ? 'frases esperando você dominar a palavra'
+                          : 'todos os cards já apareceram')
+                : paraEquilibrar ? 'cards a virar pt → es para abrir vaga'
+                                 : 'respostas até o próximo card novo') +
       '</div>';
 
     if (estreados.length) {
@@ -876,11 +882,20 @@
       'e depois <b>pt → es</b>, onde produz o espanhol — que é bem mais difícil. ' +
       'Dominado não é aposentadoria: o card continua voltando, só que cada vez ' +
       'mais espaçado. O card novo entra em <b>es → pt</b>, e é por isso que ' +
-      'admiti-los é a única torneira que enche esse lado. A contagem regressiva ' +
-      'lá em cima sai daqui: com <b>es → pt</b> lotado ela estica, e quando esse ' +
-      'lado esvazia ela encurta e o card novo vem depressa. ' +
-      '<b>Presos</b> são frases que mostram uma palavra em uso e esperam você ' +
-      'dominar essa palavra: quando ela cai, a frase dela é o próximo card novo.</p>' +
+      'admiti-los é a única torneira que enche esse lado.</p>' +
+      '<p class="legenda">A entrada de card novo tem três tempos, e quem os ' +
+      'separa é quantos cards você já viu. Até <b>' + Motor.VISTOS_RAPIDO +
+      '</b>, card novo quase toda hora — no começo não há o que revisar. Daí ' +
+      'até <b>' + Motor.VISTOS_FREIO + '</b>, a espera cresce de <b>' +
+      Motor.ESPERA_INICIAL + '</b> para <b>' + Motor.ESPERA_FINAL +
+      '</b> respostas. Passado esse ponto quem manda é o equilíbrio: só entra ' +
+      'card novo se houver <b>menos es → pt do que pt → es</b>. Cada inédito ' +
+      'admitido passa a ser pago por um card que atravessou para a volta — ' +
+      'sem isso o lado esquerdo cresce mais rápido do que se esvazia, porque ' +
+      'sair dele exige três acertos seguidos escrevendo.</p>' +
+      '<p class="legenda"><b>Presos</b> são frases que mostram uma palavra em ' +
+      'uso e esperam você dominar essa palavra: quando ela cai, a frase dela ' +
+      'é o próximo card novo.</p>' +
       '<table class="etapas"><tr><th>Nível</th>' +
       ETAPAS.map(e => cabeca(e.rotulo)).join('') +
       cabeca('Total') + '</tr>' + linhas +
