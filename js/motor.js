@@ -687,13 +687,27 @@ window.Motor = (function () {
       } else if (est.seguidas >= 3) {
         est.etapa = inversa ? 'dominado' : 'inversa-multipla';
         est.seguidas = 0;   // a direção nova começa do zero
-        if (inversa) est.revisoes = 0;   // acabou de amadurecer: escada do zero
+        /* «revisoes» não zera aqui. Quem chega pela primeira vez já vem com
+           zero, e quem está voltando de um tropeço tem de reencontrar o
+           degrau de onde caiu — senão o recuo de um degrau viraria recuo
+           até o chão no momento da reconquista. */
       } else {
         est.etapa = inversa ? 'inversa-escrita' : 'escrita';
       }
     } else {
-      est.etapa = inversa ? 'inversa-multipla' : 'multipla';
-      est.revisoes = 0;
+      /* ── errar derruba um degrau, não a escada inteira ──
+         O card maduro cai para «inversa-escrita»: continua escrevendo em
+         espanhol, que é o que ele já provava saber, em vez de voltar a
+         escolher entre cinco. E a escada do espaçamento recua uma casa em
+         vez de zerar — um card de 90 dias volta em 30, não em 3.
+
+         Antes, um só deslize apagava meses de maturidade e punha o card
+         maduro no mesmo lugar de um recém-aprendido. Para quem nunca foi
+         dominado nada muda: «revisoes» já era zero, e o decremento não o
+         leva abaixo disso. */
+      est.etapa = jaDominado ? 'inversa-escrita'
+                : inversa ? 'inversa-multipla' : 'multipla';
+      est.revisoes = Math.max(0, (est.revisoes || 0) - 1);
     }
 
     /* Só o maduro espera por data; qualquer outro volta pela fila e mais nada. */
