@@ -3079,10 +3079,14 @@ window.CARDS_RAW = {
     "conheco de algum lugar",
     "soa familiar",
     "ja ouvi falar",
-    "me lembra alguma coisa",
     "me lembra algo",
     "me lembra de algo",
-    "isso me lembra algo"
+    "me lembra alguma coisa",
+    "me lembra de alguma coisa",
+    "isso me lembra algo",
+    "isso me lembra de algo",
+    "isso me lembra alguma coisa",
+    "isso me lembra de alguma coisa"
    ],
    "aceitasEn": [
     "it rings a bell",
@@ -16919,14 +16923,14 @@ window.CARDS_RAW = {
    "distratores": [
     "Ficamos roxos de frio.",
     "Ficamos roxos de raiva.",
-    "Nos vestimos de roxo.",
-    "Pintamos a parede de roxo."
+    "Passamos mal depois da festa.",
+    "Ficamos sem jantar."
    ],
    "distratoresEn": [
     "We turned blue with cold.",
     "We went purple with rage.",
-    "We dressed all in purple.",
-    "We painted the wall purple."
+    "We felt sick afterwards.",
+    "We went without dinner."
    ],
    "nivel": "C1",
    "tags": [

@@ -84,30 +84,41 @@ que acontecia, e a seca chegava a 75 respostas sem nenhum card novo.
 Agora há **a fila em circulação**, só com o que já apareceu, e **o baralho de
 inéditos**, à parte. Antes de cada card, o app decide se cabe material novo.
 
-O que a decisão persegue é o **equilíbrio entre as duas direções**. Todo card
-atravessa `es → pt`, onde você reconhece, e depois `pt → es`, onde produz o
-espanhol. Card novo entra sempre em `es → pt`, então admitir inéditos é a única
-torneira que enche esse lado — e sair do outro exige três acertos seguidos
-escrevendo em espanhol, que é lento. Sem regra nenhuma, `pt → es` incha sozinho:
-um progresso real chegou a **24 contra 98**, quatro para um.
+A decisão tem **três tempos**, e quem os separa é **quantos cards já foram
+vistos** — não a razão entre as direções, que era a régua antiga.
 
-A espera sai da razão entre os dois lados:
+| Cards vistos | O que decide | Espera por um card novo |
+|---|---|---:|
+| até **60** | nada segura | 2 respostas |
+| de 60 a **180** | a espera cresce em linha reta | de 2 a 15 |
+| **180** em diante | a porta do equilíbrio | 15, quando a porta está aberta |
 
-| es → pt | pt → es | Espera por um card novo |
-|---:|---:|---:|
-| 24 | 98 | 5 respostas |
-| 40 | 80 | 8 |
-| 50 | 50 | 12 |
-| 70 | 50 | 16 |
-| 120 | 40 | 25 — o teto |
+No começo não há o que revisar, e material é o que falta — daí o primeiro
+tempo. Depois a espera sobe conforme o baralho enche.
 
-Nunca deixa de vir: um limite que pudesse virar "nunca" recriaria a seca que a
-regra veio resolver. E há um piso no denominador, porque no começo não existe
-nada na volta e uma razão sobre zero mandaria a espera ao teto justamente quando
-ela devia ser curta.
+O terceiro tempo não é mais uma espera que estica: é **uma porta que fecha**.
+Com o baralho já grande, card inédito só entra se houver **menos `es → pt` do
+que `pt → es`**. Ela existe porque as duas direções não se enchem pela mesma
+torneira: todo card novo entra em `es → pt`, e sair de lá exige três acertos
+seguidos escrevendo, que é lento. Com inédito entrando à vontade, o lado
+esquerdo cresce mais depressa do que se esvazia e a distância só abre. Limitar
+`es → pt` pelo tamanho de `pt → es` fecha a conta: **cada inédito admitido tem
+de ser pago por um card que atravessou para a volta.**
 
-O painel mostra os dois lados («es → pt e pt → es») e o intervalo atual
-(«respostas por card novo»), para o ritmo não ser mais invisível.
+A régua antiga era a razão entre os lados, e afrouxava justamente quando não
+devia — com 122 contra 112 ela ainda deixava passar.
+
+Há ainda um freio no começo de tudo: enquanto a fila em circulação tiver menos
+de **40 cards**, nenhuma distância cabe nela — o motor pede 110 posições, a fila
+tem 10, e o card volta em 10. Aí a espera entra de mansinho, proporcional ao
+tamanho da fila, para não haver um degrau de um card novo a cada duas respostas
+para um a cada quinze.
+
+O painel mostra os dois lados («es → pt e pt → es») e, embaixo, ou quantas
+respostas faltam para o próximo inédito, ou — quando é a porta que está
+segurando — quantos **cards precisam virar `pt → es` para abrir vaga**. Cada
+travessia tira um de um lado e põe no outro, então a diferença cai de dois em
+dois.
 
 ### A fila em circulação
 

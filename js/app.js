@@ -1630,10 +1630,10 @@
     }
   });
 
-  /* A metade de cima do card gruda logo abaixo do cabeçalho, e para isso
-     precisa saber a altura dele — que não é fixa: em tela estreita o placar
-     quebra de linha e o cabeçalho cresce. O CSS não mede outro elemento, então
-     a medida vem daqui. */
+  /* A frase do card gruda logo abaixo do cabeçalho, e para isso precisa saber
+     a altura dele — que não é fixa: em tela estreita o placar quebra de linha e
+     o cabeçalho cresce. O CSS não mede outro elemento, então a medida vem
+     daqui. */
   function medirCabecalho() {
     const t = document.querySelector('.topo');
     if (t) document.documentElement.style.setProperty('--altura-topo', t.offsetHeight + 'px');

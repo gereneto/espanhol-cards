@@ -140,29 +140,6 @@ button{font:inherit}
   padding:6px 11px 7px;border-radius:0 0 8px 8px;
 }
 
-/* ── a pergunta não sai da tela ──
-   Respondida a pergunta, a tela desce sozinha até o botão, e num card longo
-   o enunciado saía por cima — era preciso subir à mão para reler a frase.
-   A metade de cima gruda logo abaixo do cabeçalho e a resposta passa por
-   baixo dela. As margens negativas são o que faz o bloco cobrir a ficha de
-   ponta a ponta: sem elas, o que rola aparece nas laterais e no topo, dentro
-   do respiro de 22px da ficha.
-
-   O gruda vale só dentro da ficha, então quando ela acaba a pergunta sobe
-   junto — que é o certo: não há mais resposta para ler embaixo. */
-.card-topo{
-  position:sticky;
-  top:var(--altura-topo,65px);
-  z-index:3;
-  background:var(--fundo-2);
-  margin:-22px -22px 0;
-  padding:22px 22px 14px;
-  border-radius:calc(var(--raio) - 1px) calc(var(--raio) - 1px) 0 0;
-}
-/* o respiro embaixo do termo passou para o bloco: margem de filho escaparia
-   pela borda de baixo e deixaria uma fresta por onde a resposta apareceria */
-.card-topo .termo-linha{margin-bottom:0}
-
 .card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;padding-right:56px}
 .etiqueta{
   font-size:11.5px;text-transform:uppercase;letter-spacing:.7px;font-weight:600;
@@ -174,7 +151,33 @@ button{font:inherit}
 .etiqueta.origem{background:var(--ok-fraco);color:var(--ok);border-color:var(--ok-borda);
   font-style:italic;text-transform:none;letter-spacing:0}
 .enunciado{color:var(--texto-2);font-size:13.5px;margin:0 0 6px}
-.termo-linha{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+/* ── a frase não sai da tela ──
+   Respondida a pergunta, a tela desce sozinha até o botão, e num card longo
+   era a frase que sumia por cima — para reler era preciso subir a tela à mão.
+   Ela gruda logo abaixo do cabeçalho e a resposta passa por baixo.
+
+   Gruda só esta linha, e não a metade de cima inteira. Quem está acima dela
+   — as etiquetas, o «o que quer dizer esta frase?» — sobe e desaparece atrás
+   do cabeçalho, que é o que se quer: nada disso se relê, e são 88px que a
+   resposta ganha num aparelho onde ela mal cabia. Sai de graça e sem
+   sobressalto, porque é rolagem comum: esconder aquilo por script encolheria
+   a página no meio da rolagem e o card ficaria oscilando entre os dois
+   tamanhos, justo na faixa em que acaba de grudar.
+
+   As margens negativas fazem a linha cobrir a ficha de ponta a ponta: sem
+   elas, o que rola aparece nas laterais, dentro do respiro de 22px. E o
+   respiro de baixo virou padding pelo mesmo motivo — margem não pinta fundo,
+   e a resposta apareceria pela fresta.
+
+   O gruda vale só dentro da ficha, então quando ela acaba a frase sobe junto
+   — que é o certo: não há mais resposta para ler embaixo. */
+.termo-linha{
+  display:flex;align-items:flex-start;gap:12px;
+  position:sticky;top:var(--altura-topo,65px);z-index:3;
+  background:var(--fundo-2);
+  margin:0 -22px;
+  padding:0 22px 14px;
+}
 .termo{
   font-size:29px;font-weight:800;line-height:1.22;letter-spacing:-.015em;
   color:#fff;overflow-wrap:break-word;flex:1;
