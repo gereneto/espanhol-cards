@@ -5206,6 +5206,8 @@ window.CARDS_RAW = {
     "sempre leva a melhor",
     "sempre sai com a dele",
     "sempre da um jeito de conseguir",
+    "sempre da um jeito",
+    "ele sempre da um jeito",
     "sempre impoe a vontade dele"
    ],
    "aceitasEn": [
@@ -16793,7 +16795,8 @@ window.CARDS_RAW = {
     "na hora",
     "sem titubear",
     "sem hesitar",
-    "de pronto"
+    "de pronto",
+    "sem perder tempo"
    ],
    "aceitasEn": [
     "without a moments hesitation",
