@@ -430,49 +430,46 @@ window.Motor = (function () {
     return { multipla: { n: 0, certas: 0 }, escrita: { n: 0, certas: 0 } };
   }
 
-  /* ── quando entra um card inédito ──
-     Card novo e card em revisão não disputam a mesma fila. Se disputassem, o
-     novo perderia sempre: quem está em múltipla escolha volta a 8-32 posições
-     e satura a frente, então quanto mais se revisa, mais raro fica o inédito.
+  /* ── quatro filas, e de qual delas vem o próximo card ──
 
-     Aqui a decisão é por carga, não por posição. A carga é o número de cards
-     na PRIMEIRA direção — os que ainda se está aprendendo a reconhecer. É o
-     estoque que custa caro; enquanto ele está cheio, material novo só atrapalha.
+     Card novo e card em revisão nunca disputaram a mesma fila — se
+     disputassem, o novo perderia sempre. Agora são quatro filas separadas:
 
-     A regra tem TRÊS FASES, e quem manda nelas é quantos cards já foram
-     vistos — não a razão entre as direções, que era a régua antiga.
+       inéditos   o que nunca apareceu
+       es→pt      você reconhece o espanhol (multipla, escrita)
+       pt→es      você produz o espanhol (inversa-multipla, inversa-escrita)
+       dominados  vencido nas duas direções, esperando a data
 
-       1. Baralho ainda pequeno (até VISTOS_RAPIDO): card novo quase toda
-          hora. No começo não há o que revisar, e material é o que falta.
-       2. Desaceleração (até VISTOS_FREIO): a espera cresce em linha reta,
-          de ESPERA_INICIAL até ESPERA_FINAL, conforme o baralho enche.
-       3. Daí em diante manda o equilíbrio: só entra card novo se houver
-          MENOS es→pt do que pt→es. Não é mais uma espera que estica — é
-          uma porta que fecha.
+     Os dominados ficam fora desta conta: eles têm gatilho de calendário e
+     furam a fila quando a data chega (ver DIAS_DOMINADO).
 
-     A terceira fase existe porque as duas direções não se enchem pela
-     mesma torneira. Todo card novo entra em es→pt; sair de lá exige três
-     acertos seguidos escrevendo. Com inédito entrando livremente, o lado
-     esquerdo cresce mais rápido do que se esvazia, e a distância só abre.
-     Limitar es→pt pelo tamanho de pt→es fecha a conta: cada inédito
-     admitido tem de ser pago por um card que atravessou para a volta.
+     Entre as outras três, a escolha persegue um alvo: **ALVO_FILA cards em cada
+     direção**. Quem está abaixo do alvo precisa de entrada, quem está acima
+     precisa de saída — e cada fila mexe no que mexe:
 
-     A régua antiga era a razão entre os lados, e afrouxava justamente
-     quando não devia: com 122 contra 112 ela ainda deixava passar. */
-  /* Enquanto a fila em circulação for curta, nenhuma distância cabe nela: o
-     motor pede 110 posições, a fila tem 10, e o card volta em 10. O começo do
-     baralho é isso, e a saída não é espaçar o que não dá — é encher a fila
-     depressa. Abaixo deste tamanho, inédito e revisão se alternam. */
-  const FILA_MINIMA = 40;
-  const VISTOS_RAPIDO = 60;    // até aqui, card novo quase toda hora
-  const VISTOS_FREIO = 180;    // daqui em diante, quem manda é o equilíbrio
-  const ESPERA_INICIAL = 2;    // respostas entre inéditos na largada
-  const ESPERA_FINAL = 15;     // no fim da desaceleração
+       tirar um inédito       +1 em es→pt        (a única torneira desse lado)
+       trabalhar es→pt        as vezes −1 em es→pt e +1 em pt→es
+       trabalhar pt→es        as vezes −1 em pt→es (vai para dominado)
 
-  function contarVistos(estados) {
-    let n = 0;
-    for (const id in estados) if (estados[id] && estados[id].vistas) n++;
-    return n;
+     Daí os pesos: o déficit de es→pt puxa inédito; o déficit de pt→es puxa
+     trabalho em es→pt, porque é de lá que sai gente para a volta; o excesso
+     de cada lado puxa trabalho no próprio lado, que é por onde ele escoa.
+
+     A regra antiga era uma espera em três tempos mais uma porta de
+     equilíbrio. Funcionava, mas media a coisa errada: contava respostas
+     desde o último inédito em vez de olhar o tamanho das filas, e a porta
+     era liga-desliga — fechava de vez em 122 contra 112. Aqui não há porta:
+     há peso, e ele cede aos poucos conforme a fila se aproxima do alvo. */
+  const ALVO_FILA = 100;     // cards que se quer ter em cada direção
+  const PISO_REVISAO = 10;   // nenhuma fila de revisão morre de fome
+  const PISO_INEDITO = 2;    // card novo nunca deixa de vir, mas em conta-gotas
+  const TETO_PESO = 100;     // desequilíbrio grande não mata as outras filas
+
+  /* Em que fila mora cada etapa. */
+  function filaDe(est) {
+    const e = (est && est.etapa) || 'multipla';
+    if (e === 'dominado') return 'dominados';
+    return (e === 'multipla' || e === 'escrita') ? 'esPt' : 'ptEs';
   }
 
   /* Quantos cards em cada direção, sem contar os dominados: esses já saíram
@@ -488,62 +485,53 @@ window.Motor = (function () {
     return { esPt: esPt, ptEs: ptEs };
   }
 
-  /* Quantas respostas se espera por um inédito, pelo tamanho do baralho já
-     visto. Fases 1 e 2; na 3 a espera fica no teto e quem decide é a porta
-     do equilíbrio, logo abaixo. */
-  function esperaPorInedito(estados) {
-    const vistos = contarVistos(estados);
-    if (vistos <= VISTOS_RAPIDO) return ESPERA_INICIAL;
-    if (vistos >= VISTOS_FREIO) return ESPERA_FINAL;
-    const t = (vistos - VISTOS_RAPIDO) / (VISTOS_FREIO - VISTOS_RAPIDO);
-    return Math.round(ESPERA_INICIAL + (ESPERA_FINAL - ESPERA_INICIAL) * t);
+  /* O peso de cada fila no sorteio. «tem» diz quais filas têm card para dar;
+     fila vazia sai da conta em vez de roubar chance das outras. */
+  function pesosDasFilas(estados, tem) {
+    const c = contarDirecoes(estados);
+    const corta = v => Math.min(TETO_PESO, Math.max(0, v));
+    const p = {
+      ineditos: PISO_INEDITO + corta(ALVO_FILA - c.esPt),
+      esPt:     PISO_REVISAO + corta(ALVO_FILA - c.ptEs) + corta(c.esPt - ALVO_FILA),
+      ptEs:     PISO_REVISAO + corta(c.ptEs - ALVO_FILA)
+    };
+    if (tem) for (const k in p) if (!tem[k]) p[k] = 0;
+    return p;
   }
 
-  /* A porta da terceira fase: com o baralho já grande, card novo só entra
-     se o lado que se está aprendendo estiver menor que o lado da volta. */
-  function equilibrioPermite(estados) {
-    if (contarVistos(estados) < VISTOS_FREIO) return true;
-    const d = contarDirecoes(estados);
-    return d.esPt < d.ptEs;
+  /* A chance de cada fila, em fração de 1. É o que o painel mostra e o que
+     converte distância em posição, logo abaixo. */
+  function chancesDasFilas(estados, tem) {
+    const p = pesosDasFilas(estados, tem);
+    const soma = p.ineditos + p.esPt + p.ptEs;
+    if (!soma) return { ineditos: 0, esPt: 0, ptEs: 0 };
+    return { ineditos: p.ineditos / soma, esPt: p.esPt / soma, ptEs: p.ptEs / soma };
   }
 
-  /* Quantos cards precisam atravessar para pt→es até a porta reabrir. Cada
-     travessia tira um de um lado e põe no outro, então a diferença cai de
-     dois em dois. Zero quando a porta já está aberta. */
-  function faltamParaEquilibrio(estados) {
-    if (equilibrioPermite(estados)) return 0;
-    const d = contarDirecoes(estados);
-    return Math.floor((d.esPt - d.ptEs) / 2) + 1;
-  }
-
-  /* A espera que vale agora, já com a rampa do começo aplicada. É este o
-     número que o painel mostra — se ele saísse de outra conta, diria uma
-     coisa e o baralho faria outra. */
-  function esperaEfetiva(estados, tamanhoFila) {
-    const espera = esperaPorInedito(estados);
-    /* Fila curta demais para espaçar seja o que for. A espera entra de mansinho
-       conforme o baralho enche: com a fila vazia, um inédito a cada resposta;
-       na fila mínima, já a espera cheia. Sem essa rampa haveria um degrau de
-       um card novo a cada duas respostas para um a cada vinte e cinco. */
-    if (tamanhoFila !== undefined && tamanhoFila < FILA_MINIMA) {
-      return Math.max(1, Math.round(espera * (tamanhoFila / FILA_MINIMA)));
+  function sortearFila(pesos) {
+    const soma = pesos.ineditos + pesos.esPt + pesos.ptEs;
+    if (!soma) return null;
+    let u = Math.random() * soma;
+    for (const k of ['ineditos', 'esPt', 'ptEs']) {
+      if (u < pesos[k]) return k;
+      u -= pesos[k];
     }
-    return espera;
+    return 'ptEs';
   }
 
-  /* Quantas respostas ainda faltam até o próximo card novo. */
-  function faltamParaInedito(estados, desdeInedito, quantosIneditos, tamanhoFila) {
-    if (!quantosIneditos) return null;      // acabaram os inéditos
-    if (!tamanhoFila) return 0;
-    return Math.max(0, esperaEfetiva(estados, tamanhoFila) - desdeInedito);
-  }
+  /* ── de distância para posição ──
+     distanciaNaFila devolve uma distância em RESPOSTAS, e era isso mesmo
+     enquanto havia uma fila só: toda resposta consumia um card dela. Com o
+     sorteio, uma fila que leva 45% das respostas anda menos de meia posição
+     por resposta — 110 posições lá dentro seriam 244 respostas.
 
-  function cabeInedito(estados, desdeInedito, quantosIneditos, tamanhoFila) {
-    if (!quantosIneditos) return false;
-    /* Sem nada em circulação só há um lugar de onde tirar card. */
-    if (tamanhoFila === 0) return true;
-    if (!equilibrioPermite(estados)) return false;
-    return desdeInedito >= esperaEfetiva(estados, tamanhoFila);
+     Então a distância continua sendo pensada em respostas, e aqui ela vira
+     posição multiplicando pela chance da fila. Toda a calibragem que já
+     estava boa continua valendo, e se acerta sozinha quando as filas mudam
+     de tamanho. */
+  function posicaoNaFila(distancia, chance, tamanho) {
+    if (!chance) return tamanho;
+    return Math.max(2, Math.min(tamanho, Math.round(distancia * chance)));
   }
 
   /* ── a frase presa à palavra ──
@@ -927,11 +915,10 @@ window.Motor = (function () {
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
-    cabeInedito, contarDirecoes, esperaPorInedito, esperaEfetiva, faltamParaInedito,
-    equilibrioPermite, faltamParaEquilibrio, contarVistos,
-    VISTOS_RAPIDO, VISTOS_FREIO,
+    contarDirecoes,
+    filaDe, pesosDasFilas, chancesDasFilas, sortearFila, posicaoNaFila,
+    ALVO_FILA,
     liberado, venceuEm,
-    ESPERA_INICIAL, ESPERA_FINAL, FILA_MINIMA,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

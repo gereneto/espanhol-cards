@@ -74,66 +74,91 @@ A curva de peso tem pico no domínio intermediário e um piso, de modo que
 **todos os níveis continuam aparecendo** — nível que você gabarita entedia,
 nível em que você erra tudo desanima.
 
-### Dois baralhos
+### Quatro filas
 
-Card novo e card em revisão **não disputam a mesma fila**. Se disputassem, o
+Card novo e card em revisão nunca disputaram a mesma fila. Se disputassem, o
 novo perderia sempre: quem está em múltipla escolha volta a 8-32 posições e
 satura a frente, então quanto mais se revisa, mais raro fica o inédito. Era o
 que acontecia, e a seca chegava a 75 respostas sem nenhum card novo.
 
-Agora há **a fila em circulação**, só com o que já apareceu, e **o baralho de
-inéditos**, à parte. Antes de cada card, o app decide se cabe material novo.
+Hoje são **quatro filas**, e cada card respondido mora na fila da sua etapa:
 
-A decisão tem **três tempos**, e quem os separa é **quantos cards já foram
-vistos** — não a razão entre as direções, que era a régua antiga.
+| Fila | Quem mora nela |
+|---|---|
+| **inéditos** | o que nunca apareceu |
+| **`es → pt`** | você reconhece o espanhol (múltipla, depois escrita) |
+| **`pt → es`** | você produz o espanhol (múltipla, depois escrita) |
+| **dominados** | vencido nas duas direções, esperando a data |
 
-| Cards vistos | O que decide | Espera por um card novo |
-|---|---|---:|
-| até **60** | nada segura | 2 respostas |
-| de 60 a **180** | a espera cresce em linha reta | de 2 a 15 |
-| **180** em diante | a porta do equilíbrio | 15, quando a porta está aberta |
+Os **dominados ficam fora da disputa**: têm gatilho de calendário e furam a
+fila quando a data chega. É a única coisa que eles obedecem.
 
-No começo não há o que revisar, e material é o que falta — daí o primeiro
-tempo. Depois a espera sobe conforme o baralho enche.
+#### De qual fila vem o próximo card
 
-O terceiro tempo não é mais uma espera que estica: é **uma porta que fecha**.
-Com o baralho já grande, card inédito só entra se houver **menos `es → pt` do
-que `pt → es`**. Ela existe porque as duas direções não se enchem pela mesma
-torneira: todo card novo entra em `es → pt`, e sair de lá exige três acertos
-seguidos escrevendo, que é lento. Com inédito entrando à vontade, o lado
-esquerdo cresce mais depressa do que se esvazia e a distância só abre. Limitar
-`es → pt` pelo tamanho de `pt → es` fecha a conta: **cada inédito admitido tem
-de ser pago por um card que atravessou para a volta.**
+Entre as outras três, a escolha persegue um alvo: **100 cards em cada
+direção**. Quem está abaixo do alvo precisa de entrada, quem está acima precisa
+de saída — e cada fila mexe no que mexe:
 
-A régua antiga era a razão entre os lados, e afrouxava justamente quando não
-devia — com 122 contra 112 ela ainda deixava passar.
+| Tirar um card de | O que isso faz com as contagens |
+|---|---|
+| inéditos | **+1** em `es → pt` — é a única torneira desse lado |
+| `es → pt` | às vezes **−1** em `es → pt` e **+1** em `pt → es` |
+| `pt → es` | às vezes **−1** em `pt → es`, que vira dominado |
 
-Há ainda um freio no começo de tudo: enquanto a fila em circulação tiver menos
-de **40 cards**, nenhuma distância cabe nela — o motor pede 110 posições, a fila
-tem 10, e o card volta em 10. Aí a espera entra de mansinho, proporcional ao
-tamanho da fila, para não haver um degrau de um card novo a cada duas respostas
-para um a cada quinze.
+Daí saem os pesos do sorteio: o déficit de `es → pt` puxa inédito; o déficit de
+`pt → es` puxa trabalho em `es → pt`, que é de onde saem os que atravessam; e o
+excesso de cada lado puxa trabalho no próprio lado, que é por onde ele escoa.
 
-O painel mostra os dois lados («es → pt e pt → es») e, embaixo, ou quantas
-respostas faltam para o próximo inédito, ou — quando é a porta que está
-segurando — quantos **cards precisam virar `pt → es` para abrir vaga**. Cada
-travessia tira um de um lado e põe no outro, então a diferença cai de dois em
-dois.
+| `es → pt` | `pt → es` | inédito | `es → pt` | `pt → es` |
+|---:|---:|---:|---:|---:|
+| 0 | 0 | 100% | — | — |
+| 50 | 0 | 30% | 64% | 6% |
+| 100 | 0 | 2% | 90% | 8% |
+| 100 | 100 | 9% | 45% | 45% |
+| 137 | 137 | 2% | 71% | 27% |
+| 50 | 150 | 43% | 8% | 49% |
 
-### A fila em circulação
+**Não é uma porta que abre e fecha — é peso**, e ele cede aos poucos conforme a
+fila chega perto do alvo. A régua anterior contava respostas desde o último
+inédito e tinha uma porta liga-desliga que fechava de vez em 122 contra 112;
+media a coisa errada, que era o intervalo, e não o tamanho das filas.
 
-Ao responder, o card volta para a fila mais adiante, e a distância depende de
-como foi:
+Card novo nunca deixa de vir: há um piso de peso para os inéditos, porque um
+limite que pudesse virar "nunca" recriaria a seca que a regra veio resolver.
+
+Simulando 1500 respostas com a taxa de acerto real, partindo do zero, as duas
+direções chegam ao alvo por volta da resposta 1000 e ficam lá:
+
+| Respostas | `es → pt` | `pt → es` | Dominados | Cards vistos |
+|---:|---:|---:|---:|---:|
+| 250 | 69 | 17 | 1 | 88 |
+| 500 | 84 | 59 | 3 | 148 |
+| 750 | 97 | 90 | 9 | 195 |
+| 1000 | 100 | 102 | 27 | 228 |
+| 1500 | 99 | 104 | 75 | 278 |
+
+### Onde o card cai dentro da fila
+
+Ao responder, o card volta para a fila da sua etapa, mais adiante, e a
+distância depende de como foi:
 
 | Situação | Volta em ~ |
 |---|---:|
-| Errou em `es → pt` | 10 posições (cresce a cada erro seguido no mesmo card) |
+| Errou em `es → pt` | 10 respostas (cresce a cada erro seguido no mesmo card) |
 | Errou em `pt → es` | 30 (idem) |
 | Acertou na múltipla, devagar | 14 |
 | Acertou na múltipla, rápido | 32 |
 | Acertou escrevendo, devagar | 35 |
 | Acertou escrevendo, rápido | 110 |
 | Acertou escrevendo 3× seguidas | 220 — fecha a direção |
+
+**A distância é contada em respostas, não em posições.** Enquanto havia uma
+fila só isso dava no mesmo: toda resposta consumia um card dela. Com o sorteio
+não dá: uma fila que leva 45% das respostas anda menos de meia posição por
+resposta, e 110 posições lá dentro seriam 244 respostas de espera. Então a
+distância vira posição multiplicando pela chance da fila — 110 respostas numa
+fila de 45% são 50 posições. A calibragem da tabela continua valendo como está,
+e se acerta sozinha quando as filas mudam de tamanho.
 
 Errar em `pt → es` espera mais do que errar em `es → pt` pelo mesmo motivo que
 faz o acerto na múltipla dessa direção esperar 90: a grafia espanhola certa
@@ -144,9 +169,13 @@ Dizer "já conhecia bem" empurra mais para o fim; "não conhecia" segura mais pe
 Acerto lento em algo que você disse não conhecer é tratado como possível chute:
 o card continua na múltipla escolha.
 
+O painel mostra os dois lados com o alvo ao lado («es → pt e pt → es (alvo
+100 · 100)») e a **chance de o próximo card ser inédito**, que é o que o
+sorteio de fato promete — não uma data.
+
 ### O card dominado, e a única data do app
 
-A fila tem centenas de cards e todo card respondido volta para ela, então o intervalo
+As filas têm centenas de cards e todo card respondido volta para uma delas, então o intervalo
 máximo que ela consegue dar é **uma passada pelo baralho** — uns poucos dias.
 Acertar três vezes seguidas com o card voltando a cada dois dias não prova
 memória de longo prazo; prova que ele ainda estava fresco.

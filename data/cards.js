@@ -5165,7 +5165,12 @@ window.CARDS_RAW = {
     "nao faca rodeios",
     "deixa de rodeios",
     "nao enrola",
-    "chega de enrolacao"
+    "chega de enrolacao",
+    "nao fique de enrolacao",
+    "para de enrolar",
+    "sem enrolacao",
+    "va direto ao assunto",
+    "vai direto ao ponto"
    ],
    "aceitasEn": [
     "dont beat about the bush",
@@ -5178,14 +5183,14 @@ window.CARDS_RAW = {
    "distratores": [
     "Não suba nos galhos. / Pode quebrar.",
     "Não ande pelo mato. / É perigoso.",
-    "Não se ramifique. / Siga um caminho.",
-    "Não corte os galhos. / Deixe a árvore."
+    "Não fale tão alto. / Baixe o tom.",
+    "Não se meta nisso. / Deixe para lá."
    ],
    "distratoresEn": [
     "Don't climb up the branches.",
     "Don't walk through the woods.",
-    "Don't spread yourself too thin.",
-    "Don't cut the branches off."
+    "Don't speak so loudly.",
+    "Don't get involved in this."
    ],
    "nivel": "C1",
    "tags": [
@@ -5593,7 +5598,12 @@ window.CARDS_RAW = {
     "ta bom nos vemos as oito",
     "fechado as oito",
     "beleza fica combinado as oito",
-    "ta certo a gente se ve as oito"
+    "ta certo a gente se ve as oito",
+    "ok nos vemos as oito",
+    "ok a gente se encontra as oito",
+    "beleza nos vemos as oito",
+    "ok fica combinado as oito",
+    "beleza combinado as oito"
    ],
    "aceitasEn": [
     "ok lets meet at eight",
@@ -7297,7 +7307,13 @@ window.CARDS_RAW = {
     "voce esta a fim de um cafe",
     "quer um cafe",
     "voce aceita um cafe",
-    "topa um cafe"
+    "topa um cafe",
+    "gostaria de um cafe",
+    "voce gostaria de um cafe",
+    "voce quer um cafe",
+    "aceita um cafe",
+    "esta a fim de um cafe",
+    "voce topa um cafe"
    ],
    "aceitasEn": [
     "do you fancy a coffee",
@@ -16131,7 +16147,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "placa",
     "placa do carro",
-    "placa do veiculo"
+    "placa do veiculo",
+    "matricula",
+    "matricula da escola",
+    "inscricao"
    ],
    "aceitasEn": [
     "number plate",
@@ -16141,13 +16160,13 @@ window.CARDS_RAW = {
     "registration"
    ],
    "distratores": [
-    "a matrícula da escola",
+    "a multa de trânsito",
     "a carteira do aluno",
     "a mensalidade do curso",
     "a inscrição na prova"
    ],
    "distratoresEn": [
-    "the school enrolment",
+    "the traffic fine",
     "the student card",
     "the tuition fee",
     "the exam sign-up"
@@ -16157,8 +16176,8 @@ window.CARDS_RAW = {
     "cidade",
     "escola"
    ],
-   "nota": "Os dois sentidos convivem: a placa do carro e a matrícula na escola. É o número que registra, seja de veículo ou de aluno.",
-   "notaEn": "Both senses live side by side: the plate on a car and enrolment at a school. It is the number that registers you, either way."
+   "nota": "Os dois sentidos estão certos: a placa do carro e a matrícula na escola. O card cobra a placa porque é o sentido que o português não tem — a matrícula você já sabe.",
+   "notaEn": "Both senses are correct: the plate on a car and enrolment at a school. The card drills the plate, which is the one you are less likely to guess."
   },
   {
    "id": "p240",
@@ -16914,7 +16933,12 @@ window.CARDS_RAW = {
     "comemos demais",
     "nos empanturramos",
     "comemos muito",
-    "enchemos a barriga"
+    "enchemos a barriga",
+    "comemos ate ficar cheios",
+    "comemos ate nos encher",
+    "nos enchemos",
+    "comemos ate estufar",
+    "comemos ate nao aguentar mais"
    ],
    "aceitasEn": [
     "we ate until we burst",
@@ -17354,7 +17378,12 @@ window.CARDS_RAW = {
     "hoje nao vou ao escritorio",
     "nao vou ao escritorio hoje",
     "hoje eu nao vou para o escritorio",
-    "hoje eu nao vou no escritorio"
+    "hoje eu nao vou no escritorio",
+    "nao vou hoje no escritorio",
+    "nao vou hoje ao escritorio",
+    "hoje nao vou no escritorio",
+    "hoje nao vou para o escritorio",
+    "nao vou para o escritorio hoje"
    ],
    "aceitasEn": [
     "im not going to the office today",

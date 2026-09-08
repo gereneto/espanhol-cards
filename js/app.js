@@ -56,9 +56,13 @@
     return {
       versao: 1,
       atualizado_em: new Date().toISOString(),
-      fila: [],                                // em circulação: só o que já apareceu
-      ineditos: Motor.montarFila(CARDS),       // baralho à parte, ainda fechado
-      desdeInedito: 0,                         // respostas desde o último card novo
+      /* Quatro filas. As três primeiras disputam o próximo card por sorteio
+         (ver Motor.pesosDasFilas); a dos dominados tem gatilho de calendário
+         e fura a fila quando a data chega. */
+      ineditos: Motor.montarFila(CARDS),       // nunca apareceu
+      filaEsPt: [],                            // você reconhece o espanhol
+      filaPtEs: [],                            // você produz o espanhol
+      dominados: [],                           // vencido nas duas, esperando data
       cards: {},
       contestacoes: [],
       comentarios: [],
@@ -69,16 +73,16 @@
   function carregarProgresso() {
     let p = null;
     try { p = JSON.parse(localStorage.getItem(CHAVE_PROGRESSO) || 'null'); } catch (e) { p = null; }
-    if (!p || !Array.isArray(p.fila)) p = progressoVazio();
+    if (!p || !p.cards) p = progressoVazio();
     return conciliarFila(p);
   }
 
-  /* Mantém os dois baralhos coerentes com o que existe: a fila em circulação
-     só com o que já apareceu, o baralho de inéditos com todo o resto. */
+  /* Mantém as quatro filas coerentes com o estado dos cards. Cada card
+     respondido mora na fila da sua etapa, e é daqui que sai a arrumação
+     quando a etapa muda por sincronização de outro aparelho — ou quando o
+     progresso vem no formato antigo, de uma fila só. */
   function conciliarFila(p) {
     p.cards = p.cards || {};
-    p.ineditos = Array.isArray(p.ineditos) ? p.ineditos : [];
-    if (typeof p.desdeInedito !== 'number') p.desdeInedito = 0;
 
     /* Card apagado do baralho deixa para trás o estado dele. Sem varrer, ele
        continuaria contando em "cards já vistos" e nas tabelas do painel, e
@@ -100,26 +104,37 @@
       if (h.length >= e.vistas && h[0]) e.primeiraCerta = !!h[0].acertou;
     });
 
-    const visto = id => !!p.cards[id];
-    /* A frase presa a uma palavra ainda não dominada não entra em baralho
-       nenhum. Não guardo lista de presos: a condição se recalcula aqui a
+    const visto = id => !!p.cards[id] && !!p.cards[id].vistas;
+    /* A frase presa a uma palavra ainda não dominada não entra em fila
+       nenhuma. Não guardo lista de presos: a condição se recalcula aqui a
        cada carregamento, então dominar a palavra num aparelho destrava a
        frase em todos, sem nada de novo trafegar no progresso.json. */
     const solto = id => Motor.liberado(PORID[id], p.cards);
 
-    /* Migração e faxina numa passada só. Até aqui havia uma fila única, com
-       inéditos misturados aos que já circulam; quem tinha progresso salvo
-       chega com ela. Os inéditos saem da fila e vão para o seu próprio
-       baralho, que é o que resolve a seca de cards novos. */
-    const migrados = p.fila.filter(id => PORID[id] && !visto(id));
-    p.fila = p.fila.filter(id => PORID[id] && visto(id));
-    p.ineditos = p.ineditos.filter(id => PORID[id] && !visto(id) && solto(id));
+    /* A ordem que já existia é a dica de quem vem primeiro. «p.fila» é o
+       formato antigo, de fila única: quem vinha de lá se distribui pelas
+       etapas sem perder o lugar relativo. */
+    const ordem = []
+      .concat(p.filaEsPt || [], p.filaPtEs || [], p.dominados || [], p.fila || []);
+    const posicao = {};
+    ordem.forEach((id, i) => { if (posicao[id] === undefined) posicao[id] = i; });
+    const lugar = id => (posicao[id] === undefined ? 1e9 : posicao[id]);
 
-    const jaTenho = new Set(p.fila.concat(p.ineditos));
-    const entram = migrados.filter(id => !jaTenho.has(id) && solto(id))
-      .concat(CARDS.filter(c => !jaTenho.has(c.id) && !visto(c.id) &&
-                                !migrados.includes(c.id) && solto(c.id)).map(c => c.id));
-    if (entram.length) p.ineditos = p.ineditos.concat(entram);
+    const filas = { esPt: [], ptEs: [], dominados: [] };
+    CARDS.forEach(c => { if (visto(c.id)) filas[Motor.filaDe(p.cards[c.id])].push(c.id); });
+    for (const k in filas) filas[k].sort((a, b) => lugar(a) - lugar(b));
+    p.filaEsPt = filas.esPt;
+    p.filaPtEs = filas.ptEs;
+    p.dominados = filas.dominados;
+
+    const antes = Array.isArray(p.ineditos) ? p.ineditos : [];
+    const conhecidos = new Set(antes);
+    p.ineditos = antes.filter(id => PORID[id] && !visto(id) && solto(id))
+      .concat(CARDS.filter(c => !conhecidos.has(c.id) && !visto(c.id) && solto(c.id))
+                   .map(c => c.id));
+
+    delete p.fila;          // formato antigo, de fila única
+    delete p.desdeInedito;  // a contagem regressiva deu lugar ao sorteio
 
     ordenarIneditos(p);
     return p;
@@ -201,35 +216,75 @@
 
   /* ═══════════════ fluxo do card ═══════════════ */
 
-  /* Tira o próximo card de um dos dois baralhos. O de inéditos tem a
-     preferência sempre que couber material novo (ver Motor.cabeInedito);
-     fora isso, sai o primeiro da fila em circulação cuja data já venceu. */
-  function tirarProximoId() {
-    const cabe = Motor.cabeInedito(progresso.cards, progresso.desdeInedito,
-                                   progresso.ineditos.length, progresso.fila.length);
-    if (cabe || !progresso.fila.length) {
-      if (progresso.ineditos.length) {
-        progresso.desdeInedito = 0;
-        return progresso.ineditos.shift();
-      }
-    }
-    if (!progresso.fila.length) return null;
+  /* ── de qual fila vem o próximo card ──
+     Primeiro os dominados: quem venceu a data fura a fila, e é só isso que
+     eles obedecem. Depois o sorteio entre inéditos, es→pt e pt→es, com os
+     pesos que perseguem ALVO_FILA cards em cada direção (ver motor.js).
 
-    /* O card dominado espera a data dele. Pego o primeiro da fila que já
-       venceu, sem remexer na ordem dos outros. Se todos estiverem de molho
-       — baralho pequeno, ou você estudou tudo hoje — vai o de data mais
-       próxima: ficar sem card nenhum seria pior do que adiantar um. */
-    const agora = new Date().toISOString();
-    let i = progresso.fila.findIndex(id => !Motor.esperando(progresso.cards[id], agora));
-    if (i < 0) {
-      i = 0;
-      progresso.fila.forEach((id, k) => {
-        const atual = progresso.cards[progresso.fila[i]], outro = progresso.cards[id];
-        if (outro && atual && outro.voltaEm < atual.voltaEm) i = k;
-      });
+     Se não sobrou nada em lugar nenhum, entra o dominado de data mais
+     próxima: ficar sem card seria pior do que adiantar um. */
+  function tirarProximoId() {
+    const vencido = dominadoMaisProximo(new Date().toISOString());
+    if (vencido !== null) return progresso.dominados.splice(vencido, 1)[0];
+
+    const tem = {
+      ineditos: progresso.ineditos.length > 0,
+      esPt: progresso.filaEsPt.length > 0,
+      ptEs: progresso.filaPtEs.length > 0
+    };
+    const escolhida = Motor.sortearFila(Motor.pesosDasFilas(progresso.cards, tem));
+    if (escolhida === 'ineditos') { ordenarIneditos(progresso); return progresso.ineditos.shift(); }
+    if (escolhida === 'esPt') return progresso.filaEsPt.shift();
+    if (escolhida === 'ptEs') return progresso.filaPtEs.shift();
+
+    const proximo = dominadoMaisProximo(null);
+    return proximo === null ? null : progresso.dominados.splice(proximo, 1)[0];
+  }
+
+  /* O índice do dominado que já venceu a data — ou, com «agora» nulo, o de
+     data mais próxima, vencido ou não. */
+  function dominadoMaisProximo(agora) {
+    let melhor = -1;
+    progresso.dominados.forEach((id, i) => {
+      const e = progresso.cards[id];
+      if (!e) return;
+      if (agora && Motor.esperando(e, agora)) return;
+      const atual = melhor >= 0 ? progresso.cards[progresso.dominados[melhor]] : null;
+      if (!atual || String(e.voltaEm) < String(atual.voltaEm)) melhor = i;
+    });
+    return melhor >= 0 ? melhor : null;
+  }
+
+  /* Devolve o card para a fila da etapa em que ele ficou. A distância vem em
+     RESPOSTAS e vira posição pela chance da fila: uma fila que leva metade
+     das respostas anda meia posição por resposta, então 110 respostas são 55
+     posições lá dentro. O dominado não entra nessa conta — ele espera data. */
+  function guardarNaFila(id, est, r) {
+    const alvo = Motor.filaDe(est);
+    if (alvo === 'dominados') {
+      if (progresso.dominados.indexOf(id) < 0) progresso.dominados.push(id);
+      return { fila: alvo, distancia: null, posicao: null };
     }
-    progresso.desdeInedito++;
-    return progresso.fila.splice(i, 1)[0];
+    const fila = alvo === 'esPt' ? progresso.filaEsPt : progresso.filaPtEs;
+    const tem = {
+      ineditos: progresso.ineditos.length > 0,
+      esPt: progresso.filaEsPt.length > 0 || alvo === 'esPt',
+      ptEs: progresso.filaPtEs.length > 0 || alvo === 'ptEs'
+    };
+    const chance = Motor.chancesDasFilas(progresso.cards, tem)[alvo];
+    const distancia = Motor.distanciaNaFila(est, r);
+    const posicao = Motor.posicaoNaFila(distancia, chance, fila.length);
+    fila.splice(posicao, 0, id);
+    return { fila: alvo, distancia: distancia, posicao: posicao };
+  }
+
+  /* Tira o card de onde quer que ele esteja — a resposta sobre conhecimento
+     prévio chega depois do registro e pode mudar a distância. */
+  function retirarDasFilas(id) {
+    [progresso.filaEsPt, progresso.filaPtEs, progresso.dominados].forEach(f => {
+      const i = f.indexOf(id);
+      if (i >= 0) f.splice(i, 1);
+    });
   }
 
   function proximoCard() {
@@ -549,9 +604,12 @@
      Guardo quem já venceu antes: se a frase voltar a ficar presa por causa
      de um erro futuro, ela sai daqui pelo conciliarFila, não por engano. */
   function destravarFrases(idPalavra) {
+    const emCirculacao = id => progresso.filaEsPt.indexOf(id) >= 0 ||
+                               progresso.filaPtEs.indexOf(id) >= 0 ||
+                               progresso.dominados.indexOf(id) >= 0;
     const novas = CARDS
       .filter(c => c.requer === idPalavra && !progresso.cards[c.id] &&
-                   !progresso.ineditos.includes(c.id) && !progresso.fila.includes(c.id))
+                   !progresso.ineditos.includes(c.id) && !emCirculacao(c.id))
       .map(c => c.id);
     if (novas.length) progresso.ineditos.unshift(...novas);
     return novas.length;
@@ -575,8 +633,7 @@
     if (virouDominado) destravarFrases(id);
     mostrarConquista(virouDominado);
 
-    const dist = Motor.distanciaNaFila(est, r);
-    progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
+    const guardado = guardarNaFila(id, est, r);
 
     progresso.totais.respostas++;
     if (r.acertou) progresso.totais.acertos++;
@@ -600,7 +657,9 @@
       pausado: !!r.pausado,
       julgado_por_voce: !!r.julgadoPorVoce,
       etapa_depois: est.etapa,
-      distancia_fila: dist
+      fila: guardado.fila,
+      distancia_fila: guardado.distancia,
+      posicao_fila: guardado.posicao
     };
     sessao.eventos.push(evento);
 
@@ -627,11 +686,11 @@
     if (Motor.pareceChute(r)) est.etapa = 'multipla';
     evento.etapa_depois = est.etapa;
 
-    const i = progresso.fila.indexOf(id);
-    if (i >= 0) progresso.fila.splice(i, 1);
-    const dist = Motor.distanciaNaFila(est, r);
-    progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
-    evento.distancia_fila = dist;
+    retirarDasFilas(id);
+    const guardado = guardarNaFila(id, est, r);
+    evento.fila = guardado.fila;
+    evento.distancia_fila = guardado.distancia;
+    evento.posicao_fila = guardado.posicao;
 
     salvarProgresso();
   }
@@ -780,15 +839,17 @@
     const etapaDe = id => progresso.cards[id].etapa;
     const dominados = ids.filter(id => etapaDe(id) === 'dominado').length;
     const dir = Motor.contarDirecoes(progresso.cards);
-    const faltam = Motor.faltamParaInedito(progresso.cards, progresso.desdeInedito,
-                                           (progresso.ineditos || []).length,
-                                           progresso.fila.length);
     const presos = CARDS.filter(c => !progresso.cards[c.id] &&
                                      !Motor.liberado(c, progresso.cards)).length;
-    /* Com o baralho já grande, o que segura card novo não é mais a espera:
-       é a porta do equilíbrio. Mostrar a contagem regressiva nessa hora
-       prometeria um card que não vem. */
-    const paraEquilibrar = Motor.faltamParaEquilibrio(progresso.cards);
+    /* A chance de o próximo card ser inédito. Não é mais uma contagem
+       regressiva: o sorteio pesa as três filas a cada card, e o que dá para
+       prometer é a probabilidade, não a data. */
+    const temIneditos = (progresso.ineditos || []).length > 0;
+    const chances = Motor.chancesDasFilas(progresso.cards, {
+      ineditos: temIneditos,
+      esPt: progresso.filaEsPt.length > 0,
+      ptEs: progresso.filaPtEs.length > 0
+    });
 
     /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
        separado do que você já trazia de casa. */
@@ -804,17 +865,16 @@
       metrica(aprendidos, 'não conhecia e hoje acerta') +
       /* é o equilíbrio que a admissão de inéditos persegue — vê-lo explica
          por que o card novo às vezes vem depressa e às vezes espera */
-      metrica(dir.esPt + ' · ' + dir.ptEs, 'es → pt e pt → es') +
+      /* É o alvo que a escolha de fila persegue — vê-lo explica por que o
+         card novo às vezes vem depressa e às vezes rareia. */
+      metrica(dir.esPt + ' · ' + dir.ptEs,
+              'es → pt e pt → es (alvo ' + Motor.ALVO_FILA + ' · ' + Motor.ALVO_FILA + ')') +
       metrica(dominados, 'dominados nas duas direções') +
-      /* Contagem regressiva, não uma taxa: dizer "faltam 7" se entende de
-         cara, e mostra o efeito do equilíbrio entre as duas direções, que é
-         o que decide quando o card novo entra. */
-      metrica(faltam === null ? '—' : (paraEquilibrar || faltam),
-              faltam === null
+      metrica(!temIneditos ? '—' : Math.round(100 * chances.ineditos) + '%',
+              !temIneditos
                 ? (presos ? 'frases esperando você dominar a palavra'
                           : 'todos os cards já apareceram')
-                : paraEquilibrar ? 'cards a virar pt → es para abrir vaga'
-                                 : 'respostas até o próximo card novo') +
+                : 'chance de o próximo ser card novo') +
       '</div>';
 
     if (estreados.length) {
@@ -900,16 +960,15 @@
       'Dominado não é aposentadoria: o card continua voltando, só que cada vez ' +
       'mais espaçado. O card novo entra em <b>es → pt</b>, e é por isso que ' +
       'admiti-los é a única torneira que enche esse lado.</p>' +
-      '<p class="legenda">A entrada de card novo tem três tempos, e quem os ' +
-      'separa é quantos cards você já viu. Até <b>' + Motor.VISTOS_RAPIDO +
-      '</b>, card novo quase toda hora — no começo não há o que revisar. Daí ' +
-      'até <b>' + Motor.VISTOS_FREIO + '</b>, a espera cresce de <b>' +
-      Motor.ESPERA_INICIAL + '</b> para <b>' + Motor.ESPERA_FINAL +
-      '</b> respostas. Passado esse ponto quem manda é o equilíbrio: só entra ' +
-      'card novo se houver <b>menos es → pt do que pt → es</b>. Cada inédito ' +
-      'admitido passa a ser pago por um card que atravessou para a volta — ' +
-      'sem isso o lado esquerdo cresce mais rápido do que se esvazia, porque ' +
-      'sair dele exige três acertos seguidos escrevendo.</p>' +
+      '<p class="legenda">São <b>quatro filas</b>: inéditos, es → pt, pt → es ' +
+      'e dominados. Os dominados têm data marcada e furam a fila quando ela ' +
+      'chega. As outras três são sorteadas a cada card, com peso que persegue ' +
+      '<b>' + Motor.ALVO_FILA + ' cards em cada direção</b>: quem está abaixo ' +
+      'do alvo puxa entrada, quem está acima puxa saída. Faltando es → pt, ' +
+      'entra inédito, que é a única torneira desse lado; faltando pt → es, ' +
+      'trabalha-se es → pt, que é de onde saem os que atravessam. Não é uma ' +
+      'porta que abre e fecha — é peso, e cede aos poucos conforme a fila ' +
+      'chega perto do alvo.</p>' +
       '<p class="legenda"><b>Presos</b> são frases que mostram uma palavra em ' +
       'uso e esperam você dominar essa palavra: quando ela cai, a frase dela ' +
       'é o próximo card novo.</p>' +
@@ -1253,9 +1312,13 @@
     const saida = {
       versao: 1,
       atualizado_em: new Date().toISOString(),
-      fila: (local.fila && local.fila.length) ? local.fila : (remoto.fila || []),
+      /* A ordem das filas é só uma dica: o conciliarFila reconstrói tudo a
+         partir da etapa de cada card, que é o que a mescla card a card
+         resolve logo abaixo. Fico com a lista de quem tem mais o que dizer. */
       ineditos: (local.ineditos && local.ineditos.length) ? local.ineditos : (remoto.ineditos || []),
-      desdeInedito: Math.max(local.desdeInedito || 0, (remoto || {}).desdeInedito || 0),
+      filaEsPt: (local.filaEsPt && local.filaEsPt.length) ? local.filaEsPt : (remoto.filaEsPt || []),
+      filaPtEs: (local.filaPtEs && local.filaPtEs.length) ? local.filaPtEs : (remoto.filaPtEs || []),
+      dominados: (local.dominados && local.dominados.length) ? local.dominados : (remoto.dominados || []),
       contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
       comentarios: juntarComentarios(local.comentarios, remoto.comentarios),
       cards: {},
@@ -1527,7 +1590,11 @@
   function irParaInicio() {
     if (cardAtual && !respostaPendente) {
       const id = cardAtual.id;
-      const baralho = progresso.cards[id] ? progresso.fila : progresso.ineditos;
+      const est = progresso.cards[id];
+      const baralho = !est ? progresso.ineditos
+        : Motor.filaDe(est) === 'esPt' ? progresso.filaEsPt
+        : Motor.filaDe(est) === 'ptEs' ? progresso.filaPtEs
+        : progresso.dominados;
       if (baralho.indexOf(id) < 0) { baralho.unshift(id); salvarProgresso(); }
     }
     cardAtual = null;
