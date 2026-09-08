@@ -23,7 +23,7 @@
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
     'meta-origem',
-    'area-feedback', 'veredito', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
+    'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
     'area-contestar', 'btn-contestar', 'aviso-contestado', 'btn-comentar-card',
     'comentario-fundo', 'comentario-alvo', 'comentario-texto', 'comentario-restam',
@@ -281,6 +281,7 @@
     el['area-feedback'].classList.add('oculto');
     /* o chão criado para o botão subir era daquele card; some com ele */
     el['area-feedback'].style.paddingBottom = '';
+    el.conquista.classList.add('oculto');
     el['area-conhecia'].classList.add('oculto');
     el['area-julgamento'].classList.add('oculto');
     el['resposta-dada'].classList.add('oculto');
@@ -515,9 +516,15 @@
 
   /* Perguntar "já conhecia?" só faz sentido quando você acerta de primeira:
      errando, a resposta é óbvia; se o card já apareceu antes, você o conhece
-     do próprio app e não do seu repertório. */
+     do próprio app e não do seu repertório.
+
+     A frase presa a uma palavra cai no mesmo caso, mesmo estreando: ela só
+     apareceu porque você venceu aquela palavra aqui dentro, e a palavra é o
+     que a frase tem de novo. A resposta seria sobre o app, não sobre o que
+     você trouxe de fora — e é isso que a pergunta existe para medir. */
   function mostrarPerguntaConhecia(r) {
-    el['area-conhecia'].classList.toggle('oculto', !(estreiaPendente && r.acertou));
+    const cabe = estreiaPendente && r.acertou && !cardAtual.requer;
+    el['area-conhecia'].classList.toggle('oculto', !cabe);
   }
 
   /* Você decide se o quase-certo valeu. Só depois disso a resposta é gravada. */
@@ -550,13 +557,23 @@
     return novas.length;
   }
 
+  /* Vencer as duas direções é a única conquista do app que não se vê na
+     hora: o card apenas some da fila por semanas. Uma etiqueta basta para
+     o terceiro acerto seguido em espanhol ter o tamanho que tem. */
+  function mostrarConquista(virou) {
+    el.conquista.textContent = virou ? 'Card dominado!' : '';
+    el.conquista.classList.toggle('oculto', !virou);
+  }
+
   /* Grava a resposta e devolve o card para a fila. */
   function registrar(r) {
     const id = cardAtual.id;
     const est = progresso.cards[id] || (progresso.cards[id] = Motor.estadoInicial(id));
     const etapaAntes = est.etapa;
     Motor.registrar(est, r);
-    if (est.etapa === 'dominado' && etapaAntes !== 'dominado') destravarFrases(id);
+    const virouDominado = est.etapa === 'dominado' && etapaAntes !== 'dominado';
+    if (virouDominado) destravarFrases(id);
+    mostrarConquista(virouDominado);
 
     const dist = Motor.distanciaNaFila(est, r);
     progresso.fila.splice(Math.min(dist, progresso.fila.length), 0, id);
@@ -1612,6 +1629,17 @@
       sincronizar({ silencioso: true, keepalive: true, completo: true });
     }
   });
+
+  /* A metade de cima do card gruda logo abaixo do cabeçalho, e para isso
+     precisa saber a altura dele — que não é fixa: em tela estreita o placar
+     quebra de linha e o cabeçalho cresce. O CSS não mede outro elemento, então
+     a medida vem daqui. */
+  function medirCabecalho() {
+    const t = document.querySelector('.topo');
+    if (t) document.documentElement.style.setProperty('--altura-topo', t.offsetHeight + 'px');
+  }
+  medirCabecalho();
+  window.addEventListener('resize', medirCabecalho);
 
   /* ═══════════════ arranque ═══════════════ */
 

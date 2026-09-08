@@ -599,7 +599,14 @@ window.Motor = (function () {
     if (!r.acertou) {
       // Volta relativamente cedo, mas cada erro seguido no mesmo card
       // afasta mais: insistir de imediato num card travado só cansa.
-      base = (r.quase ? 10 : 7) * (1 + 0.5 * Math.min(est.errosSeguidos || 0, 4));
+      base = r.quase ? 10 : 7;
+      /* Errar em pt→es é outra história: a grafia espanhola certa acabou de
+         aparecer na tela, e o card cai na múltipla escolha da mesma direção.
+         Voltar em dez posições seria pedir que se reconheça o que se acabou
+         de ler — a mesma muleta que o piso do acerto nessa direção evita.
+         Aqui o piso é menor do que aquele: errou, então precisa voltar. */
+      if (r.direcao === 'pt-es') base = r.quase ? 26 : 20;
+      base *= (1 + 0.5 * Math.min(est.errosSeguidos || 0, 4));
     } else if (r.modo === 'multipla') {
       // acertar na múltipla escolha vale pouco: pode ter sido chute
       if (r.conhecia === 'nao' && r.velocidade === 'lento') base = 8;

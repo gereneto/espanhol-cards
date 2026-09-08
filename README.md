@@ -26,9 +26,16 @@ conjugação verbal, quase todos irregulares.
 5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
    O **Próximo card** só serve para avançar, então dá para ficar lendo a nota.
    A exceção é o quase-certo: aí o app pergunta antes se conta como acerto.
+   A tela desce sozinha até o botão, e a **metade de cima do card fica grudada**
+   logo abaixo do cabeçalho: a resposta passa por baixo dela, e a frase que se
+   acabou de traduzir continua à vista para conferir. Num card longo era
+   justamente ela que sumia.
 6. Se você **acertar de primeira**, ele pergunta **se já conhecia aquilo**, e grava
    assim que você responde. Não pergunta quando você erra (aí a resposta seria
-   óbvia) nem quando o card já apareceu antes (aí você conheceria do próprio app).
+   óbvia), nem quando o card já apareceu antes (aí você conheceria do próprio
+   app), nem nas frases presas a uma palavra: elas só apareceram porque você
+   venceu aquela palavra aqui dentro, então a resposta seria sobre o app e não
+   sobre o que você trouxe de fora.
 
 Tudo isso é gravado para calibrar as próximas levas de cards.
 
@@ -109,12 +116,18 @@ como foi:
 
 | Situação | Volta em ~ |
 |---|---:|
-| Errou | 10 posições (cresce a cada erro seguido no mesmo card) |
+| Errou em `es → pt` | 10 posições (cresce a cada erro seguido no mesmo card) |
+| Errou em `pt → es` | 30 (idem) |
 | Acertou na múltipla, devagar | 14 |
 | Acertou na múltipla, rápido | 32 |
 | Acertou escrevendo, devagar | 35 |
 | Acertou escrevendo, rápido | 110 |
 | Acertou escrevendo 3× seguidas | 220 — fecha a direção |
+
+Errar em `pt → es` espera mais do que errar em `es → pt` pelo mesmo motivo que
+faz o acerto na múltipla dessa direção esperar 90: a grafia espanhola certa
+acabou de aparecer na tela, e o card cai na múltipla escolha da mesma direção.
+Voltar em dez posições seria pedir que você reconhecesse o que acabou de ler.
 
 Dizer "já conhecia bem" empurra mais para o fim; "não conhecia" segura mais perto.
 Acerto lento em algo que você disse não conhecer é tratado como possível chute:
@@ -128,7 +141,9 @@ Acertar três vezes seguidas com o card voltando a cada dois dias não prova
 memória de longo prazo; prova que ele ainda estava fresco.
 
 Por isso o card que venceu as duas direções — e **só ele** — ganha uma data de
-retorno, que cresce a cada revisão certa:
+retorno, que cresce a cada revisão certa. No momento em que isso acontece, o
+feedback traz um **«Card dominado!»** — de outro modo a conquista passaria em
+branco, porque o card simplesmente sumiria da fila por semanas.
 
 | Revisões certas depois de dominado | Volta em |
 |---:|---:|

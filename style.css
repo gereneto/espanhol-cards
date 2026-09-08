@@ -140,6 +140,29 @@ button{font:inherit}
   padding:6px 11px 7px;border-radius:0 0 8px 8px;
 }
 
+/* ── a pergunta não sai da tela ──
+   Respondida a pergunta, a tela desce sozinha até o botão, e num card longo
+   o enunciado saía por cima — era preciso subir à mão para reler a frase.
+   A metade de cima gruda logo abaixo do cabeçalho e a resposta passa por
+   baixo dela. As margens negativas são o que faz o bloco cobrir a ficha de
+   ponta a ponta: sem elas, o que rola aparece nas laterais e no topo, dentro
+   do respiro de 22px da ficha.
+
+   O gruda vale só dentro da ficha, então quando ela acaba a pergunta sobe
+   junto — que é o certo: não há mais resposta para ler embaixo. */
+.card-topo{
+  position:sticky;
+  top:var(--altura-topo,65px);
+  z-index:3;
+  background:var(--fundo-2);
+  margin:-22px -22px 0;
+  padding:22px 22px 14px;
+  border-radius:calc(var(--raio) - 1px) calc(var(--raio) - 1px) 0 0;
+}
+/* o respiro embaixo do termo passou para o bloco: margem de filho escaparia
+   pela borda de baixo e deixaria uma fresta por onde a resposta apareceria */
+.card-topo .termo-linha{margin-bottom:0}
+
 .card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;padding-right:56px}
 .etiqueta{
   font-size:11.5px;text-transform:uppercase;letter-spacing:.7px;font-weight:600;
@@ -200,6 +223,15 @@ button{font:inherit}
 .veredito.ok{color:var(--ok)}
 .veredito.erro{color:var(--erro)}
 .veredito.quase{color:var(--quase)}
+/* Venceu as duas direções. Uma etiqueta, logo abaixo do veredito: no
+   mesmo verde do acerto, mas com contorno, para não ser lida como
+   subtítulo do «Certo!» — é outra coisa, e maior. */
+.conquista{
+  display:inline-block;margin:-6px 0 14px;
+  background:var(--ok-fraco);color:var(--ok);border:1px solid var(--ok-borda);
+  border-radius:999px;padding:4px 13px;font-size:13px;font-weight:700;
+  letter-spacing:.3px;
+}
 .resposta-certa{
   background:var(--fundo-3);border:1px solid var(--borda);border-radius:11px;
   padding:12px 15px;margin-bottom:12px;
