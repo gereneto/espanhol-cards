@@ -14263,7 +14263,7 @@ window.CARDS_RAW = {
    "tags": [
     "verbo"
    ],
-   "nota": "Ver de forma vaga, ou pressentir. Combina com 'atisbo'.",
+   "nota": "Ver de forma vaga, ou pressentir.\n🇪🇸 vislumbrar → 🇧🇷 vislumbrar, entrever\n🇪🇸 atisbar → 🇧🇷 espreitar, entrever de relance\n🇪🇸 el atisbo → 🇧🇷 o indício, o vislumbre",
    "notaEn": "To make something out faintly, or to sense it coming: 'vislumbrar una solución'. Its noun cousin is 'un atisbo'."
   },
   {

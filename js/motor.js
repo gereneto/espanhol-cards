@@ -684,10 +684,6 @@ window.Motor = (function () {
       if (est.seguidas >= 3) base *= 2;   // acabou de fechar a direção
     }
 
-    /* O maduro vai para o fim da fila e espera a data dele. A distância aqui
-       só evita que ele fique rondando a frente entre uma espera e outra. */
-    if (est.etapa === 'dominado') base = Math.max(base, 400);
-
     if (r.acertou) {
       if (r.conhecia === 'sim') base *= 1.3;
       else if (r.conhecia === 'nao') base *= 0.75;
@@ -761,17 +757,25 @@ window.Motor = (function () {
       }
     } else {
       /* ── errar derruba um degrau, não a escada inteira ──
-         O card maduro cai para «inversa-escrita»: continua escrevendo em
-         espanhol, que é o que ele já provava saber, em vez de voltar a
-         escolher entre cinco. E a escada do espaçamento recua uma casa em
-         vez de zerar — um card de 90 dias volta em 30, não em 3.
+         O card maduro CONTINUA dominado: o que recua é só a espera, uma
+         casa — um card de 90 dias volta em 30, não em 3. Ele segue sendo
+         cobrado por escrito em espanhol, que é o que ele já provava saber.
 
-         Antes, um só deslize apagava meses de maturidade e punha o card
-         maduro no mesmo lugar de um recém-aprendido. Para quem nunca foi
-         dominado nada muda: «revisoes» já era zero, e o decremento não o
-         leva abaixo disso. */
-      est.etapa = jaDominado ? 'inversa-escrita'
-                : inversa ? 'inversa-multipla' : 'multipla';
+         Duas versões atrás, um só deslize apagava meses de maturidade e
+         punha o card maduro no mesmo lugar de um recém-aprendido. Depois
+         ele passou a cair para «inversa-escrita», o que ainda o obrigava a
+         reconquistar três acertos seguidos para voltar à escada. Agora não
+         sai: quem já atravessou as duas direções não precisa provar de novo
+         que atravessou — precisa só de mais um encontro, e mais cedo.
+
+         Errando sempre, ele se estabiliza no degrau de baixo, três dias, e
+         fica ali sendo escrito a cada três dias até voltar a acertar. É o
+         laço mais apertado que a escada tem, e é onde um card esquecido
+         deve mesmo ficar.
+
+         Para quem nunca foi dominado nada muda: «revisoes» já era zero, e o
+         decremento não o leva abaixo disso. */
+      if (!jaDominado) est.etapa = inversa ? 'inversa-multipla' : 'multipla';
       est.revisoes = Math.max(0, (est.revisoes || 0) - 1);
     }
 

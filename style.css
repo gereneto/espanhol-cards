@@ -212,6 +212,9 @@ button{font:inherit}
 }
 .aviso-lingua b{color:var(--texto);font-weight:700}
 
+/* Degrau da escada dos dominados onde ninguém chegou ainda. */
+tr.vago td{opacity:.42}
+
 /* ── alternativas ── */
 .alternativas{display:flex;flex-direction:column;gap:9px}
 .alternativa{

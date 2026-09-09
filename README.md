@@ -194,12 +194,29 @@ branco, porque o card simplesmente sumiria da fila por semanas.
 | 5ª | 3 meses |
 | daí em diante | 6 meses |
 
-Enquanto a data não chega, o app pula o card e pega o seguinte da fila. Errar
-devolve ao começo da escada e tira o card de dominado, de volta à múltipla
-escolha da volta. Se **todos** os cards estiverem esperando, entra o de data
-mais próxima — ficar sem card nenhum seria pior do que adiantar um.
+Chegada a data, o card **fura a fila**: ele não disputa o sorteio das outras
+três, é a única coisa no app com hora marcada. Se **todos** estiverem
+esperando, entra o de data mais próxima — ficar sem card nenhum seria pior do
+que adiantar um.
+
+**Errar desce um degrau, e só.** Um card de 90 dias passa a voltar em 30, e
+continua dominado — quem já atravessou as duas direções não precisa provar de
+novo que atravessou, precisa só de mais um encontro, e mais cedo. Errando
+sempre, ele se estabiliza no degrau de baixo e volta a cada três dias, sendo
+cobrado por escrito em espanhol até acertar de novo. É o laço mais apertado que
+a escada tem, e é onde um card esquecido deve mesmo ficar.
+
+Isso mudou duas vezes. Na primeira versão um só deslize apagava meses de
+maturidade e devolvia o card ao começo da escada. Depois ele passou a cair para
+`inversa-escrita`, o que ainda o obrigava a reconquistar três acertos seguidos
+antes de voltar à escada. Agora não sai.
 
 O card nunca sai do baralho. Ele só espera mais.
+
+O painel mostra **a escada inteira**: quantos cards em cada degrau, quantos já
+venceram a data e estão de prontidão para furar a fila, e em quantos dias o
+próximo aparece. Degrau onde ninguém chegou ainda fica na tabela, esmaecido —
+ver o degrau vago diz tanto quanto ver o cheio.
 
 
 ## Onde roda

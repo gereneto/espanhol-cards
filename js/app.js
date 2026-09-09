@@ -916,6 +916,7 @@
     }
 
     html += tabelaEtapas();
+    html += tabelaDominados();
     html += tabelaNivel();
     html += tabelaModo();
     html += tabelaPor('Por tipo', c => c.tipo, ['palavra', 'frase']);
@@ -1018,6 +1019,71 @@
      e não do histórico: o histórico guarda só as últimas 12 respostas, então
      em card muito praticado o historico[0] já não é a estreia — e era isso
      que fazia a coluna "de primeira" mentir justamente onde havia mais dado. */
+  /* ── a escada dos dominados ──
+     O dominado não volta pela fila: volta por data, e a espera cresce a cada
+     revisão certa — 3 dias, 1 semana, 2, 1 mês, 3 meses, meio ano. Esta
+     tabela diz onde cada um está parado: quantos em cada degrau, quantos já
+     venceram a data e estão esperando a vez de furar a fila, e quando o
+     próximo dos que ainda esperam vai aparecer.
+
+     Errar recua um degrau e não tira ninguém daqui: um card de 90 dias passa
+     a voltar em 30, e continua dominado. */
+  function rotuloEspera(dias) {
+    if (dias === 7) return '1 semana';
+    if (dias === 30) return '1 mês';
+    if (dias < 7) return dias + ' dias';
+    if (dias < 30 && dias % 7 === 0) return (dias / 7) + ' semanas';
+    if (dias % 30 === 0) return (dias / 30) + ' meses';
+    return dias + ' dias';
+  }
+
+  function emQuantosDias(iso) {
+    const dias = Math.ceil((Date.parse(iso) - Date.now()) / 86400000);
+    if (dias <= 0) return 'hoje';
+    if (dias === 1) return 'amanhã';
+    if (dias < 60) return 'em ' + dias + ' dias';
+    return 'em ' + Math.round(dias / 30) + ' meses';
+  }
+
+  function tabelaDominados() {
+    const agora = new Date().toISOString();
+    const degraus = Motor.DIAS_DOMINADO.map(dias => (
+      { dias: dias, n: 0, vencidos: 0, proxima: null }));
+    (progresso.dominados || []).forEach(id => {
+      const e = progresso.cards[id];
+      if (!e) return;
+      const d = degraus[Math.min(e.revisoes || 0, degraus.length - 1)];
+      d.n++;
+      if (!Motor.esperando(e, agora)) d.vencidos++;
+      else if (!d.proxima || e.voltaEm < d.proxima) d.proxima = e.voltaEm;
+    });
+
+    const total = degraus.reduce((s, d) => s + d.n, 0);
+    if (!total) return '';
+    const vencidos = degraus.reduce((s, d) => s + d.vencidos, 0);
+
+    const linhas = degraus.map(d => {
+      /* Degrau vazio fica na tabela, esmaecido: a escada é a mesma para todo
+         mundo, e ver o degrau vago diz que ninguém chegou lá ainda. */
+      const vazio = d.n ? '' : ' class="vago"';
+      return '<tr' + vazio + '><td>' + rotuloEspera(d.dias) + '</td>' +
+        '<td class="num">' + (d.n || '—') + '</td>' +
+        '<td class="num">' + (d.vencidos || '—') + '</td>' +
+        '<td class="num">' + (d.proxima ? emQuantosDias(d.proxima) : '—') + '</td></tr>';
+    }).join('');
+
+    return '<h3>A escada dos dominados</h3>' +
+      '<p class="legenda">Vencidas as duas direções, o card sai das filas e passa ' +
+      'a voltar por data. Cada revisão certa sobe um degrau; <b>errar desce um</b>, ' +
+      'e não tira o card daqui. <b>Já venceram</b> são os que estão de prontidão ' +
+      'para furar a fila no próximo card.</p>' +
+      '<table><tr><th>Espera</th><th class="num">Cards</th>' +
+      '<th class="num">Já venceram</th><th class="num">O próximo volta</th></tr>' +
+      linhas +
+      '<tr class="soma"><td>Todos</td><td class="num">' + total + '</td>' +
+      '<td class="num">' + (vencidos || '—') + '</td><td class="num">—</td></tr></table>';
+  }
+
   function tabelaNivel() {
     const g = {};
     Motor.NIVEIS.forEach(n => (g[n] =
