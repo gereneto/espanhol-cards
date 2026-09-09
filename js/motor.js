@@ -167,6 +167,36 @@ window.Motor = (function () {
     }
   };
 
+  /* ── o advérbio de tempo que anda pela frase ──
+     «Hoje eu não vou ao escritório» e «Não vou ao escritório hoje» são a mesma
+     frase: o português põe o advérbio na frente ou atrás sem mudar nada. Foram
+     duas contestações — u010 e v002 — e, sem regra, cada card teria de prever
+     as duas ordens na mão, para sempre.
+
+     Aqui o advérbio vai para o fim, venha ele de onde vier, dos dois lados da
+     comparação: «hoje não vou», «não vou hoje no escritório» e «não vou no
+     escritório hoje» chegam todas ao mesmo lugar. Não há risco de igualar
+     coisas diferentes: duas respostas que só diferem na posição do advérbio
+     são, em português, a mesma resposta.
+
+     A lista é curta de propósito. Ficam de fora «antes» e «depois», que puxam
+     complemento muito mais do que andam sozinhos — «antes de tudo» não é
+     «tudo antes» —, e ficam de fora «cedo» e «tarde», que também são
+     substantivo: «a tarde» é hora do dia, não é chegar atrasado. */
+  const TEMPO = {
+    pt: new Set(['hoje', 'ontem', 'amanha', 'agora', 'sempre', 'nunca']),
+    es: new Set(['hoy', 'ayer', 'manana', 'ahora', 'siempre', 'nunca']),
+    en: new Set(['today', 'yesterday', 'tomorrow', 'now', 'always', 'never'])
+  };
+
+  function tempoParaOFim(palavras, lingua) {
+    const tabela = TEMPO[lingua] || TEMPO.pt;
+    if (palavras.length < 2) return palavras;
+    const resto = [], tempo = [];
+    palavras.forEach(p => (tabela.has(p) ? tempo : resto).push(p));
+    return resto.length ? resto.concat(tempo) : palavras;
+  }
+
   /* Português é o padrão: quem já chamava normalizar(txt) continua igual. */
   function normalizar(txt, lingua) {
     const L = LINGUAS[lingua] || LINGUAS.pt;
@@ -190,7 +220,7 @@ window.Motor = (function () {
         saida.push(p);
       }
     }
-    return saida.join(' ');
+    return tempoParaOFim(saida, lingua in LINGUAS ? lingua : 'pt').join(' ');
   }
 
   /* ── que língua cada direção usa ──
@@ -293,6 +323,46 @@ window.Motor = (function () {
       .normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
       .replace(/[^a-z0-9\s]/g, ' ').trim().split(/\s+/)[0];
     return (ARTIGOS_GENERO[lingua] || {})[primeira] || null;
+  }
+
+  /* ── respondeu certo, na língua errada ──
+     Nos falsos amigos acontece de ler o espanhol como se fosse português e
+     responder o espanhol da OUTRA palavra: «la sobremesa» pede «a conversa
+     depois da refeição», e sai «el postre» — que é a resposta certa da
+     pergunta espelhada. Estar atento às bandeiras não resolve; a palavra é
+     que engana.
+
+     A nota do card já carrega esses pares, um por linha, no formato
+     «🇪🇸 x → 🇧🇷 y»: são 156 pares em 73 cards, e é de lá que sai a lista de
+     espanhóis que valem como aviso, sem adivinhação nenhuma. Junto com eles
+     entra a própria palavra da pergunta.
+
+     Vale só em es→pt, que é o lado onde a resposta devia estar em português.
+     Na volta, responder em espanhol é o que se pede.
+
+     Quem chama isto é o app, e só depois de a resposta ter sido dada como
+     errada — então nunca há risco de barrar uma tradução boa. */
+  function espanhoisDoCard(card) {
+    const saida = [String((card && card.es) || '')];
+    const par = /🇪🇸\s*([^→\n]+?)\s*→\s*🇧🇷/g;
+    let m;
+    while ((m = par.exec(String((card && card.nota) || '')))) {
+      m[1].split(',').forEach(t => saida.push(t.trim()));
+    }
+    return saida.filter(Boolean);
+  }
+
+  function linguaTrocada(card, texto, direcao) {
+    if (direcao !== 'es-pt') return null;
+    const dado = normalizarEs(texto);
+    if (!dado) return null;
+    const espanhois = espanhoisDoCard(card);
+    for (let i = 0; i < espanhois.length; i++) {
+      if (normalizarEs(espanhois[i]) === dado) {
+        return { palavra: espanhois[i], propria: i === 0 };
+      }
+    }
+    return null;
   }
 
   /* Devolve o artigo que era esperado quando o que ele escreveu bate no
@@ -912,6 +982,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
+    linguaTrocada, espanhoisDoCard,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,

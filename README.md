@@ -283,7 +283,13 @@ A resposta escrita cai em um de três baldes.
 **Certo, direto.** Sai de graça o que é a mesma resposta escrita de outro jeito:
 acento, maiúscula, pontuação, plural (`sentir saudade` = `sentir saudades`),
 número por extenso (`3 anos` = `três anos`), contração (`pra`, `tô`), artigo e
-pronome-sujeito (`eu concordo` = `concordo`), e o `já` aspectual. Sinônimo
+pronome-sujeito (`eu concordo` = `concordo`), o `já` aspectual, e a **posição do
+advérbio de tempo** — «hoje eu não vou ao escritório», «não vou hoje no
+escritório» e «não vou no escritório hoje» são a mesma frase, e o português
+deixa o advérbio andar sem mudar nada. São seis palavras só (`hoje`, `ontem`,
+`amanhã`, `agora`, `sempre`, `nunca`): ficam de fora `antes` e `depois`, que
+puxam complemento («antes de tudo» não é «tudo antes»), e `cedo` e `tarde`, que
+também são substantivo. Sinônimo
 verdadeiro (`é preciso` / `é necessário`) entra pela lista `aceitas` do card —
 nunca afrouxando a comparação.
 
@@ -297,6 +303,24 @@ forma verbal registrada do card**, não foi a mão que escorregou — foi o temp
 ou a pessoa, que é justamente o que o card cobra. Isso é erro seco, sem
 perguntar nada, e o feedback nomeia o que você escreveu: *«Él dice la verdad»
 — presente*, contra o pretérito que era pedido.
+
+**Em espanhol — e aí não conta.** Falso amigo engana de um jeito que estar
+atento às bandeiras não resolve: você lê «la sobremesa», reconhece a palavra
+portuguesa e responde o espanhol dela — «el postre», que é a resposta certa da
+pergunta espelhada. O app reconhece isso, **avisa e devolve a vez**, sem contar
+erro e sem gravar nada:
+
+> **el postre** está em espanhol 🇪🇸: é a resposta da pergunta ao contrário.
+> Aqui a tradução vai em português 🇧🇷 — tente de novo.
+
+Ele sabe quais palavras espanholas valem como aviso porque a nota do card já as
+carrega, uma por linha, no formato «🇪🇸 x → 🇧🇷 y» — são 156 pares em 73 cards.
+Junto com elas entra a própria palavra da pergunta.
+
+Vale **uma vez por aparição do card**: com duas viraria tentativa livre. E vale
+só em `es → pt`, que é o lado em que a resposta devia estar em português — na
+volta, responder em espanhol é o que se pede. O relógio continua correndo de
+propósito: o tropeço não é erro, mas também não sai de graça.
 
 **Quase — e aí quem decide é você.** Se a resposta chegou perto mas não bate,
 o app não dá nem tira ponto: mostra o que você escreveu ao lado da resposta
@@ -320,6 +344,23 @@ entram inteiros na comparação, então `envergonhada` para `embarazada` e
 > traz duas traduções separadas por `/`, ou um parêntese, ou é bem mais longa que
 > as outras, dá para acertar sem saber nada de espanhol — basta escolher a
 > diferente. O `build.js` recusa o baralho quando isso acontece.
+
+> **E não podem dividir uma categoria que a resposta certa não tem.** É o mesmo
+> defeito um degrau acima: não é a forma que entrega, é o assunto. Se as quatro
+> erradas falam todas de gato e a certa não, de novo basta escolher a diferente.
+> O `build.js` avisa quando encontra uma palavra de conteúdo nos **quatro**
+> distratores e em nenhum lugar da resposta certa.
+>
+> A checagem tem limites, e é bom saber quais. Ela não vê categoria por assunto
+> sem palavra repetida — quatro frases sobre comida em que nenhuma palavra se
+> repete passam batido, e isso continua sendo olho humano. E deixa de fora os
+> cards de conjugação, onde as cinco alternativas têm o mesmo verbo por
+> construção e o que muda é o tempo.
+>
+> Quando o defeito aparece, a receita é ficar com **dois** distratores literais,
+> que são a armadilha de verdade — quem lê «gato encerrado» e pensa em gato tem
+> de ter onde cair —, e trocar os outros dois por leituras erradas plausíveis
+> fora da categoria.
 
 Depois de editar:
 

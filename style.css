@@ -202,6 +202,16 @@ button{font:inherit}
 .rotulo-resposta .bandeira{font-size:17px}
 .resposta-certa .rotulo span{font-size:13px;margin-right:2px}
 
+/* Respondeu em espanhol num card de falso amigo: o aviso devolve a vez em
+   vez de contar erro, então usa o amarelo do «deu quase», que é a cor de
+   quem não acertou nem errou. */
+.aviso-lingua{
+  margin:12px 0 0;font-size:14px;line-height:1.45;color:var(--quase);
+  background:var(--quase-fraco);border:1px solid var(--quase-borda);
+  border-radius:11px;padding:11px 14px;
+}
+.aviso-lingua b{color:var(--texto);font-weight:700}
+
 /* ── alternativas ── */
 .alternativas{display:flex;flex-direction:column;gap:9px}
 .alternativa{

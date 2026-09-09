@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-09-08",
+ "gerado_em": "2026-09-09",
  "total": 457,
  "cards": [
   {
@@ -1556,7 +1556,10 @@ window.CARDS_RAW = {
    "aceitas": [
     "trabalhar",
     "ralar",
-    "labutar"
+    "labutar",
+    "trampar",
+    "dar duro",
+    "batalhar"
    ],
    "aceitasEn": [
     "to work",
@@ -1736,9 +1739,9 @@ window.CARDS_RAW = {
    ],
    "distratores": [
     "a sobremesa (doce)",
-    "a toalha de mesa",
-    "o aperitivo",
-    "o cardápio"
+    "a soneca depois do almoço",
+    "a arrumação da mesa",
+    "o cafezinho antes de sair"
    ],
    "distratoresEn": [
     "the dessert after dinner",
@@ -1848,7 +1851,11 @@ window.CARDS_RAW = {
     "gambiarra",
     "trabalho malfeito",
     "porcaria",
-    "servico porco"
+    "servico porco",
+    "servico malfeito",
+    "trabalho porco",
+    "remendo",
+    "meia boca"
    ],
    "aceitasEn": [
     "the botched job",
@@ -4050,14 +4057,14 @@ window.CARDS_RAW = {
    "distratores": [
     "A panela dele caiu. / Quebrou.",
     "Ele esqueceu a panela. / Queimou tudo.",
-    "Ele deixou a comida queimar. / Estragou.",
-    "Ele ficou com fome. / Não comeu."
+    "Ele chegou atrasado. / Perdeu a hora.",
+    "Ele ficou sem dinheiro. / Faliu."
    ],
    "distratoresEn": [
     "He dropped his cooking pot.",
     "He left the pot on the stove.",
-    "He let the food burn.",
-    "He went completely hungry."
+    "He turned up very late.",
+    "He ran out of money."
    ],
    "nivel": "C1",
    "tags": [
@@ -5003,7 +5010,9 @@ window.CARDS_RAW = {
     "deus ajuda quem cedo madruga",
     "deus ajuda quem acorda cedo",
     "quem madruga deus ajuda",
-    "a quem madruga deus ajuda"
+    "a quem madruga deus ajuda",
+    "deus ajuda quem madruga",
+    "deus ajuda quem cedo acorda"
    ],
    "aceitasEn": [
     "the early bird catches the worm",
@@ -6633,7 +6642,11 @@ window.CARDS_RAW = {
     "a contragosto",
     "contrariado",
     "de ma vontade",
-    "resmungando"
+    "resmungando",
+    "contra a vontade",
+    "de mau grado",
+    "sem vontade nenhuma",
+    "a forca"
    ],
    "aceitasEn": [
     "grudgingly",
@@ -7162,8 +7175,8 @@ window.CARDS_RAW = {
    "distratores": [
     "Você pode me estender a mão?",
     "Você pode lavar as mãos?",
-    "Você pode soltar a mão?",
-    "Você pode erguer a mão?"
+    "Você pode me esperar aqui?",
+    "Você pode falar mais alto?"
    ],
    "distratoresEn": [
     "Can you hold my hand?",
@@ -7188,7 +7201,11 @@ window.CARDS_RAW = {
     "esta chovendo canivete",
     "esta chovendo muito",
     "chove torrencialmente",
-    "esta caindo o mundo"
+    "esta caindo o mundo",
+    "esta chovendo forte",
+    "chove a cantaros",
+    "esta caindo um toro de agua",
+    "esta chovendo a valer"
    ],
    "aceitasEn": [
     "its raining cats and dogs",
@@ -7393,7 +7410,11 @@ window.CARDS_RAW = {
     "tenho jeito para cozinhar",
     "sou bom de cozinha",
     "me dou bem cozinhando",
-    "levo jeito para cozinhar"
+    "levo jeito para cozinhar",
+    "sou bom cozinhando",
+    "cozinho bem",
+    "me viro bem na cozinha",
+    "tenho talento para cozinhar"
    ],
    "aceitasEn": [
     "im good at cooking",
@@ -7472,7 +7493,12 @@ window.CARDS_RAW = {
     "pelo visto ele nao vira",
     "ao que parece ele nao vem",
     "pelo jeito nao vem",
-    "aparentemente nao vira"
+    "aparentemente nao vira",
+    "pelo visto ele nao vem",
+    "pelo visto nao vira",
+    "ao que tudo indica nao vem",
+    "parece que nao vem",
+    "pelo jeito ele nao vem"
    ],
    "aceitasEn": [
     "apparently he wont come",
@@ -7547,7 +7573,11 @@ window.CARDS_RAW = {
     "alias ele tinha razao",
     "por sinal ele tinha razao",
     "diga-se de passagem ele tinha razao",
-    "a proposito ele tinha razao"
+    "a proposito ele tinha razao",
+    "alias ele estava certo",
+    "por falar nisso ele tinha razao",
+    "alias tinha razao",
+    "diga-se de passagem tinha razao"
    ],
    "aceitasEn": [
     "incidentally he was right",
@@ -7585,7 +7615,12 @@ window.CARDS_RAW = {
     "ele esta me enrolando",
     "esta me empurrando com a barriga",
     "esta adiando comigo",
-    "esta me fazendo esperar"
+    "esta me fazendo esperar",
+    "esta me enrolando",
+    "ta me enrolando",
+    "esta me dando corda",
+    "fica me adiando",
+    "esta empurrando com a barriga"
    ],
    "aceitasEn": [
     "he keeps stalling me",
@@ -7666,7 +7701,11 @@ window.CARDS_RAW = {
     "tem algo estranho aqui",
     "tem dedo de gente aqui",
     "aqui tem gato",
-    "isso esta mal contado"
+    "isso esta mal contado",
+    "aqui tem coisa",
+    "tem coisa aqui",
+    "aqui tem coisa esquisita",
+    "tem alguma coisa errada aqui"
    ],
    "aceitasEn": [
     "there is something fishy going on here",
@@ -7679,14 +7718,14 @@ window.CARDS_RAW = {
    "distratores": [
     "Aqui tem gato preso.",
     "Aqui mora um gato.",
-    "Aqui entrou um gato.",
-    "Aqui falta um gato."
+    "Aqui está tudo certo.",
+    "Aqui falta alguém."
    ],
    "distratoresEn": [
     "There is a cat shut in here.",
     "A cat lives here with us.",
-    "A cat has got in here.",
-    "There is a cat missing here."
+    "Everything here is in order.",
+    "Someone is missing from here."
    ],
    "nivel": "C1",
    "tags": [
@@ -7868,7 +7907,11 @@ window.CARDS_RAW = {
     "ele nao da o braco a torcer",
     "nao admite que errou",
     "nao cede nunca",
-    "nao volta atras"
+    "nao volta atras",
+    "nao da o braco a torcer",
+    "nao reconhece o erro",
+    "nao admite o erro",
+    "nao recua"
    ],
    "aceitasEn": [
     "he wont back down",
@@ -13495,7 +13538,10 @@ window.CARDS_RAW = {
     "moderacao",
     "comedimento",
     "mesura",
-    "equilibrio"
+    "equilibrio",
+    "temperanca",
+    "ponderacao",
+    "contencao"
    ],
    "aceitasEn": [
     "restraint",
@@ -14271,7 +14317,11 @@ window.CARDS_RAW = {
     "estou com agua na boca",
     "fiquei com agua na boca",
     "me da agua na boca",
-    "da agua na boca"
+    "da agua na boca",
+    "fico com agua na boca",
+    "isso da agua na boca",
+    "so de ver da agua na boca",
+    "minha boca enche de agua"
    ],
    "aceitasEn": [
     "my mouth is watering",
@@ -14352,7 +14402,11 @@ window.CARDS_RAW = {
     "me pegou de surpresa",
     "pegou de surpresa",
     "me surpreendeu",
-    "me pegou desprevenido"
+    "me pegou desprevenido",
+    "me apanhou de surpresa",
+    "fui pego de surpresa",
+    "me pegou desprevenida",
+    "me pegou no contrape"
    ],
    "aceitasEn": [
     "it caught me by surprise",
@@ -14390,7 +14444,11 @@ window.CARDS_RAW = {
     "esta de lamber os dedos",
     "de lamber os beicos",
     "esta uma delicia",
-    "esta divino"
+    "esta divino",
+    "de lamber os dedos",
+    "esta maravilhoso",
+    "esta otimo",
+    "esta uma maravilha"
    ],
    "aceitasEn": [
     "its good enough to lick your fingers",
@@ -14447,10 +14505,10 @@ window.CARDS_RAW = {
     "O tiro fez muito barulho."
    ],
    "distratoresEn": [
-    "The shot only grazed him.",
     "The shot hit the target.",
     "The shot narrowly missed.",
-    "The shot made a lot of noise."
+    "It went exactly as planned.",
+    "He got away with it."
    ],
    "nivel": "B2",
    "tags": [
@@ -14546,7 +14604,12 @@ window.CARDS_RAW = {
     "esta de saco cheio",
     "nao aguenta mais",
     "esta cheio disso",
-    "esta farto"
+    "esta farto",
+    "ta de saco cheio",
+    "esta ate o pescoco",
+    "esta cansado disso",
+    "nao suporta mais",
+    "esta de saco cheio disso"
    ],
    "aceitasEn": [
     "hes had it up to here",
@@ -14626,7 +14689,11 @@ window.CARDS_RAW = {
     "fico com vergonha de perguntar",
     "tenho vergonha de perguntar",
     "da vergonha perguntar",
-    "morro de vergonha de perguntar"
+    "morro de vergonha de perguntar",
+    "fico sem graca de perguntar",
+    "me da vergonha perguntar",
+    "nao tenho coragem de perguntar",
+    "fico encabulado de perguntar"
    ],
    "aceitasEn": [
     "im too embarrassed to ask",
@@ -14687,8 +14754,8 @@ window.CARDS_RAW = {
    "distratoresEn": [
     "With an expert eye.",
     "With your eyes open.",
-    "Under the eyes of others.",
-    "With only one eye."
+    "With a proper measure.",
+    "By careful calculation."
    ],
    "nivel": "C2",
    "tags": [
@@ -16906,14 +16973,14 @@ window.CARDS_RAW = {
    "distratores": [
     "Para de bater na lata.",
     "Para de abrir a lata.",
-    "Para de jogar a lata fora.",
-    "Para de guardar tudo em lata."
+    "Para de chegar atrasado.",
+    "Para de mexer nas coisas."
    ],
    "distratoresEn": [
     "Stop banging on the tin.",
     "Stop opening the tin.",
-    "Stop throwing the tin away.",
-    "Stop keeping it all in tins."
+    "Stop turning up late.",
+    "Stop touching my things."
    ],
    "nivel": "B2",
    "tags": [

@@ -97,6 +97,57 @@ function checarFormato(certa, distratores, onde, coletar) {
   }
 }
 
+/* ── a categoria que só os distratores têm ──
+   Um degrau acima do formato: ali é a forma que entrega a resposta, aqui é o
+   assunto. Se as quatro alternativas erradas falam todas de gato e a certa
+   não, dá para acertar escolhendo a diferente, sem saber espanhol. O Gere
+   apontou isso em quatro cards antes de o build aprender a ver — «Nos
+   pusimos morados», «No te andes por las ramas», «Aquí hay gato encerrado» e
+   «Se le fue la olla».
+
+   A conta é a palavra de conteúdo que aparece nos QUATRO distratores e não
+   aparece na resposta certa, contando singular e plural como a mesma.
+
+   Duas coisas ela NÃO pega, e é bom saber:
+   — categoria por assunto sem palavra repetida (quatro frases sobre comida
+     em que nenhuma palavra se repete). Isso continua sendo olho humano;
+   — card de conjugação, que fica de fora de propósito: lá as cinco
+     alternativas têm o mesmo verbo por construção e o que muda é o tempo,
+     então a palavra comum não entrega nada.
+
+   Sai como aviso, não como erro: a lista de palavras vazias nunca vai estar
+   completa, e um falso positivo não deve barrar o baralho. */
+const VAZIAS_CATEGORIA = new Set(('a o as os um uma uns umas de do da dos das em no na nos nas ' +
+  'por para pra com sem que se e ou mais menos muito pouco ele ela eles elas eu voce nao ja ao ' +
+  'aos aqui ali la isso esse essa este esta seu sua meu minha ser estar ter foi era tudo nada ' +
+  'algo alguem quem qual quando onde como porque ' +
+  'the of to in on it is are do does did not you he she they we and or up out off his her my ' +
+  'your that this an was were be been have has had with for from at by as so if but all any ' +
+  'some one two what how who when where why too very much more less there here got get').split(' '));
+
+function palavrasDeCategoria(s) {
+  const saida = new Set();
+  String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/)
+    .filter(p => p.length > 2 && !VAZIAS_CATEGORIA.has(p))
+    .forEach(p => {
+      saida.add(p);
+      if (p.endsWith('s') && p.length > 3) saida.add(p.slice(0, -1));
+    });
+  return saida;
+}
+
+function checarCategoria(certa, distratores, onde, coletar) {
+  if (!Array.isArray(distratores) || distratores.length !== 4) return;
+  const naCerta = palavrasDeCategoria(certa);
+  const conjuntos = distratores.map(palavrasDeCategoria);
+  const comuns = [...conjuntos[0]].filter(p => conjuntos.every(c => c.has(p)) && !naCerta.has(p));
+  if (comuns.length) {
+    coletar('os quatro distratores falam de «' + comuns[0] + '» e a resposta certa não: ' +
+      onde + ' — dá para acertar escolhendo a diferente');
+  }
+}
+
 /* Nenhum distrator pode ser, para o motor, a resposta certa — nem repetir
    outro distrator. Vale nas duas pontas: na múltipla escolha apareceriam
    duas alternativas certas, e na escrita o texto do distrator seria aceito.
@@ -156,6 +207,11 @@ for (const c of cards) {
   }
 
   checarFormato(c.pt, c.distratores, onde, e => erros.push(e));
+  /* Conjugação fica de fora: lá as cinco alternativas têm o mesmo verbo por
+     construção, e o que muda é o tempo. */
+  if (!(c.tags || []).includes('conjugação')) {
+    checarCategoria(c.pt, c.distratores, onde, a => avisos.push(a));
+  }
 
   /* ── o lado inglês ── */
   const temAlgumEn = CAMPOS_EN.some(k => c[k] !== undefined) || c.formasEsEn !== undefined;
@@ -178,6 +234,9 @@ for (const c of cards) {
       /* as heurísticas de formato são só aviso em inglês: quem decide de fato
          é a revisão, e barrar o build travaria tradução legítima */
       checarFormato(c.en, c.distratoresEn, ondeEn, a => avisos.push(a));
+      if (!(c.tags || []).includes('conjugação')) {
+        checarCategoria(c.en, c.distratoresEn, ondeEn, a => avisos.push(a));
+      }
     }
 
     /* formasEsEn tem de rotular exatamente as mesmas formas de formasEs */

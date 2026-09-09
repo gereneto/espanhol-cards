@@ -22,6 +22,7 @@
     'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
+    'aviso-lingua',
     'meta-origem',
     'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
@@ -47,6 +48,7 @@
   let respostaPendente = null;
   let ultimoRegistro = null;
   let estreiaPendente = false;
+  let chanceUsada = false;   // o aviso de língua trocada só devolve a vez uma vez
   let respostasDesdeSync = 0;
   let sincronizando = false;
   let sincronizacoes = 0;
@@ -301,6 +303,7 @@
     respostaPendente = null;
     ultimoRegistro = null;
     estreiaPendente = false;
+    chanceUsada = false;
     pausou = false;
 
     el['meta-tipo'].textContent = cardAtual.tipo;
@@ -333,6 +336,7 @@
     el.termo.textContent = Motor.pergunta(cardAtual, direcaoAtual);
     el.termo.classList.toggle('frase', cardAtual.tipo === 'frase');
 
+    el['aviso-lingua'].classList.add('oculto');
     el['area-feedback'].classList.add('oculto');
     /* o chão criado para o botão subir era daquele card; some com ele */
     el['area-feedback'].style.paddingBottom = '';
@@ -408,7 +412,22 @@
     const texto = desistiu ? '' : Motor.cortar(el.entrada.value, Motor.LIMITES.resposta);
     if (!desistiu && !texto.trim()) { el.entrada.focus(); return; }
 
+    /* ── respondeu certo, na língua errada ──
+       Falso amigo é assim: você lê «la sobremesa», reconhece a palavra
+       portuguesa e responde o espanhol dela. Não é desconhecimento, é a
+       palavra enganando — então o app avisa e devolve a vez, sem contar
+       erro nem gravar nada. Uma vez por aparição do card: com duas viraria
+       tentativa livre, e a medida do tempo perderia o sentido.
+
+       O relógio segue correndo, de propósito. O tropeço não é erro, mas
+       também não sai de graça: a resposta vai chegar mais lenta, e o card
+       volta um pouco mais cedo por causa disso. */
     const conferencia = desistiu ? 'errado' : Motor.conferir(cardAtual, texto, direcaoAtual);
+    if (conferencia === 'errado' && !desistiu && !chanceUsada) {
+      const troca = Motor.linguaTrocada(cardAtual, texto, direcaoAtual);
+      if (troca) { avisarLinguaTrocada(troca); return; }
+    }
+    el['aviso-lingua'].classList.add('oculto');
     el.entrada.disabled = true;
     el['btn-responder'].disabled = true;
     el['btn-nao-sei'].disabled = true;
@@ -420,6 +439,18 @@
       quase: conferencia === 'quase',
       ms, resposta: texto, desistiu: !!desistiu
     });
+  }
+
+  function avisarLinguaTrocada(troca) {
+    chanceUsada = true;
+    el['aviso-lingua'].innerHTML = troca.propria
+      ? '<b>' + escapar(troca.palavra) + '</b> é a própria palavra da pergunta, ' +
+        'em espanhol 🇪🇸. O que se pede é a tradução, em português 🇧🇷 — tente de novo.'
+      : '<b>' + escapar(troca.palavra) + '</b> está em espanhol 🇪🇸: é a resposta da ' +
+        'pergunta ao contrário. Aqui a tradução vai em português 🇧🇷 — tente de novo.';
+    el['aviso-lingua'].classList.remove('oculto');
+    el.entrada.value = '';
+    el.entrada.focus();
   }
 
   /* Mostra o feedback. Grava na hora, salvo quando a resposta caiu na
