@@ -406,28 +406,55 @@ window.Motor = (function () {
     return String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
 
-  /* ── acertou a palavra, errou o acento ──
-     Em espanhol o acento e o «ñ» são parte da grafia que o card ensina, então
-     escrever «todavia» por «todavía» não é a mão escorregando: é a mesma
-     lacuna que o card existe para fechar. Erro seco, como o do gênero e o da
-     conjugação — e, como eles, com nome: o feedback diz qual era a forma.
+  /* ── o acento e o «ñ» não são a mesma coisa ──
+     O acento espanhol muda a sílaba tônica, e errá-lo é um deslize de escrita
+     — vale corrigir, não vale reprovar. Já o «ñ» é OUTRA LETRA: «año» e «ano»
+     são duas palavras, e confundi-las é constrangedor. Então:
 
-     Devolve a resposta certa quando o que ele escreveu bate letra por letra
-     tirando os acentos, e só erra neles. Fora disso devolve null, e o texto
-     segue o caminho normal (pode virar «deu quase» por outro motivo). */
-  function erroDeAcento(card, texto, direcao) {
+       só faltou acento   →  a resposta conta como certa, com um aviso
+       o «ñ» virou «n»    →  erro seco, como o do gênero e o da conjugação
+
+     Esta função acha a forma certa quando o que ele escreveu bate com ela a
+     menos de acento e/ou «ñ», e diz de qual dos dois casos se trata. Quando
+     há as duas diferenças ao mesmo tempo, manda o «ñ»: é o que pesa.
+
+     Devolve o texto ORIGINAL do card, e não o normalizado: quem vai aparecer
+     na tela é «apañárselas», não «apañársela», que é o que sobra do funil. */
+  function semAcentoMantendoEne(t) {
+    return String(t || '').normalize('NFC').toLowerCase()
+      .replace(/ñ/g, '\u0001')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/\u0001/g, 'ñ');
+  }
+
+  function difDeGrafiaEs(card, texto, direcao) {
     if (linguaDaResposta(direcao) !== 'es') return null;
     const dado = normalizarEs(texto);
     if (!dado) return null;
     if (respostasAceitas(card, direcao).includes(dado)) return null;  // acertou, acento e tudo
-    /* Percorre as formas ORIGINAIS, e não as normalizadas: quem vai aparecer
-       na tela é o texto do card, com artigo e plural no lugar — «apañárselas»
-       e não «apañársela», que é o que sobra depois do funil. */
-    const frouxo = semAcento(dado);
+    const comEne = semAcentoMantendoEne(dado);
+    const semNada = semAcento(dado);
+    let doEne = null;
     for (const alvo of formasAceitas(card, direcao)) {
-      if (semAcento(normalizar(alvo, 'es')) === frouxo) return String(alvo).trim();
+      const n = normalizar(alvo, 'es');
+      if (semAcentoMantendoEne(n) === comEne) {
+        return { forma: String(alvo).trim(), classe: 'acento' };
+      }
+      if (!doEne && semAcento(n) === semNada) doEne = String(alvo).trim();
     }
-    return null;
+    return doEne ? { forma: doEne, classe: 'ene' } : null;
+  }
+
+  /* O «ñ» errado: erro seco. */
+  function erroDeEne(card, texto, direcao) {
+    const d = difDeGrafiaEs(card, texto, direcao);
+    return d && d.classe === 'ene' ? d.forma : null;
+  }
+
+  /* Só o acento: conta como acerto, e o app chama atenção. */
+  function acentoRelevado(card, texto, direcao) {
+    const d = difDeGrafiaEs(card, texto, direcao);
+    return d && d.classe === 'acento' ? d.forma : null;
   }
 
   function linguaTrocada(card, texto, direcao) {
@@ -489,8 +516,11 @@ window.Motor = (function () {
        que é justamente o que o card cobra. Erro seco, sem perguntar. */
     if (formaReconhecida(card, texto, direcao)) return 'errado';
 
-    /* Mesma coisa com o acento e o «ñ» do espanhol. */
-    if (erroDeAcento(card, texto, direcao)) return 'errado';
+    /* O «ñ» trocado por «n» é erro seco: são letras diferentes. */
+    if (erroDeEne(card, texto, direcao)) return 'errado';
+
+    /* Faltou só o acento: conta como certo. Quem avisa é o app. */
+    if (acentoRelevado(card, texto, direcao)) return 'certo';
 
     if (aceitas.some(alvo => parecido(dado, alvo, lingua))) return 'quase';
     return 'errado';
@@ -1124,7 +1154,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
-    linguaTrocada, espanhoisDoCard, erroDeAcento,
+    linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,

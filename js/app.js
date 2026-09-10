@@ -22,7 +22,7 @@
     'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
-    'aviso-lingua',
+    'aviso-lingua', 'aviso-acento',
     'meta-origem',
     'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
@@ -65,6 +65,7 @@
       filaEsPt: [],                            // você reconhece o espanhol
       filaPtEs: [],                            // você produz o espanhol
       dominados: [],                           // vencido nas duas, esperando data
+      serie: [],                               // [respostas, es→pt, pt→es, dominados]
       cards: {},
       contestacoes: [],
       comentarios: [],
@@ -137,6 +138,25 @@
 
     delete p.fila;          // formato antigo, de fila única
     delete p.desdeInedito;  // a contagem regressiva deu lugar ao sorteio
+
+    /* ── a série das etapas ──
+       Ninguém anotava isso, e refazer o caminho pelo histórico dos cards dava
+       só uma estimativa: o histórico guarda doze respostas por card, e as
+       regras mudaram várias vezes no percurso. Mas o repositório de dados
+       guarda o progresso.json inteiro a cada sincronização — 442 fotografias
+       do baralho, com a etapa de cada card. Dali sai a série EXATA, e é ela
+       que o data/historico.js traz pronta.
+
+       Semeia uma vez, e daí em diante o app mesmo vai anotando ponto a ponto.
+       A semente só entra se este progresso for mesmo a continuação daquele
+       histórico: num navegador de outra pessoa, com dez respostas dadas, a
+       curva de mil e quinhentas não é dela. */
+    if (!Array.isArray(p.serie)) p.serie = [];
+    const semente = (window.HISTORICO_RAW && window.HISTORICO_RAW.serie) || [];
+    if (!p.serie.length && semente.length) {
+      const fim = semente[semente.length - 1][0];
+      if ((p.totais && p.totais.respostas || 0) >= fim - 50) p.serie = semente.slice();
+    }
 
     ordenarIneditos(p);
     return p;
@@ -337,6 +357,7 @@
     el.termo.classList.toggle('frase', cardAtual.tipo === 'frase');
 
     el['aviso-lingua'].classList.add('oculto');
+    el['aviso-acento'].classList.add('oculto');
     el['area-feedback'].classList.add('oculto');
     /* o chão criado para o botão subir era daquele card; some com ele */
     el['area-feedback'].style.paddingBottom = '';
@@ -495,9 +516,18 @@
        vez": o que faltou tem nome, e é o gênero. */
     const genero = escrevendo && !forma
       ? Motor.erroDeGenero(cardAtual, r.resposta, r.direcao) : null;
-    /* E o acento, que em espanhol é letra e não enfeite. */
+    /* E o «ñ», que é letra e não «n» com enfeite. */
     const acento = escrevendo && !forma && !genero
-      ? Motor.erroDeAcento(cardAtual, r.resposta, r.direcao) : null;
+      ? Motor.erroDeEne(cardAtual, r.resposta, r.direcao) : null;
+
+    /* Acertou, mas sem o acento. Não custa ponto — custa uma linha. */
+    const soAcento = escrevendo && r.acertou
+      ? Motor.acentoRelevado(cardAtual, r.resposta, r.direcao) : null;
+    el['aviso-acento'].classList.toggle('oculto', !soAcento);
+    if (soAcento) {
+      el['aviso-acento'].innerHTML = 'Contou como certo, mas o acento: era <b>' +
+        escapar(soAcento) + '</b>.';
+    }
 
     if (forma || genero || acento) {
       el['texto-dado'].innerHTML = forma
@@ -506,7 +536,7 @@
         ? escapar(r.resposta) +
           ' <span class="forma-rotulo">gênero errado — era «' + escapar(genero) + '»</span>'
         : escapar(r.resposta) +
-          ' <span class="forma-rotulo">faltou o acento — era «' + escapar(acento) + '»</span>';
+          ' <span class="forma-rotulo">o «ñ» é outra letra — era «' + escapar(acento) + '»</span>';
       el['resposta-dada'].classList.remove('oculto');
       el['resposta-dada'].classList.add('conjugacao');
     } else {
@@ -575,6 +605,15 @@
     const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const rolar = comportamento => {
+      /* O chão é refeito do zero a cada passada, e esse zero é o conserto.
+         Antes ele só crescia: a primeira passada acontece com o teclado
+         aberto, onde falta muito para o botão aparecer, e criava um chão do
+         tamanho do teclado. Quando o teclado fechava, a passada seguinte via
+         que não faltava mais nada e voltava sem desfazer o chão — a página
+         ficava alta demais, e a tela parava bem mais para baixo do que
+         precisava. Zerar antes de medir deixa o navegador reencaixar a
+         rolagem, e o que se acrescenta depois é só o que falta agora. */
+      el['area-feedback'].style.paddingBottom = '';
       const falta = faltaRolar(alvo);
       if (!falta) return;
       /* Rolar sozinho não resolve: o botão é o último elemento da página, e
@@ -585,8 +624,7 @@
       const podeRolar = document.documentElement.scrollHeight
         - Math.round(window.scrollY) - window.innerHeight;
       if (falta > podeRolar) {
-        const atual = parseFloat(el['area-feedback'].style.paddingBottom) || 0;
-        el['area-feedback'].style.paddingBottom = (atual + (falta - podeRolar)) + 'px';
+        el['area-feedback'].style.paddingBottom = (falta - podeRolar) + 'px';
       }
       window.scrollBy({ top: falta, behavior: comportamento });
     };
@@ -674,6 +712,12 @@
 
     progresso.totais.respostas++;
     if (r.acertou) progresso.totais.acertos++;
+
+    /* Um ponto por resposta, para o gráfico do painel. São quatro números;
+       mil respostas somam uns 15 KB no progresso.json, que já tem 500. */
+    const d = Motor.contarDirecoes(progresso.cards);
+    progresso.serie.push([progresso.totais.respostas, d.esPt, d.ptEs,
+                          progresso.dominados.length]);
 
     const evento = {
       em: new Date().toISOString(),
@@ -919,7 +963,7 @@
     html += tabelaEtapas();
     html += tabelaDominados();
     html += tabelaModo();
-    html += tabelaPor('Por tipo', c => c.tipo, ['palavra', 'frase']);
+    html += tabelaPor('Por categoria', categoriaDe, CATEGORIAS.map(c => c[0]));
 
     el['painel-conteudo'].innerHTML = html;
     ligarGrafico();
@@ -1008,46 +1052,14 @@
      em card muito praticado o historico[0] já não é a estreia — e era isso
      que fazia a coluna "de primeira" mentir justamente onde havia mais dado. */
   /* ── o caminho até aqui ──
-     Quantos cards em cada etapa, a cada resposta que você já deu. Ninguém
-     guardou essa série: o que existe é o histórico de cada card, com as
-     últimas doze respostas dele. Isso basta — dos seus cards, 99% têm doze
-     respostas ou menos, então o histórico junto reconstrói quase tudo.
+     Quantos cards em cada etapa, a cada resposta. A série é anotada pelo app
+     a cada resposta e vem semeada com o histórico exato do repositório de
+     dados (ver conciliarFila) — não é reconstrução nem estimativa: cada ponto
+     é uma contagem que existiu.
 
-     A reconstrução junta todas as respostas guardadas, ordena pela data, e
-     replica uma a uma pelo motor. O que sai é a curva sob as REGRAS DE HOJE,
-     não sob as que valiam na época — as regras mudaram várias vezes, e a
-     curva com uma régua só é a que dá para comparar consigo mesma.
-
-     A conta é incremental: em vez de recontar 300 cards a cada uma das 1500
-     respostas, só o card que se mexeu troca de balde. */
-  function serieDasEtapas() {
-    const respostas = [];
-    Object.keys(progresso.cards).forEach(id => {
-      (progresso.cards[id].historico || []).forEach(h => respostas.push({ id: id, h: h }));
-    });
-    if (respostas.length < 20) return null;   // curva de nada não se desenha
-    respostas.sort((a, b) => (String(a.h.em) < String(b.h.em) ? -1 : 1));
-
-    const estados = {};
-    const conta = { esPt: 0, ptEs: 0, dominados: 0 };
-    const serie = [];
-    respostas.forEach(r => {
-      let est = estados[r.id], antes = null;
-      if (est) antes = Motor.filaDe(est);
-      else est = estados[r.id] = Motor.estadoInicial(r.id);
-      const fase = Motor.faseDe(est);
-      Motor.registrar(est, {
-        acertou: r.h.acertou, modo: fase.modo, direcao: fase.direcao,
-        velocidade: r.h.velocidade, quase: r.h.quase,
-        conhecia: r.h.conhecia, pausado: r.h.pausado
-      });
-      const depois = Motor.filaDe(est);
-      if (antes) conta[antes]--;
-      conta[depois]++;
-      serie.push([conta.esPt, conta.ptEs, conta.dominados]);
-    });
-    return serie;
-  }
+     Os pontos semeados são um por sincronização, a cada três respostas; os
+     anotados daqui em diante são um por resposta. A curva fica mais rala
+     atrás e mais fina à frente, o que não incomoda numa figura de 600px. */
 
   const SERIES = [
     { chave: 0, nome: 'es → pt', cor: 'var(--serie-espt)' },
@@ -1056,15 +1068,27 @@
   ];
 
   function graficoEtapas() {
-    const serie = serieDasEtapas();
-    if (!serie) return '';
+    const bruta = (progresso.serie || []).filter(p => Array.isArray(p) && p.length === 4);
+    if (bruta.length < 20) return '';           // curva de nada não se desenha
+    /* [respostas, esPt, ptEs, dom] → o desenho só precisa das três contagens,
+       e a resposta vira o rótulo do eixo. */
+    const serie = bruta.map(p => [p[1], p[2], p[3]]);
+    const eixoX = bruta.map(p => p[0]);
 
-    const L = 34, R = 634, T = 10, B = 168, ALT = 190;
+    /* Alto o dobro do que era: no celular a figura ficava espremida e as
+       três bandas se confundiam perto do fim, onde elas mais importam. */
+    const L = 34, R = 634, T = 10, B = 330, ALT = 352;
     const n = serie.length;
     const topo = Math.max(...serie.map(p => p[0] + p[1] + p[2]));
-    const passo = topo > 240 ? 100 : topo > 120 ? 50 : 25;
+    const passo = topo > 400 ? 100 : topo > 200 ? 50 : 25;
     const ymax = Math.ceil(topo / passo) * passo || passo;
-    const x = i => L + (n < 2 ? 0 : (i / (n - 1)) * (R - L));
+    /* O eixo anda em RESPOSTAS, e não em índice de ponto. Os pontos semeados
+       são um por sincronização e as sincronizações não foram parelhas: espaçar
+       por índice esticaria os dias de muita sincronização e comprimiria os
+       outros, contando uma história torta. */
+    const xIni = eixoX[0], xFim = eixoX[n - 1];
+    const vao = Math.max(1, xFim - xIni);
+    const x = i => L + ((eixoX[i] - xIni) / vao) * (R - L);
     const y = v => B - (v / ymax) * (B - T);
 
     /* Amostra: mil e quinhentos pontos num SVG de 600px de largura são quatro
@@ -1098,10 +1122,13 @@
         '" fill="none" class="fresta"/>';
     }
 
-    for (let k = 0; k <= 4; k++) {
-      const i = Math.round((n - 1) * k / 4);
-      svg += '<text x="' + x(i).toFixed(1) + '" y="' + (B + 15) + '" class="eixo" text-anchor="' +
-        (k === 0 ? 'start' : k === 4 ? 'end' : 'middle') + '">' + (i + 1) + '</text>';
+    /* Rótulos em números redondos de resposta, e não no valor do ponto que
+       calhou de cair ali. */
+    const passoX = vao > 2000 ? 500 : vao > 800 ? 250 : vao > 300 ? 100 : 50;
+    for (let v = Math.ceil(xIni / passoX) * passoX; v <= xFim; v += passoX) {
+      const px = L + ((v - xIni) / vao) * (R - L);
+      svg += '<text x="' + px.toFixed(1) + '" y="' + (B + 15) + '" class="eixo" ' +
+        'text-anchor="middle">' + v + '</text>';
     }
     svg += '<line id="g-cursor" y1="' + T + '" y2="' + B + '" class="cursor" style="display:none"/>';
     svg += '<rect x="' + L + '" y="' + T + '" width="' + (R - L) + '" height="' + (B - T) +
@@ -1113,14 +1140,15 @@
       ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('');
 
     return '<h3>O caminho até aqui</h3>' +
-      '<p class="legenda">Cards em cada etapa, refazendo as <b>' + n + '</b> respostas ' +
-      'guardadas com as regras de hoje — por isso o fim da curva não bate com o ' +
-      'estado atual, que se formou com as regras antigas. Toque para ler um ponto.</p>' +
-      '<div class="chaves" id="g-chaves">' + chaves + '</div>' +
+      '<p class="legenda">Cards em cada etapa ao longo das suas <b>' +
+      eixoX[n - 1] + '</b> respostas. Toque para ler um ponto.</p>' +
+      '<div class="chaves" id="g-chaves">' + chaves +
+      '<span class="quando" id="g-quando">agora</span></div>' +
       '<svg class="grafico-etapas" viewBox="0 0 640 ' + ALT + '" role="img" ' +
       'aria-label="Cards em cada etapa ao longo das respostas">' + svg + '</svg>' +
       '<script type="application/json" id="g-dados">' +
-      JSON.stringify(idx.map(i => [i, serie[i][0], serie[i][1], serie[i][2]])) + '</' + 'script>';
+      JSON.stringify(idx.map(i => [i, serie[i][0], serie[i][1], serie[i][2], eixoX[i]])) +
+      '</' + 'script>';
   }
 
   /* O gráfico é remontado a cada abertura do painel, então o ouvinte se
@@ -1137,18 +1165,22 @@
     svg.querySelector('#g-toque').addEventListener('pointerdown', ev => {
       const r = svg.getBoundingClientRect();
       const alvo = (ev.clientX - r.left) / r.width * 640;
+      /* Mesma escala do desenho: o eixo anda em respostas (índice 4 do ponto). */
+      const ini = pontos[0][4], fim = pontos[pontos.length - 1][4];
+      const largo = Math.max(1, fim - ini);
+      const emX = p => 34 + ((p[4] - ini) / largo) * 600;
       let melhor = 0;
       pontos.forEach((p, k) => {
-        const px = 34 + (p[0] / (pontos[pontos.length - 1][0] || 1)) * 600;
-        const atual = 34 + (pontos[melhor][0] / (pontos[pontos.length - 1][0] || 1)) * 600;
-        if (Math.abs(px - alvo) < Math.abs(atual - alvo)) melhor = k;
+        if (Math.abs(emX(p) - alvo) < Math.abs(emX(pontos[melhor]) - alvo)) melhor = k;
       });
       const p = pontos[melhor];
-      const px = 34 + (p[0] / (pontos[pontos.length - 1][0] || 1)) * 600;
+      const px = emX(p);
       cursor.setAttribute('x1', px);
       cursor.setAttribute('x2', px);
       cursor.style.display = '';
       valores.forEach((b, k) => { b.textContent = p[k + 1]; });
+      const nota = el['painel-conteudo'].querySelector('#g-quando');
+      if (nota) nota.textContent = 'na resposta ' + p[4];
     });
   }
 
@@ -1257,8 +1289,8 @@
         '<td class="num">' + x.vistos + '</td>' +
         '<td class="num">' + pctDe(x.certasEstreia, x.estreias) + '</td>' +
         '<td class="num">' + pctDe(x.certasDepois, x.depois) + '</td>' +
-        '<td class="num geral"><span>' + (x.respostas ? geral + '%' : '—') + '</span>' +
-        '<div class="barra"><i style="width:' + geral + '%"></i></div></td></tr>';
+        '<td class="num">' + (x.respostas ? geral + '%' : '—') + '</td>' +
+        '<td class="col-barra"><div class="barra"><i style="width:' + geral + '%"></i></div></td></tr>';
     }).join('');
 
     if (!linhas) return '';
@@ -1267,8 +1299,10 @@
       '“depois”, o que fixou repetindo. A barra é o acerto geral do nível.' +
       (semEstreia ? ' <b>' + semEstreia + '</b> sem estreia anotada.' : '') +
       '</p>' +
-      '<table><tr><th>Nível</th><th class="num">Cards</th><th class="num">De primeira</th>' +
-      '<th class="num">Depois</th><th class="num">Geral</th></tr>' + linhas + '</table>';
+      '<table class="nivel"><tr><th>Nível</th>' +
+      ['Cards', 'De primeira', 'Depois', 'Geral'].map(r =>
+        '<th class="vert"><span>' + r + '</span></th>').join('') +
+      '<th></th></tr>' + linhas + '</table>';
   }
 
   /* Escolher entre cinco é bem mais fácil que escrever do zero. */
@@ -1293,6 +1327,25 @@
       '<th class="num">Acerto</th></tr>' + linhas + '</table>';
   }
 
+  /* ── as cinco famílias do baralho ──
+     «Palavra ou frase» dizia da forma do card, não do que ele ensina. Estas
+     cinco dizem: são as coisas que um brasileiro tropeça em espanhol, e cada
+     card cai na primeira que casar — a ordem é a da especificidade, do mais
+     armadilha ao mais geral. */
+  const CATEGORIAS = [
+    ['Falsos amigos',        c => (c.tags || []).includes('falso-amigo')],
+    ['Expressões e gírias',  c => (c.tags || []).some(t =>
+                                    t === 'expressão' || t === 'gíria' || t === 'provérbio')],
+    ['Conjugação',           c => (c.tags || []).includes('conjugação')],
+    ['Frases do dia a dia',  c => c.tipo === 'frase'],
+    ['Vocabulário',          () => true]
+  ];
+
+  function categoriaDe(c) {
+    for (const [nome, casa] of CATEGORIAS) if (casa(c)) return nome;
+    return 'Vocabulário';
+  }
+
   function tabelaPor(titulo, chave, ordem) {
     const grupos = {};
     Object.keys(progresso.cards).forEach(id => {
@@ -1313,7 +1366,7 @@
       return '<tr><td>' + escapar(k) + '</td>' +
         '<td class="num">' + g.cards + '</td>' +
         '<td class="num">' + pct + '%</td>' +
-        '<td><div class="barra"><i style="width:' + pct + '%"></i></div></td></tr>';
+        '<td class="col-barra"><div class="barra"><i style="width:' + pct + '%"></i></div></td></tr>';
     }).join('');
 
     if (!linhas) return '';
@@ -1557,6 +1610,9 @@
       filaEsPt: (local.filaEsPt && local.filaEsPt.length) ? local.filaEsPt : (remoto.filaEsPt || []),
       filaPtEs: (local.filaPtEs && local.filaPtEs.length) ? local.filaPtEs : (remoto.filaPtEs || []),
       dominados: (local.dominados && local.dominados.length) ? local.dominados : (remoto.dominados || []),
+      /* A série é histórico: fica a mais longa das duas. */
+      serie: ((local.serie || []).length >= (remoto.serie || []).length
+                ? local.serie : remoto.serie) || [],
       contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
       comentarios: juntarComentarios(local.comentarios, remoto.comentarios),
       cards: {},

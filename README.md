@@ -374,13 +374,15 @@ dura, porque a grafia é parte do que você está aprendendo: uma letra fora do
 lugar pode ser exatamente a lacuna. Em português, que você já domina, errar uma
 tecla não diz nada sobre saber a palavra, e a folga é maior.
 
-**O acento entra nessa conta, e o `ñ` também.** Em espanhol eles não são
-enfeite: `ñ` é outra letra, e `año` e `ano` são duas palavras cuja diferença é
-constrangedora. Então o português continua chegando sem acento nenhum à
-comparação, e o espanhol chega inteiro — responder `todavia` por `todavía` é
-erro, e erro **seco**, sem passar pelo «deu quase». Como o do gênero e o da
-conjugação, ele vem com nome: *faltou o acento — era «todavía»*. São 128 dos
-457 cards que têm acento ou `ñ` no espanhol.
+**O acento e o `ñ` não são a mesma coisa.** O acento espanhol muda a sílaba
+tônica, e errá-lo é deslize de escrita: **conta como acerto**, com uma linha
+chamando atenção — *contou como certo, mas o acento: era «todavía»*. Já o `ñ`
+é **outra letra**: `año` e `ano` são duas palavras, e confundi-las é
+constrangedor. Aí é erro **seco**, sem passar pelo «deu quase», e com nome,
+como o do gênero e o da conjugação: *o «ñ» é outra letra — era «la muñeca»*.
+
+Em português nada disso vale: a acentuação não é o que você está aprendendo, e
+o teclado do celular atrapalha mais do que ajuda.
 
 Nos cards de conjugação há um corte a mais: se o que você escreveu **é outra
 forma verbal registrada do card**, não foi a mão que escorregou — foi o tempo
@@ -475,19 +477,28 @@ O 📊 abre as estatísticas. A primeira tabela é **por nível** — é a que r
 nível. Depois vem **o caminho até aqui**: quantos cards em cada etapa a cada
 resposta que você já deu, em bandas empilhadas.
 
-Ninguém guardou essa série. O que existe é o histórico de cada card, com as
-últimas doze respostas dele — e isso basta, porque 99% dos cards têm doze
-respostas ou menos, então os históricos juntos reconstroem quase tudo (1485 de
-1490, hoje). A reconstrução ordena todas as respostas pela data e as replica
-pelo motor, uma a uma.
+Essa série não era anotada, e refazê-la pelo histórico dos cards dava só uma
+estimativa — o histórico guarda doze respostas por card, e as regras mudaram
+várias vezes no percurso. Mas o **repositório de dados guarda o
+`progresso.json` inteiro a cada sincronização**: são 442 fotografias do
+baralho, cada uma com a etapa de todos os cards. Dali sai a série **exata**, e
+é ela que o `data/historico.js` traz pronta, gerada por `fonte/historico.js`.
 
-O que sai é a curva **sob as regras de hoje**, não sob as que valiam na época.
-As regras mudaram várias vezes, e uma curva com régua única é a que dá para
-comparar consigo mesma — mas é por isso que o fim dela não bate com os números
-do topo da página, e a legenda diz isso.
+O app semeia com ela uma vez e daí em diante anota ponto a ponto, a cada
+resposta. A semente só entra se o progresso for mesmo a continuação daquele
+histórico — num navegador com dez respostas dadas, a curva de mil e quinhentas
+não é de quem está ali.
+
+O eixo horizontal anda em **respostas**, e não em índice de ponto: os pontos
+semeados são um por sincronização, as sincronizações não foram parelhas, e
+espaçar por índice esticaria os dias de muita sincronização.
 
 As outras tabelas dizem **onde os cards estão**: em que pé está cada nível, a
-escada dos dominados, escolher x escrever, e por tipo.
+escada dos dominados, escolher x escrever, e **por categoria** — cinco
+famílias que dizem o que o card ensina, e não a forma dele: falsos amigos (77),
+expressões e gírias (82), conjugação (50), frases do dia a dia (74) e
+vocabulário (174). Cada card cai na primeira que casa, da mais armadilha à
+mais geral.
 
 ## Vendo o baralho inteiro
 
@@ -604,8 +615,10 @@ js/revisao.js         o que as duas páginas de revisão têm em comum
 js/revisar-es-en.js   a tela do Yoisser
 js/revisar-en-pt.js   a tela do Gere
 fonte/build.js        valida e gera o baralho, nas duas línguas
+fonte/historico.js    tira do repositório de dados a série exata das etapas
 fonte/cards/*.json    os cards
 fonte/tags.json       os temas em pt/en/es
 data/cards.js         gerado — é o que as páginas carregam
 data/tags.js          gerado
+data/historico.js     gerado — a semente da curva do painel
 ```
