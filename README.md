@@ -15,9 +15,11 @@ conjugação verbal, quase todos irregulares.
    (para `exquisito`, uma das opções é "esquisito").
 3. Se você acertar, **da próxima vez terá que escrever** a resposta.
    Se errar escrevendo, o card volta para a múltipla escolha.
-   Depois de três acertos seguidos escrevendo, **o card se inverte**: passa a
+   Depois de **três acertos seguidos**, **o card se inverte**: passa a
    mostrar o português e a pedir o espanhol, de novo primeiro escolhendo e
-   depois escrevendo. Uma **🇪🇸** e uma **🇧🇷** marcam a direção — uma ao lado
+   depois escrevendo. O acerto na múltipla conta para os três, então na
+   prática são a escolha e mais duas escritas de cada lado — **seis respostas
+   certas do zero ao domínio**. Uma **🇪🇸** e uma **🇧🇷** marcam a direção — uma ao lado
    da pergunta, outra ao lado da resposta — para não haver dúvida de que lado
    traduzir. Vencer as duas direções não aposenta o card: ele passa a voltar
    cada vez mais espaçado, mas nunca sai do baralho.
@@ -173,6 +175,27 @@ O painel mostra os dois lados com o alvo ao lado («es → pt e pt → es (alvo
 100 · 100)») e a **chance de o próximo card ser inédito**, que é o que o
 sorteio de fato promete — não uma data.
 
+### O atalho de quem não erra
+
+Seis respostas é o caminho de quem tropeça pelo menos uma vez. Card que
+ninguém erra e que sai depressa não precisa das seis, e o desconto sai do que
+o próprio card já mostrou:
+
+| O que o card mostrou | Passos | Caminho |
+|---|---:|---|
+| erro, ou alguma resposta lenta | **6** | escolha + 2 escritas de cada lado |
+| erro nenhum, nunca lento | **5** | perde uma escrita na volta |
+| erro nenhum, sempre rápido | **4** | uma escolha e uma escrita de cada lado |
+
+O desconto é gasto **o mais tarde possível**: primeiro no portão da volta, e
+só com o desconto cheio também no da ida. Não é escrúpulo, é o que a evidência
+permite — no portão da ida o card tem três respostas e ainda pode tropeçar
+depois; no da volta, o histórico já está quase completo.
+
+Um erro depois disso **apaga o desconto**: o portão volta a pedir três, e o
+card que errou na primeira resposta e acertou tudo depois chega ao domínio em
+sete.
+
 ### O card dominado, e a única data do app
 
 As filas têm centenas de cards e todo card respondido volta para uma delas, então o intervalo
@@ -208,7 +231,7 @@ a escada tem, e é onde um card esquecido deve mesmo ficar.
 
 Isso mudou duas vezes. Na primeira versão um só deslize apagava meses de
 maturidade e devolvia o card ao começo da escada. Depois ele passou a cair para
-`inversa-escrita`, o que ainda o obrigava a reconquistar três acertos seguidos
+`inversa-escrita`, o que ainda o obrigava a reconquistar os acertos seguidos
 antes de voltar à escada. Agora não sai.
 
 O card nunca sai do baralho. Ele só espera mais.
@@ -238,6 +261,15 @@ onde são gravados três arquivos:
 - `sessoes/<data>.json` — registro de cada resposta da sessão
 - `resumo.md` — relatório legível, base para calibrar a próxima leva
 - `contestacoes.json` — respostas que você achou que deveriam ter sido aceitas
+- `comentarios.json` — o que você comentou num card, pelo botão do rodapé
+
+A cada atualização do baralho, os **três canais de retorno** são revistos
+juntos: os comentários, as contestações, e os **«deu quase» que você marcou
+como acerto**. Esse terceiro é o mais silencioso dos três — não pede nada, mas
+é onde a variante legítima aparece antes de virar contestação. Dos 24 que
+apareceram até agora, 13 eram tradução boa que a lista não previa; os outros
+10 eram erro de digitação, que é exatamente o que o balde do «quase» existe
+para pegar.
 
 Para ligar a sincronização, abra **⚙️** no app e informe um
 [fine-grained token](https://github.com/settings/personal-access-tokens/new)
@@ -300,7 +332,10 @@ A resposta escrita cai em um de três baldes.
 **Certo, direto.** Sai de graça o que é a mesma resposta escrita de outro jeito:
 acento, maiúscula, pontuação, plural (`sentir saudade` = `sentir saudades`),
 número por extenso (`3 anos` = `três anos`), contração (`pra`, `tô`), artigo e
-pronome-sujeito (`eu concordo` = `concordo`), o `já` aspectual, e a **posição do
+pronome-sujeito (`eu concordo` = `concordo`), o `já` aspectual, o apóstrofo
+(`um copo d'água` = `um copo de água`), o par `este`/`esse` (`este ano` =
+`esse ano`, e o mesmo com `isto`/`isso` — `aquele` fica de fora, que aí a
+distância importa), e a **posição do
 advérbio de tempo** — «hoje eu não vou ao escritório», «não vou hoje no
 escritório» e «não vou no escritório hoje» são a mesma frase, e o português
 deixa o advérbio andar sem mudar nada. São seis palavras só (`hoje`, `ontem`,

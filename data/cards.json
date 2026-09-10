@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "gerado_em": "2026-09-09",
+ "gerado_em": "2026-09-10",
  "total": 457,
  "cards": [
   {
@@ -1396,7 +1396,9 @@
    "en": "sensitive to cold",
    "aceitas": [
     "friorento",
-    "friolento"
+    "friolento",
+    "friorenta",
+    "friolenta"
    ],
    "aceitasEn": [
     "sensitive to cold",
@@ -1434,7 +1436,10 @@
     "enjoativo",
     "enjoado",
     "empalagoso",
-    "doce demais"
+    "doce demais",
+    "enjoativa",
+    "enjoada",
+    "empalagosa"
    ],
    "aceitasEn": [
     "sickly sweet",
@@ -1473,7 +1478,9 @@
     "sem graca",
     "insosso",
     "sem tempero",
-    "insipido"
+    "insipido",
+    "insossa",
+    "insipida"
    ],
    "aceitasEn": [
     "bland",
@@ -1601,7 +1608,8 @@
     "bacana",
     "agradavel",
     "gente boa mesmo",
-    "boa gente"
+    "boa gente",
+    "simpatica"
    ],
    "aceitasEn": [
     "nice",
@@ -1626,7 +1634,8 @@
    "nivel": "B2",
    "tags": [
     "gíria",
-    "Espanha"
+    "Espanha",
+    "adjetivo"
    ],
    "nota": "'Es muy maja' = ela é muito gente boa.",
    "notaEn": "'Es muy maja' = she's really nice. Heard all over Spain for someone pleasant and easy to be around; it can also mean good-looking."
@@ -1642,7 +1651,10 @@
     "caro",
     "comovente",
     "afetuoso",
-    "adoravel"
+    "adoravel",
+    "querida",
+    "cara",
+    "afetuosa"
    ],
    "aceitasEn": [
     "dearly loved",
@@ -1726,7 +1738,12 @@
     "conversa depois da refeicao",
     "sobremesa (conversa)",
     "conversa a mesa",
-    "papo pos-almoco"
+    "papo pos-almoco",
+    "a conversa apos a refeicao",
+    "conversa apos a refeicao",
+    "papo depois da refeicao",
+    "conversa depois do almoco",
+    "prosa depois da refeicao"
    ],
    "aceitasEn": [
     "the talk after a meal",
@@ -1896,7 +1913,9 @@
     "melindroso",
     "chato",
     "suscetivel",
-    "exigente demais"
+    "exigente demais",
+    "melindrosa",
+    "chata"
    ],
    "aceitasEn": [
     "touchy",
@@ -1936,7 +1955,10 @@
     "teimoso",
     "cabeca-dura",
     "obstinado",
-    "cabecudo"
+    "cabecudo",
+    "teimosa",
+    "obstinada",
+    "cabecuda"
    ],
    "aceitasEn": [
     "stubborn",
@@ -2182,7 +2204,9 @@
     "comprovado",
     "irrefutavel",
     "cabal",
-    "que faz fe"
+    "que faz fe",
+    "fidedigna",
+    "comprovada"
    ],
    "aceitasEn": [
     "conclusive",
@@ -2223,7 +2247,8 @@
     "peremptorio",
     "urgente",
     "improrrogavel",
-    "impreterivel"
+    "impreterivel",
+    "peremptoria"
    ],
    "aceitasEn": [
     "urgent and final",
@@ -2725,7 +2750,11 @@
     "orgulhoso",
     "ufano",
     "envaidecido",
-    "satisfeito"
+    "satisfeito",
+    "orgulhosa",
+    "ufana",
+    "envaidecida",
+    "satisfeita"
    ],
    "aceitasEn": [
     "proud",
@@ -3353,7 +3382,12 @@
     "ficar no fim do mundo",
     "ser muito longe",
     "la longe",
-    "no fim da picada"
+    "no fim da picada",
+    "estar muito longe",
+    "estar no fim do mundo",
+    "e muito longe",
+    "fica muito longe",
+    "fica longe pra caramba"
    ],
    "aceitasEn": [
     "to be in the middle of nowhere",
@@ -4560,7 +4594,11 @@
     "ta pra chegar",
     "deve chegar a qualquer momento",
     "esta prestes a chegar",
-    "chega ja ja"
+    "chega ja ja",
+    "vai chegar a qualquer momento",
+    "vai chegar ja ja",
+    "esta para chegar a qualquer momento",
+    "deve estar chegando"
    ],
    "aceitasEn": [
     "its about to happen",
@@ -5075,7 +5113,10 @@
     "provérbio"
    ],
    "nota": "Sobre querer fazer coisas demais ao mesmo tempo.",
-   "notaEn": "'Abarcar' is to take in or encompass; 'apretar' is to grip tight. Reach for too much and you hold none of it firmly."
+   "notaEn": "'Abarcar' is to take in or encompass; 'apretar' is to grip tight. Reach for too much and you hold none of it firmly.",
+   "aceitasEs": [
+    "quien mucho abarca poco aprieta"
+   ]
   },
   {
    "id": "f057",
@@ -6563,7 +6604,11 @@
     "despropositado",
     "disparatado",
     "sem cabimento",
-    "maluco"
+    "maluco",
+    "absurda",
+    "despropositada",
+    "disparatada",
+    "maluca"
    ],
    "aceitasEn": [
     "preposterous",
@@ -6684,7 +6729,12 @@
     "astuto",
     "manhoso",
     "dissimulado",
-    "velhaco"
+    "velhaco",
+    "matreira",
+    "astuta",
+    "manhosa",
+    "dissimulada",
+    "velhaca"
    ],
    "aceitasEn": [
     "sly",
@@ -6723,7 +6773,10 @@
     "prolixo",
     "detalhado demais",
     "minucioso",
-    "cansativo"
+    "cansativo",
+    "prolixa",
+    "minuciosa",
+    "cansativa"
    ],
    "aceitasEn": [
     "long-winded",
@@ -6764,7 +6817,12 @@
     "severo",
     "seco",
     "rispido",
-    "carrancudo"
+    "carrancudo",
+    "austera",
+    "severa",
+    "seca",
+    "rispida",
+    "carrancuda"
    ],
    "aceitasEn": [
     "stern",
@@ -7284,7 +7342,12 @@
     "costumo acordar cedo",
     "costumo levantar cedo",
     "geralmente acordo cedo",
-    "tenho o costume de acordar cedo"
+    "tenho o costume de acordar cedo",
+    "costumo me levantar cedo",
+    "eu costumo me levantar cedo",
+    "costumo levantar-me cedo",
+    "costumo me acordar cedo",
+    "geralmente me levanto cedo"
    ],
    "aceitasEn": [
     "i usually get up early",
@@ -7413,7 +7476,12 @@
     "sou bom cozinhando",
     "cozinho bem",
     "me viro bem na cozinha",
-    "tenho talento para cozinhar"
+    "tenho talento para cozinhar",
+    "eu sou bom em cozinhar",
+    "sou bom em cozinhar",
+    "sou boa em cozinhar",
+    "sou boa de cozinha",
+    "sou boa cozinhando"
    ],
    "aceitasEn": [
     "im good at cooking",
@@ -7454,7 +7522,11 @@
     "no final das contas da na mesma",
     "no final das contas tanto faz",
     "afinal de contas tanto faz",
-    "no fim tanto faz"
+    "no fim tanto faz",
+    "no fim das contas da na mesma",
+    "afinal da na mesma",
+    "no fim das contas e a mesma coisa",
+    "no final das contas e a mesma coisa"
    ],
    "aceitasEn": [
     "at the end of the day it doesnt matter",
@@ -13911,7 +13983,10 @@
     "melindroso",
     "fresco",
     "cheio de dedos",
-    "afetado"
+    "afetado",
+    "melindrosa",
+    "fresca",
+    "afetada"
    ],
    "aceitasEn": [
     "prissy",
@@ -13951,7 +14026,10 @@
     "sucinto",
     "conciso",
     "enxuto",
-    "breve"
+    "breve",
+    "sucinta",
+    "concisa",
+    "enxuta"
    ],
    "aceitasEn": [
     "concise",
@@ -13991,7 +14069,9 @@
     "aziago",
     "funesto",
     "infeliz",
-    "de mau agouro"
+    "de mau agouro",
+    "aziaga",
+    "funesta"
    ],
    "aceitasEn": [
     "ill-fated",
@@ -14032,7 +14112,10 @@
     "arredio",
     "esquivo",
     "insociavel",
-    "fechado"
+    "fechado",
+    "arredia",
+    "esquiva",
+    "fechada"
    ],
    "aceitasEn": [
     "unsociable",
@@ -16598,7 +16681,11 @@
     "nao tem graca",
     "nao acho graca nenhuma",
     "nao me faz rir",
-    "nao estou achando graca"
+    "nao estou achando graca",
+    "nao vejo graca nenhuma",
+    "nao vejo graca",
+    "nao vejo a menor graca",
+    "nao acho a menor graca"
    ],
    "aceitasEn": [
     "i dont find it funny",
@@ -17126,7 +17213,12 @@
     "sinto saudades da minha cidade",
     "sinto falta da minha cidade",
     "tenho saudade da minha cidade",
-    "sinto saudade da minha terra"
+    "sinto saudade da minha terra",
+    "tenho saudade de minha cidade",
+    "sinto saudade de minha cidade",
+    "sinto saudades de minha cidade",
+    "estou com saudade da minha cidade",
+    "tenho saudades da minha cidade"
    ],
    "aceitasEn": [
     "i miss my hometown",
@@ -17365,7 +17457,12 @@
     "me traz um copo de agua",
     "pode me trazer um copo de agua",
     "me da um copo de agua",
-    "voce me da um copo de agua"
+    "voce me da um copo de agua",
+    "pega um copo de agua para mim",
+    "me pega um copo de agua",
+    "voce pega um copo de agua para mim",
+    "pode pegar um copo de agua para mim",
+    "traz um copo de agua para mim"
    ],
    "aceitasEn": [
     "could you get me a glass of water",

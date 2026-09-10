@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-09-09",
+ "gerado_em": "2026-09-10",
  "total": 457,
  "cards": [
   {
@@ -1397,7 +1397,9 @@ window.CARDS_RAW = {
    "en": "sensitive to cold",
    "aceitas": [
     "friorento",
-    "friolento"
+    "friolento",
+    "friorenta",
+    "friolenta"
    ],
    "aceitasEn": [
     "sensitive to cold",
@@ -1435,7 +1437,10 @@ window.CARDS_RAW = {
     "enjoativo",
     "enjoado",
     "empalagoso",
-    "doce demais"
+    "doce demais",
+    "enjoativa",
+    "enjoada",
+    "empalagosa"
    ],
    "aceitasEn": [
     "sickly sweet",
@@ -1474,7 +1479,9 @@ window.CARDS_RAW = {
     "sem graca",
     "insosso",
     "sem tempero",
-    "insipido"
+    "insipido",
+    "insossa",
+    "insipida"
    ],
    "aceitasEn": [
     "bland",
@@ -1602,7 +1609,8 @@ window.CARDS_RAW = {
     "bacana",
     "agradavel",
     "gente boa mesmo",
-    "boa gente"
+    "boa gente",
+    "simpatica"
    ],
    "aceitasEn": [
     "nice",
@@ -1627,7 +1635,8 @@ window.CARDS_RAW = {
    "nivel": "B2",
    "tags": [
     "gíria",
-    "Espanha"
+    "Espanha",
+    "adjetivo"
    ],
    "nota": "'Es muy maja' = ela é muito gente boa.",
    "notaEn": "'Es muy maja' = she's really nice. Heard all over Spain for someone pleasant and easy to be around; it can also mean good-looking."
@@ -1643,7 +1652,10 @@ window.CARDS_RAW = {
     "caro",
     "comovente",
     "afetuoso",
-    "adoravel"
+    "adoravel",
+    "querida",
+    "cara",
+    "afetuosa"
    ],
    "aceitasEn": [
     "dearly loved",
@@ -1727,7 +1739,12 @@ window.CARDS_RAW = {
     "conversa depois da refeicao",
     "sobremesa (conversa)",
     "conversa a mesa",
-    "papo pos-almoco"
+    "papo pos-almoco",
+    "a conversa apos a refeicao",
+    "conversa apos a refeicao",
+    "papo depois da refeicao",
+    "conversa depois do almoco",
+    "prosa depois da refeicao"
    ],
    "aceitasEn": [
     "the talk after a meal",
@@ -1897,7 +1914,9 @@ window.CARDS_RAW = {
     "melindroso",
     "chato",
     "suscetivel",
-    "exigente demais"
+    "exigente demais",
+    "melindrosa",
+    "chata"
    ],
    "aceitasEn": [
     "touchy",
@@ -1937,7 +1956,10 @@ window.CARDS_RAW = {
     "teimoso",
     "cabeca-dura",
     "obstinado",
-    "cabecudo"
+    "cabecudo",
+    "teimosa",
+    "obstinada",
+    "cabecuda"
    ],
    "aceitasEn": [
     "stubborn",
@@ -2183,7 +2205,9 @@ window.CARDS_RAW = {
     "comprovado",
     "irrefutavel",
     "cabal",
-    "que faz fe"
+    "que faz fe",
+    "fidedigna",
+    "comprovada"
    ],
    "aceitasEn": [
     "conclusive",
@@ -2224,7 +2248,8 @@ window.CARDS_RAW = {
     "peremptorio",
     "urgente",
     "improrrogavel",
-    "impreterivel"
+    "impreterivel",
+    "peremptoria"
    ],
    "aceitasEn": [
     "urgent and final",
@@ -2726,7 +2751,11 @@ window.CARDS_RAW = {
     "orgulhoso",
     "ufano",
     "envaidecido",
-    "satisfeito"
+    "satisfeito",
+    "orgulhosa",
+    "ufana",
+    "envaidecida",
+    "satisfeita"
    ],
    "aceitasEn": [
     "proud",
@@ -3354,7 +3383,12 @@ window.CARDS_RAW = {
     "ficar no fim do mundo",
     "ser muito longe",
     "la longe",
-    "no fim da picada"
+    "no fim da picada",
+    "estar muito longe",
+    "estar no fim do mundo",
+    "e muito longe",
+    "fica muito longe",
+    "fica longe pra caramba"
    ],
    "aceitasEn": [
     "to be in the middle of nowhere",
@@ -4561,7 +4595,11 @@ window.CARDS_RAW = {
     "ta pra chegar",
     "deve chegar a qualquer momento",
     "esta prestes a chegar",
-    "chega ja ja"
+    "chega ja ja",
+    "vai chegar a qualquer momento",
+    "vai chegar ja ja",
+    "esta para chegar a qualquer momento",
+    "deve estar chegando"
    ],
    "aceitasEn": [
     "its about to happen",
@@ -5076,7 +5114,10 @@ window.CARDS_RAW = {
     "provérbio"
    ],
    "nota": "Sobre querer fazer coisas demais ao mesmo tempo.",
-   "notaEn": "'Abarcar' is to take in or encompass; 'apretar' is to grip tight. Reach for too much and you hold none of it firmly."
+   "notaEn": "'Abarcar' is to take in or encompass; 'apretar' is to grip tight. Reach for too much and you hold none of it firmly.",
+   "aceitasEs": [
+    "quien mucho abarca poco aprieta"
+   ]
   },
   {
    "id": "f057",
@@ -6564,7 +6605,11 @@ window.CARDS_RAW = {
     "despropositado",
     "disparatado",
     "sem cabimento",
-    "maluco"
+    "maluco",
+    "absurda",
+    "despropositada",
+    "disparatada",
+    "maluca"
    ],
    "aceitasEn": [
     "preposterous",
@@ -6685,7 +6730,12 @@ window.CARDS_RAW = {
     "astuto",
     "manhoso",
     "dissimulado",
-    "velhaco"
+    "velhaco",
+    "matreira",
+    "astuta",
+    "manhosa",
+    "dissimulada",
+    "velhaca"
    ],
    "aceitasEn": [
     "sly",
@@ -6724,7 +6774,10 @@ window.CARDS_RAW = {
     "prolixo",
     "detalhado demais",
     "minucioso",
-    "cansativo"
+    "cansativo",
+    "prolixa",
+    "minuciosa",
+    "cansativa"
    ],
    "aceitasEn": [
     "long-winded",
@@ -6765,7 +6818,12 @@ window.CARDS_RAW = {
     "severo",
     "seco",
     "rispido",
-    "carrancudo"
+    "carrancudo",
+    "austera",
+    "severa",
+    "seca",
+    "rispida",
+    "carrancuda"
    ],
    "aceitasEn": [
     "stern",
@@ -7285,7 +7343,12 @@ window.CARDS_RAW = {
     "costumo acordar cedo",
     "costumo levantar cedo",
     "geralmente acordo cedo",
-    "tenho o costume de acordar cedo"
+    "tenho o costume de acordar cedo",
+    "costumo me levantar cedo",
+    "eu costumo me levantar cedo",
+    "costumo levantar-me cedo",
+    "costumo me acordar cedo",
+    "geralmente me levanto cedo"
    ],
    "aceitasEn": [
     "i usually get up early",
@@ -7414,7 +7477,12 @@ window.CARDS_RAW = {
     "sou bom cozinhando",
     "cozinho bem",
     "me viro bem na cozinha",
-    "tenho talento para cozinhar"
+    "tenho talento para cozinhar",
+    "eu sou bom em cozinhar",
+    "sou bom em cozinhar",
+    "sou boa em cozinhar",
+    "sou boa de cozinha",
+    "sou boa cozinhando"
    ],
    "aceitasEn": [
     "im good at cooking",
@@ -7455,7 +7523,11 @@ window.CARDS_RAW = {
     "no final das contas da na mesma",
     "no final das contas tanto faz",
     "afinal de contas tanto faz",
-    "no fim tanto faz"
+    "no fim tanto faz",
+    "no fim das contas da na mesma",
+    "afinal da na mesma",
+    "no fim das contas e a mesma coisa",
+    "no final das contas e a mesma coisa"
    ],
    "aceitasEn": [
     "at the end of the day it doesnt matter",
@@ -13912,7 +13984,10 @@ window.CARDS_RAW = {
     "melindroso",
     "fresco",
     "cheio de dedos",
-    "afetado"
+    "afetado",
+    "melindrosa",
+    "fresca",
+    "afetada"
    ],
    "aceitasEn": [
     "prissy",
@@ -13952,7 +14027,10 @@ window.CARDS_RAW = {
     "sucinto",
     "conciso",
     "enxuto",
-    "breve"
+    "breve",
+    "sucinta",
+    "concisa",
+    "enxuta"
    ],
    "aceitasEn": [
     "concise",
@@ -13992,7 +14070,9 @@ window.CARDS_RAW = {
     "aziago",
     "funesto",
     "infeliz",
-    "de mau agouro"
+    "de mau agouro",
+    "aziaga",
+    "funesta"
    ],
    "aceitasEn": [
     "ill-fated",
@@ -14033,7 +14113,10 @@ window.CARDS_RAW = {
     "arredio",
     "esquivo",
     "insociavel",
-    "fechado"
+    "fechado",
+    "arredia",
+    "esquiva",
+    "fechada"
    ],
    "aceitasEn": [
     "unsociable",
@@ -16599,7 +16682,11 @@ window.CARDS_RAW = {
     "nao tem graca",
     "nao acho graca nenhuma",
     "nao me faz rir",
-    "nao estou achando graca"
+    "nao estou achando graca",
+    "nao vejo graca nenhuma",
+    "nao vejo graca",
+    "nao vejo a menor graca",
+    "nao acho a menor graca"
    ],
    "aceitasEn": [
     "i dont find it funny",
@@ -17127,7 +17214,12 @@ window.CARDS_RAW = {
     "sinto saudades da minha cidade",
     "sinto falta da minha cidade",
     "tenho saudade da minha cidade",
-    "sinto saudade da minha terra"
+    "sinto saudade da minha terra",
+    "tenho saudade de minha cidade",
+    "sinto saudade de minha cidade",
+    "sinto saudades de minha cidade",
+    "estou com saudade da minha cidade",
+    "tenho saudades da minha cidade"
    ],
    "aceitasEn": [
     "i miss my hometown",
@@ -17366,7 +17458,12 @@ window.CARDS_RAW = {
     "me traz um copo de agua",
     "pode me trazer um copo de agua",
     "me da um copo de agua",
-    "voce me da um copo de agua"
+    "voce me da um copo de agua",
+    "pega um copo de agua para mim",
+    "me pega um copo de agua",
+    "voce pega um copo de agua para mim",
+    "pode pegar um copo de agua para mim",
+    "traz um copo de agua para mim"
    ],
    "aceitasEn": [
     "could you get me a glass of water",

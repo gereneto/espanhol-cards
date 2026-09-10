@@ -59,8 +59,14 @@ window.Motor = (function () {
      então "im" vira "i am" e o "i" ainda cai como pronome-sujeito. */
   const GRAFIAS_PT = {
     pra: 'para', pro: 'para', to: 'estou', ta: 'esta', tao: 'estao',
-    duas: 'dois', vc: 'voce', catorze: 'quatorze'
+    duas: 'dois', vc: 'voce', catorze: 'quatorze',
+    /* «este ano» e «esse ano» são a mesma coisa no português do Brasil, e
+       nenhum card do baralho ensina a diferença entre os dois. «Aquele» fica
+       de fora: esse é o demonstrativo de longe, e aí a distância importa. */
+    esse: 'este', essa: 'esta', esses: 'estes', essas: 'estas', isso: 'isto'
   };
+
+  const GRAFIAS_ES = {};
 
   /* Em inglês a contração não é desleixo, é a forma corrente: "I don't mind"
      e "I do not mind" são a mesma frase. O apóstrofo já caiu antes (ver o
@@ -141,6 +147,13 @@ window.Motor = (function () {
      responde "oficina" acertou tanto quanto quem responde "la oficina". */
   const ARTIGOS_ES = /^(el|la|los|las|un|una|unos|unas)\s+/;
 
+  /* No português o apóstrofo é sempre a mesma coisa: um «de» que perdeu a
+     vogal antes de outra. «Um copo d'água» é «um copo de água», e a
+     pontuação viraria espaço logo adiante, deixando um «d» solto. */
+  function prePt(s) {
+    return s.replace(/\bd['’´`]\s*/g, 'de ');
+  }
+
   /* Ajustes que precisam do texto ainda inteiro, antes de a pontuação virar
      espaço. É onde o inglês desfaz o apóstrofo: se ele virasse espaço,
      "I don't mind" seria "i don t mind" e nunca casaria com "i dont mind". */
@@ -154,11 +167,15 @@ window.Motor = (function () {
   const LINGUAS = {
     pt: {
       omissiveis: OMISSIVEIS_PT, numeros: NUMEROS_PT,
-      grafias: GRAFIAS_PT, plural: pluralPt
+      grafias: GRAFIAS_PT, plural: pluralPt, pre: prePt
     },
+    /* O espanhol não herda as grafias do português: «pra», «vc» e «isso» não
+       são palavras dele, e desfazê-las aqui só abriria porta para casar coisa
+       que não casa. A tabela própria está vazia porque, até agora, o espanhol
+       do baralho não precisou de nenhuma. */
     es: {
       omissiveis: OMISSIVEIS_ES, numeros: NUMEROS_PT,
-      grafias: GRAFIAS_PT, plural: pluralPt,
+      grafias: GRAFIAS_ES, plural: pluralPt,
       pre: s => s.trim().replace(ARTIGOS_ES, '')
     },
     en: {
@@ -489,6 +506,7 @@ window.Motor = (function () {
       revisoes: 0,         // revisões certas já feitas depois de dominado
       voltaEm: null,       // ISO: só o card dominado espera uma data
       porModo: contadoresPorModo(),
+      velocidades: { rapido: 0, medio: 0, lento: 0 },
       historico: []        // últimas 12 respostas
     };
   }
@@ -694,6 +712,44 @@ window.Motor = (function () {
     return Math.max(3, Math.round(base * ruido));
   }
 
+  /* ── quantos passos até o domínio ──
+     Do zero ao dominado são SEIS respostas certas: escolher entre cinco e
+     escrever duas vezes de cada lado. O contador «seguidas» não separa
+     escolher de escrever, então o acerto na múltipla já conta para o portão
+     — o caminho é multipla, escrita, escrita | multipla, escrita, escrita.
+
+     Card que ninguém erra e que sai depressa não precisa das seis. O
+     desconto sai do que o próprio card já mostrou:
+
+       erro nenhum, nunca lento    →  1 passo a menos  (5 respostas)
+       erro nenhum, sempre rápido  →  2 passos a menos (4 respostas)
+
+     Ele é gasto o mais tarde possível: primeiro no portão da volta, e só
+     com o desconto cheio também no da ida. Não é escrúpulo, é o que a
+     evidência permite — no portão da ida o card tem três respostas e ainda
+     pode tropeçar depois; no da volta o histórico está quase completo.
+
+     Um erro depois disso apaga o desconto: «erros» deixa de ser zero e o
+     portão volta a pedir três. Quem já é dominado não passa por aqui. */
+  const ACERTOS_PARA_VIRAR = 3;
+
+  function descontoDePassos(est) {
+    const v = est && est.velocidades;
+    /* Sem a conta não há atalho. Progresso gravado antes deste contador
+       existir passa a tê-lo na primeira resposta nova, e só a partir daí o
+       card pode encurtar o caminho — o desconto se ganha com evidência. */
+    if (!v) return 0;
+    if (est.erros || v.lento) return 0;
+    return v.medio ? 1 : 2;
+  }
+
+  function acertosParaVirar(est, inversa) {
+    const desconto = descontoDePassos(est);
+    if (desconto >= 2) return ACERTOS_PARA_VIRAR - 1;            // os dois portões cedem
+    if (desconto === 1 && inversa) return ACERTOS_PARA_VIRAR - 1;  // só o da volta
+    return ACERTOS_PARA_VIRAR;
+  }
+
   /* Acertar devagar, na múltipla escolha, algo que a pessoa diz não conhecer
      é mais provável ter sido chute do que conhecimento. */
   function pareceChute(r) {
@@ -718,6 +774,24 @@ window.Motor = (function () {
     }
     const noModo = est.porModo[r.modo];
     if (noModo) { noModo.n++; if (r.acertou) noModo.certas++; }
+
+    /* Mesma história para as velocidades, que o atalho do domínio consulta —
+       com um cuidado a mais. O histórico guarda 12 respostas, e um card com
+       mais do que isso tem um pedaço do passado que ninguém sabe. Essas
+       respostas perdidas entram como «médio»: não barram o atalho, mas tiram
+       o desconto cheio, que é a posição honesta para quem não sabe. */
+    if (!est.velocidades) {
+      est.velocidades = { rapido: 0, medio: 0, lento: 0 };
+      const guardadas = est.historico || [];
+      guardadas.forEach(h => {
+        if (est.velocidades[h.velocidade] !== undefined) est.velocidades[h.velocidade]++;
+      });
+      /* «vistas» já contou a resposta de agora, e o histórico dela só entra no
+         fim desta função — daí o menos um. */
+      const perdidas = Math.max(0, (est.vistas || 1) - 1 - guardadas.length);
+      est.velocidades.medio += perdidas;
+    }
+    if (est.velocidades[r.velocidade] !== undefined) est.velocidades[r.velocidade]++;
 
     if (r.acertou) {
       est.acertos++;
@@ -745,7 +819,7 @@ window.Motor = (function () {
       } else if (r.modo === 'multipla') {
         if (inversa) est.etapa = 'inversa-escrita';
         else est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
-      } else if (est.seguidas >= 3) {
+      } else if (est.seguidas >= acertosParaVirar(est, inversa)) {
         est.etapa = inversa ? 'dominado' : 'inversa-multipla';
         est.seguidas = 0;   // a direção nova começa do zero
         /* «revisoes» não zera aqui. Quem chega pela primeira vez já vem com
@@ -987,6 +1061,7 @@ window.Motor = (function () {
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
     linguaTrocada, espanhoisDoCard,
+    descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
