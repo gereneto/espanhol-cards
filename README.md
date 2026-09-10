@@ -320,6 +320,30 @@ enquanto serve à revisão (adiante). Três regras, que o `build.js` cobra:
   referência: onde a nota portuguesa aponta um vizinho luso, a inglesa aponta os
   vizinhos dentro do próprio espanhol (`polvo`/`pulpo`, `cena`/`escena`).
 
+### Os arquivos são levas, não categorias
+
+Os nove arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
+cima da outra. Os quatro primeiros nasceram juntos, no commit que criou o app,
+e os nomes deles descrevem os temas daquele baralho de 140 cards. Do quinto em
+diante é **uma leva por commit** — «Leva de 112 cards, quase toda de
+palavras», «Leva de 60 cards nos campos que faltavam» —, e o nome do arquivo
+passou a registrar quando, não o quê.
+
+Por isso `01-falsos-amigos.json` tem 32 dos 76 falsos amigos do baralho, e os
+outros 44 estão espalhados por cinco arquivos. **Isso é assim de propósito, e
+não vale a pena arrumar:**
+
+- juntar tudo desfaria o registro das levas, que é o que a calibragem lê para
+  saber o que entrou quando;
+- resolveria uma etiqueta só. `expressão` são 63 cards em vários arquivos,
+  `adjetivo` são 24 — e nenhuma partição por arquivo daria conta, porque um
+  card é `falso-amigo` **e** `comida` ao mesmo tempo;
+- nada lê os arquivos. O `build.js` ordena os nomes e concatena; quem indexa é
+  a etiqueta, e é ela que o 🗂️ filtra.
+
+**A etiqueta é o índice; o arquivo é a data.** Card novo vai para a leva
+corrente, seja ele do tema que for.
+
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
 

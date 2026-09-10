@@ -1185,7 +1185,8 @@ window.CARDS_RAW = {
    ],
    "nivel": "A2",
    "tags": [
-    "tecnologia"
+    "tecnologia",
+    "falso-amigo"
    ],
    "nota": "🇪🇸 la pantalla → 🇧🇷 a tela\n🇪🇸 el lienzo → 🇧🇷 a tela de pintura\n🇪🇸 el pantalón → 🇧🇷 a calça",
    "notaEn": "'La pantalla' is the screen — of a phone, a television, or a cinema. Keep it apart from 'el pantalón', trousers, which it echoes. A painter's canvas is 'un lienzo'."
