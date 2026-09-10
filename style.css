@@ -349,6 +349,30 @@ table.etapas td{text-align:center;font-variant-numeric:tabular-nums}
 .barra{height:6px;background:var(--fundo-3);border-radius:99px;overflow:hidden;min-width:60px}
 .barra i{display:block;height:100%;background:var(--ok)}
 
+/* ── o caminho até aqui ──
+   Três cores para três etapas, escolhidas para se separarem também em visão
+   com deficiência de cor, e conferidas contra o fundo escuro da ficha. */
+:root{
+  --serie-espt:#3987e5;
+  --serie-ptes:#d95926;
+  --serie-dom:#199e70;
+}
+svg.grafico-etapas{display:block;width:100%;height:auto;margin:4px 0 14px}
+svg.grafico-etapas .malha{stroke:var(--borda);stroke-width:1}
+svg.grafico-etapas .eixo{fill:var(--texto-2);font-size:10px}
+/* a fresta é o fundo da ficha passando entre duas bandas */
+svg.grafico-etapas .fresta{stroke:var(--fundo-2);stroke-width:2;stroke-linejoin:round}
+svg.grafico-etapas .cursor{stroke:var(--texto-2);stroke-width:1}
+.chaves{display:flex;flex-wrap:wrap;gap:6px 18px;margin:2px 0 4px}
+.chaves .chave{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--texto-2)}
+.chaves .chave i{width:11px;height:11px;border-radius:3px;flex:none}
+.chaves .chave b{color:var(--texto);font-variant-numeric:tabular-nums}
+
+/* a coluna «geral» da tabela por nível: o número e a barra na mesma célula */
+td.geral{white-space:nowrap}
+td.geral span{display:inline-block;min-width:34px}
+td.geral .barra{display:inline-block;width:52px;vertical-align:middle;margin-left:6px;min-width:0}
+
 /* ── configurações ── */
 .grupo{
   background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;

@@ -164,10 +164,32 @@ window.Motor = (function () {
       .replace(/\bone (hundred|thousand|million)\b/g, '$1');  // 100 = a hundred
   }
 
+  /* ── acento: quem perdoa e quem cobra ──
+     Em português a acentuação não é o que se está aprendendo: errar o til de
+     «saudade» não diz nada sobre saber a palavra, e o teclado do celular
+     atrapalha mais do que ajuda. Em espanhol é o contrário — o acento é parte
+     da grafia que o card ensina, e «ñ» é OUTRA LETRA, não um «n» enfeitado:
+     «año» e «ano» são duas palavras, e a diferença entre elas é constrangedora.
+
+     Então o português continua chegando sem acento nenhum ao funil, e o
+     espanhol chega inteiro. A consequência é que responder em espanhol passa
+     a exigir a acentuação certa. Foi pedido, e é coerente com a régua que já
+     era mais dura desse lado. */
+  const PONTUACAO_PT = /[^a-z0-9\s]/g;
+  const PONTUACAO_ES = /[^a-z0-9áéíóúüñ\s]/g;
+
+  /* O plural continua caindo dos dois lados: ele é a mesma palavra escrita de
+     outro jeito, e não tem nada a ver com acento. A classe precisa das letras
+     espanholas para «años» chegar a «año». */
+  function pluralEs(p) {
+    return p.replace(/^([a-záéíóúüñ]{3,})s$/, '$1');
+  }
+
   const LINGUAS = {
     pt: {
       omissiveis: OMISSIVEIS_PT, numeros: NUMEROS_PT,
-      grafias: GRAFIAS_PT, plural: pluralPt, pre: prePt
+      grafias: GRAFIAS_PT, plural: pluralPt, pre: prePt,
+      pontuacao: PONTUACAO_PT
     },
     /* O espanhol não herda as grafias do português: «pra», «vc» e «isso» não
        são palavras dele, e desfazê-las aqui só abriria porta para casar coisa
@@ -175,12 +197,14 @@ window.Motor = (function () {
        do baralho não precisou de nenhuma. */
     es: {
       omissiveis: OMISSIVEIS_ES, numeros: NUMEROS_PT,
-      grafias: GRAFIAS_ES, plural: pluralPt,
-      pre: s => s.trim().replace(ARTIGOS_ES, '')
+      grafias: GRAFIAS_ES, plural: pluralEs,
+      pre: s => s.trim().replace(ARTIGOS_ES, ''),
+      pontuacao: PONTUACAO_ES, guardaAcento: true
     },
     en: {
       omissiveis: OMISSIVEIS_EN, numeros: NUMEROS_EN,
-      grafias: GRAFIAS_EN, plural: pluralEn, pre: preEn
+      grafias: GRAFIAS_EN, plural: pluralEn, pre: preEn,
+      pontuacao: PONTUACAO_PT
     }
   };
 
@@ -218,11 +242,16 @@ window.Motor = (function () {
   function normalizar(txt, lingua) {
     const L = LINGUAS[lingua] || LINGUAS.pt;
 
-    let texto = (txt || '')
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // tira acentos
-      .toLowerCase();
+    let texto = String(txt || '').toLowerCase();
+    if (L.guardaAcento) {
+      /* NFC junta o «n» e o til numa letra só, para o ñ digitado dos dois
+         jeitos chegar ao mesmo lugar. */
+      texto = texto.normalize('NFC');
+    } else {
+      texto = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');  // tira acentos
+    }
     if (L.pre) texto = L.pre(texto);                      // contração, artigo da frente
-    const bruto = texto.replace(/[^a-z0-9\s]/g, ' ');     // tira pontuação
+    const bruto = texto.replace(L.pontuacao, ' ');        // tira pontuação
 
     const saida = [];
     for (const bruta of bruto.split(/\s+/)) {
@@ -369,13 +398,45 @@ window.Motor = (function () {
     return saida.filter(Boolean);
   }
 
+  /* Aqui a régua é a frouxa, de propósito. Reconhecer que a resposta saiu em
+     espanhol é outra pergunta que corrigir espanhol: quem escreve «el raton»
+     sem o acento em es→pt não está errando o espanhol — está respondendo na
+     língua errada, e é disso que ele precisa ser avisado. */
+  function semAcento(t) {
+    return String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  /* ── acertou a palavra, errou o acento ──
+     Em espanhol o acento e o «ñ» são parte da grafia que o card ensina, então
+     escrever «todavia» por «todavía» não é a mão escorregando: é a mesma
+     lacuna que o card existe para fechar. Erro seco, como o do gênero e o da
+     conjugação — e, como eles, com nome: o feedback diz qual era a forma.
+
+     Devolve a resposta certa quando o que ele escreveu bate letra por letra
+     tirando os acentos, e só erra neles. Fora disso devolve null, e o texto
+     segue o caminho normal (pode virar «deu quase» por outro motivo). */
+  function erroDeAcento(card, texto, direcao) {
+    if (linguaDaResposta(direcao) !== 'es') return null;
+    const dado = normalizarEs(texto);
+    if (!dado) return null;
+    if (respostasAceitas(card, direcao).includes(dado)) return null;  // acertou, acento e tudo
+    /* Percorre as formas ORIGINAIS, e não as normalizadas: quem vai aparecer
+       na tela é o texto do card, com artigo e plural no lugar — «apañárselas»
+       e não «apañársela», que é o que sobra depois do funil. */
+    const frouxo = semAcento(dado);
+    for (const alvo of formasAceitas(card, direcao)) {
+      if (semAcento(normalizar(alvo, 'es')) === frouxo) return String(alvo).trim();
+    }
+    return null;
+  }
+
   function linguaTrocada(card, texto, direcao) {
     if (direcao !== 'es-pt') return null;
-    const dado = normalizarEs(texto);
+    const dado = semAcento(normalizarEs(texto));
     if (!dado) return null;
     const espanhois = espanhoisDoCard(card);
     for (let i = 0; i < espanhois.length; i++) {
-      if (normalizarEs(espanhois[i]) === dado) {
+      if (semAcento(normalizarEs(espanhois[i])) === dado) {
         return { palavra: espanhois[i], propria: i === 0 };
       }
     }
@@ -427,6 +488,9 @@ window.Motor = (function () {
        não foi a mão que escorregou: foi o tempo ou a pessoa que ele errou,
        que é justamente o que o card cobra. Erro seco, sem perguntar. */
     if (formaReconhecida(card, texto, direcao)) return 'errado';
+
+    /* Mesma coisa com o acento e o «ñ» do espanhol. */
+    if (erroDeAcento(card, texto, direcao)) return 'errado';
 
     if (aceitas.some(alvo => parecido(dado, alvo, lingua))) return 'quase';
     return 'errado';
@@ -1060,7 +1124,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
-    linguaTrocada, espanhoisDoCard,
+    linguaTrocada, espanhoisDoCard, erroDeAcento,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,

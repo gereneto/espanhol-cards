@@ -374,6 +374,14 @@ dura, porque a grafia é parte do que você está aprendendo: uma letra fora do
 lugar pode ser exatamente a lacuna. Em português, que você já domina, errar uma
 tecla não diz nada sobre saber a palavra, e a folga é maior.
 
+**O acento entra nessa conta, e o `ñ` também.** Em espanhol eles não são
+enfeite: `ñ` é outra letra, e `año` e `ano` são duas palavras cuja diferença é
+constrangedora. Então o português continua chegando sem acento nenhum à
+comparação, e o espanhol chega inteiro — responder `todavia` por `todavía` é
+erro, e erro **seco**, sem passar pelo «deu quase». Como o do gênero e o da
+conjugação, ele vem com nome: *faltou o acento — era «todavía»*. São 128 dos
+457 cards que têm acento ou `ñ` no espanhol.
+
 Nos cards de conjugação há um corte a mais: se o que você escreveu **é outra
 forma verbal registrada do card**, não foi a mão que escorregou — foi o tempo
 ou a pessoa, que é justamente o que o card cobra. Isso é erro seco, sem
@@ -459,6 +467,27 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 No topo, 🏠 volta para a página inicial de qualquer tela, 🗂️ abre a lista de
 todos os cards, 📊 as estatísticas e ⚙️ as configurações. O cabeçalho é fixo, então esses botões
 ficam sempre à mão.
+
+## O painel
+
+O 📊 abre as estatísticas. A primeira tabela é **por nível** — é a que responde
+«como estou indo», e a barra verde de cada linha é o acerto geral daquele
+nível. Depois vem **o caminho até aqui**: quantos cards em cada etapa a cada
+resposta que você já deu, em bandas empilhadas.
+
+Ninguém guardou essa série. O que existe é o histórico de cada card, com as
+últimas doze respostas dele — e isso basta, porque 99% dos cards têm doze
+respostas ou menos, então os históricos juntos reconstroem quase tudo (1485 de
+1490, hoje). A reconstrução ordena todas as respostas pela data e as replica
+pelo motor, uma a uma.
+
+O que sai é a curva **sob as regras de hoje**, não sob as que valiam na época.
+As regras mudaram várias vezes, e uma curva com régua única é a que dá para
+comparar consigo mesma — mas é por isso que o fim dela não bate com os números
+do topo da página, e a legenda diz isso.
+
+As outras tabelas dizem **onde os cards estão**: em que pé está cada nível, a
+escada dos dominados, escolher x escrever, e por tipo.
 
 ## Vendo o baralho inteiro
 
