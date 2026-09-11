@@ -457,6 +457,35 @@ window.Motor = (function () {
     return d && d.classe === 'acento' ? d.forma : null;
   }
 
+  /* ── onde exatamente o acento caiu ──
+     «No creo que sea fácil» tem cinco palavras e só uma com acento. Mostrar a
+     frase inteira no aviso obriga a procurar; mostrar «fácil» vai direto. E
+     na resposta certa, embaixo, a letra que faltou ganha cor.
+
+     Devolve as palavras certas em que o acento sumiu, e a resposta certa
+     fatiada em pedaços — cada letra acentuada que faltou vem marcada, para o
+     app pintar. Uma palavra que ele escreveu COM o acento não é marcada,
+     mesmo que outra da frase não tenha vindo. */
+  const LETRA = /[a-z0-9áéíóúüñ]/i;
+  const PALAVRA = /[a-z0-9áéíóúüñ]+/gi;
+
+  function acentoFaltando(card, texto, direcao) {
+    const certo = acentoRelevado(card, texto, direcao);
+    if (!certo) return null;
+    const escritas = new Set((String(texto || '').normalize('NFC').toLowerCase()
+      .match(PALAVRA) || []));
+    const palavras = [];
+    const pedacos = [];
+    String(certo).normalize('NFC').split(/([^a-z0-9áéíóúüñ]+)/i).forEach(p => {
+      if (!p) return;
+      const perdeu = LETRA.test(p) && /[áéíóúü]/i.test(p) && !escritas.has(p.toLowerCase());
+      if (!perdeu) { pedacos.push({ texto: p, destaque: false }); return; }
+      palavras.push(p);
+      p.split('').forEach(ch => pedacos.push({ texto: ch, destaque: /[áéíóúü]/i.test(ch) }));
+    });
+    return palavras.length ? { palavras: palavras, pedacos: pedacos } : null;
+  }
+
   function linguaTrocada(card, texto, direcao) {
     if (direcao !== 'es-pt') return null;
     const dado = semAcento(normalizarEs(texto));
@@ -1154,7 +1183,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
-    linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado,
+    linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,

@@ -65,7 +65,7 @@
       filaEsPt: [],                            // você reconhece o espanhol
       filaPtEs: [],                            // você produz o espanhol
       dominados: [],                           // vencido nas duas, esperando data
-      serie: [],                               // [respostas, es→pt, pt→es, dominados]
+      serie: [],                               // [respostas, es→pt, pt→es, 6 degraus]
       cards: {},
       contestacoes: [],
       comentarios: [],
@@ -152,6 +152,11 @@
        histórico: num navegador de outra pessoa, com dez respostas dadas, a
        curva de mil e quinhentas não é dela. */
     if (!Array.isArray(p.serie)) p.serie = [];
+    /* A versão anterior anotava quatro números, com os dominados num bolo só,
+       e bolo não se divide por degrau depois. Série nesse formato sai inteira,
+       e a semente nova — que já vem dividida, e cobre até a última
+       sincronização — entra no lugar. */
+    if (p.serie.some(pt => !Array.isArray(pt) || pt.length !== 9)) p.serie = [];
     const semente = (window.HISTORICO_RAW && window.HISTORICO_RAW.serie) || [];
     if (!p.serie.length && semente.length) {
       const fim = semente[semente.length - 1][0];
@@ -520,13 +525,17 @@
     const acento = escrevendo && !forma && !genero
       ? Motor.erroDeEne(cardAtual, r.resposta, r.direcao) : null;
 
-    /* Acertou, mas sem o acento. Não custa ponto — custa uma linha. */
+    /* Acertou, mas sem o acento. Não custa ponto — custa uma linha, que diz
+       só a palavra, e a letra pintada na resposta certa, logo abaixo. */
     const soAcento = escrevendo && r.acertou
-      ? Motor.acentoRelevado(cardAtual, r.resposta, r.direcao) : null;
+      ? Motor.acentoFaltando(cardAtual, r.resposta, r.direcao) : null;
     el['aviso-acento'].classList.toggle('oculto', !soAcento);
     if (soAcento) {
-      el['aviso-acento'].innerHTML = 'Contou como certo, mas o acento: era <b>' +
-        escapar(soAcento) + '</b>.';
+      el['aviso-acento'].innerHTML = 'atenção ao acento: <b>' +
+        soAcento.palavras.map(escapar).join(', ') + '</b>';
+      el['resposta-certa'].innerHTML = soAcento.pedacos.map(p => p.destaque
+        ? '<mark class="acento">' + escapar(p.texto) + '</mark>'
+        : escapar(p.texto)).join('');
     }
 
     if (forma || genero || acento) {
@@ -536,7 +545,7 @@
         ? escapar(r.resposta) +
           ' <span class="forma-rotulo">gênero errado — era «' + escapar(genero) + '»</span>'
         : escapar(r.resposta) +
-          ' <span class="forma-rotulo">o «ñ» é outra letra — era «' + escapar(acento) + '»</span>';
+          ' <span class="forma-rotulo">preste atenção ao ñ</span>';
       el['resposta-dada'].classList.remove('oculto');
       el['resposta-dada'].classList.add('conjugacao');
     } else {
@@ -713,11 +722,16 @@
     progresso.totais.respostas++;
     if (r.acertou) progresso.totais.acertos++;
 
-    /* Um ponto por resposta, para o gráfico do painel. São quatro números;
-       mil respostas somam uns 15 KB no progresso.json, que já tem 500. */
+    /* Um ponto por resposta, para o gráfico do painel: as duas direções e os
+       dominados divididos pelos seis degraus. Nove números; mil respostas
+       somam uns 25 KB no progresso.json, que já tem 500. */
     const d = Motor.contarDirecoes(progresso.cards);
-    progresso.serie.push([progresso.totais.respostas, d.esPt, d.ptEs,
-                          progresso.dominados.length]);
+    const degraus = [0, 0, 0, 0, 0, 0];
+    progresso.dominados.forEach(id => {
+      const e = progresso.cards[id];
+      if (e) degraus[Math.min(e.revisoes || 0, 5)]++;
+    });
+    progresso.serie.push([progresso.totais.respostas, d.esPt, d.ptEs].concat(degraus));
 
     const evento = {
       em: new Date().toISOString(),
@@ -1061,25 +1075,36 @@
      anotados daqui em diante são um por resposta. A curva fica mais rala
      atrás e mais fina à frente, o que não incomoda numa figura de 600px. */
 
+  /* Oito bandas, de baixo para cima: as duas direções em cores próprias, e
+     os dominados subindo a escada numa rampa de verde, do escuro (3 dias,
+     colado ao pt→es de onde o card acabou de sair) ao claro (6 meses, no
+     topo). Rampa e não oito cores: os degraus são uma ordem, e a ordem se lê
+     pelo tom; oito cores soltas pediriam legenda para cada uma. */
   const SERIES = [
-    { chave: 0, nome: 'es → pt', cor: 'var(--serie-espt)' },
-    { chave: 1, nome: 'pt → es', cor: 'var(--serie-ptes)' },
-    { chave: 2, nome: 'dominado', cor: 'var(--serie-dom)' }
+    { chave: 0, nome: 'es → pt',   cor: 'var(--serie-espt)' },
+    { chave: 1, nome: 'pt → es',   cor: 'var(--serie-ptes)' },
+    { chave: 2, nome: '3 dias',    cor: 'var(--degrau-0)', degrau: true },
+    { chave: 3, nome: '1 semana',  cor: 'var(--degrau-1)', degrau: true },
+    { chave: 4, nome: '2 semanas', cor: 'var(--degrau-2)', degrau: true },
+    { chave: 5, nome: '1 mês',     cor: 'var(--degrau-3)', degrau: true },
+    { chave: 6, nome: '3 meses',   cor: 'var(--degrau-4)', degrau: true },
+    { chave: 7, nome: '6 meses',   cor: 'var(--degrau-5)', degrau: true }
   ];
 
   function graficoEtapas() {
-    const bruta = (progresso.serie || []).filter(p => Array.isArray(p) && p.length === 4);
+    const bruta = (progresso.serie || []).filter(p => Array.isArray(p) && p.length === 9);
     if (bruta.length < 20) return '';           // curva de nada não se desenha
-    /* [respostas, esPt, ptEs, dom] → o desenho só precisa das três contagens,
+    /* [respostas, esPt, ptEs, d0..d5] → o desenho precisa das oito contagens,
        e a resposta vira o rótulo do eixo. */
-    const serie = bruta.map(p => [p[1], p[2], p[3]]);
+    const serie = bruta.map(p => p.slice(1));
     const eixoX = bruta.map(p => p[0]);
+    const soma = p => p.reduce((a, b) => a + b, 0);
 
     /* Alto o dobro do que era: no celular a figura ficava espremida e as
        três bandas se confundiam perto do fim, onde elas mais importam. */
     const L = 34, R = 634, T = 10, B = 330, ALT = 352;
     const n = serie.length;
-    const topo = Math.max(...serie.map(p => p[0] + p[1] + p[2]));
+    const topo = Math.max(...serie.map(soma));
     const passo = topo > 400 ? 100 : topo > 200 ? 50 : 25;
     const ymax = Math.ceil(topo / passo) * passo || passo;
     /* O eixo anda em RESPOSTAS, e não em índice de ponto. Os pontos semeados
@@ -1115,8 +1140,12 @@
       svg += '<path d="M' + cima.concat(baixo).join('L') + 'Z" fill="' + s.cor + '"/>';
       base = topoBanda;
     });
+    /* A fresta só separa os três grupos — es→pt, pt→es, dominado — e não os
+       degraus entre si. Um card vale menos de um pixel nesta escala, e uma
+       fresta de dois apagaria o degrau fino por inteiro; entre degraus quem
+       separa é o tom da rampa, que foi escolhida para isso. */
     let sep = new Array(n).fill(0);
-    for (let k = 0; k < SERIES.length - 1; k++) {
+    for (let k = 0; k < 2; k++) {
       sep = sep.map((b, i) => b + serie[i][SERIES[k].chave]);
       svg += '<path d="M' + idx.map(i => x(i).toFixed(1) + ' ' + y(sep[i]).toFixed(1)).join('L') +
         '" fill="none" class="fresta"/>';
@@ -1135,19 +1164,24 @@
       '" fill="transparent" id="g-toque"/>';
 
     const ult = serie[n - 1];
-    const chaves = SERIES.map(s =>
+    const chaves = SERIES.filter(s => !s.degrau).map(s =>
       '<span class="chave"><i style="background:' + s.cor + '"></i>' + s.nome +
-      ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('');
+      ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('') +
+      '<span class="chave"><i style="background:var(--degrau-3)"></i>dominado' +
+      ' <b id="g-dom">' + ult.slice(2).reduce((a, b) => a + b, 0) + '</b></span>';
+    const escada = '<div class="escada-legenda">' + SERIES.filter(s => s.degrau).map(s =>
+      '<span><i style="background:' + s.cor + '"></i>' + s.nome +
+      ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('') + '</div>';
 
     return '<h3>O caminho até aqui</h3>' +
       '<p class="legenda">Cards em cada etapa ao longo das suas <b>' +
       eixoX[n - 1] + '</b> respostas. Toque para ler um ponto.</p>' +
       '<div class="chaves" id="g-chaves">' + chaves +
-      '<span class="quando" id="g-quando">agora</span></div>' +
+      '<span class="quando" id="g-quando">agora</span></div>' + escada +
       '<svg class="grafico-etapas" viewBox="0 0 640 ' + ALT + '" role="img" ' +
       'aria-label="Cards em cada etapa ao longo das respostas">' + svg + '</svg>' +
       '<script type="application/json" id="g-dados">' +
-      JSON.stringify(idx.map(i => [i, serie[i][0], serie[i][1], serie[i][2], eixoX[i]])) +
+      JSON.stringify(idx.map(i => [i].concat(serie[i], [eixoX[i]]))) +
       '</' + 'script>';
   }
 
@@ -1160,15 +1194,18 @@
     if (!svg || !dados) return;
     const pontos = JSON.parse(dados.textContent);
     const cursor = svg.querySelector('#g-cursor');
-    const valores = [...el['painel-conteudo'].querySelectorAll('#g-chaves b')];
+    const valores = [...el['painel-conteudo'].querySelectorAll('[data-serie]')];
+    const totalDom = el['painel-conteudo'].querySelector('#g-dom');
 
     svg.querySelector('#g-toque').addEventListener('pointerdown', ev => {
       const r = svg.getBoundingClientRect();
       const alvo = (ev.clientX - r.left) / r.width * 640;
-      /* Mesma escala do desenho: o eixo anda em respostas (índice 4 do ponto). */
-      const ini = pontos[0][4], fim = pontos[pontos.length - 1][4];
+      /* Mesma escala do desenho: o eixo anda em respostas, que é o último
+         número de cada ponto. */
+      const R_ = p => p[p.length - 1];
+      const ini = R_(pontos[0]), fim = R_(pontos[pontos.length - 1]);
       const largo = Math.max(1, fim - ini);
-      const emX = p => 34 + ((p[4] - ini) / largo) * 600;
+      const emX = p => 34 + ((R_(p) - ini) / largo) * 600;
       let melhor = 0;
       pontos.forEach((p, k) => {
         if (Math.abs(emX(p) - alvo) < Math.abs(emX(pontos[melhor]) - alvo)) melhor = k;
@@ -1178,9 +1215,10 @@
       cursor.setAttribute('x1', px);
       cursor.setAttribute('x2', px);
       cursor.style.display = '';
-      valores.forEach((b, k) => { b.textContent = p[k + 1]; });
+      valores.forEach(b => { b.textContent = p[1 + Number(b.dataset.serie)]; });
+      if (totalDom) totalDom.textContent = p.slice(3, 9).reduce((a, b) => a + b, 0);
       const nota = el['painel-conteudo'].querySelector('#g-quando');
-      if (nota) nota.textContent = 'na resposta ' + p[4];
+      if (nota) nota.textContent = 'na resposta ' + p[p.length - 1];
     });
   }
 

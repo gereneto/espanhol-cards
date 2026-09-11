@@ -1,7 +1,7 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.CARDS_RAW = {
  "versao": 1,
- "gerado_em": "2026-09-10",
+ "gerado_em": "2026-09-11",
  "total": 457,
  "cards": [
   {

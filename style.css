@@ -221,6 +221,12 @@ tr.vago td{opacity:.42}
   margin:-4px 0 12px;font-size:13.5px;color:var(--quase);
 }
 .aviso-acento b{color:var(--texto);font-weight:700}
+/* A letra acentuada que faltou, pintada na resposta certa. O mesmo amarelo
+   do aviso, para o olho ligar uma coisa à outra sem ler nada. */
+.resposta-certa mark.acento{
+  background:var(--quase-fraco);color:var(--quase);
+  border-radius:3px;padding:0 1px;box-shadow:0 0 0 1px var(--quase-borda);
+}
 
 /* ── alternativas ── */
 .alternativas{display:flex;flex-direction:column;gap:9px}
@@ -363,6 +369,16 @@ table.etapas td{text-align:center;font-variant-numeric:tabular-nums}
   --serie-espt:#3987e5;
   --serie-ptes:#d95926;
   --serie-dom:#199e70;
+  /* Os seis degraus do dominado: um verde só, do escuro ao claro. Conferido
+     como escala ordinal contra o fundo escuro — tom único, claridade sempre
+     subindo, passo visível entre vizinhos, e o degrau mais escuro ainda com
+     3,1:1 de contraste. */
+  --degrau-0:#14764f;
+  --degrau-1:#1e9a71;
+  --degrau-2:#33b98a;
+  --degrau-3:#5ecfa4;
+  --degrau-4:#8ce0bf;
+  --degrau-5:#b9f0d8;
 }
 svg.grafico-etapas{display:block;width:100%;height:auto;margin:4px 0 14px}
 svg.grafico-etapas .malha{stroke:var(--borda);stroke-width:1}
@@ -375,6 +391,12 @@ svg.grafico-etapas .cursor{stroke:var(--texto-2);stroke-width:1}
 .chaves .chave i{width:11px;height:11px;border-radius:3px;flex:none}
 .chaves .chave b{color:var(--texto);font-variant-numeric:tabular-nums}
 .chaves .quando{margin-left:auto;font-size:12px;color:var(--texto-2);font-variant-numeric:tabular-nums}
+/* os seis degraus numa linha só, miúda, embaixo da legenda principal */
+.escada-legenda{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 0 4px;
+  font-size:11.5px;color:var(--texto-2)}
+.escada-legenda span{display:flex;align-items:center;gap:5px}
+.escada-legenda i{width:9px;height:9px;border-radius:2px;flex:none}
+.escada-legenda b{color:var(--texto);font-weight:600;font-variant-numeric:tabular-nums}
 
 /* a barra fica na sua própria coluna, sem título: o número ao lado já diz o
    que ela mede, e o rótulo repetido só roubaria largura */

@@ -26,19 +26,23 @@ hashes.forEach((h, i) => {
   try { p = JSON.parse(git(['show', h + ':progresso.json'])); }
   catch (e) { falhas++; return; }
   const cards = p.cards || {};
-  let esPt = 0, ptEs = 0, dom = 0;
+  /* Os dominados saem já divididos pelo degrau da escada — «revisoes», de 0
+     a 5, que é o índice de DIAS_DOMINADO. */
+  let esPt = 0, ptEs = 0;
+  const degraus = [0, 0, 0, 0, 0, 0];
   for (const id in cards) {
     const e = cards[id];
     if (!e || !e.vistas) continue;
-    if (e.etapa === 'dominado') dom++;
+    if (e.etapa === 'dominado') degraus[Math.min(e.revisoes || 0, 5)]++;
     else if (e.etapa === 'multipla' || e.etapa === 'escrita') esPt++;
     else ptEs++;
   }
   const n = (p.totais && p.totais.respostas) || 0;
+  const ponto = [n, esPt, ptEs].concat(degraus);
   /* Duas fotografias podem ter o mesmo número de respostas — o app sobe o
      progresso e o resumo em commits separados. Fica a última. */
-  if (n === ultimo && serie.length) serie[serie.length - 1] = [n, esPt, ptEs, dom];
-  else { serie.push([n, esPt, ptEs, dom]); ultimo = n; }
+  if (n === ultimo && serie.length) serie[serie.length - 1] = ponto;
+  else { serie.push(ponto); ultimo = n; }
   if ((i + 1) % 100 === 0) console.log('  ' + (i + 1) + '/' + hashes.length);
 });
 
@@ -48,7 +52,7 @@ console.log('primeira:', JSON.stringify(serie[0]), '| última:', JSON.stringify(
 
 const saida = '/* Gerado por fonte/historico.js — a série exata das etapas, tirada das\n' +
   '   ' + serie.length + ' fotografias de progresso.json no repositório de dados.\n' +
-  '   Cada ponto é [respostas, es→pt, pt→es, dominados]. O app usa isto uma vez,\n' +
+  '   Cada ponto é [respostas, es→pt, pt→es, e os dominados nos seis degraus da escada]. O app usa isto uma vez,\n' +
   '   para semear progresso.serie; daí em diante ele mesmo vai anotando. */\n' +
   'window.HISTORICO_RAW = ' + JSON.stringify({ serie: serie }) + ';\n';
 fs.writeFileSync(SAIDA, saida);

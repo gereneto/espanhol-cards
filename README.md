@@ -376,10 +376,11 @@ tecla não diz nada sobre saber a palavra, e a folga é maior.
 
 **O acento e o `ñ` não são a mesma coisa.** O acento espanhol muda a sílaba
 tônica, e errá-lo é deslize de escrita: **conta como acerto**, com uma linha
-chamando atenção — *contou como certo, mas o acento: era «todavía»*. Já o `ñ`
-é **outra letra**: `año` e `ano` são duas palavras, e confundi-las é
-constrangedor. Aí é erro **seco**, sem passar pelo «deu quase», e com nome,
-como o do gênero e o da conjugação: *o «ñ» é outra letra — era «la muñeca»*.
+que nomeia só a palavra — *atenção ao acento: fácil* — e a letra que faltou
+pintada de amarelo na resposta certa, logo abaixo. Numa frase de cinco
+palavras com um acento só, é essa a que importa. Já o `ñ` é **outra letra**:
+`año` e `ano` são duas palavras, e confundi-las é constrangedor. Aí é erro
+**seco**, sem passar pelo «deu quase»: *preste atenção ao ñ*.
 
 Em português nada disso vale: a acentuação não é o que você está aprendendo, e
 o teclado do celular atrapalha mais do que ajuda.
@@ -488,6 +489,13 @@ O app semeia com ela uma vez e daí em diante anota ponto a ponto, a cada
 resposta. A semente só entra se o progresso for mesmo a continuação daquele
 histórico — num navegador com dez respostas dadas, a curva de mil e quinhentas
 não é de quem está ali.
+
+Os dominados vêm **divididos pelo degrau da escada**, numa rampa de verde que
+vai do escuro (3 dias, colado ao `pt → es` de onde o card acabou de sair) ao
+claro (6 meses, no topo). Rampa e não seis cores soltas: os degraus são uma
+ordem, e a ordem se lê pelo tom. A fresta de 2px que separa as bandas fica só
+entre os três grupos — entre degraus, um card vale menos de um pixel, e a
+fresta apagaria o degrau fino por inteiro.
 
 O eixo horizontal anda em **respostas**, e não em índice de ponto: os pontos
 semeados são um por sincronização, as sincronizações não foram parelhas, e
