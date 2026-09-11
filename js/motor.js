@@ -427,20 +427,34 @@ window.Motor = (function () {
       .replace(/\u0001/g, 'ñ');
   }
 
+  /* «Él dijo la verdad» escrito «el dijo la verdad» também é só acento —
+     mas o funil tira o «el» da frente, como artigo, e deixa o «él», que é
+     pronome. Os dois lados chegavam diferentes e o acento virava erro. A
+     leitura alternativa devolve o acento ao «el» da frente, e só quando ele
+     foi escrito: quem pulou o pronome não escreveu «el» nenhum. */
+  function leiturasEs(texto) {
+    const dado = normalizarEs(texto);
+    const bruto = String(texto || '').normalize('NFC');
+    const comEl = /^[\s¡¿"«]*el\s/i.test(bruto)
+      ? normalizarEs(bruto.replace(/^([\s¡¿"«]*)el(\s)/i, '$1él$2')) : null;
+    return comEl && comEl !== dado ? [dado, comEl] : [dado];
+  }
+
   function difDeGrafiaEs(card, texto, direcao) {
     if (linguaDaResposta(direcao) !== 'es') return null;
     const dado = normalizarEs(texto);
     if (!dado) return null;
     if (respostasAceitas(card, direcao).includes(dado)) return null;  // acertou, acento e tudo
-    const comEne = semAcentoMantendoEne(dado);
-    const semNada = semAcento(dado);
+    const leituras = leiturasEs(texto);
+    const comEne = leituras.map(semAcentoMantendoEne);
+    const semNada = leituras.map(semAcento);
     let doEne = null;
     for (const alvo of formasAceitas(card, direcao)) {
       const n = normalizar(alvo, 'es');
-      if (semAcentoMantendoEne(n) === comEne) {
+      if (comEne.includes(semAcentoMantendoEne(n))) {
         return { forma: String(alvo).trim(), classe: 'acento' };
       }
-      if (!doEne && semAcento(n) === semNada) doEne = String(alvo).trim();
+      if (!doEne && semNada.includes(semAcento(n))) doEne = String(alvo).trim();
     }
     return doEne ? { forma: doEne, classe: 'ene' } : null;
   }
@@ -462,26 +476,39 @@ window.Motor = (function () {
      frase inteira no aviso obriga a procurar; mostrar «fácil» vai direto. E
      na resposta certa, embaixo, a letra que faltou ganha cor.
 
-     Devolve as palavras certas em que o acento sumiu, e a resposta certa
-     fatiada em pedaços — cada letra acentuada que faltou vem marcada, para o
-     app pintar. Uma palavra que ele escreveu COM o acento não é marcada,
-     mesmo que outra da frase não tenha vindo. */
+     Vale para os dois lados do erro: o acento que faltou («facil») e o que
+     sobrou («me dá corte», «água», «dió»). No segundo, a palavra certa não
+     tem acento nenhum, e o que se pinta é a letra onde ele o pôs.
+
+     Devolve as palavras certas em que o acento saiu errado, e a resposta
+     certa fatiada em pedaços — cada letra errada vem marcada, para o app
+     pintar. Uma palavra que ele escreveu certa não é marcada, mesmo que
+     outra da frase tenha saído errada. */
   const LETRA = /[a-z0-9áéíóúüñ]/i;
   const PALAVRA = /[a-z0-9áéíóúüñ]+/gi;
 
   function acentoFaltando(card, texto, direcao) {
     const certo = acentoRelevado(card, texto, direcao);
     if (!certo) return null;
-    const escritas = new Set((String(texto || '').normalize('NFC').toLowerCase()
-      .match(PALAVRA) || []));
+    const escritas = String(texto || '').normalize('NFC').toLowerCase().match(PALAVRA) || [];
     const palavras = [];
     const pedacos = [];
     String(certo).normalize('NFC').split(/([^a-z0-9áéíóúüñ]+)/i).forEach(p => {
       if (!p) return;
-      const perdeu = LETRA.test(p) && /[áéíóúü]/i.test(p) && !escritas.has(p.toLowerCase());
-      if (!perdeu) { pedacos.push({ texto: p, destaque: false }); return; }
+      const minus = p.toLowerCase();
+      if (!LETRA.test(p) || escritas.includes(minus)) {
+        pedacos.push({ texto: p, destaque: false });
+        return;
+      }
+      /* A mesma palavra, escrita com o acento em outro lugar ou a mais. */
+      const base = semAcentoMantendoEne(minus);
+      const par = escritas.find(w => w.length === minus.length && semAcentoMantendoEne(w) === base);
+      if (!par && !/[áéíóúü]/i.test(p)) { pedacos.push({ texto: p, destaque: false }); return; }
       palavras.push(p);
-      p.split('').forEach(ch => pedacos.push({ texto: ch, destaque: /[áéíóúü]/i.test(ch) }));
+      p.split('').forEach((ch, i) => pedacos.push({
+        texto: ch,
+        destaque: par ? ch.toLowerCase() !== par[i] : /[áéíóúü]/i.test(ch)
+      }));
     });
     return palavras.length ? { palavras: palavras, pedacos: pedacos } : null;
   }
@@ -499,10 +526,44 @@ window.Motor = (function () {
     return null;
   }
 
+  /* ── o gênero que muda a palavra inteira ──
+     «la servilleta» escrita «el servilleto»: o artigo e a terminação foram
+     juntos para o masculino. O funil tira o artigo, e sobrava «servilleto»
+     contra «servilleta» — uma letra, que caía no «deu quase» como se fosse a
+     mão escorregando. Não foi: foi o gênero, que é o que o card ensina.
+
+     Conta como troca de gênero quando as duas frases têm as mesmas palavras
+     e as que diferem só trocam -o por -a (ou -os por -as) no fim. O radical
+     precisa de duas letras: «lo» e «la» são pronomes, e trocar um pelo
+     outro é outro erro. Vale só no espanhol, e só nos cards de palavra: numa
+     frase, «hablo» e «habla» também trocam -o por -a, e ali o erro é de
+     pessoa, não de gênero. */
+  function terminacaoTrocada(a, b) {
+    const pa = a.split(' '), pb = b.split(' ');
+    if (pa.length !== pb.length) return false;
+    let trocas = 0;
+    for (let i = 0; i < pa.length; i++) {
+      if (pa[i] === pb[i]) continue;
+      const x = pa[i].match(/^(.{2,}?)([oa])(s?)$/);
+      const y = pb[i].match(/^(.{2,}?)([oa])(s?)$/);
+      if (!x || !y || x[1] !== y[1] || x[3] !== y[3] || x[2] === y[2]) return false;
+      trocas++;
+    }
+    return trocas > 0;
+  }
+
   /* Devolve o artigo que era esperado quando o que ele escreveu bate no
      resto mas erra o gênero — e null quando não há erro de gênero nenhum. */
   function erroDeGenero(card, texto, direcao) {
     const lingua = linguaDaResposta(direcao);
+    if (lingua === 'es' && card && card.tipo === 'palavra') {
+      const dado = normalizar(texto, lingua);
+      if (dado && !respostasAceitas(card, direcao).includes(dado)) {
+        const alvo = formasAceitas(card, direcao)
+          .find(f => terminacaoTrocada(semAcento(normalizar(f, lingua)), semAcento(dado)));
+        if (alvo) return String(alvo).trim();
+      }
+    }
     const dadoGenero = generoDaFrente(texto, lingua);
     if (!dadoGenero) return null;              // não escreveu artigo: pode omitir
 

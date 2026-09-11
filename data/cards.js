@@ -17134,7 +17134,10 @@ window.CARDS_RAW = {
     "tomou coragem",
     "engoliu o choro",
     "fez das tripas coracao",
-    "se armou de coragem"
+    "se armou de coragem",
+    "se encheu de coragem",
+    "ele se encheu de coragem",
+    "encheu se de coragem"
    ],
    "aceitasEn": [
     "he steeled himself",
@@ -17905,7 +17908,11 @@ window.CARDS_RAW = {
     "chegamos ao povoado no fim da tarde",
     "chegamos a vila ao entardecer",
     "chegamos a vila no entardecer",
-    "chegamos na vila no fim da tarde"
+    "chegamos na vila no fim da tarde",
+    "chegamos na vila ao fim da tarde",
+    "chegamos a vila ao fim da tarde",
+    "chegamos na vila ao entardecer",
+    "chegamos na vila no entardecer"
    ],
    "aceitasEn": [
     "we reached the village at dusk",
@@ -18694,7 +18701,11 @@ window.CARDS_RAW = {
     "falou com pesar do irmao",
     "ele falou com tristeza do irmao",
     "ele falou com pesar sobre o irmao",
-    "ele falou do irmao com pesar"
+    "ele falou do irmao com pesar",
+    "falou com pesar de seu irmao",
+    "ele falou com pesar de seu irmao",
+    "falou com pesar do seu irmao",
+    "ele falou com pesar do seu irmao"
    ],
    "aceitasEn": [
     "he spoke of his brother with sorrow",

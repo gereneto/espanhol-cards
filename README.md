@@ -378,9 +378,18 @@ tecla não diz nada sobre saber a palavra, e a folga é maior.
 tônica, e errá-lo é deslize de escrita: **conta como acerto**, com uma linha
 que nomeia só a palavra — *atenção ao acento: fácil* — e a letra que faltou
 pintada de amarelo na resposta certa, logo abaixo. Numa frase de cinco
-palavras com um acento só, é essa a que importa. Já o `ñ` é **outra letra**:
+palavras com um acento só, é essa a que importa. Vale também para o acento
+que **sobrou** — «me dá corte», «água», «dió» —, e aí o que se pinta é a letra
+onde ele foi posto sem ser. E vale para o `él` escrito `el`, que o funil lia
+como artigo e jogava fora. Já o `ñ` é **outra letra**:
 `año` e `ano` são duas palavras, e confundi-las é constrangedor. Aí é erro
 **seco**, sem passar pelo «deu quase»: *preste atenção ao ñ*.
+
+O **gênero** também é erro seco: *gênero errado — era «la servilleta»*. Tanto o
+artigo trocado quanto a palavra que vai inteira para o outro gênero —
+«el servilleto» —, que antes caía no «deu quase» por ser uma letra só. Esse
+segundo caso vale só nos cards de palavra: numa frase, «hablo» e «habla»
+também trocam `-o` por `-a`, e ali o erro é de pessoa, não de gênero.
 
 Em português nada disso vale: a acentuação não é o que você está aprendendo, e
 o teclado do celular atrapalha mais do que ajuda.
@@ -500,6 +509,9 @@ fresta apagaria o degrau fino por inteiro.
 O eixo horizontal anda em **respostas**, e não em índice de ponto: os pontos
 semeados são um por sincronização, as sincronizações não foram parelhas, e
 espaçar por índice esticaria os dias de muita sincronização.
+
+Um toque no gráfico põe os números da legenda naquele ponto. Só o toque
+parado: o dedo que arrasta está rolando a página, e não escolhe nada.
 
 As outras tabelas dizem **onde os cards estão**: em que pé está cada nível, a
 escada dos dominados, escolher x escrever, e **por categoria** — cinco

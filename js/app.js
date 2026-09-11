@@ -1176,8 +1176,7 @@
     return '<h3>O caminho até aqui</h3>' +
       '<p class="legenda">Cards em cada etapa ao longo das suas <b>' +
       eixoX[n - 1] + '</b> respostas. Toque para ler um ponto.</p>' +
-      '<div class="chaves" id="g-chaves">' + chaves +
-      '<span class="quando" id="g-quando">agora</span></div>' + escada +
+      '<div class="chaves" id="g-chaves">' + chaves + '</div>' + escada +
       '<svg class="grafico-etapas" viewBox="0 0 640 ' + ALT + '" role="img" ' +
       'aria-label="Cards em cada etapa ao longo das respostas">' + svg + '</svg>' +
       '<script type="application/json" id="g-dados">' +
@@ -1186,8 +1185,13 @@
   }
 
   /* O gráfico é remontado a cada abertura do painel, então o ouvinte se
-     amarra depois de o HTML entrar. Toque, e não arrasto: arrastar brigaria
-     com a rolagem da página no celular. */
+     amarra depois de o HTML entrar.
+
+     Só o toque parado escolhe um ponto. O dedo que arrasta está rolando a
+     página, e o pointerdown disparava antes de dar para saber — cada rolagem
+     que começava em cima do gráfico mudava o ponto lido. Agora vale o click,
+     que o celular já não dispara depois de uma rolagem, e para o mouse, que
+     dispara, a conta da distância entre apertar e soltar resolve. */
   function ligarGrafico() {
     const svg = el['painel-conteudo'].querySelector('.grafico-etapas');
     const dados = el['painel-conteudo'].querySelector('#g-dados');
@@ -1197,7 +1201,11 @@
     const valores = [...el['painel-conteudo'].querySelectorAll('[data-serie]')];
     const totalDom = el['painel-conteudo'].querySelector('#g-dom');
 
-    svg.querySelector('#g-toque').addEventListener('pointerdown', ev => {
+    const toque = svg.querySelector('#g-toque');
+    let inicio = null;
+    toque.addEventListener('pointerdown', ev => { inicio = [ev.clientX, ev.clientY]; });
+    toque.addEventListener('click', ev => {
+      if (inicio && Math.hypot(ev.clientX - inicio[0], ev.clientY - inicio[1]) > 8) return;
       const r = svg.getBoundingClientRect();
       const alvo = (ev.clientX - r.left) / r.width * 640;
       /* Mesma escala do desenho: o eixo anda em respostas, que é o último
@@ -1217,8 +1225,6 @@
       cursor.style.display = '';
       valores.forEach(b => { b.textContent = p[1 + Number(b.dataset.serie)]; });
       if (totalDom) totalDom.textContent = p.slice(3, 9).reduce((a, b) => a + b, 0);
-      const nota = el['painel-conteudo'].querySelector('#g-quando');
-      if (nota) nota.textContent = 'na resposta ' + p[p.length - 1];
     });
   }
 
