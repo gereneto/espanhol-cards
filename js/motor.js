@@ -713,7 +713,8 @@ window.Motor = (function () {
        dominados  vencido nas duas direções, esperando a data
 
      Os dominados ficam fora desta conta: eles têm gatilho de calendário e
-     furam a fila quando a data chega (ver DIAS_DOMINADO).
+     furam a fila quando a data chega, com espaço entre eles (ver
+     vezDoDominado).
 
      Entre as outras três, a escolha persegue um alvo: **ALVO_FILA cards em cada
      direção**. Quem está abaixo do alvo precisa de entrada, quem está acima
@@ -731,8 +732,16 @@ window.Motor = (function () {
      equilíbrio. Funcionava, mas media a coisa errada: contava respostas
      desde o último inédito em vez de olhar o tamanho das filas, e a porta
      era liga-desliga — fechava de vez em 122 contra 112. Aqui não há porta:
-     há peso, e ele cede aos poucos conforme a fila se aproxima do alvo. */
+     há peso, e ele cede aos poucos conforme a fila se aproxima do alvo.
+
+     O peso é o desvio vezes GANHO. Com o desvio puro, cada card a mais ou a
+     menos valia um ponto de peso, e o equilíbrio parava antes do alvo: os
+     pisos de 10 puxam as filas para um lado, e só um desvio de alguns cards
+     gerava peso para compensar — as filas assentaram em 96 e 106. Com o
+     desvio multiplicado por quatro, o mesmo empurrão sai de um desvio quatro
+     vezes menor. */
   const ALVO_FILA = 100;     // cards que se quer ter em cada direção
+  const GANHO = 4;           // quanto pesa cada card de desvio do alvo
   const PISO_REVISAO = 10;   // nenhuma fila de revisão morre de fome
   const PISO_INEDITO = 2;    // card novo nunca deixa de vir, mas em conta-gotas
   const TETO_PESO = 100;     // desequilíbrio grande não mata as outras filas
@@ -761,7 +770,7 @@ window.Motor = (function () {
      fila vazia sai da conta em vez de roubar chance das outras. */
   function pesosDasFilas(estados, tem) {
     const c = contarDirecoes(estados);
-    const corta = v => Math.min(TETO_PESO, Math.max(0, v));
+    const corta = v => Math.min(TETO_PESO, Math.max(0, GANHO * v));
     const p = {
       ineditos: PISO_INEDITO + corta(ALVO_FILA - c.esPt),
       esPt:     PISO_REVISAO + corta(ALVO_FILA - c.ptEs) + corta(c.esPt - ALVO_FILA),
@@ -791,19 +800,83 @@ window.Motor = (function () {
     return 'ptEs';
   }
 
-  /* ── de distância para posição ──
-     distanciaNaFila devolve uma distância em RESPOSTAS, e era isso mesmo
-     enquanto havia uma fila só: toda resposta consumia um card dela. Com o
-     sorteio, uma fila que leva 45% das respostas anda menos de meia posição
-     por resposta — 110 posições lá dentro seriam 244 respostas.
+  /* ── quem sai da fila: a urgência ──
+     Até aqui o card voltava para uma POSIÇÃO: a distância em respostas vezes
+     a chance da fila. Parecia justo e prendia cards para sempre. A fila tem
+     cem cards e fica do mesmo tamanho; a cada card que sai do começo, outro
+     entra — quase sempre na frente de quem está lá atrás, porque o erro volta
+     na posição três e o acerto na trinta. Quem estava na posição 78 dava um
+     passo à frente e levava um empurrão para trás, a cada vez. O histórico
+     achou cards parados assim havia 1.600 respostas.
 
-     Então a distância continua sendo pensada em respostas, e aqui ela vira
-     posição multiplicando pela chance da fila. Toda a calibragem que já
-     estava boa continua valendo, e se acerta sozinha quando as filas mudam
-     de tamanho. */
-  function posicaoNaFila(distancia, chance, tamanho) {
-    if (!chance) return tamanho;
-    return Math.max(2, Math.min(tamanho, Math.round(distancia * chance)));
+     Não dá para devolver cada card na distância pedida: com cem cards numa
+     fila que leva um terço das respostas, a espera média é de trezentas
+     respostas, qualquer que seja a ordem. Alguém espera mais do que pediu. A
+     pergunta é quem, e a resposta antiga era «sempre os mesmos».
+
+     Agora o card não guarda posição: guarda quando entrou e a distância que
+     pediu. Na hora de tirar da fila, sai o mais urgente:
+
+       urgência = espera ÷ distância²
+
+     Espera ÷ distância é quantas vezes ele já esperou o que pediu; dividir
+     de novo pela distância dá prioridade a quem pediu pouco. O erro (7
+     respostas) que já esperou 14 tem urgência 0,29; o acerto escrito (110)
+     que já esperou 220, 0,018. O erro passa na frente, como deve — mas a
+     espera do outro cresce sem parar, e uma hora ele passa também. Ninguém
+     fica para sempre.
+
+     E ninguém sai antes da hora: se há card que já cumpriu a distância, só
+     esses concorrem. Voltar cedo demais é justamente a muleta que as
+     distâncias da volta (pt→es) existem para evitar.
+
+     Na simulação com o seu baralho, contra a regra da posição: o erro volta
+     em 23 respostas em vez de 27, e a maior espera de um card na fila cai de
+     quase mil respostas para menos de quatrocentas. */
+  function urgencia(est, respostas) {
+    const f = est && est.naFila;
+    if (!f) return 0;
+    const dist = Math.max(1, f.distancia || 1);
+    return (respostas - f.desde) / (dist * dist);
+  }
+
+  function cumpriu(est, respostas) {
+    const f = est && est.naFila;
+    return !f || respostas - f.desde >= (f.distancia || 0);
+  }
+
+  /* O índice, dentro da fila, do card que sai agora. */
+  function escolherNaFila(fila, estados, respostas) {
+    if (!fila.length) return -1;
+    const devidos = fila.some(id => cumpriu(estados[id], respostas));
+    let melhor = -1, maior = -Infinity;
+    fila.forEach((id, i) => {
+      if (devidos && !cumpriu(estados[id], respostas)) return;
+      const u = urgencia(estados[id], respostas);
+      if (u > maior) { maior = u; melhor = i; }
+    });
+    return melhor;
+  }
+
+  /* ── os dominados que venceram ──
+     O dominado fura a fila quando chega a data. Um só, tudo bem; mas eles
+     vencem em lote — 43 no mesmo dia, pelos cards dominados juntos três dias
+     antes —, e o histórico mostrou 22 dominados seguidos numa sessão.
+
+     Então há espaço entre eles: depois de um dominado, vêm pelo menos
+     ESPACO_DOMINADO cards de outra fila. Passado o espaço, a vez do dominado
+     é sorteada, com chance que cresce com o acúmulo: um vencido sozinho tem
+     10% por card, e dez ou mais vão sempre que o espaço deixa. Com espaço
+     dois, isso é no máximo um card em cada três — dá conta de 40 dominados
+     num dia de 120 respostas, e o atraso típico é de poucas horas, nada
+     perto dos dias da espera. */
+  const ESPACO_DOMINADO = 2;
+  const VENCIDOS_CHEIO = 10;
+
+  function vezDoDominado(vencidos, desdeUltimo) {
+    if (!vencidos) return false;
+    if (desdeUltimo < ESPACO_DOMINADO) return false;
+    return Math.random() < Math.min(1, vencidos / VENCIDOS_CHEIO);
   }
 
   /* ── a frase presa à palavra ──
@@ -831,7 +904,7 @@ window.Motor = (function () {
      card voltando de dois em dois dias não prova memória de longo prazo —
      prova que ele ainda estava fresco. Então o card continua no baralho para
      sempre, e o que cresce é a espera: 3 dias, 1 semana, 2, 1 mês, 3 meses,
-     meio ano. Errar devolve ao começo da escada, e o card sai de dominado.
+     meio ano. Errar desce um degrau (ver registrar).
 
      É a única parte do app que olha o calendário, e só para os maduros. A
      fila tem 361 cards e todo card respondido volta para ela, então sem data
@@ -999,7 +1072,11 @@ window.Motor = (function () {
            dominado, e a próxima espera fica mais longa. Antes ele caía para
            'inversa-escrita' e precisava reconquistar as três seguidas — o
            contador de dominados encolhia justamente quando se acertava. */
-        est.revisoes = (est.revisoes || 0) + 1;
+        /* Quem nunca errou — nem antes de dominar, nem nas revisões — sobe
+           de dois em dois: 3 dias, 2 semanas, 3 meses, 6 meses. Um erro em
+           qualquer momento da vida do card devolve o passo de um. */
+        est.revisoes = Math.min(DIAS_DOMINADO.length - 1,
+          (est.revisoes || 0) + (est.erros ? 1 : 2));
       } else if (r.modo === 'multipla') {
         if (inversa) est.etapa = 'inversa-escrita';
         else est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
@@ -1250,7 +1327,8 @@ window.Motor = (function () {
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
     contarDirecoes,
-    filaDe, pesosDasFilas, chancesDasFilas, sortearFila, posicaoNaFila,
+    filaDe, pesosDasFilas, chancesDasFilas, sortearFila,
+    urgencia, cumpriu, escolherNaFila, vezDoDominado, ESPACO_DOMINADO,
     ALVO_FILA,
     liberado, venceuEm,
     montarFila, alternativas, embaralhar,

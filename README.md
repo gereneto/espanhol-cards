@@ -93,7 +93,7 @@ Hoje são **quatro filas**, e cada card respondido mora na fila da sua etapa:
 | **dominados** | vencido nas duas direções, esperando a data |
 
 Os **dominados ficam fora da disputa**: têm gatilho de calendário e furam a
-fila quando a data chega. É a única coisa que eles obedecem.
+fila quando a data chega — com espaço entre eles (ver adiante).
 
 #### De qual fila vem o próximo card
 
@@ -121,7 +121,10 @@ excesso de cada lado puxa trabalho no próprio lado, que é por onde ele escoa.
 | 50 | 150 | 43% | 8% | 49% |
 
 **Não é uma porta que abre e fecha — é peso**, e ele cede aos poucos conforme a
-fila chega perto do alvo. A régua anterior contava respostas desde o último
+fila chega perto do alvo. Cada card de desvio pesa **quatro** pontos: com um
+ponto só, os pisos de peso puxavam o equilíbrio para o lado e as filas
+assentavam em 96 e 106, porque só um desvio de vários cards gerava peso para
+compensar. A régua anterior contava respostas desde o último
 inédito e tinha uma porta liga-desliga que fechava de vez em 122 contra 112;
 media a coisa errada, que era o intervalo, e não o tamanho das filas.
 
@@ -154,13 +157,40 @@ distância depende de como foi:
 | Acertou escrevendo, rápido | 110 |
 | Acertou escrevendo 3× seguidas | 220 — fecha a direção |
 
-**A distância é contada em respostas, não em posições.** Enquanto havia uma
-fila só isso dava no mesmo: toda resposta consumia um card dela. Com o sorteio
-não dá: uma fila que leva 45% das respostas anda menos de meia posição por
-resposta, e 110 posições lá dentro seriam 244 respostas de espera. Então a
-distância vira posição multiplicando pela chance da fila — 110 respostas numa
-fila de 45% são 50 posições. A calibragem da tabela continua valendo como está,
-e se acerta sozinha quando as filas mudam de tamanho.
+**A distância é contada em respostas, e o card não ganha posição.** Ele anota
+quando entrou na fila e a distância que pediu, e na hora de tirar um card da
+fila sai o **mais urgente**:
+
+> urgência = espera ÷ distância²
+
+Espera ÷ distância é quantas vezes ele já esperou o que pediu; dividir de novo
+pela distância dá a vez a quem pediu pouco. O erro que pediu 7 e já esperou 14
+tem urgência 0,29; o acerto escrito que pediu 110 e esperou 220, 0,018 — o erro
+passa na frente. Mas a espera do outro não para de crescer, e uma hora ele
+passa também. E ninguém sai **antes** de cumprir a distância, se houver quem já
+cumpriu: voltar cedo é a muleta que as distâncias da volta existem para evitar.
+
+Até a versão anterior a distância virava **posição** (distância × chance da
+fila), e isso prendia cards para sempre. A fila fica do mesmo tamanho: a cada
+card que sai do começo, outro entra — quase sempre na frente de quem está lá
+atrás, porque o erro volta na posição três e o acerto na trinta. Quem estava na
+posição 78 dava um passo à frente e levava um empurrão para trás, a cada vez. O
+histórico achou cards parados assim havia **1.600 respostas**.
+
+Não dá para devolver cada card na distância exata: com cem cards numa fila que
+leva um terço das respostas, a espera média é de umas trezentas respostas,
+qualquer que seja a ordem. Alguém espera mais do que pediu — e a regra antiga
+escolhia sempre os mesmos. Simulando 1000 respostas com a taxa de acerto real:
+
+| | Posição (antes) | Urgência (agora) |
+|---|---:|---:|
+| erro volta em (mediana · 90%) | 27 · 55 | 23 · 41 |
+| maior espera de um card na fila | ~1000 | ~370 |
+| pior volta ÷ distância pedida | 7,9× | 5,0× |
+
+Na passagem, o card que já estava na fila ganha a espera pelo número de cards
+respondidos depois da última vez dele, e a distância pela posição que ocupava.
+Os presos entram logo na roda.
 
 Errar em `pt → es` espera mais do que errar em `es → pt` pelo mesmo motivo que
 faz o acerto na múltipla dessa direção esperar 90: a grafia espanhola certa
@@ -206,21 +236,33 @@ memória de longo prazo; prova que ele ainda estava fresco.
 Por isso o card que venceu as duas direções — e **só ele** — ganha uma data de
 retorno, que cresce a cada revisão certa. No momento em que isso acontece, o
 feedback traz um **«Card dominado!»** — de outro modo a conquista passaria em
-branco, porque o card simplesmente sumiria da fila por semanas.
+branco, porque o card simplesmente sumiria da fila por semanas. E cada revisão
+certa diz quanto ganhou: **«volta em 2 semanas»**.
 
-| Revisões certas depois de dominado | Volta em |
-|---:|---:|
-| 1ª | 3 dias |
-| 2ª | 1 semana |
-| 3ª | 2 semanas |
-| 4ª | 1 mês |
-| 5ª | 3 meses |
-| daí em diante | 6 meses |
+| Degrau | Volta em | Quem nunca errou |
+|---|---:|---:|
+| ao dominar | 3 dias | 3 dias |
+| 1ª revisão certa | 1 semana | 2 semanas |
+| 2ª | 2 semanas | 3 meses |
+| 3ª | 1 mês | 6 meses |
+| 4ª | 3 meses | 6 meses |
+| daí em diante | 6 meses | 6 meses |
+
+**Quem nunca errou sobe de dois em dois.** Card sem nenhum erro na vida — nem
+antes de dominar, nem nas revisões — pula um degrau a cada revisão certa. Um
+erro em qualquer momento devolve o passo de um.
 
 Chegada a data, o card **fura a fila**: ele não disputa o sorteio das outras
 três, é a única coisa no app com hora marcada. Se **todos** estiverem
 esperando, entra o de data mais próxima — ficar sem card nenhum seria pior do
 que adiantar um.
+
+**Mas com espaço.** Os dominados vencem em lote — 43 no mesmo dia, dos cards
+dominados juntos três dias antes —, e o histórico mostrou 22 deles seguidos
+numa sessão. Depois de um dominado vêm pelo menos **dois** cards de outra fila;
+passado o espaço, a vez do dominado é sorteada com chance que cresce com o
+acúmulo: 10% com um vencido, e sempre com dez ou mais. Isso é no máximo um card
+em cada três, e o atraso típico é de poucas horas.
 
 **Errar desce um degrau, e só.** Um card de 90 dias passa a voltar em 30, e
 continua dominado — quem já atravessou as duas direções não precisa provar de
@@ -236,9 +278,8 @@ antes de voltar à escada. Agora não sai.
 
 O card nunca sai do baralho. Ele só espera mais.
 
-O painel mostra **a escada inteira**: quantos cards em cada degrau, quantos já
-venceram a data e estão de prontidão para furar a fila, e em quantos dias o
-próximo aparece. Degrau onde ninguém chegou ainda fica na tabela, esmaecido —
+O painel mostra **a escada inteira**: quantos cards em cada degrau e quando o
+próximo aparece — «agora», se algum do degrau já venceu a data. Degrau onde ninguém chegou ainda fica na tabela, esmaecido —
 ver o degrau vago diz tanto quanto ver o cheio.
 
 

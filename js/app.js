@@ -129,6 +129,7 @@
     p.filaEsPt = filas.esPt;
     p.filaPtEs = filas.ptEs;
     p.dominados = filas.dominados;
+    anotarEntradaNaFila(p);
 
     const antes = Array.isArray(p.ineditos) ? p.ineditos : [];
     const conhecidos = new Set(antes);
@@ -165,6 +166,50 @@
 
     ordenarIneditos(p);
     return p;
+  }
+
+  /* ── a passagem da posição para a urgência ──
+     Card que já estava na fila antes da urgência não sabe quando entrou nem
+     que distância pediu. Sai das duas coisas que o progresso ainda tem:
+
+       espera     quantos cards foram respondidos depois da última vez dele —
+                  pelo «ultima» de cada um. Conta cards, não respostas, então
+                  é um piso; mas separa bem o card de ontem do parado há dias.
+       distância  a posição que ele ocupava, dividida pela chance da fila —
+                  a mesma conta da regra antiga, ao contrário —, entre 7 e
+                  100. O teto é baixo de propósito: lá no fundo da fila, a
+                  posição já não dizia o que o card pediu, dizia quantos
+                  empurrões ele levou.
+
+     Os presos saem com espera grande e entram logo na roda; o card que tinha
+     acabado de voltar para a posição três continua logo ali.
+
+     Card que está em fila e perdeu o «naFila» por outro caminho (uma
+     sincronização com aparelho de versão antiga) passa pela mesma conta. */
+  function anotarEntradaNaFila(p) {
+    const respostas = (p.totais && p.totais.respostas) || 0;
+    const faltam = [['esPt', p.filaEsPt], ['ptEs', p.filaPtEs]]
+      .some(([, f]) => f.some(id => !p.cards[id].naFila));
+    if (!faltam) return;
+    const quando = Object.keys(p.cards)
+      .map(id => Date.parse(p.cards[id].ultima) || 0).sort((a, b) => a - b);
+    const depoisDe = t => {                  // quantos têm «ultima» maior que t
+      let lo = 0, hi = quando.length;
+      while (lo < hi) { const m = (lo + hi) >> 1; if (quando[m] <= t) lo = m + 1; else hi = m; }
+      return quando.length - lo;
+    };
+    const chances = Motor.chancesDasFilas(p.cards, {
+      ineditos: (p.ineditos || []).length > 0,
+      esPt: p.filaEsPt.length > 0, ptEs: p.filaPtEs.length > 0
+    });
+    [['esPt', p.filaEsPt], ['ptEs', p.filaPtEs]].forEach(([k, fila]) => {
+      fila.forEach((id, i) => {
+        const e = p.cards[id];
+        if (e.naFila) return;
+        const distancia = Math.max(7, Math.min(100, Math.round((i + 1) / (chances[k] || 1))));
+        e.naFila = { desde: respostas - depoisDe(Date.parse(e.ultima) || 0), distancia: distancia };
+      });
+    });
   }
 
   /* O baralho de inéditos é ordenado pelo desempenho: sai primeiro o nível
@@ -250,19 +295,39 @@
 
      Se não sobrou nada em lugar nenhum, entra o dominado de data mais
      próxima: ficar sem card seria pior do que adiantar um. */
-  function tirarProximoId() {
-    const vencido = dominadoMaisProximo(new Date().toISOString());
-    if (vencido !== null) return progresso.dominados.splice(vencido, 1)[0];
+  /* Quantos cards vieram desde o último dominado. Começa alto: abrir o app
+     não precisa esperar espaço nenhum. */
+  let desdeDominado = 99;
 
+  function tirarProximoId() {
+    const id = escolherProximoId();
+    const e = id && progresso.cards[id];
+    desdeDominado = e && e.etapa === 'dominado' ? 0 : desdeDominado + 1;
+    return id;
+  }
+
+  function escolherProximoId() {
+    const agora = new Date().toISOString();
+    const vencidos = progresso.dominados.filter(id =>
+      progresso.cards[id] && !Motor.esperando(progresso.cards[id], agora)).length;
     const tem = {
       ineditos: progresso.ineditos.length > 0,
       esPt: progresso.filaEsPt.length > 0,
       ptEs: progresso.filaPtEs.length > 0
     };
+    const temOutro = tem.ineditos || tem.esPt || tem.ptEs;
+    /* Sem nada nas outras filas, o vencido vem sem esperar espaço. */
+    if (vencidos && (!temOutro || Motor.vezDoDominado(vencidos, desdeDominado))) {
+      return progresso.dominados.splice(dominadoMaisProximo(agora), 1)[0];
+    }
+
     const escolhida = Motor.sortearFila(Motor.pesosDasFilas(progresso.cards, tem));
     if (escolhida === 'ineditos') { ordenarIneditos(progresso); return progresso.ineditos.shift(); }
-    if (escolhida === 'esPt') return progresso.filaEsPt.shift();
-    if (escolhida === 'ptEs') return progresso.filaPtEs.shift();
+    if (escolhida === 'esPt' || escolhida === 'ptEs') {
+      const fila = escolhida === 'esPt' ? progresso.filaEsPt : progresso.filaPtEs;
+      const i = Motor.escolherNaFila(fila, progresso.cards, progresso.totais.respostas);
+      return fila.splice(i, 1)[0];
+    }
 
     const proximo = dominadoMaisProximo(null);
     return proximo === null ? null : progresso.dominados.splice(proximo, 1)[0];
@@ -282,27 +347,23 @@
     return melhor >= 0 ? melhor : null;
   }
 
-  /* Devolve o card para a fila da etapa em que ele ficou. A distância vem em
-     RESPOSTAS e vira posição pela chance da fila: uma fila que leva metade
-     das respostas anda meia posição por resposta, então 110 respostas são 55
-     posições lá dentro. O dominado não entra nessa conta — ele espera data. */
+  /* Devolve o card para a fila da etapa em que ele ficou. Ele não ganha
+     posição: anota quando entrou e a distância, em respostas, que pediu — e
+     é pela urgência que sai (ver Motor.escolherNaFila). A ordem do array
+     deixou de significar alguma coisa. O dominado não entra nessa conta —
+     ele espera data. */
   function guardarNaFila(id, est, r) {
     const alvo = Motor.filaDe(est);
     if (alvo === 'dominados') {
+      delete est.naFila;
       if (progresso.dominados.indexOf(id) < 0) progresso.dominados.push(id);
-      return { fila: alvo, distancia: null, posicao: null };
+      return { fila: alvo, distancia: null };
     }
     const fila = alvo === 'esPt' ? progresso.filaEsPt : progresso.filaPtEs;
-    const tem = {
-      ineditos: progresso.ineditos.length > 0,
-      esPt: progresso.filaEsPt.length > 0 || alvo === 'esPt',
-      ptEs: progresso.filaPtEs.length > 0 || alvo === 'ptEs'
-    };
-    const chance = Motor.chancesDasFilas(progresso.cards, tem)[alvo];
     const distancia = Motor.distanciaNaFila(est, r);
-    const posicao = Motor.posicaoNaFila(distancia, chance, fila.length);
-    fila.splice(posicao, 0, id);
-    return { fila: alvo, distancia: distancia, posicao: posicao };
+    est.naFila = { desde: progresso.totais.respostas, distancia: distancia };
+    fila.push(id);
+    return { fila: alvo, distancia: distancia };
   }
 
   /* Tira o card de onde quer que ele esteja — a resposta sobre conhecimento
@@ -702,9 +763,14 @@
   /* Vencer as duas direções é a única conquista do app que não se vê na
      hora: o card apenas some da fila por semanas. Uma etiqueta basta para
      o terceiro acerto seguido em espanhol ter o tamanho que tem. */
-  function mostrarConquista(virou) {
-    el.conquista.textContent = virou ? 'Card dominado!' : '';
-    el.conquista.classList.toggle('oculto', !virou);
+  function mostrarConquista(virou, diasDeVolta) {
+    /* O dominado acertado de novo não muda de etapa, e o que ele ganhou só
+       se via no painel: uma espera mais longa. Dizer quanto é o que dá peso
+       à revisão certa. */
+    const texto = virou ? 'Card dominado!'
+      : diasDeVolta ? 'volta em ' + rotuloEspera(diasDeVolta) : '';
+    el.conquista.textContent = texto;
+    el.conquista.classList.toggle('oculto', !texto);
   }
 
   /* Grava a resposta e devolve o card para a fila. */
@@ -715,7 +781,8 @@
     Motor.registrar(est, r);
     const virouDominado = est.etapa === 'dominado' && etapaAntes !== 'dominado';
     if (virouDominado) destravarFrases(id);
-    mostrarConquista(virouDominado);
+    mostrarConquista(virouDominado,
+      etapaAntes === 'dominado' && r.acertou ? Motor.DIAS_DOMINADO[est.revisoes] : null);
 
     const guardado = guardarNaFila(id, est, r);
 
@@ -753,8 +820,7 @@
       julgado_por_voce: !!r.julgadoPorVoce,
       etapa_depois: est.etapa,
       fila: guardado.fila,
-      distancia_fila: guardado.distancia,
-      posicao_fila: guardado.posicao
+      distancia_fila: guardado.distancia
     };
     sessao.eventos.push(evento);
 
@@ -785,7 +851,6 @@
     const guardado = guardarNaFila(id, est, r);
     evento.fila = guardado.fila;
     evento.distancia_fila = guardado.distancia;
-    evento.posicao_fila = guardado.posicao;
 
     salvarProgresso();
   }
@@ -1280,9 +1345,9 @@
       /* Degrau vazio fica na tabela, esmaecido: a escada é a mesma para todo
          mundo, e ver o degrau vago diz que ninguém chegou lá ainda. */
       const vazio = d.n ? '' : ' class="vago"';
-      /* Sem nenhum de molho, o próximo é um que já venceu — e esse volta
-         agora, no primeiro card que vier. */
-      const quando = d.proxima ? quandoVolta(d.proxima) : (d.vencidos ? 'agora' : '—');
+      /* Havendo um vencido no degrau, o próximo é ele, e volta agora — a data
+         do seguinte, ainda de molho, não diz nada. */
+      const quando = d.vencidos ? 'agora' : d.proxima ? quandoVolta(d.proxima) : '—';
       return '<tr' + vazio + '><td>' + rotuloEspera(d.dias) + '</td>' +
         '<td class="num">' + (d.n || '—') + '</td>' +
         '<td class="num">' + quando + '</td></tr>';
@@ -1933,7 +1998,15 @@
         : Motor.filaDe(est) === 'esPt' ? progresso.filaEsPt
         : Motor.filaDe(est) === 'ptEs' ? progresso.filaPtEs
         : progresso.dominados;
-      if (baralho.indexOf(id) < 0) { baralho.unshift(id); salvarProgresso(); }
+      if (baralho.indexOf(id) < 0) {
+        baralho.unshift(id);
+        /* Na fila de revisão a ordem não conta mais: o que o põe na frente
+           é uma espera que nenhum outro card alcança. */
+        if (est && est.etapa !== 'dominado') {
+          est.naFila = { desde: progresso.totais.respostas - 1e6, distancia: 1 };
+        }
+        salvarProgresso();
+      }
     }
     cardAtual = null;
     respostaPendente = null;
