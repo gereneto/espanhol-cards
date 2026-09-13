@@ -4803,7 +4803,11 @@ window.CARDS_RAW = {
     "como se nada tivesse ocorrido",
     "como se nada houvesse acontecido",
     "como se nada tivesse se passado",
-    "como se nada fosse"
+    "como se nada fosse",
+    "como se nao tivesse acontecido nada",
+    "como se nao tivesse ocorrido nada",
+    "como se nao tivesse havido nada",
+    "como se nao houvesse acontecido nada"
    ],
    "aceitasEn": [
     "as if nothing had happened",
@@ -5221,7 +5225,10 @@ window.CARDS_RAW = {
     "para de enrolar",
     "sem enrolacao",
     "va direto ao assunto",
-    "vai direto ao ponto"
+    "vai direto ao ponto",
+    "para de enrolacao",
+    "pare de enrolacao",
+    "chega de enrolar"
    ],
    "aceitasEn": [
     "dont beat about the bush",
@@ -6610,7 +6617,9 @@ window.CARDS_RAW = {
     "absurda",
     "despropositada",
     "disparatada",
-    "maluca"
+    "maluca",
+    "sem nocao",
+    "sem pe nem cabeca"
    ],
    "aceitasEn": [
     "preposterous",
@@ -13324,7 +13333,7 @@ window.CARDS_RAW = {
    "tags": [
     "mídia"
    ],
-   "nota": "De 'estrenar' (usar pela primeira vez), que já apareceu como verbo.",
+   "nota": "Vem de 'estrenar', usar ou mostrar pela primeira vez: 'estrenar zapatos' é estrear sapatos, e 'el estreno' de um filme é a estreia.",
    "notaEn": "'El estreno' is the opening night. It comes from 'estrenar', to use something for the very first time — a film, a pair of shoes, a flat."
   },
   {
@@ -14515,7 +14524,7 @@ window.CARDS_RAW = {
    "tags": [
     "expressão"
    ],
-   "nota": "'Pillar' é o pegar coloquial da Espanha, que já apareceu sozinho.",
+   "nota": "'Pillar' é o pegar coloquial da Espanha: 'pillar un resfriado' é pegar um resfriado, 'te pillé' é te peguei. 'Pillar de sorpresa' é pegar desprevenido.",
    "notaEn": "'Pillar' is the everyday Spanish verb for catching, and 'pillar de sorpresa' is to catch someone off guard."
   },
   {
@@ -14860,7 +14869,10 @@ window.CARDS_RAW = {
     "vale mais a manha que a forca",
     "mais vale jeito do que forca",
     "melhor jeito que forca",
-    "vale mais o jeito que a forca"
+    "vale mais o jeito que a forca",
+    "e melhor jeito que forca",
+    "e melhor jeito do que forca",
+    "mais vale o jeito que a forca"
    ],
    "aceitasEn": [
     "brain beats brawn",
@@ -18310,7 +18322,10 @@ window.CARDS_RAW = {
     "guardo uma lembranca carinhosa daquela casa",
     "tenho uma lembranca querida daquela casa",
     "guardo uma recordacao querida daquela casa",
-    "guardo uma lembranca muito querida daquela casa"
+    "guardo uma lembranca muito querida daquela casa",
+    "tenho uma memoria querida daquela casa",
+    "guardo uma memoria querida daquela casa",
+    "tenho uma recordacao querida daquela casa"
    ],
    "aceitasEn": [
     "i keep a fond memory of that house",

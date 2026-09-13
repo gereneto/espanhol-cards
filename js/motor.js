@@ -108,11 +108,16 @@ window.Motor = (function () {
   /* O espanhol dispensa o sujeito tanto quanto o português: "no sabía" é tão
      correto quanto "yo no sabía". Quem carrega a pessoa é o verbo conjugado,
      que continua entrando inteiro na comparação. O artigo espanhol não entra
-     na lista — só o da frente cai, no "pre" da língua. */
+     na lista — só o da frente cai, no "pre" da língua.
+
+     «él» e «tú» entram com acento. A lista nasceu quando o espanhol chegava
+     sem acento nenhum, e «el» cobria os dois; quando o acento passou a
+     contar, «Él dijo la verdad» e «él está hecho un lío» deixaram de soltar o
+     sujeito, e a resposta com pronome virou erro. */
   const OMISSIVEIS_ES = new Set([
     ...OMISSIVEIS_PT,
-    'yo', 'el', 'ella', 'ellos', 'ellas',
-    'nosotros', 'nosotras', 'vosotros', 'usted', 'ustedes'
+    'yo', 'tú', 'el', 'él', 'ella', 'ellos', 'ellas',
+    'nosotros', 'nosotras', 'vosotros', 'vosotras', 'usted', 'ustedes'
   ]);
 
   /* O inglês é o oposto do português: exige o sujeito e exige o artigo. Quem
@@ -427,34 +432,35 @@ window.Motor = (function () {
       .replace(/\u0001/g, 'ñ');
   }
 
-  /* «Él dijo la verdad» escrito «el dijo la verdad» também é só acento —
-     mas o funil tira o «el» da frente, como artigo, e deixa o «él», que é
-     pronome. Os dois lados chegavam diferentes e o acento virava erro. A
-     leitura alternativa devolve o acento ao «el» da frente, e só quando ele
-     foi escrito: quem pulou o pronome não escreveu «el» nenhum. */
-  function leiturasEs(texto) {
+  /* «Él dijo la verdad» escrito «el dijo la verdad»: os dois soltam o
+     sujeito e chegam iguais, e a resposta conta como certa — mas o acento é
+     o que separa o pronome do artigo, e vale o aviso. Só quando ele escreveu
+     o «el» na frente e o card começa por «Él». */
+  function pronomeSemAcento(card, texto, direcao) {
+    if (!/^[\s¡¿"«]*el\s/i.test(String(texto || '').normalize('NFC'))) return null;
     const dado = normalizarEs(texto);
-    const bruto = String(texto || '').normalize('NFC');
-    const comEl = /^[\s¡¿"«]*el\s/i.test(bruto)
-      ? normalizarEs(bruto.replace(/^([\s¡¿"«]*)el(\s)/i, '$1él$2')) : null;
-    return comEl && comEl !== dado ? [dado, comEl] : [dado];
+    const alvo = formasAceitas(card, direcao).find(f =>
+      /^[\s¡¿"«]*él\s/i.test(String(f).normalize('NFC')) && normalizar(f, 'es') === dado);
+    return alvo ? String(alvo).trim() : null;
   }
 
   function difDeGrafiaEs(card, texto, direcao) {
     if (linguaDaResposta(direcao) !== 'es') return null;
     const dado = normalizarEs(texto);
     if (!dado) return null;
-    if (respostasAceitas(card, direcao).includes(dado)) return null;  // acertou, acento e tudo
-    const leituras = leiturasEs(texto);
-    const comEne = leituras.map(semAcentoMantendoEne);
-    const semNada = leituras.map(semAcento);
+    if (respostasAceitas(card, direcao).includes(dado)) {    // acertou, acento e tudo
+      const forma = pronomeSemAcento(card, texto, direcao);   // — menos o do «él»
+      return forma ? { forma: forma, classe: 'acento' } : null;
+    }
+    const comEne = semAcentoMantendoEne(dado);
+    const semNada = semAcento(dado);
     let doEne = null;
     for (const alvo of formasAceitas(card, direcao)) {
       const n = normalizar(alvo, 'es');
-      if (comEne.includes(semAcentoMantendoEne(n))) {
+      if (semAcentoMantendoEne(n) === comEne) {
         return { forma: String(alvo).trim(), classe: 'acento' };
       }
-      if (!doEne && semNada.includes(semAcento(n))) doEne = String(alvo).trim();
+      if (!doEne && semAcento(n) === semNada) doEne = String(alvo).trim();
     }
     return doEne ? { forma: doEne, classe: 'ene' } : null;
   }
