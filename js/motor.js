@@ -803,13 +803,22 @@ window.Motor = (function () {
     const maior = Math.max(a.length, b.length);
     if (maior < 4) return false;
 
-    const d = distancia(a, b);
-    if (!d) return true;
     const inversa = lingua === 'es';
+    /* No espanhol o acento já é conferido antes, com régua própria; aqui ele
+       não soma. Sem isso «yo etuve alli» contava duas diferenças contra
+       «yo estuve allí» — a letra e o acento — e caía no errado. */
+    const d = inversa
+      ? distancia(semAcentoMantendoEne(a), semAcentoMantendoEne(b))
+      : distancia(a, b);
+    if (!d) return true;
 
     if (!a.includes(' ') && !b.includes(' ')) {
       return inversa ? (d === 1 && maior >= 6) : d <= (maior >= 8 ? 2 : 1);
     }
+    /* Uma letra só, em espanhol, também vale a pergunta numa frase curta.
+       A régua de 92% pedia onze letras por erro, e «etuve allí» contra
+       «estuve allí» (dez contra onze) caía como errado seco — era uma tecla. */
+    if (inversa && d === 1 && maior >= 6) return true;
     return 1 - d / maior >= (inversa ? 0.92 : 0.82);
   }
 
@@ -1025,11 +1034,14 @@ window.Motor = (function () {
      Então há espaço entre eles: depois de um dominado, vêm pelo menos
      ESPACO_DOMINADO cards de outra fila. Passado o espaço, a vez do dominado
      é sorteada, com chance que cresce com o acúmulo: um vencido sozinho tem
-     10% por card, e dez ou mais vão sempre que o espaço deixa. Com espaço
-     dois, isso é no máximo um card em cada três — dá conta de 40 dominados
-     num dia de 120 respostas, e o atraso típico é de poucas horas, nada
-     perto dos dias da espera. */
-  const ESPACO_DOMINADO = 2;
+     10% por card, e dez ou mais vão sempre que o espaço deixa.
+
+     O espaço começou em dois e o Gere pediu sete. Com sete, é no máximo um
+     dominado em cada oito cards: uns 15 num dia de 125 respostas. Nos dias
+     em que vencem mais do que isso, os vencidos esperam — e como a espera
+     seguinte conta a partir da revisão, e não da data marcada, o atraso se
+     acomoda sozinho em vez de crescer para sempre. */
+  const ESPACO_DOMINADO = 7;
   const VENCIDOS_CHEIO = 10;
 
   function vezDoDominado(vencidos, desdeUltimo) {
@@ -1044,18 +1056,39 @@ window.Motor = (function () {
      enquanto a conquista ainda está fresca. A frase mostra a palavra em uso
      corrente, que é o que a definição sozinha não ensina: dominar «estrenar»
      não é saber que é estrear, é saber dizer «estreno zapatos hoy». */
-  function liberado(card, estados) {
-    if (!card || !card.requer) return true;
+  /* ── mas só no dia seguinte ──
+     A frase entrava logo depois do domínio, com a palavra ainda na tela da
+     memória: ler «estreno zapatos» minutos depois de escrever «estrenar» é
+     reconhecer, não lembrar. Agora ela espera virar o dia — entra à
+     meia-noite seguinte ao domínio, no fuso do aparelho —, e o encontro vira
+     também uma primeira revisão da palavra.
+
+     A data do domínio fica em «dominadoEm», que o registrar anota. Palavra
+     dominada antes de a data existir não tem o campo, e conta como vencida
+     há muito tempo: a frase dela já estava liberada, e continua. */
+  function liberadaEm(card, estados) {
+    if (!card || !card.requer) return 0;
     const e = estados && estados[card.requer];
-    return !!e && e.etapa === 'dominado';
+    if (!e || e.etapa !== 'dominado') return Infinity;
+    if (!e.dominadoEm) return 0;
+    const d = new Date(e.dominadoEm);
+    d.setHours(24, 0, 0, 0);                     // a meia-noite seguinte
+    return d.getTime();
   }
 
-  /* Quando a palavra que abriu esta frase foi vencida. Ordena as frases
-     recém-liberadas: primeiro a da palavra dominada há menos tempo. */
+  function liberado(card, estados, agora) {
+    return liberadaEm(card, estados) <= (agora || Date.now());
+  }
+
+  /* Quando esta frase foi liberada — ordena as recém-liberadas: primeiro a
+     de palavra dominada há menos tempo. Sem a data, vale o «ultima» da
+     palavra, como era antes. */
   function venceuEm(card, estados) {
     if (!card || !card.requer) return 0;
     const e = estados && estados[card.requer];
-    return (e && e.ultima) ? (Date.parse(e.ultima) || 0) : 0;
+    if (!e) return 0;
+    if (e.dominadoEm) return liberadaEm(card, estados);
+    return e.ultima ? (Date.parse(e.ultima) || 0) : 0;
   }
 
   /* ── o intervalo do card maduro ──
@@ -1241,6 +1274,8 @@ window.Motor = (function () {
         else est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
       } else if (est.seguidas >= acertosParaVirar(est, inversa)) {
         est.etapa = inversa ? 'dominado' : 'inversa-multipla';
+        /* a primeira vez só: é dela que a frase de uso conta o dia seguinte */
+        if (inversa && !est.dominadoEm) est.dominadoEm = new Date().toISOString();
         est.seguidas = 0;   // a direção nova começa do zero
         /* «revisoes» não zera aqui. Quem chega pela primeira vez já vem com
            zero, e quem está voltando de um tropeço tem de reencontrar o
@@ -1490,7 +1525,7 @@ window.Motor = (function () {
     filaDe, pesosDasFilas, chancesDasFilas, sortearFila,
     urgencia, cumpriu, escolherNaFila, vezDoDominado, ESPACO_DOMINADO,
     ALVO_FILA,
-    liberado, venceuEm,
+    liberado, liberadaEm, venceuEm,
     montarFila, alternativas, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

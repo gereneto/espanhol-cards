@@ -259,10 +259,12 @@ que adiantar um.
 
 **Mas com espaço.** Os dominados vencem em lote — 43 no mesmo dia, dos cards
 dominados juntos três dias antes —, e o histórico mostrou 22 deles seguidos
-numa sessão. Depois de um dominado vêm pelo menos **dois** cards de outra fila;
+numa sessão. Depois de um dominado vêm pelo menos **sete** cards de outra fila;
 passado o espaço, a vez do dominado é sorteada com chance que cresce com o
 acúmulo: 10% com um vencido, e sempre com dez ou mais. Isso é no máximo um card
-em cada três, e o atraso típico é de poucas horas.
+em cada oito — uns 15 num dia de 125 respostas. Nos dias em que vencem mais do
+que isso, os vencidos esperam; como a espera seguinte conta a partir da
+revisão, e não da data marcada, o atraso se acomoda em vez de crescer.
 
 **Errar desce um degrau, e só.** Um card de 90 dias passa a voltar em 30, e
 continua dominado — quem já atravessou as duas direções não precisa provar de
@@ -387,11 +389,15 @@ corrente, seja ele do tema que for.
 
 **Toda palavra tem a sua frase.** A leva 10 (`10-frases-de-uso.json`, 205
 frases) fechou a conta: cada uma das 248 palavras do baralho tem uma frase de
-uso presa a ela por `requer`, que só entra depois de a palavra ser dominada.
+uso presa a ela por `requer`, que só entra **no dia seguinte** ao domínio da
+palavra — à meia-noite, no fuso do aparelho. Logo depois do domínio, ler a
+frase seria reconhecer a palavra que acabou de passar na tela; no dia seguinte,
+o encontro vira também uma primeira revisão dela. A data do domínio fica em
+`dominadoEm`; palavra dominada antes de o campo existir conta como liberada.
 Palavra nova sem frase faz o build avisar.
 
-A frase destravada entra na frente dos cards novos, mas **só as duas mais
-frescas** — de palavra vista nas últimas 24 horas. As outras entram
+A frase liberada entra na frente dos cards novos, mas **só as duas mais
+frescas** — liberadas nas últimas 24 horas. As outras entram
 **intercaladas, uma a cada dois cards de outro tipo**. Sem isso, as 73 frases
 que a leva 10 destravou de uma vez seriam os próximos 73 cards novos, sem uma
 expressão ou um verbo no meio.
@@ -569,7 +575,8 @@ ficam sempre à mão.
 
 ## O painel
 
-O 📊 abre as estatísticas. A primeira tabela é **por nível** — é a que responde
+O 📊 abre as estatísticas. A primeira tabela é o **percentual de acerto** por
+nível — é a que responde
 «como estou indo», e a barra verde de cada linha é o acerto geral daquele
 nível. Depois vem **o caminho até aqui**: quantos cards em cada etapa a cada
 resposta que você já deu, em bandas empilhadas.
@@ -600,12 +607,8 @@ espaçar por índice esticaria os dias de muita sincronização.
 Um toque no gráfico põe os números da legenda naquele ponto. Só o toque
 parado: o dedo que arrasta está rolando a página, e não escolhe nada.
 
-As outras tabelas dizem **onde os cards estão**: em que pé está cada nível, a
-escada dos dominados, escolher x escrever, e **por categoria** — cinco
-famílias que dizem o que o card ensina, e não a forma dele: falsos amigos (77),
-expressões e gírias (82), conjugação (50), frases do dia a dia (74) e
-vocabulário (174). Cada card cai na primeira que casa, da mais armadilha à
-mais geral.
+As outras duas tabelas dizem **onde os cards estão**: em que pé está cada
+nível e a escada dos dominados.
 
 ## Vendo o baralho inteiro
 

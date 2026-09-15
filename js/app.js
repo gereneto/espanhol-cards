@@ -227,10 +227,11 @@
        delas nasceram destravadas de uma vez — as palavras já estavam
        dominadas —, e furando a fila todas juntas elas seriam os próximos 73
        cards novos, sem uma expressão, um verbo ou uma palavra no meio. Então
-       furam a fila no máximo FRESCAS_NA_FRENTE, de palavra vista nas últimas
-       24 horas; as outras entram intercaladas, uma a cada DOIS cards de
-       outro tipo. O «vista» é o «ultima» da palavra, que a revisão do
-       dominado também renova — por isso o teto, e não só a janela. */
+       furam a fila no máximo FRESCAS_NA_FRENTE, liberadas nas últimas 24
+       horas; as outras entram intercaladas, uma a cada DOIS cards de outro
+       tipo. Para palavra dominada antes de existir «dominadoEm», a data que
+       sobra é o «ultima», que a revisão do dominado também renova — por isso
+       o teto, e não só a janela. */
     const presas = [], resto = [];
     p.ineditos.forEach(id => ((PORID[id] || {}).requer ? presas : resto).push(id));
     const quando = id => Motor.venceuEm(PORID[id], p.cards);
@@ -402,6 +403,8 @@
   }
 
   function proximoCard() {
+    recolherFrasesLiberadas();
+    if (window.scrollY >= 2) el['tela-card'].style.minHeight = el['tela-card'].offsetHeight + 'px';
     const id = tirarProximoId();
     if (!id) { irParaInicio(); return; }
     cardAtual = PORID[id];
@@ -477,7 +480,11 @@
     }
 
     mostrar('tela-card');
-    if (modoAtual === 'escrita') setTimeout(() => el.entrada.focus(), 40);
+    /* O foco no campo espera a subida acabar: focar antes faz o navegador
+       rolar até o campo por conta própria, e as duas rolagens brigam. */
+    voltarAoTopo(() => {
+      if (modoAtual === 'escrita' && cardAtual) el.entrada.focus({ preventScroll: true });
+    });
 
     inicioResposta = performance.now();
   }
@@ -573,7 +580,7 @@
       'português 🇧🇷, e o que se pede é o espanhol dela — tente de novo.';
     el['aviso-lingua'].classList.remove('oculto');
     el.entrada.value = '';
-    el.entrada.focus();
+    el.entrada.focus({ preventScroll: true });
   }
 
   function avisarLinguaTrocada(troca) {
@@ -585,7 +592,7 @@
         'pergunta ao contrário. Aqui a tradução vai em português 🇧🇷 — tente de novo.';
     el['aviso-lingua'].classList.remove('oculto');
     el.entrada.value = '';
-    el.entrada.focus();
+    el.entrada.focus({ preventScroll: true });
   }
 
   /* Mostra o feedback. Grava na hora, salvo quando a resposta caiu na
@@ -690,26 +697,31 @@
     trazerBotaoParaAVista();
   }
 
-  /* Depois de responder, o feedback empurra o botão de seguir adiante para
-     baixo da dobra, e era preciso rolar à mão a cada card. Puxa a tela o
-     bastante para ele aparecer — e nada além disso, para o espanhol não sair
-     de vista. Quando a resposta ficou por julgar, o alvo são os dois botões
-     de julgamento, que é o que espera decisão naquele momento.
+  /* ── a rolagem ──
+     Depois de responder, o feedback empurra o botão de seguir adiante para
+     baixo da dobra. A tela sobe o bastante para ele aparecer, e nada além
+     disso, para o espanhol não sair de vista. Quando a resposta ficou por
+     julgar, o alvo são os dois botões de julgamento.
 
-     O scrollIntoView não deu conta, e por dois motivos que só aparecem no
-     aparelho de verdade:
+     A versão anterior disparava três rolagens — suave, suave de novo 300 ms
+     depois, e uma seca aos 700 ms para o caso de a suave ter morrido — e
+     refazia o «chão» debaixo do botão a cada uma. Funcionava, mas se via: a
+     seca dava tranco, a segunda suave recomeçava no meio da primeira, e
+     zerar o chão para medir de novo encolhia a página por um instante, e o
+     navegador puxava a tela de volta antes de ela descer outra vez.
 
-     — no celular o teclado cobre metade da tela sem encolher o innerHeight,
-       então ele conclui que o botão está à vista e não faz nada. Quem sabe
-       o que está coberto é o visualViewport, e é contra ele que a conta é
-       feita aqui;
-     — a rolagem suave é cancelada por qualquer toque na tela, e logo depois
-       de escolher a alternativa o dedo ainda está lá.
+     Agora é uma animação só, feita à mão, quadro a quadro. A cada quadro ela
+     mede quanto ainda falta para o alvo caber na parte visível — contra o
+     visualViewport, que é quem sabe o que o teclado cobre — e se move como
+     uma mola com amortecimento crítico: sai parada, acelera, freia e chega
+     sem passar do ponto. Se o teclado fecha no meio, o que falta muda e a
+     mola segue o novo alvo sem recomeçar. Termina quando fica parada no
+     lugar por alguns quadros, depois de um mínimo que dá tempo ao teclado.
 
-     Daí as três passadas. Cada uma recalcula quanto falta a partir da
-     posição atual, então repetir não faz passar do ponto: rolar e o botão
-     subir se cancelam. A do fim é instantânea, porque rolagem suave
-     cancelada no meio do caminho não se recupera sozinha. */
+     O chão só cresce durante a animação, e no fim sai apenas a sobra que
+     está abaixo da tela: tirar o que ninguém está vendo não move nada.
+     Um toque ou a roda do mouse no meio do caminho interrompem: a mão de
+     quem usa manda mais do que a animação. */
   const FOLGA_BOTAO = 24;
 
   /* Quanto ainda falta rolar para o alvo caber na parte de fato visível. */
@@ -722,40 +734,104 @@
     return Math.max(0, (r.bottom + FOLGA_BOTAO) - (topo + altura));
   }
 
+  let rolagemAtual = null;
+
+  /* Anima a rolagem até «falta()» chegar a zero. «falta» devolve pixels,
+     positivos para descer e negativos para subir. */
+  function rolarSuave(falta, aoTerminar) {
+    if (rolagemAtual) rolagemAtual.parar();
+    const raiz = document.documentElement;
+    const chao = el['area-feedback'];
+    const instantaneo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const W = 13;             // rad/s: rigidez da mola (chega em ~0,4 s)
+    const MINIMO = 450;       // ms: tempo para o teclado terminar de fechar
+    const MAXIMO = 1600;      // ms: nunca fica rolando para sempre
+    const inicio = performance.now();
+    let anterior = inicio, parado = 0, quadro = 0, vivo = true, vel = 0;
+
+    const interromper = () => parar();
+    window.addEventListener('touchstart', interromper, { passive: true, once: true });
+    window.addEventListener('wheel', interromper, { passive: true, once: true });
+
+    function parar(concluiu) {
+      if (!vivo) return;
+      vivo = false;
+      cancelAnimationFrame(quadro);
+      window.removeEventListener('touchstart', interromper);
+      window.removeEventListener('wheel', interromper);
+      /* a sobra do chão que ficou abaixo da tela sai sem mexer em nada */
+      const pad = parseFloat(chao.style.paddingBottom) || 0;
+      if (pad) {
+        const sobra = raiz.scrollHeight - (window.scrollY + window.innerHeight);
+        const tirar = Math.min(pad, Math.max(0, Math.floor(sobra)));
+        chao.style.paddingBottom = (pad - tirar) ? (pad - tirar) + 'px' : '';
+      }
+      if (rolagemAtual === controle) rolagemAtual = null;
+      if (concluiu && aoTerminar) aoTerminar();
+    }
+
+    function passo(agora) {
+      if (!vivo) return;
+      const dt = Math.min(64, agora - anterior) / 1000;
+      anterior = agora;
+      const d = falta();
+      if (Math.abs(d) < 0.5 && Math.abs(vel) < 20) {
+        vel = 0;
+        parado++;
+        if (parado >= 6 && agora - inicio >= MINIMO) return parar(true);
+      } else {
+        parado = 0;
+        let andar;
+        if (instantaneo) {
+          andar = d;
+        } else {
+          vel += (W * W * d - 2 * W * vel) * dt;
+          andar = vel * dt;
+          /* nunca passa do alvo; e o fim não se arrasta em frações de pixel */
+          if (Math.abs(andar) > Math.abs(d) || Math.sign(andar) !== Math.sign(d)) { andar = d; vel = 0; }
+          else if (Math.abs(andar) < 1 && Math.abs(d) <= 4) andar = d;
+        }
+        if (andar > 0) {
+          const podeRolar = raiz.scrollHeight - window.scrollY - window.innerHeight;
+          if (andar > podeRolar) {
+            const pad = parseFloat(chao.style.paddingBottom) || 0;
+            chao.style.paddingBottom = Math.ceil(pad + andar - podeRolar) + 'px';
+          }
+        }
+        window.scrollTo(0, window.scrollY + andar);
+      }
+      if (agora - inicio >= MAXIMO) return parar(true);
+      quadro = requestAnimationFrame(passo);
+    }
+
+    const controle = { parar: () => parar(false) };
+    rolagemAtual = controle;
+    quadro = requestAnimationFrame(passo);
+    return controle;
+  }
+
   function trazerBotaoParaAVista() {
     const alvo = el['btn-proximo'].classList.contains('oculto')
       ? el['area-julgamento'] : el['btn-proximo'];
     if (!alvo) return;
-    const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    rolarSuave(() => faltaRolar(alvo));
+  }
 
-    const rolar = comportamento => {
-      /* O chão é refeito do zero a cada passada, e esse zero é o conserto.
-         Antes ele só crescia: a primeira passada acontece com o teclado
-         aberto, onde falta muito para o botão aparecer, e criava um chão do
-         tamanho do teclado. Quando o teclado fechava, a passada seguinte via
-         que não faltava mais nada e voltava sem desfazer o chão — a página
-         ficava alta demais, e a tela parava bem mais para baixo do que
-         precisava. Zerar antes de medir deixa o navegador reencaixar a
-         rolagem, e o que se acrescenta depois é só o que falta agora. */
-      el['area-feedback'].style.paddingBottom = '';
-      const falta = faltaRolar(alvo);
-      if (!falta) return;
-      /* Rolar sozinho não resolve: o botão é o último elemento da página, e
-         quando falta subir mais do que ainda há para rolar — teclado
-         aberto, tela baixa —, a página termina antes de ele chegar. Sem
-         isto a rolagem acontecia e o botão continuava embaixo do teclado.
-         Então primeiro se cria chão debaixo dele, e só então se rola. */
-      const podeRolar = document.documentElement.scrollHeight
-        - Math.round(window.scrollY) - window.innerHeight;
-      if (falta > podeRolar) {
-        el['area-feedback'].style.paddingBottom = (falta - podeRolar) + 'px';
-      }
-      window.scrollBy({ top: falta, behavior: comportamento });
-    };
-
-    rolar(suave ? 'smooth' : 'auto');
-    setTimeout(() => rolar(suave ? 'smooth' : 'auto'), 300);  // o teclado fechou
-    setTimeout(() => rolar('auto'), 700);                     // e se a suave morreu
+  /* Card novo começa do topo, subindo com a mesma suavidade. A página do
+     card anterior era mais alta (tinha feedback), e trocar o conteúdo com a
+     tela lá embaixo faria o navegador saltar para cima de uma vez; segurar a
+     altura até a subida acabar evita o salto. */
+  function voltarAoTopo(aoTerminar) {
+    if (window.scrollY < 2) {
+      el['tela-card'].style.minHeight = '';
+      if (aoTerminar) aoTerminar();
+      return;
+    }
+    el['tela-card'].style.minHeight = el['tela-card'].offsetHeight + 'px';
+    rolarSuave(() => -window.scrollY, () => {
+      el['tela-card'].style.minHeight = '';
+      if (aoTerminar) aoTerminar();
+    });
   }
 
   function mostrarVeredito(r) {
@@ -797,21 +873,18 @@
     el['btn-proximo'].focus({ preventScroll: true });
     trazerBotaoParaAVista();
   }
-  /* Dominou a palavra: as frases que a usam entram na hora, na frente do
-     baralho de inéditos. O ordenarIneditos faria isso no próximo
-     carregamento, mas a graça está em vir agora, na sequência da conquista.
-     Guardo quem já venceu antes: se a frase voltar a ficar presa por causa
-     de um erro futuro, ela sai daqui pelo conciliarFila, não por engano. */
-  function destravarFrases(idPalavra) {
-    const emCirculacao = id => progresso.filaEsPt.indexOf(id) >= 0 ||
-                               progresso.filaPtEs.indexOf(id) >= 0 ||
-                               progresso.dominados.indexOf(id) >= 0;
-    const novas = CARDS
-      .filter(c => c.requer === idPalavra && !progresso.cards[c.id] &&
-                   !progresso.ineditos.includes(c.id) && !emCirculacao(c.id))
-      .map(c => c.id);
-    if (novas.length) progresso.ineditos.unshift(...novas);
-    return novas.length;
+  /* Frases cuja palavra foi dominada até ontem e que ainda não estão nos
+     inéditos. Antes elas entravam na hora do domínio; agora esperam o dia
+     virar (ver Motor.liberado), e quem as recolhe é esta função, chamada a
+     cada card — o app pode ficar aberto de um dia para o outro. */
+  function recolherFrasesLiberadas() {
+    const agora = Date.now();
+    const jaEsta = new Set(progresso.ineditos);
+    const novas = CARDS.filter(c => c.requer && !progresso.cards[c.id] &&
+      !jaEsta.has(c.id) && Motor.liberado(c, progresso.cards, agora));
+    if (!novas.length) return;
+    novas.forEach(c => progresso.ineditos.push(c.id));
+    ordenarIneditos(progresso);
   }
 
   /* Vencer as duas direções é a única conquista do app que não se vê na
@@ -821,7 +894,8 @@
     /* O dominado acertado de novo não muda de etapa, e o que ele ganhou só
        se via no painel: uma espera mais longa. Dizer quanto é o que dá peso
        à revisão certa. */
-    const texto = virou ? 'Card dominado!'
+    const temFrase = virou && cardAtual && CARDS.some(c => c.requer === cardAtual.id);
+    const texto = virou ? 'Card dominado!' + (temFrase ? ' A frase de uso chega amanhã.' : '')
       : diasDeVolta ? 'volta em ' + rotuloEspera(diasDeVolta) : '';
     el.conquista.textContent = texto;
     el.conquista.classList.toggle('oculto', !texto);
@@ -834,7 +908,6 @@
     const etapaAntes = est.etapa;
     Motor.registrar(est, r);
     const virouDominado = est.etapa === 'dominado' && etapaAntes !== 'dominado';
-    if (virouDominado) destravarFrases(id);
     mostrarConquista(virouDominado,
       etapaAntes === 'dominado' && r.acertou ? Motor.DIAS_DOMINADO[est.revisoes] : null);
 
@@ -1095,8 +1168,6 @@
     html += graficoEtapas();
     html += tabelaEtapas();
     html += tabelaDominados();
-    html += tabelaModo();
-    html += tabelaPor('Por categoria', categoriaDe, CATEGORIAS.map(c => c[0]));
 
     el['painel-conteudo'].innerHTML = html;
     ligarGrafico();
@@ -1458,7 +1529,7 @@
 
     if (!linhas) return '';
     const semEstreia = Motor.NIVEIS.reduce((a, n) => a + g[n].semEstreia, 0);
-    return '<h3>Por nível</h3><p class="legenda">“De primeira” é o que você já sabia; ' +
+    return '<h3>Percentual de acerto</h3><p class="legenda">“De primeira” é o que você já sabia; ' +
       '“depois”, o que fixou repetindo. A barra é o acerto geral do nível.' +
       (semEstreia ? ' <b>' + semEstreia + '</b> sem estreia anotada.' : '') +
       '</p>' +
@@ -1466,75 +1537,6 @@
       ['Cards', 'De primeira', 'Depois', 'Geral'].map(r =>
         '<th class="vert"><span>' + r + '</span></th>').join('') +
       '<th></th></tr>' + linhas + '</table>';
-  }
-
-  /* Escolher entre cinco é bem mais fácil que escrever do zero. */
-  function tabelaModo() {
-    const g = { multipla: { n: 0, certas: 0 }, escrita: { n: 0, certas: 0 } };
-    Object.keys(progresso.cards).forEach(id => {
-      const pm = progresso.cards[id].porModo || {};
-      Object.keys(g).forEach(k => {
-        if (!pm[k]) return;
-        g[k].n += pm[k].n;
-        g[k].certas += pm[k].certas;
-      });
-    });
-    const rotulos = { multipla: 'escolhendo entre 5', escrita: 'escrevendo' };
-    const linhas = Object.keys(g).filter(k => g[k].n).map(k => {
-      const x = g[k];
-      return '<tr><td>' + rotulos[k] + '</td><td class="num">' + x.n + '</td>' +
-        '<td class="num">' + pctDe(x.certas, x.n) + '</td></tr>';
-    }).join('');
-    if (!linhas) return '';
-    return '<h3>Escolher x escrever</h3><table><tr><th>Modo</th><th class="num">Respostas</th>' +
-      '<th class="num">Acerto</th></tr>' + linhas + '</table>';
-  }
-
-  /* ── as cinco famílias do baralho ──
-     «Palavra ou frase» dizia da forma do card, não do que ele ensina. Estas
-     cinco dizem: são as coisas que um brasileiro tropeça em espanhol, e cada
-     card cai na primeira que casar — a ordem é a da especificidade, do mais
-     armadilha ao mais geral. */
-  const CATEGORIAS = [
-    ['Falsos amigos',        c => (c.tags || []).includes('falso-amigo')],
-    ['Expressões e gírias',  c => (c.tags || []).some(t =>
-                                    t === 'expressão' || t === 'gíria' || t === 'provérbio')],
-    ['Conjugação',           c => (c.tags || []).includes('conjugação')],
-    ['Frases do dia a dia',  c => c.tipo === 'frase'],
-    ['Vocabulário',          () => true]
-  ];
-
-  function categoriaDe(c) {
-    for (const [nome, casa] of CATEGORIAS) if (casa(c)) return nome;
-    return 'Vocabulário';
-  }
-
-  function tabelaPor(titulo, chave, ordem) {
-    const grupos = {};
-    Object.keys(progresso.cards).forEach(id => {
-      const c = PORID[id]; if (!c) return;
-      const k = chave(c);
-      const g = grupos[k] || (grupos[k] = { certas: 0, total: 0, cards: 0 });
-      const e = progresso.cards[id];
-      if (!e.vistas) return;
-      g.cards++;
-      /* contadores do card, e não o histórico: este guarda só as últimas 12 */
-      g.total += e.vistas;
-      g.certas += e.acertos;
-    });
-
-    const linhas = (ordem || Object.keys(grupos)).filter(k => grupos[k]).map(k => {
-      const g = grupos[k];
-      const pct = g.total ? Math.round(100 * g.certas / g.total) : 0;
-      return '<tr><td>' + escapar(k) + '</td>' +
-        '<td class="num">' + g.cards + '</td>' +
-        '<td class="num">' + pct + '%</td>' +
-        '<td class="col-barra"><div class="barra"><i style="width:' + pct + '%"></i></div></td></tr>';
-    }).join('');
-
-    if (!linhas) return '';
-    return '<h3>' + titulo + '</h3><table><tr><th>—</th><th class="num">Cards</th>' +
-      '<th class="num">Acerto</th><th></th></tr>' + linhas + '</table>';
   }
 
   /* ═══════════════ todos os cards ═══════════════ */
