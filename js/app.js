@@ -513,6 +513,9 @@
     if (conferencia === 'errado' && !desistiu && !chanceUsada) {
       const troca = Motor.linguaTrocada(cardAtual, texto, direcaoAtual);
       if (troca) { avisarLinguaTrocada(troca); return; }
+      /* e o espelho, na volta: a pergunta portuguesa lida como espanhol */
+      const leitura = Motor.leituraEspanhola(cardAtual, texto, direcaoAtual, indiceEspanhol());
+      if (leitura) { avisarLeituraEspanhola(leitura); return; }
     }
     el['aviso-lingua'].classList.add('oculto');
     el.entrada.disabled = true;
@@ -526,6 +529,25 @@
       quase: conferencia === 'quase',
       ms, resposta: texto, desistiu: !!desistiu
     });
+  }
+
+  /* O índice do espanhol do baralho, montado na primeira vez que alguém
+     precisa dele (ver Motor.leituraEspanhola). */
+  let INDICE_ES = null;
+  function indiceEspanhol() {
+    if (!INDICE_ES) INDICE_ES = Motor.indiceEspanhol(CARDS);
+    return INDICE_ES;
+  }
+
+  function avisarLeituraEspanhola(l) {
+    chanceUsada = true;
+    el['aviso-lingua'].innerHTML =
+      '<b>' + escapar(l.resposta) + '</b> é a tradução de <b>' + escapar(l.espanhol) +
+      '</b>, em espanhol 🇪🇸. Mas aqui <b>' + escapar(l.pergunta) + '</b> está em ' +
+      'português 🇧🇷, e o que se pede é o espanhol dela — tente de novo.';
+    el['aviso-lingua'].classList.remove('oculto');
+    el.entrada.value = '';
+    el.entrada.focus();
   }
 
   function avisarLinguaTrocada(troca) {
@@ -585,6 +607,9 @@
     /* E o «ñ», que é letra e não «n» com enfeite. */
     const acento = escrevendo && !forma && !genero
       ? Motor.erroDeEne(cardAtual, r.resposta, r.direcao) : null;
+    /* A terminação de outra pessoa ou outro tempo: «suele» por «suelo». */
+    const flexao = escrevendo && !forma && !genero && !acento
+      ? Motor.erroDeFlexao(cardAtual, r.resposta, r.direcao) : null;
 
     /* Acertou, mas sem o acento. Não custa ponto — custa uma linha, que diz
        só a palavra, e a letra pintada na resposta certa, logo abaixo. */
@@ -599,14 +624,17 @@
         : escapar(p.texto)).join('');
     }
 
-    if (forma || genero || acento) {
+    if (forma || genero || acento || flexao) {
       el['texto-dado'].innerHTML = forma
         ? escapar(forma.forma) + ' <span class="forma-rotulo">' + escapar(forma.rotulo) + '</span>'
         : genero
         ? escapar(r.resposta) +
           ' <span class="forma-rotulo">gênero errado — era «' + escapar(genero) + '»</span>'
+        : acento
+        ? escapar(r.resposta) +
+          ' <span class="forma-rotulo">preste atenção ao ñ</span>'
         : escapar(r.resposta) +
-          ' <span class="forma-rotulo">preste atenção ao ñ</span>';
+          ' <span class="forma-rotulo">forma errada — era «' + escapar(flexao) + '»</span>';
       el['resposta-dada'].classList.remove('oculto');
       el['resposta-dada'].classList.add('conjugacao');
     } else {
@@ -622,7 +650,7 @@
       el['area-julgamento'].classList.remove('oculto');
       el['btn-proximo'].classList.add('oculto');
     } else {
-      if (!forma && !genero && !acento) el['resposta-dada'].classList.add('oculto');
+      if (!forma && !genero && !acento && !flexao) el['resposta-dada'].classList.add('oculto');
       el['area-julgamento'].classList.add('oculto');
       el['btn-proximo'].classList.remove('oculto');
       mostrarVeredito(r);

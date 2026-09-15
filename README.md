@@ -363,7 +363,7 @@ enquanto serve à revisão (adiante). Três regras, que o `build.js` cobra:
 
 ### Os arquivos são levas, não categorias
 
-Os nove arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
+Os dez arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
 cima da outra. Os quatro primeiros nasceram juntos, no commit que criou o app,
 e os nomes deles descrevem os temas daquele baralho de 140 cards. Do quinto em
 diante é **uma leva por commit** — «Leva de 112 cards, quase toda de
@@ -384,6 +384,11 @@ não vale a pena arrumar:**
 
 **A etiqueta é o índice; o arquivo é a data.** Card novo vai para a leva
 corrente, seja ele do tema que for.
+
+**Toda palavra tem a sua frase.** A leva 10 (`10-frases-de-uso.json`, 205
+frases) fechou a conta: cada uma das 248 palavras do baralho tem uma frase de
+uso presa a ela por `requer`, que só entra depois de a palavra ser dominada.
+Palavra nova sem frase faz o build avisar.
 
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
@@ -441,6 +446,19 @@ ou a pessoa, que é justamente o que o card cobra. Isso é erro seco, sem
 perguntar nada, e o feedback nomeia o que você escreveu: *«Él dice la verdad»
 — presente*, contra o pretérito que era pedido.
 
+Fora dos cards de conjugação vale uma regra geral de **flexão**: se as duas
+respostas têm as mesmas palavras menos uma, e essa tem o mesmo radical com
+outra desinência verbal — «apeteces» por «apetece», «juega» por «juegan» —,
+é erro seco, com o aviso *forma errada — era «apetece»*. O «-s» sozinho
+precisava de cuidado: o funil lê plural como singular, e «apeteces» chegava
+igual a «apetece» e contava como certo. Nas frases, uma palavra que só ganhou
+ou perdeu o «-s» é tratada como flexão; plural de verdade quase nunca vem
+sozinho numa frase («la sábana» → «las sábanas» muda duas palavras).
+
+A exceção é a **vogal final trocada por outra** — «suele» por «suelo»,
+«harte» por «harto». No teclado Dvorak a, o, e, u, i são vizinhas, e dali não
+dá para saber se foi a pessoa do verbo ou o dedo: fica para o «deu quase».
+
 **Em espanhol — e aí não conta.** Falso amigo engana de um jeito que estar
 atento às bandeiras não resolve: você lê «la sobremesa», reconhece a palavra
 portuguesa e responde o espanhol dela — «el postre», que é a resposta certa da
@@ -454,10 +472,26 @@ Ele sabe quais palavras espanholas valem como aviso porque a nota do card já as
 carrega, uma por linha, no formato «🇪🇸 x → 🇧🇷 y» — são 156 pares em 73 cards.
 Junto com elas entra a própria palavra da pergunta.
 
-Vale **uma vez por aparição do card**: com duas viraria tentativa livre. E vale
-só em `es → pt`, que é o lado em que a resposta devia estar em português — na
-volta, responder em espanhol é o que se pede. O relógio continua correndo de
-propósito: o tropeço não é erro, mas também não sai de graça.
+Vale **uma vez por aparição do card**: com duas viraria tentativa livre. O
+relógio continua correndo de propósito: o tropeço não é erro, mas também não
+sai de graça.
+
+**Na volta, o mesmo tropeço ao contrário.** A pergunta é «a cola», em
+português, e pede «el pegamento». Mas «cola» também é palavra espanhola — a
+fila —, e o olho que já está no espanhol lê a pergunta assim e responde «a
+fila». É certo, na língua errada:
+
+> **a fila** é a tradução de **la cola**, em espanhol 🇪🇸. Mas aqui **a cola**
+> está em português 🇧🇷, e o que se pede é o espanhol dela — tente de novo.
+
+Para saber o que a pergunta quer dizer lida como espanhol, não há lista à
+parte: o baralho inteiro vira um índice. Cada card diz o que o seu espanhol
+significa (o `pt` e as `aceitas`), e as notas trazem os pares «🇪🇸 x → 🇧🇷 y».
+A varredura das 248 perguntas de palavra achou 12 cobertas só pelo baralho, e
+outras 17 ganharam o par na nota — «a tela» (o tecido), «o marco» (a
+moldura), «a mala» (má), «reparar» (consertar), «apagar» (desligar),
+«o escritório» (a escrivaninha), entre outras. Card novo com pergunta que se
+lê como outra palavra espanhola deve trazer o par na nota.
 
 **Quase — e aí quem decide é você.** Se a resposta chegou perto mas não bate,
 o app não dá nem tira ponto: mostra o que você escreveu ao lado da resposta

@@ -320,6 +320,20 @@ for (const c of cards) {
   }
 }
 
+/* ── toda palavra tem a sua frase ──
+   A palavra sozinha diz o que é; a frase diz como se usa — e é o uso que a
+   definição não ensina. Desde a leva 10 toda palavra do baralho tem uma
+   frase presa a ela, e o build avisa quando alguma entra sem. Aviso, e não
+   erro: a palavra pode chegar numa leva e a frase na seguinte. */
+{
+  const comFrase = new Set(cards.filter(c => c.requer).map(c => c.requer));
+  const soltas = cards.filter(c => c.tipo === 'palavra' && !comFrase.has(c.id));
+  if (soltas.length) {
+    avisos.push(soltas.length + ' palavra(s) sem frase de uso presa a ela: ' +
+      soltas.map(c => c.id + ' (' + c.es + ')').join(', '));
+  }
+}
+
 /* ── estatísticas ── */
 const conta = (f) => cards.reduce((a, c) => { const k = f(c); a[k] = (a[k] || 0) + 1; return a; }, {});
 console.log('\n  total ............ ' + cards.length);

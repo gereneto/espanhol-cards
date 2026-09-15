@@ -244,8 +244,11 @@ window.Motor = (function () {
   }
 
   /* Português é o padrão: quem já chamava normalizar(txt) continua igual. */
-  function normalizar(txt, lingua) {
+  /* «opcoes.plural = false» desliga o plural = singular. Só a conferência da
+     flexão usa: para ela, o «-s» de «apeteces» é a pessoa do verbo. */
+  function normalizar(txt, lingua, opcoes) {
     const L = LINGUAS[lingua] || LINGUAS.pt;
+    const comPlural = !opcoes || opcoes.plural !== false;
 
     let texto = String(txt || '').toLowerCase();
     if (L.guardaAcento) {
@@ -266,7 +269,7 @@ window.Motor = (function () {
       for (let p of (L.grafias[bruta] || bruta).split(' ')) {
         if (L.omissiveis.has(p)) continue;                // antes de mexer na palavra
         if (L.numeros[p]) p = L.numeros[p];               // "3 anos" = "três anos"
-        p = L.plural(p);                                  // plural = singular
+        if (comPlural) p = L.plural(p);                   // plural = singular
         if (L.omissiveis.has(p)) continue;                // e de novo, para "eles" → "ele"
         saida.push(p);
       }
@@ -519,6 +522,71 @@ window.Motor = (function () {
     return palavras.length ? { palavras: palavras, pedacos: pedacos } : null;
   }
 
+  /* ── a pergunta em português, lida como espanhol ──
+     O mesmo tropeço, na volta. A pergunta é «a cola», em português, e pede
+     «el pegamento». Mas «cola» também é palavra espanhola — é a fila —, e o
+     olho que já está no espanhol lê a pergunta como espanhol e responde «a
+     fila», a tradução dela. É certo, na língua errada, e merece o mesmo aviso.
+
+     Para saber o que a pergunta quer dizer em espanhol, não há lista à
+     parte: o próprio baralho sabe. Cada card diz o que o seu espanhol
+     significa em português (o «pt» e as «aceitas»), e as notas trazem mais
+     pares «🇪🇸 x → 🇧🇷 y». Juntos, viram um índice: o espanhol, chaveado sem
+     artigo e sem acento, aponta para as traduções dele. Se a pergunta lida
+     como espanhol cai numa chave, e a resposta é uma daquelas traduções, foi
+     a leitura trocada.
+
+     O índice se monta uma vez, no app, a partir de todos os cards. O
+     espanhol de um card não conta contra a pergunta dele mesmo — «acatar»
+     pergunta «acatar» —, mas as notas dele contam: é na nota de «a tela»
+     que mora «🇪🇸 la tela → 🇧🇷 o tecido», justamente para esta pergunta. E
+     a tradução igual à própria pergunta não vale como tropeço: aí não há
+     leitura trocada nenhuma, só cognato. */
+  function chaveDeLeitura(t) {
+    /* «a oficina (mecânica)»: o parêntese explica a pergunta, não faz parte
+       do que o olho lê como espanhol */
+    return semAcento(normalizarEs(String(t || '').replace(/\([^)]*\)/g, ' ')));
+  }
+
+  function indiceEspanhol(cards) {
+    const indice = new Map();
+    const guardar = (es, pts, id) => {
+      const chave = chaveDeLeitura(es);
+      if (!chave) return;
+      const lista = indice.get(chave) || [];
+      lista.push({ id: id, es: String(es).trim(),
+                   pts: pts.map(p => String(p).trim()).filter(Boolean) });
+      indice.set(chave, lista);
+    };
+    (cards || []).forEach(c => {
+      guardar(c.es, String(c.pt || '').split('/').concat(c.aceitas || []), c.id);
+      const par = /🇪🇸\s*([^→\n]+?)\s*→\s*🇧🇷\s*([^\n]+)/g;
+      let m;
+      while ((m = par.exec(String(c.nota || '')))) {
+        const pts = m[2].split(',');
+        m[1].split(',').forEach(es => guardar(es, pts, c.id));
+      }
+    });
+    return indice;
+  }
+
+  function leituraEspanhola(card, texto, direcao, indice) {
+    if (direcao !== 'pt-es' || !indice) return null;
+    const dado = normalizar(texto, 'pt');
+    if (!dado) return null;
+    for (const pergunta of String(card.pt || '').split('/')) {
+      const propriaPergunta = normalizar(pergunta.replace(/\([^)]*\)/g, ' '), 'pt');
+      if (dado === propriaPergunta) continue;
+      for (const ent of (indice.get(chaveDeLeitura(pergunta)) || [])) {
+        if (chaveDeLeitura(ent.es) === chaveDeLeitura(card.es)) continue;   // o espanhol do próprio card
+        if (ent.pts.some(p => normalizar(p, 'pt') === dado)) {
+          return { pergunta: pergunta.trim(), espanhol: ent.es, resposta: String(texto).trim() };
+        }
+      }
+    }
+    return null;
+  }
+
   function linguaTrocada(card, texto, direcao) {
     if (direcao !== 'es-pt') return null;
     const dado = semAcento(normalizarEs(texto));
@@ -604,6 +672,11 @@ window.Motor = (function () {
        mão que escorregou, foi o gênero — que é o que o card ensina. */
     if (erroDeGenero(card, texto, direcao)) return 'errado';
 
+    /* A terminação de outra pessoa ou outro tempo: «suele» por «suelo»,
+       «apeteces» por «apetece». Erro seco — e antes da lista de aceitas,
+       porque o plural = singular deixaria o «-s» passar como certo. */
+    if (erroDeFlexao(card, texto, direcao)) return 'errado';
+
     const aceitas = respostasAceitas(card, direcao);
     if (aceitas.includes(dado)) return 'certo';
 
@@ -635,6 +708,86 @@ window.Motor = (function () {
     const dado = normalizarEs(texto);
     for (const forma of Object.keys(card.formasEs)) {
       if (normalizarEs(forma) === dado) return { forma, rotulo: rotulos[forma] };
+    }
+    return null;
+  }
+
+  /* ── a terminação de outra pessoa ──
+     «Suelo levantarme temprano» escrito «suele levantarme temprano». Uma
+     letra, e caía no «deu quase», como se a mão tivesse escorregado. Não
+     escorregou: «suele» é outra pessoa do mesmo verbo, e a conjugação é o que
+     o espanhol cobra. O mesmo com «¿te apeteces un café?» por «¿te apetece?».
+
+     O formasEs já pegava isso, mas só nos cards de conjugação, que listam as
+     formas uma a uma. Aqui a regra vale para qualquer frase: as duas
+     respostas têm as mesmas palavras menos uma, e essa uma tem o mesmo
+     radical (três letras ou mais) com duas desinências verbais diferentes —
+     «suel-o» e «suel-e», «apetec-e» e «apetec-es».
+
+     Pega também «cansado» por «cansada», que é concordância e não
+     conjugação; o nome no aviso é «forma», que serve às duas. O que não pega
+     é erro de digitação no meio da palavra — «pesdumbre», «quinto pito» —,
+     que continua indo para o «deu quase».
+
+     E há o «-s» sozinho. O funil lê plural como singular, e por isso
+     «apeteces» chegava igual a «apetece» e contava como CERTO. Aqui a
+     comparação é feita sem essa folga, e nas frases uma palavra que só
+     ganhou ou perdeu o «-s» é tratada como flexão. Plural de verdade quase
+     nunca vem sozinho numa frase — «la sábana» vira «las sábanas», e são duas
+     palavras diferentes —, então ele continua passando pelo caminho de
+     sempre. Nos cards de palavra o «-s» segue sendo plural.
+
+     Uma exceção, para não punir a mão: quando a diferença é UMA vogal final
+     trocada por outra — «suele» por «suelo», «harte» por «harto» —, fica
+     para o «deu quase». No teclado Dvorak, a, o, e, u e i são vizinhas na
+     mesma fileira, e daqui não dá para saber se foi a pessoa do verbo ou o
+     dedo. Quem sabe é quem escreveu. Desinência que ganha ou perde letra —
+     «apeteces», «juega» por «juegan», «hablamos» por «hablan» — não tem
+     esse álibi. */
+  const DESINENCIAS = new Set((
+    'o as a amos ais an es e emos eis en imos is i iste io isteis ieron ' +
+    'aste aron asteis aba abas abamos abais aban ia ias iamos iais ian ' +
+    'are aras ara aremos areis aran ere eras era eremos ereis eran ' +
+    'ire iras ira iremos ireis iran aria arias ariamos ariais arian ' +
+    'eria erias eriamos eriais erian iria irias iriamos iriais irian ' +
+    'ase ases asemos aseis asen iese ieses iesemos ieseis iesen ' +
+    'iera ieras ieramos ierais ieran ado ada ido ida ando iendo ar er ir'
+  ).split(' '));
+
+  function flexaoTrocada(a, b) {
+    const n = Math.min(a.length, b.length);
+    for (let k = 3; k <= n; k++) {
+      if (a[k - 1] !== b[k - 1]) break;
+      const sa = a.slice(k), sb = b.slice(k);
+      if (sa !== sb && DESINENCIAS.has(sa) && DESINENCIAS.has(sb)) return true;
+    }
+    return false;
+  }
+
+  /* Devolve a palavra certa, escrita como no card — ou null. */
+  function erroDeFlexao(card, texto, direcao) {
+    if (linguaDaResposta(direcao) !== 'es') return null;
+    const cru = t => semAcento(normalizar(t, 'es', { plural: false }));
+    const dado = cru(texto);
+    if (!dado) return null;
+    const alvos = formasAceitas(card, direcao);
+    if (alvos.some(a => cru(a) === dado)) return null;      // escreveu uma forma aceita
+    const escritas = dado.split(' ');
+    const frase = card.tipo === 'frase';
+    for (const alvo of alvos) {
+      const certas = cru(alvo).split(' ');
+      if (certas.length !== escritas.length) continue;
+      const difs = certas.map((p, i) => i).filter(i => certas[i] !== escritas[i]);
+      if (difs.length !== 1) continue;
+      const certa = certas[difs[0]], escrita = escritas[difs[0]];
+      const umaVogal = escrita.length === certa.length &&
+        escrita.slice(0, -1) === certa.slice(0, -1) && /[aeiou]$/.test(escrita) && /[aeiou]$/.test(certa);
+      if (umaVogal) continue;
+      const soOS = frase && (escrita === certa + 's' || certa === escrita + 's');
+      if (!soOS && !flexaoTrocada(escrita, certa)) continue;
+      const original = (String(alvo).normalize('NFC').match(PALAVRA) || [])
+        .find(p => semAcento(p) === certa);
+      return original || certa;
     }
     return null;
   }
@@ -1328,6 +1481,7 @@ window.Motor = (function () {
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
     linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando,
+    indiceEspanhol, leituraEspanhola, erroDeFlexao,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
