@@ -1036,12 +1036,12 @@ window.Motor = (function () {
      é sorteada, com chance que cresce com o acúmulo: um vencido sozinho tem
      10% por card, e dez ou mais vão sempre que o espaço deixa.
 
-     O espaço começou em dois e o Gere pediu sete. Com sete, é no máximo um
-     dominado em cada oito cards: uns 15 num dia de 125 respostas. Nos dias
-     em que vencem mais do que isso, os vencidos esperam — e como a espera
-     seguinte conta a partir da revisão, e não da data marcada, o atraso se
-     acomoda sozinho em vez de crescer para sempre. */
-  const ESPACO_DOMINADO = 7;
+     O espaço começou em dois, passou por sete e ficou em três: no máximo um
+     dominado em cada quatro cards, uns 30 num dia de 125 respostas — acima
+     dos 17 a 31 que vencem por dia nesta fase. Nos dias em que vencem mais,
+     os vencidos esperam; como a espera seguinte conta a partir da revisão, e
+     não da data marcada, o atraso se acomoda em vez de crescer. */
+  const ESPACO_DOMINADO = 3;
   const VENCIDOS_CHEIO = 10;
 
   function vezDoDominado(vencidos, desdeUltimo) {

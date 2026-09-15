@@ -259,10 +259,10 @@ que adiantar um.
 
 **Mas com espaço.** Os dominados vencem em lote — 43 no mesmo dia, dos cards
 dominados juntos três dias antes —, e o histórico mostrou 22 deles seguidos
-numa sessão. Depois de um dominado vêm pelo menos **sete** cards de outra fila;
+numa sessão. Depois de um dominado vêm pelo menos **três** cards de outra fila;
 passado o espaço, a vez do dominado é sorteada com chance que cresce com o
 acúmulo: 10% com um vencido, e sempre com dez ou mais. Isso é no máximo um card
-em cada oito — uns 15 num dia de 125 respostas. Nos dias em que vencem mais do
+em cada quatro — uns 30 num dia de 125 respostas. Nos dias em que vencem mais do
 que isso, os vencidos esperam; como a espera seguinte conta a partir da
 revisão, e não da data marcada, o atraso se acomoda em vez de crescer.
 
