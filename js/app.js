@@ -221,13 +221,39 @@
        quer dizer que ela foi liberada — presa nenhuma chega a este ponto —,
        e a promessa é que ela seja o próximo card novo. Entre duas, primeiro
        a da palavra vencida mais recentemente. Isso vive na ordenação, e não
-       só no momento de dominar, para sobreviver a recarregar e sincronizar. */
+       só no momento de dominar, para sobreviver a recarregar e sincronizar.
+
+       Mas só as frescas. Quando a leva 10 deu uma frase a cada palavra, 73
+       delas nasceram destravadas de uma vez — as palavras já estavam
+       dominadas —, e furando a fila todas juntas elas seriam os próximos 73
+       cards novos, sem uma expressão, um verbo ou uma palavra no meio. Então
+       furam a fila no máximo FRESCAS_NA_FRENTE, de palavra vista nas últimas
+       24 horas; as outras entram intercaladas, uma a cada DOIS cards de
+       outro tipo. O «vista» é o «ultima» da palavra, que a revisão do
+       dominado também renova — por isso o teto, e não só a janela. */
     const presas = [], resto = [];
     p.ineditos.forEach(id => ((PORID[id] || {}).requer ? presas : resto).push(id));
-    presas.sort((a, b) => Motor.venceuEm(PORID[b], p.cards) - Motor.venceuEm(PORID[a], p.cards));
+    const quando = id => Motor.venceuEm(PORID[id], p.cards);
+    presas.sort((a, b) => quando(b) - quando(a));
+
+    const FRESCAS_NA_FRENTE = 2;
+    const agora = Date.now();
+    const frescas = presas.filter(id => agora - quando(id) < 864e5).slice(0, FRESCAS_NA_FRENTE);
+    const antigas = presas.filter(id => frescas.indexOf(id) < 0);
 
     const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, p.cards));
-    p.ineditos = presas.concat(Motor.ordenarNovos(resto, pesos, PORID));
+    p.ineditos = frescas.concat(intercalar(Motor.ordenarNovos(resto, pesos, PORID), antigas, 2));
+  }
+
+  /* «cada» cards de «muitos», depois um de «poucos», até acabarem os dois. */
+  function intercalar(muitos, poucos, cada) {
+    const saida = [];
+    let i = 0, j = 0;
+    while (i < muitos.length || j < poucos.length) {
+      for (let k = 0; k < cada && i < muitos.length; k++) saida.push(muitos[i++]);
+      if (j < poucos.length) saida.push(poucos[j++]);
+    }
+    return saida;
   }
 
   function salvarProgresso() {

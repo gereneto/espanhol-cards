@@ -1,10 +1,5 @@
 /* GERADO POR fonte/build.js — não edite à mão. */
 window.TAGS_RAW = {
- "Espanha": {
-  "en": "Spain",
-  "es": "España",
-  "cards": 22
- },
  "adjetivo": {
   "en": "adjective",
   "es": "adjetivo",
@@ -44,6 +39,11 @@ window.TAGS_RAW = {
   "en": "conditional",
   "es": "condicional",
   "cards": 4
+ },
+ "conducir": {
+  "en": "conducir",
+  "es": "conducir",
+  "cards": 0
  },
  "conjugação": {
   "en": "conjugation",
@@ -104,6 +104,11 @@ window.TAGS_RAW = {
   "en": "office",
   "es": "oficina",
   "cards": 1
+ },
+ "Espanha": {
+  "en": "Spain",
+  "es": "España",
+  "cards": 22
  },
  "estar": {
   "en": "estar",
@@ -200,6 +205,16 @@ window.TAGS_RAW = {
   "es": "jurídico",
   "cards": 4
  },
+ "llover": {
+  "en": "llover",
+  "es": "llover",
+  "cards": 0
+ },
+ "mais-que-perfeito": {
+  "en": "pluperfect",
+  "es": "pluscuamperfecto",
+  "cards": 0
+ },
  "mídia": {
   "en": "media",
   "es": "medios",
@@ -295,6 +310,11 @@ window.TAGS_RAW = {
   "es": "salud",
   "cards": 0
  },
+ "seguir": {
+  "en": "seguir",
+  "es": "seguir",
+  "cards": 0
+ },
  "ser": {
   "en": "ser",
   "es": "ser",
@@ -354,5 +374,10 @@ window.TAGS_RAW = {
   "en": "travel",
   "es": "viaje",
   "cards": 6
+ },
+ "vivir": {
+  "en": "vivir",
+  "es": "vivir",
+  "cards": 0
  }
 };

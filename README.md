@@ -390,6 +390,18 @@ frases) fechou a conta: cada uma das 248 palavras do baralho tem uma frase de
 uso presa a ela por `requer`, que só entra depois de a palavra ser dominada.
 Palavra nova sem frase faz o build avisar.
 
+A frase destravada entra na frente dos cards novos, mas **só as duas mais
+frescas** — de palavra vista nas últimas 24 horas. As outras entram
+**intercaladas, uma a cada dois cards de outro tipo**. Sem isso, as 73 frases
+que a leva 10 destravou de uma vez seriam os próximos 73 cards novos, sem uma
+expressão ou um verbo no meio.
+
+A leva 11 (`11-leva-variada.json`, 111 cards) veio para dar esse outro tipo:
+25 expressões e gírias, 20 frases do dia a dia, 15 cards de conjugação
+(subjuntivo, mais-que-perfeito, futuro de probabilidade, imperativo
+negativo…), 15 falsos amigos e 10 palavras de tecnologia e saúde — os temas
+mais fracos do resumo —, cada palavra com a sua frase.
+
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
 
