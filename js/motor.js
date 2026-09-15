@@ -853,7 +853,6 @@ window.Motor = (function () {
       erros: 0,
       seguidas: 0,         // acertos consecutivos
       errosSeguidos: 0,    // erros consecutivos
-      conhecia: null,      // última resposta à pergunta "já conhecia?"
       ultima: null,        // ISO da última vez que apareceu
       revisoes: 0,         // revisões certas já feitas depois de dominado
       voltaEm: null,       // ISO: só o card dominado espera uma data
@@ -1134,8 +1133,7 @@ window.Motor = (function () {
       base *= (1 + 0.5 * Math.min(est.errosSeguidos || 0, 4));
     } else if (r.modo === 'multipla') {
       // acertar na múltipla escolha vale pouco: pode ter sido chute
-      if (r.conhecia === 'nao' && r.velocidade === 'lento') base = 8;
-      else if (r.velocidade === 'lento') base = 14;
+      if (r.velocidade === 'lento') base = 14;
       else if (r.velocidade === 'medio') base = 22;
       else base = 32;
 
@@ -1151,10 +1149,6 @@ window.Motor = (function () {
       if (est.seguidas >= 3) base *= 2;   // acabou de fechar a direção
     }
 
-    if (r.acertou) {
-      if (r.conhecia === 'sim') base *= 1.3;
-      else if (r.conhecia === 'nao') base *= 0.75;
-    }
     if (r.pausado) base *= 0.9;   // tempo não é confiável, seja conservador
 
     const ruido = 0.85 + Math.random() * 0.3;
@@ -1199,11 +1193,52 @@ window.Motor = (function () {
     return ACERTOS_PARA_VIRAR;
   }
 
-  /* Acertar devagar, na múltipla escolha, algo que a pessoa diz não conhecer
-     é mais provável ter sido chute do que conhecimento. */
-  function pareceChute(r) {
-    return !!r.acertou && r.modo === 'multipla'
-      && r.conhecia === 'nao' && r.velocidade === 'lento';
+  /* ── o diário ──
+     Uma linha por dia, no fuso do aparelho, com o que os gráficos do painel
+     precisam e nada além: quantas respostas, quantas certas, quantas em
+     cada hora, e o tempo dos acertos de cada modo. O tempo não vai resposta
+     a resposta: vai contado em faixas, cada uma 18% mais larga que a
+     anterior, de 0,3 s a dois minutos, e só as faixas usadas são gravadas.
+     Das faixas sai a mediana da semana com erro de poucos centésimos, e um
+     ano de estudo cabe em umas dezenas de KB. */
+  const FAIXAS_POR_E = 6, TEMPO_BASE = 300, FAIXAS = 36;
+  const faixaDoTempo = ms =>
+    Math.max(0, Math.min(FAIXAS - 1, Math.floor(FAIXAS_POR_E * Math.log(ms / TEMPO_BASE))));
+
+  /* A mediana de um punhado de faixas somadas, interpolando dentro da faixa
+     onde cai a metade. */
+  function medianaDasFaixas(faixas) {
+    let total = 0;
+    for (const k in faixas) total += faixas[k];
+    if (!total) return null;
+    const metade = total / 2;
+    let soma = 0;
+    const chaves = Object.keys(faixas).map(Number).sort((a, b) => a - b);
+    for (const k of chaves) {
+      const c = faixas[k];
+      if (soma + c >= metade) return TEMPO_BASE * Math.exp((k + (metade - soma) / c) / FAIXAS_POR_E);
+      soma += c;
+    }
+    return null;
+  }
+  function diaLocal(quando) {
+    const t = new Date(quando);
+    const dd = n => (n < 10 ? '0' : '') + n;
+    return t.getFullYear() + '-' + dd(t.getMonth() + 1) + '-' + dd(t.getDate());
+  }
+
+  function anotarDiario(diario, r, quando) {
+    const t = new Date(quando);
+    const d = diaLocal(t);
+    const g = diario[d] || (diario[d] = { n: 0, ok: 0, h: new Array(24).fill(0), m: {}, e: {} });
+    g.n++;
+    if (r.acertou) g.ok++;
+    g.h[t.getHours()]++;
+    const tempo = r.modo === 'multipla' ? g.m : r.modo === 'escrita' ? g.e : null;
+    if (tempo && r.acertou && !r.pausado && r.ms > 0) {
+      const k = faixaDoTempo(r.ms);
+      tempo[k] = (tempo[k] || 0) + 1;
+    }
   }
 
   /* Registra uma resposta no estado do card. */
@@ -1271,11 +1306,13 @@ window.Motor = (function () {
           (est.revisoes || 0) + (est.erros ? 1 : 2));
       } else if (r.modo === 'multipla') {
         if (inversa) est.etapa = 'inversa-escrita';
-        else est.etapa = pareceChute(r) ? 'multipla' : 'escrita';
+        else est.etapa = 'escrita';
       } else if (est.seguidas >= acertosParaVirar(est, inversa)) {
         est.etapa = inversa ? 'dominado' : 'inversa-multipla';
         /* a primeira vez só: é dela que a frase de uso conta o dia seguinte */
         if (inversa && !est.dominadoEm) est.dominadoEm = new Date().toISOString();
+        /* e quantas respostas custou chegar lá, para o painel */
+        if (inversa && est.ateDominar === undefined) est.ateDominar = est.vistas;
         est.seguidas = 0;   // a direção nova começa do zero
         /* «revisoes» não zera aqui. Quem chega pela primeira vez já vem com
            zero, e quem está voltando de um tropeço tem de reencontrar o
@@ -1314,8 +1351,6 @@ window.Motor = (function () {
     // a estreia é a única medida limpa do que já se sabia antes do app
     if (est.vistas === 1) est.primeiraCerta = !!r.acertou;
 
-    if (r.conhecia) est.conhecia = r.conhecia;
-
     est.historico.push({
       em: est.ultima,
       modo: r.modo,
@@ -1323,7 +1358,6 @@ window.Motor = (function () {
       quase: !!r.quase,
       ms: r.ms,
       velocidade: r.velocidade,
-      conhecia: r.conhecia || null,
       resposta: r.resposta || null,
       pausado: !!r.pausado
     });
@@ -1512,7 +1546,7 @@ window.Motor = (function () {
   return {
     NIVEIS, ROTULO_NIVEL, LIMIARES,
     normalizar, conferir, velocidade,
-    estadoInicial, registrar, modoDe, direcaoDe, faseDe, pareceChute,
+    estadoInicial, registrar, modoDe, direcaoDe, faseDe, anotarDiario, diaLocal, medianaDasFaixas,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
     linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando,

@@ -25,11 +25,11 @@
     'aviso-lingua', 'aviso-acento',
     'meta-origem',
     'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
-    'area-conhecia', 'area-julgamento', 'resposta-dada', 'texto-dado',
+    'area-julgamento', 'resposta-dada', 'texto-dado',
     'area-contestar', 'btn-contestar', 'aviso-contestado', 'btn-comentar-card',
     'comentario-fundo', 'comentario-alvo', 'comentario-texto', 'comentario-restam',
     'btn-comentario-enviar', 'btn-comentario-fechar',
-    'btn-proximo', 'painel-conteudo',
+    'btn-proximo', 'painel-conteudo', 'dica',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
     'arquivo-importar', 'btn-zerar', 'rodape-sync'
@@ -47,7 +47,6 @@
   let pausou = false;
   let respostaPendente = null;
   let ultimoRegistro = null;
-  let estreiaPendente = false;
   let chanceUsada = false;   // o aviso de língua trocada só devolve a vez uma vez
   let respostasDesdeSync = 0;
   let sincronizando = false;
@@ -162,6 +161,33 @@
     if (!p.serie.length && semente.length) {
       const fim = semente[semente.length - 1][0];
       if ((p.totais && p.totais.respostas || 0) >= fim - 50) p.serie = semente.slice();
+    }
+
+    /* ── o diário, a retenção e o custo do domínio ──
+       Mesma semente, mesma guarda. O diário tira do repositório de dados cada
+       resposta dada desde o primeiro dia; o que veio depois da última
+       fotografia sai do histórico dos próprios cards, que ainda o guarda.
+       Para quem não é a continuação daquele histórico, o diário começa só do
+       histórico dos cards — é pouco, mas é dele. */
+    const raw = window.HISTORICO_RAW || {};
+    const continua = semente.length &&
+      (p.totais && p.totais.respostas || 0) >= semente[semente.length - 1][0] - 50;
+    if (!p.diario || typeof p.diario !== 'object') {
+      p.diario = continua && raw.diario ? JSON.parse(JSON.stringify(raw.diario)) : {};
+      const desde = continua ? (raw.ate || '') : '';
+      Object.keys(p.cards).forEach(id => (p.cards[id].historico || []).forEach(h => {
+        if (h && h.em && h.em > desde) Motor.anotarDiario(p.diario, h, h.em);
+      }));
+    }
+    if (!Array.isArray(p.retencao) || p.retencao.length !== Motor.DIAS_DOMINADO.length) {
+      p.retencao = continua && raw.retencao ? raw.retencao.map(g => g.slice())
+        : Motor.DIAS_DOMINADO.map(() => [0, 0]);
+    }
+    if (continua && raw.ateDominar) {
+      Object.keys(raw.ateDominar).forEach(id => {
+        const e = p.cards[id];
+        if (e && e.ateDominar === undefined) e.ateDominar = raw.ateDominar[id];
+      });
     }
 
     ordenarIneditos(p);
@@ -290,6 +316,7 @@
   function mostrar(tela) {
     ['tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards']
       .forEach(t => el[t].classList.toggle('oculto', t !== tela));
+    el.dica.hidden = true;
     const aceso = BOTAO_DA_TELA[tela];
     Object.values(BOTAO_DA_TELA).forEach(b => el[b].classList.toggle('aqui', b === aceso));
   }
@@ -417,7 +444,6 @@
     alvoAtual = Motor.resposta(cardAtual, direcaoAtual);
     respostaPendente = null;
     ultimoRegistro = null;
-    estreiaPendente = false;
     chanceUsada = false;
     pausou = false;
 
@@ -457,7 +483,6 @@
     /* o chão criado para o botão subir era daquele card; some com ele */
     el['area-feedback'].style.paddingBottom = '';
     el.conquista.classList.add('oculto');
-    el['area-conhecia'].classList.add('oculto');
     el['area-julgamento'].classList.add('oculto');
     el['resposta-dada'].classList.add('oculto');
     el['resposta-dada'].classList.remove('conjugacao');
@@ -604,7 +629,6 @@
     r.pausado = pausou || r.ms >= Motor.MS_ABANDONO;
     r.velocidade = Motor.velocidade(cardAtual, r.modo, r.ms, r.pausado);
     respostaPendente = r;
-    estreiaPendente = !estadoDe(cardAtual.id) || estadoDe(cardAtual.id).vistas === 0;
 
     el['resposta-certa'].textContent = alvoAtual;
     /* Neutra por padrão: quem pinta de verde é o veredito, e no caso do
@@ -622,12 +646,6 @@
         ? '<span class="medida">tempo não contado (' +
           (pausou ? 'você saiu da aba' : 'demorou demais, o card ficou parado') + ')</span>'
         : '');
-
-    el['area-conhecia'].classList.add('oculto');
-    [...document.querySelectorAll('.opcao-conhecia')].forEach(b => {
-      b.style.borderColor = '';
-      b.style.color = '';
-    });
 
     /* Escreveu outra conjugação: mostra qual foi, para o erro ensinar algo. */
     const escrevendo = r.modo === 'escrita' && !r.desistiu;
@@ -688,7 +706,6 @@
       el['btn-proximo'].classList.remove('oculto');
       mostrarVeredito(r);
       registrar(r);
-      mostrarPerguntaConhecia(r);
       mostrarContestar(r);
     }
 
@@ -844,19 +861,6 @@
       : 'Não foi dessa vez';
   }
 
-  /* Perguntar "já conhecia?" só faz sentido quando você acerta de primeira:
-     errando, a resposta é óbvia; se o card já apareceu antes, você o conhece
-     do próprio app e não do seu repertório.
-
-     A frase presa a uma palavra cai no mesmo caso, mesmo estreando: ela só
-     apareceu porque você venceu aquela palavra aqui dentro, e a palavra é o
-     que a frase tem de novo. A resposta seria sobre o app, não sobre o que
-     você trouxe de fora — e é isso que a pergunta existe para medir. */
-  function mostrarPerguntaConhecia(r) {
-    const cabe = estreiaPendente && r.acertou && !cardAtual.requer;
-    el['area-conhecia'].classList.toggle('oculto', !cabe);
-  }
-
   /* Você decide se o quase-certo valeu. Só depois disso a resposta é gravada. */
   function julgar(valor) {
     if (!respostaPendente || ultimoRegistro) return;
@@ -868,7 +872,6 @@
     el['btn-proximo'].classList.remove('oculto');
     mostrarVeredito(r);
     registrar(r);
-    mostrarPerguntaConhecia(r);
     mostrarContestar(r);
     el['btn-proximo'].focus({ preventScroll: true });
     trazerBotaoParaAVista();
@@ -894,8 +897,7 @@
     /* O dominado acertado de novo não muda de etapa, e o que ele ganhou só
        se via no painel: uma espera mais longa. Dizer quanto é o que dá peso
        à revisão certa. */
-    const temFrase = virou && cardAtual && CARDS.some(c => c.requer === cardAtual.id);
-    const texto = virou ? 'Card dominado!' + (temFrase ? ' A frase de uso chega amanhã.' : '')
+    const texto = virou ? 'Card dominado!'
       : diasDeVolta ? 'volta em ' + rotuloEspera(diasDeVolta) : '';
     el.conquista.textContent = texto;
     el.conquista.classList.toggle('oculto', !texto);
@@ -906,7 +908,15 @@
     const id = cardAtual.id;
     const est = progresso.cards[id] || (progresso.cards[id] = Motor.estadoInicial(id));
     const etapaAntes = est.etapa;
+    const degrauAntes = Math.min(est.revisoes || 0, 5);
     Motor.registrar(est, r);
+    /* Para o painel: o dia, a hora e o tempo desta resposta, e — se era a
+       revisão de um dominado — se a memória aguentou a espera daquele degrau. */
+    Motor.anotarDiario(progresso.diario, r, est.ultima);
+    if (etapaAntes === 'dominado') {
+      progresso.retencao[degrauAntes][0]++;
+      if (r.acertou) progresso.retencao[degrauAntes][1]++;
+    }
     const virouDominado = est.etapa === 'dominado' && etapaAntes !== 'dominado';
     mostrarConquista(virouDominado,
       etapaAntes === 'dominado' && r.acertou ? Motor.DIAS_DOMINADO[est.revisoes] : null);
@@ -941,7 +951,6 @@
       desistiu: !!r.desistiu,
       ms: r.ms,
       velocidade: r.velocidade,
-      conhecia: null,
       resposta: r.resposta || null,
       pausado: !!r.pausado,
       julgado_por_voce: !!r.julgadoPorVoce,
@@ -957,29 +966,6 @@
     salvarProgresso();
     atualizarPlacar();
     talvezSincronizar();
-  }
-
-  /* A resposta sobre conhecimento prévio chega depois do registro, então
-     revisa o que ela muda: a etapa (acerto lento no que não se conhecia é
-     provável chute) e a distância até o card voltar. */
-  function aplicarConhecia(valor) {
-    if (!ultimoRegistro) return;
-    const { id, est, evento, r } = ultimoRegistro;
-
-    r.conhecia = valor;
-    est.conhecia = valor;
-    evento.conhecia = valor;
-    if (est.historico.length) est.historico[est.historico.length - 1].conhecia = valor;
-
-    if (Motor.pareceChute(r)) est.etapa = 'multipla';
-    evento.etapa_depois = est.etapa;
-
-    retirarDasFilas(id);
-    const guardado = guardarNaFila(id, est, r);
-    evento.fila = guardado.fila;
-    evento.distancia_fila = guardado.distancia;
-
-    salvarProgresso();
   }
 
   /* Reordena só a parte inédita da fila, mantendo as mesmas posições — o
@@ -1136,18 +1122,10 @@
       ptEs: progresso.filaPtEs.length > 0
     });
 
-    /* Você disse que não conhecia, e hoje já acerta: é o que o app ensinou,
-       separado do que você já trazia de casa. */
-    const aprendidos = ids.filter(id => {
-      const e = progresso.cards[id];
-      return e.conhecia === 'nao' && e.acertos > 0 && e.etapa !== 'multipla';
-    }).length;
-
     let html = '<div class="grade">' +
       metrica(ids.length + '/' + CARDS.length, 'cards já vistos') +
       metrica(pctDe(dePrimeira.length, estreados.length), 'acertou de primeira') +
       metrica(taxa + '%', 'acerto geral (' + t.respostas + ' respostas)') +
-      metrica(aprendidos, 'não conhecia e hoje acerta') +
       /* é o equilíbrio que a admissão de inéditos persegue — vê-lo explica
          por que o card novo às vezes vem depressa e às vezes espera */
       /* É o alvo que a escolha de fila persegue — vê-lo explica por que o
@@ -1168,7 +1146,14 @@
     html += graficoEtapas();
     html += tabelaEtapas();
     html += tabelaDominados();
+    html += tabelaMemoria();
+    html += calendarioEstudo();
+    html += graficoRespostasDia();
+    html += mapaHorario();
+    html += graficoVelocidade();
+    html += graficoAteDominar();
 
+    esconderDica();
     el['painel-conteudo'].innerHTML = html;
     ligarGrafico();
     mostrar('tela-painel');
@@ -1539,6 +1524,371 @@
       '<th></th></tr>' + linhas + '</table>';
   }
 
+  /* ═══════════════ os gráficos do diário ═══════════════
+     Tudo daqui para baixo sai de progresso.diario (um resumo por dia), de
+     progresso.retencao e do «ateDominar» de cada card. Os desenhos são SVG
+     de largura fixa que a tela encolhe; tocar num quadrado, numa barra ou
+     num ponto mostra o número dele na dica. */
+
+  const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  const SEMANA = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+  const RAMPA = ['var(--degrau-0)', 'var(--degrau-1)', 'var(--degrau-2)',
+                 'var(--degrau-3)', 'var(--degrau-4)', 'var(--degrau-5)'];
+  const LARGURA = 500;
+
+  const milhar = n => n.toLocaleString('pt-BR');
+  const diaMes = d => d.slice(8, 10) + '/' + d.slice(5, 7);
+  const emSegundos = ms => (ms / 1000).toLocaleString('pt-BR',
+    { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const comDica = texto => ' class="alvo" data-dica="' + escapar(texto) + '"';
+  const figura = (w, h, miolo, rotulo, extra) =>
+    '<svg class="grafico"' + (extra || '') + ' viewBox="0 0 ' + w + ' ' + h +
+    '" role="img" aria-label="' + escapar(rotulo) + '">' + miolo + '</svg>';
+  const linhaDeGrade = (x1, x2, y) =>
+    '<line class="malha" x1="' + x1 + '" x2="' + x2 + '" y1="' + y.toFixed(1) + '" y2="' + y.toFixed(1) + '"/>';
+  /* Barra de topo arredondado e base reta, apoiada no eixo. */
+  function barra(x, y, w, h, r) {
+    if (h <= 0) return '';
+    r = Math.min(r, w / 2, h);
+    return 'M' + x.toFixed(1) + ',' + (y + h).toFixed(1) + 'V' + (y + r).toFixed(1) +
+      'Q' + x.toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + r).toFixed(1) + ',' + y.toFixed(1) +
+      'H' + (x + w - r).toFixed(1) + 'Q' + (x + w).toFixed(1) + ',' + y.toFixed(1) + ' ' +
+      (x + w).toFixed(1) + ',' + (y + r).toFixed(1) + 'V' + (y + h).toFixed(1) + 'Z';
+  }
+  /* Um passo redondo para a grade, com umas quatro linhas. */
+  function passoRedondo(topo) {
+    const bruto = Math.max(1, topo / 4);
+    const ordem = Math.pow(10, Math.floor(Math.log10(bruto)));
+    const f = bruto / ordem;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * ordem;
+  }
+
+  /* Meio-dia local: somar dias ao meio-dia nunca tropeça numa troca de
+     horário de verão. */
+  const meioDia = d => new Date(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10), 12);
+
+  /* Os dias do diário, de ponta a ponta até hoje, sem buraco: dia sem
+     estudo entra com zero. */
+  function diasDoDiario() {
+    const diario = progresso.diario || {};
+    const chaves = Object.keys(diario).filter(d => diario[d] && diario[d].n).sort();
+    if (!chaves.length) return [];
+    const hoje = Motor.diaLocal(new Date());
+    const fim = chaves[chaves.length - 1] > hoje ? chaves[chaves.length - 1] : hoje;
+    const dias = [];
+    for (const t = meioDia(chaves[0]); ; t.setDate(t.getDate() + 1)) {
+      const d = Motor.diaLocal(t);
+      const g = diario[d];
+      dias.push({ d, n: g ? g.n : 0, ok: g ? g.ok : 0, g });
+      if (d >= fim || dias.length > 3700) break;
+    }
+    return dias;
+  }
+
+  /* ── o calendário ──
+     Um quadrado por dia, semana a semana, das últimas dezoito. O tom de
+     verde é o volume do dia, e o número está na dica. */
+  function calendarioEstudo() {
+    let dias = diasDoDiario();
+    if (!dias.length) return '';
+    const segundaDe = d => (meioDia(d).getDay() + 6) % 7;         // seg = 0
+    const SEMANAS = 18;
+    const corte = meioDia(dias[dias.length - 1].d);
+    corte.setDate(corte.getDate() - segundaDe(dias[dias.length - 1].d) - 7 * (SEMANAS - 1));
+    dias = dias.filter(x => meioDia(x.d) >= corte);
+    const inicio = meioDia(dias[0].d);
+    inicio.setDate(inicio.getDate() - segundaDe(dias[0].d));
+
+    const maior = Math.max(...dias.map(x => x.n));
+    const tam = 20, vao = 4, L = 32, T = 20;
+    let m = '', colunas = 0, ultimoMes = -9;
+    ['seg', 'qua', 'sex'].forEach((n, i) => {
+      m += '<text x="' + (L - 6) + '" y="' + (T + 2 * i * (tam + vao) + tam / 2 + 4) +
+        '" text-anchor="end">' + n + '</text>';
+    });
+    dias.forEach(x => {
+      const col = Math.floor((meioDia(x.d) - inicio + 3600e3) / (7 * 864e5));
+      colunas = Math.max(colunas, col + 1);
+      const lin = segundaDe(x.d);
+      const tom = x.n ? RAMPA[Math.min(5, Math.floor(5 * x.n / (maior + 1)) + 1)] : 'var(--fundo-3)';
+      const nome = SEMANA[meioDia(x.d).getDay()] + ', ' + diaMes(x.d);
+      m += '<rect' + comDica(nome + ' — ' + (x.n ? milhar(x.n) + (x.n === 1 ? ' resposta' : ' respostas') : 'sem estudo')) +
+        ' x="' + (L + col * (tam + vao)) + '" y="' + (T + lin * (tam + vao)) +
+        '" width="' + tam + '" height="' + tam + '" rx="5" fill="' + tom + '"/>';
+      /* o mês no alto da coluna em que ele começa, se couber */
+      const mes = +x.d.slice(5, 7) - 1;
+      if ((x.d.slice(8) === '01' || x === dias[0]) && col - ultimoMes >= 2) {
+        m += '<text x="' + (L + col * (tam + vao)) + '" y="' + (T - 7) + '">' + MESES[mes] + '</text>';
+        ultimoMes = col;
+      }
+    });
+    const W = L + colunas * (tam + vao), H = T + 7 * (tam + vao);
+    return '<h3>Calendário de estudo</h3>' +
+      '<div class="calendario" style="max-width:' + Math.round(W * 1.2) + 'px">' +
+      figura(W, H, m, 'Respostas por dia, em calendário') + '</div>';
+  }
+
+  /* ── respostas por dia ──
+     Os últimos sessenta dias em barras. A média é a dos sete dias antes de
+     hoje: o de hoje ainda está pela metade. */
+  function graficoRespostasDia() {
+    const todos = diasDoDiario();
+    if (todos.length < 2) return '';
+    const dias = todos.slice(-60);
+    const W = LARGURA, L = 36, R = 6, T = 10, B = 196;
+    const maior = Math.max(...dias.map(x => x.n));
+    const passo = passoRedondo(maior);
+    const topo = Math.ceil(maior / passo) * passo;
+    const y = v => B - (v / topo) * (B - T);
+    const coluna = (W - L - R) / dias.length, larg = Math.max(2, coluna * 0.72);
+    const cadaRotulo = Math.ceil(dias.length / 7);
+    let m = '';
+    for (let v = 0; v <= topo; v += passo) {
+      m += linhaDeGrade(L, W - R, y(v)) +
+        '<text x="' + (L - 6) + '" y="' + (y(v) + 4).toFixed(1) + '" text-anchor="end">' + milhar(v) + '</text>';
+    }
+    dias.forEach((x, i) => {
+      const bx = L + i * coluna + (coluna - larg) / 2;
+      if (x.n) {
+        m += '<path' + comDica(SEMANA[meioDia(x.d).getDay()] + ', ' + diaMes(x.d) + ' — ' +
+          milhar(x.n) + (x.n === 1 ? ' resposta' : ' respostas')) +
+          ' d="' + barra(bx, y(x.n), larg, B - y(x.n), 3) + '" fill="var(--degrau-2)"/>';
+      }
+      if ((dias.length - 1 - i) % cadaRotulo === 0) {
+        m += '<text x="' + (bx + larg / 2).toFixed(1) + '" y="' + (B + 22) + '" text-anchor="middle">' + diaMes(x.d) + '</text>';
+      }
+    });
+    const antes = todos.slice(0, -1).slice(-7);
+    const media = Math.round(antes.reduce((a, x) => a + x.n, 0) / antes.length);
+    const recorde = todos.reduce((a, x) => x.n > a.n ? x : a);
+    return '<h3>Respostas por dia</h3>' +
+      '<p class="legenda">Nos últimos ' + (antes.length === 7 ? '7 dias' : antes.length + (antes.length === 1 ? ' dia' : ' dias')) +
+      ', foram <b>' + milhar(media) + ' respostas por dia</b>, em média. O recorde é <b>' +
+      milhar(recorde.n) + '</b>, em ' + diaMes(recorde.d) + '.</p>' +
+      figura(W, B + 30, m, 'Respostas por dia');
+  }
+
+  /* ── quando você estuda ──
+     Dia da semana contra hora do dia, somando tudo o que o diário tem. Só
+     entram as horas que já tiveram alguma resposta. */
+  function mapaHorario() {
+    const mapa = Array.from({ length: 7 }, () => new Array(24).fill(0));
+    const diario = progresso.diario || {};
+    Object.keys(diario).forEach(d => {
+      const g = diario[d];
+      if (!g || !Array.isArray(g.h)) return;
+      const dia = meioDia(d).getDay();
+      g.h.forEach((n, h) => { mapa[dia][h] += n || 0; });
+    });
+    const horas = [];
+    for (let h = 0; h < 24; h++) if (mapa.some(l => l[h])) horas.push(h);
+    if (!horas.length) return '';
+    const h0 = horas[0], h1 = horas[horas.length - 1];
+    const cols = h1 - h0 + 1, L = 36, T = 6, vao = 3;
+    const cel = Math.min(28, Math.floor((LARGURA - L) / cols) - vao);
+    const alta = Math.max(cel, 24);             // altura da linha: os nomes dos dias respiram
+    const maior = Math.max(...mapa.map(l => Math.max(...l)));
+    const ordem = [1, 2, 3, 4, 5, 6, 0];
+    let m = '';
+    ordem.forEach((d, lin) => {
+      m += '<text x="' + (L - 6) + '" y="' + (T + lin * (alta + vao) + alta / 2 + 5) + '" text-anchor="end">' + SEMANA[d] + '</text>';
+      for (let h = h0; h <= h1; h++) {
+        const n = mapa[d][h];
+        const tom = n ? RAMPA[Math.min(5, Math.floor(6 * n / (maior + 1)))] : 'var(--fundo-3)';
+        m += '<rect' + comDica(SEMANA[d] + ', ' + h + 'h — ' + (n ? milhar(n) + (n === 1 ? ' resposta' : ' respostas') : 'nada')) +
+          ' x="' + (L + (h - h0) * (cel + vao)) + '" y="' + (T + lin * (alta + vao)) +
+          '" width="' + cel + '" height="' + alta + '" rx="4" fill="' + tom + '"/>';
+      }
+    });
+    const cadaHora = cols > 12 ? 3 : 2;
+    for (let h = h0; h <= h1; h++) {
+      if ((h - h0) % cadaHora) continue;
+      m += '<text x="' + (L + (h - h0) * (cel + vao) + cel / 2) + '" y="' + (T + 7 * (alta + vao) + 16) +
+        '" text-anchor="middle">' + h + 'h</text>';
+    }
+    const porHora = new Array(24).fill(0), porDia = mapa.map(l => l.reduce((a, b) => a + b, 0));
+    mapa.forEach(l => l.forEach((n, h) => { porHora[h] += n; }));
+    const pico = porHora.indexOf(Math.max(...porHora));
+    const diaPico = porDia.indexOf(Math.max(...porDia));
+    const W = L + cols * (cel + vao), H = T + 7 * (alta + vao) + 22;
+    return '<h3>Quando você estuda</h3>' +
+      '<p class="legenda">O horário mais cheio é o das <b>' + pico + 'h</b>, e o dia da semana com mais respostas é <b>' +
+      ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'][diaPico] +
+      '</b>. Quanto mais claro o quadrado, mais respostas.</p>' +
+      figura(W, H, m, 'Respostas por dia da semana e hora');
+  }
+
+  /* ── a velocidade ──
+     A mediana dos acertos de cada semana (de segunda a domingo),
+     separando escrever de escolher entre cinco. Semana com menos de vinte
+     acertos cronometrados fica de fora: é pouco para dizer um tempo. */
+  function graficoVelocidade() {
+    const diario = progresso.diario || {};
+    const semanas = {};
+    Object.keys(diario).forEach(d => {
+      const g = diario[d];
+      if (!g || !g.m || !g.e) return;
+      const t = meioDia(d);
+      t.setDate(t.getDate() - (t.getDay() + 6) % 7);
+      const s = Motor.diaLocal(t);
+      const x = semanas[s] || (semanas[s] = { s, m: {}, e: {}, n: 0 });
+      ['m', 'e'].forEach(modo => Object.keys(g[modo]).forEach(k => {
+        x[modo][k] = (x[modo][k] || 0) + g[modo][k];
+        x.n += g[modo][k];
+      }));
+    });
+    const lista = Object.keys(semanas).sort().map(k => semanas[k])
+      .filter(x => x.n >= 20)
+      .map(x => ({ s: x.s, escolhendo: Motor.medianaDasFaixas(x.m), escrevendo: Motor.medianaDasFaixas(x.e) }));
+    if (lista.length < 2) return '';
+
+    const W = LARGURA, L = 40, R = 60, T = 14, B = 186;
+    const maior = Math.max(...lista.flatMap(x => [x.escolhendo || 0, x.escrevendo || 0])) / 1000;
+    const passo = maior > 8 ? 4 : 2;
+    const topo = Math.ceil((maior + 0.5) / passo) * passo;
+    const x = i => L + (i / (lista.length - 1)) * (W - L - R);
+    const y = ms => B - (ms / 1000 / topo) * (B - T);
+    let m = '';
+    for (let v = 0; v <= topo; v += passo) {
+      m += linhaDeGrade(L, W - R, y(v * 1000)) +
+        (v ? '<text x="' + (L - 6) + '" y="' + (y(v * 1000) + 4).toFixed(1) + '" text-anchor="end">' + v + ' s</text>' : '');
+    }
+    const SERIE = [['escrevendo', 'var(--serie-ptes)'], ['escolhendo', 'var(--serie-espt)']];
+    const extremos = {};
+    SERIE.forEach(([k, cor]) => {
+      const pts = lista.map((s, i) => s[k] ? [x(i), y(s[k]), s] : null).filter(Boolean);
+      if (!pts.length) return;
+      extremos[k] = [pts[0][2][k], pts[pts.length - 1][2][k]];
+      m += '<path d="M' + pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join('L') +
+        '" fill="none" stroke="' + cor + '" stroke-width="2.5" stroke-linejoin="round"/>';
+      pts.forEach(p => {
+        m += '<circle' + comDica('Semana de ' + diaMes(p[2].s) + ' — ' + k + ': ' + emSegundos(p[2][k]) + ' s') +
+          ' cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="5.5" fill="' + cor + '" stroke="var(--fundo-2)" stroke-width="2"/>';
+      });
+      const u = pts[pts.length - 1];
+      m += '<text class="forte" x="' + (u[0] + 11).toFixed(1) + '" y="' + (u[1] + 4).toFixed(1) + '">' + emSegundos(u[2][k]) + ' s</text>';
+    });
+    const cada = Math.ceil(lista.length / 7);
+    lista.forEach((s, i) => {
+      if ((lista.length - 1 - i) % cada) return;
+      m += '<text x="' + x(i).toFixed(1) + '" y="' + (B + 22) + '" text-anchor="middle">' + diaMes(s.s) + '</text>';
+    });
+    const frase = (k, nome) => extremos[k]
+      ? nome + ', foi de <b>' + emSegundos(extremos[k][0]) + ' s</b> para <b>' + emSegundos(extremos[k][1]) + ' s</b>' : '';
+    const partes = [frase('escrevendo', 'Escrevendo'), frase('escolhendo', 'escolhendo entre cinco')].filter(Boolean);
+    return '<h3>Velocidade a cada semana</h3>' +
+      '<p class="legenda">Tempo típico de um acerto (a mediana), sem os tempos pausados. ' + partes.join('; ') + '.</p>' +
+      '<div class="chaves">' +
+      '<span class="chave"><i style="background:var(--serie-ptes)"></i>escrevendo</span>' +
+      '<span class="chave"><i style="background:var(--serie-espt)"></i>escolhendo entre cinco</span></div>' +
+      figura(W, B + 30, m, 'Tempo típico de um acerto por semana');
+  }
+
+  /* ── quantas respostas até dominar ──
+     Conta as aparições do card nas duas direções até o primeiro domínio. O
+     fim da escala junta tudo o que passou de quatorze. */
+  function graficoAteDominar() {
+    const TETO = 14;
+    const valores = Object.keys(progresso.cards)
+      .map(id => progresso.cards[id].ateDominar).filter(n => n > 0);
+    if (valores.length < 5) return '';
+    const hist = {};
+    valores.forEach(n => { const k = Math.min(n, TETO); hist[k] = (hist[k] || 0) + 1; });
+    const ks = [];
+    for (let k = Math.min(...valores); k <= Math.min(TETO, Math.max(...valores)); k++) ks.push(k);
+    const ordenados = valores.slice().sort((a, b) => a - b);
+    const mediana = Math.min(TETO, ordenados[Math.floor((ordenados.length - 1) / 2)]);
+    const ate5 = valores.filter(n => n <= 5).length;
+
+    const W = LARGURA, L = 36, R = 6, T = 22, B = 186;
+    const maior = Math.max(...ks.map(k => hist[k] || 0));
+    const passo = passoRedondo(maior);
+    const topo = Math.ceil(maior / passo) * passo;
+    const y = v => B - (v / topo) * (B - T);
+    const coluna = (W - L - R) / ks.length, larg = coluna * 0.74;
+    let m = '';
+    for (let v = 0; v <= topo; v += passo) {
+      m += linhaDeGrade(L, W - R, y(v)) +
+        '<text x="' + (L - 6) + '" y="' + (y(v) + 4).toFixed(1) + '" text-anchor="end">' + v + '</text>';
+    }
+    ks.forEach((k, i) => {
+      const bx = L + i * coluna + (coluna - larg) / 2, n = hist[k] || 0;
+      const rotulo = k === TETO ? TETO + '+' : String(k);
+      if (n) {
+        m += '<path' + comDica((k === TETO ? TETO + ' ou mais' : k) + ' respostas — ' + n + (n === 1 ? ' card' : ' cards')) +
+          ' d="' + barra(bx, y(n), larg, B - y(n), 4) + '" fill="' + (k === mediana ? 'var(--degrau-4)' : 'var(--degrau-1)') + '"/>';
+      }
+      m += '<text x="' + (bx + larg / 2).toFixed(1) + '" y="' + (B + 22) + '" text-anchor="middle">' + rotulo + '</text>';
+      if (k === mediana) {
+        m += '<text class="forte" x="' + (bx + larg / 2).toFixed(1) + '" y="' + (y(n) - 7).toFixed(1) + '" text-anchor="middle">mediana</text>';
+      }
+    });
+    return '<h3>Quantas respostas até dominar</h3>' +
+      '<p class="legenda">Dos <b>' + valores.length + '</b> cards que já chegaram ao domínio, a metade precisou de <b>' +
+      mediana + ' respostas ou menos</b>, e <b>' + pctDe(ate5, valores.length) + '</b> chegaram lá em até cinco.</p>' +
+      figura(W, B + 30, m, 'Quantas respostas cada card levou até o domínio');
+  }
+
+  /* ── a memória depois da espera ──
+     Cada revisão de dominado, pelo degrau em que o card estava: quanto se
+     lembra depois de três dias sem vê-lo, de uma semana, e assim por diante. */
+  function tabelaMemoria() {
+    const ret = progresso.retencao || [];
+    if (!ret.some(g => g && g[0])) return '';
+    const linhas = Motor.DIAS_DOMINADO.map((dias, i) => {
+      const g = ret[i] || [0, 0];
+      const acerto = g[0] >= 5 ? pctDe(g[1], g[0]) : g[0] ? 'poucos dados' : '—';
+      return '<tr' + (g[0] < 5 ? ' class="vago"' : '') + '><td>' + rotuloEspera(dias) + '</td>' +
+        '<td class="num">' + (g[0] || '—') + '</td><td class="num">' + acerto + '</td></tr>';
+    }).join('');
+    return '<h3>A memória depois da espera</h3>' +
+      '<table><tr><th>Espera</th><th class="num">Revisões</th><th class="num">Acerto</th></tr>' +
+      linhas + '</table>';
+  }
+
+  /* ── a dica ──
+     Uma só, fixa na tela, para todos os gráficos. Vale o toque parado, como
+     no gráfico do caminho: o dedo que arrasta está rolando a página. Com
+     mouse, basta passar por cima. */
+  function esconderDica() {
+    el.dica.hidden = true;
+    const antes = el['painel-conteudo'].querySelector('.alvo.tocado');
+    if (antes) antes.classList.remove('tocado');
+  }
+
+  function mostrarDica(alvo, px, py) {
+    const antes = el['painel-conteudo'].querySelector('.alvo.tocado');
+    if (antes && antes !== alvo) antes.classList.remove('tocado');
+    alvo.classList.add('tocado');
+    el.dica.textContent = alvo.getAttribute('data-dica');
+    el.dica.hidden = false;
+    const larg = el.dica.offsetWidth, alt = el.dica.offsetHeight;
+    let esq = px - larg / 2, topo = py - alt - 14;
+    esq = Math.max(8, Math.min(esq, window.innerWidth - larg - 8));
+    if (topo < 8) topo = py + 18;
+    el.dica.style.left = esq + 'px';
+    el.dica.style.top = topo + 'px';
+  }
+
+  function ligarDicas() {
+    const painel = el['painel-conteudo'];
+    let inicio = null;
+    painel.addEventListener('pointerdown', ev => { inicio = [ev.clientX, ev.clientY]; });
+    painel.addEventListener('click', ev => {
+      if (inicio && Math.hypot(ev.clientX - inicio[0], ev.clientY - inicio[1]) > 8) return;
+      const alvo = ev.target.closest && ev.target.closest('[data-dica]');
+      if (!alvo) { esconderDica(); return; }
+      mostrarDica(alvo, ev.clientX, ev.clientY);
+    });
+    painel.addEventListener('pointermove', ev => {
+      if (ev.pointerType !== 'mouse') return;
+      const alvo = ev.target.closest && ev.target.closest('[data-dica]');
+      if (alvo) mostrarDica(alvo, ev.clientX, ev.clientY);
+      else if (!el.dica.hidden) esconderDica();
+    });
+    window.addEventListener('scroll', () => { if (!el.dica.hidden) esconderDica(); }, { passive: true });
+  }
+
   /* ═══════════════ todos os cards ═══════════════ */
 
   /* Situação de cada card, do jeito que interessa a quem está olhando a
@@ -1778,6 +2128,13 @@
       /* A série é histórico: fica a mais longa das duas. */
       serie: ((local.serie || []).length >= (remoto.serie || []).length
                 ? local.serie : remoto.serie) || [],
+      /* Diário e retenção também: dia a dia, e degrau a degrau, fica o lado
+         que viu mais respostas. */
+      diario: juntarDiarios(local.diario, remoto.diario),
+      retencao: (local.retencao || remoto.retencao) && Motor.DIAS_DOMINADO.map((_, i) => {
+        const a = (local.retencao || [])[i] || [0, 0], b = (remoto.retencao || [])[i] || [0, 0];
+        return (b[0] > a[0] ? b : a).slice();
+      }),
       contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
       comentarios: juntarComentarios(local.comentarios, remoto.comentarios),
       cards: {},
@@ -1795,6 +2152,16 @@
       saida.cards[id] = (b.vistas > a.vistas) ? b : a;
     });
     return conciliarFila(saida);
+  }
+
+  function juntarDiarios(a, b) {
+    if (!a && !b) return undefined;
+    const saida = {};
+    new Set([...Object.keys(a || {}), ...Object.keys(b || {})]).forEach(d => {
+      const x = (a || {})[d], y = (b || {})[d];
+      saida[d] = !x ? y : !y ? x : (y.n > x.n ? y : x);
+    });
+    return saida;
   }
 
   /* Comentário some do aparelho que não o escreveu, então a mesclagem junta
@@ -2026,20 +2393,10 @@
     if (e.key === 'Enter' || e.keyCode === 13) { e.preventDefault(); responderEscrita(false); }
   });
 
+  ligarDicas();
+
   document.querySelectorAll('.opcao-julgamento').forEach(b => {
     b.addEventListener('click', () => julgar(b.dataset.julgamento));
-  });
-
-  document.querySelectorAll('.opcao-conhecia').forEach(b => {
-    b.addEventListener('click', () => {
-      aplicarConhecia(b.dataset.conhecia);
-      document.querySelectorAll('.opcao-conhecia').forEach(o => {
-        o.style.borderColor = '';
-        o.style.color = '';
-      });
-      b.style.borderColor = 'var(--acento)';
-      b.style.color = 'var(--acento)';
-    });
   });
 
   /* Sair de um card sem responder não pode sumir com ele: volta para a
@@ -2136,10 +2493,6 @@
         return;
       }
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); avancar(); }
-      if (!el['area-conhecia'].classList.contains('oculto') && '123'.includes(e.key)) {
-        e.preventDefault();
-        document.querySelectorAll('.opcao-conhecia')[+e.key - 1].click();
-      }
       return;
     }
     if (modoAtual === 'multipla' && '12345'.includes(e.key)) {

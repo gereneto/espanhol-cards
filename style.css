@@ -318,18 +318,6 @@ tr.vago td{opacity:.42}
 .opcao-julgamento.acertei:hover{border-color:var(--ok);color:var(--ok);background:var(--ok-fraco)}
 .opcao-julgamento.errei:hover{border-color:var(--erro);color:var(--erro);background:var(--erro-fraco)}
 
-.conhecia{
-  border-top:1px solid var(--borda);margin:0 0 18px;padding-top:16px;
-}
-.pergunta-conhecia{margin:0;font-size:14.5px}
-.conhecia .linha-botoes{margin-top:10px}
-.opcao-conhecia{
-  background:var(--fundo-3);border:1px solid var(--borda);color:var(--texto);
-  border-radius:999px;padding:9px 15px;cursor:pointer;font-size:14px;flex:1;
-  min-width:130px;
-}
-.opcao-conhecia:hover{border-color:var(--acento);color:var(--acento)}
-
 /* ── painel ── */
 .grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:22px}
 .metrica{background:var(--fundo-2);border:1px solid var(--borda);border-radius:12px;padding:14px}
@@ -396,6 +384,24 @@ svg.grafico-etapas .cursor{stroke:var(--texto-2);stroke-width:1}
 .escada-legenda span{display:flex;align-items:center;gap:5px}
 .escada-legenda i{width:9px;height:9px;border-radius:2px;flex:none}
 .escada-legenda b{color:var(--texto);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* ── os gráficos do diário ──
+   SVG de 500 de largura que a tela encolhe. O teto de 600px segura o texto
+   num tamanho decente no computador; no celular, 13 unidades viram uns 9px. */
+svg.grafico{display:block;width:100%;max-width:600px;height:auto;margin:4px 0 24px;overflow:visible}
+svg.grafico text{fill:var(--texto-2);font-size:13px;font-family:inherit}
+svg.grafico text.forte{fill:var(--texto);font-weight:700}
+svg.grafico .malha{stroke:var(--borda);stroke-width:1}
+svg.grafico .alvo{cursor:pointer}
+svg.grafico .alvo.tocado{stroke:var(--texto);stroke-width:2}
+.calendario svg.grafico text{font-size:11px}
+@media (max-width:520px){ svg.grafico text{font-size:16px} .calendario svg.grafico text{font-size:12px} }
+.dica{
+  position:fixed;z-index:30;pointer-events:none;background:var(--fundo-3);
+  border:1px solid var(--borda);color:var(--texto);font-size:13px;line-height:1.4;
+  padding:7px 10px;border-radius:9px;box-shadow:0 10px 24px -12px #000;
+  max-width:260px;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
 
 /* a barra fica na sua própria coluna, sem título: o número ao lado já diz o
    que ela mede, e o rótulo repetido só roubaria largura */

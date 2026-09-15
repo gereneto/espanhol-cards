@@ -32,12 +32,11 @@ conjugação verbal, quase todos irregulares.
    logo abaixo do cabeçalho: a resposta passa por baixo dela, e a frase que se
    acabou de traduzir continua à vista para conferir. Num card longo era
    justamente ela que sumia.
-6. Se você **acertar de primeira**, ele pergunta **se já conhecia aquilo**, e grava
-   assim que você responde. Não pergunta quando você erra (aí a resposta seria
-   óbvia), nem quando o card já apareceu antes (aí você conheceria do próprio
-   app), nem nas frases presas a uma palavra: elas só apareceram porque você
-   venceu aquela palavra aqui dentro, então a resposta seria sobre o app e não
-   sobre o que você trouxe de fora.
+6. Não há mais a pergunta «você já conhecia isso?». Quem já sabe o card se
+   revela sozinho: acerta sempre e depressa, e o caminho até o domínio encurta
+   e o card que nunca errou sobe a escada dos dominados de dois em dois
+   degraus. As respostas dadas enquanto a pergunta
+   existia continuam gravadas nos cards antigos.
 
 Tudo isso é gravado para calibrar as próximas levas de cards.
 
@@ -49,8 +48,8 @@ desempenho**: o app calcula uma nota de domínio por nível e sorteia mais cards
 daquele que você ainda não domina mas já consegue acompanhar.
 
 Na nota de domínio, a **estreia** do card pesa mais, porque é a única medida
-limpa do que você já sabia: acertar conhecendo vale 1; acertar dizendo que não
-conhecia vale 0,4, já que provavelmente foi dedução ou chute. As respostas
+limpa do que você já sabia: acertar vale 1 — ou 0,4, nos cards antigos em que
+você disse que não conhecia, já que provavelmente foi dedução ou chute. As respostas
 seguintes valem por mostrarem em que nível está custando fixar. Enquanto há
 pouca evidência, tudo é puxado para o meio, para um acerto solto não decidir nada.
 
@@ -196,10 +195,6 @@ Errar em `pt → es` espera mais do que errar em `es → pt` pelo mesmo motivo q
 faz o acerto na múltipla dessa direção esperar 90: a grafia espanhola certa
 acabou de aparecer na tela, e o card cai na múltipla escolha da mesma direção.
 Voltar em dez posições seria pedir que você reconhecesse o que acabou de ler.
-
-Dizer "já conhecia bem" empurra mais para o fim; "não conhecia" segura mais perto.
-Acerto lento em algo que você disse não conhecer é tratado como possível chute:
-o card continua na múltipla escolha.
 
 O painel mostra os dois lados com o alvo ao lado («es → pt e pt → es (alvo
 100 · 100)») e a **chance de o próximo card ser inédito**, que é o que o
@@ -566,7 +561,6 @@ card duplicado) e regenera `data/cards.json` e `data/cards.js`.
 |---|---|
 | `1`–`5` | escolhe a alternativa |
 | `Enter` | responde / vai para o próximo card |
-| `1`–`3` | responde "já conhecia?" |
 | `1` / `2` | no quase-certo, "Acertei" / "Errei" |
 
 No topo, 🏠 volta para a página inicial de qualquer tela, 🗂️ abre a lista de
@@ -609,6 +603,34 @@ parado: o dedo que arrasta está rolando a página, e não escolhe nada.
 
 As outras duas tabelas dizem **onde os cards estão**: em que pé está cada
 nível e a escada dos dominados.
+
+Depois vêm os gráficos do **diário**:
+
+- **a memória depois da espera** — as revisões de dominado de cada degrau da
+  escada, e quantas foram certas;
+- **o calendário** — um quadrado por dia das últimas dezoito semanas, no tom
+  de verde do volume; o número está na dica;
+- **respostas por dia** — os últimos sessenta dias em barras, com a média dos
+  sete dias antes de hoje e o recorde;
+- **quando você estuda** — dia da semana contra hora do dia;
+- **velocidade a cada semana** — a mediana dos acertos, escrevendo e
+  escolhendo entre cinco, sem os tempos pausados;
+- **quantas respostas até dominar** — o histograma, contando as aparições do
+  card nas duas direções até o primeiro domínio.
+
+Tocar num quadrado, numa barra ou num ponto mostra o número dele; com mouse,
+basta passar por cima.
+
+Nada disso sai das respostas uma a uma, que não cabem no `progresso.json`. O
+app anota a cada resposta um **resumo do dia** em `progresso.diario` — quantas
+respostas, quantas certas, quantas em cada hora, e os tempos dos acertos
+contados em faixas 18% mais largas a cada passo, das quais sai a mediana —, as
+revisões por degrau em `progresso.retencao`, e em cada card o `ateDominar`. O
+passado vem da mesma semente da curva: o `fonte/historico.js` refaz cada
+resposta desde o primeiro dia pelo histórico dos cards nas fotografias do
+`progresso.json`, e o que ficou entre a última fotografia e a primeira abertura
+sai do histórico que os cards ainda guardam. Na sincronização, fica dia a dia
+e degrau a degrau o lado que viu mais respostas.
 
 ## Vendo o baralho inteiro
 
@@ -725,10 +747,10 @@ js/revisao.js         o que as duas páginas de revisão têm em comum
 js/revisar-es-en.js   a tela do Yoisser
 js/revisar-en-pt.js   a tela do Gere
 fonte/build.js        valida e gera o baralho, nas duas línguas
-fonte/historico.js    tira do repositório de dados a série exata das etapas
+fonte/historico.js    tira do repositório de dados a história do painel
 fonte/cards/*.json    os cards
 fonte/tags.json       os temas em pt/en/es
 data/cards.js         gerado — é o que as páginas carregam
 data/tags.js          gerado
-data/historico.js     gerado — a semente da curva do painel
+data/historico.js     gerado — a semente da curva e do diário do painel
 ```
