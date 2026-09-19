@@ -28,7 +28,9 @@ conjugação verbal, quase todos irregulares.
 5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
    O **Próximo card** só serve para avançar, então dá para ficar lendo a nota.
    A exceção é o quase-certo: aí o app pergunta antes se conta como acerto.
-   A tela desce sozinha até o botão, e a **metade de cima do card fica grudada**
+   A tela desce sozinha até o botão — depois de o teclado do celular fechar, e
+   devolvendo o que tiver descido a mais se a tela crescer no meio do
+   caminho —, e a **metade de cima do card fica grudada**
    logo abaixo do cabeçalho: a resposta passa por baixo dela, e a frase que se
    acabou de traduzir continua à vista para conferir. Num card longo era
    justamente ela que sumia.
@@ -153,8 +155,12 @@ distância depende de como foi:
 | Acertou na múltipla, devagar | 14 |
 | Acertou na múltipla, rápido | 32 |
 | Acertou escrevendo, devagar | 35 |
-| Acertou escrevendo, rápido | 110 |
-| Acertou escrevendo 3× seguidas | 220 — fecha a direção |
+| Acertou escrevendo, no tempo médio | 48 |
+| Acertou escrevendo, rápido | 64 |
+| Acertou escrevendo 3× seguidas | 128 — fecha a direção |
+
+Escrever rápido já pediu 110, mais de três vezes o que pede a escolha rápida.
+Hoje é o dobro: **32 e 64**.
 
 **A distância é contada em respostas, e o card não ganha posição.** Ele anota
 quando entrou na fila e a distância que pediu, e na hora de tirar um card da
@@ -164,7 +170,7 @@ fila sai o **mais urgente**:
 
 Espera ÷ distância é quantas vezes ele já esperou o que pediu; dividir de novo
 pela distância dá a vez a quem pediu pouco. O erro que pediu 7 e já esperou 14
-tem urgência 0,29; o acerto escrito que pediu 110 e esperou 220, 0,018 — o erro
+tem urgência 0,29; o acerto escrito que pediu 64 e esperou 128, 0,031 — o erro
 passa na frente. Mas a espera do outro não para de crescer, e uma hora ele
 passa também. E ninguém sai **antes** de cumprir a distância, se houver quem já
 cumpriu: voltar cedo é a muleta que as distâncias da volta existem para evitar.
@@ -295,7 +301,11 @@ O progresso fica no `localStorage` do navegador e é enviado para
 **[espanhol-cards-dados](https://github.com/gereneto/espanhol-cards-dados)**,
 onde são gravados estes arquivos:
 
-- `progresso.json` — estado de cada card (etapa, acertos, erros, tempos, histórico)
+- `progresso.json` — estado de cada card (etapa, acertos, erros, tempos, histórico).
+  Vai **sem indentação** e com o histórico enxuto (`quase` e `pausado` só quando
+  verdadeiros): é o arquivo que sobe e desce inteiro a cada três respostas, e
+  assim ele tem pouco mais da metade do tamanho. Passando de 1 MB, o app o lê
+  pela API de blobs do GitHub, que a de conteúdo não entrega
 - `sessoes/<data>.json` — registro de cada resposta da sessão
 - `resumo.md` — relatório legível, base para calibrar a próxima leva
 - `contestacoes.json` — respostas que você achou que deveriam ter sido aceitas
@@ -546,6 +556,33 @@ entram inteiros na comparação, então `envergonhada` para `embarazada` e
 > de ter onde cair —, e trocar os outros dois por leituras erradas plausíveis
 > fora da categoria.
 
+### O distrator que sai do que você já viu
+
+Na frase de uso, os quatro distratores costumam ser a mesma frase com a palavra
+principal trocada: «O estudo tem um viés evidente» contra «um erro», «um
+custo», «um objetivo», «um autor». São os mesmos para todo mundo, e nenhum é
+palavra do baralho. Na múltipla escolha `es → pt`, o app troca **até dois**
+deles pela tradução de uma palavra que você **já encontrou** e que pode
+confundir com a certa — quem hesita entre «el hito» e «el sitio» acha «um
+lugar» ao lado de «um marco».
+
+Só acontece quando dá para fazer sem estragar a frase:
+
+- o card é frase presa a uma palavra (`requer`), e os quatro distratores
+  trocam o **mesmo trecho** da resposta, que é a tradução da palavra sem o artigo;
+- a palavra que entra tem a **mesma classe** da que sai: substantivo do mesmo
+  gênero e número, adjetivo com a mesma terminação, verbo no infinitivo. Verbo
+  e adjetivo são o que a etiqueta do card diz (`verbo`, `adjetivo`) — «luego →
+  logo» acaba em «-o» e não é adjetivo;
+- a **grafia espanhola** é parecida com a da palavra certa (60% ou mais; com o
+  mesmo assunto, 34%). O assunto sozinho não basta: `comida` punha «guardanapo
+  assado» ao lado de «frango assado», e distrator que se descarta sem saber
+  espanhol facilita em vez de dificultar.
+
+Sem candidato, ficam os quatro prontos. Os dinâmicos que apareceram vão para o
+log da sessão, no campo `dinamicos` do evento, para a calibragem saber quando
+o erro foi num deles.
+
 Depois de editar:
 
 ```bash
@@ -553,7 +590,14 @@ node fonte/build.js
 ```
 
 Isso valida tudo (ids repetidos, distrator igual à resposta, nível inválido,
-card duplicado) e regenera `data/cards.json` e `data/cards.js`.
+card duplicado) e regenera `data/cards.json`, `data/cards.js` e
+`data/cards-revisao.js`. O `cards.js` é o que o app de estudo carrega, e vai
+**sem o lado inglês**, que é um terço do baralho e só a revisão usa; o
+`cards-revisao.js` tem tudo.
+
+O build também carimba o `?v=` dos assets nos HTML — **um por arquivo**, tirado
+do conteúdo de cada um. Mexer no CSS não obriga ninguém a baixar o baralho de
+novo, e a data `gerado_em` só muda quando algum card muda.
 
 ## Atalhos
 
@@ -730,7 +774,7 @@ O botão **Importar arquivo** da página do Gere reconhece os dois formatos pelo
 campo `revisor`, então esse caminho manual funciona ponta a ponta sem token.
 
 Os cards que eu acrescentar depois chegam nele sozinhos: a página carrega o
-`data/cards.js` do próprio site, então basta dar push e pedir que recarregue.
+`data/cards-revisao.js` do próprio site, então basta dar push e pedir que recarregue.
 
 ## Estrutura
 
@@ -753,7 +797,8 @@ fonte/build.js        valida e gera o baralho, nas duas línguas
 fonte/historico.js    tira do repositório de dados a história do painel
 fonte/cards/*.json    os cards
 fonte/tags.json       os temas em pt/en/es
-data/cards.js         gerado — é o que as páginas carregam
+data/cards.js         gerado — o baralho do app de estudo, sem o inglês
+data/cards-revisao.js gerado — o baralho inteiro, para as páginas de revisão
 data/tags.js          gerado
 data/historico.js     gerado — a semente da curva e do diário do painel
 ```

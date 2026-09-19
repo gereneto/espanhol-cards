@@ -48,6 +48,7 @@
   let respostaPendente = null;
   let ultimoRegistro = null;
   let chanceUsada = false;   // o aviso de língua trocada só devolve a vez uma vez
+  let dinamicosAtuais = [];  // distratores que saíram do progresso, e não do card
   let respostasDesdeSync = 0;
   let sincronizando = false;
   let sincronizacoes = 0;
@@ -104,6 +105,19 @@
       if (!e || e.primeiraCerta !== undefined || !e.vistas) return;
       const h = e.historico || [];
       if (h.length >= e.vistas && h[0]) e.primeiraCerta = !!h[0].acertou;
+    });
+
+    /* O histórico antigo gravava em toda resposta três campos que quase
+       sempre dizem «não» — quase, pausado e o «conhecia» da pergunta que já
+       saiu do app. Tirá-los quando não dizem nada enxuga o arquivo em um
+       terço, e ninguém os lê de outro jeito que não «é verdadeiro?». */
+    Object.keys(p.cards).forEach(id => {
+      ((p.cards[id] && p.cards[id].historico) || []).forEach(h => {
+        if (!h) return;
+        if (!h.quase) delete h.quase;
+        if (!h.pausado) delete h.pausado;
+        if (h.conhecia == null) delete h.conhecia;
+      });
     });
 
     const visto = id => !!p.cards[id] && !!p.cards[id].vistas;
@@ -523,7 +537,13 @@
   }
 
   function montarAlternativas() {
-    const opcoes = Motor.alternativas(cardAtual, direcaoAtual, CARDS);
+    /* com o progresso, a frase de uso pode trocar distrator pronto por
+       palavra já vista (ver Motor.distratoresDinamicos) */
+    const opcoes = Motor.alternativas(cardAtual, direcaoAtual, CARDS, progresso.cards);
+    /* quais alternativas não são do card: vão para o log da sessão, para a
+       calibragem saber quando o erro foi num distrator dinâmico */
+    dinamicosAtuais = direcaoAtual === 'pt-es' ? []
+      : opcoes.filter(o => o !== cardAtual.pt && cardAtual.distratores.indexOf(o) < 0);
     el['area-multipla'].innerHTML = '';
     opcoes.forEach((texto, i) => {
       const b = document.createElement('button');
@@ -749,22 +769,33 @@
      quem usa manda mais do que a animação. */
   const FOLGA_BOTAO = 24;
 
-  /* Quanto ainda falta rolar para o alvo caber na parte de fato visível. */
+  /* Quanto ainda falta rolar para o alvo caber na parte de fato visível.
+     Positivo: falta descer. Negativo: há folga sobrando abaixo do alvo. */
   function faltaRolar(alvo) {
     const r = alvo.getBoundingClientRect();
     if (!r.height) return 0;
     const vv = window.visualViewport;
     const topo = vv ? vv.offsetTop : 0;
     const altura = vv ? vv.height : window.innerHeight;
-    return Math.max(0, (r.bottom + FOLGA_BOTAO) - (topo + altura));
+    return (r.bottom + FOLGA_BOTAO) - (topo + altura);
+  }
+
+  /* O teclado do celular encolhe o visualViewport e deixa o innerHeight como
+     estava (no Chrome antigo encolhia os dois, e aí isto não vê nada — quem
+     cobre esse caso é a volta, em trazerBotaoParaAVista). */
+  function tecladoAberto() {
+    const vv = window.visualViewport;
+    return !!vv && vv.height < window.innerHeight - 120;
   }
 
   let rolagemAtual = null;
 
   /* Anima a rolagem até «falta()» chegar a zero. «falta» devolve pixels,
      positivos para descer e negativos para subir. */
-  function rolarSuave(falta, aoTerminar) {
+  function rolarSuave(falta, aoTerminar, opcoes) {
     if (rolagemAtual) rolagemAtual.parar();
+    const esperarTeclado = !!(opcoes && opcoes.esperarTeclado);
+    const ESPERA_TECLADO = 500;   // ms: se ele não fechar nisso, desce assim mesmo
     const raiz = document.documentElement;
     const chao = el['area-feedback'];
     const instantaneo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -797,6 +828,15 @@
 
     function passo(agora) {
       if (!vivo) return;
+      /* Responder por escrito fecha o teclado, e ele leva uns 300 ms para
+         sair. Descer nesse intervalo é medir a tela pela metade: a mola
+         chegava ao alvo com o teclado ainda aberto, o teclado saía, e a
+         página ficava descida demais. Espera ele sair, e só então mede. */
+      if (esperarTeclado && agora - inicio < ESPERA_TECLADO && tecladoAberto()) {
+        anterior = agora;
+        quadro = requestAnimationFrame(passo);
+        return;
+      }
       const dt = Math.min(64, agora - anterior) / 1000;
       anterior = agora;
       const d = falta();
@@ -839,7 +879,16 @@
     const alvo = el['btn-proximo'].classList.contains('oculto')
       ? el['area-julgamento'] : el['btn-proximo'];
     if (!alvo) return;
-    rolarSuave(() => faltaRolar(alvo));
+    /* O alvo tem dois lados. Se a tela cresce no meio do caminho — o teclado
+       que fecha tarde, a barra do navegador que some —, o que já se desceu
+       passa do ponto, e antes a conta parava em zero e deixava assim. Agora
+       ela devolve o excesso, mas só o que ESTA animação desceu: nunca sobe
+       além de onde a tela estava quando a resposta foi dada. */
+    const partida = window.scrollY;
+    rolarSuave(() => {
+      const d = faltaRolar(alvo);
+      return d >= 0 ? d : Math.max(d, Math.min(0, partida - window.scrollY));
+    }, null, { esperarTeclado: true });
   }
 
   /* Card novo começa do topo, subindo com a mesma suavidade. A página do
@@ -966,6 +1015,7 @@
       fila: guardado.fila,
       distancia_fila: guardado.distancia
     };
+    if (r.modo === 'multipla' && dinamicosAtuais.length) evento.dinamicos = dinamicosAtuais.slice();
     sessao.eventos.push(evento);
 
     ultimoRegistro = { id, est, evento, r };
@@ -2045,9 +2095,12 @@
       }
 
       /* o sha da leitura vai junto: sem ele o escrever baixava o arquivo
-         inteiro outra vez só para descobri-lo */
+         inteiro outra vez só para descobri-lo. E o arquivo vai sem
+         indentação: ela era um terço do tamanho, e este é o arquivo que sobe
+         e desce inteiro a cada três respostas. Quem o lê é programa — o app e
+         o fonte/historico.js —, e para os olhos há o «Exportar arquivo». */
       await GH.escrever('progresso.json',
-        JSON.stringify(progresso, null, 1),
+        JSON.stringify(progresso),
         'progresso — ' + agora,
         { keepalive: opcoes.keepalive, sha: arq ? arq.sha : undefined });
 

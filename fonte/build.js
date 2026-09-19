@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /* ────────────────────────────────────────────────────────────────
    fonte/build.js — junta e valida os arquivos de fonte/cards/ e
-   gera data/cards.json (para ferramentas) e data/cards.js (que o
-   app carrega, para funcionar até abrindo o index.html direto).
+   gera data/cards.json (para ferramentas), data/cards.js (que o app
+   de estudo carrega, para funcionar até abrindo o index.html direto)
+   e data/cards-revisao.js (o baralho com o inglês, para a revisão).
 
    Uso:  node fonte/build.js
    ──────────────────────────────────────────────────────────────── */
@@ -296,14 +297,17 @@ for (const c of cards) {
     const nucleo = limpar(alvo.es)
       .replace(/^(el|la|los|las|un|una)\s+/, '')
       /* «enterarse» conjugado vira «me enteré», e o radical tem de cortar
-         antes da desinência para sobreviver a isso: enterarse → enter */
-      .replace(/(ar|er|ir)se$/, '')
+         antes da desinência para sobreviver a isso: enterarse → enter. O
+         mesmo com o pronome a mais: «apañárselas» vira «me las apañaré». */
+      .replace(/(ar|er|ir)se(l[oa]s?)?$/, '')
       .replace(/(ar|er|ir)$/, '');
     /* O espanhol muda o radical ao conjugar: «soler» vira «suelo»,
        «acordarse» vira «me acuerdo», «pedir» vira «pide». Sem prever isso o
        aviso dispara justamente nos verbos mais irregulares — que são os que
        mais precisam de uma frase mostrando o uso. */
     const variantes = new Set([nucleo]);
+    /* o adjetivo concorda: «soso» aparece na frase como «sosa» */
+    if (/[oa]$/.test(nucleo)) variantes.add(nucleo.slice(0, -1));
     [['o', 'ue'], ['e', 'ie'], ['e', 'i'], ['u', 'ue']].forEach(([de, para]) => {
       const i = nucleo.lastIndexOf(de);
       if (i >= 0) variantes.add(nucleo.slice(0, i) + para + nucleo.slice(i + 1));
@@ -361,22 +365,38 @@ if (erros.length) {
   process.exit(1);
 }
 
-/* ── saída ── */
-const baralho = {
-  versao: 1,
-  gerado_em: new Date().toISOString().slice(0, 10),
-  total: cards.length,
-  cards
-};
-
+/* ── saída ──
+   A data só muda quando o baralho muda. Carimbada a cada build, ela fazia
+   todo build em dia novo reescrever o baralho e trocar o ?v= dele, mesmo sem
+   card nenhum mexido — e o navegador baixava 860 KB de novo por nada. */
 fs.mkdirSync(path.join(raiz, 'data'), { recursive: true });
-fs.writeFileSync(path.join(raiz, 'data', 'cards.json'), JSON.stringify(baralho, null, 1), 'utf8');
-fs.writeFileSync(
-  path.join(raiz, 'data', 'cards.js'),
-  '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
-  'window.CARDS_RAW = ' + JSON.stringify(baralho, null, 1) + ';\n',
-  'utf8'
-);
+const arqJson = path.join(raiz, 'data', 'cards.json');
+let geradoEm = new Date().toISOString().slice(0, 10);
+try {
+  const anterior = JSON.parse(fs.readFileSync(arqJson, 'utf8'));
+  if (JSON.stringify(anterior.cards) === JSON.stringify(cards)) geradoEm = anterior.gerado_em;
+} catch (e) { /* primeiro build, ou arquivo ilegível: vale a data de hoje */ }
+
+const baralho = { versao: 1, gerado_em: geradoEm, total: cards.length, cards };
+
+/* O app de estudo não usa o lado inglês, e ele é um terço do baralho: o
+   cards.js vai sem esses campos, e as páginas de revisão carregam o
+   cards-revisao.js, que tem tudo. Os dois vão sem indentação — quem quer ler
+   o baralho lê o cards.json, que continua indentado. */
+const CAMPOS_SO_DA_REVISAO = CAMPOS_EN.concat('formasEsEn');
+const semIngles = Object.assign({}, baralho, {
+  cards: cards.map(c => {
+    const limpo = Object.assign({}, c);
+    CAMPOS_SO_DA_REVISAO.forEach(k => delete limpo[k]);
+    return limpo;
+  })
+});
+const comoJs = dados => '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
+  'window.CARDS_RAW = ' + JSON.stringify(dados) + ';\n';
+
+fs.writeFileSync(arqJson, JSON.stringify(baralho, null, 1), 'utf8');
+fs.writeFileSync(path.join(raiz, 'data', 'cards.js'), comoJs(semIngles), 'utf8');
+fs.writeFileSync(path.join(raiz, 'data', 'cards-revisao.js'), comoJs(baralho), 'utf8');
 
 if (TAGS) {
   fs.writeFileSync(
@@ -389,31 +409,40 @@ if (TAGS) {
 
 /* ── carimbo de versão nos assets ──
    Sem isso o navegador pode servir um data/cards.js velho junto de um
-   index.html novo, misturando baralho antigo com código novo. */
+   index.html novo, misturando baralho antigo com código novo.
+
+   O carimbo é de CADA arquivo, tirado do conteúdo dele. Antes era um só para
+   todos, e mexer numa linha do CSS obrigava o navegador a baixar de novo o
+   baralho inteiro. Agora só muda o ?v= de quem mudou — e a página só é
+   regravada se algum carimbo dela mudou. */
 const crypto = require('crypto');
 const assets = [
   'style.css', 'style-revisao.css', 'style-professor.css',
   'js/motor.js', 'js/github.js', 'js/app.js',
   'js/revisao.js', 'js/revisar-es-en.js', 'js/revisar-en-pt.js',
-  'data/cards.js', 'data/tags.js', 'data/historico.js', 'data/historico.js'
+  'data/cards.js', 'data/cards-revisao.js', 'data/tags.js', 'data/historico.js'
 ].filter(a => fs.existsSync(path.join(raiz, a)));   // as páginas de revisão podem ainda não existir
 
-const soma = crypto.createHash('sha1');
-for (const a of assets) soma.update(fs.readFileSync(path.join(raiz, a)));
-const versao = soma.digest('hex').slice(0, 8);
+const versaoDe = {};
+for (const a of assets) {
+  versaoDe[a] = crypto.createHash('sha1')
+    .update(fs.readFileSync(path.join(raiz, a))).digest('hex').slice(0, 8);
+}
 
+let trocadas = 0;
 for (const pagina of fs.readdirSync(raiz).filter(f => f.endsWith('.html'))) {
   const caminho = path.join(raiz, pagina);
-  let html = fs.readFileSync(caminho, 'utf8');
+  const antes = fs.readFileSync(caminho, 'utf8');
+  let html = antes;
   for (const a of assets) {
     const escapado = a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     html = html.replace(
       new RegExp('(href|src)="' + escapado + '(\\?v=[^"]*)?"', 'g'),
-      '$1="' + a + '?v=' + versao + '"'
+      '$1="' + a + '?v=' + versaoDe[a] + '"'
     );
   }
-  fs.writeFileSync(caminho, html, 'utf8');
+  if (html !== antes) { fs.writeFileSync(caminho, html, 'utf8'); trocadas++; }
 }
 
-console.log('\n  ok → data/cards.json e data/cards.js');
-console.log('  assets carimbados com ?v=' + versao + '\n');
+console.log('\n  ok → data/cards.json, data/cards.js e data/cards-revisao.js');
+console.log('  carimbo ?v= por arquivo; ' + trocadas + ' página(s) regravada(s)\n');

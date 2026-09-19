@@ -1167,9 +1167,11 @@ window.Motor = (function () {
          reaparece bem mais adiante, quando a imagem já não sirva de muleta. */
       if (r.acertou && r.direcao === 'pt-es') base = Math.max(base, 90);
     } else {
+      /* Escrever rápido pedia 110, mais de três vezes o que pede a escolha
+         rápida (32). Agora é o dobro: 32 e 64, com o meio-termo entre eles. */
       if (r.velocidade === 'lento') base = 35;
-      else if (r.velocidade === 'medio') base = 60;
-      else base = 110;
+      else if (r.velocidade === 'medio') base = 48;
+      else base = 64;
       if (est.seguidas >= 3) base *= 2;   // acabou de fechar a direção
     }
 
@@ -1375,16 +1377,21 @@ window.Motor = (function () {
     // a estreia é a única medida limpa do que já se sabia antes do app
     if (est.vistas === 1) est.primeiraCerta = !!r.acertou;
 
-    est.historico.push({
+    /* «quase» e «pausado» só são gravados quando verdadeiros. Quase sempre
+       são falsos, e escritos em todas as doze respostas de cada card eram um
+       terço do progresso.json — que sobe inteiro a cada três respostas. Quem
+       lê o histórico já trata o campo ausente como falso. */
+    const entrada = {
       em: est.ultima,
       modo: r.modo,
       acertou: r.acertou,
-      quase: !!r.quase,
       ms: r.ms,
       velocidade: r.velocidade,
-      resposta: r.resposta || null,
-      pausado: !!r.pausado
-    });
+      resposta: r.resposta || null
+    };
+    if (r.quase) entrada.quase = true;
+    if (r.pausado) entrada.pausado = true;
+    est.historico.push(entrada);
     if (est.historico.length > 12) est.historico = est.historico.slice(-12);
 
     return est;
@@ -1533,10 +1540,160 @@ window.Motor = (function () {
     return ordem;
   }
 
-  /* Alternativas da múltipla escolha: a certa mais os 4 distratores. */
-  function alternativas(card, direcao, todos) {
-    if (direcao !== 'pt-es') return embaralhar([card.pt, ...card.distratores]);
+  /* Alternativas da múltipla escolha: a certa mais os 4 distratores.
+     «estados» é o progresso de quem responde: com ele, a frase de uso pode
+     trocar distrator pronto por palavra que a pessoa já viu (ver abaixo). */
+  function alternativas(card, direcao, todos, estados) {
+    if (direcao !== 'pt-es') {
+      return embaralhar([card.pt, ...distratoresDinamicos(card, todos || [], estados)]);
+    }
     return embaralhar([card.es, ...distratoresEs(card, todos || [])]);
+  }
+
+  /* ── o distrator que sai do que a pessoa já viu ──
+     Na frase de uso, os quatro distratores costumam ser a mesma frase com a
+     palavra principal trocada: «O estudo tem um viés evidente» contra «um
+     erro», «um custo», «um objetivo», «um autor». São bons, mas são os mesmos
+     para todo mundo, e nenhum deles é palavra do baralho. O Gere pediu (no
+     comentário do u095) que entrassem ali, de preferência, palavras que a
+     pessoa já encontrou e que possam confundi-la: quem hesita entre «el hito»
+     e «el sitio» tem de achar «um lugar» ao lado de «um marco».
+
+     Vale só quando dá para fazer sem estragar a frase:
+
+       — o card é frase presa a uma palavra («requer»);
+       — os quatro distratores trocam o MESMO trecho da resposta certa, e esse
+         trecho é a tradução da palavra, sem o artigo;
+       — a palavra que entra tem a mesma classe da que sai: substantivo do
+         mesmo gênero e número (o artigo fica na frase, fora do trecho),
+         adjetivo com a mesma terminação, verbo no infinitivo.
+
+     E só entra quem tem por que confundir: a grafia espanhola parecida com a
+     da palavra certa — «hito» e «sitio», «ladrillo» e «tornillo». O mesmo assunto
+     afrouxa um pouco a régua, mas não a dispensa: a primeira versão aceitava
+     o assunto sozinho, e «comida» punha «guardanapo assado» ao lado de
+     «frango assado». Distrator que se descarta sem saber espanhol facilita a
+     pergunta em vez de dificultar. Pelo mesmo motivo só entra palavra de um
+     termo só, e o adjetivo só é tratado como adjetivo quando os distratores
+     prontos confirmam a vaga: «Chegaremos logo» acaba em «-o», e os prontos
+     dele («tarde», «juntos», «amanhã») mostram que ali não cabe «prolixo».
+
+     Trocam-se no máximo DOIS dos quatro. Os prontos foram escolhidos a dedo
+     para a frase, e dois deles garantem que a pergunta continue boa mesmo
+     quando os dinâmicos saem fracos. Sem progresso, ou sem candidato, ficam
+     os quatro prontos. */
+  const ARTIGO_PT = /^(o|a|os|as|um|uma|uns|umas)\s+/i;
+  const TAGS_GERAIS = new Set(['falso-amigo', 'verbo', 'substantivo', 'adjetivo',
+    'gíria', 'expressão', 'Espanha', 'cotidiano']);
+  const DINAMICOS_NO_MAXIMO = 2;
+  const PARECIDA_MINIMA = 0.6;        // 1 − distância ÷ tamanho, no espanhol sem artigo
+  const PARECIDA_NO_ASSUNTO = 0.34;   // com o mesmo assunto, um pouco menos basta
+
+  function formasPt(card) {
+    return String(card.pt || '').split('/').concat(card.aceitas || [])
+      .map(t => t.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim()).filter(Boolean)
+      .map(t => {
+        const m = t.match(ARTIGO_PT);
+        return { artigo: m ? m[1].toLowerCase() : '', nucleo: t.replace(ARTIGO_PT, '').trim() };
+      });
+  }
+
+  function classePt(forma, card) {
+    if (forma.artigo) {
+      return 'n' + (/^(o|os|um|uns)$/.test(forma.artigo) ? 'm' : 'f') + (/s$/.test(forma.artigo) ? 'p' : 's');
+    }
+    /* «vulgar» e «familiar» também acabam em -ar: verbo é só o que o card diz
+       que é, e o que parece infinitivo sem ser dito verbo fica de fora */
+    if (/(ar|er|ir|ôr)(-se)?$/.test(forma.nucleo.split(' ')[0])) {
+      return (card.tags || []).includes('verbo') ? 'v' : null;
+    }
+    /* Sem artigo pode ser advérbio ou locução: «luego → logo» acaba em «-o» e
+       não é adjetivo. Como no verbo, vale o que a etiqueta do card diz. */
+    if (!(card.tags || []).includes('adjetivo')) return null;
+    const fim = forma.nucleo.slice(-1);
+    return fim === 'o' || fim === 'a' ? 'adj' + fim : null;
+  }
+
+  /* O trecho que muda entre a resposta certa e um distrator: quantas
+     palavras iguais na frente, quantas atrás, e o miolo de cada lado. */
+  function trechoTrocado(certa, outra) {
+    const x = certa.split(/\s+/), y = outra.split(/\s+/);
+    let i = 0;
+    while (i < x.length && i < y.length && x[i] === y[i]) i++;
+    let j = 0;
+    while (j < x.length - i && j < y.length - i && x[x.length - 1 - j] === y[y.length - 1 - j]) j++;
+    return { pre: i, suf: j, daCerta: x.slice(i, x.length - j).join(' '), daOutra: y.slice(i, y.length - j).join(' ') };
+  }
+
+  const PONTO_FINAL = /[.,!?;:…]+$/;
+
+  function distratoresDinamicos(card, todos, estados) {
+    const prontos = (card.distratores || []).slice();
+    if (!estados || !card.requer || prontos.length !== 4) return prontos;
+    const palavra = todos.find(c => c.id === card.requer);
+    if (!palavra) return prontos;
+
+    const trechos = prontos.map(d => trechoTrocado(card.pt, d));
+    if (new Set(trechos.map(t => t.pre + '|' + t.suf)).size !== 1) return prontos;
+    const miolo = trechos[0].daCerta;
+    const cauda = (miolo.match(PONTO_FINAL) || [''])[0];
+    const semCauda = t => t.replace(PONTO_FINAL, '');
+    const alvo = formasPt(palavra).find(f => f.nucleo.toLowerCase() === semCauda(miolo).toLowerCase());
+    if (!alvo) return prontos;
+
+    const classe = classePt(alvo, palavra);
+    if (!classe) return prontos;
+    /* a vaga de adjetivo tem de ser confirmada pelos prontos: três dos quatro
+       acabam na mesma letra que a resposta certa */
+    if (classe.slice(0, 3) === 'adj') {
+      const fim = classe.slice(3);
+      if (trechos.filter(t => semCauda(t.daOutra).slice(-1) === fim).length < 3) return prontos;
+    }
+    const semArtigoEs = t => semAcento(String(t || '').trim().toLowerCase().replace(ARTIGOS_ES, ''));
+    const alvoEs = semArtigoEs(palavra.es);
+    const assuntos = (palavra.tags || []).filter(t => !TAGS_GERAIS.has(t));
+    const traducoes = c => formasPt(c).map(f => normalizar(f.nucleo, 'pt')).filter(Boolean);
+    const daPalavra = new Set(traducoes(palavra));
+    const jaNaTela = new Set(trechos.map(t => normalizar(semCauda(t.daOutra), 'pt')));
+    const certas = new Set(respostasAceitas(card, 'es-pt'));
+    const maiuscula = /^[A-ZÀ-Ý]/.test(miolo);
+    const montar = nucleo => {
+      const x = card.pt.split(/\s+/);
+      const texto = maiuscula ? nucleo[0].toUpperCase() + nucleo.slice(1) : nucleo;
+      return x.slice(0, trechos[0].pre).concat(texto + cauda, x.slice(x.length - trechos[0].suf)).join(' ');
+    };
+
+    const candidatos = [];
+    todos.forEach(c => {
+      const e = estados[c.id];
+      if (c.tipo !== 'palavra' || c.id === palavra.id || !e || !e.vistas) return;
+      const forma = formasPt(c)[0];
+      if (!forma || forma.nucleo.includes(' ') || classePt(forma, c) !== classe) return;
+      const chave = normalizar(forma.nucleo, 'pt');
+      if (!chave || jaNaTela.has(chave) || traducoes(c).some(t => daPalavra.has(t))) return;
+
+      const es = semArtigoEs(c.es);
+      const parecida = 1 - distancia(es, alvoEs) / Math.max(es.length, alvoEs.length, 1);
+      const mesmoAssunto = (c.tags || []).some(t => assuntos.includes(t));
+      if (parecida < (mesmoAssunto ? PARECIDA_NO_ASSUNTO : PARECIDA_MINIMA)) return;
+
+      const nota = 3 * parecida + (es[0] === alvoEs[0] ? 0.5 : 0) + (mesmoAssunto ? 1 : 0) +
+        (e.erros ? 0.5 : 0) + (c.nivel === palavra.nivel ? 0.3 : 0) + Math.random() * 0.6;
+      const frase = montar(forma.nucleo);
+      if (certas.has(normalizar(frase, 'pt'))) return;
+      candidatos.push({ frase: frase, chave: chave, nota: nota });
+    });
+    if (!candidatos.length) return prontos;
+
+    candidatos.sort((a, b) => b.nota - a.nota);
+    const entram = [];
+    for (const c of candidatos.slice(0, 6)) {          // sorteio entre os melhores, para variar
+      if (entram.length < DINAMICOS_NO_MAXIMO && !entram.some(x => x.chave === c.chave) &&
+          (entram.length === 0 || Math.random() < 0.7)) entram.push(c);
+    }
+    const saem = embaralhar([0, 1, 2, 3]).slice(0, entram.length);
+    entram.forEach((c, i) => { prontos[saem[i]] = c.frase; });
+    return prontos;
   }
 
   /* Na direção invertida o baralho não traz distratores prontos, então eles
@@ -1594,7 +1751,7 @@ window.Motor = (function () {
     urgencia, cumpriu, escolherNaFila, vezDoDominado, ESPACO_DOMINADO,
     ALVO_FILA,
     liberado, liberadaEm, venceuEm,
-    montarFila, alternativas, embaralhar,
+    montarFila, alternativas, distratoresDinamicos, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
   };
