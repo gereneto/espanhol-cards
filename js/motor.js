@@ -1725,10 +1725,14 @@ window.Motor = (function () {
     const traducoes = c => [String(c.pt || '')].concat(String(c.pt || '').split('/'), c.aceitas || [])
       .map(t => normalizar(t, 'pt')).filter(Boolean);
     const minhas = new Set(traducoes(card));
+    /* nem repetir forma que já entrou: «Ojalá viniera mañana» é forma do v034
+       e é também a frase de outro card */
+    const jaNaTela = new Set(formas.map(normalizarEs));
 
     const candidatos = todos
       .filter(c => c.id !== card.id && c.tipo === card.tipo &&
-        !certas.has(normalizarEs(c.es)) && !traducoes(c).some(t => minhas.has(t)))
+        !certas.has(normalizarEs(c.es)) && !jaNaTela.has(normalizarEs(c.es)) &&
+        !traducoes(c).some(t => minhas.has(t)))
       .map(c => {
         let nota = Math.random();
         if (c.nivel === card.nivel) nota += 2;
