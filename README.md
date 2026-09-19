@@ -776,27 +776,6 @@ campo `revisor`, então esse caminho manual funciona ponta a ponta sem token.
 Os cards que eu acrescentar depois chegam nele sozinhos: a página carrega o
 `data/cards-revisao.js` do próprio site, então basta dar push e pedir que recarregue.
 
-## Variações de layout (provisório)
-
-Cinco variações do desenho, para comparar no uso de verdade. Todas com a
-**mesma paleta** do `style.css` — nenhuma cor nova, só os tokens —, para a
-comparação ser de layout; a de cor fica para depois. O rodapé traz o seletor
-(**Atual · A · B · C · D · E**), a escolha fica no navegador, e
-`?layout=b` na URL escolhe e grava.
-
-| | Nome | A ideia |
-|---|---|---|
-| **A** | Verbete | editorial: a palavra em serifa de texto (Newsreader), caixas viram fios, a alternativa vira o «1.» itálico de uma acepção |
-| **B** | Suíço | uma grotesca só (Hanken Grotesk), pesos decididos, cantos retos, régua forte fechando a pergunta, alternativas em linhas 01–05 |
-| **C** | Técnico | ficha de instrumento: conteúdo em IBM Plex Sans, todo metadado em Plex Mono entre colchetes, retícula de pontos no fundo |
-| **D** | Tátil | o desenho de hoje sem nenhuma linha de contorno: superfícies por tom, cantos largos, botão com corpo (Figtree) |
-| **E** | Silêncio | peso leve (Albert Sans 300), tudo no eixo central, quase sem recipiente, botão de contorno |
-
-É tudo CSS por cima do mesmo HTML: `style-variacoes.css` com regras sob
-`[data-layout=x]`, e `js/layout.js`, que aplica a escolha no `<head>` e pede
-ao Google Fonts só as fontes da variação ativa. Fechado o layout, a escolhida
-vai para o `style.css` e os dois arquivos saem, junto com o seletor.
-
 ## Estrutura
 
 ```
@@ -805,14 +784,12 @@ revisar-es-en.html    revisão do Yoisser (só por URL)
 revisar-en-pt.html    revisão do Gere (só por URL)
 professor.html        página do Yoisser (só por URL)
 style.css
-style-variacoes.css   PROVISÓRIO — as cinco variações de layout em teste
 style-revisao.css     as telas de revisão
 style-professor.css   a página do professor
 img/                  a foto do professor
 js/motor.js           fila, tempos, conferência das respostas
 js/github.js          fábrica de clientes: GH (dados) e GH_REV (revisão)
 js/app.js             fluxo, painel, relatórios
-js/layout.js          PROVISÓRIO — aplica a variação escolhida e monta o seletor
 js/revisao.js         o que as duas páginas de revisão têm em comum
 js/revisar-es-en.js   a tela do Yoisser
 js/revisar-en-pt.js   a tela do Gere

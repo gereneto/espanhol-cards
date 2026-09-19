@@ -417,7 +417,7 @@ if (TAGS) {
    regravada se algum carimbo dela mudou. */
 const crypto = require('crypto');
 const assets = [
-  'style.css', 'style-revisao.css', 'style-professor.css', 'style-variacoes.css', 'js/layout.js',
+  'style.css', 'style-revisao.css', 'style-professor.css',
   'js/motor.js', 'js/github.js', 'js/app.js',
   'js/revisao.js', 'js/revisar-es-en.js', 'js/revisar-en-pt.js',
   'data/cards.js', 'data/cards-revisao.js', 'data/tags.js', 'data/historico.js'

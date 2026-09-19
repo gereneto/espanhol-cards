@@ -1,6 +1,7 @@
 /* ────────────────────────────────────────────────────────────────
-   Pilha — o baralho como fichário: a caixa é o fundo, a ficha é a
-   superfície erguida, e as fichas que esperam aparecem atrás dela.
+   Pilha — o baralho como fichário: a caixa é o fundo e a ficha é a
+   superfície erguida. (As duas fichas que assomavam atrás dela saíram a
+   pedido: a ficha fica sozinha sobre a caixa.)
    Verde-noite para a caixa, âmbar para o que exige decisão, verde-água
    só para o acerto — que por isso é visto.
 
@@ -11,8 +12,6 @@
   --fundo:#0d1614;        /* a caixa */
   --fundo-2:#16211f;      /* a ficha */
   --fundo-3:#1e2c29;      /* blocos dentro da ficha */
-  --atras-1:#132320;      /* a ficha logo atrás */
-  --atras-2:#101d1b;      /* e a de trás dela */
   --borda:#25352f;
   --texto:#e4ebe8;
   --texto-2:#8ba39d;
@@ -85,11 +84,6 @@ h1{font-size:26px;margin:0 0 6px}
 h2{font-size:20px;margin:0 0 16px}
 h3{font-size:15px;margin:0 0 8px;color:var(--acento)}
 .sub{color:var(--texto-2);margin:0 0 22px}
-.dica{color:var(--texto-2);font-size:12.5px;margin-top:18px}
-kbd{
-  background:var(--fundo-3);border:1px solid var(--borda);border-bottom-width:2px;
-  border-radius:5px;padding:1px 6px;font-size:11.5px;font-family:inherit;
-}
 
 /* ── início ── */
 .bloco-inicio{text-align:center;padding:36px 0}
@@ -114,17 +108,8 @@ button{font:inherit}
 .secundario:hover{border-color:var(--texto-2)}
 .linha-botoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
-/* ── a ficha, e as que esperam atrás ──
-   A pilha não é enfeite: ela diz o que número nenhum diz tão bem — que há
-   fila, que ela tem tamanho, e que este card saiu de algum lugar e volta
-   para lá. São duas bordas assomando no alto, atrás da ficha. */
-.fichario{position:relative;padding-top:15px}
-.atras{
-  position:absolute;height:46px;
-  border-radius:var(--raio);border:1px solid var(--borda);border-bottom:0;
-}
-.atras.a{top:7px;left:10px;right:10px;background:var(--atras-1)}
-.atras.b{top:0;left:21px;right:21px;background:var(--atras-2)}
+/* ── a ficha ── */
+.fichario{position:relative}
 
 .card{
   position:relative;z-index:1;
