@@ -173,6 +173,20 @@ function checarDistratores(c, direcao, campo, onde, coletar) {
         ' → ' + vistos.get(chave) + ' / ' + d + '  (viram "' + chave + '")');
     }
     vistos.set(chave, d);
+
+    /* E cada metade de um distrator com barra. «Me dê a mão. / Vamos
+       atravessar.» passava inteiro e trazia dentro «me dê a mão», que o funil
+       lê igual a «me dê uma mão» — a resposta certa do card. Quem lê a
+       alternativa lê a metade, e a metade não pode estar certa. */
+    if (d.includes('/')) {
+      for (const parte of d.split('/')) {
+        const chaveParte = Motor.normalizar(parte, lingua);
+        if (chaveParte && certas.has(chaveParte)) {
+          coletar('metade de distrator que o motor lê como a resposta certa: ' + onde +
+            ' → ' + parte.trim() + '  (em «' + d + '»)');
+        }
+      }
+    }
   }
 }
 
@@ -199,11 +213,34 @@ for (const c of cards) {
   checarDistratores(c, 'es-pt', 'distratores', onde, e => erros.push(e));
   checarDistratores(c, 'pt-es', 'distratoresEs', onde, e => erros.push(e));
 
+  /* Card de conjugação traz a mesma frase em quatro outros tempos. Elas têm
+     dois serviços: reconhecer o tempo errado na resposta escrita, e ser as
+     quatro alternativas erradas da múltipla escolha pt → es (ver
+     distratoresEs, no motor). Com menos de quatro, a vaga que sobra é
+     preenchida com frase de outro card, fora do assunto. */
+  if ((c.tags || []).includes('conjugação')) {
+    const n = c.formasEs ? Object.keys(c.formasEs).length : 0;
+    if (n < 4) erros.push('card de conjugação precisa de 4 formasEs (tem ' + n + '): ' + onde);
+  }
+
   /* uma forma verbal alternativa nunca pode coincidir com a resposta certa */
   if (c.formasEs) {
     const certas = new Set(Motor.respostasAceitas(c, 'pt-es'));
     for (const f of Object.keys(c.formasEs)) {
       if (certas.has(Motor.normalizarEs(f))) erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);
+    }
+  }
+
+  /* O parêntese explica a resposta, e ninguém o escreve: «o peixe (para
+     comer)» tem de aceitar «o peixe». O funil não tira o parêntese, então a
+     forma nua precisa estar entre as aceitas. */
+  if (typeof c.pt === 'string' && c.pt.includes('(') && Array.isArray(c.aceitas)) {
+    for (const parte of c.pt.split('/')) {
+      if (!parte.includes('(')) continue;
+      const nua = parte.replace(/\([^)]*\)/g, ' ').trim();
+      if (nua && Motor.conferir(c, nua, 'es-pt') !== 'certo') {
+        erros.push('a resposta sem o parêntese não é aceita: ' + onde + ' → «' + nua + '» (ponha em "aceitas")');
+      }
     }
   }
 

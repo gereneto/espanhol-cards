@@ -1324,8 +1324,8 @@
     "a bilheteria / a fila"
    ],
    "distratoresEn": [
-    "the note / the message",
-    "the invoice / the bill",
+    "the memo / the message",
+    "the invoice / the receipt",
     "the wallet / the purse",
     "the box office / the ticket queue"
    ],
@@ -1685,7 +1685,9 @@
     "adoravel",
     "querida",
     "cara",
-    "afetuosa"
+    "afetuosa",
+    "muito caro",
+    "muito querido"
    ],
    "aceitasEn": [
     "dearly loved",
@@ -9897,12 +9899,14 @@
    "formasEs": {
     "Ojalá viniera mañana": "imperfeito do subjuntivo",
     "Ojalá viene mañana": "indicativo, onde o subjuntivo é obrigatório",
-    "Ojalá vendrá mañana": "futuro do indicativo, que aqui não cabe"
+    "Ojalá vendrá mañana": "futuro do indicativo, que aqui não cabe",
+    "Ojalá vino mañana": "pretérito, que aqui não cabe"
    },
    "formasEsEn": {
     "Ojalá viniera mañana": "imperfect subjunctive",
     "Ojalá viene mañana": "indicative, where the subjunctive is required",
-    "Ojalá vendrá mañana": "future indicative, which does not fit here"
+    "Ojalá vendrá mañana": "future indicative, which does not fit here",
+    "Ojalá vino mañana": "preterite, which does not fit here"
    }
   },
   {
@@ -9949,12 +9953,14 @@
    "formasEs": {
     "No creo que es fácil": "indicativo, onde o subjuntivo é obrigatório",
     "No creo que fuera fácil": "imperfeito do subjuntivo",
-    "No creo que será fácil": "futuro do indicativo, que aqui não cabe"
+    "No creo que será fácil": "futuro do indicativo, que aqui não cabe",
+    "No creo que sería fácil": "condicional, que aqui não cabe"
    },
    "formasEsEn": {
     "No creo que es fácil": "indicative, where the subjunctive is required",
     "No creo que fuera fácil": "imperfect subjunctive",
-    "No creo que será fácil": "future indicative, which does not fit here"
+    "No creo que será fácil": "future indicative, which does not fit here",
+    "No creo que sería fácil": "conditional, which does not fit here"
    }
   },
   {
@@ -10365,12 +10371,14 @@
    "formasEs": {
     "Nosotros vivíamos aquí": "imperfeito",
     "Nosotros viviremos aquí": "futuro",
-    "Nosotros viviríamos aquí": "condicional"
+    "Nosotros viviríamos aquí": "condicional",
+    "Nosotros viviéramos aquí": "imperfeito do subjuntivo"
    },
    "formasEsEn": {
     "Nosotros vivíamos aquí": "imperfect",
     "Nosotros viviremos aquí": "future",
-    "Nosotros viviríamos aquí": "conditional"
+    "Nosotros viviríamos aquí": "conditional",
+    "Nosotros viviéramos aquí": "imperfect subjunctive"
    }
   },
   {
@@ -28781,12 +28789,14 @@
    "formasEs": {
     "Quiero que vienes a la fiesta": "presente do indicativo",
     "Quiero que vinieras a la fiesta": "imperfeito do subjuntivo",
-    "Quiero que vendrás a la fiesta": "futuro"
+    "Quiero que vendrás a la fiesta": "futuro",
+    "Quiero que vendrías a la fiesta": "condicional"
    },
    "formasEsEn": {
     "Quiero que vienes a la fiesta": "present indicative",
     "Quiero que vinieras a la fiesta": "imperfect subjunctive",
-    "Quiero que vendrás a la fiesta": "future"
+    "Quiero que vendrás a la fiesta": "future",
+    "Quiero que vendrías a la fiesta": "conditional"
    }
   },
   {
@@ -28832,12 +28842,14 @@
    "formasEs": {
     "No lo haces": "presente",
     "No lo hiciste": "pretérito",
-    "No lo harás": "futuro"
+    "No lo harás": "futuro",
+    "No lo hacías": "imperfeito"
    },
    "formasEsEn": {
     "No lo haces": "present",
     "No lo hiciste": "preterite",
-    "No lo harás": "future"
+    "No lo harás": "future",
+    "No lo hacías": "imperfect"
    }
   },
   {
@@ -28883,12 +28895,14 @@
    "formasEs": {
     "Ya hemos comido cuando llegaste": "pretérito perfeito",
     "Ya comíamos cuando llegaste": "imperfeito",
-    "Ya habremos comido cuando llegaste": "futuro perfeito"
+    "Ya habremos comido cuando llegaste": "futuro perfeito",
+    "Ya habríamos comido cuando llegaste": "condicional composto"
    },
    "formasEsEn": {
     "Ya hemos comido cuando llegaste": "present perfect",
     "Ya comíamos cuando llegaste": "imperfect",
-    "Ya habremos comido cuando llegaste": "future perfect"
+    "Ya habremos comido cuando llegaste": "future perfect",
+    "Ya habríamos comido cuando llegaste": "conditional perfect"
    }
   },
   {
@@ -28940,12 +28954,14 @@
    "formasEs": {
     "Son las diez": "presente",
     "Eran las diez": "imperfeito",
-    "Serían las diez": "condicional"
+    "Serían las diez": "condicional",
+    "Fueron las diez": "pretérito"
    },
    "formasEsEn": {
     "Son las diez": "present",
     "Eran las diez": "imperfect",
-    "Serían las diez": "conditional"
+    "Serían las diez": "conditional",
+    "Fueron las diez": "preterite"
    }
   },
   {
@@ -28994,12 +29010,14 @@
    "formasEs": {
     "Me gusta ir contigo": "presente",
     "Me gustó ir contigo": "pretérito",
-    "Me gustará ir contigo": "futuro"
+    "Me gustará ir contigo": "futuro",
+    "Me gustaba ir contigo": "imperfeito"
    },
    "formasEsEn": {
     "Me gusta ir contigo": "present",
     "Me gustó ir contigo": "preterite",
-    "Me gustará ir contigo": "future"
+    "Me gustará ir contigo": "future",
+    "Me gustaba ir contigo": "imperfect"
    }
   },
   {
@@ -29046,12 +29064,14 @@
    "formasEs": {
     "Cuando era niño, viví en Lima": "pretérito",
     "Cuando era niño, vivo en Lima": "presente",
-    "Cuando era niño, viviría en Lima": "condicional"
+    "Cuando era niño, viviría en Lima": "condicional",
+    "Cuando era niño, viviré en Lima": "futuro"
    },
    "formasEsEn": {
     "Cuando era niño, viví en Lima": "preterite",
     "Cuando era niño, vivo en Lima": "present",
-    "Cuando era niño, viviría en Lima": "conditional"
+    "Cuando era niño, viviría en Lima": "conditional",
+    "Cuando era niño, viviré en Lima": "future"
    }
   },
   {
@@ -29095,12 +29115,14 @@
    "formasEs": {
     "Espero que te gusta el regalo": "presente do indicativo",
     "Espero que te gustó el regalo": "pretérito",
-    "Espero que te gustará el regalo": "futuro"
+    "Espero que te gustará el regalo": "futuro",
+    "Espero que te gustaría el regalo": "condicional"
    },
    "formasEsEn": {
     "Espero que te gusta el regalo": "present indicative",
     "Espero que te gustó el regalo": "preterite",
-    "Espero que te gustará el regalo": "future"
+    "Espero que te gustará el regalo": "future",
+    "Espero que te gustaría el regalo": "conditional"
    }
   },
   {
@@ -29147,12 +29169,14 @@
    "formasEs": {
     "Dudo que tiene razón": "presente do indicativo",
     "Dudo que tuvo razón": "pretérito",
-    "Dudo que tendrá razón": "futuro"
+    "Dudo que tendrá razón": "futuro",
+    "Dudo que tendría razón": "condicional"
    },
    "formasEsEn": {
     "Dudo que tiene razón": "present indicative",
     "Dudo que tuvo razón": "preterite",
-    "Dudo que tendrá razón": "future"
+    "Dudo que tendrá razón": "future",
+    "Dudo que tendría razón": "conditional"
    }
   },
   {
@@ -29197,12 +29221,14 @@
    "formasEs": {
     "Nos conocemos en 2010": "presente",
     "Nos conocíamos en 2010": "imperfeito",
-    "Nos conoceremos en 2010": "futuro"
+    "Nos conoceremos en 2010": "futuro",
+    "Nos conoceríamos en 2010": "condicional"
    },
    "formasEsEn": {
     "Nos conocemos en 2010": "present",
     "Nos conocíamos en 2010": "imperfect",
-    "Nos conoceremos en 2010": "future"
+    "Nos conoceremos en 2010": "future",
+    "Nos conoceríamos en 2010": "conditional"
    }
   },
   {
@@ -29249,12 +29275,14 @@
    "formasEs": {
     "Seguía lloviendo": "imperfeito",
     "Siguió lloviendo": "pretérito",
-    "Seguirá lloviendo": "futuro"
+    "Seguirá lloviendo": "futuro",
+    "Seguiría lloviendo": "condicional"
    },
    "formasEsEn": {
     "Seguía lloviendo": "imperfect",
     "Siguió lloviendo": "preterite",
-    "Seguirá lloviendo": "future"
+    "Seguirá lloviendo": "future",
+    "Seguiría lloviendo": "conditional"
    }
   },
   {
@@ -29305,12 +29333,14 @@
    "formasEs": {
     "Te lo dije mañana": "pretérito",
     "Te lo diría mañana": "condicional",
-    "Te lo decía mañana": "imperfeito"
+    "Te lo decía mañana": "imperfeito",
+    "Te lo he dicho mañana": "pretérito perfeito"
    },
    "formasEsEn": {
     "Te lo dije mañana": "preterite",
     "Te lo diría mañana": "conditional",
-    "Te lo decía mañana": "imperfect"
+    "Te lo decía mañana": "imperfect",
+    "Te lo he dicho mañana": "present perfect"
    }
   },
   {
@@ -29356,12 +29386,14 @@
    "formasEs": {
     "Pones la mesa, por favor": "presente",
     "Pusiste la mesa, por favor": "pretérito",
-    "Pondrás la mesa, por favor": "futuro"
+    "Pondrás la mesa, por favor": "futuro",
+    "Ponías la mesa, por favor": "imperfeito"
    },
    "formasEsEn": {
     "Pones la mesa, por favor": "present",
     "Pusiste la mesa, por favor": "preterite",
-    "Pondrás la mesa, por favor": "future"
+    "Pondrás la mesa, por favor": "future",
+    "Ponías la mesa, por favor": "imperfect"
    }
   },
   {
@@ -29411,12 +29443,14 @@
    "formasEs": {
     "No creo que llueve hoy": "presente do indicativo",
     "No creo que lloverá hoy": "futuro",
-    "No creo que llovió hoy": "pretérito"
+    "No creo que llovió hoy": "pretérito",
+    "No creo que llovía hoy": "imperfeito"
    },
    "formasEsEn": {
     "No creo que llueve hoy": "present indicative",
     "No creo que lloverá hoy": "future",
-    "No creo que llovió hoy": "preterite"
+    "No creo que llovió hoy": "preterite",
+    "No creo que llovía hoy": "imperfect"
    }
   },
   {
@@ -29465,12 +29499,14 @@
    "formasEs": {
     "Conduce toda la noche": "presente",
     "Conducía toda la noche": "imperfeito",
-    "Conducirá toda la noche": "futuro"
+    "Conducirá toda la noche": "futuro",
+    "Conduciría toda la noche": "condicional"
    },
    "formasEsEn": {
     "Conduce toda la noche": "present",
     "Conducía toda la noche": "imperfect",
-    "Conducirá toda la noche": "future"
+    "Conducirá toda la noche": "future",
+    "Conduciría toda la noche": "conditional"
    }
   },
   {
@@ -29520,12 +29556,14 @@
    "formasEs": {
     "Si había estudiado, habría aprobado": "mais-que-perfeito do indicativo",
     "Si estudiara, aprobaría": "imperfeito do subjuntivo",
-    "Si hubiera estudiado, aprobaré": "futuro"
+    "Si hubiera estudiado, aprobaré": "futuro",
+    "Si hubiera estudiado, apruebo": "presente"
    },
    "formasEsEn": {
     "Si había estudiado, habría aprobado": "pluperfect indicative",
     "Si estudiara, aprobaría": "imperfect subjunctive",
-    "Si hubiera estudiado, aprobaré": "future"
+    "Si hubiera estudiado, aprobaré": "future",
+    "Si hubiera estudiado, apruebo": "present"
    }
   },
   {

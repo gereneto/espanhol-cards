@@ -353,6 +353,16 @@ exportar e importar o arquivo à mão pelas mesmas configurações.
 
 ## Mexendo nos cards
 
+> **Antes de criar ou corrigir um card, leia o
+> [`fonte/MANUAL-DOS-CARDS.md`](fonte/MANUAL-DOS-CARDS.md).** É lá que estão as
+> regras — o que merece um card, o que entra em `aceitas`, como se faz um
+> distrator que não entrega nem pune, a nota, a frase de uso, a conjugação — e
+> a lista de conferência, com o caso que deu origem a cada regra. Esta seção
+> explica como o app lê o card; o manual, como se escreve um.
+>
+> `node fonte/revisar.js 12-` põe uma leva em cinco linhas por card, para a
+> leitura de conferência que o build não substitui.
+
 Os cards ficam em `fonte/cards/*.json`. Cada um é assim:
 
 ```json
@@ -622,8 +632,9 @@ Depois de editar:
 node fonte/build.js
 ```
 
-Isso valida tudo (ids repetidos, distrator igual à resposta, nível inválido,
-card duplicado) e regenera `data/cards.json`, `data/cards.js` e
+Isso valida tudo (ids repetidos, distrator — ou metade de distrator — igual à
+resposta, resposta com parêntese cuja forma nua não é aceita, conjugação sem
+quatro `formasEs`, nível inválido, card duplicado) e regenera `data/cards.json`, `data/cards.js` e
 `data/cards-revisao.js`. O `cards.js` é o que o app de estudo carrega, e vai
 **sem o lado inglês**, que é um terço do baralho e só a revisão usa; o
 `cards-revisao.js` tem tudo.
@@ -832,6 +843,8 @@ js/revisao.js         o que as duas páginas de revisão têm em comum
 js/revisar-es-en.js   a tela do Yoisser
 js/revisar-en-pt.js   a tela do Gere
 fonte/build.js        valida e gera o baralho, nas duas línguas
+fonte/MANUAL-DOS-CARDS.md  como se escreve e se confere um card
+fonte/revisar.js      a leva em cinco linhas por card, para ler
 fonte/historico.js    tira do repositório de dados a história do painel
 fonte/cards/*.json    os cards
 fonte/tags.json       os temas em pt/en/es
