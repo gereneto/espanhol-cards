@@ -193,6 +193,30 @@ escolhia sempre os mesmos. Simulando 1000 respostas com a taxa de acerto real:
 | maior espera de um card na fila | ~1000 | ~370 |
 | pior volta ÷ distância pedida | 7,9× | 5,0× |
 
+**E quem ficou para trás fura a fila.** «Uma hora ele passa também» era
+verdade, e a hora era longe demais: o progresso de 19 de setembro tinha 37
+cards que pediram 100 respostas e esperavam havia mais de mil. Enquanto houver
+card de distância curta acabando de vencer, o de distância longa perde para
+ele, e sempre há. Então, passada a espera pedida, o **atraso** — em respostas,
+não em proporção — soma urgência por conta própria, e ao cubo:
+
+> urgência = espera ÷ distância² + 0,15 × (atraso ÷ 400)³
+
+Quase nada nas primeiras cem respostas de atraso; o bastante para passar à
+frente de um acerto recém-vencido por volta das duzentas, e de um erro
+recém-vencido perto das quatrocentas. A fila não tem como devolver todo mundo
+na hora, e o que a regra escolhe é quem paga. Na simulação (fila de cem, a
+mesma mistura de distâncias, 30 mil respostas):
+
+| | só espera ÷ distância² | com o atraso |
+|---|---:|---:|
+| maior espera de um card na fila | 1.155 | 555 |
+| acerto escrito longo: espera ÷ pedido | 6,7× | 4,3× |
+| erro: espera ÷ pedido | 1,1× | 1,3× |
+| acerto de múltipla: espera ÷ pedido | 2,0× | 5,0× |
+
+Quem paga é o acerto de múltipla escolha — o que menos prova.
+
 Na passagem, o card que já estava na fila ganha a espera pelo número de cards
 respondidos depois da última vez dele, e a distância pela posição que ocupava.
 Os presos entram logo na roda.
@@ -482,6 +506,15 @@ A exceção é a **vogal final trocada por outra** — «suele» por «suelo»,
 «harte» por «harto». No teclado Dvorak a, o, e, u, i são vizinhas, e dali não
 dá para saber se foi a pessoa do verbo ou o dedo: fica para o «deu quase».
 
+**O «deu quase» mostra onde foi.** A diferença é, por definição, pequena — uma
+letra numa frase de quarenta —, e achá-la a olho custa mais do que devia. O
+motor acha a forma aceita mais próxima do que foi escrito e alinha as duas
+letra a letra (`Motor.diferencaDoQuase`): a letra trocada sai pintada dos dois
+lados, a que faltou só na certa, a que sobrou só na escrita. No português o
+acento não conta, no espanhol conta; pontuação, maiúscula e parênteses nunca
+contam. Se a forma mais próxima for uma variante que não está na caixa, ela
+aparece ao lado do que foi escrito («também vale …»).
+
 **Em espanhol — e aí não conta.** Falso amigo engana de um jeito que estar
 atento às bandeiras não resolve: você lê «la sobremesa», reconhece a palavra
 portuguesa e responde o espanhol dela — «el postre», que é a resposta certa da
@@ -656,6 +689,11 @@ Depois vêm os gráficos do **diário**:
   de verde do volume; o número está na dica;
 - **respostas por dia** — os últimos sessenta dias em barras, com a média dos
   sete dias antes de hoje e o recorde;
+- **cards novos por dia** — o mesmo desenho, em azul, contando estreias: em
+  quantos cards você pôs os olhos pela primeira vez em cada dia. Cada card
+  guarda o dia da estreia (`estreia`); o passado vem da semente, que lê todas
+  as fotografias — o card só guarda doze respostas, e nos mais rodados a
+  primeira já se foi;
 - **quando você estuda** — dia da semana contra hora do dia;
 - **velocidade a cada semana** — a mediana dos acertos, escrevendo e
   escolhendo entre cinco, sem os tempos pausados;

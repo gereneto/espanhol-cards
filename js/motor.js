@@ -82,7 +82,10 @@ window.Motor = (function () {
     /* «este ano» e «esse ano» são a mesma coisa no português do Brasil, e
        nenhum card do baralho ensina a diferença entre os dois. «Aquele» fica
        de fora: esse é o demonstrativo de longe, e aí a distância importa. */
-    esse: 'este', essa: 'esta', esses: 'estes', essas: 'estas', isso: 'isto'
+    esse: 'este', essa: 'esta', esses: 'estes', essas: 'estas', isso: 'isto',
+    /* a cidade escrita à espanhola numa resposta em português: quem acabou
+       de ler «Madrid» na pergunta copia a grafia, e isso não é erro de nada */
+    madrid: 'madri'
   });
 
   const GRAFIAS_ES = tabela({});

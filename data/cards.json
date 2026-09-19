@@ -11,7 +11,8 @@
    "en": "pregnant",
    "aceitas": [
     "gravida",
-    "prenha"
+    "prenha",
+    "gestante"
    ],
    "aceitasEn": [
     "pregnant",
@@ -50,7 +51,9 @@
     "requintado",
     "refinado",
     "saboroso",
-    "primoroso"
+    "primoroso",
+    "gostoso",
+    "fino"
    ],
    "aceitasEn": [
     "delicious",
@@ -93,7 +96,10 @@
     "um tempinho",
     "um instante",
     "instante",
-    "um pouco"
+    "um pouco",
+    "um pouquinho",
+    "um tempo",
+    "pouco tempo"
    ],
    "aceitasEn": [
     "a while",
@@ -133,7 +139,10 @@
    "aceitas": [
     "bebado",
     "embriagado",
-    "bebum"
+    "bebum",
+    "ebrio",
+    "alcoolizado",
+    "de porre"
    ],
    "aceitasEn": [
     "drunk",
@@ -755,7 +764,9 @@
     "lembrar",
     "lembrar-se",
     "recordar",
-    "se lembrar"
+    "se lembrar",
+    "recordar-se",
+    "se recordar"
    ],
    "aceitasEn": [
     "to remember",
@@ -1048,7 +1059,10 @@
     "chateado",
     "irritado",
     "zangado",
-    "com raiva"
+    "com raiva",
+    "aborrecido",
+    "irado",
+    "furioso"
    ],
    "aceitasEn": [
     "angry",
@@ -1127,7 +1141,10 @@
    "aceitas": [
     "jogar fora",
     "puxar",
-    "jogar"
+    "jogar",
+    "atirar",
+    "arremessar",
+    "jogar no lixo"
    ],
    "aceitasEn": [
     "to throw away",
@@ -1141,13 +1158,13 @@
    ],
    "distratores": [
     "tirar / remover",
-    "atirar / disparar",
+    "arrancar / extrair",
     "esticar / alongar",
     "empurrar / apertar"
    ],
    "distratoresEn": [
     "to remove / to take off",
-    "to shoot / to fire",
+    "to tear out / to extract",
     "to stretch / to lengthen",
     "to push / to press"
    ],
@@ -1530,7 +1547,11 @@
     "sordido",
     "brega",
     "mixuruca",
-    "pao-duro"
+    "pao-duro",
+    "tosco",
+    "vagabundo",
+    "chinfrim",
+    "fuleiro"
    ],
    "aceitasEn": [
     "shabby",
@@ -1925,7 +1946,10 @@
     "suscetivel",
     "exigente demais",
     "melindrosa",
-    "chata"
+    "chata",
+    "cricri",
+    "enjoado",
+    "cheio de frescura"
    ],
    "aceitasEn": [
     "touchy",
@@ -2174,7 +2198,8 @@
     "sem importancia",
     "banal",
     "irrelevante",
-    "insignificante"
+    "insignificante",
+    "futil"
    ],
    "aceitasEn": [
     "trivial",
@@ -2361,13 +2386,13 @@
    ],
    "distratores": [
     "a sobra / o resto",
-    "o naufrágio / o afundamento",
+    "a sombra / a penumbra",
     "a calmaria / a serenidade",
     "a zombaria / o deboche"
    ],
    "distratoresEn": [
     "the leftover",
-    "the shipwreck",
+    "the shadow",
     "the calm",
     "the mockery"
    ],
@@ -2562,9 +2587,9 @@
     "one's own will"
    ],
    "distratores": [
-    "o alvedrio da manhã",
+    "o alvorecer",
     "o albergue",
-    "o alvitre do juiz",
+    "o alvitre",
     "o alvo"
    ],
    "distratoresEn": [
@@ -2965,7 +2990,7 @@
     "Me jogue a mão. / Me arremesse.",
     "Solte a minha mão. / Me largue.",
     "Levante a mão. / Peça a palavra.",
-    "Me dê a mão. / Vamos atravessar."
+    "Segure a minha mão. / Vamos atravessar."
    ],
    "distratoresEn": [
     "Throw me the ball.",
@@ -3189,9 +3214,9 @@
    ],
    "distratores": [
     "Vou da melhor forma.",
-    "Vou para o melhor lugar.",
     "No melhor dos casos, fui.",
-    "Vou o quanto antes."
+    "Com certeza eu vou.",
+    "Prefiro não ir."
    ],
    "distratoresEn": [
     "I go the best way.",
@@ -3219,7 +3244,9 @@
     "estou aqui ha dois anos",
     "moro aqui ha dois anos",
     "tem dois anos que estou aqui",
-    "estou aqui faz dois anos"
+    "estou aqui faz dois anos",
+    "ja estou ha dois anos aqui",
+    "ja faz dois anos que estou aqui"
    ],
    "aceitasEn": [
     "ive been here two years",
@@ -3365,8 +3392,8 @@
    "distratores": [
     "Meter o pé na porta. / Forçar a entrada.",
     "Enfiar o pé na jaca. / Exagerar na bebida.",
-    "Botar a pata no chão. / Firmar o passo.",
-    "Bater o pé. / Insistir na teimosia."
+    "Meter o bedelho. / Dar palpite.",
+    "Abrir o bico. / Contar o segredo."
    ],
    "distratoresEn": [
     "To get your foot in the door.",
@@ -3487,7 +3514,10 @@
     "nao tem pelos na lingua",
     "diz o que pensa",
     "fala na lata",
-    "ele fala o que pensa"
+    "ele fala o que pensa",
+    "fala o que quer",
+    "ele fala o que quer",
+    "diz o que quer"
    ],
    "aceitasEn": [
     "he doesnt mince his words",
@@ -3545,9 +3575,9 @@
    ],
    "distratores": [
     "O pão acabou. / Comeram tudo.",
-    "É comida boa. / Alimenta bem.",
     "É pão-duro. / Não gasta nada.",
-    "Já foi consumido. / Não sobrou."
+    "É coisa antiga. / Já passou.",
+    "É caro demais. / Não compensa."
    ],
    "distratoresEn": [
     "The bread has run out.",
@@ -3634,7 +3664,7 @@
     "É teimoso como uma cabra.",
     "Come como uma cabra.",
     "Está magro.",
-    "Sobe que nem cabra."
+    "É muito esperto."
    ],
    "distratoresEn": [
     "He is as stubborn as a mule.",
@@ -3848,7 +3878,7 @@
     "Estou empoeirado. / Estou sujo.",
     "Fiz uma poeira. / Levantei pó.",
     "Estou de mau humor. / Estou irritado.",
-    "Fiquei todo sujo. / Preciso de banho."
+    "Estou sem dinheiro. / Estou quebrado."
    ],
    "distratoresEn": [
     "I am covered in dust.",
@@ -3889,7 +3919,7 @@
    "distratores": [
     "Por causa das moscas.",
     "Se houver moscas.",
-    "Para espantar as moscas.",
+    "Por pura teimosia.",
     "Sem mais nem menos."
    ],
    "distratoresEn": [
@@ -4325,14 +4355,14 @@
    "distratores": [
     "Virou sueco.",
     "Aprendeu sueco.",
-    "Foi para a Suécia.",
-    "Ficou loiro."
+    "Fez-se de vítima.",
+    "Ficou sem graça."
    ],
    "distratoresEn": [
     "He became a Swede.",
     "He learned Swedish quickly.",
-    "He moved to Sweden.",
-    "He dyed his hair blond."
+    "He played the victim.",
+    "He was embarrassed."
    ],
    "nivel": "C1",
    "tags": [
@@ -4858,7 +4888,10 @@
     "nem que chova eu vou",
     "mesmo que chova vou",
     "mesmo chovendo eu vou",
-    "mesmo que chova eu vou"
+    "mesmo que chova eu vou",
+    "ainda que chova irei",
+    "nem que chova irei",
+    "mesmo se chover eu vou"
    ],
    "aceitasEn": [
     "even if it rains ill go",
@@ -5830,7 +5863,7 @@
    ],
    "distratores": [
     "o sono",
-    "o soalho de cima",
+    "o salário",
     "o teto",
     "o sol"
    ],
@@ -6119,7 +6152,7 @@
    "distratores": [
     "a bagunça",
     "a base",
-    "a bassoura",
+    "a vassoura",
     "a batida"
    ],
    "distratoresEn": [
@@ -6201,7 +6234,7 @@
    ],
    "distratores": [
     "enterrar",
-    "inteirar-se de dinheiro",
+    "integrar-se",
     "entrar",
     "enternecer-se"
    ],
@@ -6279,7 +6312,7 @@
     "a folga",
     "a fuga",
     "a horta",
-    "a huella"
+    "a pegada"
    ],
    "distratoresEn": [
     "the day off",
@@ -6350,7 +6383,7 @@
     "to be slow"
    ],
    "distratores": [
-    "tardear",
+    "entardecer",
     "trocar",
     "tratar",
     "tostar"
@@ -6511,7 +6544,7 @@
    ],
    "distratores": [
     "a brasa",
-    "a bretanha",
+    "a brisa",
     "a brincadeira",
     "a broca"
    ],
@@ -6539,7 +6572,9 @@
     "colocar",
     "levantar",
     "apresentar",
-    "formular"
+    "formular",
+    "expor",
+    "sugerir"
    ],
    "aceitasEn": [
     "to raise",
@@ -7925,7 +7960,11 @@
     "naquela epoca vivia em madrid",
     "naquela epoca ele vivia em madri",
     "naquela epoca ele vivia em madrid",
-    "naquele tempo vivia em madrid"
+    "naquele tempo vivia em madrid",
+    "na epoca morava em madri",
+    "naquele tempo morava em madri",
+    "naquela epoca morava em madri",
+    "entao ele morava em madri"
    ],
    "aceitasEn": [
     "at that time he lived in madrid",
@@ -8773,8 +8812,7 @@
    "aceitas": [
     "eu digo que sim",
     "digo que sim",
-    "eu falo que sim",
-    "eu acho que sim"
+    "eu falo que sim"
    ],
    "aceitasEn": [
     "i say yes",
@@ -9149,7 +9187,7 @@
     "Nós andaríamos muito.",
     "Nós andávamos muito.",
     "Nós andaremos muito.",
-    "Nós andaremos bastante."
+    "Nós tínhamos andado muito."
    ],
    "distratoresEn": [
     "We would walk a lot.",
@@ -9188,7 +9226,6 @@
    "aceitas": [
     "ele trouxe o livro",
     "trouxe o livro",
-    "ele levou o livro",
     "ele trouxe um livro"
    ],
    "aceitasEn": [
@@ -9613,7 +9650,6 @@
    "aceitas": [
     "eu durmo pouco",
     "durmo pouco",
-    "eu durmo mal",
     "eu nao durmo muito"
    ],
    "aceitasEn": [
@@ -10662,7 +10698,10 @@
     "o copo me caiu",
     "caiu o copo da minha mao",
     "o copo escorregou da minha mao",
-    "eu deixei cair o copo"
+    "eu deixei cair o copo",
+    "derrubei o copo",
+    "deixei cair o copo",
+    "o copo caiu"
    ],
    "aceitasEn": [
     "i dropped the glass",
@@ -10955,7 +10994,7 @@
    "distratores": [
     "o sobrenome",
     "o sobrado",
-    "o soborno de festa",
+    "o sobrinho",
     "o sobressalto"
    ],
    "distratoresEn": [
@@ -12014,7 +12053,7 @@
     "a bolsa de mão",
     "o bolinho",
     "o boliche",
-    "o bolso de viagem"
+    "o bolsista"
    ],
    "distratoresEn": [
     "the handbag",
@@ -13071,7 +13110,7 @@
    ],
    "distratores": [
     "a jubilação escolar",
-    "a jubilosidade",
+    "a celebração",
     "a juventude",
     "a jurisdição"
    ],
@@ -13441,7 +13480,10 @@
     "desabamento",
     "despencada",
     "colapso",
-    "queda brusca"
+    "queda brusca",
+    "queda",
+    "desmoronamento",
+    "derrocada"
    ],
    "aceitasEn": [
     "collapse",
@@ -13985,13 +14027,13 @@
     "a angústia",
     "a arrogância",
     "a ambiguidade",
-    "a artimanha honesta"
+    "a acurácia"
    ],
    "distratoresEn": [
     "the anguish",
     "the arrogance",
     "the ambiguity",
-    "the honest trick"
+    "the accuracy"
    ],
    "nivel": "C2",
    "tags": [
@@ -14142,7 +14184,8 @@
     "fechado",
     "arredia",
     "esquiva",
-    "fechada"
+    "fechada",
+    "arisco"
    ],
    "aceitasEn": [
     "unsociable",
@@ -14154,9 +14197,9 @@
     "shy of company"
    ],
    "distratores": [
-    "huguenote",
+    "humano",
     "humilde",
-    "hurrah",
+    "urbano",
     "hospitaleiro"
    ],
    "distratoresEn": [
@@ -14196,7 +14239,7 @@
    ],
    "distratores": [
     "acalentar",
-    "acamparar",
+    "acampar",
     "acautelar",
     "acalorar"
    ],
@@ -14731,8 +14774,8 @@
    "distratores": [
     "Está com o nariz entupido.",
     "Está com o nariz sangrando.",
-    "Está com a cara suja.",
-    "Está com o nariz frio."
+    "Está morrendo de medo.",
+    "Está atolado de trabalho."
    ],
    "distratoresEn": [
     "He has a blocked nose.",
@@ -14937,13 +14980,13 @@
    ],
    "distratores": [
     "ver na televisão",
-    "ajudar alguém",
+    "resistir",
     "insistir no assunto",
     "desistir de tudo"
    ],
    "distratoresEn": [
     "to watch",
-    "to assist",
+    "to resist",
     "to insist",
     "to give up"
    ],
@@ -15367,7 +15410,7 @@
     "o sótão",
     "o soalho",
     "o sofá",
-    "o soturno"
+    "o sobrado"
    ],
    "distratoresEn": [
     "the attic",
@@ -16185,7 +16228,7 @@
     "term"
    ],
    "distratores": [
-    "o praça",
+    "a praça",
     "o prato",
     "o traço",
     "o pulso"
@@ -16342,13 +16385,13 @@
     "a multa de trânsito",
     "a carteira do aluno",
     "a mensalidade do curso",
-    "a inscrição na prova"
+    "o seguro do carro"
    ],
    "distratoresEn": [
     "the traffic fine",
     "the student card",
     "the tuition fee",
-    "the exam sign-up"
+    "the car insurance"
    ],
    "nivel": "B2",
    "tags": [
@@ -16643,13 +16686,13 @@
     "swell"
    ],
    "distratores": [
-    "a ola do estádio",
+    "a olaria",
     "a maré alta",
     "a espuma branca",
     "a corrente forte"
    ],
    "distratoresEn": [
-    "the stadium wave",
+    "the pottery",
     "the high tide",
     "the white foam",
     "the strong current"
@@ -16958,7 +17001,10 @@
     "para mim e grego",
     "nao entendo nada disso",
     "e grego",
-    "isso e chines para mim"
+    "isso e chines para mim",
+    "isso para mim e grego",
+    "nao entendo patavina",
+    "isso e grego"
    ],
    "aceitasEn": [
     "its all greek to me",
@@ -17134,7 +17180,7 @@
     "Ficamos roxos de frio.",
     "Ficamos roxos de raiva.",
     "Passamos mal depois da festa.",
-    "Ficamos sem jantar."
+    "Comemos muito mal."
    ],
    "distratoresEn": [
     "We turned blue with cold.",
@@ -19455,7 +19501,7 @@
     "Meu chefe está entediado comigo.",
     "Meu chefe está contente comigo.",
     "Meu chefe está preocupado comigo.",
-    "Meu chefe está enfeitado comigo."
+    "Meu chefe está decepcionado comigo."
    ],
    "distratoresEn": [
     "My boss is bored with me.",
@@ -19843,7 +19889,9 @@
     "a conversa depois da refeicao durou ate as cinco",
     "ficamos conversando a mesa ate as cinco",
     "a conversa a mesa durou ate as cinco",
-    "a conversa depois do almoco foi ate as cinco"
+    "a conversa depois do almoco foi ate as cinco",
+    "a conversa apos a refeicao durou ate as cinco",
+    "a conversa depois de comer durou ate as cinco"
    ],
    "aceitasEn": [
     "the after lunch chat went on until five",
@@ -24308,7 +24356,13 @@
     "a idade dele nao foi empecilho para terminar o curso",
     "a idade nao impediu que terminasse o curso",
     "a idade nao foi impedimento para terminar o curso",
-    "a idade nao foi obice para terminar o curso"
+    "a idade nao foi obice para terminar o curso",
+    "sua idade nao foi empecilho para terminar o curso",
+    "sua idade nao foi obstaculo para terminar o curso",
+    "a idade dela nao foi empecilho para terminar o curso",
+    "a idade nao foi obstaculo para concluir o curso",
+    "a idade nao foi empecilho para concluir o curso",
+    "a idade nao foi empecilho para terminar a faculdade"
    ],
    "aceitasEn": [
     "her age was no obstacle to finishing her degree",
@@ -25038,7 +25092,11 @@
     "ainda nao caiu o salario deste mes",
     "ainda nao recebi o pagamento deste mes",
     "ainda nao me pagaram este mes",
-    "ainda nao recebi o salario desse mes"
+    "ainda nao recebi o salario desse mes",
+    "ainda nao recebi meu salario este mes",
+    "ainda nao recebi meu salario deste mes",
+    "ainda nao recebi o salario este mes",
+    "ainda nao recebi o meu salario deste mes"
    ],
    "aceitasEn": [
     "i haven t been paid yet this month",
@@ -26410,7 +26468,10 @@
     "vou tirar carta este ano",
     "vou tirar a habilitacao este ano",
     "este ano vou tirar a carteira de motorista",
-    "vou tirar a cnh este ano"
+    "vou tirar a cnh este ano",
+    "vou tirar a carteira este ano",
+    "vou tirar minha carteira de motorista este ano",
+    "vou tirar a minha habilitacao este ano"
    ],
    "aceitasEn": [
     "i m going to get my driving licence this year",
@@ -26929,7 +26990,7 @@
    "distratores": [
     "Você está cortando o meu cabelo.",
     "Você está puxando o meu cabelo.",
-    "Você está me deixando careca.",
+    "Você está me deixando nervoso.",
     "Você está me dando uma bronca."
    ],
    "distratoresEn": [
@@ -26970,15 +27031,15 @@
    ],
    "distratores": [
     "Calçamos as botas.",
-    "Saímos para caminhar.",
     "Compramos sapatos novos.",
-    "Arrumamos as malas."
+    "Bebemos até cair.",
+    "Trabalhamos até cansar."
    ],
    "distratoresEn": [
     "We put our boots on.",
-    "We went out for a walk.",
     "We bought new shoes.",
-    "We packed our bags."
+    "We drank until we dropped.",
+    "We worked until we were worn out."
    ],
    "nivel": "B2",
    "tags": [
@@ -27137,8 +27198,8 @@
    "distratores": [
     "Virou a omelete na frigideira.",
     "Deu uma volta no quarteirão.",
-    "Fez a comida sozinho.",
-    "Deixou a comida queimar."
+    "Entregou o jogo.",
+    "Perdeu a cabeça."
    ],
    "distratoresEn": [
     "He flipped the omelette in the pan.",
@@ -27176,14 +27237,14 @@
    "distratores": [
     "Está chovendo sem parar.",
     "Choveu depois da seca.",
-    "Molhou tudo com a chuva.",
-    "Está garoando lá fora."
+    "É repetir o óbvio.",
+    "É sorte demais."
    ],
    "distratoresEn": [
     "It's raining non-stop.",
     "It rained after the drought.",
-    "Everything got wet in the rain.",
-    "It's drizzling outside."
+    "It's stating the obvious.",
+    "It's too much luck."
    ],
    "nivel": "C1",
    "tags": [
@@ -27789,16 +27850,16 @@
     "they splashed out"
    ],
    "distratores": [
-    "Jogaram o lixo pela janela.",
+    "Jogaram tudo pela janela.",
     "Mudaram de casa.",
-    "Venderam a casa.",
-    "Brigaram e saíram de casa."
+    "Economizaram cada centavo.",
+    "Fizeram tudo às pressas."
    ],
    "distratoresEn": [
-    "They threw the rubbish out of the window.",
+    "They threw everything out of the window.",
     "They moved house.",
-    "They sold the house.",
-    "They argued and left home."
+    "They saved every penny.",
+    "They did everything in a rush."
    ],
    "nivel": "C1",
    "tags": [
@@ -27859,7 +27920,9 @@
     "me deu branco na prova",
     "fiquei com a mente em branco na prova",
     "esqueci tudo na prova",
-    "deu branco no exame"
+    "deu branco no exame",
+    "tive um branco na prova",
+    "me deu um branco na prova"
    ],
    "aceitasEn": [
     "my mind went blank in the exam",
@@ -30181,13 +30244,13 @@
    ],
    "distratores": [
     "o anexo",
-    "o enlace matrimonial",
+    "o encaixe",
     "o arquivo",
     "a mensagem"
    ],
    "distratoresEn": [
     "the attachment",
-    "the wedding",
+    "the socket",
     "the file",
     "the message"
    ],
