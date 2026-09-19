@@ -1,8 +1,9 @@
 /* ────────────────────────────────────────────────────────────────
    motor.js — estado dos cards e gestão da fila.
 
-   Existe uma fila única. Ao responder, o card é reinserido mais adiante
-   nela; quanto mais fácil foi a resposta, mais longe ele vai.
+   São quatro filas: inéditos, es→pt, pt→es e dominados (ver pesosDasFilas).
+   Ao responder, o card volta para a fila da etapa dele e anota a distância
+   que pediu; quanto mais fácil foi a resposta, mais longe ele vai.
 
    A única exceção é o card já dominado nas duas direções: esse ganha uma
    data de retorno, que cresce a cada revisão certa. Nunca sai do baralho —
@@ -36,15 +37,33 @@ window.Motor = (function () {
      responde em português não escreve "the office", e quem responde em
      inglês não escreve "3" esperando casar com "três". */
 
-  const NUMEROS_PT = {
+  /* As tabelas são consultadas com a palavra que a pessoa escreveu, e objeto
+     comum herda chaves que ninguém pôs ali: «constructor» — que é palavra
+     espanhola — achava a função Object, e o funil quebrava tentando tratá-la
+     como texto. Tabela sem protótipo só tem o que está escrito nela. */
+  const tabela = o => Object.assign(Object.create(null), o);
+
+  const NUMEROS_PT = tabela({
     '0': 'zero', '1': 'um', '2': 'dois', '3': 'tres', '4': 'quatro',
     '5': 'cinco', '6': 'seis', '7': 'sete', '8': 'oito', '9': 'nove',
     '10': 'dez', '11': 'onze', '12': 'doze', '13': 'treze', '14': 'quatorze',
     '15': 'quinze', '16': 'dezesseis', '17': 'dezessete', '18': 'dezoito',
     '19': 'dezenove', '20': 'vinte', '30': 'trinta', '50': 'cinquenta', '100': 'cem'
-  };
+  });
 
-  const NUMEROS_EN = {
+  /* O espanhol usava a tabela portuguesa, e só casava onde as duas línguas
+     coincidem (tres, cinco, seis): «2 años» virava «dois año» e nunca batia
+     com «dos años». O «1» fica de fora — «un», «una» e «uno» dependem do
+     que vem depois. Com acento, porque o espanhol chega ao funil com ele. */
+  const NUMEROS_ES = tabela({
+    '0': 'cero', '2': 'dos', '3': 'tres', '4': 'cuatro', '5': 'cinco',
+    '6': 'seis', '7': 'siete', '8': 'ocho', '9': 'nueve', '10': 'diez',
+    '11': 'once', '12': 'doce', '13': 'trece', '14': 'catorce', '15': 'quince',
+    '16': 'dieciséis', '17': 'diecisiete', '18': 'dieciocho', '19': 'diecinueve',
+    '20': 'veinte', '30': 'treinta', '50': 'cincuenta', '100': 'cien'
+  });
+
+  const NUMEROS_EN = tabela({
     '0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four',
     '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine',
     '10': 'ten', '11': 'eleven', '12': 'twelve', '13': 'thirteen',
@@ -52,21 +71,21 @@ window.Motor = (function () {
     '18': 'eighteen', '19': 'nineteen', '20': 'twenty', '30': 'thirty',
     '40': 'forty', '50': 'fifty', '60': 'sixty', '70': 'seventy',
     '80': 'eighty', '90': 'ninety', '100': 'hundred'
-  };
+  });
 
   /* Contrações e grafias alternativas da mesma palavra. O valor pode trazer
      mais de uma palavra: cada uma volta para o funil e é conferida sozinha,
      então "im" vira "i am" e o "i" ainda cai como pronome-sujeito. */
-  const GRAFIAS_PT = {
+  const GRAFIAS_PT = tabela({
     pra: 'para', pro: 'para', to: 'estou', ta: 'esta', tao: 'estao',
     duas: 'dois', vc: 'voce', catorze: 'quatorze',
     /* «este ano» e «esse ano» são a mesma coisa no português do Brasil, e
        nenhum card do baralho ensina a diferença entre os dois. «Aquele» fica
        de fora: esse é o demonstrativo de longe, e aí a distância importa. */
     esse: 'este', essa: 'esta', esses: 'estes', essas: 'estas', isso: 'isto'
-  };
+  });
 
-  const GRAFIAS_ES = {};
+  const GRAFIAS_ES = tabela({});
 
   /* Em inglês a contração não é desleixo, é a forma corrente: "I don't mind"
      e "I do not mind" são a mesma frase. O apóstrofo já caiu antes (ver o
@@ -79,7 +98,7 @@ window.Motor = (function () {
      mudaria o sentido de uma resposta legítima, que é justamente o que a
      normalização não pode fazer — quando as duas leituras existem, o jeito
      é a variante entrar na lista "aceitasEn" do card. */
-  const GRAFIAS_EN = {
+  const GRAFIAS_EN = tabela({
     im: 'i am', ive: 'i have', id: 'i would',
     its: 'it is', thats: 'that is', theres: 'there is', heres: 'here is',
     hes: 'he is', shes: 'she is', whats: 'what is', whos: 'who is',
@@ -94,7 +113,7 @@ window.Motor = (function () {
     hadnt: 'had not', wouldnt: 'would not', couldnt: 'could not',
     shouldnt: 'should not', mustnt: 'must not',
     gonna: 'going to', wanna: 'want to', gotta: 'got to'
-  };
+  });
 
   /* Palavras que o português põe ou tira sem mudar nada: artigos e
      pronomes-sujeito (as duas línguas dispensam o sujeito), mais o "já"
@@ -201,7 +220,7 @@ window.Motor = (function () {
        que não casa. A tabela própria está vazia porque, até agora, o espanhol
        do baralho não precisou de nenhuma. */
     es: {
-      omissiveis: OMISSIVEIS_ES, numeros: NUMEROS_PT,
+      omissiveis: OMISSIVEIS_ES, numeros: NUMEROS_ES,
       grafias: GRAFIAS_ES, plural: pluralEs,
       pre: s => s.trim().replace(ARTIGOS_ES, ''),
       pontuacao: PONTUACAO_ES, guardaAcento: true
@@ -367,9 +386,9 @@ window.Motor = (function () {
      esbarraria em contração («a la», «del») e daria falso negativo sem
      ensinar nada — e é na frente que o gênero do substantivo se declara. */
   const ARTIGOS_GENERO = {
-    es: { el:'m', los:'m', un:'m', unos:'m', la:'f', las:'f', una:'f', unas:'f' },
-    pt: { o:'m', os:'m', um:'m', uns:'m', a:'f', as:'f', uma:'f', umas:'f' },
-    en: {}
+    es: tabela({ el:'m', los:'m', un:'m', unos:'m', la:'f', las:'f', una:'f', unas:'f' }),
+    pt: tabela({ o:'m', os:'m', um:'m', uns:'m', a:'f', as:'f', uma:'f', umas:'f' }),
+    en: tabela({})
   };
 
   function generoDaFrente(txt, lingua) {
@@ -1080,14 +1099,19 @@ window.Motor = (function () {
   }
 
   /* Quando esta frase foi liberada — ordena as recém-liberadas: primeiro a
-     de palavra dominada há menos tempo. Sem a data, vale o «ultima» da
-     palavra, como era antes. */
+     de palavra dominada há menos tempo.
+
+     Sem a data do domínio valia o «ultima» da palavra, e isso dava um efeito
+     torto: a revisão da palavra dominada renova o «ultima», a frase dela
+     passava por recém-liberada e furava a fila dos inéditos — aparecia logo
+     depois de a palavra ser revista, inclusive quando a revisão era um erro.
+     Palavra sem a data foi dominada antes de o campo existir: conta como
+     liberada há muito tempo, igual ao que o liberadaEm já diz dela. */
   function venceuEm(card, estados) {
     if (!card || !card.requer) return 0;
     const e = estados && estados[card.requer];
-    if (!e) return 0;
-    if (e.dominadoEm) return liberadaEm(card, estados);
-    return e.ultima ? (Date.parse(e.ultima) || 0) : 0;
+    if (!e || !e.dominadoEm) return 0;
+    return liberadaEm(card, estados);
   }
 
   /* ── o intervalo do card maduro ──
@@ -1525,10 +1549,20 @@ window.Motor = (function () {
     }
 
     const tags = new Set(card.tags || []);
-    const alvo = normalizarEs(card.es);
+
+    /* Alternativa errada não pode ser resposta certa. Fica de fora o espanhol
+       que o card aceita (o «es» e as aceitasEs) e o card que divide uma
+       tradução com este: «quisquilloso» e «remilgado» são os dois
+       «melindroso», e «Échame una mano» e «¿Me puedes echar una mano?» são os
+       dois «me dá uma mão» — um não serve de pegadinha para o outro. */
+    const certas = new Set(respostasAceitas(card, 'pt-es'));
+    const traducoes = c => [String(c.pt || '')].concat(String(c.pt || '').split('/'), c.aceitas || [])
+      .map(t => normalizar(t, 'pt')).filter(Boolean);
+    const minhas = new Set(traducoes(card));
 
     const candidatos = todos
-      .filter(c => c.id !== card.id && c.tipo === card.tipo && normalizarEs(c.es) !== alvo)
+      .filter(c => c.id !== card.id && c.tipo === card.tipo &&
+        !certas.has(normalizarEs(c.es)) && !traducoes(c).some(t => minhas.has(t)))
       .map(c => {
         let nota = Math.random();
         if (c.nivel === card.nivel) nota += 2;

@@ -407,6 +407,14 @@
      deixou de significar alguma coisa. O dominado não entra nessa conta —
      ele espera data. */
   function guardarNaFila(id, est, r) {
+    /* Uma sincronização no meio do card refaz as filas pela etapa de cada um
+       (ver conciliarFila) e devolve o card que está na tela à fila dele — ou
+       aos inéditos, se era a estreia. Sem tirar antes, ele ficava duas vezes
+       na fila, e o inédito já respondido podia sair de novo como «novo». */
+    retirarDasFilas(id);
+    const novo = progresso.ineditos.indexOf(id);
+    if (novo >= 0) progresso.ineditos.splice(novo, 1);
+
     const alvo = Motor.filaDe(est);
     if (alvo === 'dominados') {
       delete est.naFila;
@@ -2019,22 +2027,29 @@
 
       /* Ler antes de escrever. Outro aparelho pode ter estudado desde a
          última subida, e escrever por cima apagaria o que ele fez — foi
-         exatamente assim que 604 respostas viraram 25. Sem rede, sobe o
-         que se tem: perder a mescla é melhor do que perder a resposta. */
-      try {
-        const arq = await GH.ler('progresso.json');
-        if (arq) {
-          const remoto = JSON.parse(arq.texto);
-          progresso = conciliarFila(mesclar(progresso, remoto));
-          salvarProgresso();
-          atualizarPlacar();
-        }
-      } catch (e) { /* segue com o que temos */ }
+         exatamente assim que 604 respostas viraram 25.
 
+         Se a leitura falha, a subida não acontece. Antes ela seguia «com o
+         que se tem», mas sem rede a escrita falha do mesmo jeito, e quando a
+         leitura falhava por outro motivo — foi o caso do arquivo que passou
+         de 1 MB — o que seguia era justamente a gravação por cima, sem
+         mescla. As respostas ficam no navegador e sobem na próxima. */
+      const arq = await GH.ler('progresso.json');
+      if (arq) {
+        let remoto;
+        try { remoto = JSON.parse(arq.texto); }
+        catch (e) { throw new Error('o progresso.json do GitHub veio ilegível; nada foi gravado por cima dele.'); }
+        progresso = conciliarFila(mesclar(progresso, remoto));
+        salvarProgresso();
+        atualizarPlacar();
+      }
+
+      /* o sha da leitura vai junto: sem ele o escrever baixava o arquivo
+         inteiro outra vez só para descobri-lo */
       await GH.escrever('progresso.json',
         JSON.stringify(progresso, null, 1),
         'progresso — ' + agora,
-        { keepalive: opcoes.keepalive });
+        { keepalive: opcoes.keepalive, sha: arq ? arq.sha : undefined });
 
       /* O progresso sobe sempre; sessão, contestações e resumo só de vez em
          quando. São o registro para calibrar levas, não o seu avanço, e
@@ -2483,6 +2498,11 @@
     if (el['tela-card'].classList.contains('oculto')) return;
     const alvo = e.target.tagName;
     if (alvo === 'INPUT' && e.key !== 'Escape') return;
+    /* O comentário se abre por cima do card, com o feedback à mostra: sem
+       isto, o espaço digitado no texto não entrava e ainda avançava o card
+       lá atrás, e «1» e «2» julgavam o «deu quase». */
+    if (alvo === 'TEXTAREA' || alvo === 'SELECT') return;
+    if (!el['comentario-fundo'].classList.contains('oculto')) return;
 
     if (!el['area-feedback'].classList.contains('oculto')) {
       if (!el['area-julgamento'].classList.contains('oculto')) {

@@ -3,8 +3,8 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **419 cards** — 248 palavras e 171 frases, sendo 67 falsos amigos
-(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 50 de
+São **773 cards** — 273 palavras e 500 frases, sendo 158 falsos amigos
+(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 65 de
 conjugação verbal, quase todos irregulares.
 
 ## Como funciona
@@ -293,7 +293,7 @@ localmente, basta abrir o `index.html` no navegador — funciona igual.
 
 O progresso fica no `localStorage` do navegador e é enviado para
 **[espanhol-cards-dados](https://github.com/gereneto/espanhol-cards-dados)**,
-onde são gravados três arquivos:
+onde são gravados estes arquivos:
 
 - `progresso.json` — estado de cada card (etapa, acertos, erros, tempos, histórico)
 - `sessoes/<data>.json` — registro de cada resposta da sessão
@@ -360,7 +360,7 @@ enquanto serve à revisão (adiante). Três regras, que o `build.js` cobra:
 
 ### Os arquivos são levas, não categorias
 
-Os dez arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
+Os onze arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
 cima da outra. Os quatro primeiros nasceram juntos, no commit que criou o app,
 e os nomes deles descrevem os temas daquele baralho de 140 cards. Do quinto em
 diante é **uma leva por commit** — «Leva de 112 cards, quase toda de
@@ -383,7 +383,7 @@ não vale a pena arrumar:**
 corrente, seja ele do tema que for.
 
 **Toda palavra tem a sua frase.** A leva 10 (`10-frases-de-uso.json`, 205
-frases) fechou a conta: cada uma das 248 palavras do baralho tem uma frase de
+frases) fechou a conta: cada palavra do baralho — hoje são 273 — tem uma frase de
 uso presa a ela por `requer`, que só entra **no dia seguinte** ao domínio da
 palavra — à meia-noite, no fuso do aparelho. Logo depois do domínio, ler a
 frase seria reconhecer a palavra que acabou de passar na tela; no dia seguinte,
@@ -738,8 +738,11 @@ Os cards que eu acrescentar depois chegam nele sozinhos: a página carrega o
 index.html            telas do app de estudo
 revisar-es-en.html    revisão do Yoisser (só por URL)
 revisar-en-pt.html    revisão do Gere (só por URL)
+professor.html        página do Yoisser (só por URL)
 style.css
 style-revisao.css     as telas de revisão
+style-professor.css   a página do professor
+img/                  a foto do professor
 js/motor.js           fila, tempos, conferência das respostas
 js/github.js          fábrica de clientes: GH (dados) e GH_REV (revisão)
 js/app.js             fluxo, painel, relatórios
