@@ -255,6 +255,9 @@ tr.vago td{opacity:.42}
 #entrada:focus{outline:0;border-color:var(--acento)}
 
 /* ── feedback ── */
+/* o veredito encostava nos botões de responder (e na última alternativa):
+   zero de respiro entre a pergunta respondida e o que veio dela */
+#area-feedback{margin-top:18px}
 .veredito{font-size:19px;font-weight:700;margin-bottom:14px}
 .veredito.ok{color:var(--ok)}
 .veredito.erro{color:var(--erro)}

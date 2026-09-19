@@ -1699,13 +1699,22 @@ window.Motor = (function () {
   /* Na direção invertida o baralho não traz distratores prontos, então eles
      saem de outros cards. Não é sorteio cego: prefere os que têm chance de
      confundir de verdade — mesmo tema, mesmo nível, tamanho e começo
-     parecidos —, que é o que faz a alternativa doer. */
+     parecidos —, que é o que faz a alternativa doer.
+
+     O card de conjugação é exceção: ele já lista em «formasEs» a mesma frase
+     nos outros tempos («Ayer lo sabía», «Ayer lo sabré»), que é o espelho dos
+     distratores prontos do português. Sem elas, «Ayer lo supe» aparecia entre
+     «Yo puse la mesa» e «No lo hagas», sozinha no assunto, e a pergunta se
+     respondia sem saber o verbo. As formas entram primeiro; o sorteio só
+     completa o que faltar (há cards com três). */
   function distratoresEs(card, todos) {
     if (Array.isArray(card.distratoresEs) && card.distratoresEs.length >= 4) {
       return embaralhar(card.distratoresEs.slice()).slice(0, 4);
     }
 
     const tags = new Set(card.tags || []);
+    const formas = formasComoFrase(card);
+    if (formas.length >= 4) return embaralhar(formas).slice(0, 4);
 
     /* Alternativa errada não pode ser resposta certa. Fica de fora o espanhol
        que o card aceita (o «es» e as aceitasEs) e o card que divide uma
@@ -1731,7 +1740,26 @@ window.Motor = (function () {
       .sort((a, b) => b.nota - a.nota)
       .slice(0, 10);
 
-    return embaralhar(candidatos).slice(0, 4).map(x => x.c.es);
+    return formas.concat(embaralhar(candidatos).slice(0, 4 - formas.length).map(x => x.c.es));
+  }
+
+  /* As formas vêm sem pontuação («Viene aquí»), e a resposta certa vem com
+     («¡Ven aquí!»): nua, a alternativa errada se denunciaria pela cara. Cada
+     forma ganha a abertura e o fecho da resposta certa. */
+  function formasComoFrase(card) {
+    const es = String(card.es || '');
+    const abre = (es.match(/^[¿¡]+/) || [''])[0];
+    const fecha = (es.match(/[.!?…]+$/) || [''])[0];
+    const certas = new Set(respostasAceitas(card, 'pt-es'));
+    const vistas = new Set();
+    return Object.keys(card.formasEs || {})
+      .filter(f => {
+        const chave = normalizarEs(f);
+        if (!chave || certas.has(chave) || vistas.has(chave)) return false;
+        vistas.add(chave);
+        return true;
+      })
+      .map(f => (/^[¿¡]/.test(f) ? '' : abre) + f + (/[.!?…]$/.test(f) ? '' : fecha));
   }
 
   return {
