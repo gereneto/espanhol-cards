@@ -841,6 +841,103 @@ window.Motor = (function () {
     return 1 - d / maior >= (inversa ? 0.92 : 0.82);
   }
 
+  /* ── onde foi que deu quase ──
+     O «deu quase» mostra o que foi escrito e a resposta certa, e pergunta se
+     valeu. Só que a diferença é, por definição, pequena — uma letra numa
+     frase de quarenta —, e achar essa letra a olho custa mais do que devia.
+     Aqui ela é achada: a forma aceita mais próxima do que foi escrito, e as
+     duas alinhadas letra a letra. Sai pintado, de cada lado, só o que não
+     casa: a letra trocada nos dois, a que faltou na certa, a que sobrou na
+     escrita.
+
+     A comparação segue a régua da língua: no português e no inglês o acento
+     não conta (o conferidor já o ignora), no espanhol conta. Pontuação,
+     maiúscula e o que vem entre parênteses nunca são diferença. */
+  const COMPARAVEL = /[\p{L}\p{N}]/u;
+
+  function letrasComparaveis(texto, lingua) {
+    const letras = [];
+    let parentese = 0, ultimoFoiEspaco = true;
+    Array.from(String(texto || '').normalize('NFC')).forEach(ch => {
+      if (ch === '(') parentese++;
+      const dentro = parentese > 0;
+      if (ch === ')' && parentese) parentese--;
+      let chave = null;
+      if (!dentro && /\s/.test(ch)) {
+        if (!ultimoFoiEspaco) chave = ' ';
+        ultimoFoiEspaco = true;
+      } else if (!dentro && COMPARAVEL.test(ch)) {
+        chave = ch.toLowerCase();
+        if (lingua !== 'es') chave = chave.normalize('NFD').replace(/[̀-ͯ]/g, '');
+        ultimoFoiEspaco = false;
+      }
+      letras.push({ texto: ch, chave: chave, destaque: false });
+    });
+    /* espaço sobrando no fim não é letra que faltou */
+    for (let i = letras.length - 1; i >= 0 && letras[i].chave === ' '; i--) letras[i].chave = null;
+    return letras;
+  }
+
+  function alinharLetras(dada, certa) {
+    const a = dada.filter(l => l.chave !== null), b = certa.filter(l => l.chave !== null);
+    const m = a.length, n = b.length;
+    const d = [];
+    for (let i = 0; i <= m; i++) {
+      d.push(new Array(n + 1).fill(0));
+      d[i][0] = i;
+    }
+    for (let j = 0; j <= n; j++) d[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1,
+          d[i - 1][j - 1] + (a[i - 1].chave === b[j - 1].chave ? 0 : 1));
+      }
+    }
+    let i = m, j = n;
+    while (i > 0 || j > 0) {
+      if (i > 0 && j > 0 && a[i - 1].chave === b[j - 1].chave && d[i][j] === d[i - 1][j - 1]) { i--; j--; }
+      else if (i > 0 && j > 0 && d[i][j] === d[i - 1][j - 1] + 1) { a[i - 1].destaque = b[j - 1].destaque = true; i--; j--; }
+      else if (i > 0 && d[i][j] === d[i - 1][j] + 1) { a[i - 1].destaque = true; i--; }
+      else { b[j - 1].destaque = true; j--; }
+    }
+    return d[m][n];
+  }
+
+  function juntarPedacos(letras) {
+    const pedacos = [];
+    letras.forEach(l => {
+      const ultimo = pedacos[pedacos.length - 1];
+      if (ultimo && ultimo.destaque === l.destaque) ultimo.texto += l.texto;
+      else pedacos.push({ texto: l.texto, destaque: l.destaque });
+    });
+    return pedacos;
+  }
+
+  function diferencaDoQuase(card, texto, direcao) {
+    const lingua = linguaDaResposta(direcao);
+    const dado = normalizar(texto, lingua);
+    if (!dado) return null;
+    /* «o galho / o ramo» inteiro não é resposta de ninguém: valem as partes */
+    let formas = formasAceitas(card, direcao).map(f => String(f || '').trim())
+      .filter(f => f && (lingua === 'es' || !f.includes('/')));
+    const perto = formas.filter(f => parecido(dado, normalizar(f, lingua), lingua));
+    if (perto.length) formas = perto;
+
+    const chaves = ls => ls.filter(l => l.chave !== null).map(l => l.chave).join('');
+    const escrita = chaves(letrasComparaveis(texto, lingua));
+    let melhor = null;
+    formas.forEach(f => {
+      const dist = distancia(escrita, chaves(letrasComparaveis(f, lingua)));
+      if (!melhor || dist < melhor.dist) melhor = { forma: f, dist: dist };
+    });
+    if (!melhor || !melhor.dist) return null;
+
+    const dada = letrasComparaveis(String(texto).trim(), lingua);
+    const certa = letrasComparaveis(melhor.forma, lingua);
+    alinharLetras(dada, certa);
+    return { forma: melhor.forma, dada: juntarPedacos(dada), certa: juntarPedacos(certa) };
+  }
+
   /* Acima disto ninguém está mais olhando o card: largou o celular, foi
      fazer outra coisa e voltou. O relógio continuou correndo, mas o número
      não mede nada — nem pensar demorado, nem dificuldade. Três minutos é
@@ -1019,11 +1116,35 @@ window.Motor = (function () {
      Na simulação com o seu baralho, contra a regra da posição: o erro volta
      em 23 respostas em vez de 27, e a maior espera de um card na fila cai de
      quase mil respostas para menos de quatrocentas. */
+  /* ── e quem ficou para trás fura a fila ──
+     «Uma hora ele passa também» era verdade, e a hora era longe demais. O
+     progresso de 19 de setembro tinha 37 cards que pediram 100 respostas e
+     esperavam havia mais de mil: enquanto houver card de distância curta
+     acabando de vencer, o de distância longa perde para ele, e sempre há.
+
+     A fila não tem como devolver todo mundo na hora: cem cards, uma resposta
+     em cada três, a espera média é de trezentas, com qualquer regra. O que a
+     regra escolhe é quem paga. Então, passada a espera pedida, o ATRASO — em
+     respostas, não em proporção — soma urgência por conta própria, e ao
+     cubo: quase nada nas primeiras cem respostas de atraso, o bastante para
+     passar à frente de um acerto recém-vencido por volta das duzentas, e de
+     um erro recém-vencido perto das quatrocentas.
+
+     Na simulação (fila de cem, a mesma mistura de distâncias), a maior
+     espera cai de 1.155 respostas para 555, e a do acerto escrito longo, de
+     6,7 vezes o pedido para 4,3. O erro continua voltando logo: 1,3 vez o
+     pedido, contra 1,1. Quem paga é o acerto de múltipla escolha, que
+     esperava o dobro do que pediu e passa a esperar umas 160 respostas. */
+  const ATRASO_QUE_FURA = 400;   // respostas de atraso que valem um erro recém-vencido
+  const PESO_DO_ATRASO = 0.15;   // ≈ 1/7: a urgência de um erro no instante em que vence
+
   function urgencia(est, respostas) {
     const f = est && est.naFila;
     if (!f) return 0;
     const dist = Math.max(1, f.distancia || 1);
-    return (respostas - f.desde) / (dist * dist);
+    const espera = respostas - f.desde;
+    const atraso = Math.max(0, espera - dist);
+    return espera / (dist * dist) + PESO_DO_ATRASO * Math.pow(atraso / ATRASO_QUE_FURA, 3);
   }
 
   function cumpriu(est, respostas) {
@@ -1269,6 +1390,8 @@ window.Motor = (function () {
 
   /* Registra uma resposta no estado do card. */
   function registrar(est, r) {
+    /* o dia da estreia, para o painel contar os cards novos de cada dia */
+    if (!est.vistas && !est.estreia) est.estreia = diaLocal(new Date());
     est.vistas++;
     est.ultima = new Date().toISOString();
 
@@ -1772,7 +1895,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, anotarDiario, diaLocal, medianaDasFaixas,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
-    linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando,
+    linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando, diferencaDoQuase,
     indiceEspanhol, leituraEspanhola, erroDeFlexao,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,

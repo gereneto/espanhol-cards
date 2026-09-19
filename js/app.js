@@ -197,6 +197,21 @@
       p.retencao = continua && raw.retencao ? raw.retencao.map(g => g.slice())
         : Motor.DIAS_DOMINADO.map(() => [0, 0]);
     }
+    /* ── a estreia de cada card ──
+       O dia em que ele apareceu pela primeira vez, para o gráfico de cards
+       novos por dia. O card só guarda as últimas doze respostas, e nos mais
+       rodados a primeira já se foi: aí quem sabe é a semente, que leu todas
+       as fotografias. Sem semente, vale a resposta mais antiga que sobrou —
+       exata enquanto o histórico ainda está inteiro. */
+    Object.keys(p.cards).forEach(id => {
+      const e = p.cards[id];
+      if (!e || e.estreia || !e.vistas) return;
+      const daSemente = continua && raw.estreias && raw.estreias[id];
+      const h = (e.historico || []).map(x => x && x.em).filter(Boolean).sort()[0];
+      const doCard = h ? Motor.diaLocal(h) : '';
+      e.estreia = daSemente && (!doCard || daSemente < doCard) ? daSemente : doCard || daSemente || undefined;
+      if (!e.estreia) delete e.estreia;
+    });
     if (continua && raw.ateDominar) {
       Object.keys(raw.ateDominar).forEach(id => {
         const e = p.cards[id];
@@ -333,6 +348,13 @@
     el.dica.hidden = true;
     const aceso = BOTAO_DA_TELA[tela];
     Object.values(BOTAO_DA_TELA).forEach(b => el[b].classList.toggle('aqui', b === aceso));
+    /* Tela nova abre no topo. Sem isto o painel herdava a rolagem de onde
+       se estava — no meio do feedback de um card, em geral — e abria já nos
+       gráficos. O card fica de fora: ele tem a sua subida (voltarAoTopo). */
+    if (tela !== 'tela-card') {
+      if (rolagemAtual) rolagemAtual.parar();
+      window.scrollTo(0, 0);
+    }
   }
 
   function atualizarPlacar() {
@@ -667,7 +689,9 @@
 
     const rotuloVel = { rapido: 'rápido', medio: 'no tempo médio', lento: 'devagar' }[r.velocidade];
     el.medidas.innerHTML =
-      '<span class="medida"><b>' + (r.ms / 1000).toFixed(1) + 's</b> — ' + rotuloVel + '</span>' +
+      /* tempo desconsiderado não aparece: o número não mediu nada */
+      (r.pausado ? ''
+        : '<span class="medida"><b>' + (r.ms / 1000).toFixed(1) + 's</b> — ' + rotuloVel + '</span>') +
       /* o nível já está na aba do fichário; repeti-lo aqui só ocupa lugar */
       (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
       (r.pausado
@@ -725,6 +749,25 @@
       el.veredito.className = 'veredito quase';
       el.veredito.textContent = 'Deu quase';
       el['texto-dado'].textContent = r.resposta;
+      /* a diferença pintada dos dois lados, como no acento: achar uma letra
+         numa frase inteira, a olho, custa mais do que devia */
+      const dif = Motor.diferencaDoQuase(cardAtual, r.resposta, r.direcao);
+      if (dif) {
+        const pintar = ps => ps.map(p => p.destaque
+          ? '<mark class="acento">' + escapar(p.texto) + '</mark>' : escapar(p.texto)).join('');
+        el['texto-dado'].innerHTML = pintar(dif.dada);
+        /* a forma mais próxima pode ser uma variante, e não a que está na
+           caixa: se ela estiver lá dentro («o galho / o ramo»), pinta no
+           lugar; se não, aparece ao lado do que foi escrito */
+        const onde = alvoAtual.indexOf(dif.forma);
+        if (onde >= 0) {
+          el['resposta-certa'].innerHTML = escapar(alvoAtual.slice(0, onde)) + pintar(dif.certa) +
+            escapar(alvoAtual.slice(onde + dif.forma.length));
+        } else {
+          el['texto-dado'].innerHTML += ' <span class="forma-rotulo variante">também vale «' +
+            pintar(dif.certa) + '»</span>';
+        }
+      }
       el['resposta-dada'].classList.remove('oculto');
       el['area-julgamento'].classList.remove('oculto');
       el['btn-proximo'].classList.add('oculto');
@@ -1181,7 +1224,14 @@
     });
 
     let html = '<div class="grade">' +
+      /* a ordem faz pares na tela de duas colunas: o que já saiu e a chance
+         de sair mais; as duas taxas de acerto; as filas e onde elas acabam */
       metrica(ids.length + '/' + CARDS.length, 'cards já vistos') +
+      metrica(!temIneditos ? '—' : Math.round(100 * chances.ineditos) + '%',
+              !temIneditos
+                ? (presos ? 'frases esperando você dominar a palavra'
+                          : 'todos os cards já apareceram')
+                : 'chance de o próximo ser card novo') +
       metrica(pctDe(dePrimeira.length, estreados.length), 'acertou de primeira') +
       metrica(taxa + '%', 'acerto geral (' + t.respostas + ' respostas)') +
       /* é o equilíbrio que a admissão de inéditos persegue — vê-lo explica
@@ -1191,11 +1241,6 @@
       metrica(dir.esPt + ' · ' + dir.ptEs,
               'es → pt e pt → es (alvo ' + Motor.ALVO_FILA + ' · ' + Motor.ALVO_FILA + ')') +
       metrica(dominados, 'dominados nas duas direções') +
-      metrica(!temIneditos ? '—' : Math.round(100 * chances.ineditos) + '%',
-              !temIneditos
-                ? (presos ? 'frases esperando você dominar a palavra'
-                          : 'todos os cards já apareceram')
-                : 'chance de o próximo ser card novo') +
       '</div>';
 
     /* Por nível vem primeiro: é a tabela que responde «como estou indo», e
@@ -1207,6 +1252,7 @@
     html += tabelaMemoria();
     html += calendarioEstudo();
     html += graficoRespostasDia();
+    html += graficoNovosDia();
     html += mapaHorario();
     html += graficoVelocidade();
     html += graficoAteDominar();
@@ -1692,9 +1738,45 @@
   function graficoRespostasDia() {
     const todos = diasDoDiario();
     if (todos.length < 2) return '';
-    const dias = todos.slice(-60);
+    const antes = todos.slice(0, -1).slice(-7);
+    const media = Math.round(antes.reduce((a, x) => a + x.n, 0) / antes.length);
+    const recorde = todos.reduce((a, x) => x.n > a.n ? x : a);
+    return '<h3>Respostas por dia</h3>' +
+      '<p class="legenda">Nos últimos ' + (antes.length === 7 ? '7 dias' : antes.length + (antes.length === 1 ? ' dia' : ' dias')) +
+      ', foram <b>' + milhar(media) + ' respostas por dia</b>, em média. O recorde é <b>' +
+      milhar(recorde.n) + '</b>, em ' + diaMes(recorde.d) + '.</p>' +
+      barrasPorDia(todos.slice(-60), 'var(--degrau-2)', 'resposta', 'respostas', 'Respostas por dia');
+  }
+
+  /* ── cards novos por dia ──
+     O mesmo desenho, contando estreias: em quantos cards você pôs os olhos
+     pela primeira vez em cada dia. Os dias são os do diário, para as duas
+     figuras ficarem alinhadas uma embaixo da outra. */
+  function graficoNovosDia() {
+    const dias = diasDoDiario();
+    if (dias.length < 2) return '';
+    const porDia = {};
+    Object.keys(progresso.cards).forEach(id => {
+      const d = progresso.cards[id].estreia;
+      if (d) porDia[d] = (porDia[d] || 0) + 1;
+    });
+    const todos = dias.map(x => ({ d: x.d, n: porDia[x.d] || 0 }));
+    if (!todos.some(x => x.n)) return '';
+    const antes = todos.slice(0, -1).slice(-7);
+    const media = antes.reduce((a, x) => a + x.n, 0) / antes.length;
+    const recorde = todos.reduce((a, x) => x.n > a.n ? x : a);
+    const hoje = todos[todos.length - 1].n;
+    return '<h3>Cards novos por dia</h3>' +
+      '<p class="legenda">Nos últimos ' + (antes.length === 7 ? '7 dias' : antes.length + (antes.length === 1 ? ' dia' : ' dias')) +
+      ', estrearam <b>' + media.toFixed(1).replace('.', ',') + ' cards por dia</b>, em média' +
+      (hoje ? ' — hoje, <b>' + hoje + '</b> até agora' : '') + '. O recorde é <b>' +
+      milhar(recorde.n) + '</b>, em ' + diaMes(recorde.d) + '.</p>' +
+      barrasPorDia(todos.slice(-60), 'var(--serie-espt)', 'card novo', 'cards novos', 'Cards novos por dia');
+  }
+
+  function barrasPorDia(dias, cor, um, varios, titulo) {
     const W = LARGURA, L = 36, R = 6, T = 10, B = 196;
-    const maior = Math.max(...dias.map(x => x.n));
+    const maior = Math.max(1, ...dias.map(x => x.n));
     const passo = passoRedondo(maior);
     const topo = Math.ceil(maior / passo) * passo;
     const y = v => B - (v / topo) * (B - T);
@@ -1709,21 +1791,14 @@
       const bx = L + i * coluna + (coluna - larg) / 2;
       if (x.n) {
         m += '<path' + comDica(SEMANA[meioDia(x.d).getDay()] + ', ' + diaMes(x.d) + ' — ' +
-          milhar(x.n) + (x.n === 1 ? ' resposta' : ' respostas')) +
-          ' d="' + barra(bx, y(x.n), larg, B - y(x.n), 3) + '" fill="var(--degrau-2)"/>';
+          milhar(x.n) + ' ' + (x.n === 1 ? um : varios)) +
+          ' d="' + barra(bx, y(x.n), larg, B - y(x.n), 3) + '" fill="' + cor + '"/>';
       }
       if ((dias.length - 1 - i) % cadaRotulo === 0) {
         m += '<text x="' + (bx + larg / 2).toFixed(1) + '" y="' + (B + 22) + '" text-anchor="middle">' + diaMes(x.d) + '</text>';
       }
     });
-    const antes = todos.slice(0, -1).slice(-7);
-    const media = Math.round(antes.reduce((a, x) => a + x.n, 0) / antes.length);
-    const recorde = todos.reduce((a, x) => x.n > a.n ? x : a);
-    return '<h3>Respostas por dia</h3>' +
-      '<p class="legenda">Nos últimos ' + (antes.length === 7 ? '7 dias' : antes.length + (antes.length === 1 ? ' dia' : ' dias')) +
-      ', foram <b>' + milhar(media) + ' respostas por dia</b>, em média. O recorde é <b>' +
-      milhar(recorde.n) + '</b>, em ' + diaMes(recorde.d) + '.</p>' +
-      figura(W, B + 30, m, 'Respostas por dia');
+    return figura(W, B + 30, m, titulo);
   }
 
   /* ── quando você estuda ──

@@ -7,6 +7,8 @@
                   o tempo típico dos acertos de cada modo
      retencao     as revisões de dominado por degrau da escada, e as certas
      ateDominar   quantas respostas cada card levou até o primeiro domínio
+     estreias     o dia em que cada card apareceu pela primeira vez — o card
+                  só guarda as últimas doze respostas, e a primeira some
 
    É a história de verdade, não uma reconstrução. As respostas saem do
    histórico de cada card, que guarda as últimas doze: como as fotografias
@@ -104,14 +106,25 @@ respostas.forEach(x => {
   if (x.em > ate) ate = x.em;
 });
 
+/* A estreia de cada card: o dia da resposta mais antiga que alguma
+   fotografia guardou dele. */
+const primeira = {};
+respostas.forEach((x, chave) => {
+  const id = chave.slice(0, chave.indexOf('|'));
+  if (!primeira[id] || x.em < primeira[id]) primeira[id] = x.em;
+});
+const estreias = {};
+Object.keys(primeira).forEach(id => { estreias[id] = local(primeira[id]).toISOString().slice(0, 10); });
+
 console.log('pontos na série:', serie.length, '| falhas:', falhas);
 console.log('respostas no diário:', respostas.size, 'em', Object.keys(diario).length, 'dias');
 console.log('revisões por degrau:', JSON.stringify(retencao), '| cards com domínio:', Object.keys(ateDominar).length);
+console.log('cards com estreia:', Object.keys(estreias).length);
 
 const saida = '/* Gerado por fonte/historico.js a partir das ' + hashes.length + ' fotografias de\n' +
   '   progresso.json no repositório de dados. O app usa isto uma vez, para\n' +
   '   semear a série, o diário, a retenção e as respostas até o domínio;\n' +
   '   daí em diante ele mesmo vai anotando. */\n' +
-  'window.HISTORICO_RAW = ' + JSON.stringify({ ate, serie, diario, retencao, ateDominar }) + ';\n';
+  'window.HISTORICO_RAW = ' + JSON.stringify({ ate, serie, diario, retencao, ateDominar, estreias }) + ';\n';
 fs.writeFileSync(SAIDA, saida);
 console.log('gravado:', SAIDA, '(' + Math.round(saida.length / 1024) + ' KB)');

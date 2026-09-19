@@ -212,6 +212,14 @@ tr.vago td{opacity:.42}
   background:var(--quase-fraco);color:var(--quase);
   border-radius:3px;padding:0 1px;box-shadow:0 0 0 1px var(--quase-borda);
 }
+/* No «deu quase» a diferença é pintada também no que foi escrito. A caixa
+   de lá já é amarela, então ali a pintura se inverte: fundo amarelo cheio
+   e letra escura, que é o que aparece contra o amarelo fraco da caixa. */
+.resposta-dada mark.acento{
+  background:var(--quase);color:var(--fundo);
+  border-radius:3px;padding:0 2px;box-shadow:none;
+}
+.forma-rotulo.variante{white-space:normal;display:inline-block;margin:6px 0 0}
 
 /* ── alternativas ── */
 .alternativas{display:flex;flex-direction:column;gap:9px}
