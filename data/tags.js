@@ -5,6 +5,11 @@ window.TAGS_RAW = {
   "es": "adjetivo",
   "cards": 19
  },
+ "agradecer": {
+  "en": "agradecer",
+  "es": "agradecer",
+  "cards": 0
+ },
  "andar": {
   "en": "andar",
   "es": "andar",
@@ -14,6 +19,11 @@ window.TAGS_RAW = {
   "en": "animals",
   "es": "animales",
   "cards": 8
+ },
+ "caber": {
+  "en": "caber",
+  "es": "caber",
+  "cards": 0
  },
  "caer": {
   "en": "caer",
@@ -55,6 +65,11 @@ window.TAGS_RAW = {
   "es": "conocer",
   "cards": 1
  },
+ "contar": {
+  "en": "contar",
+  "es": "contar",
+  "cards": 0
+ },
  "corpo": {
   "en": "body",
   "es": "cuerpo",
@@ -89,6 +104,11 @@ window.TAGS_RAW = {
   "en": "economy",
   "es": "economía",
   "cards": 2
+ },
+ "elegir": {
+  "en": "elegir",
+  "es": "elegir",
+  "cards": 0
  },
  "empezar": {
   "en": "empezar",
@@ -175,6 +195,11 @@ window.TAGS_RAW = {
   "es": "hacer",
   "cards": 4
  },
+ "huir": {
+  "en": "huir",
+  "es": "huir",
+  "cards": 0
+ },
  "imperativo": {
   "en": "imperative",
   "es": "imperativo",
@@ -213,6 +238,11 @@ window.TAGS_RAW = {
  "mais-que-perfeito": {
   "en": "pluperfect",
   "es": "pluscuamperfecto",
+  "cards": 0
+ },
+ "morir": {
+  "en": "morir",
+  "es": "morir",
   "cards": 0
  },
  "mídia": {
@@ -290,6 +320,11 @@ window.TAGS_RAW = {
   "es": "regular",
   "cards": 9
  },
+ "reír": {
+  "en": "reír",
+  "es": "reír",
+  "cards": 0
+ },
  "roupa": {
   "en": "clothing",
   "es": "ropa",
@@ -313,6 +348,11 @@ window.TAGS_RAW = {
  "seguir": {
   "en": "seguir",
   "es": "seguir",
+  "cards": 0
+ },
+ "sentir": {
+  "en": "sentir",
+  "es": "sentir",
   "cards": 0
  },
  "ser": {
@@ -369,6 +409,11 @@ window.TAGS_RAW = {
   "en": "verb",
   "es": "verbo",
   "cards": 27
+ },
+ "vestirse": {
+  "en": "vestirse",
+  "es": "vestirse",
+  "cards": 0
  },
  "viagem": {
   "en": "travel",

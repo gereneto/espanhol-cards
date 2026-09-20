@@ -3,8 +3,8 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **773 cards** — 273 palavras e 500 frases, sendo 158 falsos amigos
-(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 65 de
+São **877 cards** — 307 palavras e 570 frases, sendo 168 falsos amigos
+(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 75 de
 conjugação verbal, quase todos irregulares.
 
 ## Como funciona
@@ -404,7 +404,7 @@ enquanto serve à revisão (adiante). Três regras, que o `build.js` cobra:
 
 ### Os arquivos são levas, não categorias
 
-Os onze arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
+Os doze arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
 cima da outra. Os quatro primeiros nasceram juntos, no commit que criou o app,
 e os nomes deles descrevem os temas daquele baralho de 140 cards. Do quinto em
 diante é **uma leva por commit** — «Leva de 112 cards, quase toda de
@@ -447,6 +447,19 @@ A leva 11 (`11-leva-variada.json`, 111 cards) veio para dar esse outro tipo:
 negativo…), 15 falsos amigos e 10 palavras de tecnologia e saúde — os temas
 mais fracos do resumo —, cada palavra com a sua frase.
 
+A leva 12 (`12-construcoes-e-vocabulario.json`, 104 cards) tem duas metades.
+Uma é a **construção frasal que o português não tem** e que por isso não se
+aprende por osmose: `volver a` e `ponerse a` + infinitivo, `nada más` +
+infinitivo, `lo difícil que es`, os quatro verbos de mudança que o português
+resolve com um «ficar» só (`ponerse`, `volverse`, `hacerse`, `quedarse`),
+`ni que` e `no vaya a ser que` com subjuntivo, `por poco` com o verbo no
+presente, `como` + subjuntivo, `tener` + particípio. A outra são **34 palavras
+novas**, cada uma com a sua frase de uso, puxadas para os temas que o resumo
+mostrava fracos — tecnologia, escritório, economia, cidade e saúde —, mais
+dez cards de conjugação de verbos que ainda não tinham aparecido (`caber`,
+`reír`, `elegir`, `morir`, `vestirse`, `sentir`, `contar`, `conducir`,
+`agradecer`, `huir`).
+
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
 
@@ -462,7 +475,9 @@ número por extenso (`3 anos` = `três anos`), contração (`pra`, `tô`), artig
 pronome-sujeito (`eu concordo` = `concordo`), o `já` aspectual, o apóstrofo
 (`um copo d'água` = `um copo de água`), o par `este`/`esse` (`este ano` =
 `esse ano`, e o mesmo com `isto`/`isso` — `aquele` fica de fora, que aí a
-distância importa), e a **posição do
+distância importa), o tratamento `teu`/`seu` (`o teu sobrenome` = `o seu
+sobrenome`, só do lado português: em espanhol `tu` e `su` separam o tú do
+usted, e essa diferença o baralho cobra), e a **posição do
 advérbio de tempo** — «hoje eu não vou ao escritório», «não vou hoje no
 escritório» e «não vou no escritório hoje» são a mesma frase, e o português
 deixa o advérbio andar sem mudar nada. São seis palavras só (`hoje`, `ontem`,

@@ -83,6 +83,11 @@ window.Motor = (function () {
        nenhum card do baralho ensina a diferença entre os dois. «Aquele» fica
        de fora: esse é o demonstrativo de longe, e aí a distância importa. */
     esse: 'este', essa: 'esta', esses: 'estes', essas: 'estas', isso: 'isto',
+    /* «o teu sobrenome» e «o seu sobrenome» são o mesmo tratamento no
+       português do Brasil, e nenhum card ensina a diferença entre os dois.
+       Só vale deste lado: em espanhol «tu» e «su» separam o tú do usted, e
+       essa diferença o baralho cobra. */
+    teu: 'seu', tua: 'sua', teus: 'seus', tuas: 'suas',
     /* a cidade escrita à espanhola numa resposta em português: quem acabou
        de ler «Madrid» na pergunta copia a grafia, e isso não é erro de nada */
     madrid: 'madri'

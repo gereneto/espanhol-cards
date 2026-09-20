@@ -113,7 +113,15 @@ for, e leva nova é arquivo novo.
 - **Frase com a pontuação que ela tem**, inclusive `¿` e `¡`.
 - **Português do Brasil, natural, e não decalque.** «Tengo ganas de dormir» é
   «Estou com vontade de dormir», não «Tenho ganas». Se a tradução natural se
-  afasta muito das palavras do espanhol, a nota explica a ponte.
+  afasta muito das palavras do espanhol, a nota explica a ponte. Vale também
+  para o que é gramatical mas ninguém diz: «Empieza a llover» não é «Começa a
+  chover», que só existe em livro — troque a frase do card antes de aceitar um
+  `pt` que soa a tradução.
+- **Expressão que o português também tem entra com a expressão.** «Hizo de
+  tripas corazón» é «Ele fez das tripas coração», e não «Ele criou coragem»:
+  na volta (`pt → es`), a pergunta é o `pt`, e uma paráfrase neutra não avisa
+  ninguém de que se espera uma expressão. O sentido fica na nota, e as
+  paráfrases vão para `aceitas`.
 - **A barra `/` é para dois sentidos de verdade** do espanhol («la cola» = «o
   rabo / a fila»), não para dois sinônimos — sinônimo vai em `aceitas`. No
   português e no inglês cada metade vale como resposta; no espanhol a barra não
@@ -140,6 +148,8 @@ já dá de graça não precisa ser listado**:
 - contração e grafia de conversa (`pra`, `pro`, `tô`, `tá`, `vc`);
 - número por extenso (`3 anos` = `três anos`);
 - `este` / `esse`, `isto` / `isso` (mas não `aquele`);
+- o tratamento `teu` / `seu` (só do lado português: em espanhol, `tu` e `su`
+  separam o tú do usted, e isso o baralho cobra);
 - o `já` aspectual, o apóstrofo (`d'água`), «Madrid» por «Madri»;
 - a posição de seis advérbios de tempo: `hoje`, `ontem`, `amanhã`, `agora`,
   `sempre`, `nunca`.
@@ -456,6 +466,10 @@ sem ele o navegador serve o baralho velho.
 | Frase de uso troca o mesmo trecho | `u095` sesgo — o pedido dos distratores dinâmicos |
 | Feminino do adjetivo em `aceitas` | `p043` majo / «simpática», e mais 17 adjetivos |
 | A versão curta que todo mundo diria | `u234` «a carteira»; `u024` «na sexta»; `u181` «sua idade» |
+| O tratamento `teu`/`seu` é do funil, e só do lado português | `u005` «qual é o teu sobrenome», aceito à mão no «deu quase» |
+| `pt` que ninguém diz fora de livro pede frase nova | `v033` «Começa a chover», trocado por «O filme começa às oito» |
+| A expressão do português é o `pt`, quando existe | `f124` «Hizo de tripas corazón»: na volta, «Ele criou coragem» não pedia expressão nenhuma |
+| A nota diz onde está o que ela aponta | `v028` «o y aparece do nada», sem dizer que «oigo» tem g e o y é das outras pessoas |
 | Pares `🇪🇸 → 🇧🇷` na nota | `p046` sobremesa, `p077` carpeta, `p102` pegamento: «respondi certo na língua errada» |
 | Nota para qualquer pessoa | `p174` estreno: «já apareceu como verbo» |
 | Etimologia conferida | `f098` «amén de», que não vem de «amém» |
