@@ -498,5 +498,105 @@
   "en": "vivir",
   "es": "vivir",
   "cards": 0
+ },
+ "go": {
+  "en": "go",
+  "es": "go",
+  "cards": 0
+ },
+ "take": {
+  "en": "take",
+  "es": "take",
+  "cards": 0
+ },
+ "give": {
+  "en": "give",
+  "es": "give",
+  "cards": 0
+ },
+ "make": {
+  "en": "make",
+  "es": "make",
+  "cards": 0
+ },
+ "come": {
+  "en": "come",
+  "es": "come",
+  "cards": 0
+ },
+ "see": {
+  "en": "see",
+  "es": "see",
+  "cards": 0
+ },
+ "know": {
+  "en": "know",
+  "es": "know",
+  "cards": 0
+ },
+ "think": {
+  "en": "think",
+  "es": "think",
+  "cards": 0
+ },
+ "find": {
+  "en": "find",
+  "es": "find",
+  "cards": 0
+ },
+ "leave": {
+  "en": "leave",
+  "es": "leave",
+  "cards": 0
+ },
+ "put": {
+  "en": "put",
+  "es": "put",
+  "cards": 0
+ },
+ "write": {
+  "en": "write",
+  "es": "write",
+  "cards": 0
+ },
+ "speak": {
+  "en": "speak",
+  "es": "speak",
+  "cards": 0
+ },
+ "break": {
+  "en": "break",
+  "es": "break",
+  "cards": 0
+ },
+ "drive": {
+  "en": "drive",
+  "es": "drive",
+  "cards": 0
+ },
+ "feel": {
+  "en": "feel",
+  "es": "feel",
+  "cards": 0
+ },
+ "lose": {
+  "en": "lose",
+  "es": "lose",
+  "cards": 0
+ },
+ "pay": {
+  "en": "pay",
+  "es": "pay",
+  "cards": 0
+ },
+ "understand": {
+  "en": "understand",
+  "es": "understand",
+  "cards": 0
+ },
+ "get": {
+  "en": "get",
+  "es": "get",
+  "cards": 0
  }
 }

@@ -45,10 +45,12 @@ São 2000 cards novos para fechar mil em cada uma das seis direções.
    «sink» não se adivinham, e por isso a faixa A1-A2 rende muito mais card ali
    do que aqui.
 6. **Inglês primeiro**, português depois.
-7. **A leva de estreia tem 30 cards**, lidos um a um pelo Gere. O tamanho das
-   levas seguintes se ajusta depois — com sessenta e seis levas de trinta o
-   serviço não fecha, então a ideia é crescer para 80–120 assim que o padrão
-   estiver combinado, com a leitura apoiada no `revisar.js`.
+7. **A leva de estreia teve 30 cards**, lidos um a um pelo Gere e aprovados sem
+   mudança. Dali em diante a leva é de **cerca de cem cards**, e a revisão
+   profunda passa a ser a do uso: o Gere e os outros usuários acham o defeito
+   estudando, pelos três canais de retorno. A leitura no `revisar.js` continua
+   obrigatória antes de cada commit — foi ela que pegou os catorze defeitos da
+   leva 2, que o build não via.
 8. **As telas do app não são minhas.** Eu entrego o formato dos dados, o build
    e esta documentação; a tela de escolha do curso («que língua você fala, que
    língua quer aprender») fica com o Gere.
@@ -169,8 +171,9 @@ baralhos de feitios bem diferentes.
 | # | etapa | estado |
 |---|---|---|
 | 0 | Formato: pastas por baralho, ids com prefixo, build e revisar.js lendo os três, manual generalizado | **feito** (21/09) |
-| 1 | Inglês, leva de estreia: 30 cards variados, lidos um a um | **escrita** (21/09), esperando a leitura do Gere |
-| 2… | Inglês, levas de 80 a 120 até fechar mil | — |
+| 1 | Inglês, leva de estreia: 30 cards variados, lidos um a um | **feito** (21/09) — aprovados sem mudança |
+| 2 | Inglês, leva 2: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 130 |
+| 3… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
