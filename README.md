@@ -5,7 +5,9 @@ App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 
 São **mil cards** — 347 palavras e 653 frases, sendo 175 falsos amigos
 (`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 88 de
-conjugação verbal, quase todos irregulares.
+conjugação verbal, quase todos irregulares. Trinta e oito deles mudam de
+gênero: a mesma ficha aparece ora «Tu hermano es muy majo», ora «Tu hermana es
+muy maja», sorteadas na hora de perguntar.
 
 ## Como funciona
 
@@ -385,6 +387,27 @@ Os cards ficam em `fonte/cards/*.json`. Cada um é assim:
 
 `pt` é a resposta mostrada; `aceitas` são as **outras maneiras de dizer a mesma
 coisa**, e é lá que se resolve a variação de tradução.
+
+### O card que muda de gênero
+
+Onde a frase fala de uma pessoa, o espanhol muda a terminação — e guardar só o
+masculino faria o baralho inteiro falar de homens. Esses cards trazem as duas
+formas no mesmo texto, entre chaves, masculino antes da barra:
+
+```json
+{"es":"Mi hij{o|a} es zurd{o|a}.","pt":"{Meu filho|Minha filha} é canhot{o|a}."}
+```
+
+A cada aparição o app sorteia um lado (`Motor.formaDoCard`) e ele vale para o
+card inteiro — a pergunta, a resposta certa, as respostas aceitas, os quatro
+distratores e as formas verbais saem todos do mesmo gênero. Depois de
+responder, a nota mostra a outra forma; na lista de todos os cards ela aparece
+embaixo, com o 🔁. O resto do app — busca, painel, relatório, distratores
+tirados de outros cards — trabalha com a forma masculina, que é a canônica.
+
+As duas formas passam pelo `build.js` separadamente, como se fossem dois
+cards, e `node fonte/revisar.js` imprime a linha `G` com a frase já no
+feminino, que é a que ninguém vê ao escrever o card.
 
 ### O lado inglês
 

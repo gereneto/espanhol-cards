@@ -190,11 +190,51 @@ function checarDistratores(c, direcao, campo, onde, coletar) {
   }
 }
 
-for (const c of cards) {
-  const onde = c.id + ' (' + c.es + ')';
+/* ── o card que muda de gênero ──
+   «Tu herman{o|a} es muy maj{o|a}» é um card só, que aparece ora no
+   masculino ora no feminino (ver Motor.formaDoCard). Aqui se confere a
+   marcação em si — chave fechada, dois lados, e os dois diferentes. As duas
+   formas, depois, passam inteiras por todas as checagens do baralho, uma de
+   cada vez: é assim que se descobre que o feminino repete outro card ou que
+   um distrator virou a resposta certa de um dos lados. */
+const VARIANTE = /\{([^{}|]*)\|([^{}|]*)\}/g;
 
-  if (ids.has(c.id)) erros.push('id repetido: ' + onde);
-  ids.add(c.id);
+function textosDoCard(v, saida) {
+  if (typeof v === 'string') saida.push(v);
+  else if (Array.isArray(v)) v.forEach(x => textosDoCard(x, saida));
+  else if (v && typeof v === 'object') {
+    Object.keys(v).forEach(k => { saida.push(k); textosDoCard(v[k], saida); });
+  }
+  return saida;
+}
+
+function checarVariantes(c, onde) {
+  for (const t of textosDoCard(c, []).filter(t => /[{}|]/.test(t))) {
+    if (/[{}|]/.test(t.replace(VARIANTE, ''))) {
+      erros.push('marcação de gênero malformada: ' + onde + ' → «' + t +
+        '» (a forma é {masculino|feminino})');
+      continue;
+    }
+    let m;
+    VARIANTE.lastIndex = 0;
+    while ((m = VARIANTE.exec(t))) {
+      if (m[1] === m[2]) {
+        erros.push('marcação de gênero com os dois lados iguais: ' + onde + ' → «' + m[0] + '»');
+      }
+    }
+  }
+}
+
+for (const bruto of cards) {
+  if (ids.has(bruto.id)) erros.push('id repetido: ' + bruto.id + ' (' + bruto.es + ')');
+  ids.add(bruto.id);
+  checarVariantes(bruto, bruto.id + ' (' + bruto.es + ')');
+
+  /* Card comum devolve uma forma só, e o laço roda uma vez. */
+  const formas = Motor.formasDoCard(bruto);
+  for (let g = 0; g < formas.length; g++) {
+  const c = formas[g];
+  const onde = c.id + ' (' + c.es + ')' + (formas.length > 1 ? (g ? ' [feminino]' : ' [masculino]') : '');
 
   if (textos.has(normalizar(c.es))) {
     erros.push('card repetido: ' + onde + ' já existe em ' + textos.get(normalizar(c.es)));
@@ -287,6 +327,7 @@ for (const c of cards) {
       }
     }
   }
+  }
 }
 
 /* ── dicionário de temas ──
@@ -331,7 +372,7 @@ for (const c of cards) {
      por radical e erra para menos de vez em quando. */
   if (alvo.tipo === 'palavra') {
     const limpar = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-    const nucleo = limpar(alvo.es)
+    const nucleo = limpar(Motor.formaDoCard(alvo, 0).es)
       .replace(/^(el|la|los|las|un|una)\s+/, '')
       /* «enterarse» conjugado vira «me enteré», e o radical tem de cortar
          antes da desinência para sobreviver a isso: enterarse → enter. O
@@ -350,7 +391,7 @@ for (const c of cards) {
       if (i >= 0) variantes.add(nucleo.slice(0, i) + para + nucleo.slice(i + 1));
     });
 
-    const frase = limpar(c.es);
+    const frase = limpar(Motor.formaDoCard(c, 0).es);
     const radicais = [...variantes]
       .map(v => v.slice(0, Math.max(4, v.length - 2)))
       .filter(Boolean);

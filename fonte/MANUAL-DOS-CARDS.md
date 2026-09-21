@@ -139,6 +139,45 @@ for, e leva nova é arquivo novo.
 - **Teto de tamanho**: a resposta cabe em 120 caracteres; frase boa tem até
   umas dez palavras e **uma só** dificuldade.
 
+### 4.1 O card que muda de gênero
+
+«Tu hermano es muy majo» e «Tu hermana es muy maja» são a mesma lição: o que
+muda é de quem se fala. Duas fichas guardariam duas vezes o mesmo ensinamento,
+e quem tirasse a primeira veria o masculino para sempre. Então o card é um só
+e traz as duas terminações no mesmo texto, entre chaves — masculino antes da
+barra, feminino depois:
+
+```json
+{"es":"Tu herman{o|a} es muy maj{o|a}.","pt":"{Seu irmão|Sua irmã} é muito simpátic{o|a}."}
+```
+
+A cada aparição sorteia-se um lado, e ele vale para o **card inteiro**: `es`,
+`pt`, `en`, `aceitas`, `distratores`, `formasEs` e nota. O que está fora das
+chaves não muda — é por isso que a marcação sai barata.
+
+- **Marca-se onde a palavra muda mesmo.** Trocar só «ele» por «ela» não faz um
+  card de gênero: o funil descarta o pronome-sujeito, e a pergunta continuaria
+  a mesma. Vale quando a terminação espanhola muda.
+- **Só nas frases.** O card de palavra fica na forma canônica de dicionário —
+  adjetivo no masculino, com o feminino em `aceitas`.
+- **Só no singular.** «Nosotros» é a forma de grupo misto; «nosotras» diz que
+  são todas mulheres, o que é outra frase, e não a mesma em outro gênero.
+- **Os quatro distratores acompanham.** Se a certa sai no feminino e as
+  alternativas ficam no masculino, acerta-se escolhendo a diferente — é a
+  seção 6.2 pelo caminho do gênero. Distrator sem gênero («Estou com frio»)
+  fica como está.
+- **Quando o `pt` não diz o gênero, os dois espanhóis valem.** «No seas tan
+  quisquilloso» é «Não seja tão implicante», que serve aos dois: na volta
+  (`pt → es`) ninguém tem como adivinhar qual lado foi sorteado. Aí a outra
+  forma entra em `aceitasEs` **com os lados trocados** —
+  `["No seas tan quisquillos{a|o} con la comida."]` —, e assim a que é aceita
+  é sempre a que não está na tela. Quando o `pt` diz o gênero («Minha irmã é
+  loira»), a concordância é cobrada, e é lição.
+- **Feminino que muda de assunto não entra.** «Ese político es un zorro» é
+  raposa; «una zorra» é xingamento. O mesmo vale para o feminino que ninguém
+  diz («la albañila») e para o que estraga os distratores. Na dúvida, o card
+  fica como está.
+
 ---
 
 ## 5. `aceitas`: o que mais está certo
@@ -386,6 +425,8 @@ Card com alguns desses campos e não todos é erro: é tradução pela metade.
 
 As checagens de formato do inglês saem como aviso, e quem decide é a revisão
 (`revisar-es-en.html`), cujas decisões ficam à parte e prevalecem sobre a fonte.
+Num card de gênero, as telas de revisão mostram o texto com as chaves: quem
+mexer no inglês tem de devolvê-las, ou o card passa a variar de um lado só.
 
 ---
 
@@ -402,7 +443,10 @@ forma nua não é aceita; distrator — ou metade de
 distrator — que o motor lê como resposta certa; dois distratores iguais; formato
 que entrega a certa (barra, parêntese, comprimento); conjugação sem quatro
 `formasEs`, ou com forma igual à certa; `requer` quebrado; etiqueta sem
-tradução; inglês pela metade. **E avisa**: palavra de conteúdo nos quatro
+tradução; inglês pela metade; marcação de gênero malformada. **O card de
+gênero passa duas vezes por tudo isso**, uma por forma: é assim que se
+descobre que o feminino repete outro card ou que um distrator virou a resposta
+certa de um dos lados. **E avisa**: palavra de conteúdo nos quatro
 distratores e não na certa; frase que não parece usar a palavra que requer;
 palavra sem frase de uso.
 
@@ -440,6 +484,7 @@ sem ele o navegador serve o baralho velho.
 - [ ] Li **todos** os sentidos da palavra no dicionário, e nenhum distrator é um deles?
 - [ ] Nenhum distrator, nem metade de um, está nas aceitas — nem é a certa com outro artigo?
 - [ ] Mesmo formato: barras, parênteses, tamanho, classe, artigo, registro?
+- [ ] Card de gênero: os quatro acompanham a terminação da certa? (linha `G` do `revisar.js`)
 - [ ] Tampando o espanhol, **não** dá para apontar a diferente? (dois literais, dois fora)
 - [ ] Todas as palavras existem, são português, fazem sentido e são plausíveis?
 - [ ] Falso amigo: o sentido português está entre os quatro?
@@ -485,4 +530,5 @@ sem ele o navegador serve o baralho velho.
 | Quatro `formasEs`, e distratores de conjugação no assunto | `v002` «Ayer lo supe» entre «Yo puse la mesa» e «No lo hagas» |
 | Forma que é tradução válida não serve | `v043` «hemos vivido»; `v062` «pondrías» |
 | Dois sentidos certos: cobra-se o que o português não tem | `p239` la matrícula (a placa), com o outro em `aceitas` |
+| Uma ficha, duas formas, para o que muda de gênero | `u023` «Tu hermano es muy majo», pedido do Gere, e mais 37 cards |
 | Cada contestação é decidida junto | combinado desde a primeira leva |

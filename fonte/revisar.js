@@ -16,6 +16,15 @@
 const fs = require('fs');
 const path = require('path');
 
+/* O card de gênero guarda as duas formas num texto só («Tu herman{o|a} es
+   muy maj{o|a}»). A leitura mostra a linha como ela está escrita, que é o
+   que se revisa, e logo abaixo a frase já no feminino — que é a que ninguém
+   vê ao escrever o card, e é onde o erro se esconde. Quem resolve as chaves
+   é o motor, para não haver duas regras para a mesma marcação. */
+const janela = {};
+new Function('window', fs.readFileSync(path.join(__dirname, '..', 'js', 'motor.js'), 'utf8'))(janela);
+const Motor = janela.Motor;
+
 const pasta = path.join(__dirname, 'cards');
 const filtros = process.argv.slice(2);
 const ehId = f => /^[a-z]+\d+$/.test(f);
@@ -40,13 +49,18 @@ cards.forEach(c => {
   console.log('  ES ' + c.es + (c.aceitasEs ? '  ‖ ' + c.aceitasEs.join(' ; ') : ''));
   console.log('  PT ' + c.pt + '  ‖ ' + (c.aceitas || []).join(' ; '));
   console.log('  D  ' + (c.distratores || []).join(' | '));
+  if (Motor.temVariante(c)) {
+    const f = Motor.formaDoCard(c, 1);
+    console.log('  G  ' + f.es + '  ‖ ' + f.pt);
+  }
   if (c.formasEs) console.log('  F  ' + Object.keys(c.formasEs).map(f => f + ' (' + c.formasEs[f] + ')').join(' | '));
   if (c.nota) console.log('  N  ' + c.nota.replace(/\n/g, '\n     '));
 
   if ((c.tags || []).includes('conjugação')) return;
-  const certa = palavras([c.pt].concat(c.aceitas || []).join(' '));
+  const m = Motor.formaDoCard(c, 0);
+  const certa = palavras([m.pt].concat(m.aceitas || []).join(' '));
   const conta = {};
-  (c.distratores || []).forEach(d => palavras(d).forEach(w => { conta[w] = (conta[w] || 0) + 1; }));
+  (m.distratores || []).forEach(d => palavras(d).forEach(w => { conta[w] = (conta[w] || 0) + 1; }));
   const comuns = Object.keys(conta).filter(w => conta[w] >= 3 && !certa.has(w));
   if (comuns.length) suspeitos.push(c.id + '  «' + comuns.join('», «') + '» em três ou mais distratores, e não na certa  —  ' + c.es);
 });

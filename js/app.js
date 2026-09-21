@@ -8,7 +8,18 @@
   const SINCRONIZAR_COMPLETO_A_CADA = 8;  // sincronizações
   const REDE_DE_SEGURANCA = 45000;        // ms parado com resposta pendente
 
-  const CARDS = (window.CARDS_RAW && window.CARDS_RAW.cards) || [];
+  /* ── o baralho, e o baralho como ele aparece ──
+     O card de gênero guarda as duas formas num texto só («Tu herman{o|a} es
+     muy maj{o|a}»). Quem estuda vê uma delas, sorteada na hora de perguntar;
+     todo o resto do app — a lista, o painel, o relatório, os distratores
+     tirados de outros cards — trabalha com a forma masculina, que é a
+     canônica. Daí os dois baralhos: FONTE é o que o build gerou, CARDS é o
+     que se mostra. */
+  const FONTE = (window.CARDS_RAW && window.CARDS_RAW.cards) || [];
+  const PORID_FONTE = {};
+  FONTE.forEach(c => { PORID_FONTE[c.id] = c; });
+
+  const CARDS = FONTE.map(c => Motor.formaDoCard(c, 0));
   const PORID = {};
   CARDS.forEach(c => { PORID[c.id] = c; });
 
@@ -40,6 +51,8 @@
   let progresso = carregarProgresso();
   let sessao = novaSessao();
   let cardAtual = null;
+  let generoAtual = 0;      // 0 masculino, 1 feminino — só no card que muda de gênero
+  let outraForma = null;    // o mesmo card no outro gênero, para a nota
   let modoAtual = null;
   let direcaoAtual = 'es-pt';
   let alvoAtual = null;
@@ -478,8 +491,14 @@
     if (window.scrollY >= 2) el['tela-card'].style.minHeight = el['tela-card'].offsetHeight + 'px';
     const id = tirarProximoId();
     if (!id) { irParaInicio(); return; }
-    cardAtual = PORID[id];
-    if (!cardAtual) return proximoCard();
+    const bruto = PORID_FONTE[id];
+    if (!bruto) return proximoCard();
+    /* O gênero é sorteado a cada aparição, e vale para o card inteiro: a
+       pergunta, a resposta certa, as aceitas e os distratores saem todos do
+       mesmo lado. O outro lado fica guardado para a nota. */
+    generoAtual = Motor.temVariante(bruto) && Math.random() < 0.5 ? 1 : 0;
+    cardAtual = Motor.formaDoCard(bruto, generoAtual);
+    outraForma = Motor.temVariante(bruto) ? Motor.formaDoCard(bruto, 1 - generoAtual) : null;
 
     const est = estadoDe(id);
     const fase = Motor.faseDe(est);
@@ -643,7 +662,7 @@
      precisa dele (ver Motor.leituraEspanhola). */
   let INDICE_ES = null;
   function indiceEspanhol() {
-    if (!INDICE_ES) INDICE_ES = Motor.indiceEspanhol(CARDS);
+    if (!INDICE_ES) INDICE_ES = Motor.indiceEspanhol(FONTE);
     return INDICE_ES;
   }
 
@@ -684,8 +703,16 @@
     /* Neutra por padrão: quem pinta de verde é o veredito, e no caso do
        "deu quase" ele só chega depois que você julgar. */
     el['caixa-resposta'].classList.remove('certa');
-    el.nota.textContent = cardAtual.nota || '';
-    el.nota.classList.toggle('oculto', !cardAtual.nota);
+    /* O card saiu num dos dois gêneros; o outro entra no fim da nota, que é
+       onde o card ensina. Ver «Tu hermana es muy maja» depois de responder o
+       masculino é a outra metade da lição — e é de graça, porque o card já
+       traz as duas formas. */
+    const nota = [cardAtual.nota,
+      outraForma ? '🔁 ' + (generoAtual ? 'No masculino' : 'No feminino') +
+        ': «' + outraForma.es + '» — ' + outraForma.pt : ''
+    ].filter(Boolean).join('\n');
+    el.nota.textContent = nota;
+    el.nota.classList.toggle('oculto', !nota);
 
     const rotuloVel = { rapido: 'rápido', medio: 'no tempo médio', lento: 'devagar' }[r.velocidade];
     el.medidas.innerHTML =
@@ -2066,6 +2093,15 @@
     mostrar('tela-cards');
   }
 
+  /* A lista mostra o masculino, que é a forma canônica; o feminino entra
+     embaixo, junto da nota, para o card de gênero não parecer um card comum. */
+  function linhaDaNota(c) {
+    const bruto = PORID_FONTE[c.id];
+    const outra = bruto && Motor.temVariante(bruto) ? Motor.formaDoCard(bruto, 1) : null;
+    return [c.nota, outra ? '🔁 No feminino: «' + outra.es + '» — ' + outra.pt : '']
+      .filter(Boolean).join('\n');
+  }
+
   function renderizarCards() {
     const busca = Motor.normalizar(el['busca-cards'].value);
     const tipo = el['filtro-tipo'].value;
@@ -2123,7 +2159,7 @@
           placar +
           (c.tags || []).map(t => '<span class="selo">' + escapar(t) + '</span>').join('') +
         '</div>' +
-        (c.nota ? '<p class="card-linha-nota">' + escapar(c.nota) + '</p>' : '') +
+        (linhaDaNota(c) ? '<p class="card-linha-nota">' + escapar(linhaDaNota(c)) + '</p>' : '') +
         '<button class="link-comentar na-lista" data-comentar="' + escapar(c.id) + '">Comentar</button>' +
       '</div>';
     }).join('');

@@ -366,6 +366,73 @@ window.Motor = (function () {
     return formasAceitas(card, direcao).map(t => normalizar(t, lingua)).filter(Boolean);
   }
 
+  /* ── o card que muda de gênero ──
+     «Tu hermano es muy majo» e «Tu hermana es muy maja» são a mesma lição:
+     o que muda é de quem se fala. Dois cards guardariam duas vezes o mesmo
+     ensinamento — e quem tirasse o primeiro veria o masculino para sempre,
+     sem nunca topar com a terminação que o espanhol muda. Então o card é um
+     só e carrega as duas formas no mesmo texto, entre chaves:
+
+       "es": "Tu herman{o|a} es muy maj{o|a}."
+       "pt": "{Teu irmão|Tua irmã} é muito simpátic{o|a}."
+
+     Antes da barra o masculino, depois dela o feminino. A cada aparição
+     sorteia-se UM lado, e ele vale para o card inteiro — es, pt, en, aceitas,
+     distratores, formasEs e nota. Não é capricho: com a escolha feita campo a
+     campo, a pergunta sairia no feminino e a resposta certa no masculino.
+
+     O que não está entre chaves não muda, e é isso que faz a marcação ser
+     barata: as aceitas que já trazem os dois gêneros («simpatico»,
+     «simpatica») continuam valendo nas duas formas. */
+  const VARIANTE = /\{([^{}|]*)\|([^{}|]*)\}/g;
+
+  function temVariante(v) {
+    if (typeof v === 'string') return v.indexOf('{') >= 0;
+    if (Array.isArray(v)) return v.some(temVariante);
+    if (v && typeof v === 'object') {
+      return Object.keys(v).some(k => temVariante(k) || temVariante(v[k]));
+    }
+    return false;
+  }
+
+  function generoDoTexto(txt, i) {
+    return String(txt).replace(VARIANTE, (_, masculino, feminino) => (i ? feminino : masculino));
+  }
+
+  /* As formasEs guardam o texto na CHAVE do objeto, e o rótulo no valor:
+     «Ayer lo sabía» também pode trazer gênero, então a chave é resolvida
+     como qualquer outro texto. */
+  function generoDoValor(v, i) {
+    if (typeof v === 'string') return generoDoTexto(v, i);
+    if (Array.isArray(v)) return v.map(x => generoDoValor(x, i));
+    if (v && typeof v === 'object') {
+      const saida = {};
+      Object.keys(v).forEach(k => { saida[generoDoTexto(k, i)] = generoDoValor(v[k], i); });
+      return saida;
+    }
+    return v;
+  }
+
+  /* O card numa das duas formas: 0 é o masculino, 1 o feminino. Card sem
+     chave nenhuma volta como está — são quase todos, e nenhum deles precisa
+     de uma cópia. */
+  function formaDoCard(card, i) {
+    if (!card || !temVariante(card)) return card;
+    const saida = {};
+    Object.keys(card).forEach(k => { saida[k] = generoDoValor(card[k], i); });
+    return saida;
+  }
+
+  /* As duas formas, para quem precisa conferir as duas: é assim que o build
+     valida um card de gênero, passando cada forma pelas mesmas checagens. */
+  function formasDoCard(card) {
+    return temVariante(card) ? [formaDoCard(card, 0), formaDoCard(card, 1)] : [card];
+  }
+
+  function sortearForma(card) {
+    return formaDoCard(card, Math.random() < 0.5 ? 1 : 0);
+  }
+
   /* ── teto de cada campo de texto ──
      Num app de uma pessoa só, campo sem limite nunca incomodou. Com mais
      gente usando, cada caractere digitado vai parar no progresso.json e
@@ -585,7 +652,9 @@ window.Motor = (function () {
                    pts: pts.map(p => String(p).trim()).filter(Boolean) });
       indice.set(chave, lista);
     };
-    (cards || []).forEach(c => {
+    /* O card de gênero entra com as duas formas: quem responde no feminino
+       a uma pergunta que saiu no masculino merece o mesmo aviso. */
+    (cards || []).forEach(bruto => formasDoCard(bruto).forEach(c => {
       guardar(c.es, String(c.pt || '').split('/').concat(c.aceitas || []), c.id);
       const par = /🇪🇸\s*([^→\n]+?)\s*→\s*🇧🇷\s*([^\n]+)/g;
       let m;
@@ -593,7 +662,7 @@ window.Motor = (function () {
         const pts = m[2].split(',');
         m[1].split(',').forEach(es => guardar(es, pts, c.id));
       }
-    });
+    }));
     return indice;
   }
 
@@ -1907,6 +1976,7 @@ window.Motor = (function () {
     indiceEspanhol, leituraEspanhola, erroDeFlexao,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
+    temVariante, formaDoCard, formasDoCard, sortearForma,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
     contarDirecoes,

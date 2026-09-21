@@ -2924,18 +2924,24 @@
   {
    "id": "f003",
    "tipo": "frase",
-   "es": "Estoy harto de esperar.",
+   "es": "Estoy hart{o|a} de esperar.",
    "pt": "Estou de saco cheio de esperar.",
    "en": "I'm fed up with waiting.",
    "aceitas": [
     "estou de saco cheio de esperar",
     "cansei de esperar",
     "estou farto de esperar",
+    "estou farta de esperar",
     "nao aguento mais esperar",
     "estou cheio de esperar",
+    "estou cheia de esperar",
     "to de saco cheio de esperar",
     "estou cansado de esperar",
+    "estou cansada de esperar",
     "enjoei de esperar"
+   ],
+   "aceitasEs": [
+    "Estoy hart{a|o} de esperar."
    ],
    "aceitasEn": [
     "im fed up with waiting",
@@ -2947,9 +2953,9 @@
     "ive had enough of waiting"
    ],
    "distratores": [
-    "Estou cheio de comida agora.",
-    "Espero ficar farto de comer.",
-    "Estou disposto a esperar mais.",
+    "Estou che{io|ia} de comida agora.",
+    "Espero ficar fart{o|a} de comer.",
+    "Estou dispost{o|a} a esperar mais.",
     "Tenho bastante tempo para esperar."
    ],
    "distratoresEn": [
@@ -3853,17 +3859,17 @@
   {
    "id": "f024",
    "tipo": "frase",
-   "es": "Estoy hecho polvo.",
-   "pt": "Estou acabado. / Estou exausto.",
+   "es": "Estoy hech{o|a} polvo.",
+   "pt": "Estou acabad{o|a}. / Estou exaust{o|a}.",
    "en": "I'm completely worn out.",
    "aceitas": [
-    "estou acabado",
-    "estou exausto",
-    "estou moido",
-    "to destruido",
-    "estou detonado",
-    "estou morto de cansaco",
-    "estou arrasado",
+    "estou acabad{o|a}",
+    "estou exaust{o|a}",
+    "estou moid{o|a}",
+    "to destruid{o|a}",
+    "estou detonad{o|a}",
+    "estou mort{o|a} de cansaco",
+    "estou arrasad{o|a}",
     "nao aguento mais"
    ],
    "aceitasEn": [
@@ -3877,10 +3883,10 @@
     "im dead tired"
    ],
    "distratores": [
-    "Estou empoeirado. / Estou sujo.",
+    "Estou empoeirad{o|a}. / Estou suj{o|a}.",
     "Fiz uma poeira. / Levantei pó.",
-    "Estou de mau humor. / Estou irritado.",
-    "Estou sem dinheiro. / Estou quebrado."
+    "Estou de mau humor. / Estou irritad{o|a}.",
+    "Estou sem dinheiro. / Estou quebrad{o|a}."
    ],
    "distratoresEn": [
     "I am covered in dust.",
@@ -8547,14 +8553,13 @@
   {
    "id": "v009",
    "tipo": "frase",
-   "es": "Yo fui profesor.",
-   "pt": "Eu fui professor.",
+   "es": "Yo fui {profesor|profesora}.",
+   "pt": "Eu fui {professor|professora}.",
    "en": "I was a teacher.",
    "aceitas": [
-    "eu fui professor",
-    "fui professor",
-    "eu fui professora",
-    "trabalhei como professor"
+    "eu fui {professor|professora}",
+    "fui {professor|professora}",
+    "trabalhei como {professor|professora}"
    ],
    "aceitasEn": [
     "i was a teacher",
@@ -8563,10 +8568,10 @@
     "i worked as a teacher"
    ],
    "distratores": [
-    "Eu sou professor.",
-    "Eu era professor.",
-    "Eu serei professor.",
-    "Eu seria professor."
+    "Eu sou {professor|professora}.",
+    "Eu era {professor|professora}.",
+    "Eu serei {professor|professora}.",
+    "Eu seria {professor|professora}."
    ],
    "distratoresEn": [
     "I am a teacher.",
@@ -8584,16 +8589,16 @@
    "nota": "Mesmo 'fui' do verbo 'ir'. Aqui é 'ser', porque vem seguido de profissão.",
    "notaEn": "The same 'fui' as in 'ir', but here it is 'ser'. A profession after it settles the question. The imperfect 'era profesor' would stress the years rather than the fact.",
    "formasEs": {
-    "Yo soy profesor": "presente",
-    "Yo era profesor": "imperfeito",
-    "Yo seré profesor": "futuro",
-    "Yo sería profesor": "condicional"
+    "Yo soy {profesor|profesora}": "presente",
+    "Yo era {profesor|profesora}": "imperfeito",
+    "Yo seré {profesor|profesora}": "futuro",
+    "Yo sería {profesor|profesora}": "condicional"
    },
    "formasEsEn": {
-    "Yo soy profesor": "present",
-    "Yo era profesor": "imperfect",
-    "Yo seré profesor": "future",
-    "Yo sería profesor": "conditional"
+    "Yo soy {profesor|profesora}": "present",
+    "Yo era {profesor|profesora}": "imperfect",
+    "Yo seré {profesor|profesora}": "future",
+    "Yo sería {profesor|profesora}": "conditional"
    }
   },
   {
@@ -8910,31 +8915,31 @@
   {
    "id": "v016",
    "tipo": "frase",
-   "es": "Él vino solo.",
-   "pt": "Ele veio sozinho.",
-   "en": "He came alone.",
+   "es": "{Él|Ella} vino sol{o|a}.",
+   "pt": "{Ele|Ela} veio sozinh{o|a}.",
+   "en": "{He|She} came alone.",
    "aceitas": [
-    "ele veio sozinho",
-    "veio sozinho",
-    "ele veio so",
-    "ele chegou sozinho"
+    "{ele|ela} veio sozinh{o|a}",
+    "veio sozinh{o|a}",
+    "{ele|ela} veio so",
+    "{ele|ela} chegou sozinh{o|a}"
    ],
    "aceitasEn": [
-    "he came alone",
-    "he came by himself",
-    "he came on his own"
+    "{he|she} came alone",
+    "{he|she} came by {himself|herself}",
+    "{he|she} came on {his|her} own"
    ],
    "distratores": [
-    "Ele vem sozinho.",
-    "Ele vinha sozinho.",
-    "Ele virá sozinho.",
-    "Ele viria sozinho."
+    "{Ele|Ela} vem sozinh{o|a}.",
+    "{Ele|Ela} vinha sozinh{o|a}.",
+    "{Ele|Ela} virá sozinh{o|a}.",
+    "{Ele|Ela} viria sozinh{o|a}."
    ],
    "distratoresEn": [
-    "He comes alone.",
-    "He used to come alone.",
-    "He will come alone.",
-    "He would come alone."
+    "{He|She} comes alone.",
+    "{He|She} used to come alone.",
+    "{He|She} will come alone.",
+    "{He|She} would come alone."
    ],
    "nivel": "A2",
    "tags": [
@@ -8946,16 +8951,16 @@
    "nota": "'Vino' é 'veio' — e também é 'vinho'. O contexto separa.",
    "notaEn": "'Vino' is he came — and also wine. The sentence keeps them apart, but the coincidence has fuelled a thousand jokes.",
    "formasEs": {
-    "Él viene solo": "presente",
-    "Él venía solo": "imperfeito",
-    "Él vendrá solo": "futuro",
-    "Él vendría solo": "condicional"
+    "{Él|Ella} viene sol{o|a}": "presente",
+    "{Él|Ella} venía sol{o|a}": "imperfeito",
+    "{Él|Ella} vendrá sol{o|a}": "futuro",
+    "{Él|Ella} vendría sol{o|a}": "condicional"
    },
    "formasEsEn": {
-    "Él viene solo": "present",
-    "Él venía solo": "imperfect",
-    "Él vendrá solo": "future",
-    "Él vendría solo": "conditional"
+    "{Él|Ella} viene sol{o|a}": "present",
+    "{Él|Ella} venía sol{o|a}": "imperfect",
+    "{Él|Ella} vendrá sol{o|a}": "future",
+    "{Él|Ella} vendría sol{o|a}": "conditional"
    }
   },
   {
@@ -17081,15 +17086,15 @@
   {
    "id": "f121",
    "tipo": "frase",
-   "es": "Está hecho un lío.",
-   "pt": "Ele está confuso.",
-   "en": "He's all muddled up.",
+   "es": "Está hech{o|a} un lío.",
+   "pt": "{Ele|Ela} está confus{o|a}.",
+   "en": "{He's|She's} all muddled up.",
    "aceitas": [
-    "esta confuso",
-    "ele esta confuso",
-    "esta enrolado",
-    "se enrolou todo",
-    "esta perdido"
+    "esta confus{o|a}",
+    "{ele|ela} esta confus{o|a}",
+    "esta enrolad{o|a}",
+    "se enrolou tod{o|a}",
+    "esta perdid{o|a}"
    ],
    "aceitasEn": [
     "hes all muddled up",
@@ -17100,16 +17105,16 @@
     "hes all mixed up"
    ],
    "distratores": [
-    "Ele está com pressa.",
-    "Ele está muito bravo.",
-    "Ele está bem resolvido.",
-    "Ele está de mau humor."
+    "{Ele|Ela} está com pressa.",
+    "{Ele|Ela} está muito brav{o|a}.",
+    "{Ele|Ela} está bem resolvid{o|a}.",
+    "{Ele|Ela} está de mau humor."
    ],
    "distratoresEn": [
-    "He is in a real hurry.",
-    "He is extremely angry.",
-    "He has it all worked out.",
-    "He is in a foul mood."
+    "{He|She} is in a real hurry.",
+    "{He|She} is extremely angry.",
+    "{He|She} has it all worked out.",
+    "{He|She} is in a foul mood."
    ],
    "nivel": "B2",
    "tags": [
@@ -17456,14 +17461,19 @@
    "id": "u006",
    "tipo": "frase",
    "requer": "p106",
-   "es": "El niño no quiere comer.",
+   "es": "{El niño|La niña} no quiere comer.",
    "pt": "A criança não quer comer.",
    "en": "The child does not want to eat.",
    "aceitas": [
     "a crianca nao quer comer",
     "o menino nao quer comer",
+    "a menina nao quer comer",
     "a crianca nao quer comer nada",
-    "o garoto nao quer comer"
+    "o garoto nao quer comer",
+    "a garota nao quer comer"
+   ],
+   "aceitasEs": [
+    "{La niña|El niño} no quiere comer."
    ],
    "aceitasEn": [
     "the child does not want to eat",
@@ -18143,33 +18153,33 @@
    "id": "u023",
    "tipo": "frase",
    "requer": "p043",
-   "es": "Tu hermano es muy majo.",
-   "pt": "Seu irmão é muito simpático.",
-   "en": "Your brother is really nice.",
+   "es": "Tu herman{o|a} es muy maj{o|a}.",
+   "pt": "{Seu irmão|Sua irmã} é muito simpátic{o|a}.",
+   "en": "Your {brother|sister} is really nice.",
    "aceitas": [
-    "seu irmao e muito simpatico",
-    "teu irmao e muito simpatico",
-    "seu irmao e muito legal",
-    "seu irmao e bem legal",
-    "seu irmao e gente boa"
+    "{seu irmao|sua irma} e muito simpatic{o|a}",
+    "{teu irmao|tua irma} e muito simpatic{o|a}",
+    "{seu irmao|sua irma} e muito legal",
+    "{seu irmao|sua irma} e bem legal",
+    "{seu irmao|sua irma} e gente boa"
    ],
    "aceitasEn": [
-    "your brother is really nice",
-    "your brother is very nice",
-    "your brother is a nice guy",
-    "your brother is really lovely"
+    "your {brother|sister} is really nice",
+    "your {brother|sister} is very nice",
+    "your {brother is a nice guy|sister is a nice girl}",
+    "your {brother|sister} is really lovely"
    ],
    "distratores": [
-    "Seu irmão é muito alto.",
-    "Seu irmão é muito quieto.",
-    "Seu irmão é muito teimoso.",
-    "Seu irmão é muito rico."
+    "{Seu irmão|Sua irmã} é muito alt{o|a}.",
+    "{Seu irmão|Sua irmã} é muito quiet{o|a}.",
+    "{Seu irmão|Sua irmã} é muito teimos{o|a}.",
+    "{Seu irmão|Sua irmã} é muito ric{o|a}."
    ],
    "distratoresEn": [
-    "Your brother is really tall.",
-    "Your brother is really quiet.",
-    "Your brother is really stubborn.",
-    "Your brother is really rich."
+    "Your {brother|sister} is really tall.",
+    "Your {brother|sister} is really quiet.",
+    "Your {brother|sister} is really stubborn.",
+    "Your {brother|sister} is really rich."
    ],
    "nivel": "B2",
    "tags": [
@@ -18223,15 +18233,15 @@
    "id": "u025",
    "tipo": "frase",
    "requer": "p018",
-   "es": "Detuvieron al presunto autor del robo.",
-   "pt": "Prenderam o suposto autor do roubo.",
+   "es": "Detuvieron {al presunto autor|a la presunta autora} del robo.",
+   "pt": "Prenderam {o suposto autor|a suposta autora} do roubo.",
    "en": "They arrested the alleged robber.",
    "aceitas": [
-    "prenderam o suposto autor do roubo",
-    "detiveram o suposto autor do roubo",
-    "prenderam o presumido autor do roubo",
-    "prenderam o suposto ladrao",
-    "prenderam o suposto autor do assalto"
+    "prenderam {o suposto autor|a suposta autora} do roubo",
+    "detiveram {o suposto autor|a suposta autora} do roubo",
+    "prenderam {o presumido autor|a presumida autora} do roubo",
+    "prenderam {o suposto ladrao|a suposta ladra}",
+    "prenderam {o suposto autor|a suposta autora} do assalto"
    ],
    "aceitasEn": [
     "they arrested the alleged robber",
@@ -18240,10 +18250,10 @@
     "the alleged robber was arrested"
    ],
    "distratores": [
-    "Prenderam o verdadeiro autor do roubo.",
-    "Prenderam o antigo autor do roubo.",
-    "Prenderam o único autor do roubo.",
-    "Prenderam o principal autor do roubo."
+    "Prenderam {o verdadeiro autor|a verdadeira autora} do roubo.",
+    "Prenderam {o antigo autor|a antiga autora} do roubo.",
+    "Prenderam {o único autor|a única autora} do roubo.",
+    "Prenderam {o principal autor|a principal autora} do roubo."
    ],
    "distratoresEn": [
     "They arrested the real robber.",
@@ -18779,37 +18789,37 @@
    "id": "u039",
    "tipo": "frase",
    "requer": "p188",
-   "es": "Habló con pesadumbre de su hermano.",
-   "pt": "Ele falou com pesar do irmão.",
-   "en": "He spoke of his brother with sorrow.",
+   "es": "Habló con pesadumbre de su herman{o|a}.",
+   "pt": "Ele falou com pesar d{o irmão|a irmã}.",
+   "en": "He spoke of his {brother|sister} with sorrow.",
    "aceitas": [
-    "ele falou com pesar do irmao",
-    "falou com pesar do irmao",
-    "ele falou com tristeza do irmao",
-    "ele falou com pesar sobre o irmao",
-    "ele falou do irmao com pesar",
-    "falou com pesar de seu irmao",
-    "ele falou com pesar de seu irmao",
-    "falou com pesar do seu irmao",
-    "ele falou com pesar do seu irmao"
+    "ele falou com pesar d{o irmao|a irma}",
+    "falou com pesar d{o irmao|a irma}",
+    "ele falou com tristeza d{o irmao|a irma}",
+    "ele falou com pesar sobre {o irmao|a irma}",
+    "ele falou d{o irmao|a irma} com pesar",
+    "falou com pesar {de seu irmao|de sua irma}",
+    "ele falou com pesar {de seu irmao|de sua irma}",
+    "falou com pesar d{o seu irmao|a sua irma}",
+    "ele falou com pesar d{o seu irmao|a sua irma}"
    ],
    "aceitasEn": [
-    "he spoke of his brother with sorrow",
-    "he spoke about his brother with sorrow",
-    "he spoke of his brother with grief",
-    "he talked about his brother with sorrow"
+    "he spoke of his {brother|sister} with sorrow",
+    "he spoke about his {brother|sister} with sorrow",
+    "he spoke of his {brother|sister} with grief",
+    "he talked about his {brother|sister} with sorrow"
    ],
    "distratores": [
-    "Ele falou com orgulho do irmão.",
-    "Ele falou com raiva do irmão.",
-    "Ele falou com humor do irmão.",
-    "Ele falou com admiração do irmão."
+    "Ele falou com orgulho d{o irmão|a irmã}.",
+    "Ele falou com raiva d{o irmão|a irmã}.",
+    "Ele falou com humor d{o irmão|a irmã}.",
+    "Ele falou com admiração d{o irmão|a irmã}."
    ],
    "distratoresEn": [
-    "He spoke of his brother with pride.",
-    "He spoke of his brother with anger.",
-    "He spoke of his brother with humor.",
-    "He spoke of his brother with admiration."
+    "He spoke of his {brother|sister} with pride.",
+    "He spoke of his {brother|sister} with anger.",
+    "He spoke of his {brother|sister} with humor.",
+    "He spoke of his {brother|sister} with admiration."
    ],
    "nivel": "C2",
    "tags": [
@@ -18901,34 +18911,34 @@
    "id": "u042",
    "tipo": "frase",
    "requer": "p004",
-   "es": "Llegó borracho a casa.",
-   "pt": "Chegou bêbado em casa.",
-   "en": "He came home drunk.",
+   "es": "Llegó borrach{o|a} a casa.",
+   "pt": "Chegou bêbad{o|a} em casa.",
+   "en": "{He|She} came home drunk.",
    "aceitas": [
-    "chegou bebado em casa",
-    "chegou bebado a casa",
-    "ele chegou bebado em casa",
-    "chegou em casa bebado",
-    "chegou embriagado em casa",
-    "voltou bebado para casa"
+    "chegou bebad{o|a} em casa",
+    "chegou bebad{o|a} a casa",
+    "{ele|ela} chegou bebad{o|a} em casa",
+    "chegou em casa bebad{o|a}",
+    "chegou embriagad{o|a} em casa",
+    "voltou bebad{o|a} para casa"
    ],
    "aceitasEn": [
-    "he came home drunk",
-    "he got home drunk",
-    "he arrived home drunk",
+    "{he|she} came home drunk",
+    "{he|she} got home drunk",
+    "{he|she} arrived home drunk",
     "came home drunk"
    ],
    "distratores": [
-    "Chegou molhado em casa.",
-    "Chegou cansado em casa.",
-    "Chegou atrasado em casa.",
-    "Chegou machucado em casa."
+    "Chegou molhad{o|a} em casa.",
+    "Chegou cansad{o|a} em casa.",
+    "Chegou atrasad{o|a} em casa.",
+    "Chegou machucad{o|a} em casa."
    ],
    "distratoresEn": [
-    "He came home soaked.",
-    "He came home tired.",
-    "He came home late.",
-    "He came home hurt."
+    "{He|She} came home soaked.",
+    "{He|She} came home tired.",
+    "{He|She} came home late.",
+    "{He|She} came home hurt."
    ],
    "nivel": "A2",
    "tags": [
@@ -19409,31 +19419,31 @@
    "id": "u055",
    "tipo": "frase",
    "requer": "p026",
-   "es": "Mi hijo es zurdo.",
-   "pt": "Meu filho é canhoto.",
-   "en": "My son is left-handed.",
+   "es": "Mi hij{o|a} es zurd{o|a}.",
+   "pt": "{Meu filho|Minha filha} é canhot{o|a}.",
+   "en": "My {son|daughter} is left-handed.",
    "aceitas": [
-    "meu filho e canhoto",
-    "o meu filho e canhoto",
-    "meu filho e sinistro",
-    "meu filho escreve com a mao esquerda"
+    "{meu filho|minha filha} e canhot{o|a}",
+    "{o meu filho|a minha filha} e canhot{o|a}",
+    "{meu filho|minha filha} e sinistr{o|a}",
+    "{meu filho|minha filha} escreve com a mao esquerda"
    ],
    "aceitasEn": [
-    "my son is left handed",
-    "my son is a lefty",
-    "my son is a leftie"
+    "my {son|daughter} is left handed",
+    "my {son|daughter} is a lefty",
+    "my {son|daughter} is a leftie"
    ],
    "distratores": [
-    "Meu filho é surdo.",
-    "Meu filho é destro.",
-    "Meu filho é tímido.",
-    "Meu filho é teimoso."
+    "{Meu filho|Minha filha} é surd{o|a}.",
+    "{Meu filho|Minha filha} é destr{o|a}.",
+    "{Meu filho|Minha filha} é tímid{o|a}.",
+    "{Meu filho|Minha filha} é teimos{o|a}."
    ],
    "distratoresEn": [
-    "My son is deaf.",
-    "My son is right-handed.",
-    "My son is shy.",
-    "My son is stubborn."
+    "My {son|daughter} is deaf.",
+    "My {son|daughter} is right-handed.",
+    "My {son|daughter} is shy.",
+    "My {son|daughter} is stubborn."
    ],
    "nivel": "B1",
    "tags": [
@@ -19486,16 +19496,17 @@
    "id": "u057",
    "tipo": "frase",
    "requer": "p029",
-   "es": "Mi jefe está enfadado conmigo.",
-   "pt": "Meu chefe está bravo comigo.",
+   "es": "Mi jef{e|a} está enfadad{o|a} conmigo.",
+   "pt": "{Meu chefe|Minha chefe} está brav{o|a} comigo.",
    "en": "My boss is angry with me.",
    "aceitas": [
-    "meu chefe esta bravo comigo",
-    "meu chefe esta chateado comigo",
-    "meu chefe esta irritado comigo",
-    "meu chefe esta zangado comigo",
-    "meu chefe esta com raiva de mim",
-    "meu chefe ficou bravo comigo"
+    "{meu chefe|minha chefe} esta brav{o|a} comigo",
+    "{meu chefe|minha chefe} esta chatead{o|a} comigo",
+    "{meu chefe|minha chefe} esta irritad{o|a} comigo",
+    "{meu chefe|minha chefe} esta zangad{o|a} comigo",
+    "{meu chefe|minha chefe} esta com raiva de mim",
+    "{meu chefe|minha chefe} ficou brav{o|a} comigo",
+    "{meu chefe|minha chefa} esta brav{o|a} comigo"
    ],
    "aceitasEn": [
     "my boss is angry with me",
@@ -19504,10 +19515,10 @@
     "my boss is cross with me"
    ],
    "distratores": [
-    "Meu chefe está entediado comigo.",
-    "Meu chefe está contente comigo.",
-    "Meu chefe está preocupado comigo.",
-    "Meu chefe está decepcionado comigo."
+    "{Meu chefe|Minha chefe} está entediad{o|a} comigo.",
+    "{Meu chefe|Minha chefe} está contente comigo.",
+    "{Meu chefe|Minha chefe} está preocupad{o|a} comigo.",
+    "{Meu chefe|Minha chefe} está decepcionad{o|a} comigo."
    ],
    "distratoresEn": [
     "My boss is bored with me.",
@@ -20009,16 +20020,23 @@
    "id": "u070",
    "tipo": "frase",
    "requer": "p050",
-   "es": "No seas tan quisquilloso con la comida.",
+   "es": "No seas tan quisquillos{o|a} con la comida.",
    "pt": "Não seja tão implicante com a comida.",
    "en": "Don't be so fussy about the food.",
    "aceitas": [
     "nao seja tao implicante com a comida",
     "nao seja tao chato com a comida",
+    "nao seja tao chata com a comida",
     "nao seja tao fresco com a comida",
+    "nao seja tao fresca com a comida",
     "nao seja tao exigente com a comida",
     "nao seja tao enjoado com a comida",
-    "nao seja tao cheio de frescura com a comida"
+    "nao seja tao enjoada com a comida",
+    "nao seja tao cheio de frescura com a comida",
+    "nao seja tao cheia de frescura com a comida"
+   ],
+   "aceitasEs": [
+    "No seas tan quisquillos{a|o} con la comida."
    ],
    "aceitasEn": [
     "don t be so fussy about the food",
@@ -20027,10 +20045,10 @@
     "stop being so picky about the food"
    ],
    "distratores": [
-    "Não seja tão guloso com a comida.",
-    "Não seja tão generoso com a comida.",
-    "Não seja tão apressado com a comida.",
-    "Não seja tão descuidado com a comida."
+    "Não seja tão gulos{o|a} com a comida.",
+    "Não seja tão generos{o|a} com a comida.",
+    "Não seja tão apressad{o|a} com a comida.",
+    "Não seja tão descuidad{o|a} com a comida."
    ],
    "distratoresEn": [
     "Don't be so greedy with the food.",
@@ -20049,33 +20067,33 @@
    "id": "u071",
    "tipo": "frase",
    "requer": "p051",
-   "es": "Es tan tozudo que nunca da su brazo a torcer.",
-   "pt": "É tão teimoso que nunca dá o braço a torcer.",
-   "en": "He's so stubborn he never gives in.",
+   "es": "Es tan tozud{o|a} que nunca da su brazo a torcer.",
+   "pt": "É tão teimos{o|a} que nunca dá o braço a torcer.",
+   "en": "{He's|She's} so stubborn {he|she} never gives in.",
    "aceitas": [
-    "e tao teimoso que nunca da o braco a torcer",
-    "ele e tao teimoso que nunca da o braco a torcer",
+    "e tao teimos{o|a} que nunca da o braco a torcer",
+    "{ele|ela} e tao teimos{o|a} que nunca da o braco a torcer",
     "e tao cabeca dura que nunca da o braco a torcer",
-    "e tao teimoso que nunca cede",
-    "e tao turrao que nunca da o braco a torcer"
+    "e tao teimos{o|a} que nunca cede",
+    "e tao turr{ao|ona} que nunca da o braco a torcer"
    ],
    "aceitasEn": [
-    "he s so stubborn he never gives in",
-    "he is so stubborn that he never backs down",
-    "he s so pig headed he never gives in",
-    "he s so stubborn he never gives an inch"
+    "{he s|she s} so stubborn {he|she} never gives in",
+    "{he|she} is so stubborn that {he|she} never backs down",
+    "{he s|she s} so pig headed {he|she} never gives in",
+    "{he s|she s} so stubborn {he|she} never gives an inch"
    ],
    "distratores": [
     "É tão ágil que nunca torce o braço na luta.",
     "É tão forte que nunca quebrou o braço jogando.",
-    "É tão tímido que nunca levanta o braço na aula.",
-    "É tão calmo que nunca perde a paciência com ninguém."
+    "É tão tímid{o|a} que nunca levanta o braço na aula.",
+    "É tão calm{o|a} que nunca perde a paciência com ninguém."
    ],
    "distratoresEn": [
-    "He's so agile he never twists his arm.",
-    "He's so strong he never breaks his arm.",
-    "He's so shy he never raises his hand.",
-    "He's so calm he never loses his patience."
+    "{He's|She's} so agile {he|she} never twists {his|her} arm.",
+    "{He's|She's} so strong {he|she} never breaks {his|her} arm.",
+    "{He's|She's} so shy {he|she} never raises {his|her} hand.",
+    "{He's|She's} so calm {he|she} never loses {his|her} patience."
    ],
    "nivel": "C1",
    "tags": [
@@ -20373,35 +20391,35 @@
    "id": "u079",
    "tipo": "frase",
    "requer": "p070",
-   "es": "Iba muy ufano con su coche nuevo.",
-   "pt": "Andava todo orgulhoso com o carro novo.",
-   "en": "He was going around very proud of his new car.",
+   "es": "Iba muy ufan{o|a} con su coche nuevo.",
+   "pt": "Andava tod{o|a} orgulhos{o|a} com o carro novo.",
+   "en": "{He|She} was going around very proud of {his|her} new car.",
    "aceitas": [
-    "andava todo orgulhoso com o carro novo",
-    "andava muito orgulhoso com seu carro novo",
-    "estava todo orgulhoso com o carro novo",
-    "andava todo prosa com o carro novo",
-    "andava muito orgulhoso do carro novo",
-    "andava todo vaidoso com o carro novo",
-    "andava todo envaidecido com o carro novo"
+    "andava tod{o|a} orgulhos{o|a} com o carro novo",
+    "andava muito orgulhos{o|a} com seu carro novo",
+    "estava tod{o|a} orgulhos{o|a} com o carro novo",
+    "andava tod{o|a} prosa com o carro novo",
+    "andava muito orgulhos{o|a} do carro novo",
+    "andava tod{o|a} vaidos{o|a} com o carro novo",
+    "andava tod{o|a} envaidecid{o|a} com o carro novo"
    ],
    "aceitasEn": [
-    "he was going around very proud of his new car",
-    "he was very proud of his new car",
-    "he was strutting about with his new car",
-    "he went around very pleased with his new car"
+    "{he|she} was going around very proud of {his|her} new car",
+    "{he|she} was very proud of {his|her} new car",
+    "{he|she} was strutting about with {his|her} new car",
+    "{he|she} went around very pleased with {his|her} new car"
    ],
    "distratores": [
-    "Andava todo irritado com o carro novo.",
-    "Andava todo preocupado com o carro novo.",
-    "Andava todo endividado com o carro novo.",
-    "Andava todo cansado com o carro novo."
+    "Andava tod{o|a} irritad{o|a} com o carro novo.",
+    "Andava tod{o|a} preocupad{o|a} com o carro novo.",
+    "Andava tod{o|a} endividad{o|a} com o carro novo.",
+    "Andava tod{o|a} cansad{o|a} com o carro novo."
    ],
    "distratoresEn": [
-    "He was going around very annoyed with his new car.",
-    "He was going around very worried about his new car.",
-    "He was going around deep in debt with his new car.",
-    "He was going around very tired with his new car."
+    "{He|She} was going around very annoyed with {his|her} new car.",
+    "{He|She} was going around very worried about {his|her} new car.",
+    "{He|She} was going around deep in debt with {his|her} new car.",
+    "{He|She} was going around very tired with {his|her} new car."
    ],
    "nivel": "C2",
    "tags": [
@@ -21277,16 +21295,16 @@
    "id": "u102",
    "tipo": "frase",
    "requer": "p097",
-   "es": "Es un negociador taimado.",
-   "pt": "É um negociador matreiro.",
-   "en": "He's a sly negotiator.",
+   "es": "Es {un negociador|una negociadora} taimad{o|a}.",
+   "pt": "É {um negociador|uma negociadora} matreir{o|a}.",
+   "en": "{He's|She's} a sly negotiator.",
    "aceitas": [
-    "e um negociador matreiro",
-    "e um negociador ardiloso",
-    "e um negociador astuto",
-    "e um negociador espertalhao",
-    "ele e um negociador matreiro",
-    "e um negociador manhoso"
+    "e {um negociador|uma negociadora} matreir{o|a}",
+    "e {um negociador|uma negociadora} ardilos{o|a}",
+    "e {um negociador|uma negociadora} astut{o|a}",
+    "e {um negociador|uma negociadora} espertalh{ao|ona}",
+    "{ele e um negociador|ela e uma negociadora} matreir{o|a}",
+    "e {um negociador|uma negociadora} manhos{o|a}"
    ],
    "aceitasEn": [
     "he s a sly negotiator",
@@ -21295,16 +21313,16 @@
     "she s a wily negotiator"
    ],
    "distratores": [
-    "É um negociador teimoso.",
-    "É um negociador ingênuo.",
-    "É um negociador honesto.",
-    "É um negociador novato."
+    "É {um negociador|uma negociadora} teimos{o|a}.",
+    "É {um negociador|uma negociadora} ingênu{o|a}.",
+    "É {um negociador|uma negociadora} honest{o|a}.",
+    "É {um negociador|uma negociadora} novat{o|a}."
    ],
    "distratoresEn": [
-    "He's a stubborn negotiator.",
-    "He's a naive negotiator.",
-    "He's an honest negotiator.",
-    "He's a novice negotiator."
+    "{He's|She's} a stubborn negotiator.",
+    "{He's|She's} a naive negotiator.",
+    "{He's|She's} an honest negotiator.",
+    "{He's|She's} a novice negotiator."
    ],
    "nivel": "C2",
    "tags": [
@@ -23300,40 +23318,41 @@
    "id": "u154",
    "tipo": "frase",
    "requer": "p153",
-   "es": "A este tío le falta un tornillo.",
-   "pt": "Esse cara tem um parafuso a menos.",
-   "en": "This guy has a screw loose.",
+   "es": "A est{e tío|a tía} le falta un tornillo.",
+   "pt": "{Esse cara|Essa mina} tem um parafuso a menos.",
+   "en": "This {guy|girl} has a screw loose.",
    "aceitas": [
-    "esse cara tem um parafuso a menos",
-    "esse cara tem um parafuso solto",
-    "falta um parafuso nesse cara",
-    "esse cara e meio maluco",
-    "esse cara nao bate bem",
-    "esse cara tem um parafuso frouxo"
+    "{esse cara|essa mina} tem um parafuso a menos",
+    "{esse cara|essa mulher} tem um parafuso a menos",
+    "{esse cara|essa mina} tem um parafuso solto",
+    "falta um parafuso {nesse cara|nessa mina}",
+    "{esse cara|essa mina} e meio maluc{o|a}",
+    "{esse cara|essa mina} nao bate bem",
+    "{esse cara|essa mina} tem um parafuso frouxo"
    ],
    "aceitasEn": [
-    "this guy has a screw loose",
-    "this bloke has a screw loose",
-    "that guy has a screw loose",
-    "this guy isn t all there"
+    "this {guy|girl} has a screw loose",
+    "this {bloke|lass} has a screw loose",
+    "that {guy|girl} has a screw loose",
+    "this {guy|girl} isn t all there"
    ],
    "distratores": [
-    "Esse cara tem um dente a menos.",
-    "Esse cara tem um dinheiro guardado.",
-    "Esse cara tem um carro velho.",
-    "Esse cara tem um emprego fixo."
+    "{Esse cara|Essa mina} tem um dente a menos.",
+    "{Esse cara|Essa mina} tem um dinheiro guardado.",
+    "{Esse cara|Essa mina} tem um carro velho.",
+    "{Esse cara|Essa mina} tem um emprego fixo."
    ],
    "distratoresEn": [
-    "This guy has a tooth missing.",
-    "This guy has some money saved.",
-    "This guy has an old car.",
-    "This guy has a steady job."
+    "This {guy|girl} has a tooth missing.",
+    "This {guy|girl} has some money saved.",
+    "This {guy|girl} has an old car.",
+    "This {guy|girl} has a steady job."
    ],
    "nivel": "B1",
    "tags": [
     "objetos"
    ],
-   "nota": "«Faltarle un tornillo» é o mesmo parafuso solto do português. «Tío» é o cara da gíria espanhola, além de tio.",
+   "nota": "«Faltarle un tornillo» é o mesmo parafuso solto do português. «Tío» e «tía» são o cara e a mina da gíria espanhola, além de tio e tia.",
    "notaEn": "'Faltarle un tornillo a alguien' is to have a screw loose. 'Tío' is Spain's slang for guy, besides uncle."
   },
   {
@@ -24647,16 +24666,16 @@
    "id": "u188",
    "tipo": "frase",
    "requer": "p191",
-   "es": "No seas remilgado y pruébalo.",
-   "pt": "Não seja fresco e experimenta.",
+   "es": "No seas remilgad{o|a} y pruébalo.",
+   "pt": "Não seja fresc{o|a} e experimenta.",
    "en": "Don't be so prissy and try it.",
    "aceitas": [
-    "nao seja fresco e experimenta",
-    "nao seja melindroso e prova",
+    "nao seja fresc{o|a} e experimenta",
+    "nao seja melindros{o|a} e prova",
     "deixa de frescura e experimenta",
-    "nao seja enjoado e prova",
-    "nao seja cheio de nove horas e experimenta",
-    "nao seja fresco e prova"
+    "nao seja enjoad{o|a} e prova",
+    "nao seja che{io|ia} de nove horas e experimenta",
+    "nao seja fresc{o|a} e prova"
    ],
    "aceitasEn": [
     "don t be so prissy and try it",
@@ -24665,10 +24684,10 @@
     "don t be picky just try it"
    ],
    "distratores": [
-    "Não seja apressado e experimenta.",
-    "Não seja guloso e divide.",
-    "Não seja teimoso e escuta.",
-    "Não seja tímido e dança."
+    "Não seja apressad{o|a} e experimenta.",
+    "Não seja gulos{o|a} e divide.",
+    "Não seja teimos{o|a} e escuta.",
+    "Não seja tímid{o|a} e dança."
    ],
    "distratoresEn": [
     "Don't be so hasty and try it.",
@@ -25418,16 +25437,16 @@
    "id": "u207",
    "tipo": "frase",
    "requer": "p211",
-   "es": "Me duele la espalda de estar sentado.",
-   "pt": "Minhas costas doem de ficar sentado.",
+   "es": "Me duele la espalda de estar sentad{o|a}.",
+   "pt": "Minhas costas doem de ficar sentad{o|a}.",
    "en": "My back hurts from sitting down.",
    "aceitas": [
-    "minhas costas doem de ficar sentado",
-    "estou com dor nas costas de ficar sentado",
-    "minhas costas doem de tanto ficar sentado",
-    "doem as costas de ficar sentado",
-    "minhas costas estao doendo de ficar sentado",
-    "estou com dor nas costas de tanto ficar sentado"
+    "minhas costas doem de ficar sentad{o|a}",
+    "estou com dor nas costas de ficar sentad{o|a}",
+    "minhas costas doem de tanto ficar sentad{o|a}",
+    "doem as costas de ficar sentad{o|a}",
+    "minhas costas estao doendo de ficar sentad{o|a}",
+    "estou com dor nas costas de tanto ficar sentad{o|a}"
    ],
    "aceitasEn": [
     "my back hurts from sitting down",
@@ -25436,7 +25455,7 @@
     "i have backache from sitting"
    ],
    "distratores": [
-    "Minha espada dói de ficar sentado.",
+    "Minha espada dói de ficar sentad{o|a}.",
     "Minhas pernas doem de ficar em pé.",
     "Minha cabeça dói de ficar no sol.",
     "Meus olhos doem de ficar no celular."
@@ -25654,31 +25673,31 @@
    "id": "u213",
    "tipo": "frase",
    "requer": "p217",
-   "es": "Mi hermano mayor vive en Chile.",
-   "pt": "Meu irmão mais velho mora no Chile.",
-   "en": "My older brother lives in Chile.",
+   "es": "Mi herman{o|a} mayor vive en Chile.",
+   "pt": "{Meu irmão|Minha irmã} mais velh{o|a} mora no Chile.",
+   "en": "My older {brother|sister} lives in Chile.",
    "aceitas": [
-    "meu irmao mais velho mora no chile",
-    "meu irmao mais velho vive no chile",
-    "o meu irmao mais velho mora no chile",
-    "meu irmao mais velho esta morando no chile"
+    "{meu irmao|minha irma} mais velh{o|a} mora no chile",
+    "{meu irmao|minha irma} mais velh{o|a} vive no chile",
+    "{o meu irmao|a minha irma} mais velh{o|a} mora no chile",
+    "{meu irmao|minha irma} mais velh{o|a} esta morando no chile"
    ],
    "aceitasEn": [
-    "my older brother lives in chile",
-    "my big brother lives in chile",
-    "my elder brother lives in chile"
+    "my older {brother|sister} lives in chile",
+    "my big {brother|sister} lives in chile",
+    "my elder {brother|sister} lives in chile"
    ],
    "distratores": [
-    "Meu irmão mais novo mora no Chile.",
-    "Meu primo mais velho mora no Chile.",
-    "Meu irmão mais velho trabalha no Chile.",
-    "Meu avô mais velho mora no Chile."
+    "{Meu irmão|Minha irmã} mais nov{o|a} mora no Chile.",
+    "{Meu primo|Minha prima} mais velh{o|a} mora no Chile.",
+    "{Meu irmão|Minha irmã} mais velh{o|a} trabalha no Chile.",
+    "{Meu avô|Minha avó} mais velh{o|a} mora no Chile."
    ],
    "distratoresEn": [
-    "My younger brother lives in Chile.",
+    "My younger {brother|sister} lives in Chile.",
     "My older cousin lives in Chile.",
-    "My older brother works in Chile.",
-    "My oldest grandfather lives in Chile."
+    "My older {brother|sister} works in Chile.",
+    "My oldest {grandfather|grandmother} lives in Chile."
    ],
    "nivel": "A1",
    "tags": [
@@ -25998,15 +26017,15 @@
    "id": "u222",
    "tipo": "frase",
    "requer": "p226",
-   "es": "Levantó una ceja, sorprendido.",
-   "pt": "Levantou uma sobrancelha, surpreso.",
-   "en": "He raised an eyebrow, surprised.",
+   "es": "Levantó una ceja, sorprendid{o|a}.",
+   "pt": "Levantou uma sobrancelha, surpres{o|a}.",
+   "en": "{He|She} raised an eyebrow, surprised.",
    "aceitas": [
-    "levantou uma sobrancelha surpreso",
-    "ergueu uma sobrancelha surpreso",
-    "arqueou uma sobrancelha surpreso",
-    "levantou a sobrancelha surpreso",
-    "levantou uma sobrancelha espantado"
+    "levantou uma sobrancelha surpres{o|a}",
+    "ergueu uma sobrancelha surpres{o|a}",
+    "arqueou uma sobrancelha surpres{o|a}",
+    "levantou a sobrancelha surpres{o|a}",
+    "levantou uma sobrancelha espantad{o|a}"
    ],
    "aceitasEn": [
     "he raised an eyebrow surprised",
@@ -26014,16 +26033,16 @@
     "she raised an eyebrow surprised"
    ],
    "distratores": [
-    "Levantou uma pálpebra, sonolento.",
-    "Levantou a mão, confuso.",
+    "Levantou uma pálpebra, sonolent{o|a}.",
+    "Levantou a mão, confus{o|a}.",
     "Levantou os ombros, indiferente.",
-    "Levantou a voz, irritado."
+    "Levantou a voz, irritad{o|a}."
    ],
    "distratoresEn": [
-    "He lifted an eyelid, sleepy.",
-    "He raised his hand, confused.",
-    "He shrugged, indifferent.",
-    "He raised his voice, annoyed."
+    "{He|She} lifted an eyelid, sleepy.",
+    "{He|She} raised {his|her} hand, confused.",
+    "{He|She} shrugged, indifferent.",
+    "{He|She} raised {his|her} voice, annoyed."
    ],
    "nivel": "B1",
    "tags": [
@@ -27713,7 +27732,7 @@
   {
    "id": "f145",
    "tipo": "frase",
-   "es": "Me quedé frito en el sofá.",
+   "es": "Me quedé frit{o|a} en el sofá.",
    "pt": "Apaguei no sofá.",
    "en": "I crashed out on the sofa.",
    "aceitas": [
@@ -27725,6 +27744,9 @@
     "adormeci no sofa",
     "acabei dormindo no sofa"
    ],
+   "aceitasEs": [
+    "Me quedé frit{a|o} en el sofá."
+   ],
    "aceitasEn": [
     "i crashed out on the sofa",
     "i fell asleep on the sofa",
@@ -27732,7 +27754,7 @@
     "i dozed off on the sofa"
    ],
    "distratores": [
-    "Fiquei frito com o chefe.",
+    "Fiquei frit{o|a} com o chefe.",
     "Me queimei no sofá.",
     "Derrubei comida no sofá.",
     "Fiquei com calor no sofá."
@@ -27749,7 +27771,7 @@
     "Espanha",
     "casa"
    ],
-   "nota": "«Quedarse frito» é pegar no sono sem querer. Cuidado com o português «estar frito», que é estar encrencado — é o primeiro distrator.\n🇪🇸 quedarse frito → 🇧🇷 pegar no sono\n🇪🇸 estar apañado → 🇧🇷 estar frito",
+   "nota": "«Quedarse frito» é pegar no sono sem querer. Cuidado com o português «estar frito», que é estar encrencado — ele está entre as alternativas.\n🇪🇸 quedarse frito → 🇧🇷 pegar no sono\n🇪🇸 estar apañado → 🇧🇷 estar frito",
    "notaEn": "'Quedarse frito' is to nod off without meaning to. It has nothing to do with being in trouble."
   },
   {
@@ -28320,15 +28342,14 @@
   {
    "id": "f160",
    "tipo": "frase",
-   "es": "Estoy resfriado.",
-   "pt": "Estou resfriado.",
+   "es": "Estoy resfriad{o|a}.",
+   "pt": "Estou resfriad{o|a}.",
    "en": "I've got a cold.",
    "aceitas": [
-    "estou resfriado",
-    "estou gripado",
+    "estou resfriad{o|a}",
+    "estou gripad{o|a}",
     "peguei um resfriado",
-    "estou com resfriado",
-    "estou resfriada"
+    "estou com resfriado"
    ],
    "aceitasEn": [
     "i ve got a cold",
@@ -28336,10 +28357,10 @@
     "i ve caught a cold"
    ],
    "distratores": [
-    "Estou constipado do intestino.",
+    "Estou constipad{o|a} do intestino.",
     "Estou com frio.",
     "Estou com calor.",
-    "Estou cansado."
+    "Estou cansad{o|a}."
    ],
    "distratoresEn": [
     "I'm really constipated today.",
@@ -28352,7 +28373,7 @@
     "cotidiano",
     "saúde"
    ],
-   "nota": "«Resfriado» é igual ao português. A armadilha é o «constipado»: em espanhol é resfriado, e prisão de ventre é «estreñido».\n🇪🇸 estoy constipado → 🇧🇷 estou resfriado\n🇪🇸 estoy estreñido → 🇧🇷 estou com prisão de ventre",
+   "nota": "«Resfriado» é igual ao português. A armadilha é o «constipado»: em espanhol é resfriado, e prisão de ventre é «estreñido».\n🇪🇸 estoy constipad{o|a} → 🇧🇷 estou resfriad{o|a}\n🇪🇸 estoy estreñid{o|a} → 🇧🇷 estou com prisão de ventre",
    "notaEn": "'Resfriado' means you have a cold. Careful: 'constipado' also means having a cold; constipated is 'estreñido'."
   },
   {
@@ -29021,7 +29042,7 @@
   {
    "id": "v056",
    "tipo": "frase",
-   "es": "Cuando era niño, vivía en Lima.",
+   "es": "Cuando era niñ{o|a}, vivía en Lima.",
    "pt": "Quando eu era criança, morava em Lima.",
    "en": "When I was a child, I lived in Lima.",
    "aceitas": [
@@ -29029,8 +29050,13 @@
     "quando era crianca morava em lima",
     "quando eu era crianca eu morava em lima",
     "quando era pequeno morava em lima",
+    "quando era pequena morava em lima",
     "quando eu era menino morava em lima",
+    "quando eu era menina morava em lima",
     "na minha infancia morava em lima"
+   ],
+   "aceitasEs": [
+    "Cuando era niñ{a|o}, vivía en Lima."
    ],
    "aceitasEn": [
     "when i was a child i lived in lima",
@@ -29060,16 +29086,16 @@
    "nota": "Infância é cenário, e cenário vai no imperfeito: «era», «vivía». O pretérito «viví» fecharia o período como um fato pontual.",
    "notaEn": "Childhood is background, and background goes in the imperfect: 'era', 'vivía'. The preterite 'viví' would frame it as a closed event.",
    "formasEs": {
-    "Cuando era niño, viví en Lima": "pretérito",
-    "Cuando era niño, vivo en Lima": "presente",
-    "Cuando era niño, viviría en Lima": "condicional",
-    "Cuando era niño, viviré en Lima": "futuro"
+    "Cuando era niñ{o|a}, viví en Lima": "pretérito",
+    "Cuando era niñ{o|a}, vivo en Lima": "presente",
+    "Cuando era niñ{o|a}, viviría en Lima": "condicional",
+    "Cuando era niñ{o|a}, viviré en Lima": "futuro"
    },
    "formasEsEn": {
-    "Cuando era niño, viví en Lima": "preterite",
-    "Cuando era niño, vivo en Lima": "present",
-    "Cuando era niño, viviría en Lima": "conditional",
-    "Cuando era niño, viviré en Lima": "future"
+    "Cuando era niñ{o|a}, viví en Lima": "preterite",
+    "Cuando era niñ{o|a}, vivo en Lima": "present",
+    "Cuando era niñ{o|a}, viviría en Lima": "conditional",
+    "Cuando era niñ{o|a}, viviré en Lima": "future"
    }
   },
   {
@@ -30488,15 +30514,14 @@
    "id": "u245",
    "tipo": "frase",
    "requer": "p249",
-   "es": "Se puso rojo de vergüenza.",
-   "pt": "Ficou vermelho de vergonha.",
-   "en": "He went red with embarrassment.",
+   "es": "Se puso roj{o|a} de vergüenza.",
+   "pt": "Ficou vermelh{o|a} de vergonha.",
+   "en": "{He|She} went red with embarrassment.",
    "aceitas": [
-    "ficou vermelho de vergonha",
-    "ele ficou vermelho de vergonha",
+    "ficou vermelh{o|a} de vergonha",
+    "{ele|ela} ficou vermelh{o|a} de vergonha",
     "corou de vergonha",
-    "ficou corado de vergonha",
-    "ela ficou vermelha de vergonha"
+    "ficou corad{o|a} de vergonha"
    ],
    "aceitasEn": [
     "he went red with embarrassment",
@@ -30505,16 +30530,16 @@
     "he blushed"
    ],
    "distratores": [
-    "Ficou roxo de frio.",
+    "Ficou rox{o|a} de frio.",
     "Ficou verde de inveja.",
-    "Ficou pálido de medo.",
-    "Ficou roxo de raiva."
+    "Ficou pálid{o|a} de medo.",
+    "Ficou rox{o|a} de raiva."
    ],
    "distratoresEn": [
-    "He went purple with cold.",
-    "He went green with envy.",
-    "He went pale with fear.",
-    "He went purple with rage."
+    "{He|She} went purple with cold.",
+    "{He|She} went green with envy.",
+    "{He|She} went pale with fear.",
+    "{He|She} went purple with rage."
    ],
    "nivel": "A2",
    "tags": [
@@ -30528,39 +30553,39 @@
    "id": "u246",
    "tipo": "frase",
    "requer": "p250",
-   "es": "Mi hermana es rubia.",
-   "pt": "Minha irmã é loira.",
-   "en": "My sister is blonde.",
+   "es": "Mi herman{o|a} es rubi{o|a}.",
+   "pt": "{Meu irmão|Minha irmã} é loir{o|a}.",
+   "en": "My {brother|sister} is blond{|e}.",
    "aceitas": [
-    "minha irma e loira",
-    "minha irma e loura",
-    "a minha irma e loira",
-    "minha irma tem cabelo loiro"
+    "{meu irmao|minha irma} e loir{o|a}",
+    "{meu irmao|minha irma} e lour{o|a}",
+    "{o meu irmao|a minha irma} e loir{o|a}",
+    "{meu irmao|minha irma} tem cabelo loiro"
    ],
    "aceitasEn": [
-    "my sister is blonde",
-    "my sister is blond",
-    "my sister has blonde hair",
-    "my sister is fair haired"
+    "my {brother|sister} is blonde",
+    "my {brother|sister} is blond",
+    "my {brother|sister} has {blond|blonde} hair",
+    "my {brother|sister} is fair haired"
    ],
    "distratores": [
-    "Minha irmã é ruiva.",
-    "Minha irmã é morena.",
-    "Minha irmã é baixinha.",
-    "Minha irmã é grisalha."
+    "{Meu irmão|Minha irmã} é ruiv{o|a}.",
+    "{Meu irmão|Minha irmã} é moren{o|a}.",
+    "{Meu irmão|Minha irmã} é baixinh{o|a}.",
+    "{Meu irmão|Minha irmã} é grisalh{o|a}."
    ],
    "distratoresEn": [
-    "My sister is a redhead.",
-    "My sister is dark-haired.",
-    "My sister is short.",
-    "My sister is grey-haired."
+    "My {brother|sister} is a redhead.",
+    "My {brother|sister} is dark-haired.",
+    "My {brother|sister} is short.",
+    "My {brother|sister} is grey-haired."
    ],
    "nivel": "A2",
    "tags": [
     "falso-amigo",
     "adjetivo"
    ],
-   "nota": "O adjetivo concorda: «rubio», «rubia». Ruiva é «pelirroja», que junta «pelo» e «rojo».\n🇪🇸 es rubia → 🇧🇷 é loira\n🇪🇸 es pelirroja → 🇧🇷 é ruiva",
+   "nota": "O adjetivo concorda: «rubio», «rubia». Ruiva é «pelirroja», que junta «pelo» e «rojo».\n🇪🇸 es rubi{o|a} → 🇧🇷 é loir{o|a}\n🇪🇸 es pelirroj{o|a} → 🇧🇷 é ruiv{o|a}",
    "notaEn": "The adjective agrees: 'rubio', 'rubia'. A redhead is 'pelirroja', from 'pelo' + 'rojo'."
   },
   {
@@ -31637,17 +31662,17 @@
   {
    "id": "f175",
    "tipo": "frase",
-   "es": "Se puso rojo.",
-   "pt": "Ele ficou vermelho.",
-   "en": "He went red.",
+   "es": "Se puso roj{o|a}.",
+   "pt": "{Ele|Ela} ficou vermelh{o|a}.",
+   "en": "{He|She} went red.",
    "aceitas": [
-    "ele ficou vermelho",
-    "ficou vermelho",
-    "ele corou",
+    "{ele|ela} ficou vermelh{o|a}",
+    "ficou vermelh{o|a}",
+    "{ele|ela} corou",
     "corou",
-    "ficou corado",
-    "ele ficou corado",
-    "ficou vermelho de vergonha"
+    "ficou corad{o|a}",
+    "{ele|ela} ficou corad{o|a}",
+    "ficou vermelh{o|a} de vergonha"
    ],
    "aceitasEn": [
     "he went red",
@@ -31656,16 +31681,16 @@
     "he went red in the face"
    ],
    "distratores": [
-    "Ele vestiu vermelho.",
-    "Ele pintou de vermelho.",
-    "Ele escolheu o vermelho.",
-    "Ele ficou pálido."
+    "{Ele|Ela} vestiu vermelho.",
+    "{Ele|Ela} pintou de vermelho.",
+    "{Ele|Ela} escolheu o vermelho.",
+    "{Ele|Ela} ficou pálid{o|a}."
    ],
    "distratoresEn": [
-    "He wore red.",
-    "He painted it red.",
-    "He chose the red one.",
-    "He went pale."
+    "{He|She} wore red.",
+    "{He|She} painted it red.",
+    "{He|She} chose the red one.",
+    "{He|She} went pale."
    ],
    "nivel": "B1",
    "tags": [
@@ -31716,17 +31741,17 @@
   {
    "id": "f177",
    "tipo": "frase",
-   "es": "Se hizo rico.",
-   "pt": "Ele ficou rico.",
-   "en": "He got rich.",
+   "es": "Se hizo ric{o|a}.",
+   "pt": "{Ele|Ela} ficou ric{o|a}.",
+   "en": "{He|She} got rich.",
    "aceitas": [
-    "ele ficou rico",
-    "ficou rico",
+    "{ele|ela} ficou ric{o|a}",
+    "ficou ric{o|a}",
     "enriqueceu",
-    "ele enriqueceu",
+    "{ele|ela} enriqueceu",
     "fez fortuna",
-    "ele fez fortuna",
-    "ficou milionario"
+    "{ele|ela} fez fortuna",
+    "ficou milionari{o|a}"
    ],
    "aceitasEn": [
     "he got rich",
@@ -31735,16 +31760,16 @@
     "he grew rich"
    ],
    "distratores": [
-    "Ele se fez de rico.",
-    "Ele imitou os ricos.",
-    "Ele fez o papel do rico.",
-    "Ele ficou pobre."
+    "{Ele|Ela} se fez de ric{o|a}.",
+    "{Ele|Ela} imitou os ricos.",
+    "{Ele|Ela} fez o papel d{o rico|a rica}.",
+    "{Ele|Ela} ficou pobre."
    ],
    "distratoresEn": [
-    "He played the rich man.",
-    "He copied the rich.",
-    "He acted the part of the rich man.",
-    "He went broke."
+    "{He|She} played the rich {man|woman}.",
+    "{He|She} copied the rich.",
+    "{He|She} acted the part of the rich {man|woman}.",
+    "{He|She} went broke."
    ],
    "nivel": "B1",
    "tags": [
@@ -31756,16 +31781,16 @@
   {
    "id": "f178",
    "tipo": "frase",
-   "es": "Se quedó sordo.",
-   "pt": "Ele ficou surdo.",
-   "en": "He went deaf.",
+   "es": "Se quedó sord{o|a}.",
+   "pt": "{Ele|Ela} ficou surd{o|a}.",
+   "en": "{He|She} went deaf.",
    "aceitas": [
-    "ele ficou surdo",
-    "ficou surdo",
+    "{ele|ela} ficou surd{o|a}",
+    "ficou surd{o|a}",
     "perdeu a audicao",
-    "ele perdeu a audicao",
+    "{ele|ela} perdeu a audicao",
     "ensurdeceu",
-    "ele ensurdeceu"
+    "{ele|ela} ensurdeceu"
    ],
    "aceitasEn": [
     "he went deaf",
@@ -31773,16 +31798,16 @@
     "he became deaf"
    ],
    "distratores": [
-    "Ele ficou quieto.",
-    "Ele ficou de fora.",
-    "Ele ficou mudo.",
-    "Ele fingiu ser surdo."
+    "{Ele|Ela} ficou quiet{o|a}.",
+    "{Ele|Ela} ficou de fora.",
+    "{Ele|Ela} ficou mud{o|a}.",
+    "{Ele|Ela} fingiu ser surd{o|a}."
    ],
    "distratoresEn": [
-    "He kept quiet.",
-    "He was left out.",
-    "He was struck dumb.",
-    "He pretended to be deaf."
+    "{He|She} kept quiet.",
+    "{He|She} was left out.",
+    "{He|She} was struck dumb.",
+    "{He|She} pretended to be deaf."
    ],
    "nivel": "B1",
    "tags": [
@@ -31795,15 +31820,15 @@
   {
    "id": "f179",
    "tipo": "frase",
-   "es": "¡Ni que fueras millonario!",
-   "pt": "Até parece que você é milionário!",
+   "es": "¡Ni que fueras millonari{o|a}!",
+   "pt": "Até parece que você é milionári{o|a}!",
    "en": "Anyone would think you were a millionaire!",
    "aceitas": [
-    "ate parece que voce e milionario",
-    "parece ate que voce e milionario",
-    "ate parece que e milionario",
-    "ate parece que voce e rico",
-    "qualquer um diria que voce e milionario"
+    "ate parece que voce e milionari{o|a}",
+    "parece ate que voce e milionari{o|a}",
+    "ate parece que e milionari{o|a}",
+    "ate parece que voce e ric{o|a}",
+    "qualquer um diria que voce e milionari{o|a}"
    ],
    "aceitasEn": [
     "anyone would think you were a millionaire",
@@ -31811,10 +31836,10 @@
     "as if you were a millionaire"
    ],
    "distratores": [
-    "Nem que você fosse milionário.",
-    "Nem parece que você é milionário.",
-    "Se você fosse milionário.",
-    "Você não é milionário."
+    "Nem que você fosse milionári{o|a}.",
+    "Nem parece que você é milionári{o|a}.",
+    "Se você fosse milionári{o|a}.",
+    "Você não é milionári{o|a}."
    ],
    "distratoresEn": [
     "Not even if you were a millionaire.",
@@ -31954,34 +31979,34 @@
   {
    "id": "f183",
    "tipo": "frase",
-   "es": "Me llevo bien con mi hermano.",
-   "pt": "Me dou bem com meu irmão.",
-   "en": "I get on well with my brother.",
+   "es": "Me llevo bien con mi herman{o|a}.",
+   "pt": "Me dou bem com {meu irmão|minha irmã}.",
+   "en": "I get on well with my {brother|sister}.",
    "aceitas": [
-    "me dou bem com meu irmao",
-    "eu me dou bem com meu irmao",
-    "me dou bem com o meu irmao",
-    "tenho uma boa relacao com meu irmao",
-    "me entendo bem com meu irmao",
-    "nos damos bem eu e meu irmao"
+    "me dou bem com {meu irmao|minha irma}",
+    "eu me dou bem com {meu irmao|minha irma}",
+    "me dou bem com {o meu irmao|a minha irma}",
+    "tenho uma boa relacao com {meu irmao|minha irma}",
+    "me entendo bem com {meu irmao|minha irma}",
+    "nos damos bem eu e {meu irmao|minha irma}"
    ],
    "aceitasEn": [
-    "i get on well with my brother",
-    "i get along well with my brother",
-    "i get along with my brother",
-    "my brother and i get on well"
+    "i get on well with my {brother|sister}",
+    "i get along well with my {brother|sister}",
+    "i get along with my {brother|sister}",
+    "my {brother|sister} and i get on well"
    ],
    "distratores": [
-    "Levo meu irmão comigo.",
-    "Aguento bem meu irmão.",
-    "Moro perto do meu irmão.",
-    "Pareço muito com meu irmão."
+    "Levo {meu irmão|minha irmã} comigo.",
+    "Aguento bem {meu irmão|minha irmã}.",
+    "Moro perto d{o meu irmão|a minha irmã}.",
+    "Pareço muito com {meu irmão|minha irmã}."
    ],
    "distratoresEn": [
-    "I take my brother with me.",
-    "I put up with my brother.",
-    "I live near my brother.",
-    "I look a lot like my brother."
+    "I take my {brother|sister} with me.",
+    "I put up with my {brother|sister}.",
+    "I live near my {brother|sister}.",
+    "I look a lot like my {brother|sister}."
    ],
    "nivel": "A2",
    "tags": [
@@ -33922,14 +33947,14 @@
    "id": "u281",
    "tipo": "frase",
    "requer": "p285",
-   "es": "El becario se encarga del archivo.",
-   "pt": "O estagiário cuida do arquivo.",
+   "es": "{El becario|La becaria} se encarga del archivo.",
+   "pt": "{O estagiário|A estagiária} cuida do arquivo.",
    "en": "The intern is in charge of the filing.",
    "aceitas": [
-    "o estagiario cuida do arquivo",
-    "o estagiario e responsavel pelo arquivo",
-    "o estagiario toma conta do arquivo",
-    "o bolsista cuida do arquivo"
+    "{o estagiario|a estagiaria} cuida do arquivo",
+    "{o estagiario|a estagiaria} e responsavel pelo arquivo",
+    "{o estagiario|a estagiaria} toma conta do arquivo",
+    "{o bolsista|a bolsista} cuida do arquivo"
    ],
    "aceitasEn": [
     "the intern is in charge of the filing",
@@ -33937,10 +33962,10 @@
     "the intern handles the filing"
    ],
    "distratores": [
-    "O porteiro cuida do arquivo.",
-    "O contador cuida do arquivo.",
-    "O chefe cuida do arquivo.",
-    "O faxineiro cuida do arquivo."
+    "{O porteiro|A porteira} cuida do arquivo.",
+    "{O contador|A contadora} cuida do arquivo.",
+    "{O chefe|A chefe} cuida do arquivo.",
+    "{O faxineiro|A faxineira} cuida do arquivo."
    ],
    "distratoresEn": [
     "The doorman is in charge of the filing.",
@@ -35463,15 +35488,15 @@
    "id": "u301",
    "tipo": "frase",
    "requer": "p305",
-   "es": "Ese chaval juega muy bien.",
-   "pt": "Esse garoto joga muito bem.",
+   "es": "Es{e chaval|a chavala} juega muy bien.",
+   "pt": "Ess{e garoto|a garota} joga muito bem.",
    "en": "That kid plays really well.",
    "aceitas": [
-    "esse garoto joga muito bem",
-    "esse moleque joga muito bem",
-    "esse menino joga muito bem",
-    "esse rapaz joga muito bem",
-    "esse guri joga muito bem"
+    "ess{e garoto|a garota} joga muito bem",
+    "ess{e moleque|a moleca} joga muito bem",
+    "ess{e menino|a menina} joga muito bem",
+    "ess{e rapaz|a moca} joga muito bem",
+    "ess{e guri|a guria} joga muito bem"
    ],
    "aceitasEn": [
     "that kid plays really well",
@@ -35479,10 +35504,10 @@
     "that boy plays very well"
    ],
    "distratores": [
-    "Esse goleiro joga muito bem.",
+    "Ess{e goleiro|a goleira} joga muito bem.",
     "Esse time joga muito bem.",
-    "Esse veterano joga muito bem.",
-    "Esse estreante joga muito bem."
+    "Ess{e veterano|a veterana} joga muito bem.",
+    "Ess{e estreante|a estreante} joga muito bem."
    ],
    "distratoresEn": [
     "That goalkeeper plays really well.",
@@ -36529,15 +36554,15 @@
   {
    "id": "f219",
    "tipo": "frase",
-   "es": "Debe de estar dormido.",
-   "pt": "Ele deve estar dormindo.",
-   "en": "He must be asleep.",
+   "es": "Debe de estar dormid{o|a}.",
+   "pt": "{Ele|Ela} deve estar dormindo.",
+   "en": "{He|She} must be asleep.",
    "aceitas": [
-    "ele deve estar dormindo",
+    "{ele|ela} deve estar dormindo",
     "deve estar dormindo",
-    "ele deve ter pegado no sono",
+    "{ele|ela} deve ter pegado no sono",
     "provavelmente esta dormindo",
-    "ele deve estar no sono",
+    "{ele|ela} deve estar no sono",
     "imagino que esteja dormindo"
    ],
    "aceitasEn": [
@@ -36546,16 +36571,16 @@
     "he must have fallen asleep"
    ],
    "distratores": [
-    "Ele tem que dormir agora.",
-    "Ele precisa dormir mais cedo.",
-    "Ele deve dormir todo dia.",
-    "Ele devia ter dormido antes."
+    "{Ele|Ela} tem que dormir agora.",
+    "{Ele|Ela} precisa dormir mais cedo.",
+    "{Ele|Ela} deve dormir todo dia.",
+    "{Ele|Ela} devia ter dormido antes."
    ],
    "distratoresEn": [
-    "He has to sleep now.",
-    "He needs to sleep earlier.",
-    "He is supposed to sleep every day.",
-    "He should have slept earlier."
+    "{He|She} has to sleep now.",
+    "{He|She} needs to sleep earlier.",
+    "{He|She} is supposed to sleep every day.",
+    "{He|She} should have slept earlier."
    ],
    "nivel": "B2",
    "tags": [
@@ -36763,16 +36788,16 @@
   {
    "id": "f225",
    "tipo": "frase",
-   "es": "He pedido cita con el médico.",
-   "pt": "Marquei consulta com o médico.",
+   "es": "He pedido cita con {el médico|la médica}.",
+   "pt": "Marquei consulta com {o médico|a médica}.",
    "en": "I have made an appointment with the doctor.",
    "aceitas": [
-    "marquei consulta com o medico",
-    "marquei uma consulta com o medico",
-    "agendei consulta com o medico",
-    "marquei hora com o medico",
-    "pedi uma consulta com o medico",
-    "marquei consulta no medico"
+    "marquei consulta com {o medico|a medica}",
+    "marquei uma consulta com {o medico|a medica}",
+    "agendei consulta com {o medico|a medica}",
+    "marquei hora com {o medico|a medica}",
+    "pedi uma consulta com {o medico|a medica}",
+    "marquei consulta n{o medico|a medica}"
    ],
    "aceitasEn": [
     "i have made an appointment with the doctor",
@@ -36780,10 +36805,10 @@
     "i made a doctors appointment"
    ],
    "distratores": [
-    "Pedi um atestado ao médico.",
-    "Pedi uma receita ao médico.",
-    "Fui atendido pelo médico.",
-    "Liguei para o médico hoje."
+    "Pedi um atestado a{o médico|à médica}.",
+    "Pedi uma receita a{o médico|à médica}.",
+    "Fui atendido pel{o médico|a médica}.",
+    "Liguei para {o médico|a médica} hoje."
    ],
    "distratoresEn": [
     "I asked the doctor for a sick note.",
@@ -37105,16 +37130,16 @@
   {
    "id": "v081",
    "tipo": "frase",
-   "es": "Quisiera hablar con el director.",
-   "pt": "Eu queria falar com o diretor.",
+   "es": "Quisiera hablar con {el director|la directora}.",
+   "pt": "Eu queria falar com {o diretor|a diretora}.",
    "en": "I would like to speak with the director.",
    "aceitas": [
-    "eu queria falar com o diretor",
-    "queria falar com o diretor",
-    "eu gostaria de falar com o diretor",
-    "gostaria de falar com o diretor",
-    "eu queria conversar com o diretor",
-    "eu desejava falar com o diretor"
+    "eu queria falar com {o diretor|a diretora}",
+    "queria falar com {o diretor|a diretora}",
+    "eu gostaria de falar com {o diretor|a diretora}",
+    "gostaria de falar com {o diretor|a diretora}",
+    "eu queria conversar com {o diretor|a diretora}",
+    "eu desejava falar com {o diretor|a diretora}"
    ],
    "aceitasEn": [
     "i would like to speak with the director",
@@ -37122,10 +37147,10 @@
     "id like a word with the director"
    ],
    "distratores": [
-    "Eu quero falar com o diretor.",
-    "Eu quis falar com o diretor.",
-    "Eu vou falar com o diretor.",
-    "Eu falaria com o diretor."
+    "Eu quero falar com {o diretor|a diretora}.",
+    "Eu quis falar com {o diretor|a diretora}.",
+    "Eu vou falar com {o diretor|a diretora}.",
+    "Eu falaria com {o diretor|a diretora}."
    ],
    "distratoresEn": [
     "I want to speak with the director.",
@@ -37143,16 +37168,16 @@
    "nota": "«Quisiera» é imperfeito do subjuntivo usado por cortesia, e é o pedido mais educado que o espanhol tem: «quisiera un café», «quisiera preguntarle algo». «Querría» diz o mesmo, mas é a forma com s que se ouve.",
    "notaEn": "«Quisiera» is an imperfect subjunctive used for politeness, the most courteous way to ask for something: «quisiera un café», «quisiera preguntarle algo».",
    "formasEs": {
-    "Quiero hablar con el director": "presente",
-    "Quise hablar con el director": "pretérito",
-    "Querré hablar con el director": "futuro",
-    "He querido hablar con el director": "pretérito perfeito"
+    "Quiero hablar con {el director|la directora}": "presente",
+    "Quise hablar con {el director|la directora}": "pretérito",
+    "Querré hablar con {el director|la directora}": "futuro",
+    "He querido hablar con {el director|la directora}": "pretérito perfeito"
    },
    "formasEsEn": {
-    "Quiero hablar con el director": "present",
-    "Quise hablar con el director": "preterite",
-    "Querré hablar con el director": "future",
-    "He querido hablar con el director": "present perfect"
+    "Quiero hablar con {el director|la directora}": "present",
+    "Quise hablar con {el director|la directora}": "preterite",
+    "Querré hablar con {el director|la directora}": "future",
+    "He querido hablar con {el director|la directora}": "present perfect"
    }
   },
   {
@@ -39937,38 +39962,38 @@
    "id": "u335",
    "tipo": "frase",
    "requer": "p339",
-   "es": "Es un chico muy listo.",
-   "pt": "É um menino muito esperto.",
-   "en": "He is a very bright boy.",
+   "es": "Es {un chico|una chica} muy list{o|a}.",
+   "pt": "É {um menino|uma menina} muito espert{o|a}.",
+   "en": "{He|She} is a very bright {boy|girl}.",
    "aceitas": [
-    "e um menino muito esperto",
-    "ele e um menino muito esperto",
-    "e um garoto muito esperto",
-    "e um menino muito inteligente"
+    "e {um menino|uma menina} muito espert{o|a}",
+    "{ele e um menino|ela e uma menina} muito espert{o|a}",
+    "e {um garoto|uma garota} muito espert{o|a}",
+    "e {um menino|uma menina} muito inteligente"
    ],
    "aceitasEn": [
-    "he is a very bright boy",
-    "he is a very clever boy",
-    "that boy is very smart"
+    "{he|she} is a very bright {boy|girl}",
+    "{he|she} is a very clever {boy|girl}",
+    "that {boy|girl} is very smart"
    ],
    "distratores": [
-    "É um menino muito teimoso.",
-    "É um menino muito calado.",
-    "É um menino muito distraído.",
-    "É um menino muito agitado."
+    "É {um menino|uma menina} muito teimos{o|a}.",
+    "É {um menino|uma menina} muito calad{o|a}.",
+    "É {um menino|uma menina} muito distraíd{o|a}.",
+    "É {um menino|uma menina} muito agitad{o|a}."
    ],
    "distratoresEn": [
-    "He is a very stubborn boy.",
-    "He is a very quiet boy.",
-    "He is a very absent minded boy.",
-    "He is a very restless boy."
+    "{He|She} is a very stubborn {boy|girl}.",
+    "{He|She} is a very quiet {boy|girl}.",
+    "{He|She} is a very absent minded {boy|girl}.",
+    "{He|She} is a very restless {boy|girl}."
    ],
    "nivel": "A2",
    "tags": [
     "adjetivo",
     "família"
    ],
-   "nota": "Com «ser» o adjetivo vira característica de quem é. Se fosse «está listo», a frase diria que o menino já está pronto para sair.",
+   "nota": "Com «ser» o adjetivo vira característica de quem é. Se fosse «está list{o|a}», a frase diria que {o menino|a menina} já está pront{o|a} para sair.",
    "notaEn": "With «ser» the adjective describes what someone is like. «Está listo» would mean he is ready to go."
   },
   {
@@ -40097,14 +40122,13 @@
    "id": "u337",
    "tipo": "frase",
    "requer": "p341",
-   "es": "No seas pesado.",
-   "pt": "Não seja chato.",
+   "es": "No seas pesad{o|a}.",
+   "pt": "Não seja chat{o|a}.",
    "en": "Dont be annoying.",
    "aceitas": [
-    "nao seja chato",
-    "nao seja chata",
-    "deixa de ser chato",
-    "para de ser chato",
+    "nao seja chat{o|a}",
+    "deixa de ser chat{o|a}",
+    "para de ser chat{o|a}",
     "nao enche"
    ],
    "aceitasEn": [
@@ -40113,10 +40137,10 @@
     "dont be such a pest"
    ],
    "distratores": [
-    "Não seja bravo.",
-    "Não seja grosso.",
-    "Não seja teimoso.",
-    "Não seja preguiçoso."
+    "Não seja brav{o|a}.",
+    "Não seja gross{o|a}.",
+    "Não seja teimos{o|a}.",
+    "Não seja preguiços{o|a}."
    ],
    "distratoresEn": [
     "Dont be angry.",
