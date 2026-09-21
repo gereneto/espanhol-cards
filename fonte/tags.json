@@ -798,5 +798,105 @@
     "en": "freeze",
     "es": "freeze",
     "cards": 0
+  },
+  "drink": {
+    "en": "drink",
+    "es": "drink",
+    "cards": 0
+  },
+  "wake": {
+    "en": "wake",
+    "es": "wake",
+    "cards": 0
+  },
+  "blow": {
+    "en": "blow",
+    "es": "blow",
+    "cards": 0
+  },
+  "rise": {
+    "en": "rise",
+    "es": "rise",
+    "cards": 0
+  },
+  "shoot": {
+    "en": "shoot",
+    "es": "shoot",
+    "cards": 0
+  },
+  "strike": {
+    "en": "strike",
+    "es": "strike",
+    "cards": 0
+  },
+  "swear": {
+    "en": "swear",
+    "es": "swear",
+    "cards": 0
+  },
+  "dig": {
+    "en": "dig",
+    "es": "dig",
+    "cards": 0
+  },
+  "feed": {
+    "en": "feed",
+    "es": "feed",
+    "cards": 0
+  },
+  "seek": {
+    "en": "seek",
+    "es": "seek",
+    "cards": 0
+  },
+  "shine": {
+    "en": "shine",
+    "es": "shine",
+    "cards": 0
+  },
+  "sink": {
+    "en": "sink",
+    "es": "sink",
+    "cards": 0
+  },
+  "stick": {
+    "en": "stick",
+    "es": "stick",
+    "cards": 0
+  },
+  "sweep": {
+    "en": "sweep",
+    "es": "sweep",
+    "cards": 0
+  },
+  "spin": {
+    "en": "spin",
+    "es": "spin",
+    "cards": 0
+  },
+  "withdraw": {
+    "en": "withdraw",
+    "es": "withdraw",
+    "cards": 0
+  },
+  "bend": {
+    "en": "bend",
+    "es": "bend",
+    "cards": 0
+  },
+  "deal": {
+    "en": "deal",
+    "es": "deal",
+    "cards": 0
+  },
+  "overcome": {
+    "en": "overcome",
+    "es": "overcome",
+    "cards": 0
+  },
+  "mistake": {
+    "en": "mistake",
+    "es": "mistake",
+    "cards": 0
   }
 }

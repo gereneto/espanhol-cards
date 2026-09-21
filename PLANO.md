@@ -175,7 +175,8 @@ baralhos de feitios bem diferentes.
 | 2 | Inglês, leva 2: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 130 |
 | 3 | Inglês, leva 3: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 230 |
 | 4 | Inglês, leva 4: 100 cards puxando para B2, C1 e as primeiras C2 | **feito** (21/09) — o baralho está em 330 |
-| 5… | Inglês, levas de ~100 até fechar mil | — |
+| 5 | Inglês, leva 5: 100 cards, a segunda leva avançada | **feito** (21/09) — o baralho está em 430 |
+| 6… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -195,10 +196,17 @@ com o feminino em `aceitas`, que é o que o manual já manda para a palavra.
 
 A curva de níveis do inglês também vem sendo corrigida de propósito: as levas
 2 e 3 ficaram todas entre A2 e B2 porque foram atrás do que é mais frequente,
-e a leva 4 abriu C1 (36) e C2 (3). Até fechar mil o alvo é a proporção do
-espanhol — A1:75 A2:285 B1:307 B2:177 C1:100 C2:56 —, o que pede umas duas
-levas avançadas a mais e nenhuma leva só de básico.
+e as levas 4 e 5 abriram a faixa alta. Em 430 cards o inglês está em **A1:8
+A2:100 B1:128 B2:114 C1:69 C2:11**, contra o alvo do espanhol — A1:75 A2:285
+B1:307 B2:177 C1:100 C2:56. O B2 e o C1 já estão bem servidos; o que falta é
+o **C2**, que ainda precisa de mais de quarenta cards, e o grosso de A2 e B1,
+que são as faixas mais numerosas do alvo. Daqui para a frente as levas podem
+voltar ao meio da tabela, desde que cada uma leve um punhado de C2 junto.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
-varredura do motor, commit e push. É o commit que serve de memória, não a
-conversa.
+varredura do motor, e mais uma conferência que a leva 5 mostrou ser
+necessária — **nenhuma resposta certa pode se repetir entre dois cards do
+mesmo baralho, em nenhuma das três línguas**. «Tough» e «harsh» tinham os dois
+«duro» do lado espanhol, e quem estudasse es→en veria a mesma pergunta duas
+vezes com gabaritos diferentes. Depois disso, commit e push. É o commit que
+serve de memória, não a conversa.
