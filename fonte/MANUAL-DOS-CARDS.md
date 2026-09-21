@@ -132,6 +132,10 @@ for, e leva nova é arquivo novo.
   não está. Use quando a palavra portuguesa sozinha for ambígua — sobretudo
   na volta (`pt → es`), em que a pergunta é o `pt`: «a cola» não pode pedir
   «el pegamento» sem ninguém saber de que cola se fala.
+- **Duas respostas que o funil iguala não podem conviver.** O funil tira o
+  acento, e com ele a diferença entre «a maçã» e «a maca»: quem responde uma
+  acerta a outra. Quando a leva traz as duas, o parêntese desempata — «a maca
+  (do hospital)» —, e a forma nua continua entre as `aceitas`.
 - **Teto de tamanho**: a resposta cabe em 120 caracteres; frase boa tem até
   umas dez palavras e **uma só** dificuldade.
 
@@ -234,8 +238,10 @@ repetir o óbvio» tem de estar lá.
 
 O build avisa quando a mesma palavra de conteúdo está nos **quatro** distratores
 e não na certa. Categoria sem palavra repetida — quatro frases sobre comida —
-ele não vê. **O teste é tampar o espanhol**: olhando só as cinco alternativas,
-dá para apontar a diferente? Então o card está entregue.
+ele não vê, e **flexão também lhe escapa**: «Aproveite» em três distratores e
+«Aproveita» no quarto passam pela checagem, ainda que qualquer um veja que só a
+certa não fala de aproveitar. **O teste é tampar o espanhol**: olhando só as
+cinco alternativas, dá para apontar a diferente? Então o card está entregue.
 
 ### 6.4 Português de verdade, e plausível
 
@@ -470,6 +476,9 @@ sem ele o navegador serve o baralho velho.
 | `pt` que ninguém diz fora de livro pede frase nova | `v033` «Começa a chover», trocado por «O filme começa às oito» |
 | A expressão do português é o `pt`, quando existe | `f124` «Hizo de tripas corazón»: na volta, «Ele criou coragem» não pedia expressão nenhuma |
 | A nota diz onde está o que ela aponta | `v028` «o y aparece do nada», sem dizer que «oigo» tem g e o y é das outras pessoas |
+| Duas respostas que o funil iguala | `p311` «a maca» e `p316` «a maçã», na mesma leva |
+| A checagem de categoria não vê flexão | `f213` «Que aproveche»: «Aproveite» em três distratores e «Aproveita» no quarto |
+| Etiqueta `falso-amigo` só quando o par existe | `p312` `ingresar`, que em português também é ingressar: a etiqueta saiu |
 | Pares `🇪🇸 → 🇧🇷` na nota | `p046` sobremesa, `p077` carpeta, `p102` pegamento: «respondi certo na língua errada» |
 | Nota para qualquer pessoa | `p174` estreno: «já apareceu como verbo» |
 | Etimologia conferida | `f098` «amén de», que não vem de «amém» |

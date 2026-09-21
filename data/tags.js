@@ -95,6 +95,11 @@ window.TAGS_RAW = {
   "es": "decir",
   "cards": 2
  },
+ "doler": {
+  "en": "doler",
+  "es": "doler",
+  "cards": 0
+ },
  "dormir": {
   "en": "dormir",
   "es": "dormir",
@@ -230,6 +235,11 @@ window.TAGS_RAW = {
   "es": "jurídico",
   "cards": 4
  },
+ "leer": {
+  "en": "leer",
+  "es": "leer",
+  "cards": 0
+ },
  "llover": {
   "en": "llover",
   "es": "llover",
@@ -255,6 +265,11 @@ window.TAGS_RAW = {
   "es": "objetos",
   "cards": 4
  },
+ "oler": {
+  "en": "oler",
+  "es": "oler",
+  "cards": 0
+ },
  "oír": {
   "en": "oír",
   "es": "oír",
@@ -264,6 +279,11 @@ window.TAGS_RAW = {
   "en": "pedir",
   "es": "pedir",
   "cards": 1
+ },
+ "perder": {
+  "en": "perder",
+  "es": "perder",
+  "cards": 0
  },
  "poder": {
   "en": "poder",
@@ -325,6 +345,11 @@ window.TAGS_RAW = {
   "es": "reír",
   "cards": 0
  },
+ "romper": {
+  "en": "romper",
+  "es": "romper",
+  "cards": 0
+ },
  "roupa": {
   "en": "clothing",
   "es": "ropa",
@@ -348,6 +373,11 @@ window.TAGS_RAW = {
  "seguir": {
   "en": "seguir",
   "es": "seguir",
+  "cards": 0
+ },
+ "sentarse": {
+  "en": "sentarse",
+  "es": "sentarse",
   "cards": 0
  },
  "sentir": {

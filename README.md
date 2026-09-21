@@ -3,8 +3,8 @@
 App de estudo de espanhol para brasileiros, no estilo Anki, com foco em
 **expandir vocabulário** e **desfazer as confusões clássicas entre espanhol e português**.
 
-São **877 cards** — 307 palavras e 570 frases, sendo 168 falsos amigos
-(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 75 de
+São **mil cards** — 347 palavras e 653 frases, sendo 175 falsos amigos
+(`embarazada`, `exquisito`, `la fecha`, `asistir`, `el desván`…) e 88 de
 conjugação verbal, quase todos irregulares.
 
 ## Como funciona
@@ -404,7 +404,7 @@ enquanto serve à revisão (adiante). Três regras, que o `build.js` cobra:
 
 ### Os arquivos são levas, não categorias
 
-Os doze arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
+Os treze arquivos de `fonte/cards/` guardam duas ideias diferentes, uma por
 cima da outra. Os quatro primeiros nasceram juntos, no commit que criou o app,
 e os nomes deles descrevem os temas daquele baralho de 140 cards. Do quinto em
 diante é **uma leva por commit** — «Leva de 112 cards, quase toda de
@@ -459,6 +459,19 @@ mostrava fracos — tecnologia, escritório, economia, cidade e saúde —, mais
 dez cards de conjugação de verbos que ainda não tinham aparecido (`caber`,
 `reír`, `elegir`, `morir`, `vestirse`, `sentir`, `contar`, `conducir`,
 `agradecer`, `huir`).
+
+A leva 13 (`13-frases-feitas-e-vocabulario.json`, 123 cards) fechou os **mil
+cards**. São 30 frases feitas e construções do espanhol falado — `hace… que`,
+`estar a punto de`, `dejar que` + subjuntivo, `seguir sin` + infinitivo,
+`lo de`, `¿cómo que…?`, `o sea`, `total, que`, `como mucho`, `encima`,
+`deber de` de suposição —, 13 de conjugação (`oler`, `doler`, `leer`,
+`perder`, `sentarse`, o `quisiera` de cortesia, o pretérito ao lado do
+imperfeito, o `se` de `comerse`, o particípio irregular, o `hay`, `traer`, o
+imperativo de `usted` e o gerúndio de `dormir`) e **40 palavras novas** com as
+suas frases de uso, nos temas que ainda eram magros: roupa, casa, cidade,
+escola e comida, com a dupla `el bolso`/`el bolsillo`, `el escritorio` ao lado
+de `la oficina`, `la sed` diante de `la sede` e o `coger` que a América Latina
+não diz.
 
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
