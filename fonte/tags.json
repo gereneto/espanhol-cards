@@ -598,5 +598,105 @@
   "en": "get",
   "es": "get",
   "cards": 0
+ },
+ "sit": {
+  "en": "sit",
+  "es": "sit",
+  "cards": 0
+ },
+ "stand": {
+  "en": "stand",
+  "es": "stand",
+  "cards": 0
+ },
+ "read": {
+  "en": "read",
+  "es": "read",
+  "cards": 0
+ },
+ "hear": {
+  "en": "hear",
+  "es": "hear",
+  "cards": 0
+ },
+ "meet": {
+  "en": "meet",
+  "es": "meet",
+  "cards": 0
+ },
+ "win": {
+  "en": "win",
+  "es": "win",
+  "cards": 0
+ },
+ "send": {
+  "en": "send",
+  "es": "send",
+  "cards": 0
+ },
+ "sell": {
+  "en": "sell",
+  "es": "sell",
+  "cards": 0
+ },
+ "spend": {
+  "en": "spend",
+  "es": "spend",
+  "cards": 0
+ },
+ "keep": {
+  "en": "keep",
+  "es": "keep",
+  "cards": 0
+ },
+ "hold": {
+  "en": "hold",
+  "es": "hold",
+  "cards": 0
+ },
+ "choose": {
+  "en": "choose",
+  "es": "choose",
+  "cards": 0
+ },
+ "grow": {
+  "en": "grow",
+  "es": "grow",
+  "cards": 0
+ },
+ "forget": {
+  "en": "forget",
+  "es": "forget",
+  "cards": 0
+ },
+ "fall": {
+  "en": "fall",
+  "es": "fall",
+  "cards": 0
+ },
+ "begin": {
+  "en": "begin",
+  "es": "begin",
+  "cards": 0
+ },
+ "build": {
+  "en": "build",
+  "es": "build",
+  "cards": 0
+ },
+ "sleep": {
+  "en": "sleep",
+  "es": "sleep",
+  "cards": 0
+ },
+ "cut": {
+  "en": "cut",
+  "es": "cut",
+  "cards": 0
+ },
+ "become": {
+  "en": "become",
+  "es": "become",
+  "cards": 0
  }
 }

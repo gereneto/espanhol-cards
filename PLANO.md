@@ -173,7 +173,8 @@ baralhos de feitios bem diferentes.
 | 0 | Formato: pastas por baralho, ids com prefixo, build e revisar.js lendo os três, manual generalizado | **feito** (21/09) |
 | 1 | Inglês, leva de estreia: 30 cards variados, lidos um a um | **feito** (21/09) — aprovados sem mudança |
 | 2 | Inglês, leva 2: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 130 |
-| 3… | Inglês, levas de ~100 até fechar mil | — |
+| 3 | Inglês, leva 3: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 230 |
+| 4… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
