@@ -39,12 +39,58 @@ if (!Motor || typeof Motor.respostasAceitas !== 'function') {
   process.exit(1);
 }
 
-const arquivos = fs.readdirSync(pastaCards).filter(f => f.endsWith('.json')).sort();
-let cards = [];
-for (const f of arquivos) {
-  const lote = JSON.parse(fs.readFileSync(path.join(pastaCards, f), 'utf8'));
-  console.log('  ' + f.padEnd(28) + lote.length + ' cards');
-  cards = cards.concat(lote);
+/* ── três baralhos, uma pasta cada ──
+   fonte/cards/es, /en, /pt: a pasta diz que língua aquele baralho ENSINA, e é
+   ela que decide qual campo do card é a pergunta e quais são as respostas. O
+   baralho de espanhol responde em português e em inglês; o de inglês responde
+   em português e em espanhol; o de português, em espanhol e em inglês. O
+   porquê de cada decisão está em PLANO.md. */
+const IDIOMAS = ['es', 'en', 'pt'];
+const NOME_DO_IDIOMA = { es: 'espanhol', en: 'inglês', pt: 'português' };
+
+/* Cada língua tem o seu quarteto de campos. A do baralho é a que se cobra; as
+   outras duas são as respostas, e cada uma leva os seus distratores e a sua
+   nota — porque o que confunde quem fala português não é o que confunde quem
+   fala inglês. */
+const CAMPOS_DA_LINGUA = {
+  pt: { texto: 'pt', aceitas: 'aceitas',   distratores: 'distratores',   nota: 'nota',   formas: 'formasPt' },
+  en: { texto: 'en', aceitas: 'aceitasEn', distratores: 'distratoresEn', nota: 'notaEn', formas: 'formasEn' },
+  es: { texto: 'es', aceitas: 'aceitasEs', distratores: 'distratoresEs', nota: 'notaEs', formas: 'formasEs' }
+};
+
+/* De cada baralho, o público de origem: aquele em cuja língua o card é
+   escrito e relido. É dele o rótulo que vai sem sufixo. */
+const AUDIENCIA_PRINCIPAL = { es: 'pt', en: 'pt', pt: 'es' };
+
+/* O que vem colado na frente da palavra e não faz parte dela: o artigo, e o
+   «to» do infinitivo inglês. */
+const ARTIGOS = {
+  es: /^(el|la|los|las|un|una)\s+/,
+  pt: /^(o|a|os|as|um|uma)\s+/,
+  en: /^(the|a|an|to)\s+/
+};
+
+const audienciasDe = idioma => [AUDIENCIA_PRINCIPAL[idioma]]
+  .concat(IDIOMAS.filter(a => a !== idioma && a !== AUDIENCIA_PRINCIPAL[idioma]));
+
+/* Os rótulos das formas verbais saem na língua de quem lê a pergunta:
+   formasEs traz o rótulo em português (o público de origem do baralho) e
+   formasEsEn o mesmo texto com o rótulo em inglês. */
+const campoDasFormas = (ensinada, audiencia) =>
+  CAMPOS_DA_LINGUA[ensinada].formas +
+  (audiencia === AUDIENCIA_PRINCIPAL[ensinada] ? '' : audiencia[0].toUpperCase() + audiencia[1]);
+
+const baralhos = [];
+for (const idioma of IDIOMAS) {
+  const pasta = path.join(pastaCards, idioma);
+  if (!fs.existsSync(pasta)) continue;
+  let cards = [];
+  for (const f of fs.readdirSync(pasta).filter(f => f.endsWith('.json')).sort()) {
+    const lote = JSON.parse(fs.readFileSync(path.join(pasta, f), 'utf8'));
+    console.log('  ' + (idioma + '/' + f).padEnd(36) + lote.length + ' cards');
+    cards = cards.concat(lote.map(c => Object.assign({ idioma }, c)));
+  }
+  if (cards.length) baralhos.push({ idioma, cards });
 }
 
 /* ── validação ──
@@ -55,9 +101,13 @@ for (const f of arquivos) {
 const erros = [];
 const avisos = [];
 const ids = new Set();
-const textos = new Map();
 
-const CAMPOS_EN = ['en', 'aceitasEn', 'distratoresEn', 'notaEn'];
+/* Arquivo largado direto em fonte/cards/ não pertence a baralho nenhum, e
+   passaria despercebido: o build não o leria e ninguém saberia por quê. */
+for (const f of fs.readdirSync(pastaCards).filter(f => f.endsWith('.json'))) {
+  erros.push('arquivo fora de baralho: fonte/cards/' + f + ' (tem de estar em cards/es, cards/en ou cards/pt)');
+}
+if (!baralhos.length) erros.push('nenhum baralho em fonte/cards/');
 
 /* Os distratores precisam ter o MESMO FORMATO da resposta certa. Se só a
    resposta certa traz duas traduções separadas por "/", ou um parêntese,
@@ -225,109 +275,123 @@ function checarVariantes(c, onde) {
   }
 }
 
+for (const { idioma, cards } of baralhos) {
+  const L = CAMPOS_DA_LINGUA[idioma];
+  /* as línguas de quem estuda este baralho são as outras duas */
+  const audiencias = audienciasDe(idioma);
+  const textos = new Map();
+
 for (const bruto of cards) {
-  if (ids.has(bruto.id)) erros.push('id repetido: ' + bruto.id + ' (' + bruto.es + ')');
+  if (ids.has(bruto.id)) erros.push('id repetido: ' + bruto.id + ' (' + bruto[L.texto] + ')');
   ids.add(bruto.id);
-  checarVariantes(bruto, bruto.id + ' (' + bruto.es + ')');
+  checarVariantes(bruto, bruto.id + ' (' + bruto[L.texto] + ')');
 
   /* Card comum devolve uma forma só, e o laço roda uma vez. */
   const formas = Motor.formasDoCard(bruto);
   for (let g = 0; g < formas.length; g++) {
   const c = formas[g];
-  const onde = c.id + ' (' + c.es + ')' + (formas.length > 1 ? (g ? ' [feminino]' : ' [masculino]') : '');
+  const onde = c.id + ' (' + c[L.texto] + ')' + (formas.length > 1 ? (g ? ' [feminino]' : ' [masculino]') : '');
 
-  if (textos.has(normalizar(c.es))) {
-    erros.push('card repetido: ' + onde + ' já existe em ' + textos.get(normalizar(c.es)));
+  if (textos.has(normalizar(c[L.texto]))) {
+    erros.push('card repetido: ' + onde + ' já existe em ' + textos.get(normalizar(c[L.texto])));
   }
-  textos.set(normalizar(c.es), c.id);
+  textos.set(normalizar(c[L.texto]), c.id);
 
-  for (const campo of ['tipo', 'es', 'pt', 'nivel', 'nota']) {
+  for (const campo of ['tipo', L.texto, 'nivel']) {
     if (typeof c[campo] !== 'string' || !c[campo].trim()) erros.push('falta "' + campo + '": ' + onde);
   }
   if (!['palavra', 'frase'].includes(c.tipo)) erros.push('tipo inválido: ' + onde);
   if (!NIVEIS.includes(c.nivel)) erros.push('nível inválido: ' + onde);
-  if (!Array.isArray(c.distratores) || c.distratores.length !== 4) erros.push('precisa de exatamente 4 distratores: ' + onde);
-  if (!Array.isArray(c.aceitas) || !c.aceitas.length) erros.push('sem respostas aceitas: ' + onde);
   if (!Array.isArray(c.tags) || !c.tags.length) erros.push('sem tags: ' + onde);
 
-  checarDistratores(c, 'es-pt', 'distratores', onde, e => erros.push(e));
-  checarDistratores(c, 'pt-es', 'distratoresEs', onde, e => erros.push(e));
+  /* Distrator escrito à mão na própria língua ensinada é raro — na volta as
+     alternativas saem das formas verbais e de outros cards —, mas quando
+     existe passa pela mesma régua. */
+  checarDistratores(c, audiencias[0] + '-' + idioma, L.distratores, onde, e => erros.push(e));
 
   /* Card de conjugação traz a mesma frase em quatro outros tempos. Elas têm
      dois serviços: reconhecer o tempo errado na resposta escrita, e ser as
-     quatro alternativas erradas da múltipla escolha pt → es (ver
-     distratoresEs, no motor). Com menos de quatro, a vaga que sobra é
+     quatro alternativas erradas da múltipla escolha na volta (ver
+     distratoresDaLingua, no motor). Com menos de quatro, a vaga que sobra é
      preenchida com frase de outro card, fora do assunto. */
   if ((c.tags || []).includes('conjugação')) {
-    const n = c.formasEs ? Object.keys(c.formasEs).length : 0;
-    if (n < 4) erros.push('card de conjugação precisa de 4 formasEs (tem ' + n + '): ' + onde);
+    const n = c[L.formas] ? Object.keys(c[L.formas]).length : 0;
+    if (n < 4) erros.push('card de conjugação precisa de 4 ' + L.formas + ' (tem ' + n + '): ' + onde);
   }
 
   /* uma forma verbal alternativa nunca pode coincidir com a resposta certa */
-  if (c.formasEs) {
-    const certas = new Set(Motor.respostasAceitas(c, 'pt-es'));
-    for (const f of Object.keys(c.formasEs)) {
-      if (certas.has(Motor.normalizarEs(f))) erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);
-    }
-  }
-
-  /* O parêntese explica a resposta, e ninguém o escreve: «o peixe (para
-     comer)» tem de aceitar «o peixe». O funil não tira o parêntese, então a
-     forma nua precisa estar entre as aceitas. */
-  if (typeof c.pt === 'string' && c.pt.includes('(') && Array.isArray(c.aceitas)) {
-    for (const parte of c.pt.split('/')) {
-      if (!parte.includes('(')) continue;
-      const nua = parte.replace(/\([^)]*\)/g, ' ').trim();
-      if (nua && Motor.conferir(c, nua, 'es-pt') !== 'certo') {
-        erros.push('a resposta sem o parêntese não é aceita: ' + onde + ' → «' + nua + '» (ponha em "aceitas")');
+  if (c[L.formas]) {
+    const certas = new Set(Motor.respostasAceitas(c, audiencias[0] + '-' + idioma));
+    for (const f of Object.keys(c[L.formas])) {
+      if (certas.has(Motor.normalizar(f, idioma))) {
+        erros.push('forma verbal igual à resposta certa: ' + onde + ' → ' + f);
       }
     }
   }
 
-  checarFormato(c.pt, c.distratores, onde, e => erros.push(e));
-  /* Conjugação fica de fora: lá as cinco alternativas têm o mesmo verbo por
-     construção, e o que muda é o tempo. */
-  if (!(c.tags || []).includes('conjugação')) {
-    checarCategoria(c.pt, c.distratores, onde, a => avisos.push(a));
-  }
+  /* ── as duas línguas de quem estuda ──
+     Cada uma tem de estar inteira: texto, aceitas, quatro distratores e nota.
+     Card com metade de uma língua é tradução pela metade, e foi por isso que
+     a regra nasceu no lado inglês do baralho espanhol.
 
-  /* ── o lado inglês ── */
-  const temAlgumEn = CAMPOS_EN.some(k => c[k] !== undefined) || c.formasEsEn !== undefined;
-  if (temAlgumEn) {
-    const ondeEn = onde + ' [en]';
+     As checagens de formato saem como ERRO em português e como AVISO nas
+     outras: o português é a língua em que o baralho é escrito e relido, e nas
+     demais quem decide é a revisão, que barrar aqui travaria. */
+  for (const a of audiencias) {
+    const A = CAMPOS_DA_LINGUA[a];
+    const ondeA = onde + ' [' + a + ']';
+    const err = e => erros.push(e);
+    const reclamar = a === 'pt' ? err : (x => avisos.push(x));
 
-    for (const campo of ['en', 'notaEn']) {
-      if (typeof c[campo] !== 'string' || !c[campo].trim()) erros.push('falta "' + campo + '": ' + ondeEn);
+    if (typeof c[A.texto] !== 'string' || !c[A.texto].trim()) {
+      erros.push('falta "' + A.texto + '": ' + ondeA);
+      continue;
     }
-    if (!Array.isArray(c.distratoresEn) || c.distratoresEn.length !== 4) {
-      erros.push('precisa de exatamente 4 distratoresEn: ' + ondeEn);
+    if (typeof c[A.nota] !== 'string' || !c[A.nota].trim()) erros.push('falta "' + A.nota + '": ' + ondeA);
+    if (!Array.isArray(c[A.aceitas]) || !c[A.aceitas].length) erros.push('sem ' + A.aceitas + ': ' + ondeA);
+    if (!Array.isArray(c[A.distratores]) || c[A.distratores].length !== 4) {
+      erros.push('precisa de exatamente 4 ' + A.distratores + ': ' + ondeA);
     }
-    if (!Array.isArray(c.aceitasEn) || !c.aceitasEn.length) erros.push('sem aceitasEn: ' + ondeEn);
 
-    /* fora do "tem en?" de propósito: dois distratoresEn iguais entre si são
-       erro mesmo enquanto a tradução da resposta ainda não chegou */
-    checarDistratores(c, 'es-en', 'distratoresEn', ondeEn, e => erros.push(e));
+    checarDistratores(c, idioma + '-' + a, A.distratores, ondeA, err);
 
-    if (typeof c.en === 'string' && c.en.trim()) {
-      /* as heurísticas de formato são só aviso em inglês: quem decide de fato
-         é a revisão, e barrar o build travaria tradução legítima */
-      checarFormato(c.en, c.distratoresEn, ondeEn, a => avisos.push(a));
-      if (!(c.tags || []).includes('conjugação')) {
-        checarCategoria(c.en, c.distratoresEn, ondeEn, a => avisos.push(a));
+    /* O parêntese explica a resposta, e ninguém o escreve: «o peixe (para
+       comer)» tem de aceitar «o peixe». O funil não tira o parêntese, então a
+       forma nua precisa estar entre as aceitas. */
+    if (c[A.texto].includes('(') && Array.isArray(c[A.aceitas])) {
+      for (const parte of c[A.texto].split('/')) {
+        if (!parte.includes('(')) continue;
+        const nua = parte.replace(/\([^)]*\)/g, ' ').trim();
+        if (nua && Motor.conferir(c, nua, idioma + '-' + a) !== 'certo') {
+          erros.push('a resposta sem o parêntese não é aceita: ' + ondeA +
+            ' → «' + nua + '» (ponha em "' + A.aceitas + '")');
+        }
       }
     }
 
-    /* formasEsEn tem de rotular exatamente as mesmas formas de formasEs */
-    if (c.formasEs || c.formasEsEn) {
-      const a = Object.keys(c.formasEs || {}).sort().join('|');
-      const b = Object.keys(c.formasEsEn || {}).sort().join('|');
-      if (a !== b) erros.push('formasEsEn não cobre as mesmas formas de formasEs: ' + ondeEn);
-      for (const [f, r] of Object.entries(c.formasEsEn || {})) {
-        if (typeof r !== 'string' || !r.trim()) erros.push('rótulo vazio em formasEsEn: ' + ondeEn + ' → ' + f);
+    checarFormato(c[A.texto], c[A.distratores], ondeA, reclamar);
+    /* Conjugação fica de fora: lá as cinco alternativas têm o mesmo verbo por
+       construção, e o que muda é o tempo. */
+    if (!(c.tags || []).includes('conjugação')) {
+      checarCategoria(c[A.texto], c[A.distratores], ondeA, x => avisos.push(x));
+    }
+
+    /* Os rótulos das formas verbais saem na língua de quem lê a pergunta:
+       formasEs traz o rótulo em português e formasEsEn o mesmo texto com o
+       rótulo em inglês. O primeiro público não precisa de campo à parte. */
+    if (c[L.formas] && a !== audiencias[0]) {
+      const campoR = campoDasFormas(idioma, a);
+      const x = Object.keys(c[L.formas]).sort().join('|');
+      const y = Object.keys(c[campoR] || {}).sort().join('|');
+      if (x !== y) erros.push(campoR + ' não cobre as mesmas formas de ' + L.formas + ': ' + ondeA);
+      for (const [f, r] of Object.entries(c[campoR] || {})) {
+        if (typeof r !== 'string' || !r.trim()) erros.push('rótulo vazio em ' + campoR + ': ' + ondeA + ' → ' + f);
       }
     }
   }
+
   }
+}
 }
 
 /* ── dicionário de temas ──
@@ -338,7 +402,7 @@ const arqTags = path.join(__dirname, 'tags.json');
 const TAGS = fs.existsSync(arqTags) ? JSON.parse(fs.readFileSync(arqTags, 'utf8')) : null;
 if (TAGS) {
   const emUso = new Set();
-  cards.forEach(c => (c.tags || []).forEach(t => emUso.add(t)));
+  baralhos.forEach(b => b.cards.forEach(c => (c.tags || []).forEach(t => emUso.add(t))));
   for (const t of emUso) if (!TAGS[t]) erros.push('tema sem tradução em fonte/tags.json: ' + t);
   for (const t of Object.keys(TAGS)) if (!emUso.has(t)) avisos.push('tema em tags.json que nenhum card usa: ' + t);
 }
@@ -346,91 +410,104 @@ if (TAGS) {
 /* ── a frase presa a uma palavra ──
    «requer» aponta para o card da palavra que a frase põe em uso. A frase só
    entra no baralho quando aquela palavra estiver dominada, então um alvo
-   errado deixaria o card preso para sempre, sem nada na tela denunciando. */
-const PORID = new Map(cards.map(c => [c.id, c]));
-for (const c of cards) {
-  if (c.requer === undefined) continue;
-  const onde = c.id + ' (' + c.es + ')';
-  const alvo = PORID.get(c.requer);
+   errado deixaria o card preso para sempre, sem nada na tela denunciando.
+   Palavra e frase são sempre do mesmo baralho. */
+for (const { idioma, cards } of baralhos) {
+  const L = CAMPOS_DA_LINGUA[idioma];
+  const PORID = new Map(cards.map(c => [c.id, c]));
 
-  if (typeof c.requer !== 'string' || !alvo) {
-    erros.push('"requer" aponta para card que não existe: ' + onde + ' → ' + c.requer);
-    continue;
-  }
-  if (c.tipo !== 'frase') erros.push('só frase pode ter "requer": ' + onde);
-  if (alvo.tipo !== 'palavra') {
-    erros.push('"requer" tem de apontar para uma palavra: ' + onde + ' → ' + c.requer +
-      ' (' + alvo.tipo + ')');
-  }
-  /* Corrente de dois elos prenderia a segunda frase atrás de outra frase, e
-     frase não chega a "dominado" por um caminho que o usuário veja como tal. */
-  if (alvo.requer) erros.push('"requer" em cadeia: ' + onde + ' → ' + c.requer + ' que também requer');
-  if (c.requer === c.id) erros.push('card que requer a si mesmo: ' + onde);
+  for (const c of cards) {
+    if (c.requer === undefined) continue;
+    const onde = c.id + ' (' + c[L.texto] + ')';
+    const alvo = PORID.get(c.requer);
 
-  /* A frase tem de usar mesmo a palavra. Aviso, e não erro: o espanhol
-     flexiona (el vaso → los vasos, quitar → me quitó), então a comparação é
-     por radical e erra para menos de vez em quando. */
-  if (alvo.tipo === 'palavra') {
-    const limpar = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-    const nucleo = limpar(Motor.formaDoCard(alvo, 0).es)
-      .replace(/^(el|la|los|las|un|una)\s+/, '')
-      /* «enterarse» conjugado vira «me enteré», e o radical tem de cortar
-         antes da desinência para sobreviver a isso: enterarse → enter. O
-         mesmo com o pronome a mais: «apañárselas» vira «me las apañaré». */
-      .replace(/(ar|er|ir)se(l[oa]s?)?$/, '')
-      .replace(/(ar|er|ir)$/, '');
-    /* O espanhol muda o radical ao conjugar: «soler» vira «suelo»,
-       «acordarse» vira «me acuerdo», «pedir» vira «pide». Sem prever isso o
-       aviso dispara justamente nos verbos mais irregulares — que são os que
-       mais precisam de uma frase mostrando o uso. */
-    const variantes = new Set([nucleo]);
-    /* o adjetivo concorda: «soso» aparece na frase como «sosa» */
-    if (/[oa]$/.test(nucleo)) variantes.add(nucleo.slice(0, -1));
-    [['o', 'ue'], ['e', 'ie'], ['e', 'i'], ['u', 'ue']].forEach(([de, para]) => {
-      const i = nucleo.lastIndexOf(de);
-      if (i >= 0) variantes.add(nucleo.slice(0, i) + para + nucleo.slice(i + 1));
-    });
+    if (typeof c.requer !== 'string' || !alvo) {
+      erros.push('"requer" aponta para card que não existe neste baralho: ' + onde + ' → ' + c.requer);
+      continue;
+    }
+    if (c.tipo !== 'frase') erros.push('só frase pode ter "requer": ' + onde);
+    if (alvo.tipo !== 'palavra') {
+      erros.push('"requer" tem de apontar para uma palavra: ' + onde + ' → ' + c.requer +
+        ' (' + alvo.tipo + ')');
+    }
+    /* Corrente de dois elos prenderia a segunda frase atrás de outra frase, e
+       frase não chega a "dominado" por um caminho que o usuário veja como tal. */
+    if (alvo.requer) erros.push('"requer" em cadeia: ' + onde + ' → ' + c.requer + ' que também requer');
+    if (c.requer === c.id) erros.push('card que requer a si mesmo: ' + onde);
 
-    const frase = limpar(Motor.formaDoCard(c, 0).es);
-    const radicais = [...variantes]
-      .map(v => v.slice(0, Math.max(4, v.length - 2)))
-      .filter(Boolean);
-    if (radicais.length && !radicais.some(r => frase.includes(r))) {
-      avisos.push('a frase não parece usar a palavra que requer: ' + onde +
-        ' → ' + alvo.es + ' (procurei ' + radicais.map(r => '"' + r + '"').join(' ou ') + ')');
+    /* A frase tem de usar mesmo a palavra. Aviso, e não erro: a língua
+       flexiona (el vaso → los vasos, quitar → me quitó, bring → brought), e a
+       comparação é por radical, então erra para menos de vez em quando. */
+    if (alvo.tipo === 'palavra') {
+      const limpar = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const nucleo = limpar(Motor.formaDoCard(alvo, 0)[L.texto])
+        .replace(ARTIGOS[idioma], '')
+        /* «enterarse» conjugado vira «me enteré», e o radical tem de cortar
+           antes da desinência para sobreviver a isso: enterarse → enter. O
+           mesmo com o pronome a mais: «apañárselas» vira «me las apañaré». */
+        .replace(/(ar|er|ir)se(l[oa]s?)?$/, '')
+        .replace(/(ar|er|ir)$/, '');
+      /* O espanhol muda o radical ao conjugar: «soler» vira «suelo»,
+         «acordarse» vira «me acuerdo», «pedir» vira «pide». Sem prever isso o
+         aviso dispara justamente nos verbos mais irregulares — que são os que
+         mais precisam de uma frase mostrando o uso. */
+      const variantes = new Set([nucleo]);
+      /* o adjetivo concorda: «soso» aparece na frase como «sosa» */
+      if (/[oa]$/.test(nucleo)) variantes.add(nucleo.slice(0, -1));
+      if (idioma !== 'en') {
+        [['o', 'ue'], ['e', 'ie'], ['e', 'i'], ['u', 'ue']].forEach(([de, para]) => {
+          const i = nucleo.lastIndexOf(de);
+          if (i >= 0) variantes.add(nucleo.slice(0, i) + para + nucleo.slice(i + 1));
+        });
+      }
+
+      const frase = limpar(Motor.formaDoCard(c, 0)[L.texto]);
+      const radicais = [...variantes]
+        .map(v => v.slice(0, Math.max(4, v.length - 2)))
+        .filter(Boolean);
+      if (radicais.length && !radicais.some(r => frase.includes(r))) {
+        avisos.push('a frase não parece usar a palavra que requer: ' + onde +
+          ' → ' + alvo[L.texto] + ' (procurei ' + radicais.map(r => '"' + r + '"').join(' ou ') + ')');
+      }
     }
   }
-}
 
-/* ── toda palavra tem a sua frase ──
-   A palavra sozinha diz o que é; a frase diz como se usa — e é o uso que a
-   definição não ensina. Desde a leva 10 toda palavra do baralho tem uma
-   frase presa a ela, e o build avisa quando alguma entra sem. Aviso, e não
-   erro: a palavra pode chegar numa leva e a frase na seguinte. */
-{
+  /* ── toda palavra tem a sua frase ──
+     A palavra sozinha diz o que é; a frase diz como se usa — e é o uso que a
+     definição não ensina. Desde a leva 10 toda palavra do baralho tem uma
+     frase presa a ela, e o build avisa quando alguma entra sem. Aviso, e não
+     erro: a palavra pode chegar numa leva e a frase na seguinte. */
   const comFrase = new Set(cards.filter(c => c.requer).map(c => c.requer));
   const soltas = cards.filter(c => c.tipo === 'palavra' && !comFrase.has(c.id));
   if (soltas.length) {
-    avisos.push(soltas.length + ' palavra(s) sem frase de uso presa a ela: ' +
-      soltas.map(c => c.id + ' (' + c.es + ')').join(', '));
+    avisos.push('[' + idioma + '] ' + soltas.length + ' palavra(s) sem frase de uso presa a ela: ' +
+      soltas.map(c => c.id + ' (' + c[L.texto] + ')').join(', '));
   }
 }
 
-/* ── estatísticas ── */
-const conta = (f) => cards.reduce((a, c) => { const k = f(c); a[k] = (a[k] || 0) + 1; return a; }, {});
-console.log('\n  total ............ ' + cards.length);
-console.log('  por tipo ......... ' + JSON.stringify(conta(c => c.tipo)));
-console.log('  por nível ........ ' + NIVEIS.map(n => n + ':' + (conta(c => c.nivel)[n] || 0)).join('  '));
+/* ── estatísticas, um bloco por baralho ── */
+for (const { idioma, cards } of baralhos) {
+  const L = CAMPOS_DA_LINGUA[idioma];
+  const conta = (f) => cards.reduce((a, c) => { const k = f(c); a[k] = (a[k] || 0) + 1; return a; }, {});
+  console.log('\n  ' + NOME_DO_IDIOMA[idioma] + ', para quem fala ' +
+    audienciasDe(idioma).map(a => NOME_DO_IDIOMA[a]).join(' e '));
+  console.log('  total ............ ' + cards.length);
+  console.log('  por tipo ......... ' + JSON.stringify(conta(c => c.tipo)));
+  console.log('  por nível ........ ' + NIVEIS.map(n => n + ':' + (conta(c => c.nivel)[n] || 0)).join('  '));
 
-const presas = cards.filter(c => c.requer);
-if (presas.length) {
-  const palavras = new Set(presas.map(c => c.requer));
-  console.log('  presas à palavra . ' + presas.length + ' frases, sobre ' + palavras.size + ' palavras');
+  const presas = cards.filter(c => c.requer);
+  if (presas.length) {
+    const palavras = new Set(presas.map(c => c.requer));
+    console.log('  presas à palavra . ' + presas.length + ' frases, sobre ' + palavras.size + ' palavras');
+  }
+
+  for (const a of audienciasDe(idioma)) {
+    const campo = CAMPOS_DA_LINGUA[a].texto;
+    const feitos = cards.filter(c => typeof c[campo] === 'string' && c[campo].trim()).length;
+    console.log('  em ' + NOME_DO_IDIOMA[a].padEnd(12) + ' ' + feitos + ' de ' + cards.length +
+      (feitos === cards.length ? '  ✓' : '  (faltam ' + (cards.length - feitos) + ')'));
+  }
 }
-
-const traduzidos = cards.filter(c => typeof c.en === 'string' && c.en.trim()).length;
-console.log('  em inglês ........ ' + traduzidos + ' de ' + cards.length +
-  (traduzidos === cards.length ? '  ✓' : '  (faltam ' + (cards.length - traduzidos) + ')'));
 
 if (avisos.length) {
   console.warn('\n  ' + avisos.length + ' aviso(s) — não barram o build:');
@@ -444,45 +521,62 @@ if (erros.length) {
 }
 
 /* ── saída ──
-   A data só muda quando o baralho muda. Carimbada a cada build, ela fazia
-   todo build em dia novo reescrever o baralho e trocar o ?v= dele, mesmo sem
-   card nenhum mexido — e o navegador baixava 860 KB de novo por nada. */
+   Um arquivo por baralho, todos no mesmo formato: data/cards-<idioma>.js, que
+   põe o baralho em window.BARALHOS[idioma]. O espanhol também continua saindo
+   nos dois nomes antigos — data/cards.js, sem o lado inglês, que é o que o app
+   de hoje carrega, e data/cards-revisao.js, completo, que é o que as telas de
+   revisão carregam. Quando a tela de escolha do curso existir, ela lê o
+   BARALHOS e os dois nomes antigos podem ser aposentados.
+
+   A data só muda quando o baralho muda. Carimbada a cada build, ela fazia todo
+   build em dia novo reescrever o baralho e trocar o ?v= dele, mesmo sem card
+   nenhum mexido — e o navegador baixava 860 KB de novo por nada. */
 fs.mkdirSync(path.join(raiz, 'data'), { recursive: true });
-const arqJson = path.join(raiz, 'data', 'cards.json');
-let geradoEm = new Date().toISOString().slice(0, 10);
-try {
-  const anterior = JSON.parse(fs.readFileSync(arqJson, 'utf8'));
-  if (JSON.stringify(anterior.cards) === JSON.stringify(cards)) geradoEm = anterior.gerado_em;
-} catch (e) { /* primeiro build, ou arquivo ilegível: vale a data de hoje */ }
 
-const baralho = { versao: 1, gerado_em: geradoEm, total: cards.length, cards };
+const comoJs = (dados, globais) => '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
+  'window.BARALHOS = window.BARALHOS || {};\n' +
+  globais.map(g => g + ' = ').join('') + JSON.stringify(dados) + ';\n';
 
-/* O app de estudo não usa o lado inglês, e ele é um terço do baralho: o
-   cards.js vai sem esses campos, e as páginas de revisão carregam o
-   cards-revisao.js, que tem tudo. Os dois vão sem indentação — quem quer ler
-   o baralho lê o cards.json, que continua indentado. */
-const CAMPOS_SO_DA_REVISAO = CAMPOS_EN.concat('formasEsEn');
-const semIngles = Object.assign({}, baralho, {
-  cards: cards.map(c => {
-    const limpo = Object.assign({}, c);
-    CAMPOS_SO_DA_REVISAO.forEach(k => delete limpo[k]);
-    return limpo;
-  })
-});
-const comoJs = dados => '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
-  'window.CARDS_RAW = ' + JSON.stringify(dados) + ';\n';
+const CAMPOS_SO_DA_REVISAO = ['en', 'aceitasEn', 'distratoresEn', 'notaEn', 'formasEsEn'];
 
-fs.writeFileSync(arqJson, JSON.stringify(baralho, null, 1), 'utf8');
-fs.writeFileSync(path.join(raiz, 'data', 'cards.js'), comoJs(semIngles), 'utf8');
-fs.writeFileSync(path.join(raiz, 'data', 'cards-revisao.js'), comoJs(baralho), 'utf8');
+for (const { idioma, cards } of baralhos) {
+  const arqJson = path.join(raiz, 'data', 'cards-' + idioma + '.json');
+  const legado = idioma === 'es';
+  const jsonDoEspanhol = path.join(raiz, 'data', 'cards.json');
 
-if (TAGS) {
-  fs.writeFileSync(
-    path.join(raiz, 'data', 'tags.js'),
-    '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
-    'window.TAGS_RAW = ' + JSON.stringify(TAGS, null, 1) + ';\n',
-    'utf8'
-  );
+  let geradoEm = new Date().toISOString().slice(0, 10);
+  try {
+    const anterior = JSON.parse(fs.readFileSync(legado ? jsonDoEspanhol : arqJson, 'utf8'));
+    if (JSON.stringify(anterior.cards) === JSON.stringify(cards)) geradoEm = anterior.gerado_em;
+  } catch (e) { /* primeiro build, ou arquivo ilegível: vale a data de hoje */ }
+
+  const baralho = { versao: 1, idioma: idioma, gerado_em: geradoEm, total: cards.length, cards };
+
+  fs.writeFileSync(legado ? jsonDoEspanhol : arqJson, JSON.stringify(baralho, null, 1), 'utf8');
+  if (!legado) {
+    fs.writeFileSync(path.join(raiz, 'data', 'cards-' + idioma + '.js'),
+      comoJs(baralho, ["window.BARALHOS['" + idioma + "']"]), 'utf8');
+  }
+
+  if (legado) {
+    /* O app de estudo de hoje não usa o lado inglês, e ele é um terço do
+       baralho: o cards.js vai sem esses campos. Quem quer ler o baralho lê o
+       cards.json, que continua indentado. */
+    const semIngles = Object.assign({}, baralho, {
+      cards: cards.map(c => {
+        const limpo = Object.assign({}, c);
+        CAMPOS_SO_DA_REVISAO.forEach(k => delete limpo[k]);
+        return limpo;
+      })
+    });
+    fs.writeFileSync(path.join(raiz, 'data', 'cards.js'), comoJs(semIngles, ['window.CARDS_RAW']), 'utf8');
+    /* O espanhol completo continua saindo com o nome antigo, que as telas de
+       revisão carregam — e já responde também pelo nome novo, para quem vier
+       ler os três baralhos do mesmo jeito. No dia em que o app escolher curso,
+       este arquivo vira data/cards-es.js e o CARDS_RAW sai de cena. */
+    fs.writeFileSync(path.join(raiz, 'data', 'cards-revisao.js'),
+      comoJs(baralho, ['window.CARDS_RAW', "window.BARALHOS['es']"]), 'utf8');
+  }
 }
 
 /* ── carimbo de versão nos assets ──
@@ -498,7 +592,8 @@ const assets = [
   'style.css', 'style-revisao.css', 'style-professor.css',
   'js/motor.js', 'js/github.js', 'js/app.js',
   'js/revisao.js', 'js/revisar-es-en.js', 'js/revisar-en-pt.js',
-  'data/cards.js', 'data/cards-revisao.js', 'data/tags.js', 'data/historico.js'
+  'data/cards.js', 'data/cards-revisao.js', 'data/tags.js', 'data/historico.js',
+  'data/cards-es.js', 'data/cards-en.js', 'data/cards-pt.js'
 ].filter(a => fs.existsSync(path.join(raiz, a)));   // as páginas de revisão podem ainda não existir
 
 const versaoDe = {};
@@ -522,5 +617,7 @@ for (const pagina of fs.readdirSync(raiz).filter(f => f.endsWith('.html'))) {
   if (html !== antes) { fs.writeFileSync(caminho, html, 'utf8'); trocadas++; }
 }
 
-console.log('\n  ok → data/cards.json, data/cards.js e data/cards-revisao.js');
+console.log('\n  ok → ' + baralhos.map(b => b.idioma === 'es'
+  ? 'data/cards.js e data/cards-revisao.js'
+  : 'data/cards-' + b.idioma + '.js').join(', '));
 console.log('  carimbo ?v= por arquivo; ' + trocadas + ' página(s) regravada(s)\n');

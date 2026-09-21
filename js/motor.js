@@ -344,10 +344,24 @@ window.Motor = (function () {
      Quem manda é a língua da resposta, não a direção: 'en-es' e 'pt-es'
      cobram o mesmo espanhol, e cada língua tem seu par de campos no card. */
   const CAMPOS = {
-    pt: { certa: 'pt', aceitas: 'aceitas' },
-    es: { certa: 'es', aceitas: 'aceitasEs' },
-    en: { certa: 'en', aceitas: 'aceitasEn' }
+    pt: { certa: 'pt', aceitas: 'aceitas',   distratores: 'distratores',   formas: 'formasPt' },
+    es: { certa: 'es', aceitas: 'aceitasEs', distratores: 'distratoresEs', formas: 'formasEs' },
+    en: { certa: 'en', aceitas: 'aceitasEn', distratores: 'distratoresEn', formas: 'formasEn' }
   };
+
+  /* ── a língua que o baralho ensina ──
+     São três baralhos: o de espanhol responde em português e em inglês, o de
+     inglês responde em português e em espanhol, o de português responde em
+     espanhol e em inglês (ver PLANO.md). O card diz de qual baralho é; sem
+     dizer, é espanhol, que foi o primeiro e cujos mil cards não trazem o
+     campo. É essa língua que separa RECONHECER de PRODUZIR: na língua de casa
+     os quatro distratores vêm escritos no card, e na língua ensinada eles saem
+     das outras formas do verbo e do espanhol dos cards vizinhos. */
+  function idiomaDoCard(card) {
+    return (card && card.idioma) || 'es';
+  }
+
+  const Maiuscula = l => l[0].toUpperCase() + l[1];
   function formasAceitas(card, direcao) {
     const lingua = linguaDaResposta(direcao);
     const campo = CAMPOS[lingua];
@@ -794,16 +808,17 @@ window.Motor = (function () {
   /* Quando a resposta coincide com outra forma verbal do card, devolve qual
      é, para o feedback poder dizer o que ele escreveu de fato. */
   function formaReconhecida(card, texto, direcao) {
-    if (linguaDaResposta(direcao) !== 'es' || !card.formasEs) return null;
+    const lingua = linguaDaResposta(direcao);
+    const campo = CAMPOS[lingua].formas;
+    if (!card[campo]) return null;
 
     /* as formas são sempre as mesmas; o rótulo é que sai na língua de quem
        está lendo a pergunta — formasEsEn quando o card foi perguntado em inglês */
-    const rotulos = linguaDaPergunta(direcao) === 'en' && card.formasEsEn
-      ? card.formasEsEn : card.formasEs;
+    const rotulos = card[campo + Maiuscula(linguaDaPergunta(direcao))] || card[campo];
 
-    const dado = normalizarEs(texto);
-    for (const forma of Object.keys(card.formasEs)) {
-      if (normalizarEs(forma) === dado) return { forma, rotulo: rotulos[forma] };
+    const dado = normalizar(texto, lingua);
+    for (const forma of Object.keys(card[campo])) {
+      if (normalizar(forma, lingua) === dado) return { forma, rotulo: rotulos[forma] };
     }
     return null;
   }
@@ -1744,10 +1759,20 @@ window.Motor = (function () {
      «estados» é o progresso de quem responde: com ele, a frase de uso pode
      trocar distrator pronto por palavra que a pessoa já viu (ver abaixo). */
   function alternativas(card, direcao, todos, estados) {
-    if (direcao !== 'pt-es') {
-      return embaralhar([card.pt, ...distratoresDinamicos(card, todos || [], estados)]);
+    const lingua = linguaDaResposta(direcao);
+    const certa = card[CAMPOS[lingua].certa];
+    /* Responder na língua que o baralho ensina é produzir, e aí não há quatro
+       prontos: as alternativas saem das outras formas do verbo e de cards
+       vizinhos. */
+    if (lingua === idiomaDoCard(card)) {
+      return embaralhar([certa, ...distratoresDaLingua(card, todos || [], lingua)]);
     }
-    return embaralhar([card.es, ...distratoresEs(card, todos || [])]);
+    /* Na língua de casa os quatro vêm escritos no card — e, no português, dois
+       deles podem ser trocados por palavras que a pessoa já viu. */
+    if (lingua === 'pt') {
+      return embaralhar([certa, ...distratoresDinamicos(card, todos || [], estados)]);
+    }
+    return embaralhar([certa, ...(card[CAMPOS[lingua].distratores] || []).slice(0, 4)]);
   }
 
   /* ── o distrator que sai do que a pessoa já viu ──
@@ -1896,69 +1921,84 @@ window.Motor = (function () {
     return prontos;
   }
 
-  /* Na direção invertida o baralho não traz distratores prontos, então eles
-     saem de outros cards. Não é sorteio cego: prefere os que têm chance de
-     confundir de verdade — mesmo tema, mesmo nível, tamanho e começo
-     parecidos —, que é o que faz a alternativa doer.
+  /* ── produzir, e não reconhecer ──
+     Quando a resposta é na língua que o baralho ensina, ele não traz quatro
+     distratores prontos: eles saem de outros cards. Não é sorteio cego —
+     prefere os que têm chance de confundir de verdade: mesmo tema, mesmo
+     nível, tamanho e começo parecidos, que é o que faz a alternativa doer.
 
-     O card de conjugação é exceção: ele já lista em «formasEs» a mesma frase
-     nos outros tempos («Ayer lo sabía», «Ayer lo sabré»), que é o espelho dos
-     distratores prontos do português. Sem elas, «Ayer lo supe» aparecia entre
-     «Yo puse la mesa» e «No lo hagas», sozinha no assunto, e a pergunta se
-     respondia sem saber o verbo. As formas entram primeiro; o sorteio só
-     completa o que faltar (há cards com três). */
-  function distratoresEs(card, todos) {
-    if (Array.isArray(card.distratoresEs) && card.distratoresEs.length >= 4) {
-      return embaralhar(card.distratoresEs.slice()).slice(0, 4);
+     O card de conjugação é exceção: ele já lista em «formasEs» (ou «formasEn»,
+     conforme o baralho) a mesma frase nos outros tempos — «Ayer lo sabía»,
+     «Ayer lo sabré» —, que é o espelho dos distratores prontos do português.
+     Sem elas, «Ayer lo supe» aparecia entre «Yo puse la mesa» e «No lo hagas»,
+     sozinha no assunto, e a pergunta se respondia sem saber o verbo. As formas
+     entram primeiro; o sorteio só completa o que faltar (há cards com três). */
+  const AUDIENCIA_PRINCIPAL = { es: 'pt', en: 'pt', pt: 'es' };
+
+  function distratoresDaLingua(card, todos, lingua) {
+    const campo = CAMPOS[lingua];
+    const prontos = card[campo.distratores];
+    if (Array.isArray(prontos) && prontos.length >= 4) {
+      return embaralhar(prontos.slice()).slice(0, 4);
     }
 
     const tags = new Set(card.tags || []);
-    const formas = formasComoFrase(card);
+    const formas = formasComoFrase(card, lingua);
     if (formas.length >= 4) return embaralhar(formas).slice(0, 4);
 
-    /* Alternativa errada não pode ser resposta certa. Fica de fora o espanhol
-       que o card aceita (o «es» e as aceitasEs) e o card que divide uma
-       tradução com este: «quisquilloso» e «remilgado» são os dois
-       «melindroso», e «Échame una mano» e «¿Me puedes echar una mano?» são os
-       dois «me dá uma mão» — um não serve de pegadinha para o outro. */
-    const certas = new Set(respostasAceitas(card, 'pt-es'));
-    const traducoes = c => [String(c.pt || '')].concat(String(c.pt || '').split('/'), c.aceitas || [])
-      .map(t => normalizar(t, 'pt')).filter(Boolean);
+    /* A direção não importa aqui, só a língua da resposta. */
+    const direcao = (lingua === 'pt' ? 'es' : 'pt') + '-' + lingua;
+
+    /* Alternativa errada não pode ser resposta certa. Fica de fora o texto que
+       o card aceita (o «es» e as aceitasEs) e o card que divide uma tradução
+       com este: «quisquilloso» e «remilgado» são os dois «melindroso», e
+       «Échame una mano» e «¿Me puedes echar una mano?» são os dois «me dá uma
+       mão» — um não serve de pegadinha para o outro. A comparação é feita na
+       língua de casa do baralho. */
+    const casa = CAMPOS[AUDIENCIA_PRINCIPAL[lingua] || 'pt'];
+    const certas = new Set(respostasAceitas(card, direcao));
+    const traducoes = c => [String(c[casa.certa] || '')]
+      .concat(String(c[casa.certa] || '').split('/'), c[casa.aceitas] || [])
+      .map(t => normalizar(t, AUDIENCIA_PRINCIPAL[lingua] || 'pt')).filter(Boolean);
     const minhas = new Set(traducoes(card));
     /* nem repetir forma que já entrou: «Ojalá viniera mañana» é forma do v034
        e é também a frase de outro card */
-    const jaNaTela = new Set(formas.map(normalizarEs));
+    const jaNaTela = new Set(formas.map(f => normalizar(f, lingua)));
+    const texto = c => String(c[campo.certa] || '');
 
     const candidatos = todos
-      .filter(c => c.id !== card.id && c.tipo === card.tipo &&
-        !certas.has(normalizarEs(c.es)) && !jaNaTela.has(normalizarEs(c.es)) &&
+      .filter(c => c.id !== card.id && c.tipo === card.tipo && texto(c) &&
+        !certas.has(normalizar(texto(c), lingua)) && !jaNaTela.has(normalizar(texto(c), lingua)) &&
         !traducoes(c).some(t => minhas.has(t)))
       .map(c => {
         let nota = Math.random();
         if (c.nivel === card.nivel) nota += 2;
         if ((c.tags || []).some(t => tags.has(t))) nota += 2.5;
-        nota += 1.5 * Math.min(c.es.length, card.es.length) / Math.max(c.es.length, card.es.length);
-        if (c.es[0].toLowerCase() === card.es[0].toLowerCase()) nota += 1;
+        nota += 1.5 * Math.min(texto(c).length, texto(card).length) /
+          Math.max(texto(c).length, texto(card).length);
+        if (texto(c)[0].toLowerCase() === texto(card)[0].toLowerCase()) nota += 1;
         return { c, nota };
       })
       .sort((a, b) => b.nota - a.nota)
       .slice(0, 10);
 
-    return formas.concat(embaralhar(candidatos).slice(0, 4 - formas.length).map(x => x.c.es));
+    return formas.concat(embaralhar(candidatos).slice(0, 4 - formas.length).map(x => texto(x.c)));
   }
 
   /* As formas vêm sem pontuação («Viene aquí»), e a resposta certa vem com
      («¡Ven aquí!»): nua, a alternativa errada se denunciaria pela cara. Cada
      forma ganha a abertura e o fecho da resposta certa. */
-  function formasComoFrase(card) {
-    const es = String(card.es || '');
-    const abre = (es.match(/^[¿¡]+/) || [''])[0];
-    const fecha = (es.match(/[.!?…]+$/) || [''])[0];
-    const certas = new Set(respostasAceitas(card, 'pt-es'));
+  function formasComoFrase(card, lingua) {
+    const campo = CAMPOS[lingua || 'es'];
+    const texto = String(card[campo.certa] || '');
+    const abre = (texto.match(/^[¿¡]+/) || [''])[0];
+    const fecha = (texto.match(/[.!?…]+$/) || [''])[0];
+    const direcao = (lingua === 'pt' ? 'es' : 'pt') + '-' + (lingua || 'es');
+    const certas = new Set(respostasAceitas(card, direcao));
     const vistas = new Set();
-    return Object.keys(card.formasEs || {})
+    return Object.keys(card[campo.formas] || {})
       .filter(f => {
-        const chave = normalizarEs(f);
+        const chave = normalizar(f, lingua || 'es');
         if (!chave || certas.has(chave) || vistas.has(chave)) return false;
         vistas.add(chave);
         return true;
@@ -1976,7 +2016,7 @@ window.Motor = (function () {
     indiceEspanhol, leituraEspanhola, erroDeFlexao,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,
-    temVariante, formaDoCard, formasDoCard, sortearForma,
+    temVariante, formaDoCard, formasDoCard, sortearForma, idiomaDoCard,
     distanciaNaFila, esperando, proximaVolta, DIAS_DOMINADO,
     tempoConfiavel, MS_ABANDONO,
     contarDirecoes,
@@ -1984,7 +2024,7 @@ window.Motor = (function () {
     urgencia, cumpriu, escolherNaFila, vezDoDominado, ESPACO_DOMINADO,
     ALVO_FILA,
     liberado, liberadaEm, venceuEm,
-    montarFila, alternativas, distratoresDinamicos, embaralhar,
+    montarFila, alternativas, distratoresDinamicos, distratoresDaLingua, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas
   };

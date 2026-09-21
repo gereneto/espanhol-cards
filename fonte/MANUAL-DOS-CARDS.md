@@ -532,3 +532,39 @@ sem ele o navegador serve o baralho velho.
 | Dois sentidos certos: cobra-se o que o português não tem | `p239` la matrícula (a placa), com o outro em `aceitas` |
 | Uma ficha, duas formas, para o que muda de gênero | `u023` «Tu hermano es muy majo», pedido do Gere, e mais 37 cards |
 | Cada contestação é decidida junto | combinado desde a primeira leva |
+
+---
+
+## 15. Os três baralhos
+
+Este manual nasceu com um baralho só, o de espanhol, e fala nele o tempo todo.
+Agora são três — espanhol, inglês e português —, um por língua ensinada, e cada
+um serve a dois públicos. O plano inteiro está em [`../PLANO.md`](../PLANO.md);
+aqui fica só o que muda para quem escreve um card.
+
+- **A pasta diz o que o card ensina**: `fonte/cards/es`, `fonte/cards/en`,
+  `fonte/cards/pt`. Os ids dos baralhos novos levam o prefixo da língua
+  (`en-p001`, `pt-f012`); os mil do espanhol ficam com o id nu, porque o
+  progresso de quem estuda é chaveado por ele.
+- **Cada língua tem o seu quarteto**: `pt`/`aceitas`/`distratores`/`nota`,
+  `en`/`aceitasEn`/`distratoresEn`/`notaEn`,
+  `es`/`aceitasEs`/`distratoresEs`/`notaEs`. A do baralho é a que se cobra; as
+  outras duas são as respostas, e **as duas têm de estar inteiras** — o build
+  barra card com meia língua.
+- **«O que o português não entrega» vira «o que a língua de quem estuda não
+  entrega»**, e são duas línguas por baralho. No baralho de inglês, `the shelf`
+  merece card (nem o português nem o espanhol entregam) e `the animal` não.
+- **A nota de cada língua ensina o público dela**, sem mencionar o vizinho do
+  outro: a `nota` aponta o falso amigo português, a `notaEs` aponta o espanhol,
+  e onde um público não tem armadilha nenhuma a nota dele ensina a colocação, a
+  preposição ou o registro.
+- **O inglês do baralho de inglês é o americano**, com o britânico em
+  `aceitasEn` e na nota — a mesma regra que põe o espanhol da América Latina na
+  nota do baralho da Espanha. O **português é o do Brasil**, com Portugal na
+  nota.
+- **As formas verbais** seguem o baralho: `formasEn` no baralho de inglês, com
+  o rótulo na língua do público de origem, e `formasEnEs` com o mesmo texto e o
+  rótulo na outra língua.
+- **O resto do manual vale igual.** Distrator, parêntese, `aceitas`, frase de
+  uso, etiqueta, gênero: as regras são das seções 2 a 14, e nenhuma delas é do
+  espanhol.
