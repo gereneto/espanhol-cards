@@ -1,702 +1,802 @@
 {
- "Espanha": {
-  "en": "Spain",
-  "es": "España",
-  "cards": 22
- },
- "adjetivo": {
-  "en": "adjective",
-  "es": "adjetivo",
-  "cards": 19
- },
- "agradecer": {
-  "en": "agradecer",
-  "es": "agradecer",
-  "cards": 0
- },
- "andar": {
-  "en": "andar",
-  "es": "andar",
-  "cards": 1
- },
- "animais": {
-  "en": "animals",
-  "es": "animales",
-  "cards": 8
- },
- "bring": {
-  "en": "bring",
-  "es": "bring",
-  "cards": 0
- },
- "buy": {
-  "en": "buy",
-  "es": "buy",
-  "cards": 0
- },
- "caber": {
-  "en": "caber",
-  "es": "caber",
-  "cards": 0
- },
- "caer": {
-  "en": "caer",
-  "es": "caer",
-  "cards": 1
- },
- "casa": {
-  "en": "home",
-  "es": "casa",
-  "cards": 24
- },
- "catch": {
-  "en": "catch",
-  "es": "catch",
-  "cards": 0
- },
- "cidade": {
-  "en": "city",
-  "es": "ciudad",
-  "cards": 8
- },
- "comida": {
-  "en": "food",
-  "es": "comida",
-  "cards": 14
- },
- "condicional": {
-  "en": "conditional",
-  "es": "condicional",
-  "cards": 4
- },
- "conducir": {
-  "en": "conducir",
-  "es": "conducir",
-  "cards": 0
- },
- "conjugação": {
-  "en": "conjugation",
-  "es": "conjugación",
-  "cards": 50
- },
- "conocer": {
-  "en": "conocer",
-  "es": "conocer",
-  "cards": 1
- },
- "contar": {
-  "en": "contar",
-  "es": "contar",
-  "cards": 0
- },
- "corpo": {
-  "en": "body",
-  "es": "cuerpo",
-  "cards": 2
- },
- "cotidiano": {
-  "en": "everyday",
-  "es": "cotidiano",
-  "cards": 23
- },
- "cultura": {
-  "en": "culture",
-  "es": "cultura",
-  "cards": 1
- },
- "dar": {
-  "en": "dar",
-  "es": "dar",
-  "cards": 1
- },
- "decir": {
-  "en": "decir",
-  "es": "decir",
-  "cards": 2
- },
- "doler": {
-  "en": "doler",
-  "es": "doler",
-  "cards": 0
- },
- "dormir": {
-  "en": "dormir",
-  "es": "dormir",
-  "cards": 2
- },
- "eat": {
-  "en": "eat",
-  "es": "eat",
-  "cards": 0
- },
- "economia": {
-  "en": "economy",
-  "es": "economía",
-  "cards": 2
- },
- "elegir": {
-  "en": "elegir",
-  "es": "elegir",
-  "cards": 0
- },
- "empezar": {
-  "en": "empezar",
-  "es": "empezar",
-  "cards": 1
- },
- "escola": {
-  "en": "school",
-  "es": "escuela",
-  "cards": 6
- },
- "escritório": {
-  "en": "office",
-  "es": "oficina",
-  "cards": 1
- },
- "estar": {
-  "en": "estar",
-  "es": "estar",
-  "cards": 1
- },
- "expressão": {
-  "en": "expression",
-  "es": "expresión",
-  "cards": 54
- },
- "falso-amigo": {
-  "en": "false friend",
-  "es": "falso amigo",
-  "cards": 53
- },
- "família": {
-  "en": "family",
-  "es": "familia",
-  "cards": 0
- },
- "filosofia": {
-  "en": "philosophy",
-  "es": "filosofía",
-  "cards": 1
- },
- "formal": {
-  "en": "formal",
-  "es": "formal",
-  "cards": 4
- },
- "futuro": {
-  "en": "future",
-  "es": "futuro",
-  "cards": 1
- },
- "gerúndio": {
-  "en": "gerund",
-  "es": "gerundio",
-  "cards": 1
- },
- "gramática": {
-  "en": "grammar",
-  "es": "gramática",
-  "cards": 18
- },
- "gustar": {
-  "en": "gustar",
-  "es": "gustar",
-  "cards": 1
- },
- "gíria": {
-  "en": "slang",
-  "es": "jerga",
-  "cards": 12
- },
- "haber": {
-  "en": "haber",
-  "es": "haber",
-  "cards": 2
- },
- "hacer": {
-  "en": "hacer",
-  "es": "hacer",
-  "cards": 4
- },
- "huir": {
-  "en": "huir",
-  "es": "huir",
-  "cards": 0
- },
- "imperativo": {
-  "en": "imperative",
-  "es": "imperativo",
-  "cards": 2
- },
- "imperfeito": {
-  "en": "imperfect",
-  "es": "imperfecto",
-  "cards": 5
- },
- "ir": {
-  "en": "ir",
-  "es": "ir",
-  "cards": 2
- },
- "irregular": {
-  "en": "irregular",
-  "es": "irregular",
-  "cards": 41
- },
- "jugar": {
-  "en": "jugar",
-  "es": "jugar",
-  "cards": 1
- },
- "jurídico": {
-  "en": "legal",
-  "es": "jurídico",
-  "cards": 4
- },
- "leer": {
-  "en": "leer",
-  "es": "leer",
-  "cards": 0
- },
- "llover": {
-  "en": "llover",
-  "es": "llover",
-  "cards": 0
- },
- "mais-que-perfeito": {
-  "en": "pluperfect",
-  "es": "pluscuamperfecto",
-  "cards": 0
- },
- "morir": {
-  "en": "morir",
-  "es": "morir",
-  "cards": 0
- },
- "mídia": {
-  "en": "media",
-  "es": "medios",
-  "cards": 4
- },
- "objetos": {
-  "en": "objects",
-  "es": "objetos",
-  "cards": 4
- },
- "oler": {
-  "en": "oler",
-  "es": "oler",
-  "cards": 0
- },
- "oír": {
-  "en": "oír",
-  "es": "oír",
-  "cards": 1
- },
- "pedir": {
-  "en": "pedir",
-  "es": "pedir",
-  "cards": 1
- },
- "perder": {
-  "en": "perder",
-  "es": "perder",
-  "cards": 0
- },
- "phrasal verb": {
-  "en": "phrasal verb",
-  "es": "phrasal verb",
-  "cards": 0
- },
- "poder": {
-  "en": "poder",
-  "es": "poder",
-  "cards": 1
- },
- "política": {
-  "en": "politics",
-  "es": "política",
-  "cards": 1
- },
- "poner": {
-  "en": "poner",
-  "es": "poner",
-  "cards": 1
- },
- "preposição": {
-  "en": "preposition",
-  "es": "preposición",
-  "cards": 0
- },
- "present perfect": {
-  "en": "present perfect",
-  "es": "present perfect",
-  "cards": 0
- },
- "presente": {
-  "en": "present",
-  "es": "presente",
-  "cards": 13
- },
- "pretérito": {
-  "en": "preterite",
-  "es": "pretérito",
-  "cards": 21
- },
- "pretérito perfeito": {
-  "en": "present perfect",
-  "es": "pretérito perfecto",
-  "cards": 1
- },
- "profissões": {
-  "en": "trades",
-  "es": "oficios",
-  "cards": 3
- },
- "pronomes": {
-  "en": "pronouns",
-  "es": "pronombres",
-  "cards": 1
- },
- "provérbio": {
-  "en": "proverb",
-  "es": "refrán",
-  "cards": 5
- },
- "querer": {
-  "en": "querer",
-  "es": "querer",
-  "cards": 2
- },
- "regular": {
-  "en": "regular",
-  "es": "regular",
-  "cards": 9
- },
- "reír": {
-  "en": "reír",
-  "es": "reír",
-  "cards": 0
- },
- "romper": {
-  "en": "romper",
-  "es": "romper",
-  "cards": 0
- },
- "roupa": {
-  "en": "clothing",
-  "es": "ropa",
-  "cards": 5
- },
- "saber": {
-  "en": "saber",
-  "es": "saber",
-  "cards": 2
- },
- "salir": {
-  "en": "salir",
-  "es": "salir",
-  "cards": 1
- },
- "saúde": {
-  "en": "health",
-  "es": "salud",
-  "cards": 0
- },
- "seguir": {
-  "en": "seguir",
-  "es": "seguir",
-  "cards": 0
- },
- "sentarse": {
-  "en": "sentarse",
-  "es": "sentarse",
-  "cards": 0
- },
- "sentir": {
-  "en": "sentir",
-  "es": "sentir",
-  "cards": 0
- },
- "ser": {
-  "en": "ser",
-  "es": "ser",
-  "cards": 3
- },
- "social": {
-  "en": "society",
-  "es": "sociedad",
-  "cards": 1
- },
- "subjuntivo": {
-  "en": "subjunctive",
-  "es": "subjuntivo",
-  "cards": 9
- },
- "substantivo": {
-  "en": "noun",
-  "es": "sustantivo",
-  "cards": 26
- },
- "teach": {
-  "en": "teach",
-  "es": "teach",
-  "cards": 0
- },
- "tecnologia": {
-  "en": "technology",
-  "es": "tecnología",
-  "cards": 1
- },
- "tell": {
-  "en": "tell",
-  "es": "tell",
-  "cards": 0
- },
- "tener": {
-  "en": "tener",
-  "es": "tener",
-  "cards": 3
- },
- "trabalho": {
-  "en": "work",
-  "es": "trabajo",
-  "cards": 5
- },
- "traer": {
-  "en": "traer",
-  "es": "traer",
-  "cards": 1
- },
- "venir": {
-  "en": "venir",
-  "es": "venir",
-  "cards": 4
- },
- "ver": {
-  "en": "ver",
-  "es": "ver",
-  "cards": 2
- },
- "verbo": {
-  "en": "verb",
-  "es": "verbo",
-  "cards": 27
- },
- "vestirse": {
-  "en": "vestirse",
-  "es": "vestirse",
-  "cards": 0
- },
- "viagem": {
-  "en": "travel",
-  "es": "viaje",
-  "cards": 6
- },
- "vivir": {
-  "en": "vivir",
-  "es": "vivir",
-  "cards": 0
- },
- "go": {
-  "en": "go",
-  "es": "go",
-  "cards": 0
- },
- "take": {
-  "en": "take",
-  "es": "take",
-  "cards": 0
- },
- "give": {
-  "en": "give",
-  "es": "give",
-  "cards": 0
- },
- "make": {
-  "en": "make",
-  "es": "make",
-  "cards": 0
- },
- "come": {
-  "en": "come",
-  "es": "come",
-  "cards": 0
- },
- "see": {
-  "en": "see",
-  "es": "see",
-  "cards": 0
- },
- "know": {
-  "en": "know",
-  "es": "know",
-  "cards": 0
- },
- "think": {
-  "en": "think",
-  "es": "think",
-  "cards": 0
- },
- "find": {
-  "en": "find",
-  "es": "find",
-  "cards": 0
- },
- "leave": {
-  "en": "leave",
-  "es": "leave",
-  "cards": 0
- },
- "put": {
-  "en": "put",
-  "es": "put",
-  "cards": 0
- },
- "write": {
-  "en": "write",
-  "es": "write",
-  "cards": 0
- },
- "speak": {
-  "en": "speak",
-  "es": "speak",
-  "cards": 0
- },
- "break": {
-  "en": "break",
-  "es": "break",
-  "cards": 0
- },
- "drive": {
-  "en": "drive",
-  "es": "drive",
-  "cards": 0
- },
- "feel": {
-  "en": "feel",
-  "es": "feel",
-  "cards": 0
- },
- "lose": {
-  "en": "lose",
-  "es": "lose",
-  "cards": 0
- },
- "pay": {
-  "en": "pay",
-  "es": "pay",
-  "cards": 0
- },
- "understand": {
-  "en": "understand",
-  "es": "understand",
-  "cards": 0
- },
- "get": {
-  "en": "get",
-  "es": "get",
-  "cards": 0
- },
- "sit": {
-  "en": "sit",
-  "es": "sit",
-  "cards": 0
- },
- "stand": {
-  "en": "stand",
-  "es": "stand",
-  "cards": 0
- },
- "read": {
-  "en": "read",
-  "es": "read",
-  "cards": 0
- },
- "hear": {
-  "en": "hear",
-  "es": "hear",
-  "cards": 0
- },
- "meet": {
-  "en": "meet",
-  "es": "meet",
-  "cards": 0
- },
- "win": {
-  "en": "win",
-  "es": "win",
-  "cards": 0
- },
- "send": {
-  "en": "send",
-  "es": "send",
-  "cards": 0
- },
- "sell": {
-  "en": "sell",
-  "es": "sell",
-  "cards": 0
- },
- "spend": {
-  "en": "spend",
-  "es": "spend",
-  "cards": 0
- },
- "keep": {
-  "en": "keep",
-  "es": "keep",
-  "cards": 0
- },
- "hold": {
-  "en": "hold",
-  "es": "hold",
-  "cards": 0
- },
- "choose": {
-  "en": "choose",
-  "es": "choose",
-  "cards": 0
- },
- "grow": {
-  "en": "grow",
-  "es": "grow",
-  "cards": 0
- },
- "forget": {
-  "en": "forget",
-  "es": "forget",
-  "cards": 0
- },
- "fall": {
-  "en": "fall",
-  "es": "fall",
-  "cards": 0
- },
- "begin": {
-  "en": "begin",
-  "es": "begin",
-  "cards": 0
- },
- "build": {
-  "en": "build",
-  "es": "build",
-  "cards": 0
- },
- "sleep": {
-  "en": "sleep",
-  "es": "sleep",
-  "cards": 0
- },
- "cut": {
-  "en": "cut",
-  "es": "cut",
-  "cards": 0
- },
- "become": {
-  "en": "become",
-  "es": "become",
-  "cards": 0
- }
+  "Espanha": {
+    "en": "Spain",
+    "es": "España",
+    "cards": 22
+  },
+  "adjetivo": {
+    "en": "adjective",
+    "es": "adjetivo",
+    "cards": 19
+  },
+  "agradecer": {
+    "en": "agradecer",
+    "es": "agradecer",
+    "cards": 0
+  },
+  "andar": {
+    "en": "andar",
+    "es": "andar",
+    "cards": 1
+  },
+  "animais": {
+    "en": "animals",
+    "es": "animales",
+    "cards": 8
+  },
+  "bring": {
+    "en": "bring",
+    "es": "bring",
+    "cards": 0
+  },
+  "buy": {
+    "en": "buy",
+    "es": "buy",
+    "cards": 0
+  },
+  "caber": {
+    "en": "caber",
+    "es": "caber",
+    "cards": 0
+  },
+  "caer": {
+    "en": "caer",
+    "es": "caer",
+    "cards": 1
+  },
+  "casa": {
+    "en": "home",
+    "es": "casa",
+    "cards": 24
+  },
+  "catch": {
+    "en": "catch",
+    "es": "catch",
+    "cards": 0
+  },
+  "cidade": {
+    "en": "city",
+    "es": "ciudad",
+    "cards": 8
+  },
+  "comida": {
+    "en": "food",
+    "es": "comida",
+    "cards": 14
+  },
+  "condicional": {
+    "en": "conditional",
+    "es": "condicional",
+    "cards": 4
+  },
+  "conducir": {
+    "en": "conducir",
+    "es": "conducir",
+    "cards": 0
+  },
+  "conjugação": {
+    "en": "conjugation",
+    "es": "conjugación",
+    "cards": 50
+  },
+  "conocer": {
+    "en": "conocer",
+    "es": "conocer",
+    "cards": 1
+  },
+  "contar": {
+    "en": "contar",
+    "es": "contar",
+    "cards": 0
+  },
+  "corpo": {
+    "en": "body",
+    "es": "cuerpo",
+    "cards": 2
+  },
+  "cotidiano": {
+    "en": "everyday",
+    "es": "cotidiano",
+    "cards": 23
+  },
+  "cultura": {
+    "en": "culture",
+    "es": "cultura",
+    "cards": 1
+  },
+  "dar": {
+    "en": "dar",
+    "es": "dar",
+    "cards": 1
+  },
+  "decir": {
+    "en": "decir",
+    "es": "decir",
+    "cards": 2
+  },
+  "doler": {
+    "en": "doler",
+    "es": "doler",
+    "cards": 0
+  },
+  "dormir": {
+    "en": "dormir",
+    "es": "dormir",
+    "cards": 2
+  },
+  "eat": {
+    "en": "eat",
+    "es": "eat",
+    "cards": 0
+  },
+  "economia": {
+    "en": "economy",
+    "es": "economía",
+    "cards": 2
+  },
+  "elegir": {
+    "en": "elegir",
+    "es": "elegir",
+    "cards": 0
+  },
+  "empezar": {
+    "en": "empezar",
+    "es": "empezar",
+    "cards": 1
+  },
+  "escola": {
+    "en": "school",
+    "es": "escuela",
+    "cards": 6
+  },
+  "escritório": {
+    "en": "office",
+    "es": "oficina",
+    "cards": 1
+  },
+  "estar": {
+    "en": "estar",
+    "es": "estar",
+    "cards": 1
+  },
+  "expressão": {
+    "en": "expression",
+    "es": "expresión",
+    "cards": 54
+  },
+  "falso-amigo": {
+    "en": "false friend",
+    "es": "falso amigo",
+    "cards": 53
+  },
+  "família": {
+    "en": "family",
+    "es": "familia",
+    "cards": 0
+  },
+  "filosofia": {
+    "en": "philosophy",
+    "es": "filosofía",
+    "cards": 1
+  },
+  "formal": {
+    "en": "formal",
+    "es": "formal",
+    "cards": 4
+  },
+  "futuro": {
+    "en": "future",
+    "es": "futuro",
+    "cards": 1
+  },
+  "gerúndio": {
+    "en": "gerund",
+    "es": "gerundio",
+    "cards": 1
+  },
+  "gramática": {
+    "en": "grammar",
+    "es": "gramática",
+    "cards": 18
+  },
+  "gustar": {
+    "en": "gustar",
+    "es": "gustar",
+    "cards": 1
+  },
+  "gíria": {
+    "en": "slang",
+    "es": "jerga",
+    "cards": 12
+  },
+  "haber": {
+    "en": "haber",
+    "es": "haber",
+    "cards": 2
+  },
+  "hacer": {
+    "en": "hacer",
+    "es": "hacer",
+    "cards": 4
+  },
+  "huir": {
+    "en": "huir",
+    "es": "huir",
+    "cards": 0
+  },
+  "imperativo": {
+    "en": "imperative",
+    "es": "imperativo",
+    "cards": 2
+  },
+  "imperfeito": {
+    "en": "imperfect",
+    "es": "imperfecto",
+    "cards": 5
+  },
+  "ir": {
+    "en": "ir",
+    "es": "ir",
+    "cards": 2
+  },
+  "irregular": {
+    "en": "irregular",
+    "es": "irregular",
+    "cards": 41
+  },
+  "jugar": {
+    "en": "jugar",
+    "es": "jugar",
+    "cards": 1
+  },
+  "jurídico": {
+    "en": "legal",
+    "es": "jurídico",
+    "cards": 4
+  },
+  "leer": {
+    "en": "leer",
+    "es": "leer",
+    "cards": 0
+  },
+  "llover": {
+    "en": "llover",
+    "es": "llover",
+    "cards": 0
+  },
+  "mais-que-perfeito": {
+    "en": "pluperfect",
+    "es": "pluscuamperfecto",
+    "cards": 0
+  },
+  "morir": {
+    "en": "morir",
+    "es": "morir",
+    "cards": 0
+  },
+  "mídia": {
+    "en": "media",
+    "es": "medios",
+    "cards": 4
+  },
+  "objetos": {
+    "en": "objects",
+    "es": "objetos",
+    "cards": 4
+  },
+  "oler": {
+    "en": "oler",
+    "es": "oler",
+    "cards": 0
+  },
+  "oír": {
+    "en": "oír",
+    "es": "oír",
+    "cards": 1
+  },
+  "pedir": {
+    "en": "pedir",
+    "es": "pedir",
+    "cards": 1
+  },
+  "perder": {
+    "en": "perder",
+    "es": "perder",
+    "cards": 0
+  },
+  "phrasal verb": {
+    "en": "phrasal verb",
+    "es": "phrasal verb",
+    "cards": 0
+  },
+  "poder": {
+    "en": "poder",
+    "es": "poder",
+    "cards": 1
+  },
+  "política": {
+    "en": "politics",
+    "es": "política",
+    "cards": 1
+  },
+  "poner": {
+    "en": "poner",
+    "es": "poner",
+    "cards": 1
+  },
+  "preposição": {
+    "en": "preposition",
+    "es": "preposición",
+    "cards": 0
+  },
+  "present perfect": {
+    "en": "present perfect",
+    "es": "present perfect",
+    "cards": 0
+  },
+  "presente": {
+    "en": "present",
+    "es": "presente",
+    "cards": 13
+  },
+  "pretérito": {
+    "en": "preterite",
+    "es": "pretérito",
+    "cards": 21
+  },
+  "pretérito perfeito": {
+    "en": "present perfect",
+    "es": "pretérito perfecto",
+    "cards": 1
+  },
+  "profissões": {
+    "en": "trades",
+    "es": "oficios",
+    "cards": 3
+  },
+  "pronomes": {
+    "en": "pronouns",
+    "es": "pronombres",
+    "cards": 1
+  },
+  "provérbio": {
+    "en": "proverb",
+    "es": "refrán",
+    "cards": 5
+  },
+  "querer": {
+    "en": "querer",
+    "es": "querer",
+    "cards": 2
+  },
+  "regular": {
+    "en": "regular",
+    "es": "regular",
+    "cards": 9
+  },
+  "reír": {
+    "en": "reír",
+    "es": "reír",
+    "cards": 0
+  },
+  "romper": {
+    "en": "romper",
+    "es": "romper",
+    "cards": 0
+  },
+  "roupa": {
+    "en": "clothing",
+    "es": "ropa",
+    "cards": 5
+  },
+  "saber": {
+    "en": "saber",
+    "es": "saber",
+    "cards": 2
+  },
+  "salir": {
+    "en": "salir",
+    "es": "salir",
+    "cards": 1
+  },
+  "saúde": {
+    "en": "health",
+    "es": "salud",
+    "cards": 0
+  },
+  "seguir": {
+    "en": "seguir",
+    "es": "seguir",
+    "cards": 0
+  },
+  "sentarse": {
+    "en": "sentarse",
+    "es": "sentarse",
+    "cards": 0
+  },
+  "sentir": {
+    "en": "sentir",
+    "es": "sentir",
+    "cards": 0
+  },
+  "ser": {
+    "en": "ser",
+    "es": "ser",
+    "cards": 3
+  },
+  "social": {
+    "en": "society",
+    "es": "sociedad",
+    "cards": 1
+  },
+  "subjuntivo": {
+    "en": "subjunctive",
+    "es": "subjuntivo",
+    "cards": 9
+  },
+  "substantivo": {
+    "en": "noun",
+    "es": "sustantivo",
+    "cards": 26
+  },
+  "teach": {
+    "en": "teach",
+    "es": "teach",
+    "cards": 0
+  },
+  "tecnologia": {
+    "en": "technology",
+    "es": "tecnología",
+    "cards": 1
+  },
+  "tell": {
+    "en": "tell",
+    "es": "tell",
+    "cards": 0
+  },
+  "tener": {
+    "en": "tener",
+    "es": "tener",
+    "cards": 3
+  },
+  "trabalho": {
+    "en": "work",
+    "es": "trabajo",
+    "cards": 5
+  },
+  "traer": {
+    "en": "traer",
+    "es": "traer",
+    "cards": 1
+  },
+  "venir": {
+    "en": "venir",
+    "es": "venir",
+    "cards": 4
+  },
+  "ver": {
+    "en": "ver",
+    "es": "ver",
+    "cards": 2
+  },
+  "verbo": {
+    "en": "verb",
+    "es": "verbo",
+    "cards": 27
+  },
+  "vestirse": {
+    "en": "vestirse",
+    "es": "vestirse",
+    "cards": 0
+  },
+  "viagem": {
+    "en": "travel",
+    "es": "viaje",
+    "cards": 6
+  },
+  "vivir": {
+    "en": "vivir",
+    "es": "vivir",
+    "cards": 0
+  },
+  "go": {
+    "en": "go",
+    "es": "go",
+    "cards": 0
+  },
+  "take": {
+    "en": "take",
+    "es": "take",
+    "cards": 0
+  },
+  "give": {
+    "en": "give",
+    "es": "give",
+    "cards": 0
+  },
+  "make": {
+    "en": "make",
+    "es": "make",
+    "cards": 0
+  },
+  "come": {
+    "en": "come",
+    "es": "come",
+    "cards": 0
+  },
+  "see": {
+    "en": "see",
+    "es": "see",
+    "cards": 0
+  },
+  "know": {
+    "en": "know",
+    "es": "know",
+    "cards": 0
+  },
+  "think": {
+    "en": "think",
+    "es": "think",
+    "cards": 0
+  },
+  "find": {
+    "en": "find",
+    "es": "find",
+    "cards": 0
+  },
+  "leave": {
+    "en": "leave",
+    "es": "leave",
+    "cards": 0
+  },
+  "put": {
+    "en": "put",
+    "es": "put",
+    "cards": 0
+  },
+  "write": {
+    "en": "write",
+    "es": "write",
+    "cards": 0
+  },
+  "speak": {
+    "en": "speak",
+    "es": "speak",
+    "cards": 0
+  },
+  "break": {
+    "en": "break",
+    "es": "break",
+    "cards": 0
+  },
+  "drive": {
+    "en": "drive",
+    "es": "drive",
+    "cards": 0
+  },
+  "feel": {
+    "en": "feel",
+    "es": "feel",
+    "cards": 0
+  },
+  "lose": {
+    "en": "lose",
+    "es": "lose",
+    "cards": 0
+  },
+  "pay": {
+    "en": "pay",
+    "es": "pay",
+    "cards": 0
+  },
+  "understand": {
+    "en": "understand",
+    "es": "understand",
+    "cards": 0
+  },
+  "get": {
+    "en": "get",
+    "es": "get",
+    "cards": 0
+  },
+  "sit": {
+    "en": "sit",
+    "es": "sit",
+    "cards": 0
+  },
+  "stand": {
+    "en": "stand",
+    "es": "stand",
+    "cards": 0
+  },
+  "read": {
+    "en": "read",
+    "es": "read",
+    "cards": 0
+  },
+  "hear": {
+    "en": "hear",
+    "es": "hear",
+    "cards": 0
+  },
+  "meet": {
+    "en": "meet",
+    "es": "meet",
+    "cards": 0
+  },
+  "win": {
+    "en": "win",
+    "es": "win",
+    "cards": 0
+  },
+  "send": {
+    "en": "send",
+    "es": "send",
+    "cards": 0
+  },
+  "sell": {
+    "en": "sell",
+    "es": "sell",
+    "cards": 0
+  },
+  "spend": {
+    "en": "spend",
+    "es": "spend",
+    "cards": 0
+  },
+  "keep": {
+    "en": "keep",
+    "es": "keep",
+    "cards": 0
+  },
+  "hold": {
+    "en": "hold",
+    "es": "hold",
+    "cards": 0
+  },
+  "choose": {
+    "en": "choose",
+    "es": "choose",
+    "cards": 0
+  },
+  "grow": {
+    "en": "grow",
+    "es": "grow",
+    "cards": 0
+  },
+  "forget": {
+    "en": "forget",
+    "es": "forget",
+    "cards": 0
+  },
+  "fall": {
+    "en": "fall",
+    "es": "fall",
+    "cards": 0
+  },
+  "begin": {
+    "en": "begin",
+    "es": "begin",
+    "cards": 0
+  },
+  "build": {
+    "en": "build",
+    "es": "build",
+    "cards": 0
+  },
+  "sleep": {
+    "en": "sleep",
+    "es": "sleep",
+    "cards": 0
+  },
+  "cut": {
+    "en": "cut",
+    "es": "cut",
+    "cards": 0
+  },
+  "become": {
+    "en": "become",
+    "es": "become",
+    "cards": 0
+  },
+  "run": {
+    "en": "run",
+    "es": "run",
+    "cards": 0
+  },
+  "wear": {
+    "en": "wear",
+    "es": "wear",
+    "cards": 0
+  },
+  "throw": {
+    "en": "throw",
+    "es": "throw",
+    "cards": 0
+  },
+  "draw": {
+    "en": "draw",
+    "es": "draw",
+    "cards": 0
+  },
+  "ride": {
+    "en": "ride",
+    "es": "ride",
+    "cards": 0
+  },
+  "shake": {
+    "en": "shake",
+    "es": "shake",
+    "cards": 0
+  },
+  "steal": {
+    "en": "steal",
+    "es": "steal",
+    "cards": 0
+  },
+  "swim": {
+    "en": "swim",
+    "es": "swim",
+    "cards": 0
+  },
+  "tear": {
+    "en": "tear",
+    "es": "tear",
+    "cards": 0
+  },
+  "hide": {
+    "en": "hide",
+    "es": "hide",
+    "cards": 0
+  },
+  "mean": {
+    "en": "mean",
+    "es": "mean",
+    "cards": 0
+  },
+  "ring": {
+    "en": "ring",
+    "es": "ring",
+    "cards": 0
+  },
+  "sing": {
+    "en": "sing",
+    "es": "sing",
+    "cards": 0
+  },
+  "bite": {
+    "en": "bite",
+    "es": "bite",
+    "cards": 0
+  },
+  "hang": {
+    "en": "hang",
+    "es": "hang",
+    "cards": 0
+  },
+  "fight": {
+    "en": "fight",
+    "es": "fight",
+    "cards": 0
+  },
+  "fly": {
+    "en": "fly",
+    "es": "fly",
+    "cards": 0
+  },
+  "lead": {
+    "en": "lead",
+    "es": "lead",
+    "cards": 0
+  },
+  "forgive": {
+    "en": "forgive",
+    "es": "forgive",
+    "cards": 0
+  },
+  "freeze": {
+    "en": "freeze",
+    "es": "freeze",
+    "cards": 0
+  }
 }

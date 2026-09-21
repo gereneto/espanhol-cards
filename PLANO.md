@@ -174,7 +174,8 @@ baralhos de feitios bem diferentes.
 | 1 | Inglês, leva de estreia: 30 cards variados, lidos um a um | **feito** (21/09) — aprovados sem mudança |
 | 2 | Inglês, leva 2: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 130 |
 | 3 | Inglês, leva 3: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 230 |
-| 4… | Inglês, levas de ~100 até fechar mil | — |
+| 4 | Inglês, leva 4: 100 cards puxando para B2, C1 e as primeiras C2 | **feito** (21/09) — o baralho está em 330 |
+| 5… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -183,6 +184,20 @@ app for estudar inglês: o aviso de **resposta certa na língua errada** lê só
 pares `🇪🇸 → 🇧🇷` da nota (o baralho de inglês escreve `🇺🇸 → 🇧🇷` e `🇺🇸 → 🇪🇸`),
 e as réguas de acento, de «ñ» e de flexão são do espanhol — em inglês elas
 simplesmente não disparam, o que não estraga nada, mas também não ajuda.
+
+A leva 4 encontrou um terceiro limite, e este é de desenho, não de conserto:
+**a marcação de gênero `{o|a}` não serve ao baralho de inglês quando o que
+muda é a concordância do adjetivo.** O texto perguntado é o inglês, que não
+concorda — «I feel completely overwhelmed» sai idêntico nos dois sorteios, e o
+build lê como card repetido. Ela continua valendo onde o próprio inglês muda
+(`my brother`/`my sister`, `his`/`her`); no adjetivo, o card fica no masculino
+com o feminino em `aceitas`, que é o que o manual já manda para a palavra.
+
+A curva de níveis do inglês também vem sendo corrigida de propósito: as levas
+2 e 3 ficaram todas entre A2 e B2 porque foram atrás do que é mais frequente,
+e a leva 4 abriu C1 (36) e C2 (3). Até fechar mil o alvo é a proporção do
+espanhol — A1:75 A2:285 B1:307 B2:177 C1:100 C2:56 —, o que pede umas duas
+levas avançadas a mais e nenhuma leva só de básico.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
 varredura do motor, commit e push. É o commit que serve de memória, não a
