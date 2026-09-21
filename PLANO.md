@@ -168,11 +168,17 @@ baralhos de feitios bem diferentes.
 
 | # | etapa | estado |
 |---|---|---|
-| 0 | Formato: pastas por baralho, ids com prefixo, build e revisar.js lendo os três, manual generalizado | — |
-| 1 | Inglês, leva de estreia: 30 cards variados, lidos um a um | — |
+| 0 | Formato: pastas por baralho, ids com prefixo, build e revisar.js lendo os três, manual generalizado | **feito** (21/09) |
+| 1 | Inglês, leva de estreia: 30 cards variados, lidos um a um | **escrita** (21/09), esperando a leitura do Gere |
 | 2… | Inglês, levas de 80 a 120 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
+
+Depois da leva 1 ficam dois acertos pendentes no motor, que só pesam quando o
+app for estudar inglês: o aviso de **resposta certa na língua errada** lê só os
+pares `🇪🇸 → 🇧🇷` da nota (o baralho de inglês escreve `🇺🇸 → 🇧🇷` e `🇺🇸 → 🇪🇸`),
+e as réguas de acento, de «ñ» e de flexão são do espanhol — em inglês elas
+simplesmente não disparam, o que não estraga nada, mas também não ajuda.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
 varredura do motor, commit e push. É o commit que serve de memória, não a

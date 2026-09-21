@@ -1,4 +1,9 @@
 {
+ "Espanha": {
+  "en": "Spain",
+  "es": "España",
+  "cards": 22
+ },
  "adjetivo": {
   "en": "adjective",
   "es": "adjetivo",
@@ -19,6 +24,16 @@
   "es": "animales",
   "cards": 8
  },
+ "bring": {
+  "en": "bring",
+  "es": "bring",
+  "cards": 0
+ },
+ "buy": {
+  "en": "buy",
+  "es": "buy",
+  "cards": 0
+ },
  "caber": {
   "en": "caber",
   "es": "caber",
@@ -33,6 +48,11 @@
   "en": "home",
   "es": "casa",
   "cards": 24
+ },
+ "catch": {
+  "en": "catch",
+  "es": "catch",
+  "cards": 0
  },
  "cidade": {
   "en": "city",
@@ -104,6 +124,11 @@
   "es": "dormir",
   "cards": 2
  },
+ "eat": {
+  "en": "eat",
+  "es": "eat",
+  "cards": 0
+ },
  "economia": {
   "en": "economy",
   "es": "economía",
@@ -128,11 +153,6 @@
   "en": "office",
   "es": "oficina",
   "cards": 1
- },
- "Espanha": {
-  "en": "Spain",
-  "es": "España",
-  "cards": 22
  },
  "estar": {
   "en": "estar",
@@ -284,6 +304,11 @@
   "es": "perder",
   "cards": 0
  },
+ "phrasal verb": {
+  "en": "phrasal verb",
+  "es": "phrasal verb",
+  "cards": 0
+ },
  "poder": {
   "en": "poder",
   "es": "poder",
@@ -298,6 +323,16 @@
   "en": "poner",
   "es": "poner",
   "cards": 1
+ },
+ "preposição": {
+  "en": "preposition",
+  "es": "preposición",
+  "cards": 0
+ },
+ "present perfect": {
+  "en": "present perfect",
+  "es": "present perfect",
+  "cards": 0
  },
  "presente": {
   "en": "present",
@@ -404,10 +439,20 @@
   "es": "sustantivo",
   "cards": 26
  },
+ "teach": {
+  "en": "teach",
+  "es": "teach",
+  "cards": 0
+ },
  "tecnologia": {
   "en": "technology",
   "es": "tecnología",
   "cards": 1
+ },
+ "tell": {
+  "en": "tell",
+  "es": "tell",
+  "cards": 0
  },
  "tener": {
   "en": "tener",
