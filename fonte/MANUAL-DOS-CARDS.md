@@ -247,6 +247,18 @@ O mesmo para a tradução: «Me dê a mão» só difere de «me dê uma mão» n
 que o funil descarta. O build confere cada distrator, **e cada metade de
 distrator com barra**, contra as respostas aceitas — mas polissemia ele não vê.
 
+**E o sentido raro conta.** Se o dicionário dá o distrator como tradução
+possível, ainda que num registro literário, jurídico ou antigo, ele sai: não
+existe distrator meio certo. Foi o que tirou «realizar» de `en-p053`
+(«realize a profit»), «pretender» de `en-p001` («pretend to the throne») e
+«suportar» de `en-p007` («support the weight»), entre dez.
+
+**A armadilha não se perde: ela muda de card.** O que o sentido raro ameaça é a
+palavra solta, porque sozinha ela não escolhe sentido. Na frase de uso o
+contexto fecha, e ali o falso amigo continua de pé — «Don't talk to strangers»
+não é «não fale com estrangeiros», ainda que «stranger» sozinho possa ser o de
+fora.
+
 ### 6.2 O mesmo formato da resposta certa
 
 Se só a certa tem barra, ou parêntese, ou é bem mais longa ou mais curta que as
@@ -507,6 +519,7 @@ sem ele o navegador serve o baralho velho.
 | Regra | O caso |
 |---|---|
 | Distrator não pode ser outro sentido da palavra | `p031` tirar/atirar, `p060` zozobra/naufrágio, `p201` asistir/ajudar, `p247` ola do estádio, `p268` enlace matrimonial, `p073` soalho, `p239` inscrição |
+| Nem o sentido raro do dicionário | dez cards de inglês: `en-p053` realize/realizar, `en-p001` pretend/pretender, `en-p007` support/suportar, `en-p012` attend/atender, `en-p014` sensible/perceptível, `en-p035` injury/injúria, `en-p056` assist/comparecer, `en-p075` stranger/estrangeiro, `en-p078` terrific/terrível, `en-p079` apology/apologia |
 | Nem metade de distrator pode estar certa | `f004` «Me dê a mão. / Vamos atravessar.»; `p035` «the note», «the bill» |
 | `aceitas` não afrouxa o sentido | `v022` «ele levou o livro» para «trajo»; `v030` «durmo mal»; `v014` «acho que sim» |
 | Formato igual ao da certa | `p046` sobremesa: «a resposta certa está se destacando» |
@@ -532,6 +545,7 @@ sem ele o navegador serve o baralho velho.
 | Dois sentidos certos: cobra-se o que o português não tem | `p239` la matrícula (a placa), com o outro em `aceitas` |
 | Uma ficha, duas formas, para o que muda de gênero | `u023` «Tu hermano es muy majo», pedido do Gere, e mais 37 cards |
 | Cada contestação é decidida junto | combinado desde a primeira leva |
+| Contestação recusada entra na nota do card | `p201` «participar» para `asistir`: quem assiste está presente e pode ficar calado |
 
 ---
 

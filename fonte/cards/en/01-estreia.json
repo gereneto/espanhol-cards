@@ -1,32 +1,1364 @@
 [
-{"id": "en-p001", "tipo": "palavra", "en": "to pretend", "pt": "fingir", "es": "fingir", "aceitas": ["fingir", "simular", "fazer de conta", "fazer que"], "aceitasEs": ["fingir", "simular", "hacer como si", "aparentar"], "aceitasEn": ["to pretend", "pretend", "to make believe"], "distratores": ["pretender", "planejar", "prender", "adivinhar"], "distratoresEs": ["pretender", "planear", "prender", "adivinar"], "nivel": "B1", "tags": ["falso-amigo", "verbo"], "nota": "«Pretend» é fingir, fazer de conta. Quem pretende fazer algo «intends to» ou «plans to».\n🇺🇸 to pretend → 🇧🇷 fingir\n🇺🇸 to intend → 🇧🇷 pretender", "notaEs": "«Pretend» es fingir, hacer como si. El que pretende hacer algo «intends to» o «plans to».\n🇺🇸 to pretend → 🇪🇸 fingir\n🇺🇸 to intend → 🇪🇸 pretender"},
-{"id": "en-u001", "tipo": "frase", "requer": "en-p001", "en": "He pretended to be asleep.", "pt": "Ele fingiu estar dormindo.", "es": "Fingió estar dormido.", "aceitas": ["ele fingiu estar dormindo", "fingiu estar dormindo", "ele fingiu que estava dormindo", "ele fez de conta que estava dormindo", "ele fingiu dormir"], "aceitasEs": ["Fingió estar dormido", "Fingió que estaba dormido", "Hizo como que dormía", "Fingió dormir"], "aceitasEn": ["he pretended to be asleep", "he pretended he was asleep", "he was pretending to be asleep"], "distratores": ["Ele jurou estar dormindo.", "Ele parecia estar dormindo.", "Ele negou estar dormindo.", "Ele admitiu estar dormindo."], "distratoresEs": ["Juró estar dormido.", "Parecía estar dormido.", "Negó estar dormido.", "Admitió estar dormido."], "nivel": "B1", "tags": ["falso-amigo", "cotidiano"], "nota": "Depois de «pretend» vem «to» + verbo, ou uma oração inteira: «he pretended that he was asleep». Sozinho também se usa: «I'm not asleep, I'm pretending».", "notaEs": "Tras «pretend» va «to» + verbo, o una oración entera: «he pretended that he was asleep». También va solo: «I'm not asleep, I'm pretending»."},
-{"id": "en-p002", "tipo": "palavra", "en": "actually", "pt": "na verdade", "es": "en realidad", "aceitas": ["na verdade", "na realidade", "de fato", "pra falar a verdade"], "aceitasEs": ["en realidad", "la verdad", "de hecho", "realmente"], "aceitasEn": ["actually", "in fact", "in reality"], "distratores": ["atualmente", "hoje em dia", "com certeza", "por acaso"], "distratoresEs": ["actualmente", "hoy en día", "seguramente", "por casualidad"], "nivel": "A2", "tags": ["falso-amigo"], "nota": "«Actually» corrige ou contraria o que se acabou de dizer. O nosso «atualmente» é «currently» ou «nowadays».\n🇺🇸 actually → 🇧🇷 na verdade\n🇺🇸 currently → 🇧🇷 atualmente", "notaEs": "«Actually» corrige o contradice lo que se acaba de decir. «Actualmente» se dice «currently» o «nowadays».\n🇺🇸 actually → 🇪🇸 en realidad\n🇺🇸 currently → 🇪🇸 actualmente"},
-{"id": "en-u002", "tipo": "frase", "requer": "en-p002", "en": "Actually, I don't agree.", "pt": "Na verdade, eu não concordo.", "es": "En realidad, no estoy de acuerdo.", "aceitas": ["na verdade eu nao concordo", "na verdade nao concordo", "na realidade nao concordo", "de fato nao concordo", "pra falar a verdade nao concordo"], "aceitasEs": ["En realidad, no estoy de acuerdo", "La verdad es que no estoy de acuerdo", "Realmente no estoy de acuerdo", "De hecho, no estoy de acuerdo"], "aceitasEn": ["actually i dont agree", "actually i do not agree", "in fact i dont agree"], "distratores": ["Atualmente, eu não concordo.", "Por enquanto, eu não concordo.", "Com certeza, eu não concordo.", "Por acaso, eu não concordo."], "distratoresEs": ["Actualmente, no estoy de acuerdo.", "Por ahora, no estoy de acuerdo.", "Seguramente, no estoy de acuerdo.", "Por casualidad, no estoy de acuerdo."], "nivel": "A2", "tags": ["falso-amigo", "cotidiano"], "nota": "«Actually» abre a frase para discordar sem brigar — é o nosso «na verdade» de quem vai contrariar com jeito.", "notaEs": "«Actually» abre la frase para discrepar sin pelear: es el «en realidad» del que va a llevar la contraria con suavidad."},
-{"id": "en-p003", "tipo": "palavra", "en": "the shelf", "pt": "a prateleira", "es": "el estante", "aceitas": ["a prateleira", "a estante"], "aceitasEs": ["el estante", "la estantería", "la balda", "el anaquel"], "aceitasEn": ["the shelf", "shelf"], "distratores": ["a gaveta", "o armário", "a bandeja", "o degrau"], "distratoresEs": ["el cajón", "el armario", "la bandeja", "el escalón"], "nivel": "A2", "tags": ["casa", "substantivo"], "nota": "«Shelf» é a tábua; o móvel inteiro é «bookcase». O plural é irregular, como o de «wolf»: «two shelves».", "notaEs": "«Shelf» es la tabla; el mueble entero es «bookcase». El plural es irregular, como el de «wolf»: «two shelves»."},
-{"id": "en-u003", "tipo": "frase", "requer": "en-p003", "en": "Put the books on the shelf.", "pt": "Ponha os livros na prateleira.", "es": "Pon los libros en el estante.", "aceitas": ["ponha os livros na prateleira", "poe os livros na prateleira", "coloque os livros na prateleira", "coloca os livros na prateleira", "bote os livros na prateleira"], "aceitasEs": ["Pon los libros en el estante", "Coloca los libros en el estante", "Pon los libros en la estantería", "Mete los libros en el estante"], "aceitasEn": ["put the books on the shelf", "put the books onto the shelf"], "distratores": ["Ponha os livros na gaveta.", "Ponha os livros na mesa.", "Ponha os livros na caixa.", "Ponha os livros na mochila."], "distratoresEs": ["Pon los libros en el cajón.", "Pon los libros en la mesa.", "Pon los libros en la caja.", "Pon los libros en la mochila."], "nivel": "A2", "tags": ["casa", "cotidiano"], "nota": "Em cima de superfície é «on»: «on the shelf», «on the table». «In the shelf» seria dentro da tábua.", "notaEs": "Sobre una superficie va «on»: «on the shelf», «on the table». «In the shelf» sería dentro de la tabla."},
-{"id": "en-p004", "tipo": "palavra", "en": "to afford", "pt": "ter dinheiro para", "es": "permitirse", "aceitas": ["ter dinheiro para", "poder pagar", "ter condicoes de pagar", "bancar", "ter grana para"], "aceitasEs": ["permitirse", "poder pagar", "costearse", "permitirse el lujo"], "aceitasEn": ["to afford", "afford", "to be able to afford"], "distratores": ["ter vontade de", "ter tempo para", "ter coragem de", "ter permissão para"], "distratoresEs": ["atreverse", "molestarse", "apresurarse", "negarse"], "nivel": "B2", "tags": ["verbo", "economia"], "nota": "«Afford» quase sempre vem com «can»: «I can't afford it». E não é só dinheiro — «I can't afford to wait» é não poder se dar ao luxo de esperar.", "notaEs": "«Afford» casi siempre viene con «can»: «I can't afford it». Y no es solo dinero: «I can't afford to wait» es no poder permitirse esperar."},
-{"id": "en-u004", "tipo": "frase", "requer": "en-p004", "en": "I can't afford a new car.", "pt": "Não tenho dinheiro para um carro novo.", "es": "No puedo permitirme un coche nuevo.", "aceitas": ["nao tenho dinheiro para um carro novo", "nao posso pagar um carro novo", "nao tenho como comprar um carro novo", "nao da para eu comprar um carro novo", "nao tenho condicoes de comprar um carro novo"], "aceitasEs": ["No puedo permitirme un coche nuevo", "No me puedo permitir un coche nuevo", "No tengo dinero para un coche nuevo", "No puedo pagar un coche nuevo"], "aceitasEn": ["i cant afford a new car", "i cannot afford a new car", "i cant afford to buy a new car"], "distratores": ["Não tenho vontade de comprar um carro novo.", "Não tenho tempo de escolher um carro novo.", "Não tenho espaço para um carro novo.", "Não tenho coragem de comprar um carro novo."], "distratoresEs": ["No tengo ganas de comprar un coche nuevo.", "No tengo tiempo de elegir un coche nuevo.", "No tengo sitio para un coche nuevo.", "No me atrevo a comprar un coche nuevo."], "nivel": "B2", "tags": ["economia", "cotidiano"], "nota": "O inglês não tem verbo para «ter dinheiro para»: resolve tudo com «afford», e por isso ele aparece muito mais do que se imagina.", "notaEs": "El inglés no tiene un verbo para «tener dinero para»: lo resuelve todo con «afford», y por eso aparece mucho más de lo que parece."},
-{"id": "en-p005", "tipo": "palavra", "en": "eventually", "pt": "por fim", "es": "al final", "aceitas": ["por fim", "no fim", "no final", "com o tempo", "mais cedo ou mais tarde", "acabou acontecendo"], "aceitasEs": ["al final", "finalmente", "con el tiempo", "tarde o temprano"], "aceitasEn": ["eventually", "in the end", "sooner or later"], "distratores": ["eventualmente", "de vez em quando", "por acaso", "de repente"], "distratoresEs": ["eventualmente", "de vez en cuando", "por casualidad", "de repente"], "nivel": "B1", "tags": ["falso-amigo"], "nota": "«Eventually» é o que acaba acontecendo depois de um tempo. O nosso «eventualmente», de vez em quando, é «occasionally».\n🇺🇸 eventually → 🇧🇷 por fim\n🇺🇸 occasionally → 🇧🇷 eventualmente", "notaEs": "«Eventually» es lo que acaba pasando al cabo del tiempo. El «eventualmente» de vez en cuando es «occasionally».\n🇺🇸 eventually → 🇪🇸 al final\n🇺🇸 occasionally → 🇪🇸 eventualmente"},
-{"id": "en-u005", "tipo": "frase", "requer": "en-p005", "en": "We eventually found the place.", "pt": "No fim, achamos o lugar.", "es": "Al final encontramos el sitio.", "aceitas": ["no fim achamos o lugar", "no final achamos o lugar", "acabamos achando o lugar", "por fim encontramos o lugar", "no fim encontramos o lugar", "acabamos encontrando o lugar"], "aceitasEs": ["Al final encontramos el sitio", "Acabamos encontrando el sitio", "Finalmente encontramos el sitio", "Al final dimos con el sitio"], "aceitasEn": ["we eventually found the place", "eventually we found the place", "we found the place in the end"], "distratores": ["Eventualmente, achamos o lugar.", "De vez em quando, achamos o lugar.", "Por acaso, achamos o lugar.", "De repente, achamos o lugar."], "distratoresEs": ["Eventualmente encontramos el sitio.", "De vez en cuando encontramos el sitio.", "Por casualidad encontramos el sitio.", "De repente encontramos el sitio."], "nivel": "B1", "tags": ["falso-amigo", "cotidiano"], "nota": "«Eventually» traz a ideia de demora: procuramos, custou, e no fim achamos. Fica antes do verbo ou no começo da frase.", "notaEs": "«Eventually» trae la idea de demora: buscamos, costó, y al final lo encontramos. Va antes del verbo o al principio de la frase."},
-{"id": "en-p006", "tipo": "palavra", "en": "the sink", "pt": "a pia", "es": "el fregadero", "aceitas": ["a pia", "a cuba"], "aceitasEs": ["el fregadero", "la pila", "el lavabo"], "aceitasEn": ["the sink", "sink", "the kitchen sink"], "distratores": ["a torneira", "o ralo", "a banheira", "o balde"], "distratoresEs": ["el grifo", "el desagüe", "la bañera", "el cubo"], "nivel": "A2", "tags": ["casa", "substantivo"], "nota": "«Sink» é a pia da cozinha e a do banheiro. A torneira é «the faucet» nos Estados Unidos e «the tap» na Inglaterra.", "notaEs": "«Sink» vale para la cocina y para el baño. El grifo es «the faucet» en Estados Unidos y «the tap» en Inglaterra."},
-{"id": "en-u006", "tipo": "frase", "requer": "en-p006", "en": "The dishes are in the sink.", "pt": "A louça está na pia.", "es": "Los platos están en el fregadero.", "aceitas": ["a louca esta na pia", "os pratos estao na pia", "tem louca na pia", "a louca ta na pia"], "aceitasEs": ["Los platos están en el fregadero", "La vajilla está en el fregadero", "Hay platos en el fregadero"], "aceitasEn": ["the dishes are in the sink", "the plates are in the sink"], "distratores": ["A louça está na mesa.", "A louça está na gaveta.", "A louça está na máquina.", "A louça está na bancada."], "distratoresEs": ["Los platos están en la mesa.", "Los platos están en el cajón.", "Los platos están en el lavavajillas.", "Los platos están en la encimera."], "nivel": "A2", "tags": ["casa", "cotidiano"], "nota": "Dentro da pia é «in the sink», e não «on». «The dishes» é a louça toda; um prato só é «a dish» ou «a plate».", "notaEs": "Dentro del fregadero es «in the sink», no «on». «The dishes» es toda la vajilla; un plato suelto es «a dish» o «a plate»."},
-{"id": "en-p007", "tipo": "palavra", "en": "to support", "pt": "apoiar", "es": "apoyar", "aceitas": ["apoiar", "dar apoio", "sustentar", "torcer por"], "aceitasEs": ["apoyar", "dar apoyo", "respaldar", "mantener"], "aceitasEn": ["to support", "support", "to back"], "distratores": ["suportar", "supor", "suprir", "tolerar"], "distratoresEs": ["soportar", "suponer", "suplir", "tolerar"], "nivel": "B1", "tags": ["falso-amigo", "verbo"], "nota": "«Support» é apoiar, e também sustentar quem depende de você. Suportar, no sentido de aguentar, é «to bear» ou «to put up with».\n🇺🇸 to support → 🇧🇷 apoiar\n🇺🇸 to bear → 🇧🇷 suportar", "notaEs": "«Support» es apoyar, y también mantener a quien depende de uno. Soportar, en el sentido de aguantar, es «to bear» o «to put up with».\n🇺🇸 to support → 🇪🇸 apoyar\n🇺🇸 to bear → 🇪🇸 soportar"},
-{"id": "en-u007", "tipo": "frase", "requer": "en-p007", "en": "My family supports me.", "pt": "Minha família me apoia.", "es": "Mi familia me apoya.", "aceitas": ["minha familia me apoia", "a minha familia me apoia", "minha familia me da apoio", "minha familia esta do meu lado"], "aceitasEs": ["Mi familia me apoya", "Mi familia me da su apoyo", "Mi familia está de mi lado"], "aceitasEn": ["my family supports me", "my family support me", "my family is behind me"], "distratores": ["Minha família me suporta.", "Minha família me tolera.", "Minha família me entende.", "Minha família me cobra."], "distratoresEs": ["Mi familia me soporta.", "Mi familia me tolera.", "Mi familia me entiende.", "Mi familia me exige."], "nivel": "B1", "tags": ["falso-amigo", "família"], "nota": "Do lado do outro: «I support you» é estou com você. Quem aguenta mau humor «puts up with» — o inglês separa as duas coisas que o português junta em «suportar».", "notaEs": "«I support you» es estoy contigo. Quien aguanta el mal humor «puts up with»: el inglés separa las dos cosas que el español junta en «soportar»."},
-{"id": "en-p008", "tipo": "palavra", "en": "the spoon", "pt": "a colher", "es": "la cuchara", "aceitas": ["a colher"], "aceitasEs": ["la cuchara", "la cucharilla"], "aceitasEn": ["the spoon", "spoon"], "distratores": ["o garfo", "a faca", "o prato", "a xícara"], "distratoresEs": ["el tenedor", "el cuchillo", "el plato", "la taza"], "nivel": "A1", "tags": ["comida", "casa", "substantivo"], "nota": "«Fork» é garfo, «knife» é faca (o k não se pronuncia) e «spoon» é colher. A de cafezinho é «teaspoon».", "notaEs": "«Fork» es tenedor, «knife» cuchillo (la k no se pronuncia) y «spoon» cuchara. La de café es «teaspoon»."},
-{"id": "en-u008", "tipo": "frase", "requer": "en-p008", "en": "I need a spoon for the soup.", "pt": "Preciso de uma colher para a sopa.", "es": "Necesito una cuchara para la sopa.", "aceitas": ["preciso de uma colher para a sopa", "preciso de uma colher pra sopa", "queria uma colher para a sopa", "eu preciso de colher para a sopa"], "aceitasEs": ["Necesito una cuchara para la sopa", "Hace falta una cuchara para la sopa", "Quiero una cuchara para la sopa"], "aceitasEn": ["i need a spoon for the soup", "i need a spoon to eat the soup"], "distratores": ["Preciso de um garfo para a sopa.", "Preciso de uma faca para a sopa.", "Preciso de um prato para a sopa.", "Preciso de um guardanapo para a sopa."], "distratoresEs": ["Necesito un tenedor para la sopa.", "Necesito un cuchillo para la sopa.", "Necesito un plato para la sopa.", "Necesito una servilleta para la sopa."], "nivel": "A1", "tags": ["comida", "cotidiano"], "nota": "Objeto contável pede artigo: «a spoon», e nunca «I need spoon». No plural, «spoons», sem artigo nenhum.", "notaEs": "El objeto contable pide artículo: «a spoon», nunca «I need spoon». En plural, «spoons», sin artículo."},
-{"id": "en-f001", "tipo": "frase", "en": "I'm looking forward to it.", "pt": "Mal posso esperar.", "es": "Tengo muchas ganas.", "aceitas": ["mal posso esperar", "estou ansioso por isso", "estou ansiosa por isso", "nao vejo a hora", "to ansioso por isso", "estou doido para isso"], "aceitasEs": ["Tengo muchas ganas", "Estoy deseando", "Me hace mucha ilusión", "No veo la hora"], "aceitasEn": ["im looking forward to it", "i am looking forward to it", "i cant wait"], "distratores": ["Tenho que esperar um pouco.", "Vou esperar sentado.", "Estou cansado de esperar.", "Espero que sim."], "distratoresEs": ["Tengo que esperar un poco.", "Me da bastante pereza.", "No me apetece nada.", "Ya veremos."], "nivel": "B1", "tags": ["expressão", "cotidiano"], "nota": "Depois de «look forward to» vem substantivo ou verbo em -ing: «I'm looking forward to seeing you». É também o fecho educado de e-mail: «I look forward to hearing from you».", "notaEs": "Tras «look forward to» va sustantivo o verbo en -ing: «I'm looking forward to seeing you». Es también el cierre formal de un correo: «I look forward to hearing from you»."},
-{"id": "en-f002", "tipo": "frase", "en": "We ran out of milk.", "pt": "Acabou o leite.", "es": "Se nos acabó la leche.", "aceitas": ["acabou o leite", "ficamos sem leite", "o leite acabou", "acabou o nosso leite", "nao tem mais leite"], "aceitasEs": ["Se nos acabó la leche", "Nos quedamos sin leche", "Se acabó la leche"], "aceitasEn": ["we ran out of milk", "weve run out of milk", "we have run out of milk"], "distratores": ["Derramamos o leite.", "Compramos leite demais.", "Esquecemos o leite.", "Sobrou leite."], "distratoresEs": ["Derramamos la leche.", "Compramos demasiada leche.", "Se nos olvidó la leche.", "Nos sobró leche."], "nivel": "B1", "tags": ["phrasal verb", "comida"], "nota": "«Run out of» é acabar o estoque de alguma coisa. Sem o «of» o sujeito muda: «the milk ran out» é o leite que acabou, e «he ran out» é ele que saiu correndo.", "notaEs": "«Run out of» es quedarse sin algo. Sin el «of» cambia el sujeto: «the milk ran out» es la leche que se acabó, y «he ran out» es él que salió corriendo."},
-{"id": "en-f003", "tipo": "frase", "en": "It's up to you.", "pt": "Você que sabe.", "es": "Tú decides.", "aceitas": ["voce que sabe", "voce decide", "fica a seu criterio", "a decisao e sua", "como voce quiser", "depende de voce"], "aceitasEs": ["Tú decides", "Como tú quieras", "Depende de ti", "Tú verás"], "aceitasEn": ["its up to you", "it is up to you", "thats up to you"], "distratores": ["Estou contando com você.", "Já falei com você.", "Isso é culpa sua.", "Chegou a sua vez."], "distratoresEs": ["Cuento contigo.", "Ya hablé contigo.", "Es culpa tuya.", "Llegó tu turno."], "nivel": "B1", "tags": ["expressão", "cotidiano"], "nota": "«Up to» aqui é de quem é a decisão. A mesma dupla em «What are you up to?» é outra coisa: o que você anda aprontando.", "notaEs": "«Up to» aquí es de quién es la decisión. La misma pareja en «What are you up to?» es otra cosa: qué andas tramando."},
-{"id": "en-f004", "tipo": "frase", "en": "I have to put up with him.", "pt": "Tenho que aguentar ele.", "es": "Tengo que aguantarlo.", "aceitas": ["tenho que aguentar ele", "tenho que aguenta lo", "preciso aguentar ele", "tenho que suportar ele", "nao tem jeito tenho que aguentar ele"], "aceitasEs": ["Tengo que aguantarlo", "Tengo que soportarlo", "Me toca aguantarlo", "No me queda otra que aguantarlo"], "aceitasEn": ["i have to put up with him", "ive got to put up with him", "i have to put up with the guy"], "distratores": ["Tenho que ajudar ele.", "Tenho que enfrentar ele.", "Tenho que evitar ele.", "Tenho que obedecer ele."], "distratoresEs": ["Tengo que ayudarlo.", "Tengo que enfrentarlo.", "Tengo que evitarlo.", "Tengo que obedecerlo."], "nivel": "B2", "tags": ["phrasal verb", "cotidiano"], "nota": "«Put up with» é aguentar gente ou situação, e as três palavras andam sempre juntas. «Put up» sozinho é hospedar: «they put me up for the night».", "notaEs": "«Put up with» es aguantar a alguien o algo, y las tres palabras van siempre juntas. «Put up» a solas es alojar: «they put me up for the night»."},
-{"id": "en-f005", "tipo": "frase", "en": "How long have you lived here?", "pt": "Há quanto tempo você mora aqui?", "es": "¿Cuánto tiempo llevas viviendo aquí?", "aceitas": ["ha quanto tempo voce mora aqui", "faz quanto tempo que voce mora aqui", "voce mora aqui ha quanto tempo", "ha quanto tempo voce vive aqui", "tem quanto tempo que voce mora aqui"], "aceitasEs": ["¿Cuánto tiempo llevas viviendo aquí?", "¿Cuánto tiempo hace que vives aquí?", "¿Desde cuándo vives aquí?"], "aceitasEn": ["how long have you lived here", "how long have you been living here"], "distratores": ["Quanto tempo você morou aqui?", "Quando você veio morar aqui?", "Até quando você vai morar aqui?", "Por quanto tempo você vai morar aqui?"], "distratoresEs": ["¿Cuánto tiempo viviste aquí?", "¿Cuándo viniste a vivir aquí?", "¿Hasta cuándo vas a vivir aquí?", "¿Por cuánto tiempo vas a vivir aquí?"], "nivel": "B1", "tags": ["gramática", "present perfect"], "nota": "O que começou antes e continua até hoje vai no present perfect: «I have lived here for ten years». O português resolve com o presente e um «há», e por isso a forma inglesa não ocorre a ninguém.", "notaEs": "Lo que empezó antes y sigue hoy va en present perfect: «I have lived here for ten years». El español lo resuelve con «llevar» + gerundio, y por eso la forma inglesa no se le ocurre a nadie."},
-{"id": "en-f006", "tipo": "frase", "en": "It depends on the weather.", "pt": "Depende do tempo.", "es": "Depende del tiempo.", "aceitas": ["depende do tempo", "depende do clima", "vai depender do tempo"], "aceitasEs": ["Depende del tiempo", "Depende del clima", "Dependerá del tiempo"], "aceitasEn": ["it depends on the weather", "that depends on the weather"], "distratores": ["Combina com o tempo.", "Muda com o tempo.", "Fala do tempo.", "Reclama do tempo."], "distratoresEs": ["Combina con el tiempo.", "Cambia con el tiempo.", "Habla del tiempo.", "Se olvida del tiempo."], "nivel": "A2", "tags": ["preposição", "gramática"], "nota": "«Depend» pede «on», sempre: «it depends on you», «it depends on the price». Sozinho, no fim da frase, também se diz: «it depends».", "notaEs": "«Depend» pide «on», siempre: «it depends on you», «it depends on the price». A solas, al final de la frase, también vale: «it depends»."},
-{"id": "en-f007", "tipo": "frase", "en": "I used to smoke.", "pt": "Eu fumava.", "es": "Yo fumaba.", "aceitas": ["eu fumava", "fumava", "eu costumava fumar", "antes eu fumava"], "aceitasEs": ["Yo fumaba", "Fumaba", "Yo solía fumar", "Antes fumaba"], "aceitasEn": ["i used to smoke", "i used to be a smoker"], "distratores": ["Eu fumei.", "Eu fumo.", "Eu costumo fumar.", "Eu fumaria."], "distratoresEs": ["Yo fumé.", "Yo fumo.", "Yo suelo fumar.", "Yo fumaría."], "nivel": "B1", "tags": ["gramática", "imperfeito"], "nota": "«Used to» é o hábito que acabou: «I used to smoke, but I quit». Não existe no presente — para o hábito de hoje é «I usually smoke».", "notaEs": "«Used to» es el hábito que se acabó: «I used to smoke, but I quit». No existe en presente: para el hábito de hoy es «I usually smoke»."},
-{"id": "en-f008", "tipo": "frase", "en": "Never mind.", "pt": "Deixa pra lá.", "es": "Da igual.", "aceitas": ["deixa pra la", "deixa quieto", "esquece", "deixa isso pra la", "nao esquenta", "tanto faz"], "aceitasEs": ["Da igual", "Déjalo", "No importa", "Olvídalo", "Nada"], "aceitasEn": ["never mind", "nevermind", "dont worry about it"], "distratores": ["Nunca se importe.", "Nunca pense nisso.", "Não é da sua conta.", "Nem me lembro mais."], "distratoresEs": ["Nunca te importe.", "Nunca pienses en eso.", "No es asunto tuyo.", "Ya ni me acuerdo."], "nivel": "B1", "tags": ["expressão", "cotidiano"], "nota": "«Never mind» encerra o assunto: esquece, não precisa responder. Serve também para retirar o que se acabou de dizer, quando a resposta já veio sozinha.", "notaEs": "«Never mind» cierra el tema: olvídalo, no hace falta contestar. Sirve también para retirar lo que uno acaba de decir, cuando la respuesta ya llegó sola."},
-{"id": "en-v001", "tipo": "frase", "en": "I brought the wine.", "pt": "Eu trouxe o vinho.", "es": "Yo traje el vino.", "aceitas": ["eu trouxe o vinho", "trouxe o vinho", "eu trouxe vinho"], "aceitasEs": ["Yo traje el vino", "Traje el vino", "Yo he traído el vino"], "aceitasEn": ["i brought the wine", "i have brought the wine"], "distratores": ["Eu trago o vinho.", "Eu trarei o vinho.", "Eu traria o vinho.", "Eu tinha trazido o vinho."], "distratoresEs": ["Yo traigo el vino.", "Yo traeré el vino.", "Yo traería el vino.", "Yo había traído el vino."], "formasEn": {"I bring the wine": "presente", "I will bring the wine": "futuro", "I would bring the wine": "condicional", "I had brought the wine": "mais-que-perfeito"}, "formasEnEs": {"I bring the wine": "presente", "I will bring the wine": "futuro", "I would bring the wine": "condicional", "I had brought the wine": "pluscuamperfecto"}, "nivel": "A2", "tags": ["conjugação", "irregular", "bring", "pretérito"], "nota": "«Bring» faz «brought» no passado e no particípio — uma forma só para os dois. Trazer é «bring», para cá; levar é «take», para lá.", "notaEs": "«Bring» hace «brought» en pasado y en participio, una sola forma para los dos. Traer es «bring», hacia aquí; llevar es «take», hacia allá."},
-{"id": "en-v002", "tipo": "frase", "en": "I have already eaten.", "pt": "Eu já comi.", "es": "Ya he comido.", "aceitas": ["eu ja comi", "ja comi", "eu comi ja"], "aceitasEs": ["Ya he comido", "Ya comí", "He comido ya"], "aceitasEn": ["i have already eaten", "ive already eaten", "i already ate"], "distratores": ["Eu como sempre.", "Eu vou comer já.", "Eu tinha comido.", "Eu estou comendo."], "distratoresEs": ["Siempre como.", "Voy a comer ya.", "Ya había comido.", "Estoy comiendo."], "formasEn": {"I eat every day": "presente", "I will eat later": "futuro", "I had eaten before": "mais-que-perfeito", "I am eating now": "gerúndio"}, "formasEnEs": {"I eat every day": "presente", "I will eat later": "futuro", "I had eaten before": "pluscuamperfecto", "I am eating now": "gerundio"}, "nivel": "B1", "tags": ["conjugação", "present perfect", "eat", "irregular"], "nota": "«Eat» faz «ate» no passado e «eaten» no particípio. Com «already», o inglês americano também aceita o passado simples: «I already ate».", "notaEs": "«Eat» hace «ate» en pasado y «eaten» en participio. Con «already», el inglés americano acepta también el pasado simple: «I already ate»."},
-{"id": "en-v003", "tipo": "frase", "en": "He taught me to drive.", "pt": "Ele me ensinou a dirigir.", "es": "Él me enseñó a conducir.", "aceitas": ["ele me ensinou a dirigir", "me ensinou a dirigir", "ele me ensinou a guiar", "ele que me ensinou a dirigir"], "aceitasEs": ["Él me enseñó a conducir", "Me enseñó a conducir", "Él me enseñó a manejar"], "aceitasEn": ["he taught me to drive", "he taught me how to drive"], "distratores": ["Ele me ensina a dirigir.", "Ele vai me ensinar a dirigir.", "Ele me ensinaria a dirigir.", "Ele tinha me ensinado a dirigir."], "distratoresEs": ["Él me enseña a conducir.", "Él me enseñará a conducir.", "Él me enseñaría a conducir.", "Él me había enseñado a conducir."], "formasEn": {"He teaches me to drive": "presente", "He will teach me to drive": "futuro", "He would teach me to drive": "condicional", "He had taught me to drive": "mais-que-perfeito"}, "formasEnEs": {"He teaches me to drive": "presente", "He will teach me to drive": "futuro", "He would teach me to drive": "condicional", "He had taught me to drive": "pluscuamperfecto"}, "nivel": "B1", "tags": ["conjugação", "irregular", "teach", "pretérito"], "nota": "«Teach» faz «taught», e o «augh» se lê como um «ó» comprido. Ensinar é «teach», aprender é «learn» — o inglês nunca usa um pelo outro.", "notaEs": "«Teach» hace «taught», y el «augh» suena como una «o» larga. Enseñar es «teach», aprender es «learn»: el inglés nunca usa uno por otro."},
-{"id": "en-v004", "tipo": "frase", "en": "They caught the train.", "pt": "Eles pegaram o trem.", "es": "Tomaron el tren.", "aceitas": ["eles pegaram o trem", "pegaram o trem", "eles tomaram o trem", "eles alcancaram o trem"], "aceitasEs": ["Tomaron el tren", "Cogieron el tren", "Alcanzaron el tren"], "aceitasEn": ["they caught the train", "they got the train"], "distratores": ["Eles pegam o trem.", "Eles vão pegar o trem.", "Eles pegariam o trem.", "Eles tinham pegado o trem."], "distratoresEs": ["Toman el tren.", "Van a tomar el tren.", "Tomarían el tren.", "Habían tomado el tren."], "formasEn": {"They catch the train": "presente", "They will catch the train": "futuro", "They would catch the train": "condicional", "They had caught the train": "mais-que-perfeito"}, "formasEnEs": {"They catch the train": "presente", "They will catch the train": "futuro", "They would catch the train": "condicional", "They had caught the train": "pluscuamperfecto"}, "nivel": "A2", "tags": ["conjugação", "irregular", "catch", "viagem"], "nota": "«Catch» faz «caught», que rima com «taught». Serve para pegar o trem, pegar uma bola e pegar um resfriado: «I caught a cold».", "notaEs": "«Catch» hace «caught», que rima con «taught». Sirve para coger el tren, atrapar una pelota y pillar un resfriado: «I caught a cold»."},
-{"id": "en-v005", "tipo": "frase", "en": "I would have told you.", "pt": "Eu teria te contado.", "es": "Te lo habría dicho.", "aceitas": ["eu teria te contado", "teria te contado", "eu teria contado para voce", "eu teria te falado"], "aceitasEs": ["Te lo habría dicho", "Te lo hubiera dicho", "Yo te lo habría contado"], "aceitasEn": ["i would have told you", "id have told you"], "distratores": ["Eu tinha te contado.", "Eu te contarei.", "Eu te contaria.", "Eu te contei."], "distratoresEs": ["Te lo había dicho.", "Te lo diré.", "Te lo diría.", "Te lo dije."], "formasEn": {"I told you": "pretérito", "I will tell you": "futuro", "I would tell you": "condicional", "I had told you": "mais-que-perfeito"}, "formasEnEs": {"I told you": "pretérito", "I will tell you": "futuro", "I would tell you": "condicional", "I had told you": "pluscuamperfecto"}, "nivel": "B2", "tags": ["conjugação", "condicional", "tell", "irregular"], "nota": "«Would have» + particípio é o que teria acontecido e não aconteceu. Costuma vir com um «if» de passado: «I would have told you if I had known».", "notaEs": "«Would have» + participio es lo que habría pasado y no pasó. Suele venir con un «if» de pasado: «I would have told you if I had known»."},
-{"id": "en-v006", "tipo": "frase", "en": "Where did you buy that?", "pt": "Onde você comprou isso?", "es": "¿Dónde compraste eso?", "aceitas": ["onde voce comprou isso", "onde comprou isso", "onde e que voce comprou isso", "voce comprou isso onde"], "aceitasEs": ["¿Dónde compraste eso?", "¿Dónde has comprado eso?", "¿Dónde lo compraste?"], "aceitasEn": ["where did you buy that", "where did you get that"], "distratores": ["Onde você compra isso?", "Onde você vai comprar isso?", "Onde você compraria isso?", "Onde você tinha comprado isso?"], "distratoresEs": ["¿Dónde compras eso?", "¿Dónde vas a comprar eso?", "¿Dónde comprarías eso?", "¿Dónde habías comprado eso?"], "formasEn": {"Where do you buy that": "presente", "Where will you buy that": "futuro", "Where would you buy that": "condicional", "Where had you bought that": "mais-que-perfeito"}, "formasEnEs": {"Where do you buy that": "presente", "Where will you buy that": "futuro", "Where would you buy that": "condicional", "Where had you bought that": "pluscuamperfecto"}, "nivel": "A2", "tags": ["conjugação", "gramática", "buy", "pretérito"], "nota": "Na pergunta e na negativa, o passado simples pede «did» e o verbo volta ao infinitivo: «did you buy», nunca «did you bought».", "notaEs": "En pregunta y en negación, el pasado simple pide «did» y el verbo vuelve al infinitivo: «did you buy», nunca «did you bought»."}
+ {
+  "id": "en-p001",
+  "tipo": "palavra",
+  "en": "to pretend",
+  "pt": "fingir",
+  "es": "fingir",
+  "aceitas": [
+   "fingir",
+   "simular",
+   "fazer de conta",
+   "fazer que"
+  ],
+  "aceitasEs": [
+   "fingir",
+   "simular",
+   "hacer como si",
+   "aparentar"
+  ],
+  "aceitasEn": [
+   "to pretend",
+   "pretend",
+   "to make believe"
+  ],
+  "distratores": [
+   "prometer",
+   "planejar",
+   "prender",
+   "adivinhar"
+  ],
+  "distratoresEs": [
+   "prometer",
+   "planear",
+   "prender",
+   "adivinar"
+  ],
+  "nivel": "B1",
+  "tags": [
+   "falso-amigo",
+   "verbo"
+  ],
+  "nota": "«Pretend» é fingir, fazer de conta. Quem pretende fazer algo «intends to» ou «plans to».\n🇺🇸 to pretend → 🇧🇷 fingir\n🇺🇸 to intend → 🇧🇷 pretender",
+  "notaEs": "«Pretend» es fingir, hacer como si. El que pretende hacer algo «intends to» o «plans to».\n🇺🇸 to pretend → 🇪🇸 fingir\n🇺🇸 to intend → 🇪🇸 pretender"
+ },
+ {
+  "id": "en-u001",
+  "tipo": "frase",
+  "requer": "en-p001",
+  "en": "He pretended to be asleep.",
+  "pt": "Ele fingiu estar dormindo.",
+  "es": "Fingió estar dormido.",
+  "aceitas": [
+   "ele fingiu estar dormindo",
+   "fingiu estar dormindo",
+   "ele fingiu que estava dormindo",
+   "ele fez de conta que estava dormindo",
+   "ele fingiu dormir"
+  ],
+  "aceitasEs": [
+   "Fingió estar dormido",
+   "Fingió que estaba dormido",
+   "Hizo como que dormía",
+   "Fingió dormir"
+  ],
+  "aceitasEn": [
+   "he pretended to be asleep",
+   "he pretended he was asleep",
+   "he was pretending to be asleep"
+  ],
+  "distratores": [
+   "Ele jurou estar dormindo.",
+   "Ele parecia estar dormindo.",
+   "Ele negou estar dormindo.",
+   "Ele admitiu estar dormindo."
+  ],
+  "distratoresEs": [
+   "Juró estar dormido.",
+   "Parecía estar dormido.",
+   "Negó estar dormido.",
+   "Admitió estar dormido."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "falso-amigo",
+   "cotidiano"
+  ],
+  "nota": "Depois de «pretend» vem «to» + verbo, ou uma oração inteira: «he pretended that he was asleep». Sozinho também se usa: «I'm not asleep, I'm pretending».",
+  "notaEs": "Tras «pretend» va «to» + verbo, o una oración entera: «he pretended that he was asleep». También va solo: «I'm not asleep, I'm pretending»."
+ },
+ {
+  "id": "en-p002",
+  "tipo": "palavra",
+  "en": "actually",
+  "pt": "na verdade",
+  "es": "en realidad",
+  "aceitas": [
+   "na verdade",
+   "na realidade",
+   "de fato",
+   "pra falar a verdade"
+  ],
+  "aceitasEs": [
+   "en realidad",
+   "la verdad",
+   "de hecho",
+   "realmente"
+  ],
+  "aceitasEn": [
+   "actually",
+   "in fact",
+   "in reality"
+  ],
+  "distratores": [
+   "atualmente",
+   "hoje em dia",
+   "com certeza",
+   "por acaso"
+  ],
+  "distratoresEs": [
+   "actualmente",
+   "hoy en día",
+   "seguramente",
+   "por casualidad"
+  ],
+  "nivel": "A2",
+  "tags": [
+   "falso-amigo"
+  ],
+  "nota": "«Actually» corrige ou contraria o que se acabou de dizer. O nosso «atualmente» é «currently» ou «nowadays».\n🇺🇸 actually → 🇧🇷 na verdade\n🇺🇸 currently → 🇧🇷 atualmente",
+  "notaEs": "«Actually» corrige o contradice lo que se acaba de decir. «Actualmente» se dice «currently» o «nowadays».\n🇺🇸 actually → 🇪🇸 en realidad\n🇺🇸 currently → 🇪🇸 actualmente"
+ },
+ {
+  "id": "en-u002",
+  "tipo": "frase",
+  "requer": "en-p002",
+  "en": "Actually, I don't agree.",
+  "pt": "Na verdade, eu não concordo.",
+  "es": "En realidad, no estoy de acuerdo.",
+  "aceitas": [
+   "na verdade eu nao concordo",
+   "na verdade nao concordo",
+   "na realidade nao concordo",
+   "de fato nao concordo",
+   "pra falar a verdade nao concordo"
+  ],
+  "aceitasEs": [
+   "En realidad, no estoy de acuerdo",
+   "La verdad es que no estoy de acuerdo",
+   "Realmente no estoy de acuerdo",
+   "De hecho, no estoy de acuerdo"
+  ],
+  "aceitasEn": [
+   "actually i dont agree",
+   "actually i do not agree",
+   "in fact i dont agree"
+  ],
+  "distratores": [
+   "Atualmente, eu não concordo.",
+   "Por enquanto, eu não concordo.",
+   "Com certeza, eu não concordo.",
+   "Por acaso, eu não concordo."
+  ],
+  "distratoresEs": [
+   "Actualmente, no estoy de acuerdo.",
+   "Por ahora, no estoy de acuerdo.",
+   "Seguramente, no estoy de acuerdo.",
+   "Por casualidad, no estoy de acuerdo."
+  ],
+  "nivel": "A2",
+  "tags": [
+   "falso-amigo",
+   "cotidiano"
+  ],
+  "nota": "«Actually» abre a frase para discordar sem brigar — é o nosso «na verdade» de quem vai contrariar com jeito.",
+  "notaEs": "«Actually» abre la frase para discrepar sin pelear: es el «en realidad» del que va a llevar la contraria con suavidad."
+ },
+ {
+  "id": "en-p003",
+  "tipo": "palavra",
+  "en": "the shelf",
+  "pt": "a prateleira",
+  "es": "el estante",
+  "aceitas": [
+   "a prateleira",
+   "a estante"
+  ],
+  "aceitasEs": [
+   "el estante",
+   "la estantería",
+   "la balda",
+   "el anaquel"
+  ],
+  "aceitasEn": [
+   "the shelf",
+   "shelf"
+  ],
+  "distratores": [
+   "a gaveta",
+   "o armário",
+   "a bandeja",
+   "o degrau"
+  ],
+  "distratoresEs": [
+   "el cajón",
+   "el armario",
+   "la bandeja",
+   "el escalón"
+  ],
+  "nivel": "A2",
+  "tags": [
+   "casa",
+   "substantivo"
+  ],
+  "nota": "«Shelf» é a tábua; o móvel inteiro é «bookcase». O plural é irregular, como o de «wolf»: «two shelves».",
+  "notaEs": "«Shelf» es la tabla; el mueble entero es «bookcase». El plural es irregular, como el de «wolf»: «two shelves»."
+ },
+ {
+  "id": "en-u003",
+  "tipo": "frase",
+  "requer": "en-p003",
+  "en": "Put the books on the shelf.",
+  "pt": "Ponha os livros na prateleira.",
+  "es": "Pon los libros en el estante.",
+  "aceitas": [
+   "ponha os livros na prateleira",
+   "poe os livros na prateleira",
+   "coloque os livros na prateleira",
+   "coloca os livros na prateleira",
+   "bote os livros na prateleira"
+  ],
+  "aceitasEs": [
+   "Pon los libros en el estante",
+   "Coloca los libros en el estante",
+   "Pon los libros en la estantería",
+   "Mete los libros en el estante"
+  ],
+  "aceitasEn": [
+   "put the books on the shelf",
+   "put the books onto the shelf"
+  ],
+  "distratores": [
+   "Ponha os livros na gaveta.",
+   "Ponha os livros na mesa.",
+   "Ponha os livros na caixa.",
+   "Ponha os livros na mochila."
+  ],
+  "distratoresEs": [
+   "Pon los libros en el cajón.",
+   "Pon los libros en la mesa.",
+   "Pon los libros en la caja.",
+   "Pon los libros en la mochila."
+  ],
+  "nivel": "A2",
+  "tags": [
+   "casa",
+   "cotidiano"
+  ],
+  "nota": "Em cima de superfície é «on»: «on the shelf», «on the table». «In the shelf» seria dentro da tábua.",
+  "notaEs": "Sobre una superficie va «on»: «on the shelf», «on the table». «In the shelf» sería dentro de la tabla."
+ },
+ {
+  "id": "en-p004",
+  "tipo": "palavra",
+  "en": "to afford",
+  "pt": "ter dinheiro para",
+  "es": "permitirse",
+  "aceitas": [
+   "ter dinheiro para",
+   "poder pagar",
+   "ter condicoes de pagar",
+   "bancar",
+   "ter grana para"
+  ],
+  "aceitasEs": [
+   "permitirse",
+   "poder pagar",
+   "costearse",
+   "permitirse el lujo"
+  ],
+  "aceitasEn": [
+   "to afford",
+   "afford",
+   "to be able to afford"
+  ],
+  "distratores": [
+   "ter vontade de",
+   "ter tempo para",
+   "ter coragem de",
+   "ter permissão para"
+  ],
+  "distratoresEs": [
+   "atreverse",
+   "molestarse",
+   "apresurarse",
+   "negarse"
+  ],
+  "nivel": "B2",
+  "tags": [
+   "verbo",
+   "economia"
+  ],
+  "nota": "«Afford» quase sempre vem com «can»: «I can't afford it». E não é só dinheiro — «I can't afford to wait» é não poder se dar ao luxo de esperar.",
+  "notaEs": "«Afford» casi siempre viene con «can»: «I can't afford it». Y no es solo dinero: «I can't afford to wait» es no poder permitirse esperar."
+ },
+ {
+  "id": "en-u004",
+  "tipo": "frase",
+  "requer": "en-p004",
+  "en": "I can't afford a new car.",
+  "pt": "Não tenho dinheiro para um carro novo.",
+  "es": "No puedo permitirme un coche nuevo.",
+  "aceitas": [
+   "nao tenho dinheiro para um carro novo",
+   "nao posso pagar um carro novo",
+   "nao tenho como comprar um carro novo",
+   "nao da para eu comprar um carro novo",
+   "nao tenho condicoes de comprar um carro novo"
+  ],
+  "aceitasEs": [
+   "No puedo permitirme un coche nuevo",
+   "No me puedo permitir un coche nuevo",
+   "No tengo dinero para un coche nuevo",
+   "No puedo pagar un coche nuevo"
+  ],
+  "aceitasEn": [
+   "i cant afford a new car",
+   "i cannot afford a new car",
+   "i cant afford to buy a new car"
+  ],
+  "distratores": [
+   "Não tenho vontade de comprar um carro novo.",
+   "Não tenho tempo de escolher um carro novo.",
+   "Não tenho espaço para um carro novo.",
+   "Não tenho coragem de comprar um carro novo."
+  ],
+  "distratoresEs": [
+   "No tengo ganas de comprar un coche nuevo.",
+   "No tengo tiempo de elegir un coche nuevo.",
+   "No tengo sitio para un coche nuevo.",
+   "No me atrevo a comprar un coche nuevo."
+  ],
+  "nivel": "B2",
+  "tags": [
+   "economia",
+   "cotidiano"
+  ],
+  "nota": "O inglês não tem verbo para «ter dinheiro para»: resolve tudo com «afford», e por isso ele aparece muito mais do que se imagina.",
+  "notaEs": "El inglés no tiene un verbo para «tener dinero para»: lo resuelve todo con «afford», y por eso aparece mucho más de lo que parece."
+ },
+ {
+  "id": "en-p005",
+  "tipo": "palavra",
+  "en": "eventually",
+  "pt": "por fim",
+  "es": "al final",
+  "aceitas": [
+   "por fim",
+   "no fim",
+   "no final",
+   "com o tempo",
+   "mais cedo ou mais tarde",
+   "acabou acontecendo"
+  ],
+  "aceitasEs": [
+   "al final",
+   "finalmente",
+   "con el tiempo",
+   "tarde o temprano"
+  ],
+  "aceitasEn": [
+   "eventually",
+   "in the end",
+   "sooner or later"
+  ],
+  "distratores": [
+   "eventualmente",
+   "de vez em quando",
+   "por acaso",
+   "de repente"
+  ],
+  "distratoresEs": [
+   "eventualmente",
+   "de vez en cuando",
+   "por casualidad",
+   "de repente"
+  ],
+  "nivel": "B1",
+  "tags": [
+   "falso-amigo"
+  ],
+  "nota": "«Eventually» é o que acaba acontecendo depois de um tempo. O nosso «eventualmente», de vez em quando, é «occasionally».\n🇺🇸 eventually → 🇧🇷 por fim\n🇺🇸 occasionally → 🇧🇷 eventualmente",
+  "notaEs": "«Eventually» es lo que acaba pasando al cabo del tiempo. El «eventualmente» de vez en cuando es «occasionally».\n🇺🇸 eventually → 🇪🇸 al final\n🇺🇸 occasionally → 🇪🇸 eventualmente"
+ },
+ {
+  "id": "en-u005",
+  "tipo": "frase",
+  "requer": "en-p005",
+  "en": "We eventually found the place.",
+  "pt": "No fim, achamos o lugar.",
+  "es": "Al final encontramos el sitio.",
+  "aceitas": [
+   "no fim achamos o lugar",
+   "no final achamos o lugar",
+   "acabamos achando o lugar",
+   "por fim encontramos o lugar",
+   "no fim encontramos o lugar",
+   "acabamos encontrando o lugar"
+  ],
+  "aceitasEs": [
+   "Al final encontramos el sitio",
+   "Acabamos encontrando el sitio",
+   "Finalmente encontramos el sitio",
+   "Al final dimos con el sitio"
+  ],
+  "aceitasEn": [
+   "we eventually found the place",
+   "eventually we found the place",
+   "we found the place in the end"
+  ],
+  "distratores": [
+   "Eventualmente, achamos o lugar.",
+   "De vez em quando, achamos o lugar.",
+   "Por acaso, achamos o lugar.",
+   "De repente, achamos o lugar."
+  ],
+  "distratoresEs": [
+   "Eventualmente encontramos el sitio.",
+   "De vez en cuando encontramos el sitio.",
+   "Por casualidad encontramos el sitio.",
+   "De repente encontramos el sitio."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "falso-amigo",
+   "cotidiano"
+  ],
+  "nota": "«Eventually» traz a ideia de demora: procuramos, custou, e no fim achamos. Fica antes do verbo ou no começo da frase.",
+  "notaEs": "«Eventually» trae la idea de demora: buscamos, costó, y al final lo encontramos. Va antes del verbo o al principio de la frase."
+ },
+ {
+  "id": "en-p006",
+  "tipo": "palavra",
+  "en": "the sink",
+  "pt": "a pia",
+  "es": "el fregadero",
+  "aceitas": [
+   "a pia",
+   "a cuba"
+  ],
+  "aceitasEs": [
+   "el fregadero",
+   "la pila",
+   "el lavabo"
+  ],
+  "aceitasEn": [
+   "the sink",
+   "sink",
+   "the kitchen sink"
+  ],
+  "distratores": [
+   "a torneira",
+   "o ralo",
+   "a banheira",
+   "o balde"
+  ],
+  "distratoresEs": [
+   "el grifo",
+   "el desagüe",
+   "la bañera",
+   "el cubo"
+  ],
+  "nivel": "A2",
+  "tags": [
+   "casa",
+   "substantivo"
+  ],
+  "nota": "«Sink» é a pia da cozinha e a do banheiro. A torneira é «the faucet» nos Estados Unidos e «the tap» na Inglaterra.",
+  "notaEs": "«Sink» vale para la cocina y para el baño. El grifo es «the faucet» en Estados Unidos y «the tap» en Inglaterra."
+ },
+ {
+  "id": "en-u006",
+  "tipo": "frase",
+  "requer": "en-p006",
+  "en": "The dishes are in the sink.",
+  "pt": "A louça está na pia.",
+  "es": "Los platos están en el fregadero.",
+  "aceitas": [
+   "a louca esta na pia",
+   "os pratos estao na pia",
+   "tem louca na pia",
+   "a louca ta na pia"
+  ],
+  "aceitasEs": [
+   "Los platos están en el fregadero",
+   "La vajilla está en el fregadero",
+   "Hay platos en el fregadero"
+  ],
+  "aceitasEn": [
+   "the dishes are in the sink",
+   "the plates are in the sink"
+  ],
+  "distratores": [
+   "A louça está na mesa.",
+   "A louça está na gaveta.",
+   "A louça está na máquina.",
+   "A louça está na bancada."
+  ],
+  "distratoresEs": [
+   "Los platos están en la mesa.",
+   "Los platos están en el cajón.",
+   "Los platos están en el lavavajillas.",
+   "Los platos están en la encimera."
+  ],
+  "nivel": "A2",
+  "tags": [
+   "casa",
+   "cotidiano"
+  ],
+  "nota": "Dentro da pia é «in the sink», e não «on». «The dishes» é a louça toda; um prato só é «a dish» ou «a plate».",
+  "notaEs": "Dentro del fregadero es «in the sink», no «on». «The dishes» es toda la vajilla; un plato suelto es «a dish» o «a plate»."
+ },
+ {
+  "id": "en-p007",
+  "tipo": "palavra",
+  "en": "to support",
+  "pt": "apoiar",
+  "es": "apoyar",
+  "aceitas": [
+   "apoiar",
+   "dar apoio",
+   "sustentar",
+   "torcer por"
+  ],
+  "aceitasEs": [
+   "apoyar",
+   "dar apoyo",
+   "respaldar",
+   "mantener"
+  ],
+  "aceitasEn": [
+   "to support",
+   "support",
+   "to back"
+  ],
+  "distratores": [
+   "supervisionar",
+   "supor",
+   "suprir",
+   "substituir"
+  ],
+  "distratoresEs": [
+   "supervisar",
+   "suponer",
+   "suplir",
+   "sustituir"
+  ],
+  "nivel": "B1",
+  "tags": [
+   "falso-amigo",
+   "verbo"
+  ],
+  "nota": "«Support» é apoiar, e também sustentar quem depende de você. Suportar, no sentido de aguentar, é «to bear» ou «to put up with».\n🇺🇸 to support → 🇧🇷 apoiar\n🇺🇸 to bear → 🇧🇷 suportar",
+  "notaEs": "«Support» es apoyar, y también mantener a quien depende de uno. Soportar, en el sentido de aguantar, es «to bear» o «to put up with».\n🇺🇸 to support → 🇪🇸 apoyar\n🇺🇸 to bear → 🇪🇸 soportar"
+ },
+ {
+  "id": "en-u007",
+  "tipo": "frase",
+  "requer": "en-p007",
+  "en": "My family supports me.",
+  "pt": "Minha família me apoia.",
+  "es": "Mi familia me apoya.",
+  "aceitas": [
+   "minha familia me apoia",
+   "a minha familia me apoia",
+   "minha familia me da apoio",
+   "minha familia esta do meu lado"
+  ],
+  "aceitasEs": [
+   "Mi familia me apoya",
+   "Mi familia me da su apoyo",
+   "Mi familia está de mi lado"
+  ],
+  "aceitasEn": [
+   "my family supports me",
+   "my family support me",
+   "my family is behind me"
+  ],
+  "distratores": [
+   "Minha família me suporta.",
+   "Minha família me tolera.",
+   "Minha família me entende.",
+   "Minha família me cobra."
+  ],
+  "distratoresEs": [
+   "Mi familia me soporta.",
+   "Mi familia me tolera.",
+   "Mi familia me entiende.",
+   "Mi familia me exige."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "falso-amigo",
+   "família"
+  ],
+  "nota": "Do lado do outro: «I support you» é estou com você. Quem aguenta mau humor «puts up with» — o inglês separa as duas coisas que o português junta em «suportar».",
+  "notaEs": "«I support you» es estoy contigo. Quien aguanta el mal humor «puts up with»: el inglés separa las dos cosas que el español junta en «soportar»."
+ },
+ {
+  "id": "en-p008",
+  "tipo": "palavra",
+  "en": "the spoon",
+  "pt": "a colher",
+  "es": "la cuchara",
+  "aceitas": [
+   "a colher"
+  ],
+  "aceitasEs": [
+   "la cuchara",
+   "la cucharilla"
+  ],
+  "aceitasEn": [
+   "the spoon",
+   "spoon"
+  ],
+  "distratores": [
+   "o garfo",
+   "a faca",
+   "o prato",
+   "a xícara"
+  ],
+  "distratoresEs": [
+   "el tenedor",
+   "el cuchillo",
+   "el plato",
+   "la taza"
+  ],
+  "nivel": "A1",
+  "tags": [
+   "comida",
+   "casa",
+   "substantivo"
+  ],
+  "nota": "«Fork» é garfo, «knife» é faca (o k não se pronuncia) e «spoon» é colher. A de cafezinho é «teaspoon».",
+  "notaEs": "«Fork» es tenedor, «knife» cuchillo (la k no se pronuncia) y «spoon» cuchara. La de café es «teaspoon»."
+ },
+ {
+  "id": "en-u008",
+  "tipo": "frase",
+  "requer": "en-p008",
+  "en": "I need a spoon for the soup.",
+  "pt": "Preciso de uma colher para a sopa.",
+  "es": "Necesito una cuchara para la sopa.",
+  "aceitas": [
+   "preciso de uma colher para a sopa",
+   "preciso de uma colher pra sopa",
+   "queria uma colher para a sopa",
+   "eu preciso de colher para a sopa"
+  ],
+  "aceitasEs": [
+   "Necesito una cuchara para la sopa",
+   "Hace falta una cuchara para la sopa",
+   "Quiero una cuchara para la sopa"
+  ],
+  "aceitasEn": [
+   "i need a spoon for the soup",
+   "i need a spoon to eat the soup"
+  ],
+  "distratores": [
+   "Preciso de um garfo para a sopa.",
+   "Preciso de uma faca para a sopa.",
+   "Preciso de um prato para a sopa.",
+   "Preciso de um guardanapo para a sopa."
+  ],
+  "distratoresEs": [
+   "Necesito un tenedor para la sopa.",
+   "Necesito un cuchillo para la sopa.",
+   "Necesito un plato para la sopa.",
+   "Necesito una servilleta para la sopa."
+  ],
+  "nivel": "A1",
+  "tags": [
+   "comida",
+   "cotidiano"
+  ],
+  "nota": "Objeto contável pede artigo: «a spoon», e nunca «I need spoon». No plural, «spoons», sem artigo nenhum.",
+  "notaEs": "El objeto contable pide artículo: «a spoon», nunca «I need spoon». En plural, «spoons», sin artículo."
+ },
+ {
+  "id": "en-f001",
+  "tipo": "frase",
+  "en": "I'm looking forward to it.",
+  "pt": "Mal posso esperar.",
+  "es": "Tengo muchas ganas.",
+  "aceitas": [
+   "mal posso esperar",
+   "estou ansioso por isso",
+   "estou ansiosa por isso",
+   "nao vejo a hora",
+   "to ansioso por isso",
+   "estou doido para isso"
+  ],
+  "aceitasEs": [
+   "Tengo muchas ganas",
+   "Estoy deseando",
+   "Me hace mucha ilusión",
+   "No veo la hora"
+  ],
+  "aceitasEn": [
+   "im looking forward to it",
+   "i am looking forward to it",
+   "i cant wait"
+  ],
+  "distratores": [
+   "Tenho que esperar um pouco.",
+   "Vou esperar sentado.",
+   "Estou cansado de esperar.",
+   "Espero que sim."
+  ],
+  "distratoresEs": [
+   "Tengo que esperar un poco.",
+   "Me da bastante pereza.",
+   "No me apetece nada.",
+   "Ya veremos."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "expressão",
+   "cotidiano"
+  ],
+  "nota": "Depois de «look forward to» vem substantivo ou verbo em -ing: «I'm looking forward to seeing you». É também o fecho educado de e-mail: «I look forward to hearing from you».",
+  "notaEs": "Tras «look forward to» va sustantivo o verbo en -ing: «I'm looking forward to seeing you». Es también el cierre formal de un correo: «I look forward to hearing from you»."
+ },
+ {
+  "id": "en-f002",
+  "tipo": "frase",
+  "en": "We ran out of milk.",
+  "pt": "Acabou o leite.",
+  "es": "Se nos acabó la leche.",
+  "aceitas": [
+   "acabou o leite",
+   "ficamos sem leite",
+   "o leite acabou",
+   "acabou o nosso leite",
+   "nao tem mais leite"
+  ],
+  "aceitasEs": [
+   "Se nos acabó la leche",
+   "Nos quedamos sin leche",
+   "Se acabó la leche"
+  ],
+  "aceitasEn": [
+   "we ran out of milk",
+   "weve run out of milk",
+   "we have run out of milk"
+  ],
+  "distratores": [
+   "Derramamos o leite.",
+   "Compramos leite demais.",
+   "Esquecemos o leite.",
+   "Sobrou leite."
+  ],
+  "distratoresEs": [
+   "Derramamos la leche.",
+   "Compramos demasiada leche.",
+   "Se nos olvidó la leche.",
+   "Nos sobró leche."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "phrasal verb",
+   "comida"
+  ],
+  "nota": "«Run out of» é acabar o estoque de alguma coisa. Sem o «of» o sujeito muda: «the milk ran out» é o leite que acabou, e «he ran out» é ele que saiu correndo.",
+  "notaEs": "«Run out of» es quedarse sin algo. Sin el «of» cambia el sujeto: «the milk ran out» es la leche que se acabó, y «he ran out» es él que salió corriendo."
+ },
+ {
+  "id": "en-f003",
+  "tipo": "frase",
+  "en": "It's up to you.",
+  "pt": "Você que sabe.",
+  "es": "Tú decides.",
+  "aceitas": [
+   "voce que sabe",
+   "voce decide",
+   "fica a seu criterio",
+   "a decisao e sua",
+   "como voce quiser",
+   "depende de voce"
+  ],
+  "aceitasEs": [
+   "Tú decides",
+   "Como tú quieras",
+   "Depende de ti",
+   "Tú verás"
+  ],
+  "aceitasEn": [
+   "its up to you",
+   "it is up to you",
+   "thats up to you"
+  ],
+  "distratores": [
+   "Estou contando com você.",
+   "Já falei com você.",
+   "Isso é culpa sua.",
+   "Chegou a sua vez."
+  ],
+  "distratoresEs": [
+   "Cuento contigo.",
+   "Ya hablé contigo.",
+   "Es culpa tuya.",
+   "Llegó tu turno."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "expressão",
+   "cotidiano"
+  ],
+  "nota": "«Up to» aqui é de quem é a decisão. A mesma dupla em «What are you up to?» é outra coisa: o que você anda aprontando.",
+  "notaEs": "«Up to» aquí es de quién es la decisión. La misma pareja en «What are you up to?» es otra cosa: qué andas tramando."
+ },
+ {
+  "id": "en-f004",
+  "tipo": "frase",
+  "en": "I have to put up with him.",
+  "pt": "Tenho que aguentar ele.",
+  "es": "Tengo que aguantarlo.",
+  "aceitas": [
+   "tenho que aguentar ele",
+   "tenho que aguenta lo",
+   "preciso aguentar ele",
+   "tenho que suportar ele",
+   "nao tem jeito tenho que aguentar ele"
+  ],
+  "aceitasEs": [
+   "Tengo que aguantarlo",
+   "Tengo que soportarlo",
+   "Me toca aguantarlo",
+   "No me queda otra que aguantarlo"
+  ],
+  "aceitasEn": [
+   "i have to put up with him",
+   "ive got to put up with him",
+   "i have to put up with the guy"
+  ],
+  "distratores": [
+   "Tenho que ajudar ele.",
+   "Tenho que enfrentar ele.",
+   "Tenho que evitar ele.",
+   "Tenho que obedecer ele."
+  ],
+  "distratoresEs": [
+   "Tengo que ayudarlo.",
+   "Tengo que enfrentarlo.",
+   "Tengo que evitarlo.",
+   "Tengo que obedecerlo."
+  ],
+  "nivel": "B2",
+  "tags": [
+   "phrasal verb",
+   "cotidiano"
+  ],
+  "nota": "«Put up with» é aguentar gente ou situação, e as três palavras andam sempre juntas. «Put up» sozinho é hospedar: «they put me up for the night».",
+  "notaEs": "«Put up with» es aguantar a alguien o algo, y las tres palabras van siempre juntas. «Put up» a solas es alojar: «they put me up for the night»."
+ },
+ {
+  "id": "en-f005",
+  "tipo": "frase",
+  "en": "How long have you lived here?",
+  "pt": "Há quanto tempo você mora aqui?",
+  "es": "¿Cuánto tiempo llevas viviendo aquí?",
+  "aceitas": [
+   "ha quanto tempo voce mora aqui",
+   "faz quanto tempo que voce mora aqui",
+   "voce mora aqui ha quanto tempo",
+   "ha quanto tempo voce vive aqui",
+   "tem quanto tempo que voce mora aqui"
+  ],
+  "aceitasEs": [
+   "¿Cuánto tiempo llevas viviendo aquí?",
+   "¿Cuánto tiempo hace que vives aquí?",
+   "¿Desde cuándo vives aquí?"
+  ],
+  "aceitasEn": [
+   "how long have you lived here",
+   "how long have you been living here"
+  ],
+  "distratores": [
+   "Quanto tempo você morou aqui?",
+   "Quando você veio morar aqui?",
+   "Até quando você vai morar aqui?",
+   "Por quanto tempo você vai morar aqui?"
+  ],
+  "distratoresEs": [
+   "¿Cuánto tiempo viviste aquí?",
+   "¿Cuándo viniste a vivir aquí?",
+   "¿Hasta cuándo vas a vivir aquí?",
+   "¿Por cuánto tiempo vas a vivir aquí?"
+  ],
+  "nivel": "B1",
+  "tags": [
+   "gramática",
+   "present perfect"
+  ],
+  "nota": "O que começou antes e continua até hoje vai no present perfect: «I have lived here for ten years». O português resolve com o presente e um «há», e por isso a forma inglesa não ocorre a ninguém.",
+  "notaEs": "Lo que empezó antes y sigue hoy va en present perfect: «I have lived here for ten years». El español lo resuelve con «llevar» + gerundio, y por eso la forma inglesa no se le ocurre a nadie."
+ },
+ {
+  "id": "en-f006",
+  "tipo": "frase",
+  "en": "It depends on the weather.",
+  "pt": "Depende do tempo.",
+  "es": "Depende del tiempo.",
+  "aceitas": [
+   "depende do tempo",
+   "depende do clima",
+   "vai depender do tempo"
+  ],
+  "aceitasEs": [
+   "Depende del tiempo",
+   "Depende del clima",
+   "Dependerá del tiempo"
+  ],
+  "aceitasEn": [
+   "it depends on the weather",
+   "that depends on the weather"
+  ],
+  "distratores": [
+   "Combina com o tempo.",
+   "Muda com o tempo.",
+   "Fala do tempo.",
+   "Reclama do tempo."
+  ],
+  "distratoresEs": [
+   "Combina con el tiempo.",
+   "Cambia con el tiempo.",
+   "Habla del tiempo.",
+   "Se olvida del tiempo."
+  ],
+  "nivel": "A2",
+  "tags": [
+   "preposição",
+   "gramática"
+  ],
+  "nota": "«Depend» pede «on», sempre: «it depends on you», «it depends on the price». Sozinho, no fim da frase, também se diz: «it depends».",
+  "notaEs": "«Depend» pide «on», siempre: «it depends on you», «it depends on the price». A solas, al final de la frase, también vale: «it depends»."
+ },
+ {
+  "id": "en-f007",
+  "tipo": "frase",
+  "en": "I used to smoke.",
+  "pt": "Eu fumava.",
+  "es": "Yo fumaba.",
+  "aceitas": [
+   "eu fumava",
+   "fumava",
+   "eu costumava fumar",
+   "antes eu fumava"
+  ],
+  "aceitasEs": [
+   "Yo fumaba",
+   "Fumaba",
+   "Yo solía fumar",
+   "Antes fumaba"
+  ],
+  "aceitasEn": [
+   "i used to smoke",
+   "i used to be a smoker"
+  ],
+  "distratores": [
+   "Eu fumei.",
+   "Eu fumo.",
+   "Eu costumo fumar.",
+   "Eu fumaria."
+  ],
+  "distratoresEs": [
+   "Yo fumé.",
+   "Yo fumo.",
+   "Yo suelo fumar.",
+   "Yo fumaría."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "gramática",
+   "imperfeito"
+  ],
+  "nota": "«Used to» é o hábito que acabou: «I used to smoke, but I quit». Não existe no presente — para o hábito de hoje é «I usually smoke».",
+  "notaEs": "«Used to» es el hábito que se acabó: «I used to smoke, but I quit». No existe en presente: para el hábito de hoy es «I usually smoke»."
+ },
+ {
+  "id": "en-f008",
+  "tipo": "frase",
+  "en": "Never mind.",
+  "pt": "Deixa pra lá.",
+  "es": "Da igual.",
+  "aceitas": [
+   "deixa pra la",
+   "deixa quieto",
+   "esquece",
+   "deixa isso pra la",
+   "nao esquenta",
+   "tanto faz"
+  ],
+  "aceitasEs": [
+   "Da igual",
+   "Déjalo",
+   "No importa",
+   "Olvídalo",
+   "Nada"
+  ],
+  "aceitasEn": [
+   "never mind",
+   "nevermind",
+   "dont worry about it"
+  ],
+  "distratores": [
+   "Nunca se importe.",
+   "Nunca pense nisso.",
+   "Não é da sua conta.",
+   "Nem me lembro mais."
+  ],
+  "distratoresEs": [
+   "Nunca te importe.",
+   "Nunca pienses en eso.",
+   "No es asunto tuyo.",
+   "Ya ni me acuerdo."
+  ],
+  "nivel": "B1",
+  "tags": [
+   "expressão",
+   "cotidiano"
+  ],
+  "nota": "«Never mind» encerra o assunto: esquece, não precisa responder. Serve também para retirar o que se acabou de dizer, quando a resposta já veio sozinha.",
+  "notaEs": "«Never mind» cierra el tema: olvídalo, no hace falta contestar. Sirve también para retirar lo que uno acaba de decir, cuando la respuesta ya llegó sola."
+ },
+ {
+  "id": "en-v001",
+  "tipo": "frase",
+  "en": "I brought the wine.",
+  "pt": "Eu trouxe o vinho.",
+  "es": "Yo traje el vino.",
+  "aceitas": [
+   "eu trouxe o vinho",
+   "trouxe o vinho",
+   "eu trouxe vinho"
+  ],
+  "aceitasEs": [
+   "Yo traje el vino",
+   "Traje el vino",
+   "Yo he traído el vino"
+  ],
+  "aceitasEn": [
+   "i brought the wine",
+   "i have brought the wine"
+  ],
+  "distratores": [
+   "Eu trago o vinho.",
+   "Eu trarei o vinho.",
+   "Eu traria o vinho.",
+   "Eu tinha trazido o vinho."
+  ],
+  "distratoresEs": [
+   "Yo traigo el vino.",
+   "Yo traeré el vino.",
+   "Yo traería el vino.",
+   "Yo había traído el vino."
+  ],
+  "formasEn": {
+   "I bring the wine": "presente",
+   "I will bring the wine": "futuro",
+   "I would bring the wine": "condicional",
+   "I had brought the wine": "mais-que-perfeito"
+  },
+  "formasEnEs": {
+   "I bring the wine": "presente",
+   "I will bring the wine": "futuro",
+   "I would bring the wine": "condicional",
+   "I had brought the wine": "pluscuamperfecto"
+  },
+  "nivel": "A2",
+  "tags": [
+   "conjugação",
+   "irregular",
+   "bring",
+   "pretérito"
+  ],
+  "nota": "«Bring» faz «brought» no passado e no particípio — uma forma só para os dois. Trazer é «bring», para cá; levar é «take», para lá.",
+  "notaEs": "«Bring» hace «brought» en pasado y en participio, una sola forma para los dos. Traer es «bring», hacia aquí; llevar es «take», hacia allá."
+ },
+ {
+  "id": "en-v002",
+  "tipo": "frase",
+  "en": "I have already eaten.",
+  "pt": "Eu já comi.",
+  "es": "Ya he comido.",
+  "aceitas": [
+   "eu ja comi",
+   "ja comi",
+   "eu comi ja"
+  ],
+  "aceitasEs": [
+   "Ya he comido",
+   "Ya comí",
+   "He comido ya"
+  ],
+  "aceitasEn": [
+   "i have already eaten",
+   "ive already eaten",
+   "i already ate"
+  ],
+  "distratores": [
+   "Eu como sempre.",
+   "Eu vou comer já.",
+   "Eu tinha comido.",
+   "Eu estou comendo."
+  ],
+  "distratoresEs": [
+   "Siempre como.",
+   "Voy a comer ya.",
+   "Ya había comido.",
+   "Estoy comiendo."
+  ],
+  "formasEn": {
+   "I eat every day": "presente",
+   "I will eat later": "futuro",
+   "I had eaten before": "mais-que-perfeito",
+   "I am eating now": "gerúndio"
+  },
+  "formasEnEs": {
+   "I eat every day": "presente",
+   "I will eat later": "futuro",
+   "I had eaten before": "pluscuamperfecto",
+   "I am eating now": "gerundio"
+  },
+  "nivel": "B1",
+  "tags": [
+   "conjugação",
+   "present perfect",
+   "eat",
+   "irregular"
+  ],
+  "nota": "«Eat» faz «ate» no passado e «eaten» no particípio. Com «already», o inglês americano também aceita o passado simples: «I already ate».",
+  "notaEs": "«Eat» hace «ate» en pasado y «eaten» en participio. Con «already», el inglés americano acepta también el pasado simple: «I already ate»."
+ },
+ {
+  "id": "en-v003",
+  "tipo": "frase",
+  "en": "He taught me to drive.",
+  "pt": "Ele me ensinou a dirigir.",
+  "es": "Él me enseñó a conducir.",
+  "aceitas": [
+   "ele me ensinou a dirigir",
+   "me ensinou a dirigir",
+   "ele me ensinou a guiar",
+   "ele que me ensinou a dirigir"
+  ],
+  "aceitasEs": [
+   "Él me enseñó a conducir",
+   "Me enseñó a conducir",
+   "Él me enseñó a manejar"
+  ],
+  "aceitasEn": [
+   "he taught me to drive",
+   "he taught me how to drive"
+  ],
+  "distratores": [
+   "Ele me ensina a dirigir.",
+   "Ele vai me ensinar a dirigir.",
+   "Ele me ensinaria a dirigir.",
+   "Ele tinha me ensinado a dirigir."
+  ],
+  "distratoresEs": [
+   "Él me enseña a conducir.",
+   "Él me enseñará a conducir.",
+   "Él me enseñaría a conducir.",
+   "Él me había enseñado a conducir."
+  ],
+  "formasEn": {
+   "He teaches me to drive": "presente",
+   "He will teach me to drive": "futuro",
+   "He would teach me to drive": "condicional",
+   "He had taught me to drive": "mais-que-perfeito"
+  },
+  "formasEnEs": {
+   "He teaches me to drive": "presente",
+   "He will teach me to drive": "futuro",
+   "He would teach me to drive": "condicional",
+   "He had taught me to drive": "pluscuamperfecto"
+  },
+  "nivel": "B1",
+  "tags": [
+   "conjugação",
+   "irregular",
+   "teach",
+   "pretérito"
+  ],
+  "nota": "«Teach» faz «taught», e o «augh» se lê como um «ó» comprido. Ensinar é «teach», aprender é «learn» — o inglês nunca usa um pelo outro.",
+  "notaEs": "«Teach» hace «taught», y el «augh» suena como una «o» larga. Enseñar es «teach», aprender es «learn»: el inglés nunca usa uno por otro."
+ },
+ {
+  "id": "en-v004",
+  "tipo": "frase",
+  "en": "They caught the train.",
+  "pt": "Eles pegaram o trem.",
+  "es": "Tomaron el tren.",
+  "aceitas": [
+   "eles pegaram o trem",
+   "pegaram o trem",
+   "eles tomaram o trem",
+   "eles alcancaram o trem"
+  ],
+  "aceitasEs": [
+   "Tomaron el tren",
+   "Cogieron el tren",
+   "Alcanzaron el tren"
+  ],
+  "aceitasEn": [
+   "they caught the train",
+   "they got the train"
+  ],
+  "distratores": [
+   "Eles pegam o trem.",
+   "Eles vão pegar o trem.",
+   "Eles pegariam o trem.",
+   "Eles tinham pegado o trem."
+  ],
+  "distratoresEs": [
+   "Toman el tren.",
+   "Van a tomar el tren.",
+   "Tomarían el tren.",
+   "Habían tomado el tren."
+  ],
+  "formasEn": {
+   "They catch the train": "presente",
+   "They will catch the train": "futuro",
+   "They would catch the train": "condicional",
+   "They had caught the train": "mais-que-perfeito"
+  },
+  "formasEnEs": {
+   "They catch the train": "presente",
+   "They will catch the train": "futuro",
+   "They would catch the train": "condicional",
+   "They had caught the train": "pluscuamperfecto"
+  },
+  "nivel": "A2",
+  "tags": [
+   "conjugação",
+   "irregular",
+   "catch",
+   "viagem"
+  ],
+  "nota": "«Catch» faz «caught», que rima com «taught». Serve para pegar o trem, pegar uma bola e pegar um resfriado: «I caught a cold».",
+  "notaEs": "«Catch» hace «caught», que rima con «taught». Sirve para coger el tren, atrapar una pelota y pillar un resfriado: «I caught a cold»."
+ },
+ {
+  "id": "en-v005",
+  "tipo": "frase",
+  "en": "I would have told you.",
+  "pt": "Eu teria te contado.",
+  "es": "Te lo habría dicho.",
+  "aceitas": [
+   "eu teria te contado",
+   "teria te contado",
+   "eu teria contado para voce",
+   "eu teria te falado"
+  ],
+  "aceitasEs": [
+   "Te lo habría dicho",
+   "Te lo hubiera dicho",
+   "Yo te lo habría contado"
+  ],
+  "aceitasEn": [
+   "i would have told you",
+   "id have told you"
+  ],
+  "distratores": [
+   "Eu tinha te contado.",
+   "Eu te contarei.",
+   "Eu te contaria.",
+   "Eu te contei."
+  ],
+  "distratoresEs": [
+   "Te lo había dicho.",
+   "Te lo diré.",
+   "Te lo diría.",
+   "Te lo dije."
+  ],
+  "formasEn": {
+   "I told you": "pretérito",
+   "I will tell you": "futuro",
+   "I would tell you": "condicional",
+   "I had told you": "mais-que-perfeito"
+  },
+  "formasEnEs": {
+   "I told you": "pretérito",
+   "I will tell you": "futuro",
+   "I would tell you": "condicional",
+   "I had told you": "pluscuamperfecto"
+  },
+  "nivel": "B2",
+  "tags": [
+   "conjugação",
+   "condicional",
+   "tell",
+   "irregular"
+  ],
+  "nota": "«Would have» + particípio é o que teria acontecido e não aconteceu. Costuma vir com um «if» de passado: «I would have told you if I had known».",
+  "notaEs": "«Would have» + participio es lo que habría pasado y no pasó. Suele venir con un «if» de pasado: «I would have told you if I had known»."
+ },
+ {
+  "id": "en-v006",
+  "tipo": "frase",
+  "en": "Where did you buy that?",
+  "pt": "Onde você comprou isso?",
+  "es": "¿Dónde compraste eso?",
+  "aceitas": [
+   "onde voce comprou isso",
+   "onde comprou isso",
+   "onde e que voce comprou isso",
+   "voce comprou isso onde"
+  ],
+  "aceitasEs": [
+   "¿Dónde compraste eso?",
+   "¿Dónde has comprado eso?",
+   "¿Dónde lo compraste?"
+  ],
+  "aceitasEn": [
+   "where did you buy that",
+   "where did you get that"
+  ],
+  "distratores": [
+   "Onde você compra isso?",
+   "Onde você vai comprar isso?",
+   "Onde você compraria isso?",
+   "Onde você tinha comprado isso?"
+  ],
+  "distratoresEs": [
+   "¿Dónde compras eso?",
+   "¿Dónde vas a comprar eso?",
+   "¿Dónde comprarías eso?",
+   "¿Dónde habías comprado eso?"
+  ],
+  "formasEn": {
+   "Where do you buy that": "presente",
+   "Where will you buy that": "futuro",
+   "Where would you buy that": "condicional",
+   "Where had you bought that": "mais-que-perfeito"
+  },
+  "formasEnEs": {
+   "Where do you buy that": "presente",
+   "Where will you buy that": "futuro",
+   "Where would you buy that": "condicional",
+   "Where had you bought that": "pluscuamperfecto"
+  },
+  "nivel": "A2",
+  "tags": [
+   "conjugação",
+   "gramática",
+   "buy",
+   "pretérito"
+  ],
+  "nota": "Na pergunta e na negativa, o passado simples pede «did» e o verbo volta ao infinitivo: «did you buy», nunca «did you bought».",
+  "notaEs": "En pregunta y en negación, el pasado simple pide «did» y el verbo vuelve al infinitivo: «did you buy», nunca «did you bought»."
+ }
 ]

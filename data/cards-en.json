@@ -29,13 +29,13 @@
     "to make believe"
    ],
    "distratores": [
-    "pretender",
+    "prometer",
     "planejar",
     "prender",
     "adivinhar"
    ],
    "distratoresEs": [
-    "pretender",
+    "prometer",
     "planear",
     "prender",
     "adivinar"
@@ -561,16 +561,16 @@
     "to back"
    ],
    "distratores": [
-    "suportar",
+    "supervisionar",
     "supor",
     "suprir",
-    "tolerar"
+    "substituir"
    ],
    "distratoresEs": [
-    "soportar",
+    "supervisar",
     "suponer",
     "suplir",
-    "tolerar"
+    "sustituir"
    ],
    "nivel": "B1",
    "tags": [
@@ -1677,13 +1677,13 @@
     "attend"
    ],
    "distratores": [
-    "atender",
+    "convocar",
     "presidir",
     "adiar",
     "cancelar"
    ],
    "distratoresEs": [
-    "atender",
+    "convocar",
     "presidir",
     "aplazar",
     "cancelar"
@@ -1847,13 +1847,13 @@
    ],
    "distratores": [
     "sensível",
-    "perceptível",
+    "emotivo",
     "óbvio",
     "cuidadoso"
    ],
    "distratoresEs": [
     "sensible",
-    "perceptible",
+    "emotivo",
     "obvio",
     "cuidadoso"
    ],
@@ -6333,13 +6333,13 @@
     "an injury"
    ],
    "distratores": [
-    "a injúria",
+    "a cirurgia",
     "o insulto",
     "a doença",
     "a cicatriz"
    ],
    "distratoresEs": [
-    "la injuria",
+    "la cirugía",
     "el insulto",
     "la enfermedad",
     "la cicatriz"
@@ -10559,13 +10559,13 @@
     "realise"
    ],
    "distratores": [
-    "realizar",
+    "resolver",
     "imaginar",
     "adivinhar",
     "esclarecer"
    ],
    "distratoresEs": [
-    "realizar",
+    "resolver",
     "imaginar",
     "adivinar",
     "esclarecer"
@@ -10821,13 +10821,13 @@
    ],
    "distratores": [
     "assistir",
-    "comparecer",
+    "consultar",
     "atrapalhar",
     "vigiar"
    ],
    "distratoresEs": [
-    "asistir",
     "presenciar",
+    "consultar",
     "estorbar",
     "vigilar"
    ],
@@ -15102,13 +15102,13 @@
     "a stranger"
    ],
    "distratores": [
-    "o estrangeiro",
+    "o intruso",
     "o imigrante",
     "o hóspede",
     "o vizinho"
    ],
    "distratoresEs": [
-    "el extranjero",
+    "el intruso",
     "el inmigrante",
     "el huésped",
     "el vecino"
@@ -15380,13 +15380,13 @@
     "terrific"
    ],
    "distratores": [
-    "terrível",
+    "previsível",
     "exigente",
     "tranquilo",
     "cansativo"
    ],
    "distratoresEs": [
-    "terrible",
+    "previsible",
     "exigente",
     "tranquilo",
     "agotador"
@@ -15475,13 +15475,13 @@
     "an apology"
    ],
    "distratores": [
-    "a apologia",
+    "a advertência",
     "a justificativa",
     "a explicação",
     "a homenagem"
    ],
    "distratoresEs": [
-    "la apología",
+    "la advertencia",
     "la justificación",
     "la explicación",
     "el homenaje"

@@ -25,13 +25,13 @@
    "a stranger"
   ],
   "distratores": [
-   "o estrangeiro",
+   "o intruso",
    "o imigrante",
    "o hóspede",
    "o vizinho"
   ],
   "distratoresEs": [
-   "el extranjero",
+   "el intruso",
    "el inmigrante",
    "el huésped",
    "el vecino"
@@ -297,13 +297,13 @@
    "terrific"
   ],
   "distratores": [
-   "terrível",
+   "previsível",
    "exigente",
    "tranquilo",
    "cansativo"
   ],
   "distratoresEs": [
-   "terrible",
+   "previsible",
    "exigente",
    "tranquilo",
    "agotador"
@@ -390,13 +390,13 @@
    "an apology"
   ],
   "distratores": [
-   "a apologia",
+   "a advertência",
    "a justificativa",
    "a explicação",
    "a homenagem"
   ],
   "distratoresEs": [
-   "la apología",
+   "la advertencia",
    "la justificación",
    "la explicación",
    "el homenaje"
