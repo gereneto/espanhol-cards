@@ -1,7 +1,7 @@
 {
  "versao": 1,
  "idioma": "es",
- "gerado_em": "2026-09-21",
+ "gerado_em": "2026-09-22",
  "total": 1000,
  "cards": [
   {
@@ -16778,17 +16778,13 @@
    "aceitas": [
     "placa",
     "placa do carro",
-    "placa do veiculo",
-    "matricula",
-    "matricula da escola",
-    "inscricao"
+    "placa do veiculo"
    ],
    "aceitasEn": [
     "number plate",
     "the number plate",
     "licence plate",
-    "the license plate",
-    "registration"
+    "the license plate"
    ],
    "distratores": [
     "a multa de trânsito",
