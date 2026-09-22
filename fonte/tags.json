@@ -1093,5 +1093,70 @@
     "en": "speed",
     "es": "speed",
     "cards": 0
+  },
+  "rewrite": {
+    "en": "rewrite",
+    "es": "rewrite",
+    "cards": 0
+  },
+  "awake": {
+    "en": "awake",
+    "es": "awake",
+    "cards": 0
+  },
+  "spit": {
+    "en": "spit",
+    "es": "spit",
+    "cards": 0
+  },
+  "overtake": {
+    "en": "overtake",
+    "es": "overtake",
+    "cards": 0
+  },
+  "outgrow": {
+    "en": "outgrow",
+    "es": "outgrow",
+    "cards": 0
+  },
+  "breed": {
+    "en": "breed",
+    "es": "breed",
+    "cards": 0
+  },
+  "oversee": {
+    "en": "oversee",
+    "es": "oversee",
+    "cards": 0
+  },
+  "withstand": {
+    "en": "withstand",
+    "es": "withstand",
+    "cards": 0
+  },
+  "undertake": {
+    "en": "undertake",
+    "es": "undertake",
+    "cards": 0
+  },
+  "interview": {
+    "en": "interview",
+    "es": "interview",
+    "cards": 0
+  },
+  "travel": {
+    "en": "travel",
+    "es": "travel",
+    "cards": 0
+  },
+  "call": {
+    "en": "call",
+    "es": "call",
+    "cards": 0
+  },
+  "live": {
+    "en": "live",
+    "es": "live",
+    "cards": 0
   }
 }

@@ -178,7 +178,8 @@ baralhos de feitios bem diferentes.
 | 5 | Inglês, leva 5: 100 cards, a segunda leva avançada | **feito** (21/09) — o baralho está em 430 |
 | 6 | Inglês, leva 6: 100 cards, o A1 e o A2 que faltavam, mais um bloco de C2 | **feito** (21/09) — o baralho está em 530 |
 | 7 | Inglês, leva 7: 100 cards de base e de conversa | **feito** (21/09) — o baralho está em 630 |
-| 8… | Inglês, levas de ~100 até fechar mil | — |
+| 8 | Inglês, leva 8: 100 cards de corpo, de base e de conversa | **feito** (22/09) — o baralho está em 730 |
+| 9… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -204,12 +205,12 @@ de setenta e cinco, e eu vinha relatando só a falta de C2. Em 530 cards o
 inglês está em **A1:20 A2:120 B1:155 B2:130 C1:80 C2:25**, contra o alvo do
 espanhol, que é A1:75 A2:285 B1:307 B2:177 C1:100 C2:56.
 
-Em 630, depois da leva 7, o inglês está em **A1:32 A2:155 B1:187 B2:141
-C1:83 C2:32**, e o que falta para as três ou quatro levas que sobram é **A2
-+130, B1 +120, A1 +43, B2 +36, C2 +24, C1 +17**. O B2 e o C1 estão
-praticamente pagos; o que resta é quase tudo base. As próximas levas são de
-vocabulário A1 e A2 e de frase de conversa B1, com um punhado de C2 em cada
-uma para não deixar a faixa alta parada.
+Em 730, depois da leva 8, o inglês está em **A1:44 A2:190 B1:220 B2:153
+C1:86 C2:37**, e o que falta para as duas ou três levas que sobram é **A2
++95, B1 +87, A1 +31, B2 +24, C2 +19, C1 +14**. O B2 e o C1 estão
+praticamente pagos, e o C2 já passou de dois terços; o que resta é quase tudo
+base. As últimas levas são de vocabulário A1 e A2 e de frase de conversa B1,
+com seis ou sete C2 em cada uma para fechar a faixa alta junto com o resto.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
 varredura do motor, e mais uma conferência que a leva 5 mostrou ser
@@ -218,5 +219,10 @@ mesmo baralho, em nenhuma das três línguas**. «Tough» e «harsh» tinham os 
 «duro» do lado espanhol; a leva 6 trouxe mais dois, «Você que sabe» e «Perdi
 minhas chaves», os dois do lado português. É defeito que o build não vê e que
 a leitura não pega, porque os cards ficam longe um do outro — só a conferência
-automática acha. O baralho de espanhol já passou por ela e está limpo. Depois
-disso, commit e push. É o commit que serve de memória, não a conversa.
+automática acha. O baralho de espanhol já passou por ela e está limpo.
+
+A leva 8 acrescentou uma segunda conferência de uma linha só, e ela também
+pagou na estreia: **nenhum campo espanhol pode ter «ç», «ã» ou «õ»**, que são
+letras que o espanhol não tem. Um distrator de `en-f251` estava
+escrito «cabeça», com a cedilha portuguesa, e nem o build nem a leitura viram.
+Depois disso, commit e push. É o commit que serve de memória, não a conversa.
