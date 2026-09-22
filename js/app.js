@@ -133,6 +133,27 @@
       });
     });
 
+    /* ── a data do domínio, para quem dominou antes dela existir ──
+       «dominadoEm» só nasceu quando a frase de uso passou a esperar o dia
+       seguinte (ver Motor.liberadaEm). Card dominado antes disso ficou sem a
+       data — e sem data, Motor.liberadaEm trata a palavra como vencida há
+       muito tempo, e a frase presa a ela sai liberada na hora, mesmo que a
+       revisão que acabou de acontecer tenha sido um erro. Foi o que o Gere
+       viu em u126: a frase de «la servilleta» apareceu minutos depois de ele
+       errar a palavra, porque «la servilleta» tinha virado dominada muito
+       antes de o campo existir. Sem semear a data aqui, o mesmo ia esperar
+       por toda palavra dominada de outros tempos — quase duzentas, neste
+       progresso — assim que a frase de cada uma fosse escrita. A última
+       resposta é a melhor pista que sobrou; não é o dia exato do domínio,
+       mas basta para a frase voltar a esperar a meia-noite seguinte, em vez
+       de pular na cara na primeira revisão. */
+    Object.keys(p.cards).forEach(id => {
+      const e = p.cards[id];
+      if (e && e.etapa === 'dominado' && !e.dominadoEm) {
+        e.dominadoEm = e.ultima || new Date().toISOString();
+      }
+    });
+
     const visto = id => !!p.cards[id] && !!p.cards[id].vistas;
     /* A frase presa a uma palavra ainda não dominada não entra em fila
        nenhuma. Não guardo lista de presos: a condição se recalcula aqui a
