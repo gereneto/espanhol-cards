@@ -176,7 +176,8 @@ baralhos de feitios bem diferentes.
 | 3 | Inglês, leva 3: 100 cards (22 palavras com frase de uso, 36 frases, 20 formas verbais) | **feito** (21/09) — o baralho está em 230 |
 | 4 | Inglês, leva 4: 100 cards puxando para B2, C1 e as primeiras C2 | **feito** (21/09) — o baralho está em 330 |
 | 5 | Inglês, leva 5: 100 cards, a segunda leva avançada | **feito** (21/09) — o baralho está em 430 |
-| 6… | Inglês, levas de ~100 até fechar mil | — |
+| 6 | Inglês, leva 6: 100 cards, o A1 e o A2 que faltavam, mais um bloco de C2 | **feito** (21/09) — o baralho está em 530 |
+| 7… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -194,19 +195,25 @@ build lê como card repetido. Ela continua valendo onde o próprio inglês muda
 (`my brother`/`my sister`, `his`/`her`); no adjetivo, o card fica no masculino
 com o feminino em `aceitas`, que é o que o manual já manda para a palavra.
 
-A curva de níveis do inglês também vem sendo corrigida de propósito: as levas
-2 e 3 ficaram todas entre A2 e B2 porque foram atrás do que é mais frequente,
-e as levas 4 e 5 abriram a faixa alta. Em 430 cards o inglês está em **A1:8
-A2:100 B1:128 B2:114 C1:69 C2:11**, contra o alvo do espanhol — A1:75 A2:285
-B1:307 B2:177 C1:100 C2:56. O B2 e o C1 já estão bem servidos; o que falta é
-o **C2**, que ainda precisa de mais de quarenta cards, e o grosso de A2 e B1,
-que são as faixas mais numerosas do alvo. Daqui para a frente as levas podem
-voltar ao meio da tabela, desde que cada uma leve um punhado de C2 junto.
+A curva de níveis do inglês vem sendo corrigida de propósito, leva a leva. As
+levas 2 e 3 ficaram todas entre A2 e B2 porque foram atrás do que é mais
+frequente; as levas 4 e 5 abriram a faixa alta; e a leva 6 voltou à base, que
+estava pior do que eu tinha notado — o A1 tinha **oito** cards contra um alvo
+de setenta e cinco, e eu vinha relatando só a falta de C2. Em 530 cards o
+inglês está em **A1:20 A2:120 B1:155 B2:130 C1:80 C2:25**, contra o alvo do
+espanhol, que é A1:75 A2:285 B1:307 B2:177 C1:100 C2:56.
+
+O que falta, em número, para as levas que sobram: **A2 +165, B1 +152, A1 +55,
+B2 +47, C2 +31, C1 +20**. O grosso do que resta é básico e intermediário, e é
+ali que as próximas levas têm de morar — o B2 e o C1 já estão quase pagos, e
+o C2 pede uns oito por leva até o fim.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
 varredura do motor, e mais uma conferência que a leva 5 mostrou ser
 necessária — **nenhuma resposta certa pode se repetir entre dois cards do
 mesmo baralho, em nenhuma das três línguas**. «Tough» e «harsh» tinham os dois
-«duro» do lado espanhol, e quem estudasse es→en veria a mesma pergunta duas
-vezes com gabaritos diferentes. Depois disso, commit e push. É o commit que
-serve de memória, não a conversa.
+«duro» do lado espanhol; a leva 6 trouxe mais dois, «Você que sabe» e «Perdi
+minhas chaves», os dois do lado português. É defeito que o build não vê e que
+a leitura não pega, porque os cards ficam longe um do outro — só a conferência
+automática acha. O baralho de espanhol já passou por ela e está limpo. Depois
+disso, commit e push. É o commit que serve de memória, não a conversa.

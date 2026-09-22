@@ -898,5 +898,105 @@
     "en": "mistake",
     "es": "mistake",
     "cards": 0
+  },
+  "light": {
+    "en": "light",
+    "es": "light",
+    "cards": 0
+  },
+  "slide": {
+    "en": "slide",
+    "es": "slide",
+    "cards": 0
+  },
+  "bleed": {
+    "en": "bleed",
+    "es": "bleed",
+    "cards": 0
+  },
+  "sting": {
+    "en": "sting",
+    "es": "sting",
+    "cards": 0
+  },
+  "swing": {
+    "en": "swing",
+    "es": "swing",
+    "cards": 0
+  },
+  "shrink": {
+    "en": "shrink",
+    "es": "shrink",
+    "cards": 0
+  },
+  "burn": {
+    "en": "burn",
+    "es": "burn",
+    "cards": 0
+  },
+  "smell": {
+    "en": "smell",
+    "es": "smell",
+    "cards": 0
+  },
+  "spell": {
+    "en": "spell",
+    "es": "spell",
+    "cards": 0
+  },
+  "lie": {
+    "en": "lie",
+    "es": "lie",
+    "cards": 0
+  },
+  "lay": {
+    "en": "lay",
+    "es": "lay",
+    "cards": 0
+  },
+  "creep": {
+    "en": "creep",
+    "es": "creep",
+    "cards": 0
+  },
+  "kneel": {
+    "en": "kneel",
+    "es": "kneel",
+    "cards": 0
+  },
+  "grind": {
+    "en": "grind",
+    "es": "grind",
+    "cards": 0
+  },
+  "flee": {
+    "en": "flee",
+    "es": "flee",
+    "cards": 0
+  },
+  "cling": {
+    "en": "cling",
+    "es": "cling",
+    "cards": 0
+  },
+  "weave": {
+    "en": "weave",
+    "es": "weave",
+    "cards": 0
+  },
+  "weep": {
+    "en": "weep",
+    "es": "weep",
+    "cards": 0
+  },
+  "arise": {
+    "en": "arise",
+    "es": "arise",
+    "cards": 0
+  },
+  "undergo": {
+    "en": "undergo",
+    "es": "undergo",
+    "cards": 0
   }
 }
