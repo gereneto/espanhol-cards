@@ -998,5 +998,100 @@
     "en": "undergo",
     "es": "undergo",
     "cards": 0
+  },
+  "be": {
+    "en": "be",
+    "es": "be",
+    "cards": 0
+  },
+  "have": {
+    "en": "have",
+    "es": "have",
+    "cards": 0
+  },
+  "do": {
+    "en": "do",
+    "es": "do",
+    "cards": 0
+  },
+  "say": {
+    "en": "say",
+    "es": "say",
+    "cards": 0
+  },
+  "learn": {
+    "en": "learn",
+    "es": "learn",
+    "cards": 0
+  },
+  "stink": {
+    "en": "stink",
+    "es": "stink",
+    "cards": 0
+  },
+  "dream": {
+    "en": "dream",
+    "es": "dream",
+    "cards": 0
+  },
+  "oversleep": {
+    "en": "oversleep",
+    "es": "oversleep",
+    "cards": 0
+  },
+  "misunderstand": {
+    "en": "misunderstand",
+    "es": "misunderstand",
+    "cards": 0
+  },
+  "swell": {
+    "en": "swell",
+    "es": "swell",
+    "cards": 0
+  },
+  "lean": {
+    "en": "lean",
+    "es": "lean",
+    "cards": 0
+  },
+  "sew": {
+    "en": "sew",
+    "es": "sew",
+    "cards": 0
+  },
+  "lend": {
+    "en": "lend",
+    "es": "lend",
+    "cards": 0
+  },
+  "watch": {
+    "en": "watch",
+    "es": "watch",
+    "cards": 0
+  },
+  "leap": {
+    "en": "leap",
+    "es": "leap",
+    "cards": 0
+  },
+  "wind": {
+    "en": "wind",
+    "es": "wind",
+    "cards": 0
+  },
+  "forbid": {
+    "en": "forbid",
+    "es": "forbid",
+    "cards": 0
+  },
+  "mislead": {
+    "en": "mislead",
+    "es": "mislead",
+    "cards": 0
+  },
+  "speed": {
+    "en": "speed",
+    "es": "speed",
+    "cards": 0
   }
 }

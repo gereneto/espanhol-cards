@@ -177,7 +177,8 @@ baralhos de feitios bem diferentes.
 | 4 | Inglês, leva 4: 100 cards puxando para B2, C1 e as primeiras C2 | **feito** (21/09) — o baralho está em 330 |
 | 5 | Inglês, leva 5: 100 cards, a segunda leva avançada | **feito** (21/09) — o baralho está em 430 |
 | 6 | Inglês, leva 6: 100 cards, o A1 e o A2 que faltavam, mais um bloco de C2 | **feito** (21/09) — o baralho está em 530 |
-| 7… | Inglês, levas de ~100 até fechar mil | — |
+| 7 | Inglês, leva 7: 100 cards de base e de conversa | **feito** (21/09) — o baralho está em 630 |
+| 8… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -203,10 +204,12 @@ de setenta e cinco, e eu vinha relatando só a falta de C2. Em 530 cards o
 inglês está em **A1:20 A2:120 B1:155 B2:130 C1:80 C2:25**, contra o alvo do
 espanhol, que é A1:75 A2:285 B1:307 B2:177 C1:100 C2:56.
 
-O que falta, em número, para as levas que sobram: **A2 +165, B1 +152, A1 +55,
-B2 +47, C2 +31, C1 +20**. O grosso do que resta é básico e intermediário, e é
-ali que as próximas levas têm de morar — o B2 e o C1 já estão quase pagos, e
-o C2 pede uns oito por leva até o fim.
+Em 630, depois da leva 7, o inglês está em **A1:32 A2:155 B1:187 B2:141
+C1:83 C2:32**, e o que falta para as três ou quatro levas que sobram é **A2
++130, B1 +120, A1 +43, B2 +36, C2 +24, C1 +17**. O B2 e o C1 estão
+praticamente pagos; o que resta é quase tudo base. As próximas levas são de
+vocabulário A1 e A2 e de frase de conversa B1, com um punhado de C2 em cada
+uma para não deixar a faixa alta parada.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
 varredura do motor, e mais uma conferência que a leva 5 mostrou ser
