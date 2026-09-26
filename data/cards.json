@@ -454,9 +454,11 @@
    "nota": "«Hacer cola» é ficar na fila.\n🇪🇸 la cola → 🇧🇷 o rabo, a fila\n🇪🇸 el pegamento → 🇧🇷 a cola de colar\n🇪🇸 la fila → 🇧🇷 a fileira",
    "notaEn": "'Cola' is both a tail and a queue — 'hacer cola' is to queue up, or to stand in line. Glue is 'el pegamento'.",
    "sinonimosEs": [
-    "la fila",
     "el rabo"
-   ]
+   ],
+   "regionaisEs": {
+    "la fila": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -1162,9 +1164,11 @@
    "nota": "'Estoy enfadado' = estou bravo. Na América Latina usa-se mais 'enojado'.\n🇪🇸 bravo → 🇧🇷 valente, feroz",
    "notaEn": "'Estoy enfadado' = I'm angry. In Spain that is the everyday word; across Latin America you will hear 'enojado' far more often.",
    "sinonimosEs": [
-    "enojado",
     "molesto"
-   ]
+   ],
+   "regionaisEs": {
+    "enojado": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -1336,9 +1340,11 @@
    "nota": "«Asignatura pendiente» é a matéria que falta passar — e, no figurado, assunto malresolvido.\n🇪🇸 la asignatura → 🇧🇷 a matéria, a disciplina\n🇪🇸 la firma → 🇧🇷 a assinatura",
    "notaEn": "'La asignatura' is a school or university subject. 'Asignatura pendiente' is one you still have to pass — and, figuratively, any unfinished business. A signature is 'una firma'.",
    "sinonimosEs": [
-    "la materia",
     "la disciplina"
-   ]
+   ],
+   "regionaisEs": {
+    "la materia": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -1423,10 +1429,10 @@
    ],
    "nota": "'Billete de tren' = passagem de trem; 'billete de 50 euros' = nota de 50.\n🇪🇸 la cédula → 🇧🇷 a carteira de identidade",
    "notaEn": "'Billete de tren' is a train ticket; 'billete de 50 euros' is a fifty-euro note. Across much of Latin America the travel ticket is 'el boleto' instead.",
-   "sinonimosEs": [
-    "el pasaje",
-    "el boleto"
-   ]
+   "regionaisEs": {
+    "el pasaje": "na América Latina",
+    "el boleto": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -1545,7 +1551,10 @@
     "adjetivo"
    ],
    "nota": "Pessoa que sente muito frio. Na América Latina: 'friolento'.",
-   "notaEn": "'Friolero' describes the person, not the weather: someone who feels the cold badly. 'Soy muy friolera' = I'm always cold. Across Latin America, 'friolento'."
+   "notaEn": "'Friolero' describes the person, not the weather: someone who feels the cold badly. 'Soy muy friolera' = I'm always cold. Across Latin America, 'friolento'.",
+   "regionaisEs": {
+    "friolento": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -1879,9 +1888,11 @@
    "nota": "Sinônimo mais coloquial: 'echar de menos'.",
    "notaEn": "'Añoro mi casa' = I miss home. It leans literary and wistful; day to day you will hear 'echar de menos', or 'extrañar' in Latin America.",
    "sinonimosEs": [
-    "extrañar",
     "echar de menos"
-   ]
+   ],
+   "regionaisEs": {
+    "extrañar": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -6190,9 +6201,9 @@
    ],
    "nota": "Cuidado: 'suelo' também é a forma de 'soler' (costumar) na primeira pessoa.",
    "notaEn": "'El suelo' is the floor indoors and the ground outside. It is also the first person of 'soler': 'suelo ir' = I usually go.",
-   "sinonimosEs": [
-    "el piso"
-   ]
+   "regionaisEs": {
+    "el piso": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -6418,10 +6429,12 @@
    "nota": "Vem de 'nieve' (neve). Também se diz 'frigorífico' na Espanha.",
    "notaEn": "From 'la nieve', snow. In Spain you will also hear 'el frigorífico'; in Latin America, 'el refrigerador' or 'la heladera'.",
    "sinonimosEs": [
-    "el frigorífico",
-    "el refrigerador",
-    "la heladera"
-   ]
+    "el frigorífico"
+   ],
+   "regionaisEs": {
+    "el refrigerador": "na América Latina",
+    "la heladera": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -6457,9 +6470,11 @@
    ],
    "nota": "Na América Latina também se diz 'la llave' ou 'el caño'.",
    "notaEn": "'El grifo' is the tap — and also the griffin, the beast whose head was carved on old fountains. In Latin America the tap is 'la llave' or 'el caño'.",
-   "sinonimosEs": [
-    "la canilla"
-   ]
+   "regionaisEs": {
+    "la llave": "em boa parte da América Latina",
+    "la canilla": "na Argentina e no Uruguai",
+    "el caño": "no Peru"
+   }
   },
   {
    "idioma": "es",
@@ -6751,9 +6766,9 @@
    ],
    "nota": "'¿Cuánto tardas?' = quanto tempo você demora?",
    "notaEn": "'¿Cuánto tardas?' = how long will you be? It measures duration, not lateness — to arrive late is 'llegar tarde'.",
-   "sinonimosEs": [
-    "demorar"
-   ]
+   "regionaisEs": {
+    "demorar": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -7895,7 +7910,10 @@
     "Espanha"
    ],
    "nota": "«Apetecer» funciona como «gustar»: o verbo concorda com o que se deseja, e quem sente a vontade vem no pronome — «¿te apetece un café?», «¿te apetecen unas tapas?». Por isso não leva o -s do tú. Na América Latina: «¿se te antoja?».",
-   "notaEn": "'Apetecer' works backwards, like 'gustar': the coffee appeals to you. Very Spanish — in Latin America you would hear '¿se te antoja un café?'"
+   "notaEn": "'Apetecer' works backwards, like 'gustar': the coffee appeals to you. Very Spanish — in Latin America you would hear '¿se te antoja un café?'",
+   "regionaisEs": {
+    "¿Se te antoja un café?": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -7936,7 +7954,10 @@
     "verbo"
    ],
    "nota": "'Tardar en + infinitivo' = demorar para fazer algo.",
-   "notaEn": "'Tardar en + infinitive' = to take time to do something. 'Tardé dos horas' says how long it took, with no complaint about lateness attached."
+   "notaEn": "'Tardar en + infinitive' = to take time to do something. 'Tardé dos horas' says how long it took, with no complaint about lateness attached.",
+   "regionaisEs": {
+    "Demoré dos horas en llegar.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -11268,8 +11289,11 @@
    ],
    "nota": "Par de 'borracho' (bêbado). Aqui o material é 'goma'; na América Latina, 'borrador'.",
    "notaEn": "'Goma' is the rubber itself, so 'goma de borrar' is the thing you rub out with. In Latin America it is 'el borrador' — which in Spain means a rough draft.",
-   "sinonimosEs": [
-    "el borrador"
+   "regionaisEs": {
+    "el borrador": "na América Latina"
+   },
+   "aceitasEs": [
+    "la goma"
    ]
   },
   {
@@ -12208,9 +12232,9 @@
    ],
    "nota": "Na Espanha é 'zumo'; na América Latina, 'jugo'.",
    "notaEn": "In Spain, 'zumo de naranja'. Across Latin America it is 'el jugo' — ask for 'zumo' in Mexico and you may get a puzzled look.",
-   "sinonimosEs": [
-    "el jugo"
-   ]
+   "regionaisEs": {
+    "el jugo": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -12244,9 +12268,9 @@
    ],
    "nota": "Na América Latina se diz 'durazno'.",
    "notaEn": "'El melocotón' in Spain, 'el durazno' across most of Latin America. Both mean the same fruit; the word marks where you learned your Spanish.",
-   "sinonimosEs": [
-    "el durazno"
-   ]
+   "regionaisEs": {
+    "el durazno": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -12281,9 +12305,9 @@
    ],
    "nota": "Vem do formato de pinha. 'Piña colada' é literalmente abacaxi coado.",
    "notaEn": "Named for its resemblance to a pine cone, which is also 'una piña'. 'Piña colada' is literally strained pineapple.",
-   "sinonimosEs": [
-    "el ananás"
-   ]
+   "regionaisEs": {
+    "el ananá": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -12350,9 +12374,9 @@
    ],
    "nota": "Na Argentina e no Uruguai se diz 'manteca'.",
    "notaEn": "'La mantequilla' in Spain and most of Latin America; in Argentina and Uruguay it is 'la manteca', which elsewhere means lard.",
-   "sinonimosEs": [
-    "la manteca"
-   ]
+   "regionaisEs": {
+    "la manteca": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -12732,9 +12756,9 @@
    ],
    "nota": "Meia-calça é 'medias' — justamente o falso amigo.",
    "notaEn": "'Los calcetines' are socks. Watch out for 'las medias', which are stockings or tights — though in parts of Latin America they mean socks after all.",
-   "sinonimosEs": [
-    "las medias"
-   ]
+   "regionaisEs": {
+    "las medias": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -12773,10 +12797,10 @@
    ],
    "nota": "Na América Latina se diz 'lentes' ou 'anteojos'.",
    "notaEn": "'Las gafas' in Spain; 'los lentes' or 'los anteojos' across Latin America. Sunglasses are 'las gafas de sol'.",
-   "sinonimosEs": [
-    "los lentes",
-    "los anteojos"
-   ]
+   "regionaisEs": {
+    "los lentes": "na América Latina",
+    "los anteojos": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -12884,9 +12908,9 @@
    ],
    "nota": "'Darse una ducha' = tomar banho.",
    "notaEn": "'Darse una ducha' or plain 'ducharse' = to have a shower. The bath you lie in is 'la bañera'.",
-   "sinonimosEs": [
-    "la regadera"
-   ]
+   "regionaisEs": {
+    "la regadera": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -13105,9 +13129,9 @@
    ],
    "nota": "Na Argentina, 'bombilla' é o canudo do chimarrão.",
    "notaEn": "'La bombilla' is the light bulb in Spain; in Latin America you may hear 'el foco' or 'la bombita'. In Argentina a 'bombilla' is the metal straw for mate.",
-   "sinonimosEs": [
-    "el foco"
-   ]
+   "regionaisEs": {
+    "el foco": "no México e em outros países da América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -13147,9 +13171,9 @@
    ],
    "nota": "'Mando a distancia'. Também significa comando, chefia.",
    "notaEn": "Short for 'mando a distancia'. On its own, 'el mando' is command or authority: 'estar al mando' is to be in charge.",
-   "sinonimosEs": [
-    "el control remoto"
-   ]
+   "regionaisEs": {
+    "el control remoto": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -13322,9 +13346,9 @@
    ],
    "nota": "De 'ascender'. Na Colômbia e no México se diz 'elevador'.",
    "notaEn": "From 'ascender', to go up. Spain says 'el ascensor'; Mexico and Colombia say 'el elevador'.",
-   "sinonimosEs": [
-    "el elevador"
-   ]
+   "regionaisEs": {
+    "el elevador": "no México e na Colômbia"
+   }
   },
   {
    "idioma": "es",
@@ -13363,9 +13387,10 @@
    ],
    "nota": "Na Argentina, 'vereda'. No México, 'banqueta'.",
    "notaEn": "'La acera' in Spain, 'la vereda' in Argentina, 'la banqueta' in Mexico. Same strip of concrete, three different words.",
-   "sinonimosEs": [
-    "la vereda"
-   ]
+   "regionaisEs": {
+    "la vereda": "na Argentina, no Uruguai e no Chile",
+    "la banqueta": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -13524,9 +13549,9 @@
    ],
    "nota": "'Hacer la maleta' = fazer as malas.\n🇪🇸 mala → 🇧🇷 má, ruim",
    "notaEn": "'Hacer la maleta' = to pack. The small one is 'el maletín', a briefcase, and the car boot in Spain is 'el maletero'.",
-   "sinonimosEs": [
-    "la valija"
-   ]
+   "regionaisEs": {
+    "la valija": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -13598,9 +13623,9 @@
    ],
    "nota": "Na América Latina, 'plomero'. De 'fontana' (fonte).",
    "notaEn": "From 'fontana', a spring or fountain. Spain says 'fontanero'; most of Latin America says 'plomero', after the lead in old pipes.",
-   "sinonimosEs": [
-    "el plomero"
-   ]
+   "regionaisEs": {
+    "el plomero": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -13753,9 +13778,9 @@
    ],
    "nota": "'Jubilarse' = aposentar-se. Vem de júbilo, a alegria de parar.",
    "notaEn": "'Jubilarse' = to retire. It shares a root with 'júbilo', joy — the language is optimistic about the moment you stop.",
-   "sinonimosEs": [
-    "el retiro"
-   ]
+   "regionaisEs": {
+    "el retiro": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -16808,10 +16833,12 @@
    "nota": "De 'morado', roxo. Na Espanha se diz mais 'el cardenal' ou 'el moratón'; na América Latina, 'el moretón'.",
    "notaEn": "From 'morado', purple. In Spain you will hear 'el cardenal' or 'el moratón'; across Latin America, 'el moretón'.",
    "sinonimosEs": [
-    "el cardenal",
-    "el hematoma",
-    "el moratón"
-   ]
+    "el hematoma"
+   ],
+   "regionaisEs": {
+    "el cardenal": "na Espanha",
+    "el moratón": "na Espanha"
+   }
   },
   {
    "idioma": "es",
@@ -16853,9 +16880,9 @@
    ],
    "nota": "Diminutivo de 'tira'. É palavra de Espanha; na América Latina se diz 'la curita', que vem da marca Curitas.",
    "notaEn": "A diminutive of 'tira', a strip. Very much a Spain word — across Latin America it is 'la curita', after the brand.",
-   "sinonimosEs": [
-    "la curita"
-   ]
+   "regionaisEs": {
+    "la curita": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -16896,9 +16923,9 @@
    ],
    "nota": "Sempre no plural: 'lo llevaron a urgencias'. O hospital inteiro é 'el hospital'; o postinho de bairro, 'el ambulatorio' ou 'el centro de salud'.",
    "notaEn": "Always plural: 'lo llevaron a urgencias'. The neighbourhood clinic is 'el ambulatorio' or 'el centro de salud'.",
-   "sinonimosEs": [
-    "emergencias"
-   ]
+   "regionaisEs": {
+    "emergencias": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -17013,7 +17040,10 @@
     "cotidiano"
    ],
    "nota": "Uma palavra só, sem hífen. Também se escreve 'antier' em boa parte da América Latina.",
-   "notaEn": "One word in Spanish, where English needs four. Much of Latin America shortens it further, to 'antier'."
+   "notaEn": "One word in Spanish, where English needs four. Much of Latin America shortens it further, to 'antier'.",
+   "regionaisEs": {
+    "antier": "em boa parte da América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -17164,10 +17194,10 @@
    ],
    "nota": "Palavra de Espanha. Na América Latina se diz 'el carro' ou 'el auto'; 'coche' por lá soa a carruagem ou a carrinho de bebê.",
    "notaEn": "The Spain word. Across Latin America it is 'el carro' or 'el auto', and 'coche' there suggests a carriage or a pram.",
-   "sinonimosEs": [
-    "el carro",
-    "el auto"
-   ]
+   "regionaisEs": {
+    "el carro": "em boa parte da América Latina",
+    "el auto": "na Argentina, no Chile e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -17209,9 +17239,12 @@
    "nota": "'El carné' sozinho serve para qualquer carteirinha. Na América Latina se diz 'la licencia de conducir' ou 'el brevete'.",
    "notaEn": "'El carné' on its own covers any membership card. Latin America says 'la licencia de conducir', or 'el brevete' in Peru.",
    "sinonimosEs": [
-    "la licencia de conducir",
     "el permiso de conducir"
-   ]
+   ],
+   "regionaisEs": {
+    "la licencia de conducir": "na América Latina",
+    "el brevete": "no Peru"
+   }
   },
   {
    "idioma": "es",
@@ -17250,9 +17283,10 @@
    ],
    "nota": "Os dois sentidos estão certos: a placa do carro e a matrícula na escola. O card cobra a placa porque é o sentido que o português não tem — a matrícula você já sabe.",
    "notaEn": "Both senses are correct: the plate on a car and enrolment at a school. The card drills the plate, which is the one you are less likely to guess.",
-   "sinonimosEs": [
-    "la placa"
-   ]
+   "regionaisEs": {
+    "la placa": "na América Latina",
+    "la patente": "na Argentina e no Chile"
+   }
   },
   {
    "idioma": "es",
@@ -17292,10 +17326,10 @@
    ],
    "nota": "De 'la maleta', a mala. Também é a pessoa que carrega malas no hotel. Na América Latina o do carro é 'el baúl' ou 'la cajuela'.",
    "notaEn": "From 'la maleta', a suitcase. It also names the porter who carries them. In Latin America the car's is 'el baúl' or 'la cajuela'.",
-   "sinonimosEs": [
-    "el baúl",
-    "la cajuela"
-   ]
+   "regionaisEs": {
+    "el baúl": "em boa parte da América Latina",
+    "la cajuela": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -17697,7 +17731,10 @@
     "Espanha"
    ],
    "nota": "'Ir a por' é a construção espanhola para buscar algo — duas preposições seguidas, que na América Latina viram só 'ir por'. Muita gente na Espanha condena o 'a', e todo mundo usa.",
-   "notaEn": "'Ir a por' is how Spain says to go and fetch something — two prepositions in a row. Latin America drops the 'a'. Purists object; everyone in Spain says it anyway."
+   "notaEn": "'Ir a por' is how Spain says to go and fetch something — two prepositions in a row. Latin America drops the 'a'. Purists object; everyone in Spain says it anyway.",
+   "regionaisEs": {
+    "Voy por pan.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -18206,7 +18243,10 @@
     "cotidiano"
    ],
    "nota": "«Añorar» é transitivo: a coisa vem direto depois do verbo, sem preposição. É palavra de registro cuidado; no dia a dia se ouve mais «echar de menos».\n🇪🇸 añoro mi ciudad → 🇧🇷 sinto saudade da minha cidade\n🇪🇸 echo de menos mi ciudad → 🇧🇷 sinto falta da minha cidade",
-   "notaEn": "'Añorar' takes a direct object — no preposition after it. It belongs to careful, faintly literary register; in everyday speech Spain says 'echar de menos' and Latin America 'extrañar'."
+   "notaEn": "'Añorar' takes a direct object — no preposition after it. It belongs to careful, faintly literary register; in everyday speech Spain says 'echar de menos' and Latin America 'extrañar'.",
+   "regionaisEs": {
+    "Extraño mi ciudad.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -20060,7 +20100,10 @@
     "falso-amigo"
    ],
    "nota": "«Hacer cola» é ficar na fila, e «mucha cola» é fila comprida. A cola de colar é «el pegamento».\n🇪🇸 la cola → 🇧🇷 a fila\n🇪🇸 el pegamento → 🇧🇷 a cola",
-   "notaEn": "'Hacer cola' is to queue, so 'mucha cola' is a long queue. 'La cola' is also an animal's tail; glue is 'el pegamento'."
+   "notaEn": "'Hacer cola' is to queue, so 'mucha cola' is a long queue. 'La cola' is also an animal's tail; glue is 'el pegamento'.",
+   "regionaisEs": {
+    "Había mucha fila en el banco.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -20461,7 +20504,10 @@
     "falso-amigo"
    ],
    "nota": "«Enfadado» é bravo, irritado — nada a ver com enfado. Na América Latina se ouve mais «enojado».\n🇪🇸 enfadado → 🇧🇷 bravo\n🇪🇸 aburrido → 🇧🇷 entediado",
-   "notaEn": "'Enfadado' is angry or cross. Latin America prefers 'enojado'; bored is 'aburrido'."
+   "notaEn": "'Enfadado' is angry or cross. Latin America prefers 'enojado'; bored is 'aburrido'.",
+   "regionaisEs": {
+    "Mi jef{e|a} está enojad{o|a} conmigo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -20503,7 +20549,10 @@
     "escola"
    ],
    "nota": "«Asignatura» é a disciplina do currículo. A assinatura é «la firma».\n🇪🇸 la asignatura → 🇧🇷 a matéria\n🇪🇸 la firma → 🇧🇷 a assinatura",
-   "notaEn": "'Asignatura' is a school or university subject. A signature is 'la firma'; 'asignatura pendiente' is also unfinished business."
+   "notaEn": "'Asignatura' is a school or university subject. A signature is 'la firma'; 'asignatura pendiente' is also unfinished business.",
+   "regionaisEs": {
+    "Me queda una materia para terminar.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -20584,7 +20633,11 @@
     "viagem"
    ],
    "nota": "«Billete» é a passagem e também a cédula: «un billete de cincuenta». Na América Latina a passagem é «el boleto».",
-   "notaEn": "'Billete' is both the ticket and the banknote. Latin America says 'boleto' for tickets."
+   "notaEn": "'Billete' is both the ticket and the banknote. Latin America says 'boleto' for tickets.",
+   "regionaisEs": {
+    "Compré el boleto de tren por internet.": "na América Latina",
+    "Compré el pasaje de tren por internet.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -20666,7 +20719,10 @@
     "adjetivo"
    ],
    "nota": "«Friolero» diz de quem sente frio, e não do tempo frio. O contrário é «caluroso».",
-   "notaEn": "'Friolero' describes a person who feels the cold, not cold weather. Someone who feels the heat is 'caluroso'."
+   "notaEn": "'Friolero' describes a person who feels the cold, not cold weather. Someone who feels the heat is 'caluroso'.",
+   "regionaisEs": {
+    "Soy muy friolento, siempre llevo chaqueta.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -21498,7 +21554,10 @@
     "casa"
    ],
    "nota": "«Se me cayó» é o acidente sem culpado: a coisa caiu, e eu estava ali. «Suelo» é o chão; a forma de «soler» é outra palavra.",
-   "notaEn": "'Se me cayó' frames the accident as something that happened to me, not something I did. 'Suelo' here is the floor, not the verb form of 'soler'."
+   "notaEn": "'Se me cayó' frames the accident as something that happened to me, not something I did. 'Suelo' here is the floor, not the verb form of 'soler'.",
+   "regionaisEs": {
+    "Se me cayó el vaso al piso.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -21737,7 +21796,11 @@
     "casa"
    ],
    "nota": "«Meter» é pôr dentro, e é o verbo natural para geladeira, bolso e forno. «Poner» fica para em cima.",
-   "notaEn": "'Meter' is to put inside — the natural verb for the fridge, a pocket or the oven. 'Poner' is to put on or down."
+   "notaEn": "'Meter' is to put inside — the natural verb for the fridge, a pocket or the oven. 'Poner' is to put on or down.",
+   "regionaisEs": {
+    "Mete la leche en el refrigerador.": "na América Latina",
+    "Mete la leche en la heladera.": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -21777,7 +21840,11 @@
     "casa"
    ],
    "nota": "«Grifo» é a torneira; abrir e fechar são «abrir» e «cerrar el grifo». O «que» do meio vale por «porque», e é bem de conversa.",
-   "notaEn": "'Grifo' is the tap; turn it on and off with 'abrir' and 'cerrar'. The 'que' in the middle means 'because', a very spoken usage."
+   "notaEn": "'Grifo' is the tap; turn it on and off with 'abrir' and 'cerrar'. The 'que' in the middle means 'because', a very spoken usage.",
+   "regionaisEs": {
+    "Cierra la llave, que se gasta el agua.": "em boa parte da América Latina",
+    "Cierra la canilla, que se gasta el agua.": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -22429,7 +22496,13 @@
     "escola"
    ],
    "nota": "«¿Me dejas…?» é o jeito espanhol de pedir emprestado. A borracha é «goma»; «borracho» é quem bebeu demais.\n🇪🇸 la goma de borrar → 🇧🇷 a borracha\n🇪🇸 borracho → 🇧🇷 bêbado",
-   "notaEn": "'¿Me dejas…?' is how Spain asks to borrow something. In much of Latin America the eraser is 'el borrador'."
+   "notaEn": "'¿Me dejas…?' is how Spain asks to borrow something. In much of Latin America the eraser is 'el borrador'.",
+   "regionaisEs": {
+    "¿Me prestas el borrador?": "na América Latina"
+   },
+   "aceitasEs": [
+    "¿Me dejas la goma?"
+   ]
   },
   {
    "idioma": "es",
@@ -23314,7 +23387,10 @@
     "Espanha"
    ],
    "nota": "«Zumo» é o suco na Espanha; do outro lado do Atlântico é «jugo». «De desayuno» é «no café da manhã».",
-   "notaEn": "'Zumo' is Spain's word for juice; Latin America says 'jugo'. 'De desayuno' means for breakfast."
+   "notaEn": "'Zumo' is Spain's word for juice; Latin America says 'jugo'. 'De desayuno' means for breakfast.",
+   "regionaisEs": {
+    "De desayuno tomo un jugo de naranja.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -23353,7 +23429,10 @@
     "comida"
    ],
    "nota": "«Melocotón» é da Espanha; na América Latina o pêssego é «durazno». O marmelo, que parece, é «el membrillo».",
-   "notaEn": "'Melocotón' is Spain's peach; Latin America says 'durazno'. Quince, a lookalike, is 'el membrillo'."
+   "notaEn": "'Melocotón' is Spain's peach; Latin America says 'durazno'. Quince, a lookalike, is 'el membrillo'.",
+   "regionaisEs": {
+    "Me encanta la mermelada de durazno.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -23392,7 +23471,10 @@
     "comida"
    ],
    "nota": "«Piña» é o abacaxi, e também a pinha do pinheiro. «Madura» concorda com «piña».",
-   "notaEn": "'Piña' is the pineapple, and also a pine cone. Note the agreement: 'la piña está madura'."
+   "notaEn": "'Piña' is the pineapple, and also a pine cone. Note the agreement: 'la piña está madura'.",
+   "regionaisEs": {
+    "El ananá está muy maduro.": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -23470,7 +23552,10 @@
     "comida"
    ],
    "nota": "«Untar» é passar algo pastoso. Na Argentina e no Uruguai, «manteca» é a manteiga; na Espanha, «manteca» é a banha.",
-   "notaEn": "'Untar' is to spread something soft. In Argentina and Uruguay butter is 'manteca'; in Spain 'manteca' is lard."
+   "notaEn": "'Untar' is to spread something soft. In Argentina and Uruguay butter is 'manteca'; in Spain 'manteca' is lard.",
+   "regionaisEs": {
+    "Unta manteca en el pan.": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -23909,7 +23994,10 @@
     "roupa"
    ],
    "nota": "«Calcetín» é a meia soquete; «las medias» são a meia-calça. É o falso amigo que dá o nome ao card.\n🇪🇸 el calcetín → 🇧🇷 a meia\n🇪🇸 las medias → 🇧🇷 a meia-calça",
-   "notaEn": "'Calcetín' is a sock; 'las medias' are tights or stockings."
+   "notaEn": "'Calcetín' is a sock; 'las medias' are tights or stockings.",
+   "regionaisEs": {
+    "Siempre pierdo una media.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -23948,7 +24036,11 @@
     "roupa"
    ],
    "nota": "«Gafas» é sempre plural, como «óculos». Na América Latina se diz «lentes» ou «anteojos», e «gafas de sol» são os óculos escuros.",
-   "notaEn": "'Gafas' is always plural. Latin America prefers 'lentes' or 'anteojos'; sunglasses are 'gafas de sol'."
+   "notaEn": "'Gafas' is always plural. Latin America prefers 'lentes' or 'anteojos'; sunglasses are 'gafas de sol'.",
+   "regionaisEs": {
+    "No veo nada sin lentes.": "na América Latina",
+    "No veo nada sin anteojos.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -24262,7 +24354,10 @@
     "casa"
    ],
    "nota": "A lâmpada que queima «se funde». Na Argentina, «bombilla» é o canudo de metal do mate.",
-   "notaEn": "A bulb that blows 'se funde'. In Argentina, 'bombilla' is the metal straw used for mate."
+   "notaEn": "A bulb that blows 'se funde'. In Argentina, 'bombilla' is the metal straw used for mate.",
+   "regionaisEs": {
+    "Se fundió el foco del baño.": "no México e em outros países da América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -24302,7 +24397,11 @@
     "casa"
    ],
    "nota": "«El mando a distancia» é o controle remoto, e «la tele» é a TV. «Mando» também é comando, chefia: «estar al mando».",
-   "notaEn": "'El mando' is the remote, short for 'mando a distancia'. It also means command: 'estar al mando'."
+   "notaEn": "'El mando' is the remote, short for 'mando a distancia'. It also means command: 'estar al mando'.",
+   "regionaisEs": {
+    "¿Dónde está el control remoto de la tele?": "na América Latina",
+    "¿Dónde está el control de la tele?": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -24500,7 +24599,10 @@
     "cidade"
    ],
    "nota": "«Ascensor» vem de «ascender», subir. No México e na Colômbia também se diz «elevador».",
-   "notaEn": "'Ascensor' comes from 'ascender', to go up. Mexico and Colombia also say 'elevador'."
+   "notaEn": "'Ascensor' comes from 'ascender', to go up. Mexico and Colombia also say 'elevador'.",
+   "regionaisEs": {
+    "El elevador no funciona, sube por la escalera.": "no México e na Colômbia"
+   }
   },
   {
    "idioma": "es",
@@ -24540,7 +24642,11 @@
     "cidade"
    ],
    "nota": "«Acera» é a calçada; na Argentina, «vereda», e no México, «banqueta». «Aparcar» é o estacionar da Espanha.",
-   "notaEn": "'Acera' is the pavement; Argentina says 'vereda' and Mexico 'banqueta'. 'Aparcar' is Spain's verb for to park."
+   "notaEn": "'Acera' is the pavement; Argentina says 'vereda' and Mexico 'banqueta'. 'Aparcar' is Spain's verb for to park.",
+   "regionaisEs": {
+    "Estacionó el auto encima de la vereda.": "na Argentina",
+    "Estacionó el carro encima de la banqueta.": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -24700,7 +24806,11 @@
     "viagem"
    ],
    "nota": "«Hacer la maleta» é arrumar a mala; desarrumar é «deshacer la maleta». Na América Latina se diz também «empacar».",
-   "notaEn": "'Hacer la maleta' is to pack; unpacking is 'deshacer la maleta'."
+   "notaEn": "'Hacer la maleta' is to pack; unpacking is 'deshacer la maleta'.",
+   "regionaisEs": {
+    "Todavía no hice la maleta.": "na América Latina",
+    "Todavía no empaqué.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -24778,7 +24888,11 @@
     "profissões"
    ],
    "nota": "«Fontanero» é da Espanha; na América Latina é «plomero». «Gotear» é pingar, de «gota».",
-   "notaEn": "'Fontanero' is Spain's plumber; Latin America says 'plomero'. 'Gotear' is to drip, from 'gota'."
+   "notaEn": "'Fontanero' is Spain's plumber; Latin America says 'plomero'. 'Gotear' is to drip, from 'gota'.",
+   "regionaisEs": {
+    "Hay que llamar al plomero, gotea la llave.": "em boa parte da América Latina",
+    "Hay que llamar al plomero, gotea la canilla.": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -27232,7 +27346,11 @@
     "corpo"
    ],
    "nota": "«Moretón» vem de «morado», roxo. Na Espanha se ouve muito «cardenal» e «moratón».",
-   "notaEn": "'Moretón' comes from 'morado', purple. In Spain you also hear 'cardenal' and 'moratón'."
+   "notaEn": "'Moretón' comes from 'morado', purple. In Spain you also hear 'cardenal' and 'moratón'.",
+   "regionaisEs": {
+    "Tengo un cardenal en la pierna.": "na Espanha",
+    "Tengo un moratón en la pierna.": "na Espanha"
+   }
   },
   {
    "idioma": "es",
@@ -27272,7 +27390,10 @@
     "saúde"
    ],
    "nota": "«Ponerse» é pôr em si mesmo: «ponte una tirita». Na América Latina o curativo é «la curita».",
-   "notaEn": "'Ponerse' is to put on yourself: 'ponte una tirita'. Latin America calls it 'la curita'."
+   "notaEn": "'Ponerse' is to put on yourself: 'ponte una tirita'. Latin America calls it 'la curita'.",
+   "regionaisEs": {
+    "Ponte una curita en el dedo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -27313,7 +27434,10 @@
     "saúde"
    ],
    "nota": "«Urgencias» vai sem artigo e no plural: «ir a urgencias». O posto de saúde é «el centro de salud».",
-   "notaEn": "'Urgencias' takes no article and stays plural: 'ir a urgencias'. A local clinic is 'el centro de salud'."
+   "notaEn": "'Urgencias' takes no article and stays plural: 'ir a urgencias'. A local clinic is 'el centro de salud'.",
+   "regionaisEs": {
+    "Lo llevaron a emergencias de madrugada.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -27432,7 +27556,10 @@
     "cotidiano"
    ],
    "nota": "«Anteayer» é uma palavra só. «Cumpleaños» não muda no plural: «los cumpleaños».",
-   "notaEn": "'Anteayer' is one word; parts of Latin America say 'antier'. 'Cumpleaños' stays the same in the plural."
+   "notaEn": "'Anteayer' is one word; parts of Latin America say 'antier'. 'Cumpleaños' stays the same in the plural.",
+   "regionaisEs": {
+    "Antier fue mi cumpleaños.": "em boa parte da América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -27591,7 +27718,11 @@
     "viagem"
    ],
    "nota": "Meio de transporte leva «en»: «en coche», «en tren». A pé é «a pie».",
-   "notaEn": "Means of transport take 'en': 'en coche', 'en tren'. On foot is 'a pie'."
+   "notaEn": "Means of transport take 'en': 'en coche', 'en tren'. On foot is 'a pie'.",
+   "regionaisEs": {
+    "Voy al trabajo en carro.": "em boa parte da América Latina",
+    "Voy al trabajo en auto.": "na Argentina, no Chile e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -27635,7 +27766,10 @@
     "viagem"
    ],
    "nota": "«Sacarse el carné» é tirar a carteira. Na América Latina se diz «la licencia de conducir».",
-   "notaEn": "'Sacarse el carné' is to get your licence. Latin America says 'la licencia de conducir'."
+   "notaEn": "'Sacarse el carné' is to get your licence. Latin America says 'la licencia de conducir'.",
+   "regionaisEs": {
+    "Me sacaré la licencia de conducir este año.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -27676,7 +27810,11 @@
     "escola"
    ],
    "nota": "«Matrícula» é a placa do carro e também a inscrição na escola; aqui o contexto é o de trânsito. «No me dio tiempo a» é não deu tempo de.",
-   "notaEn": "'Matrícula' is a number plate, and also enrolment. 'No me dio tiempo a' means I didn't have time to."
+   "notaEn": "'Matrícula' is a number plate, and also enrolment. 'No me dio tiempo a' means I didn't have time to.",
+   "regionaisEs": {
+    "No me dio tiempo a ver la placa.": "na América Latina",
+    "No alcancé a ver la placa.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -27716,7 +27854,11 @@
     "cidade"
    ],
    "nota": "«Maletero» vem de «maleta». Na América Latina o porta-malas é «el baúl» ou «la cajuela».",
-   "notaEn": "'Maletero' comes from 'maleta'. Latin America says 'el baúl' or 'la cajuela'."
+   "notaEn": "'Maletero' comes from 'maleta'. Latin America says 'el baúl' or 'la cajuela'.",
+   "regionaisEs": {
+    "Mete las bolsas en el baúl.": "em boa parte da América Latina",
+    "Mete las bolsas en la cajuela.": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -29773,7 +29915,10 @@
     "tecnologia"
    ],
    "nota": "«El móvil» é o celular na Espanha; na América Latina, «el celular». «En silencio» é o modo silencioso.",
-   "notaEn": "'El móvil' is Spain's word for mobile phone; Latin America says 'el celular'."
+   "notaEn": "'El móvil' is Spain's word for mobile phone; Latin America says 'el celular'.",
+   "regionaisEs": {
+    "Tengo el celular en silencio.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -30701,9 +30846,6 @@
    ],
    "nota": "Os verbos em «-ducir» fazem o pretérito em «-duj-»: «conduje, condujo, condujeron». O erro clássico é «condució». Na América Latina se diz «manejar».",
    "notaEn": "Verbs in '-ducir' form the preterite with '-duj-': 'conduje, condujo, condujeron' — never 'condució'. Latin America says 'manejar'.",
-   "aceitasEs": [
-    "Manejó toda la noche."
-   ],
    "formasEs": {
     "Conduce toda la noche": "presente",
     "Conducía toda la noche": "imperfeito",
@@ -30715,6 +30857,9 @@
     "Conducía toda la noche": "imperfect",
     "Conducirá toda la noche": "future",
     "Conduciría toda la noche": "conditional"
+   },
+   "regionaisEs": {
+    "Manejó toda la noche.": "na América Latina"
    }
   },
   {
@@ -30808,9 +30953,9 @@
    ],
    "nota": "«Rojo» é vermelho; o roxo é «morado». É das trocas mais comuns de quem começa.\n🇪🇸 rojo → 🇧🇷 vermelho\n🇪🇸 morado → 🇧🇷 roxo",
    "notaEn": "'Rojo' is red. Purple is 'morado' — easy to mix up because 'rojo' sounds darker than it is.",
-   "sinonimosEs": [
-    "colorado"
-   ]
+   "regionaisEs": {
+    "colorado": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -30967,9 +31112,9 @@
    ],
    "nota": "Na América Latina «prender» é acender o fogo ou ligar a luz; na Espanha se diz mais «encender». Prender alguém é «detener».\n🇪🇸 prender → 🇧🇷 acender\n🇪🇸 detener → 🇧🇷 prender",
    "notaEn": "In Latin America 'prender' is to light a fire or switch something on; Spain prefers 'encender'. To arrest is 'detener'.",
-   "sinonimosEs": [
-    "encender"
-   ]
+   "regionaisEs": {
+    "encender": "na Espanha"
+   }
   },
   {
    "idioma": "es",
@@ -31409,10 +31554,10 @@
    ],
    "nota": "«Ordenador» é o computador na Espanha; na América Latina, «la computadora». Vem do francês «ordinateur».",
    "notaEn": "'Ordenador' is Spain's word for computer; Latin America says 'la computadora'. It comes from French 'ordinateur'.",
-   "sinonimosEs": [
-    "la computadora",
-    "el computador"
-   ]
+   "regionaisEs": {
+    "la computadora": "na América Latina",
+    "el computador": "na Colômbia e no Chile"
+   }
   },
   {
    "idioma": "es",
@@ -31451,9 +31596,10 @@
    ],
    "nota": "«Portátil» sozinho, com artigo, já é o notebook. Como adjetivo serve para tudo que se carrega: «una radio portátil».",
    "notaEn": "'El portátil' on its own means the laptop. As an adjective it describes anything portable.",
-   "sinonimosEs": [
-    "la laptop"
-   ]
+   "regionaisEs": {
+    "la laptop": "na América Latina",
+    "la notebook": "na Argentina"
+   }
   },
   {
    "idioma": "es",
@@ -31808,7 +31954,10 @@
     "adjetivo"
    ],
    "nota": "«Ponerse rojo» é corar. «Vergüenza» é a vergonha; o vexame que se sente pelos outros é «vergüenza ajena».\n🇪🇸 ponerse rojo → 🇧🇷 ficar vermelho\n🇪🇸 ponerse morado → 🇧🇷 ficar roxo",
-   "notaEn": "'Ponerse rojo' is to blush. Cringing on someone else's behalf is 'vergüenza ajena'."
+   "notaEn": "'Ponerse rojo' is to blush. Cringing on someone else's behalf is 'vergüenza ajena'.",
+   "aceitasEs": [
+    "Se puso colorad{o|a} de vergüenza."
+   ]
   },
   {
    "idioma": "es",
@@ -31971,7 +32120,10 @@
     "verbo"
    ],
    "nota": "Com fogo, luz e aparelho, «prender» é pôr para funcionar. Na Espanha a mesma frase sairia com «enciende».\n🇪🇸 prende el fuego → 🇧🇷 acende o fogo\n🇪🇸 detén al ladrón → 🇧🇷 prende o ladrão",
-   "notaEn": "With fire, lights and devices, 'prender' means to start them up. In Spain you'd hear 'enciende'."
+   "notaEn": "With fire, lights and devices, 'prender' means to start them up. In Spain you'd hear 'enciende'.",
+   "regionaisEs": {
+    "Enciende la chimenea, que hace frío.": "na Espanha"
+   }
   },
   {
    "idioma": "es",
@@ -32419,7 +32571,11 @@
     "Espanha"
    ],
    "nota": "«Colgarse» é travar, falando de computador ou de programa. Sem o «se», «colgar» é pendurar ou desligar o telefone.",
-   "notaEn": "'Colgarse' is to freeze or hang, for computers and apps. Without 'se', 'colgar' is to hang something up or end a call."
+   "notaEn": "'Colgarse' is to freeze or hang, for computers and apps. Without 'se', 'colgar' is to hang something up or end a call.",
+   "regionaisEs": {
+    "Se me colgó la computadora.": "na América Latina",
+    "Se me ha colgado la computadora.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -32458,7 +32614,10 @@
     "tecnologia"
    ],
    "nota": "«Llevarse» é levar consigo; «de viaje» é na viagem, como parte da bagagem.",
-   "notaEn": "'Llevarse' is to take something with you; 'de viaje' means on the trip."
+   "notaEn": "'Llevarse' is to take something with you; 'de viaje' means on the trip.",
+   "regionaisEs": {
+    "Me llevo la laptop de viaje.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -33229,7 +33388,10 @@
     "Espanha"
    ],
    "nota": "«Echar de menos» é a saudade de todo dia na Espanha; na América Latina ouve-se mais «extrañar». A expressão nasceu do português «achar menos», que o espanhol ouviu como «echar menos».",
-   "notaEn": "«Echar de menos» is the everyday way to say you miss someone in Spain; Latin America mostly says «extrañar». It came from Portuguese «achar menos», misheard as «echar menos»."
+   "notaEn": "«Echar de menos» is the everyday way to say you miss someone in Spain; Latin America mostly says «extrañar». It came from Portuguese «achar menos», misheard as «echar menos».",
+   "regionaisEs": {
+    "Te extraño.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34277,6 +34439,9 @@
     "Yo conducía despacio": "imperfect",
     "Yo conduciré despacio": "future",
     "Yo conduciría despacio": "conditional"
+   },
+   "regionaisEs": {
+    "Yo manejo despacio.": "na América Latina"
    }
   },
   {
@@ -34423,7 +34588,10 @@
     "substantivo"
    ],
    "nota": "A «sartén» é a de fritar; a de cozinhar com líquido é «la olla», e a pequena de cabo é «el cazo». Na Espanha a palavra é feminina; em boa parte da América Latina diz-se «el sartén».",
-   "notaEn": "The «sartén» is for frying; a pot for liquids is «la olla» and a small saucepan is «el cazo». Feminine in Spain, often masculine in Latin America."
+   "notaEn": "The «sartén» is for frying; a pot for liquids is «la olla» and a small saucepan is «el cazo». Feminine in Spain, often masculine in Latin America.",
+   "regionaisEs": {
+    "el sartén": "em boa parte da América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34464,7 +34632,10 @@
     "comida"
    ],
    "nota": "«Poner al fuego» é levar ao fogo. A frigideira que não gruda é «antiadherente», e o que se faz nela é «freír» — «freír un huevo».",
-   "notaEn": "«Poner al fuego» is to put something on the heat. A non stick pan is «antiadherente», and what you do in it is «freír»."
+   "notaEn": "«Poner al fuego» is to put something on the heat. A non stick pan is «antiadherente», and what you do in it is «freír».",
+   "regionaisEs": {
+    "Pon el sartén al fuego.": "em boa parte da América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34577,9 +34748,9 @@
    ],
    "nota": "Da «percha» vem o «perchero», o cabideiro de pé ou de parede. A mesma palavra serve para o poleiro das aves, que foi de onde ela saiu.",
    "notaEn": "«Percha» gives «perchero», the coat stand. The same word names a birds perch, which is where it came from.",
-   "sinonimosEs": [
-    "el gancho"
-   ]
+   "regionaisEs": {
+    "el gancho": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34619,7 +34790,10 @@
     "roupa"
    ],
    "nota": "«Colgar» é pendurar — e também desligar o telefone. O casaco pesado é «el abrigo»; o leve, «la chaqueta».",
-   "notaEn": "«Colgar» is to hang — and also to hang up the phone. A heavy coat is «el abrigo»; a light one, «la chaqueta»."
+   "notaEn": "«Colgar» is to hang — and also to hang up the phone. A heavy coat is «el abrigo»; a light one, «la chaqueta».",
+   "regionaisEs": {
+    "Cuelga el abrigo en el gancho.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34658,9 +34832,9 @@
    ],
    "nota": "Na limpeza, «el cubo» é o balde, e a lixeira é «el cubo de la basura». O sólido de seis faces também é «el cubo» — a palavra é a mesma, mas o sentido de todo dia é o balde.\n🇪🇸 el cubo → 🇧🇷 o balde\n🇪🇸 el cubo de la basura → 🇧🇷 a lixeira",
    "notaEn": "In cleaning, «el cubo» is the bucket, and the bin is «el cubo de la basura». The six sided solid carries the same name.",
-   "sinonimosEs": [
-    "el balde"
-   ]
+   "regionaisEs": {
+    "el balde": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34700,7 +34874,10 @@
     "cotidiano"
    ],
    "nota": "«Llenar de» é encher de. O balde da faxina é «el cubo de fregar», e o pano que vai com ele é «la fregona».",
-   "notaEn": "«Llenar de» is to fill with. The cleaning bucket is «el cubo de fregar», and the mop is «la fregona»."
+   "notaEn": "«Llenar de» is to fill with. The cleaning bucket is «el cubo de fregar», and the mop is «la fregona».",
+   "regionaisEs": {
+    "Llena el balde de agua.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34744,9 +34921,10 @@
    ],
    "nota": "Na Espanha, «un piso de tres habitaciones» é um apartamento de três quartos — o imóvel, e não o andar. A palavra também é o chão que se pisa e o andar do prédio, e o contexto resolve.\n🇪🇸 el piso → 🇧🇷 o apartamento, o andar, o chão",
    "notaEn": "In Spain «un piso de tres habitaciones» is a three bedroom flat — the home, not the storey. The word also covers the floor underfoot and the storey of a building.",
-   "sinonimosEs": [
-    "el apartamento"
-   ]
+   "regionaisEs": {
+    "el apartamento": "na América Latina",
+    "el departamento": "na Argentina e no México"
+   }
   },
   {
    "idioma": "es",
@@ -34786,7 +34964,11 @@
     "economia"
    ],
    "nota": "«Alquilar» serve para quem aluga e para quem dá em aluguel. O anúncio na janela diz «se alquila», e o valor do mês é «el alquiler».",
-   "notaEn": "«Alquilar» works for the tenant and the landlord alike. The sign in the window says «se alquila», and the monthly payment is «el alquiler»."
+   "notaEn": "«Alquilar» works for the tenant and the landlord alike. The sign in the window says «se alquila», and the monthly payment is «el alquiler».",
+   "regionaisEs": {
+    "Alquilamos un apartamento en el centro.": "na América Latina",
+    "Alquilamos un departamento en el centro.": "na Argentina e no México"
+   }
   },
   {
    "idioma": "es",
@@ -34902,9 +35084,9 @@
    ],
    "nota": "Na «taquilla» se compram as entradas, e um sucesso de bilheteria é «un taquillazo». No ginásio e na escola, a mesma palavra é o armário de guardar coisas.\n🇪🇸 la taquilla → 🇧🇷 a bilheteria, o armário",
    "notaEn": "You buy tickets at the «taquilla», and a box office hit is «un taquillazo». At the gym or school the same word means a locker.",
-   "sinonimosEs": [
-    "la boletería"
-   ]
+   "regionaisEs": {
+    "la boletería": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34942,7 +35124,10 @@
     "cidade"
    ],
    "nota": "«La entrada» é o ingresso do cinema, do teatro e do museu; «el billete» fica para o transporte. Esgotado, o cartaz diz «no hay entradas».",
-   "notaEn": "«La entrada» is the ticket for a cinema, theatre or museum; «el billete» is for transport. Sold out reads «no hay entradas»."
+   "notaEn": "«La entrada» is the ticket for a cinema, theatre or museum; «el billete» is for transport. Sold out reads «no hay entradas».",
+   "regionaisEs": {
+    "Compré las entradas en la boletería.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -34981,10 +35166,10 @@
    ],
    "nota": "«El ayuntamiento» é ao mesmo tempo o prédio, o governo da cidade e os vereadores. Quem manda nele é «el alcalde».",
    "notaEn": "«El ayuntamiento» is at once the building, the city government and the councillors. The person in charge is «el alcalde».",
-   "sinonimosEs": [
-    "la alcaldía",
-    "la municipalidad"
-   ]
+   "regionaisEs": {
+    "la alcaldía": "na América Latina",
+    "la municipalidad": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35023,7 +35208,11 @@
     "jurídico"
    ],
    "nota": "«El permiso» é a licença ou a autorização — de obra, de trabalho, de dirigir. «Hay que» deixa a obrigação sem dono: é preciso, e pronto.",
-   "notaEn": "«El permiso» is a permit or licence — for building, working, driving. «Hay que» leaves the obligation ownerless."
+   "notaEn": "«El permiso» is a permit or licence — for building, working, driving. «Hay que» leaves the obligation ownerless.",
+   "regionaisEs": {
+    "Hay que pedir el permiso en la alcaldía.": "na América Latina",
+    "Hay que pedir el permiso en la municipalidad.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35063,9 +35252,11 @@
    "nota": "«La azafata» é quem atende os passageiros no avião; a bordo também se ouve «auxiliar de vuelo», que serve para qualquer gênero. No masculino, «el azafato».",
    "notaEn": "«La azafata» looks after passengers on a plane; «auxiliar de vuelo» works for any gender. The masculine is «el azafato».",
    "sinonimosEs": [
-    "la aeromoza",
     "la auxiliar de vuelo"
-   ]
+   ],
+   "regionaisEs": {
+    "la aeromoza": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35104,7 +35295,10 @@
     "profissões"
    ],
    "nota": "«Repartir» é distribuir, dividir entre vários. No avião, o carrinho é «el carrito» e o refrigerante é «un refresco».",
-   "notaEn": "«Repartir» is to hand out, to share among several. On a plane the trolley is «el carrito» and a soft drink is «un refresco»."
+   "notaEn": "«Repartir» is to hand out, to share among several. On a plane the trolley is «el carrito» and a soft drink is «un refresco».",
+   "regionaisEs": {
+    "La aeromoza repartió las bebidas.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35306,9 +35500,9 @@
    ],
    "nota": "«El becario» vive de uma «beca»: tanto o estagiário da empresa quanto o bolsista da universidade. A bolsa de estudos e a de estágio têm o mesmo nome.",
    "notaEn": "«El becario» lives on a «beca»: either the intern at a company or the scholarship student at university.",
-   "sinonimosEs": [
-    "el pasante"
-   ]
+   "regionaisEs": {
+    "el pasante": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35347,7 +35541,10 @@
     "escritório"
    ],
    "nota": "«Encargarse de» é ficar responsável por: «yo me encargo». O trabalho que ninguém quer costuma sobrar para o «becario» — e a piada existe em espanhol também.",
-   "notaEn": "«Encargarse de» is to take charge of: «yo me encargo». The job nobody wants tends to land on the «becario»."
+   "notaEn": "«Encargarse de» is to take charge of: «yo me encargo». The job nobody wants tends to land on the «becario».",
+   "regionaisEs": {
+    "{El pasante|La pasante} se encarga del archivo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35545,9 +35742,13 @@
    ],
    "nota": "Na Espanha encurta-se para «el boli»: «¿me dejas un boli?». Na América Latina ouve-se «el lapicero», «la lapicera» ou «la pluma», conforme o país.",
    "notaEn": "Spain shortens it to «el boli». Latin America says «lapicero», «lapicera» or «pluma», depending on the country.",
-   "sinonimosEs": [
-    "la pluma",
-    "el lapicero"
+   "regionaisEs": {
+    "la pluma": "no México",
+    "el lapicero": "no Peru e na América Central",
+    "la lapicera": "na Argentina e no Uruguai"
+   },
+   "aceitasEs": [
+    "el boli"
    ]
   },
   {
@@ -35589,7 +35790,15 @@
     "cotidiano"
    ],
    "nota": "«Dejar» aqui é emprestar: «¿me dejas el móvil?». Quem pede também pode dizer «¿me prestas...?», e quem empresta responde «toma».",
-   "notaEn": "«Dejar» here means to lend: «¿me dejas el móvil?». You can also ask «¿me prestas...?»."
+   "notaEn": "«Dejar» here means to lend: «¿me dejas el móvil?». You can also ask «¿me prestas...?».",
+   "regionaisEs": {
+    "¿Me prestas una pluma?": "no México",
+    "¿Me prestas un lapicero?": "no Peru e na América Central",
+    "¿Me prestas una lapicera?": "na Argentina e no Uruguai"
+   },
+   "aceitasEs": [
+    "¿Me dejas un boli?"
+   ]
   },
   {
    "idioma": "es",
@@ -35711,9 +35920,11 @@
    "nota": "Vai quase sempre no plural: «unos auriculares». Na América Latina ouve-se «los audífonos», que na Espanha são os aparelhos de surdez.",
    "notaEn": "Nearly always plural: «unos auriculares». Latin America says «los audífonos», which in Spain means hearing aids.",
    "sinonimosEs": [
-    "los audífonos",
     "los cascos"
-   ]
+   ],
+   "regionaisEs": {
+    "los audífonos": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35754,7 +35965,10 @@
     "cotidiano"
    ],
    "nota": "«Ponerse» é vestir ou pôr em si mesmo: «ponte el abrigo», «ponte los auriculares». Sem o «se», «poner» é pôr em outro lugar.",
-   "notaEn": "«Ponerse» is to put something on yourself: «ponte el abrigo», «ponte los auriculares». Without the «se», «poner» puts things elsewhere."
+   "notaEn": "«Ponerse» is to put something on yourself: «ponte el abrigo», «ponte los auriculares». Without the «se», «poner» puts things elsewhere.",
+   "regionaisEs": {
+    "Ponte los audífonos.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -35793,9 +36007,9 @@
    ],
    "nota": "«Altavoz» é literalmente «voz alta». Pôr a chamada no viva-voz é «poner el altavoz», e o aviso do aeroporto sai «por megafonía».",
    "notaEn": "«Altavoz» is literally «loud voice». Putting a call on speaker is «poner el altavoz».",
-   "sinonimosEs": [
-    "el parlante"
-   ]
+   "regionaisEs": {
+    "el parlante": "na América do Sul"
+   }
   },
   {
    "idioma": "es",
@@ -36117,9 +36331,9 @@
    ],
    "nota": "«Las gambas» são a base das tapas: «gambas al ajillo». O camarão miúdo é «la quisquilla», e na América Latina diz-se «el camarón».",
    "notaEn": "«Las gambas» are a tapas staple: «gambas al ajillo». Latin America says «el camarón».",
-   "sinonimosEs": [
-    "los camarones"
-   ]
+   "regionaisEs": {
+    "los camarones": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -36159,7 +36373,10 @@
     "Espanha"
    ],
    "nota": "«Al ajillo» é no alho com azeite e pimenta, clássico do balcão. «Una ración» é o prato para dividir; «una tapa» é a porção pequena que acompanha a bebida.",
-   "notaEn": "«Al ajillo» means cooked in garlic, oil and chilli. «Una ración» is a plate to share; «una tapa» is the small portion that comes with a drink."
+   "notaEn": "«Al ajillo» means cooked in garlic, oil and chilli. «Una ración» is a plate to share; «una tapa» is the small portion that comes with a drink.",
+   "regionaisEs": {
+    "Pedimos unos camarones al ajillo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -36365,9 +36582,11 @@
    "nota": "«Las setas» são os cogumelos, sobretudo os do campo; o de cultivo é «el champiñón». A seta que aponta o caminho é «la flecha».\n🇪🇸 la flecha → 🇧🇷 a seta",
    "notaEn": "«Las setas» are mushrooms, especially wild ones; the cultivated kind is «el champiñón».",
    "sinonimosEs": [
-    "el hongo",
     "el champiñón"
-   ]
+   ],
+   "regionaisEs": {
+    "el hongo": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -36408,7 +36627,10 @@
     "Espanha"
    ],
    "nota": "«Ir a buscar setas» é programa de outono na Espanha, e quem entende do assunto é «micólogo». Nem toda seta se come, e é aí que mora o perigo.",
-   "notaEn": "Mushroom hunting is an autumn outing in Spain, and the expert is a «micólogo». Not every mushroom is edible."
+   "notaEn": "Mushroom hunting is an autumn outing in Spain, and the expert is a «micólogo». Not every mushroom is edible.",
+   "regionaisEs": {
+    "En otoño salimos a buscar hongos.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -36445,10 +36667,10 @@
    ],
    "nota": "Na Espanha, «el plátano» é a banana de comer, e a das Canárias tem fama. A árvore de tronco descascado das praças também se chama «plátano».\n🇪🇸 el plátano → 🇧🇷 a banana",
    "notaEn": "In Spain «el plátano» is the banana you eat, the Canary Islands ones being the most prized. The plane tree in city squares carries the same name.",
-   "sinonimosEs": [
-    "la banana",
-    "el banano"
-   ]
+   "regionaisEs": {
+    "la banana": "na Argentina e no Uruguai",
+    "el banano": "na Colômbia e na América Central"
+   }
   },
   {
    "idioma": "es",
@@ -36487,7 +36709,11 @@
     "cotidiano"
    ],
    "nota": "O «me» de «me como» não muda o sentido: mostra que a fruta foi inteira e com gosto. É o mesmo «se» de «se bebió el agua».",
-   "notaEn": "The «me» in «me como» changes no meaning: it shows the whole thing went down with relish, like the «se» in «se bebió el agua»."
+   "notaEn": "The «me» in «me como» changes no meaning: it shows the whole thing went down with relish, like the «se» in «se bebió el agua».",
+   "regionaisEs": {
+    "Me como una banana antes de correr.": "na Argentina e no Uruguai",
+    "Me como un banano antes de correr.": "na Colômbia e na América Central"
+   }
   },
   {
    "idioma": "es",
@@ -36607,9 +36833,9 @@
    ],
    "nota": "«El alquiler» é tanto o contrato quanto o valor que se paga por mês. O verbo «alquilar» serve para os dois lados: quem cede e quem ocupa.",
    "notaEn": "«El alquiler» is both the rental agreement and the monthly payment. The verb «alquilar» works for landlord and tenant alike.",
-   "sinonimosEs": [
-    "el arriendo"
-   ]
+   "regionaisEs": {
+    "el arriendo": "no Chile e na Colômbia"
+   }
   },
   {
    "idioma": "es",
@@ -36648,7 +36874,10 @@
     "casa"
    ],
    "nota": "«A principios de mes» é no começo do mês; «a finales», no fim. O «se paga» sem dono é a forma impessoal, muito comum em avisos.",
-   "notaEn": "«A principios de mes» is at the start of the month; «a finales» at the end. The ownerless «se paga» is the impersonal form."
+   "notaEn": "«A principios de mes» is at the start of the month; «a finales» at the end. The ownerless «se paga» is the impersonal form.",
+   "regionaisEs": {
+    "El arriendo se paga a principios de mes.": "no Chile e na Colômbia"
+   }
   },
   {
    "idioma": "es",
@@ -37016,7 +37245,11 @@
     "substantivo"
    ],
    "nota": "«La chuleta» é o papelzinho escondido na prova — e é também a costeleta de porco, que foi o primeiro sentido. Colar num exame é «copiar en un examen».\n🇪🇸 la cola → 🇧🇷 o rabo, a fila\n🇪🇸 el pegamento → 🇧🇷 a cola de colar",
-   "notaEn": "«La chuleta» is the little crib note hidden in an exam — and also a pork chop, which was the original meaning. Cheating is «copiar en un examen»."
+   "notaEn": "«La chuleta» is the little crib note hidden in an exam — and also a pork chop, which was the original meaning. Cheating is «copiar en un examen».",
+   "regionaisEs": {
+    "el acordeón": "no México",
+    "el machete": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -37833,7 +38066,10 @@
     "cotidiano"
    ],
    "nota": "É o que se diz a quem está comendo, mesmo a desconhecidos num restaurante. A forma mais elegante é «buen provecho», corrente na América Latina.",
-   "notaEn": "You say it to anyone who is eating, even strangers in a restaurant. The fancier form is «buen provecho», common in Latin America."
+   "notaEn": "You say it to anyone who is eating, even strangers in a restaurant. The fancier form is «buen provecho», common in Latin America.",
+   "aceitasEs": [
+    "Buen provecho."
+   ]
   },
   {
    "idioma": "es",
@@ -39572,9 +39808,9 @@
    ],
    "nota": "«La grapadora» põe «grapas», os grampos, e o verbo é «grapar». O furador é «la perforadora», o clipe é «el clip» e o apontador, «el sacapuntas».",
    "notaEn": "«La grapadora» fires «grapas», staples, and the verb is «grapar». A hole punch is «la perforadora».",
-   "sinonimosEs": [
-    "la engrapadora"
-   ]
+   "regionaisEs": {
+    "la engrapadora": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -39613,7 +39849,10 @@
     "cotidiano"
    ],
    "nota": "«Prestar» é emprestar a alguém, e «pedir prestado» é tomar emprestado. Quem empresta dinheiro a juros faz um «préstamo».",
-   "notaEn": "«Prestar» is to lend; to borrow is «pedir prestado». A loan is «un préstamo»."
+   "notaEn": "«Prestar» is to lend; to borrow is «pedir prestado». A loan is «un préstamo».",
+   "regionaisEs": {
+    "¿Me prestas la engrapadora?": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -39734,9 +39973,9 @@
    ],
    "nota": "A mesma palavra é a fruta e o quarteirão: «vivo a dos manzanas de aquí». Na América Latina o quarteirão costuma ser «la cuadra», e «manzana» fica só para a fruta.",
    "notaEn": "The same word covers the fruit and the city block: «vivo a dos manzanas de aquí». In Latin America a block is usually «la cuadra».",
-   "sinonimosEs": [
-    "la cuadra"
-   ]
+   "regionaisEs": {
+    "la cuadra": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -39776,7 +40015,10 @@
     "cotidiano"
    ],
    "nota": "Para distância, o espanhol usa «a»: «a dos manzanas», «a cinco minutos», «a un paso de aquí».",
-   "notaEn": "Spanish marks distance with «a»: «a dos manzanas», «a cinco minutos», «a un paso de aquí»."
+   "notaEn": "Spanish marks distance with «a»: «a dos manzanas», «a cinco minutos», «a un paso de aquí».",
+   "regionaisEs": {
+    "Vive a dos cuadras de aquí.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -39817,7 +40059,10 @@
     "viagem"
    ],
    "nota": "«La parada» é onde o ônibus para — «la parada del autobús» —, e o verbo é «parar». A parada de sete de setembro é «el desfile».\n🇪🇸 el desfile → 🇧🇷 a parada, o desfile",
-   "notaEn": "«La parada» is where the bus stops. A parade is «el desfile»."
+   "notaEn": "«La parada» is where the bus stops. A parade is «el desfile».",
+   "regionaisEs": {
+    "el paradero": "no Chile, no Peru e na Colômbia"
+   }
   },
   {
    "idioma": "es",
@@ -39857,7 +40102,10 @@
     "viagem"
    ],
    "nota": "«Bajarse» é descer de um transporte, e o contrário é «subirse». Sem pronome, «bajar» é descer a escada ou baixar alguma coisa.",
-   "notaEn": "«Bajarse» is to get off a vehicle; the opposite is «subirse»."
+   "notaEn": "«Bajarse» is to get off a vehicle; the opposite is «subirse».",
+   "regionaisEs": {
+    "Bájate en el próximo paradero.": "no Chile, no Peru e na Colômbia"
+   }
   },
   {
    "idioma": "es",
@@ -40097,7 +40345,10 @@
     "Espanha"
    ],
    "nota": "«Patata» é a batata na Espanha; na América Latina, «papa». O pedaço servido no bar como tapa é «un pincho de tortilla».",
-   "notaEn": "«Patata» is the Spanish word for potato; Latin America says «papa». A slice served as a bar snack is «un pincho de tortilla»."
+   "notaEn": "«Patata» is the Spanish word for potato; Latin America says «papa». A slice served as a bar snack is «un pincho de tortilla».",
+   "regionaisEs": {
+    "Pedimos una tortilla de papas.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40134,9 +40385,9 @@
    ],
    "nota": "«La fresa» é o morango, e o maior e mais firme chama-se «el fresón». A broca do dentista também é «la fresa» — é a mesma palavra de «fresar», furar.",
    "notaEn": "«La fresa» is the strawberry; the bigger, firmer kind is «el fresón». A dentists drill is also «la fresa».",
-   "sinonimosEs": [
-    "la frutilla"
-   ]
+   "regionaisEs": {
+    "la frutilla": "na Argentina, no Uruguai e no Chile"
+   }
   },
   {
    "idioma": "es",
@@ -40175,7 +40426,10 @@
     "cotidiano"
    ],
    "nota": "«El mercado» é tanto o mercado municipal quanto a feira da rua, que também é «el mercadillo» quando é semanal.",
-   "notaEn": "«El mercado» covers the covered market and the street market; a weekly one is «el mercadillo»."
+   "notaEn": "«El mercado» covers the covered market and the street market; a weekly one is «el mercadillo».",
+   "regionaisEs": {
+    "Compré frutillas en el mercado.": "na Argentina, no Uruguai e no Chile"
+   }
   },
   {
    "idioma": "es",
@@ -40214,10 +40468,12 @@
    "nota": "«Las judías» são os grãos de feijão; as de vagem, ainda verdes, são «las judías verdes». Na América Latina o feijão é «el frijol», e em parte da Espanha, «las alubias».",
    "notaEn": "«Las judías» are beans; the green pods are «las judías verdes». Latin America says «el frijol», and parts of Spain «las alubias».",
    "sinonimosEs": [
-    "los frijoles",
-    "las alubias",
-    "los porotos"
-   ]
+    "las alubias"
+   ],
+   "regionaisEs": {
+    "los frijoles": "na América Latina",
+    "los porotos": "na Argentina, no Chile e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -40255,7 +40511,11 @@
     "comida"
    ],
    "nota": "O prato mais conhecido com elas é «judías con chorizo». Na Espanha o feijão aparece cozido com carne, e não ao lado do arroz como no Brasil.",
-   "notaEn": "The best known dish with them is «judías con chorizo». In Spain beans are stewed with meat rather than served beside rice."
+   "notaEn": "The best known dish with them is «judías con chorizo». In Spain beans are stewed with meat rather than served beside rice.",
+   "regionaisEs": {
+    "Cocinó frijoles con arroz.": "na América Latina",
+    "Cocinó porotos con arroz.": "na Argentina, no Chile e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -40295,9 +40555,9 @@
    ],
    "nota": "«La nata» é o creme de leite; batida com açúcar vira «nata montada», o chantili. O creme doce de confeitaria é «la crema», e o creme de leite de caixinha, «nata para cocinar».",
    "notaEn": "«La nata» is cream; whipped with sugar it becomes «nata montada». Pastry cream is «la crema».",
-   "sinonimosEs": [
-    "la crema"
-   ]
+   "regionaisEs": {
+    "la crema": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40336,7 +40596,10 @@
     "comida"
    ],
    "nota": "«Llevar», falando de receita, é o que vai dentro: «la tortilla lleva cebolla», «el café lleva azúcar».",
-   "notaEn": "«Llevar», in recipes, is what goes in: «la tortilla lleva cebolla», «el café lleva azúcar»."
+   "notaEn": "«Llevar», in recipes, is what goes in: «la tortilla lleva cebolla», «el café lleva azúcar».",
+   "regionaisEs": {
+    "El postre lleva crema batida.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40688,9 +40951,9 @@
    ],
    "nota": "«Fregar» é lavar a louça — «fregar los platos» — e também esfregar o chão, «fregar el suelo». A pia onde se lava é «el fregadero». Na América Latina diz-se «lavar los platos» e «trapear».",
    "notaEn": "«Fregar» is to wash the dishes — «fregar los platos» — and also to scrub the floor. The sink is «el fregadero».",
-   "sinonimosEs": [
-    "lavar los platos"
-   ]
+   "regionaisEs": {
+    "lavar los platos": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40729,7 +40992,10 @@
     "cotidiano"
    ],
    "nota": "«Tocarle a alguien» é chegar a vez: «me toca a mí», «¿a quién le toca?». Nada a ver com tocar em alguma coisa.",
-   "notaEn": "«Tocarle a alguien» is whose turn it is: «me toca a mí», «¿a quién le toca?»."
+   "notaEn": "«Tocarle a alguien» is whose turn it is: «me toca a mí», «¿a quién le toca?».",
+   "regionaisEs": {
+    "Hoy te toca lavar los platos.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40857,9 +41123,11 @@
    "nota": "«Los vaqueros» é a calça jeans, sempre no plural, como «los pantalones». O nome vem do vaqueiro que a usava; também se diz «los tejanos», e o tecido é «la tela vaquera».",
    "notaEn": "«Los vaqueros» are jeans, always plural like «los pantalones». The name comes from the cowboys who wore them.",
    "sinonimosEs": [
-    "los jeans",
     "los tejanos"
-   ]
+   ],
+   "regionaisEs": {
+    "los jeans": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40899,7 +41167,10 @@
     "cotidiano"
    ],
    "nota": "«Ponerse» é vestir; «llevar» é estar vestindo. «Ponte el abrigo» é ponha o casaco, e «lleva abrigo» é está de casaco.",
-   "notaEn": "«Ponerse» is to put on; «llevar» is to be wearing."
+   "notaEn": "«Ponerse» is to put on; «llevar» is to be wearing.",
+   "regionaisEs": {
+    "Ponte los jeans negros.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -40937,9 +41208,9 @@
    ],
    "nota": "«La sudadera» vem de «sudar», suar: é o moletom de treino que virou roupa de rua. O conjunto de agasalho é «el chándal», e a versão com capuz, «sudadera con capucha».",
    "notaEn": "«La sudadera» comes from «sudar», to sweat. A full tracksuit is «el chándal».",
-   "sinonimosEs": [
-    "el buzo"
-   ]
+   "regionaisEs": {
+    "el buzo": "na América do Sul"
+   }
   },
   {
    "idioma": "es",
@@ -40977,7 +41248,10 @@
     "roupa"
    ],
    "nota": "«Llevar» roupa é estar com ela no corpo, e não levar a lugar nenhum: «lleva gafas», «llevaba traje».",
-   "notaEn": "«Llevar» with clothes means to be wearing them: «lleva gafas», «llevaba traje»."
+   "notaEn": "«Llevar» with clothes means to be wearing them: «lleva gafas», «llevaba traje».",
+   "regionaisEs": {
+    "Llevaba un buzo con capucha.": "na América do Sul"
+   }
   },
   {
    "idioma": "es",
@@ -41095,10 +41369,10 @@
    ],
    "nota": "«El bolso» é a bolsa de mão. O bolso da calça é «el bolsillo», a sacola do mercado é «la bolsa», a bolsa de estudos é «la beca» e a de valores, «la bolsa».\n🇪🇸 el bolsillo → 🇧🇷 o bolso\n🇪🇸 la beca → 🇧🇷 a bolsa de estudos",
    "notaEn": "«El bolso» is a handbag. A trouser pocket is «el bolsillo» and a shopping bag is «la bolsa».",
-   "sinonimosEs": [
-    "la cartera",
-    "la bolsa"
-   ]
+   "regionaisEs": {
+    "la cartera": "na América Latina",
+    "la bolsa": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -41137,7 +41411,11 @@
     "objetos"
    ],
    "nota": "O espanhol prefere «me robaron el bolso», com a terceira pessoa do plural sem sujeito, onde o português diria «minha bolsa foi roubada».",
-   "notaEn": "Spanish prefers «me robaron el bolso», with a subjectless third person plural, where English would use the passive."
+   "notaEn": "Spanish prefers «me robaron el bolso», with a subjectless third person plural, where English would use the passive.",
+   "regionaisEs": {
+    "Me robaron la cartera en el metro.": "na América Latina",
+    "Me robaron la bolsa en el metro.": "no México"
+   }
   },
   {
    "idioma": "es",
@@ -41172,7 +41450,10 @@
     "roupa"
    ],
    "nota": "«La falda» é a saia; a curta é «la minifalda». A encosta de um monte também é «la falda de la montaña», pela forma que faz ao redor do pico.",
-   "notaEn": "«La falda» is a skirt; a short one is «la minifalda». The lower slope of a mountain is also «la falda»."
+   "notaEn": "«La falda» is a skirt; a short one is «la minifalda». The lower slope of a mountain is also «la falda».",
+   "regionaisEs": {
+    "la pollera": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -41211,7 +41492,10 @@
     "roupa"
    ],
    "nota": "«Largo» é comprido, e não largo de largura — a largura é «ancho». Uma saia «larga» vai até o tornozelo.",
-   "notaEn": "«Largo» means long, not wide; width is «ancho»."
+   "notaEn": "«Largo» means long, not wide; width is «ancho».",
+   "regionaisEs": {
+    "Se puso una pollera larga.": "na Argentina e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -41253,9 +41537,9 @@
    ],
    "nota": "«Los deberes» são a lição de casa, sempre no plural: «hacer los deberes». O dever moral é «el deber», no singular — «el deber de votar».\n🇪🇸 el deber → 🇧🇷 o dever",
    "notaEn": "«Los deberes» is school homework, always plural: «hacer los deberes». A moral duty is «el deber», singular.",
-   "sinonimosEs": [
-    "la tarea"
-   ]
+   "regionaisEs": {
+    "la tarea": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -41294,7 +41578,10 @@
     "cotidiano"
    ],
    "nota": "«Cenar» é jantar, e o jantar é «la cena». Na Espanha ele sai depois das nove da noite, e por isso a «merienda» existe.",
-   "notaEn": "«Cenar» is to have dinner, and dinner is «la cena»; in Spain it happens after nine at night."
+   "notaEn": "«Cenar» is to have dinner, and dinner is «la cena»; in Spain it happens after nine at night.",
+   "regionaisEs": {
+    "Haz la tarea antes de cenar.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -41496,9 +41783,10 @@
    ],
    "nota": "«Coger» é o verbo mais usado da Espanha para pegar qualquer coisa: «coger el autobús», «coger el teléfono», «coger frío». Em boa parte da América Latina é palavrão, e lá se diz «tomar» ou «agarrar».",
    "notaEn": "«Coger» is Spains all purpose verb for taking or catching: «coger el autobús», «coger el teléfono», «coger frío». In much of Latin America it is obscene; they say «tomar» or «agarrar».",
-   "sinonimosEs": [
-    "tomar"
-   ]
+   "regionaisEs": {
+    "tomar": "na América Latina",
+    "agarrar": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -41537,7 +41825,10 @@
     "cotidiano"
    ],
    "nota": "Na primeira pessoa o g vira j: cojo, coges, coge. É a mesma troca de «escojo» e «recojo».",
-   "notaEn": "In the first person the g turns into j: cojo, coges, coge — the same swap as «escojo» and «recojo»."
+   "notaEn": "In the first person the g turns into j: cojo, coges, coge — the same swap as «escojo» and «recojo».",
+   "regionaisEs": {
+    "Tomamos el metro todos los días.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -41835,9 +42126,11 @@
    "nota": "Na Espanha a placa do banheiro público diz «aseos», e às vezes «servicios». «El aseo» também é a higiene pessoal, «el aseo diario», e o banheiro de casa é «el cuarto de baño».\n🇪🇸 el aseo → 🇧🇷 a higiene, o asseio",
    "notaEn": "In Spain the sign on a public toilet reads «aseos», sometimes «servicios». «El aseo» also means personal hygiene.",
    "sinonimosEs": [
-    "los baños",
     "los servicios"
-   ]
+   ],
+   "regionaisEs": {
+    "los baños": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -41877,7 +42170,10 @@
     "viagem"
    ],
    "nota": "«Al fondo» é lá no fim do corredor ou do salão. Para o fundo de um recipiente, diz-se «en el fondo».",
-   "notaEn": "«Al fondo» is at the far end of a corridor or room."
+   "notaEn": "«Al fondo» is at the far end of a corridor or room.",
+   "regionaisEs": {
+    "Los baños están al fondo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -42154,9 +42450,9 @@
    ],
    "nota": "«El mechero» vem de «mecha», o pavio. Também se diz «el encendedor», mais comum na América Latina, e a caixa de fósforos é «una caja de cerillas».",
    "notaEn": "«El mechero» comes from «mecha», a wick. It is also «el encendedor», commoner in Latin America; a box of matches is «una caja de cerillas».",
-   "sinonimosEs": [
-    "el encendedor"
-   ]
+   "regionaisEs": {
+    "el encendedor": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -42195,7 +42491,10 @@
     "cotidiano"
    ],
    "nota": "Para pedir fogo na rua, a frase feita é «¿tienes fuego?», mesmo quando o que se quer é o isqueiro.",
-   "notaEn": "To ask a stranger for a light, the set phrase is «¿tienes fuego?»"
+   "notaEn": "To ask a stranger for a light, the set phrase is «¿tienes fuego?»",
+   "regionaisEs": {
+    "¿Tienes un encendedor?": "na América Latina"
+   }
   },
   {
    "idioma": "es",

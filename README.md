@@ -644,15 +644,27 @@ sem aprender. O app faz o que faria um professor:
 > **trabajar** também está certo, mas não é a palavra deste card. Tente de
 > novo: começa com **c**.
 
-As outras palavras vêm do próprio card, em `sinonimosEs`: 275 em 182 cards de
-palavra — a variante latino-americana de uma palavra da Espanha («la
-computadora», «el jugo»), a palavra neutra da gíria («trabajar», «el chisme»),
-o sinônimo corrente («recordar» para «acordarse», «aún» para «todavía») e o
-cognato que também é espanhol («absurdo» para «descabellado»). Não há como
+As outras palavras vêm do próprio card, em `sinonimosEs`: 201 em 133 cards de
+palavra — a palavra neutra da gíria («trabajar», «el chisme»), o sinônimo
+corrente («recordar» para «acordarse», «aún» para «todavía») e o cognato que
+também é espanhol («absurdo» para «descabellado»). Não há como
 tirá-las do baralho sozinho: o índice das traduções confunde homônimo com
 sinônimo («a colher» é «la cuchara» e é «coger»). Vale a mesma regra da língua
 trocada — uma vez por aparição, relógio correndo —, e nenhuma dessas palavras
 aparece como alternativa errada na múltipla escolha.
+
+**A palavra de outro lugar vale.** O baralho traz o espanhol da Espanha, mas
+não o exige: «la computadora», «el carro», «el jugo», «el sartén» contam como
+certos, e depois do acerto vem a linha que diz de onde são:
+
+> 🌎 **la computadora** é como se diz na América Latina. A forma deste card é
+> **el ordenador**.
+
+São 180 variantes em 138 cards (`regionaisEs`), com as frases de uso junto —
+«Voy al trabajo en carro» vale onde vale «el carro». Vale também ao contrário:
+o card que traz a palavra de lá («el moretón») aceita a da Espanha («el
+cardenal»). Na lista de todos os cards elas aparecem embaixo da nota, com o 🌎,
+e entram na busca.
 
 **O erro sem nome mostra o que foi escrito.** Gênero, «ñ» e conjugação já
 tinham rótulo próprio; o resto dava só «não foi dessa vez» ao lado da resposta
@@ -758,11 +770,11 @@ ficam sempre à mão.
 
 ## O painel
 
-O 📊 abre as estatísticas. A primeira tabela é o **percentual de acerto** por
-nível — é a que responde
+O 📊 abre as estatísticas. A primeira figura é **o caminho até aqui**: quantos
+cards em cada etapa a cada resposta que você já deu, em bandas empilhadas.
+Depois vem o **percentual de acerto** por nível — é a tabela que responde
 «como estou indo», e a barra verde de cada linha é o acerto geral daquele
-nível. Depois vem **o caminho até aqui**: quantos cards em cada etapa a cada
-resposta que você já deu, em bandas empilhadas.
+nível.
 
 Essa série não era anotada, e refazê-la pelo histórico dos cards dava só uma
 estimativa — o histórico guarda doze respostas por card, e as regras mudaram
@@ -776,12 +788,17 @@ resposta. A semente só entra se o progresso for mesmo a continuação daquele
 histórico — num navegador com dez respostas dadas, a curva de mil e quinhentas
 não é de quem está ali.
 
-Os dominados vêm **divididos pelo degrau da escada**, numa rampa de verde que
-vai do escuro (3 dias, colado ao `pt → es` de onde o card acabou de sair) ao
-claro (6 meses, no topo). Rampa e não seis cores soltas: os degraus são uma
-ordem, e a ordem se lê pelo tom. A fresta de 2px que separa as bandas fica só
-entre os três grupos — entre degraus, um card vale menos de um pixel, e a
-fresta apagaria o degrau fino por inteiro.
+Os dominados vêm **divididos pelo degrau da escada**, e cada degrau é uma
+etapa, com cor própria: pedras que clareiam até o diamante — ametista (3
+dias), turquesa (1 semana), esmeralda (2 semanas), topázio (1 mês, o âmbar
+da casa), quartzo rosa (3 meses) e **branco** (6 meses, o card que ficou).
+Eram uma rampa de verde, que juntava os degraus num bloco só. A claridade sobe
+a cada degrau, então a ordem continua visível, e a sequência inteira passou no
+validador de paleta contra o fundo da ficha: vizinhos bem separados na visão
+comum e na simulação de daltonismo. A legenda traz as oito etapas lado a lado.
+A fresta entre as bandas tem 2px entre as direções e o dominado, e 1px entre
+os degraus — um card vale menos de um pixel, e a fresta larga apagaria o
+degrau fino.
 
 O eixo horizontal anda em **respostas**, e não em índice de ponto: os pontos
 semeados são um por sincronização, as sincronizações não foram parelhas, e
@@ -790,8 +807,9 @@ espaçar por índice esticaria os dias de muita sincronização.
 Um toque no gráfico põe os números da legenda naquele ponto. Só o toque
 parado: o dedo que arrasta está rolando a página, e não escolhe nada.
 
-As outras duas tabelas dizem **onde os cards estão**: em que pé está cada
-nível e a escada dos dominados.
+A tabela seguinte, a escada dos dominados, diz **onde os cards estão** e
+quando o próximo de cada degrau volta. («Em que pé está cada nível» e
+«velocidade a cada semana» saíram do painel em 26/09.)
 
 Depois vêm os gráficos do **diário**:
 
@@ -807,8 +825,6 @@ Depois vêm os gráficos do **diário**:
   as fotografias — o card só guarda doze respostas, e nos mais rodados a
   primeira já se foi;
 - **quando você estuda** — dia da semana contra hora do dia;
-- **velocidade a cada semana** — a mediana dos acertos, escrevendo e
-  escolhendo entre cinco, sem os tempos pausados;
 - **quantas respostas até dominar** — o histograma, contando as aparições do
   card nas duas direções até o primeiro domínio.
 

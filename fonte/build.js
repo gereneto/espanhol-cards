@@ -347,6 +347,35 @@ for (const bruto of cards) {
     }
   }
 
+  /* A palavra de outro lugar vale como certa e o app diz onde ela se usa
+     (ver Motor.regionalDoCard). O lugar entra numa frase — «é como se diz
+     na América Latina» —, então vem com a preposição. E não pode estar ao
+     mesmo tempo entre os sinônimos, que dizem que ela não vale. */
+  const campoReg = idioma === 'pt' ? 'regionais' : 'regionais' + idioma[0].toUpperCase() + idioma[1];
+  if (c[campoReg] !== undefined) {
+    const mapa = c[campoReg];
+    if (!mapa || typeof mapa !== 'object' || Array.isArray(mapa)) {
+      erros.push(campoReg + ' tem de ser um objeto { variante: lugar }: ' + onde);
+    } else {
+      const sin = new Set((c[campoSin] || []).map(s => Motor.normalizar(s, idioma)));
+      for (const [forma, lugar] of Object.entries(mapa)) {
+        if (typeof lugar !== 'string' || !/^(na|no|nas|nos|em) \S/.test(lugar)) {
+          erros.push('lugar sem preposição em ' + campoReg + ': ' + onde + ' → «' + forma + '»: ' + lugar +
+            ' (escreva «na América Latina», «no México»…)');
+        }
+        if (sin.has(Motor.normalizar(forma, idioma))) {
+          erros.push('a mesma palavra em ' + campoReg + ' e em ' + campoSin + ': ' + onde + ' → ' + forma);
+        }
+        /* com o artigo: «el sartén» da América Latina difere de «la sartén»
+           só nele, e é justamente essa a diferença regional */
+        const cru = t => String(t).trim().toLowerCase().replace(/[.,;:!?¿¡]/g, '');
+        if (cru(forma) === cru(c[L.texto])) {
+          erros.push('variante regional igual à própria resposta: ' + onde + ' → ' + forma);
+        }
+      }
+    }
+  }
+
   /* ── as duas línguas de quem estuda ──
      Cada uma tem de estar inteira: texto, aceitas, quatro distratores e nota.
      Card com metade de uma língua é tradução pela metade, e foi por isso que

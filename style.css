@@ -206,6 +206,10 @@ tr.vago td{opacity:.42}
   margin:-4px 0 12px;font-size:13.5px;color:var(--quase);
 }
 .aviso-acento b{color:var(--texto);font-weight:700}
+/* A variante de outro lugar: não é correção, é informação — por isso o
+   tom do texto secundário, e não o amarelo do acento. */
+.aviso-regiao{margin:-4px 0 12px;font-size:13.5px;color:var(--texto-2)}
+.aviso-regiao b{color:var(--texto);font-weight:700}
 /* A letra acentuada que faltou, pintada na resposta certa. O mesmo amarelo
    do aviso, para o olho ligar uma coisa à outra sem ler nada. */
 .resposta-certa mark.acento{
@@ -340,9 +344,6 @@ th.vert span{
   display:inline-block;white-space:nowrap;
   writing-mode:vertical-rl;transform:rotate(180deg);  /* lê de baixo para cima */
 }
-table.etapas td,table.etapas th{padding-left:4px;padding-right:4px}
-table.etapas td:first-child,table.etapas th:first-child{padding-left:10px;text-align:left}
-table.etapas td{text-align:center;font-variant-numeric:tabular-nums}
 .barra{height:6px;background:var(--fundo-3);border-radius:99px;overflow:hidden;min-width:60px}
 .barra i{display:block;height:100%;background:var(--ok)}
 
@@ -363,23 +364,31 @@ table.etapas td{text-align:center;font-variant-numeric:tabular-nums}
   --degrau-3:#5ecfa4;
   --degrau-4:#8ce0bf;
   --degrau-5:#b9f0d8;
+  /* Os seis degraus no caminho até aqui, cada um uma etapa com cor própria
+     (pedido de 26/09): pedras que clareiam até o diamante — ametista,
+     turquesa, esmeralda, topázio (o âmbar da casa), quartzo rosa e branco.
+     A claridade sobe a cada degrau, então a ordem ainda se lê pelo tom; e
+     a sequência inteira, com es→pt e pt→es embaixo, passou no validador de
+     paleta contra a ficha: vizinhos a ΔE 16,7 na visão comum e 8,4 na
+     simulação de daltonismo (mínimos 15 e 8), todos acima de 3:1. */
+  --escada-0:#755ebf;
+  --escada-1:#099399;
+  --escada-2:#01c682;
+  --escada-3:#e6af28;
+  --escada-4:#f8b9da;
+  --escada-5:#ffffff;
 }
 svg.grafico-etapas{display:block;width:100%;height:auto;margin:4px 0 14px}
 svg.grafico-etapas .malha{stroke:var(--borda);stroke-width:1}
 svg.grafico-etapas .eixo{fill:var(--texto-2);font-size:10px}
 /* a fresta é o fundo da ficha passando entre duas bandas */
 svg.grafico-etapas .fresta{stroke:var(--fundo-2);stroke-width:2;stroke-linejoin:round}
+svg.grafico-etapas .fresta.fina{stroke-width:1}
 svg.grafico-etapas .cursor{stroke:var(--texto-2);stroke-width:1}
 .chaves{display:flex;flex-wrap:wrap;gap:6px 18px;margin:2px 0 4px}
 .chaves .chave{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--texto-2)}
 .chaves .chave i{width:11px;height:11px;border-radius:3px;flex:none}
 .chaves .chave b{color:var(--texto);font-variant-numeric:tabular-nums}
-/* os seis degraus numa linha só, miúda, embaixo da legenda principal */
-.escada-legenda{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 0 4px;
-  font-size:11.5px;color:var(--texto-2)}
-.escada-legenda span{display:flex;align-items:center;gap:5px}
-.escada-legenda i{width:9px;height:9px;border-radius:2px;flex:none}
-.escada-legenda b{color:var(--texto);font-weight:600;font-variant-numeric:tabular-nums}
 
 /* ── os gráficos do diário ──
    SVG de 500 de largura que a tela encolhe. O teto de 600px segura o texto

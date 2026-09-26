@@ -352,9 +352,9 @@ window.Motor = (function () {
      Quem manda é a língua da resposta, não a direção: 'en-es' e 'pt-es'
      cobram o mesmo espanhol, e cada língua tem seu par de campos no card. */
   const CAMPOS = {
-    pt: { certa: 'pt', aceitas: 'aceitas',   distratores: 'distratores',   formas: 'formasPt', sinonimos: 'sinonimos' },
-    es: { certa: 'es', aceitas: 'aceitasEs', distratores: 'distratoresEs', formas: 'formasEs', sinonimos: 'sinonimosEs' },
-    en: { certa: 'en', aceitas: 'aceitasEn', distratores: 'distratoresEn', formas: 'formasEn', sinonimos: 'sinonimosEn' }
+    pt: { certa: 'pt', aceitas: 'aceitas',   distratores: 'distratores',   formas: 'formasPt', sinonimos: 'sinonimos',   regionais: 'regionais' },
+    es: { certa: 'es', aceitas: 'aceitasEs', distratores: 'distratoresEs', formas: 'formasEs', sinonimos: 'sinonimosEs', regionais: 'regionaisEs' },
+    en: { certa: 'en', aceitas: 'aceitasEn', distratores: 'distratoresEn', formas: 'formasEn', sinonimos: 'sinonimosEn', regionais: 'regionaisEn' }
   };
 
   /* ── a língua que o baralho ensina ──
@@ -374,7 +374,8 @@ window.Motor = (function () {
     const lingua = linguaDaResposta(direcao);
     const campo = CAMPOS[lingua];
     const certa = String(card[campo.certa] || '');
-    const extras = card[campo.aceitas] || [];
+    /* a variante regional vale como resposta certa (ver regionalDoCard) */
+    const extras = (card[campo.aceitas] || []).concat(Object.keys(card[campo.regionais] || {}));
 
     /* No espanhol a barra não separa duas respostas: o card traz uma forma
        só, e as variantes vêm por aceitasEs. */
@@ -513,7 +514,7 @@ window.Motor = (function () {
      Quem chama isto é o app, e só depois de a resposta ter sido dada como
      errada — então nunca há risco de barrar uma tradução boa. */
   function espanhoisDoCard(card) {
-    const saida = [String((card && card.es) || '')];
+    const saida = [String((card && card.es) || '')].concat(Object.keys((card && card.regionaisEs) || {}));
     const par = /🇪🇸\s*([^→\n]+?)\s*→\s*🇧🇷/g;
     let m;
     while ((m = par.exec(String((card && card.nota) || '')))) {
@@ -714,6 +715,40 @@ window.Motor = (function () {
       if (semAcento(normalizarEs(espanhois[i])) === dado) {
         return { palavra: espanhois[i], propria: i === 0 };
       }
+    }
+    return null;
+  }
+
+  /* ── a palavra de outro lugar ──
+     O baralho é da Espanha, mas o espanhol não é só dela: «la computadora»
+     é o computador de toda a América Latina, e «el cardenal» é o roxo da
+     pancada na Espanha, onde o card traz «el moretón». Até 26/09 a variante
+     de outro lugar ou ficava de fora ou dava só uma segunda chance; agora ela
+     vale como resposta certa, e o app diz de onde ela é (pedido do Gere).
+
+     Cada card guarda as suas em «regionaisEs»: a variante, e onde se usa —
+     escrito com a preposição, para caber na frase do aviso: «na América
+     Latina», «no México», «na Argentina e no Uruguai», «na Espanha».
+     formasAceitas já as conta como certas; esta função só diz, depois do
+     acerto, se a resposta foi uma delas. */
+  function regionalDoCard(card, texto, direcao) {
+    const lingua = linguaDaResposta(direcao);
+    const mapa = (card && card[CAMPOS[lingua].regionais]) || {};
+    const dado = semAcento(normalizar(texto, lingua));
+    if (!dado) return null;
+    const certa = String(card[CAMPOS[lingua].certa] || '').trim();
+    const daCerta = semAcento(normalizar(certa, lingua));
+    for (const forma of Object.keys(mapa)) {
+      const chave = semAcento(normalizar(forma, lingua));
+      if (chave !== dado) continue;
+      /* «el sartén» da América Latina e «la sartén» da Espanha só diferem no
+         artigo, que o funil tira: aí quem decide é o artigo escrito, e sem
+         artigo não há o que avisar */
+      if (chave === daCerta) {
+        const g = generoDaFrente(texto, lingua);
+        if (!g || g !== generoDaFrente(forma, lingua)) continue;
+      }
+      return { forma: forma, onde: mapa[forma], certa: certa };
     }
     return null;
   }
@@ -2072,7 +2107,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, anotarDiario, diaLocal, medianaDasFaixas,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
-    linguaTrocada, sinonimoDoCard, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando, diferencaDoQuase,
+    linguaTrocada, sinonimoDoCard, regionalDoCard, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando, diferencaDoQuase,
     indiceEspanhol, leituraEspanhola, erroDeFlexao,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,

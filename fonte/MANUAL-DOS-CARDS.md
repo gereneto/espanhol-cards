@@ -61,9 +61,10 @@ ela não é do card: é do motor ou da leva inteira.
 - **Os dois lados do par.** Falso amigo costuma vir em dupla, e a dupla ensina
   mais que a metade: `vaso` (copo) pede `jarrón` (vaso); `sótano` pede
   `desván`; `propina` pede `soborno`.
-- **O espanhol é o da Espanha**, com a variante latino-americana na nota
-  («na América Latina, `plomero`») e, quando ela é corrente, em `aceitasEs`.
-  Palavra ou gíria só de lá leva a etiqueta `Espanha`.
+- **O card traz o espanhol da Espanha, mas não o exige.** A variante
+  corrente de outro lugar — «la computadora», «el carro», «el sartén» — vale
+  como resposta certa, e o app diz onde ela se usa (seção 5.2). Palavra ou
+  gíria só da Espanha leva a etiqueta `Espanha`.
 - **Nada repetido.** O build barra `es` igual ao de outro card; sinônimo muito
   próximo de card existente também não vale a vaga.
 
@@ -95,6 +96,7 @@ for, e leva nova é arquivo novo.
 | `aceitas` | as **outras** maneiras de dizer a mesma coisa (seção 5) |
 | `aceitasEs` | variantes espanholas igualmente certas (opcional) |
 | `sinonimosEs` | espanhol certo que o card **não** ensina (opcional, seção 5.1) |
+| `regionaisEs` | variante de outro lugar, que vale com aviso: `{ variante: lugar }` (opcional, seção 5.2) |
 | `distratores` | exatamente quatro (seção 6) |
 | `nivel` | `A1` a `C2` |
 | `tags` | temas, todos presentes em `fonte/tags.json` (seção 8) |
@@ -248,16 +250,14 @@ espanhol, só não o que o card ensina. Não é erro nem acerto: o app diz que e
 certo, que não é essa, e dá a primeira letra da que é. As palavras que valem
 esse aviso ficam em `sinonimosEs`:
 
-- a **variante latino-americana** de uma palavra da Espanha, quando o card
-  ensina a da Espanha: «la computadora» em `el ordenador`, «el jugo» em
-  `el zumo`;
 - a **palavra neutra** da gíria ou do registro: «trabajar» em `currar`, «el
   chisme» em `el cotilleo`, «la negligencia» em `la desidia`;
 - o **sinônimo corrente**: «recordar» em `acordarse`, «aún» em `todavía`;
 - o **cognato que também é espanhol**: «absurdo» em `descabellado`,
   «resolver» em `zanjar`.
 
-A diferença para `aceitasEs` é o que o card quer ensinar. O que vale igual,
+A variante de outro lugar **não** vai aqui: ela vale, e mora em `regionaisEs`
+(5.2). A diferença para `aceitasEs` é o que o card quer ensinar. O que vale igual,
 e que o card não tem por que recusar, vai em `aceitasEs`; o que é espanhol
 certo mas deixaria a palavra do card sem aprender vai em `sinonimosEs`. As duas
 listas não se cruzam — o build barra o sinônimo que o conferidor já aceita —, e
@@ -266,6 +266,34 @@ o sinônimo nunca sai como alternativa errada na múltipla escolha.
 Não há como adivinhá-los pelo baralho: o índice das traduções confunde
 homônimo com sinônimo («a colher» é `la cuchara` e é `coger`). Então a lista é
 escrita à mão, e card novo de palavra deve trazê-la quando houver o que pôr.
+
+### 5.2 `regionaisEs`: vale, e o app diz de onde é
+
+O baralho é da Espanha, mas não dá exclusividade a ela (decisão do Gere,
+26/09). A palavra corrente de outro lugar conta como certa, e depois do
+acerto aparece a linha: «🌎 **la computadora** é como se diz na América
+Latina. A forma deste card é **el ordenador**.»
+
+```json
+"regionaisEs": {"la computadora": "na América Latina", "el computador": "na Colômbia e no Chile"}
+```
+
+- **O lugar vem com a preposição**, porque entra na frase do aviso: «na
+  América Latina», «no México», «na Argentina e no Uruguai», «no Peru». O
+  build barra o lugar sem ela. Na dúvida sobre o país, o mais largo que for
+  verdade («em boa parte da América Latina»).
+- **Vale para os dois lados.** Quando o card traz a palavra de lá («el
+  moretón», «prender»), a da Espanha é que entra aqui, com «na Espanha».
+- **A frase de uso acompanha a palavra.** Se `el coche` aceita «el carro»,
+  «Voy al trabajo en coche» aceita «Voy al trabajo en carro». Troca-se a
+  palavra e o que ela arrasta (artigo, gênero); o resto da frase fica.
+- **Só o artigo pode mudar**: «el sartén» é a variante de «la sartén». O app
+  só avisa quando o artigo escrito é o da variante.
+- **O espanhol igual de qualquer lugar não é regional**: «Buen provecho»,
+  «el boli», «ponerse colorado» vão em `aceitasEs`, sem aviso.
+- Diferença de **tempo verbal** entre as regiões (o «he hecho» da Espanha
+  contra o «hice» da América) não entra por aqui, card a card; fica para uma
+  regra do conferidor, se um dia for o caso.
 
 ## 6. Distratores
 
@@ -507,7 +535,8 @@ distrator — que o motor lê como resposta certa; dois distratores iguais; form
 que entrega a certa (barra, parêntese, comprimento); conjugação sem quatro
 `formasEs`, ou com forma igual à certa; `requer` quebrado; etiqueta sem
 tradução; inglês pela metade; marcação de gênero malformada; sinônimo em
-`sinonimosEs` que o card já aceita como certo. **O card de
+`sinonimosEs` que o card já aceita como certo; variante em `regionaisEs` sem
+preposição no lugar, repetida nos sinônimos ou igual à própria resposta. **O card de
 gênero passa duas vezes por tudo isso**, uma por forma: é assim que se
 descobre que o feminino repete outro card ou que um distrator virou a resposta
 certa de um dos lados. **E avisa**: palavra de conteúdo nos quatro
@@ -599,6 +628,7 @@ sem ele o navegador serve o baralho velho.
 | Cada contestação é decidida junto | combinado desde a primeira leva |
 | Contestação recusada entra na nota do card | `p201` «participar» para `asistir`: quem assiste está presente e pode ficar calado |
 | `sinonimosEs`: certo, mas não é a palavra do card | `p042` currar: «se eu respondesse trabajar, o que aconteceria?» |
+| A variante de outro lugar vale, com aviso | «não vejo motivo para dar tanta exclusividade para a Espanha»: 180 variantes em 138 cards |
 | A nota mostra a outra forma só quando o `pt` é o mesmo | `f225` «não precisa mostrar o feminino»; `u006` «nesse caso vale» |
 | A forma que tropeça um brasileiro ganha uma linha na nota | `f083` «por que não tem s?»; `f021` «explique esse ponte»; `u014` imperativo de tú |
 | Regra de gramática conferida forma a forma | `v067` «reír perde o e»: o e vira í, e reímos e reís o guardam |

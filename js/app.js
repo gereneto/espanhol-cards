@@ -33,7 +33,7 @@
     'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
-    'aviso-lingua', 'aviso-acento',
+    'aviso-lingua', 'aviso-acento', 'aviso-regiao',
     'meta-origem',
     'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-julgamento', 'resposta-dada', 'texto-dado',
@@ -647,6 +647,7 @@
 
     el['aviso-lingua'].classList.add('oculto');
     el['aviso-acento'].classList.add('oculto');
+    el['aviso-regiao'].classList.add('oculto');
     el['area-feedback'].classList.add('oculto');
     /* o chão criado para o botão subir era daquele card; some com ele */
     el['area-feedback'].style.paddingBottom = '';
@@ -878,6 +879,19 @@
       el['resposta-certa'].innerHTML = soAcento.pedacos.map(p => p.destaque
         ? '<mark class="acento">' + escapar(p.texto) + '</mark>'
         : escapar(p.texto)).join('');
+    }
+
+    /* Acertou com a palavra de outro lugar: vale, e a linha diz onde ela se
+       usa e qual é a do card (ver Motor.regionalDoCard). */
+    const regiao = escrevendo && r.acertou
+      ? Motor.regionalDoCard(cardAtual, r.resposta, r.direcao) : null;
+    el['aviso-regiao'].classList.toggle('oculto', !regiao);
+    if (regiao) {
+      /* entre aspas e sem o ponto final: numa frase, o ponto dela encostava
+         no da linha — «…en coche..» */
+      const citar = t => '«<b>' + escapar(String(t).replace(/\.$/, '')) + '</b>»';
+      el['aviso-regiao'].innerHTML = '🌎 ' + citar(regiao.forma) + ' é como se diz ' +
+        escapar(regiao.onde) + '. A forma deste card é ' + citar(regiao.certa) + '.';
     }
 
     if (forma || genero || acento || flexao) {
@@ -1456,18 +1470,17 @@
       metrica(dominados, 'dominados nas duas direções') +
       '</div>';
 
-    /* Por nível vem primeiro: é a tabela que responde «como estou indo», e
-       as outras respondem «onde os cards estão». */
-    html += tabelaNivel();
+    /* O caminho vem primeiro: é a figura do estudo inteiro, etapa por etapa,
+       e a tabela de acerto por nível lê melhor depois dela. «Em que pé está
+       cada nível» e «Velocidade a cada semana» saíram a pedido (26/09). */
     html += graficoEtapas();
-    html += tabelaEtapas();
+    html += tabelaNivel();
     html += tabelaDominados();
     html += tabelaMemoria();
     html += calendarioEstudo();
     html += graficoRespostasDia();
     html += graficoNovosDia();
     html += mapaHorario();
-    html += graficoVelocidade();
     html += graficoAteDominar();
 
     esconderDica();
@@ -1483,71 +1496,6 @@
   function metrica(valor, rotulo) {
     return '<div class="metrica"><div class="valor">' + valor +
       '</div><div class="rotulo">' + rotulo + '</div></div>';
-  }
-
-  /* Em que pé estão os cards de cada nível. É a foto do baralho: quantos
-     ainda não saíram, quantos estão no meio do caminho e quantos já
-     venceram as duas direções. */
-  const ETAPAS = [
-    { chave: 'preso',    rotulo: 'Presos'    },
-    { chave: 'novo',     rotulo: 'Inéditos'  },
-    { chave: 'espt',     rotulo: 'es → pt'   },
-    { chave: 'ptes',     rotulo: 'pt → es'   },
-    { chave: 'dominado', rotulo: 'Dominados' }
-  ];
-
-  function tabelaEtapas() {
-    const g = {};
-    Motor.NIVEIS.forEach(n => {
-      g[n] = { total: 0 };
-      ETAPAS.forEach(e => (g[n][e.chave] = 0));
-    });
-
-    CARDS.forEach(c => {
-      const x = g[c.nivel]; if (!x) return;
-      x.total++;
-      const e = progresso.cards[c.id];
-      /* Preso não é inédito: é frase que existe e não pode sair enquanto a
-         palavra dela não estiver dominada. Somá-los prometeria card novo
-         que o baralho não tem como entregar. */
-      if (!e || !e.vistas) {
-        if (Motor.liberado(c, progresso.cards)) x.novo++; else x.preso++;
-        return;
-      }
-      if (e.etapa === 'dominado') { x.dominado++; return; }
-      /* Escolher entre cinco e escrever são passos da mesma travessia; o que
-         separa de verdade é para que lado se traduz. */
-      if (Motor.direcaoDe(e) === 'pt-es') { x.ptes++; return; }
-      x.espt++;
-    });
-
-    const niveis = Motor.NIVEIS.filter(n => g[n].total);
-    if (!niveis.length) return '';
-
-    const soma = ch => niveis.reduce((a, n) => a + g[n][ch], 0);
-    const celula = v => '<td class="num">' + (v || '·') + '</td>';
-
-    const linhas = niveis.map(n =>
-      '<tr><td>' + n + '</td>' +
-      ETAPAS.map(e => celula(g[n][e.chave])).join('') +
-      '<td class="num">' + g[n].total + '</td></tr>'
-    ).join('');
-
-    /* Os rótulos vão de pé: são seis colunas de números, e escritos na
-       horizontal eles é que faziam a tabela estourar a largura da tela. */
-    const cabeca = r => '<th class="vert"><span>' + r + '</span></th>';
-
-    return '<h3>Em que pé está cada nível</h3>' +
-      '<p class="legenda">Todo card vai de <b>es → pt</b> a <b>pt → es</b> e daí a ' +
-      '<b>dominado</b>. O sorteio das filas persegue <b>' + Motor.ALVO_FILA +
-      ' cards em cada direção</b>. <b>Presos</b> são frases que esperam você ' +
-      'dominar a palavra delas.</p>' +
-      '<table class="etapas"><tr><th>Nível</th>' +
-      ETAPAS.map(e => cabeca(e.rotulo)).join('') +
-      cabeca('Total') + '</tr>' + linhas +
-      '<tr class="soma"><td>Todos</td>' +
-      ETAPAS.map(e => celula(soma(e.chave))).join('') +
-      '<td class="num">' + soma('total') + '</td></tr></table>';
   }
 
   /* Por nível, separando a estreia das respostas seguintes: a estreia diz
@@ -1567,20 +1515,21 @@
      anotados daqui em diante são um por resposta. A curva fica mais rala
      atrás e mais fina à frente, o que não incomoda numa figura de 600px. */
 
-  /* Oito bandas, de baixo para cima: as duas direções em cores próprias, e
-     os dominados subindo a escada numa rampa de verde, do escuro (3 dias,
-     colado ao pt→es de onde o card acabou de sair) ao claro (6 meses, no
-     topo). Rampa e não oito cores: os degraus são uma ordem, e a ordem se lê
-     pelo tom; oito cores soltas pediriam legenda para cada uma. */
+  /* Oito bandas, de baixo para cima, e cada uma é uma etapa: as duas
+     direções, e os seis degraus do dominado, cada um com a sua cor (ver
+     --escada-* no style.css). Eram uma rampa de verde, que lia a ordem mas
+     juntava os degraus num bloco só; o pedido foi tratá-los como etapas
+     separadas, com o último — seis meses, o card que ficou — em branco. A
+     claridade sobe a cada degrau, então a ordem continua visível. */
   const SERIES = [
     { chave: 0, nome: 'es → pt',   cor: 'var(--serie-espt)' },
     { chave: 1, nome: 'pt → es',   cor: 'var(--serie-ptes)' },
-    { chave: 2, nome: '3 dias',    cor: 'var(--degrau-0)', degrau: true },
-    { chave: 3, nome: '1 semana',  cor: 'var(--degrau-1)', degrau: true },
-    { chave: 4, nome: '2 semanas', cor: 'var(--degrau-2)', degrau: true },
-    { chave: 5, nome: '1 mês',     cor: 'var(--degrau-3)', degrau: true },
-    { chave: 6, nome: '3 meses',   cor: 'var(--degrau-4)', degrau: true },
-    { chave: 7, nome: '6 meses',   cor: 'var(--degrau-5)', degrau: true }
+    { chave: 2, nome: '3 dias',    cor: 'var(--escada-0)', degrau: true },
+    { chave: 3, nome: '1 semana',  cor: 'var(--escada-1)', degrau: true },
+    { chave: 4, nome: '2 semanas', cor: 'var(--escada-2)', degrau: true },
+    { chave: 5, nome: '1 mês',     cor: 'var(--escada-3)', degrau: true },
+    { chave: 6, nome: '3 meses',   cor: 'var(--escada-4)', degrau: true },
+    { chave: 7, nome: '6 meses',   cor: 'var(--escada-5)', degrau: true }
   ];
 
   function graficoEtapas() {
@@ -1632,15 +1581,15 @@
       svg += '<path d="M' + cima.concat(baixo).join('L') + 'Z" fill="' + s.cor + '"/>';
       base = topoBanda;
     });
-    /* A fresta só separa os três grupos — es→pt, pt→es, dominado — e não os
-       degraus entre si. Um card vale menos de um pixel nesta escala, e uma
-       fresta de dois apagaria o degrau fino por inteiro; entre degraus quem
-       separa é o tom da rampa, que foi escolhida para isso. */
+    /* Uma fresta entre cada etapa e a seguinte. Entre as direções e o
+       dominado ela tem dois pixels; entre os degraus, um só: um card vale
+       menos de um pixel nesta escala, e a fresta de dois apagaria o degrau
+       fino por inteiro — ali quem mais separa é a cor. */
     let sep = new Array(n).fill(0);
-    for (let k = 0; k < 2; k++) {
+    for (let k = 0; k < SERIES.length - 1; k++) {
       sep = sep.map((b, i) => b + serie[i][SERIES[k].chave]);
       svg += '<path d="M' + idx.map(i => x(i).toFixed(1) + ' ' + y(sep[i]).toFixed(1)).join('L') +
-        '" fill="none" class="fresta"/>';
+        '" fill="none" class="fresta' + (k >= 2 ? ' fina' : '') + '"/>';
     }
 
     /* Rótulos em números redondos de resposta, e não no valor do ponto que
@@ -1655,20 +1604,17 @@
     svg += '<rect x="' + L + '" y="' + T + '" width="' + (R - L) + '" height="' + (B - T) +
       '" fill="transparent" id="g-toque"/>';
 
+    /* A legenda segue a pilha, de baixo para cima: as oito etapas lado a
+       lado, com o mesmo peso — o degrau não é mais um apêndice do dominado. */
     const ult = serie[n - 1];
-    const chaves = SERIES.filter(s => !s.degrau).map(s =>
+    const chaves = SERIES.map(s =>
       '<span class="chave"><i style="background:' + s.cor + '"></i>' + s.nome +
-      ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('') +
-      '<span class="chave"><i style="background:var(--degrau-3)"></i>dominado' +
-      ' <b id="g-dom">' + ult.slice(2).reduce((a, b) => a + b, 0) + '</b></span>';
-    const escada = '<div class="escada-legenda">' + SERIES.filter(s => s.degrau).map(s =>
-      '<span><i style="background:' + s.cor + '"></i>' + s.nome +
-      ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('') + '</div>';
+      ' <b data-serie="' + s.chave + '">' + ult[s.chave] + '</b></span>').join('');
 
     return '<h3>O caminho até aqui</h3>' +
       '<p class="legenda">Cards em cada etapa ao longo das suas <b>' +
       eixoX[n - 1] + '</b> respostas. Toque para ler um ponto.</p>' +
-      '<div class="chaves" id="g-chaves">' + chaves + '</div>' + escada +
+      '<div class="chaves" id="g-chaves">' + chaves + '</div>' +
       '<svg class="grafico-etapas" viewBox="0 0 640 ' + ALT + '" role="img" ' +
       'aria-label="Cards em cada etapa ao longo das respostas">' + svg + '</svg>' +
       '<script type="application/json" id="g-dados">' +
@@ -1691,7 +1637,6 @@
     const pontos = JSON.parse(dados.textContent);
     const cursor = svg.querySelector('#g-cursor');
     const valores = [...el['painel-conteudo'].querySelectorAll('[data-serie]')];
-    const totalDom = el['painel-conteudo'].querySelector('#g-dom');
 
     const toque = svg.querySelector('#g-toque');
     let inicio = null;
@@ -1716,7 +1661,6 @@
       cursor.setAttribute('x2', px);
       cursor.style.display = '';
       valores.forEach(b => { b.textContent = p[1 + Number(b.dataset.serie)]; });
-      if (totalDom) totalDom.textContent = p.slice(3, 9).reduce((a, b) => a + b, 0);
     });
   }
 
@@ -1855,8 +1799,6 @@
 
   const milhar = n => n.toLocaleString('pt-BR');
   const diaMes = d => d.slice(8, 10) + '/' + d.slice(5, 7);
-  const emSegundos = ms => (ms / 1000).toLocaleString('pt-BR',
-    { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const comDica = texto => ' class="alvo" data-dica="' + escapar(texto) + '"';
   const figura = (w, h, miolo, rotulo, extra) =>
     '<svg class="grafico"' + (extra || '') + ' viewBox="0 0 ' + w + ' ' + h +
@@ -2064,72 +2006,6 @@
       figura(W, H, m, 'Respostas por dia da semana e hora');
   }
 
-  /* ── a velocidade ──
-     A mediana dos acertos de cada semana (de segunda a domingo),
-     separando escrever de escolher entre cinco. Semana com menos de vinte
-     acertos cronometrados fica de fora: é pouco para dizer um tempo. */
-  function graficoVelocidade() {
-    const diario = progresso.diario || {};
-    const semanas = {};
-    Object.keys(diario).forEach(d => {
-      const g = diario[d];
-      if (!g || !g.m || !g.e) return;
-      const t = meioDia(d);
-      t.setDate(t.getDate() - (t.getDay() + 6) % 7);
-      const s = Motor.diaLocal(t);
-      const x = semanas[s] || (semanas[s] = { s, m: {}, e: {}, n: 0 });
-      ['m', 'e'].forEach(modo => Object.keys(g[modo]).forEach(k => {
-        x[modo][k] = (x[modo][k] || 0) + g[modo][k];
-        x.n += g[modo][k];
-      }));
-    });
-    const lista = Object.keys(semanas).sort().map(k => semanas[k])
-      .filter(x => x.n >= 20)
-      .map(x => ({ s: x.s, escolhendo: Motor.medianaDasFaixas(x.m), escrevendo: Motor.medianaDasFaixas(x.e) }));
-    if (lista.length < 2) return '';
-
-    const W = LARGURA, L = 40, R = 60, T = 14, B = 186;
-    const maior = Math.max(...lista.flatMap(x => [x.escolhendo || 0, x.escrevendo || 0])) / 1000;
-    const passo = maior > 8 ? 4 : 2;
-    const topo = Math.ceil((maior + 0.5) / passo) * passo;
-    const x = i => L + (i / (lista.length - 1)) * (W - L - R);
-    const y = ms => B - (ms / 1000 / topo) * (B - T);
-    let m = '';
-    for (let v = 0; v <= topo; v += passo) {
-      m += linhaDeGrade(L, W - R, y(v * 1000)) +
-        (v ? '<text x="' + (L - 6) + '" y="' + (y(v * 1000) + 4).toFixed(1) + '" text-anchor="end">' + v + ' s</text>' : '');
-    }
-    const SERIE = [['escrevendo', 'var(--serie-ptes)'], ['escolhendo', 'var(--serie-espt)']];
-    const extremos = {};
-    SERIE.forEach(([k, cor]) => {
-      const pts = lista.map((s, i) => s[k] ? [x(i), y(s[k]), s] : null).filter(Boolean);
-      if (!pts.length) return;
-      extremos[k] = [pts[0][2][k], pts[pts.length - 1][2][k]];
-      m += '<path d="M' + pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join('L') +
-        '" fill="none" stroke="' + cor + '" stroke-width="2.5" stroke-linejoin="round"/>';
-      pts.forEach(p => {
-        m += '<circle' + comDica('Semana de ' + diaMes(p[2].s) + ' — ' + k + ': ' + emSegundos(p[2][k]) + ' s') +
-          ' cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="5.5" fill="' + cor + '" stroke="var(--fundo-2)" stroke-width="2"/>';
-      });
-      const u = pts[pts.length - 1];
-      m += '<text class="forte" x="' + (u[0] + 11).toFixed(1) + '" y="' + (u[1] + 4).toFixed(1) + '">' + emSegundos(u[2][k]) + ' s</text>';
-    });
-    const cada = Math.ceil(lista.length / 7);
-    lista.forEach((s, i) => {
-      if ((lista.length - 1 - i) % cada) return;
-      m += '<text x="' + x(i).toFixed(1) + '" y="' + (B + 22) + '" text-anchor="middle">' + diaMes(s.s) + '</text>';
-    });
-    const frase = (k, nome) => extremos[k]
-      ? nome + ', foi de <b>' + emSegundos(extremos[k][0]) + ' s</b> para <b>' + emSegundos(extremos[k][1]) + ' s</b>' : '';
-    const partes = [frase('escrevendo', 'Escrevendo'), frase('escolhendo', 'escolhendo entre cinco')].filter(Boolean);
-    return '<h3>Velocidade a cada semana</h3>' +
-      '<p class="legenda">Tempo típico de um acerto (a mediana), sem os tempos pausados. ' + partes.join('; ') + '.</p>' +
-      '<div class="chaves">' +
-      '<span class="chave"><i style="background:var(--serie-ptes)"></i>escrevendo</span>' +
-      '<span class="chave"><i style="background:var(--serie-espt)"></i>escolhendo entre cinco</span></div>' +
-      figura(W, B + 30, m, 'Tempo típico de um acerto por semana');
-  }
-
   /* ── quantas respostas até dominar ──
      Conta as aparições do card nas duas direções até o primeiro domínio. O
      fim da escala junta tudo o que passou de quatorze. */
@@ -2165,9 +2041,6 @@
           ' d="' + barra(bx, y(n), larg, B - y(n), 4) + '" fill="' + (k === mediana ? 'var(--degrau-4)' : 'var(--degrau-1)') + '"/>';
       }
       m += '<text x="' + (bx + larg / 2).toFixed(1) + '" y="' + (B + 22) + '" text-anchor="middle">' + rotulo + '</text>';
-      if (k === mediana) {
-        m += '<text class="forte" x="' + (bx + larg / 2).toFixed(1) + '" y="' + (y(n) - 7).toFixed(1) + '" text-anchor="middle">mediana</text>';
-      }
     });
     return '<h3>Quantas respostas até dominar</h3>' +
       '<p class="legenda">Dos <b>' + valores.length + '</b> cards que já chegaram ao domínio, a metade precisou de <b>' +
@@ -2284,7 +2157,15 @@
   function linhaDaNota(c) {
     const bruto = PORID_FONTE[c.id];
     const outra = bruto && Motor.temVariante(bruto) ? Motor.formaDoCard(bruto, 1) : null;
-    return [c.nota, outra ? '🔁 No feminino: «' + outra.es + '» — ' + outra.pt : '']
+    /* e as palavras de outros lugares que o card também aceita */
+    /* agrupadas por lugar: «A» e «B», na América Latina; «C», no México */
+    const porLugar = new Map();
+    Object.entries(c.regionaisEs || {}).forEach(([forma, onde]) =>
+      porLugar.set(onde, (porLugar.get(onde) || []).concat('«' + forma.replace(/\.$/, '') + '»')));
+    const regionais = [...porLugar].map(([onde, formas]) =>
+      formas.join(formas.length > 2 ? ', ' : ' e ') + ', ' + onde);
+    return [c.nota, outra ? '🔁 No feminino: «' + outra.es + '» — ' + outra.pt : '',
+      regionais.length ? '🌎 Também vale: ' + regionais.join('; ') + '.' : '']
       .filter(Boolean).join('\n');
   }
 
@@ -2308,7 +2189,8 @@
 
       if (busca) {
         const alvo = Motor.normalizar(
-          [c.es, c.pt, c.nota, (c.aceitas || []).join(' '), (c.tags || []).join(' ')].join(' '));
+          [c.es, c.pt, c.nota, (c.aceitas || []).join(' '), Object.keys(c.regionaisEs || {}).join(' '),
+           (c.tags || []).join(' ')].join(' '));
         if (!busca.split(' ').every(termo => alvo.includes(termo))) return false;
       }
       return true;
