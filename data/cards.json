@@ -1,7 +1,7 @@
 {
  "versao": 1,
  "idioma": "es",
- "gerado_em": "2026-09-22",
+ "gerado_em": "2026-09-26",
  "total": 1000,
  "cards": [
   {
@@ -40,7 +40,10 @@
     "adjetivo"
    ],
    "nota": "Clássico falso amigo.\n🇪🇸 embarazada → 🇧🇷 grávida\n🇪🇸 avergonzada → 🇧🇷 envergonhada",
-   "notaEn": "'Embarazada' means pregnant. To say you are embarrassed, use 'avergonzado' or turn it around with 'me da vergüenza'."
+   "notaEn": "'Embarazada' means pregnant. To say you are embarrassed, use 'avergonzado' or turn it around with 'me da vergüenza'.",
+   "sinonimosEs": [
+    "encinta"
+   ]
   },
   {
    "idioma": "es",
@@ -85,7 +88,12 @@
     "adjetivo"
    ],
    "nota": "É sempre elogio, nunca crítica.\n🇪🇸 exquisito → 🇧🇷 delicioso, requintado\n🇪🇸 raro, extraño → 🇧🇷 esquisito, estranho",
-   "notaEn": "'Exquisito' is praise, above all at the table: '¡Está exquisito!' is what you say when a meal is superb. It also covers refined taste or manners. Something strange is 'raro' or 'extraño'."
+   "notaEn": "'Exquisito' is praise, above all at the table: '¡Está exquisito!' is what you say when a meal is superb. It also covers refined taste or manners. Something strange is 'raro' or 'extraño'.",
+   "sinonimosEs": [
+    "delicioso",
+    "sabroso",
+    "refinado"
+   ]
   },
   {
    "idioma": "es",
@@ -132,7 +140,10 @@
     "falso-amigo"
    ],
    "nota": "«Espera un rato» é espera um pouquinho.\n🇪🇸 un rato → 🇧🇷 um tempinho\n🇪🇸 el ratón → 🇧🇷 o rato, o camundongo\n🇪🇸 la rata → 🇧🇷 a ratazana",
-   "notaEn": "'Espera un rato' = wait a while. It looks like 'rat' and is not: the animal is 'una rata', and the small one is 'un ratón'."
+   "notaEn": "'Espera un rato' = wait a while. It looks like 'rat' and is not: the animal is 'una rata', and the small one is 'un ratón'.",
+   "sinonimosEs": [
+    "un momento"
+   ]
   },
   {
    "idioma": "es",
@@ -441,7 +452,11 @@
     "falso-amigo"
    ],
    "nota": "«Hacer cola» é ficar na fila.\n🇪🇸 la cola → 🇧🇷 o rabo, a fila\n🇪🇸 el pegamento → 🇧🇷 a cola de colar\n🇪🇸 la fila → 🇧🇷 a fileira",
-   "notaEn": "'Cola' is both a tail and a queue — 'hacer cola' is to queue up, or to stand in line. Glue is 'el pegamento'."
+   "notaEn": "'Cola' is both a tail and a queue — 'hacer cola' is to queue up, or to stand in line. Glue is 'el pegamento'.",
+   "sinonimosEs": [
+    "la fila",
+    "el rabo"
+   ]
   },
   {
    "idioma": "es",
@@ -586,7 +601,10 @@
     "falso-amigo"
    ],
    "nota": "🇪🇸 brincar → 🇧🇷 pular, saltar\n🇪🇸 jugar → 🇧🇷 brincar, jogar",
-   "notaEn": "'Brincar' is to jump or leap: 'el niño brincaba de alegría'. To play is 'jugar' — a different verb altogether."
+   "notaEn": "'Brincar' is to jump or leap: 'el niño brincaba de alegría'. To play is 'jugar' — a different verb altogether.",
+   "sinonimosEs": [
+    "saltar"
+   ]
   },
   {
    "idioma": "es",
@@ -698,7 +716,10 @@
     "adjetivo"
    ],
    "nota": "«El presunto asesino» é o suposto assassino — a palavra da polícia antes da condenação.\n🇪🇸 presunto → 🇧🇷 suposto, presumido\n🇪🇸 el jamón → 🇧🇷 o presunto",
-   "notaEn": "'El presunto asesino' is the alleged killer — the word the police and the papers use before a conviction. It comes from 'presumir', to presume."
+   "notaEn": "'El presunto asesino' is the alleged killer — the word the police and the papers use before a conviction. It comes from 'presumir', to presume.",
+   "sinonimosEs": [
+    "supuesto"
+   ]
   },
   {
    "idioma": "es",
@@ -736,7 +757,10 @@
     "falso-amigo"
    ],
    "nota": "Também nomeia o envelhecimento do vinho: «un vino de crianza».\n🇪🇸 la crianza → 🇧🇷 a criação, a educação\n🇪🇸 el niño, la niña → 🇧🇷 a criança",
-   "notaEn": "'La crianza' is the raising of a child — how someone was brought up. It also names the ageing of wine: 'un vino de crianza'. The verb is 'criar'."
+   "notaEn": "'La crianza' is the raising of a child — how someone was brought up. It also names the ageing of wine: 'un vino de crianza'. The verb is 'criar'.",
+   "sinonimosEs": [
+    "la educación"
+   ]
   },
   {
    "idioma": "es",
@@ -773,7 +797,10 @@
     "falso-amigo"
    ],
    "nota": "«Aula» é feminina, mas leva «el» no singular por começar com a tônico. No plural, «las aulas».\n🇪🇸 el aula → 🇧🇷 a sala de aula\n🇪🇸 la clase → 🇧🇷 a aula, a lição",
-   "notaEn": "'El aula' is the room, not the lesson — a lesson is 'una clase'. Mind the article: 'aula' is feminine but takes 'el' in the singular, because it opens with a stressed a. Plural, 'las aulas'."
+   "notaEn": "'El aula' is the room, not the lesson — a lesson is 'una clase'. Mind the article: 'aula' is feminine but takes 'el' in the singular, because it opens with a stressed a. Plural, 'las aulas'.",
+   "sinonimosEs": [
+    "la clase"
+   ]
   },
   {
    "idioma": "es",
@@ -813,7 +840,10 @@
     "falso-amigo"
    ],
    "nota": "É pronominal e pede «de»: «me acuerdo de ti».\n🇪🇸 acordarse → 🇧🇷 lembrar-se\n🇪🇸 despertarse → 🇧🇷 acordar do sono\n🇪🇸 acordar → 🇧🇷 combinar",
-   "notaEn": "'Me acuerdo de ti' = I remember you. It is reflexive and takes 'de'. Keep it apart from 'despertarse', to wake up, and from plain 'acordar', to agree on something."
+   "notaEn": "'Me acuerdo de ti' = I remember you. It is reflexive and takes 'de'. Keep it apart from 'despertarse', to wake up, and from plain 'acordar', to agree on something.",
+   "sinonimosEs": [
+    "recordar"
+   ]
   },
   {
    "idioma": "es",
@@ -846,7 +876,10 @@
     "falso-amigo"
    ],
    "nota": "«Todavía no» é ainda não.\n🇪🇸 todavía → 🇧🇷 ainda\n🇪🇸 sin embargo → 🇧🇷 todavia, contudo",
-   "notaEn": "'Todavía' = still, and 'todavía no' = not yet. Its opposite number is 'ya': 'ya llegó' (he's here already) against 'todavía no llega'."
+   "notaEn": "'Todavía' = still, and 'todavía no' = not yet. Its opposite number is 'ya': 'ya llegó' (he's here already) against 'todavía no llega'.",
+   "sinonimosEs": [
+    "aún"
+   ]
   },
   {
    "idioma": "es",
@@ -884,7 +917,11 @@
     "falso-amigo"
    ],
    "nota": "'Hasta luego' = até mais. Não é 'logo' no sentido de imediatamente.",
-   "notaEn": "'Hasta luego' is the everyday goodbye — see you later. It is not immediate: right away is 'ahora mismo' or 'enseguida'. In writing, 'luego' can also mean therefore."
+   "notaEn": "'Hasta luego' is the everyday goodbye — see you later. It is not immediate: right away is 'ahora mismo' or 'enseguida'. In writing, 'luego' can also mean therefore.",
+   "sinonimosEs": [
+    "después",
+    "más tarde"
+   ]
   },
   {
    "idioma": "es",
@@ -925,7 +962,10 @@
     "falso-amigo"
    ],
    "nota": "«No hay sitio» é não tem lugar.\n🇪🇸 el sitio → 🇧🇷 o lugar\n🇪🇸 el sitio web → 🇧🇷 o site",
-   "notaEn": "'No hay sitio' = there's no room. A website is 'un sitio web', the one place the English sense survives. 'Sitio' also means a siege, as in 'el sitio de Numancia'."
+   "notaEn": "'No hay sitio' = there's no room. A website is 'un sitio web', the one place the English sense survives. 'Sitio' also means a siege, as in 'el sitio de Numancia'.",
+   "sinonimosEs": [
+    "el lugar"
+   ]
   },
   {
    "idioma": "es",
@@ -1120,7 +1160,11 @@
     "adjetivo"
    ],
    "nota": "'Estoy enfadado' = estou bravo. Na América Latina usa-se mais 'enojado'.\n🇪🇸 bravo → 🇧🇷 valente, feroz",
-   "notaEn": "'Estoy enfadado' = I'm angry. In Spain that is the everyday word; across Latin America you will hear 'enojado' far more often."
+   "notaEn": "'Estoy enfadado' = I'm angry. In Spain that is the everyday word; across Latin America you will hear 'enojado' far more often.",
+   "sinonimosEs": [
+    "enojado",
+    "molesto"
+   ]
   },
   {
    "idioma": "es",
@@ -1161,7 +1205,11 @@
     "verbo"
    ],
    "nota": "«Quítate de ahí» é sai daí; «quítate el abrigo», tire o casaco.\n🇪🇸 quitar → 🇧🇷 tirar, remover\n🇪🇸 saldar, liquidar → 🇧🇷 quitar uma dívida",
-   "notaEn": "'Quítate de ahí' = get out of the way. 'Quitar' is to take away or take off: 'quítate el abrigo', take off your coat. Reflexive, 'quitarse' is what you do to your own clothes."
+   "notaEn": "'Quítate de ahí' = get out of the way. 'Quitar' is to take away or take off: 'quítate el abrigo', take off your coat. Reflexive, 'quitarse' is what you do to your own clothes.",
+   "sinonimosEs": [
+    "sacar",
+    "retirar"
+   ]
   },
   {
    "idioma": "es",
@@ -1286,7 +1334,11 @@
     "escola"
    ],
    "nota": "«Asignatura pendiente» é a matéria que falta passar — e, no figurado, assunto malresolvido.\n🇪🇸 la asignatura → 🇧🇷 a matéria, a disciplina\n🇪🇸 la firma → 🇧🇷 a assinatura",
-   "notaEn": "'La asignatura' is a school or university subject. 'Asignatura pendiente' is one you still have to pass — and, figuratively, any unfinished business. A signature is 'una firma'."
+   "notaEn": "'La asignatura' is a school or university subject. 'Asignatura pendiente' is one you still have to pass — and, figuratively, any unfinished business. A signature is 'una firma'.",
+   "sinonimosEs": [
+    "la materia",
+    "la disciplina"
+   ]
   },
   {
    "idioma": "es",
@@ -1370,7 +1422,11 @@
     "viagem"
    ],
    "nota": "'Billete de tren' = passagem de trem; 'billete de 50 euros' = nota de 50.\n🇪🇸 la cédula → 🇧🇷 a carteira de identidade",
-   "notaEn": "'Billete de tren' is a train ticket; 'billete de 50 euros' is a fifty-euro note. Across much of Latin America the travel ticket is 'el boleto' instead."
+   "notaEn": "'Billete de tren' is a train ticket; 'billete de 50 euros' is a fifty-euro note. Across much of Latin America the travel ticket is 'el boleto' instead.",
+   "sinonimosEs": [
+    "el pasaje",
+    "el boleto"
+   ]
   },
   {
    "idioma": "es",
@@ -1574,7 +1630,10 @@
     "adjetivo"
    ],
    "nota": "Vale para comida e para pessoas: 'es un chico soso' = é um cara sem graça.",
-   "notaEn": "'Soso' is unsalted, and by extension dull: 'es un chico soso' is he's a bit of a bore. At the table its opposite is 'salado'."
+   "notaEn": "'Soso' is unsalted, and by extension dull: 'es un chico soso' is he's a bit of a bore. At the table its opposite is 'salado'.",
+   "sinonimosEs": [
+    "insípido"
+   ]
   },
   {
    "idioma": "es",
@@ -1624,7 +1683,10 @@
     "adjetivo"
    ],
    "nota": "'Un bar cutre' = um bar caindo aos pedaços. Também: sovina.",
-   "notaEn": "'Un bar cutre' is a dive — grimy, cheap, coming apart. Of a person it means stingy. Very Spanish, and always dismissive."
+   "notaEn": "'Un bar cutre' is a dive — grimy, cheap, coming apart. Of a person it means stingy. Very Spanish, and always dismissive.",
+   "sinonimosEs": [
+    "de mala calidad"
+   ]
   },
   {
    "idioma": "es",
@@ -1666,7 +1728,10 @@
     "Espanha"
    ],
    "nota": "'El curro' = o trampo. Muito comum na Espanha.",
-   "notaEn": "Spanish slang for working: 'me voy al curro' = I'm off to work. 'El curro' is the job itself. Standard Spanish is 'trabajar'."
+   "notaEn": "Spanish slang for working: 'me voy al curro' = I'm off to work. 'El curro' is the job itself. Standard Spanish is 'trabajar'.",
+   "sinonimosEs": [
+    "trabajar"
+   ]
   },
   {
    "idioma": "es",
@@ -1713,7 +1778,11 @@
     "adjetivo"
    ],
    "nota": "'Es muy maja' = ela é muito gente boa.\n🇪🇸 legal → 🇧🇷 lícito, da lei",
-   "notaEn": "'Es muy maja' = she's really nice. Heard all over Spain for someone pleasant and easy to be around; it can also mean good-looking."
+   "notaEn": "'Es muy maja' = she's really nice. Heard all over Spain for someone pleasant and easy to be around; it can also mean good-looking.",
+   "sinonimosEs": [
+    "simpático",
+    "agradable"
+   ]
   },
   {
    "idioma": "es",
@@ -1760,7 +1829,10 @@
     "adjetivo"
    ],
    "nota": "'Un amigo entrañable' = um amigo muito querido.",
-   "notaEn": "'Un amigo entrañable' is a friend held deep inside — from 'las entrañas', the guts. Warmer and more intimate than plain 'querido'."
+   "notaEn": "'Un amigo entrañable' is a friend held deep inside — from 'las entrañas', the guts. Warmer and more intimate than plain 'querido'.",
+   "sinonimosEs": [
+    "querido"
+   ]
   },
   {
    "idioma": "es",
@@ -1805,7 +1877,11 @@
     "verbo"
    ],
    "nota": "Sinônimo mais coloquial: 'echar de menos'.",
-   "notaEn": "'Añoro mi casa' = I miss home. It leans literary and wistful; day to day you will hear 'echar de menos', or 'extrañar' in Latin America."
+   "notaEn": "'Añoro mi casa' = I miss home. It leans literary and wistful; day to day you will hear 'echar de menos', or 'extrañar' in Latin America.",
+   "sinonimosEs": [
+    "extrañar",
+    "echar de menos"
+   ]
   },
   {
    "idioma": "es",
@@ -1937,7 +2013,10 @@
     "verbo"
    ],
    "nota": "'Ya me las apañaré' = eu me viro.",
-   "notaEn": "'Ya me las apañaré' = I'll manage. Always with 'las' stuck to the end, and it comes with a shrug: whatever it takes, I'll sort it out."
+   "notaEn": "'Ya me las apañaré' = I'll manage. Always with 'las' stuck to the end, and it comes with a shrug: whatever it takes, I'll sort it out.",
+   "sinonimosEs": [
+    "arreglárselas"
+   ]
   },
   {
    "idioma": "es",
@@ -2030,7 +2109,10 @@
     "adjetivo"
    ],
    "nota": "Pessoa que se ofende ou reclama de coisinhas.",
-   "notaEn": "'Quisquilloso' is the person who takes offence at nothing and picks at details. 'No seas quisquilloso' = don't be so touchy."
+   "notaEn": "'Quisquilloso' is the person who takes offence at nothing and picks at details. 'No seas quisquilloso' = don't be so touchy.",
+   "sinonimosEs": [
+    "melindroso"
+   ]
   },
   {
    "idioma": "es",
@@ -2072,7 +2154,12 @@
     "adjetivo"
    ],
    "nota": "Sinônimos: 'terco', 'cabezota'.",
-   "notaEn": "'Tozudo' = stubborn, and rarely a compliment. Its companions are 'terco' and, more colloquially, 'cabezota' — big-headed in the mule sense."
+   "notaEn": "'Tozudo' = stubborn, and rarely a compliment. Its companions are 'terco' and, more colloquially, 'cabezota' — big-headed in the mule sense.",
+   "sinonimosEs": [
+    "terco",
+    "testarudo",
+    "cabezota"
+   ]
   },
   {
    "idioma": "es",
@@ -2114,7 +2201,12 @@
     "substantivo"
    ],
    "nota": "Falta de cuidado e de vontade de fazer as coisas.",
-   "notaEn": "'La desidia' is neglect born of not caring enough to act — apathy with consequences. 'La desidia de las autoridades' is standard newspaper Spanish."
+   "notaEn": "'La desidia' is neglect born of not caring enough to act — apathy with consequences. 'La desidia de las autoridades' is standard newspaper Spanish.",
+   "sinonimosEs": [
+    "la negligencia",
+    "el descuido",
+    "la dejadez"
+   ]
   },
   {
    "idioma": "es",
@@ -2157,7 +2249,11 @@
     "verbo"
    ],
    "nota": "'La producción ha mermado' = a produção diminuiu.",
-   "notaEn": "'La producción ha mermado' = output has fallen. It suggests loss by wearing away rather than a sudden drop. The noun 'la merma' is the shortfall itself."
+   "notaEn": "'La producción ha mermado' = output has fallen. It suggests loss by wearing away rather than a sudden drop. The noun 'la merma' is the shortfall itself.",
+   "sinonimosEs": [
+    "disminuir",
+    "reducir"
+   ]
   },
   {
    "idioma": "es",
@@ -2199,7 +2295,11 @@
     "verbo"
    ],
    "nota": "'Socavar la confianza' = minar a confiança.",
-   "notaEn": "'Socavar la confianza' = to undermine trust. Literally it is to dig away underneath until the thing gives; the figurative sense is the common one."
+   "notaEn": "'Socavar la confianza' = to undermine trust. Literally it is to dig away underneath until the thing gives; the figurative sense is the common one.",
+   "sinonimosEs": [
+    "minar",
+    "debilitar"
+   ]
   },
   {
    "idioma": "es",
@@ -2243,7 +2343,12 @@
     "verbo"
    ],
    "nota": "'Soslayar el problema' = fugir do problema. 'De soslayo' = de esguelha.",
-   "notaEn": "'Soslayar el problema' = to dodge the problem. From 'de soslayo', sideways — the glance you give something without turning your head."
+   "notaEn": "'Soslayar el problema' = to dodge the problem. From 'de soslayo', sideways — the glance you give something without turning your head.",
+   "sinonimosEs": [
+    "evitar",
+    "eludir",
+    "esquivar"
+   ]
   },
   {
    "idioma": "es",
@@ -2285,7 +2390,11 @@
     "adjetivo"
    ],
    "nota": "'No es asunto baladí' = não é assunto de somenos importância.",
-   "notaEn": "'No es asunto baladí' = it's no trifling matter — and it turns up far more often in the negative than in the positive. An Arabic borrowing, from 'baladi', local or homegrown."
+   "notaEn": "'No es asunto baladí' = it's no trifling matter — and it turns up far more often in the negative than in the positive. An Arabic borrowing, from 'baladi', local or homegrown.",
+   "sinonimosEs": [
+    "trivial",
+    "insignificante"
+   ]
   },
   {
    "idioma": "es",
@@ -2330,7 +2439,12 @@
     "jurídico"
    ],
    "nota": "'Prueba fehaciente' = prova cabal. Comum na linguagem jurídica.",
-   "notaEn": "'Prueba fehaciente' = conclusive proof. Legal and formal register, built from 'fe' (faith) and 'hacer' — something that makes you believe."
+   "notaEn": "'Prueba fehaciente' = conclusive proof. Legal and formal register, built from 'fe' (faith) and 'hacer' — something that makes you believe.",
+   "sinonimosEs": [
+    "fidedigno",
+    "fiable",
+    "comprobado"
+   ]
   },
   {
    "idioma": "es",
@@ -2373,7 +2487,12 @@
     "jurídico"
    ],
    "nota": "'Plazo perentorio' = prazo improrrogável.",
-   "notaEn": "'Plazo perentorio' = a deadline that will not be extended. Legal and formal, carrying both urgency and finality: once it passes, the right is gone."
+   "notaEn": "'Plazo perentorio' = a deadline that will not be extended. Legal and formal, carrying both urgency and finality: once it passes, the right is gone.",
+   "sinonimosEs": [
+    "urgente",
+    "apremiante",
+    "improrrogable"
+   ]
   },
   {
    "idioma": "es",
@@ -2420,7 +2539,11 @@
     "substantivo"
    ],
    "nota": "'Ni un atisbo de duda' = nem uma sombra de dúvida.",
-   "notaEn": "'Ni un atisbo de duda' = not a shadow of a doubt. An 'atisbo' is the first faint sign of something, from 'atisbar', to catch sight of."
+   "notaEn": "'Ni un atisbo de duda' = not a shadow of a doubt. An 'atisbo' is the first faint sign of something, from 'atisbar', to catch sight of.",
+   "sinonimosEs": [
+    "el indicio",
+    "el vislumbre"
+   ]
   },
   {
    "idioma": "es",
@@ -2464,7 +2587,11 @@
     "substantivo"
    ],
    "nota": "Vem de 'zozobrar' (naufragar): a angústia de quem está prestes a afundar.",
-   "notaEn": "From 'zozobrar', to capsize: 'la zozobra' is the anguish of someone about to go under. Heavier and more literary than plain 'angustia'."
+   "notaEn": "From 'zozobrar', to capsize: 'la zozobra' is the anguish of someone about to go under. Heavier and more literary than plain 'angustia'.",
+   "sinonimosEs": [
+    "la angustia",
+    "la aflicción"
+   ]
   },
   {
    "idioma": "es",
@@ -2548,7 +2675,12 @@
     "substantivo"
    ],
    "nota": "'En menoscabo de' = em detrimento de.",
-   "notaEn": "'En menoscabo de' = to the detriment of. It names damage that reduces something's worth or standing — a property's value, a person's reputation."
+   "notaEn": "'En menoscabo de' = to the detriment of. It names damage that reduces something's worth or standing — a property's value, a person's reputation.",
+   "sinonimosEs": [
+    "el perjuicio",
+    "el detrimento",
+    "el daño"
+   ]
   },
   {
    "idioma": "es",
@@ -2592,7 +2724,11 @@
     "verbo"
    ],
    "nota": "'Pergeñar un plan' = bolar um plano às pressas.",
-   "notaEn": "'Pergeñar un plan' = to throw a plan together. The word hints that it was done quickly and roughly, which is half its charm."
+   "notaEn": "'Pergeñar un plan' = to throw a plan together. The word hints that it was done quickly and roughly, which is half its charm.",
+   "sinonimosEs": [
+    "esbozar",
+    "bosquejar"
+   ]
   },
   {
    "idioma": "es",
@@ -2631,7 +2767,10 @@
     "substantivo"
    ],
    "nota": "'Hizo ademán de irse' = fez menção de ir embora.",
-   "notaEn": "'Hizo ademán de irse' = he made as if to leave. An 'ademán' is a movement of the body that signals intent, often one that stops short of the act."
+   "notaEn": "'Hizo ademán de irse' = he made as if to leave. An 'ademán' is a movement of the body that signals intent, often one that stops short of the act.",
+   "sinonimosEs": [
+    "el gesto"
+   ]
   },
   {
    "idioma": "es",
@@ -2672,7 +2811,10 @@
     "filosofia"
    ],
    "nota": "'Libre albedrío' = livre-arbítrio.",
-   "notaEn": "'Libre albedrío' = free will, the term used in theology and philosophy. On its own, 'a su albedrío' means as one pleases, at one's own discretion."
+   "notaEn": "'Libre albedrío' = free will, the term used in theology and philosophy. On its own, 'a su albedrío' means as one pleases, at one's own discretion.",
+   "sinonimosEs": [
+    "el arbitrio"
+   ]
   },
   {
    "idioma": "es",
@@ -2715,7 +2857,11 @@
     "substantivo"
    ],
    "nota": "Usado também para obras horríveis: 'un engendro de película'.",
-   "notaEn": "'Un engendro' is something misshapen — a freak, or by extension an awful piece of work: 'un engendro de película'. From 'engendrar', to beget."
+   "notaEn": "'Un engendro' is something misshapen — a freak, or by extension an awful piece of work: 'un engendro de película'. From 'engendrar', to beget.",
+   "sinonimosEs": [
+    "la aberración",
+    "la monstruosidad"
+   ]
   },
   {
    "idioma": "es",
@@ -2801,7 +2947,12 @@
     "Espanha"
    ],
    "nota": "'Me pilló mintiendo' = me flagrou mentindo. '¿Lo pillas?' = tá sacando?\n🇪🇸 pegar → 🇧🇷 colar, bater",
-   "notaEn": "'Me pilló mintiendo' = he caught me lying. Spanish slang, and it stretches: '¿lo pillas?' is do you get it, and 'me pilla lejos' is it's out of my way."
+   "notaEn": "'Me pilló mintiendo' = he caught me lying. Spanish slang, and it stretches: '¿lo pillas?' is do you get it, and 'me pilla lejos' is it's out of my way.",
+   "sinonimosEs": [
+    "coger",
+    "atrapar",
+    "agarrar"
+   ]
   },
   {
    "idioma": "es",
@@ -2845,7 +2996,11 @@
     "substantivo"
    ],
    "nota": "'Al atardecer' = ao entardecer.",
-   "notaEn": "'Al atardecer' = at dusk, as the light goes. Built like its neighbours: 'el amanecer' is daybreak, 'el anochecer' is nightfall."
+   "notaEn": "'Al atardecer' = at dusk, as the light goes. Built like its neighbours: 'el amanecer' is daybreak, 'el anochecer' is nightfall.",
+   "sinonimosEs": [
+    "la puesta de sol",
+    "el ocaso"
+   ]
   },
   {
    "idioma": "es",
@@ -2889,7 +3044,10 @@
     "adjetivo"
    ],
    "nota": "'Ufano de sus logros' = orgulhoso de suas conquistas.",
-   "notaEn": "'Ufano de sus logros' = proud of his achievements. The pride is visible and a little puffed up — pleased with oneself, and showing it."
+   "notaEn": "'Ufano de sus logros' = proud of his achievements. The pride is visible and a little puffed up — pleased with oneself, and showing it.",
+   "sinonimosEs": [
+    "orgulloso"
+   ]
   },
   {
    "idioma": "es",
@@ -3863,8 +4021,8 @@
    "tags": [
     "expressão"
    ],
-   "nota": "Cobrança de esforço e atenção.",
-   "notaEn": "'Ponte las pilas' = put your batteries in: get moving, pay attention. Said to somebody who is coasting."
+   "nota": "«Ponte» é «pon» + «te»: o imperativo de «ponerse», para tú. Para usted, «póngase las pilas». É cobrança de esforço e atenção.",
+   "notaEn": "'Ponte las pilas' = put your batteries in: get moving, pay attention. Said to somebody who is coasting. 'Ponte' is 'pon' + 'te', the tú imperative of 'ponerse'; to usted it is 'póngase las pilas'."
   },
   {
    "idioma": "es",
@@ -4303,8 +4461,11 @@
     "expressão",
     "Espanha"
    ],
-   "nota": "'Poner verde a alguien' = falar mal, criticar duramente.",
-   "notaEn": "'Poner verde a alguien' = to tear into someone, usually behind their back. Green here is the colour of the abuse, not of envy."
+   "nota": "'Poner verde a alguien' = falar mal, criticar duramente. «Le puso verde» é o leísmo da Espanha; «lo puso verde» é igualmente certo.",
+   "notaEn": "'Poner verde a alguien' = to tear into someone, usually behind their back. Green here is the colour of the abuse, not of envy.",
+   "aceitasEs": [
+    "Lo puso verde."
+   ]
   },
   {
    "idioma": "es",
@@ -4873,7 +5034,7 @@
     "gramática",
     "subjuntivo"
    ],
-   "nota": "'Ojalá' + imperfeito do subjuntivo é desejo pouco provável; com o presente ('venga'), desejo plausível. Em português o par não é simétrico: 'tomara' é forma fossilizada (antigo mais-que-perfeito de 'tomar') e praticamente só admite presente do subjuntivo — 'tomara que ele venha' é natural, 'tomara que ele viesse' soa estranho. O desejo improvável sai por outro caminho: 'quem me dera que ele viesse', 'se ao menos ele viesse', 'eu queria que ele viesse' ou 'oxalá ele viesse' (mais literário, e cognato direto de 'ojalá' — ambos vêm do árabe law šāʾ Allāh).",
+   "nota": "«Ojalá» + imperfeito do subjuntivo é o desejo que não se espera ver cumprido: «quem me dera que ele viesse». Com o presente, «ojalá venga», vira esperança de verdade — o nosso «tomara que ele venha».",
    "notaEn": "'Ojalá' + imperfect subjunctive is the wish you don't expect to be granted: if only. Swap in the present subjunctive — 'ojalá venga mañana' — and it becomes a real hope. The word is Arabic, from 'law šāʾ Allāh', if God wills."
   },
   {
@@ -4914,7 +5075,7 @@
     "gramática",
     "condicional"
    ],
-   "nota": "'De + infinitivo composto' equivale a uma condicional: 'si lo hubiera sabido'.",
+   "nota": "'De + infinitivo composto' equivale a uma condicional: 'si lo hubiera sabido'. O «lo» retoma o que se soube, e o padrão o pede: «de haberlo sabido».",
    "notaEn": "'De + perfect infinitive' is a compact conditional, equal to 'si lo hubiera sabido'. Formal and rather elegant; you will meet it in writing more than in speech."
   },
   {
@@ -6028,7 +6189,10 @@
     "casa"
    ],
    "nota": "Cuidado: 'suelo' também é a forma de 'soler' (costumar) na primeira pessoa.",
-   "notaEn": "'El suelo' is the floor indoors and the ground outside. It is also the first person of 'soler': 'suelo ir' = I usually go."
+   "notaEn": "'El suelo' is the floor indoors and the ground outside. It is also the first person of 'soler': 'suelo ir' = I usually go.",
+   "sinonimosEs": [
+    "el piso"
+   ]
   },
   {
    "idioma": "es",
@@ -6134,7 +6298,10 @@
     "animais"
    ],
    "nota": "O 'j' espanhol tem som de 'r' forte do português.",
-   "notaEn": "'El pájaro' is a small bird; 'el ave' is the wider word, taking in eagles and hens alike. The Spanish j rasps at the back of the throat."
+   "notaEn": "'El pájaro' is a small bird; 'el ave' is the wider word, taking in eagles and hens alike. The Spanish j rasps at the back of the throat.",
+   "sinonimosEs": [
+    "el ave"
+   ]
   },
   {
    "idioma": "es",
@@ -6249,7 +6416,12 @@
     "casa"
    ],
    "nota": "Vem de 'nieve' (neve). Também se diz 'frigorífico' na Espanha.",
-   "notaEn": "From 'la nieve', snow. In Spain you will also hear 'el frigorífico'; in Latin America, 'el refrigerador' or 'la heladera'."
+   "notaEn": "From 'la nieve', snow. In Spain you will also hear 'el frigorífico'; in Latin America, 'el refrigerador' or 'la heladera'.",
+   "sinonimosEs": [
+    "el frigorífico",
+    "el refrigerador",
+    "la heladera"
+   ]
   },
   {
    "idioma": "es",
@@ -6284,7 +6456,10 @@
     "casa"
    ],
    "nota": "Na América Latina também se diz 'la llave' ou 'el caño'.",
-   "notaEn": "'El grifo' is the tap — and also the griffin, the beast whose head was carved on old fountains. In Latin America the tap is 'la llave' or 'el caño'."
+   "notaEn": "'El grifo' is the tap — and also the griffin, the beast whose head was carved on old fountains. In Latin America the tap is 'la llave' or 'el caño'.",
+   "sinonimosEs": [
+    "la canilla"
+   ]
   },
   {
    "idioma": "es",
@@ -6364,7 +6539,10 @@
     "verbo"
    ],
    "nota": "Verbo sem equivalente direto: 'suelo ir' = costumo ir. Muito frequente.",
-   "notaEn": "Spanish packs 'usually' into a verb: 'suelo ir' = I usually go, 'solía ir' = I used to go. English has no equivalent verb, so it comes out as an adverb instead."
+   "notaEn": "Spanish packs 'usually' into a verb: 'suelo ir' = I usually go, 'solía ir' = I used to go. English has no equivalent verb, so it comes out as an adverb instead.",
+   "sinonimosEs": [
+    "acostumbrar"
+   ]
   },
   {
    "idioma": "es",
@@ -6450,7 +6628,10 @@
     "cidade"
    ],
    "nota": "De 'atascarse' (entupir, emperrar). Também: 'embotellamiento'.",
-   "notaEn": "From 'atascarse', to get stuck or clogged; it also names a blockage in a pipe. In Latin America you would say 'el embotellamiento' or 'el trancón'."
+   "notaEn": "From 'atascarse', to get stuck or clogged; it also names a blockage in a pipe. In Latin America you would say 'el embotellamiento' or 'el trancón'.",
+   "sinonimosEs": [
+    "el embotellamiento"
+   ]
   },
   {
    "idioma": "es",
@@ -6487,7 +6668,10 @@
     "trabalho"
    ],
    "nota": "'Estar en huelga' = estar em greve. Cuidado: 'folga' = 'descanso'.",
-   "notaEn": "'Estar en huelga' = to be on strike. It comes from 'holgar', to rest or be idle, which also gives 'holgazán', a layabout."
+   "notaEn": "'Estar en huelga' = to be on strike. It comes from 'holgar', to rest or be idle, which also gives 'holgazán', a layabout.",
+   "sinonimosEs": [
+    "el paro"
+   ]
   },
   {
    "idioma": "es",
@@ -6523,7 +6707,10 @@
     "substantivo"
    ],
    "nota": "'Retar a alguien' = desafiar alguém.",
-   "notaEn": "'Un reto' is a challenge, and 'retar a alguien' is to challenge them. In the Southern Cone 'retar' also means to tell someone off."
+   "notaEn": "'Un reto' is a challenge, and 'retar a alguien' is to challenge them. In the Southern Cone 'retar' also means to tell someone off.",
+   "sinonimosEs": [
+    "el desafío"
+   ]
   },
   {
    "idioma": "es",
@@ -6563,7 +6750,10 @@
     "verbo"
    ],
    "nota": "'¿Cuánto tardas?' = quanto tempo você demora?",
-   "notaEn": "'¿Cuánto tardas?' = how long will you be? It measures duration, not lateness — to arrive late is 'llegar tarde'."
+   "notaEn": "'¿Cuánto tardas?' = how long will you be? It measures duration, not lateness — to arrive late is 'llegar tarde'.",
+   "sinonimosEs": [
+    "demorar"
+   ]
   },
   {
    "idioma": "es",
@@ -6684,7 +6874,10 @@
     "substantivo"
    ],
    "nota": "'En pleno auge' = no auge.",
-   "notaEn": "'En pleno auge' = at its height. It also names an economic boom: 'el auge de los años veinte'."
+   "notaEn": "'En pleno auge' = at its height. It also names an economic boom: 'el auge de los años veinte'.",
+   "sinonimosEs": [
+    "el apogeo"
+   ]
   },
   {
    "idioma": "es",
@@ -6727,7 +6920,11 @@
     "substantivo"
    ],
    "nota": "'Brecha salarial' = diferença salarial.",
-   "notaEn": "'Brecha salarial' = the pay gap. Its first sense is a breach in a wall, and 'seguir en la brecha' means to still be in the thick of it."
+   "notaEn": "'Brecha salarial' = the pay gap. Its first sense is a breach in a wall, and 'seguir en la brecha' means to still be in the thick of it.",
+   "sinonimosEs": [
+    "la laguna",
+    "el vacío"
+   ]
   },
   {
    "idioma": "es",
@@ -6773,7 +6970,10 @@
     "verbo"
    ],
    "nota": "'Plantear una pregunta' = fazer uma pergunta. 'Plantearse' = considerar.",
-   "notaEn": "'Plantear una pregunta' = to raise a question; 'plantear un problema' is to set one out. Reflexive, 'plantearse' is to consider doing something."
+   "notaEn": "'Plantear una pregunta' = to raise a question; 'plantear un problema' is to set one out. Reflexive, 'plantearse' is to consider doing something.",
+   "sinonimosEs": [
+    "proponer"
+   ]
   },
   {
    "idioma": "es",
@@ -6816,7 +7016,11 @@
     "substantivo"
    ],
    "nota": "Tédio profundo, com um quê de repulsa. De 'hastiar'.",
-   "notaEn": "'El hastío' is boredom gone sour — tedium with a curl of disgust in it. From 'hastiar', to sicken. Heavier than plain 'aburrimiento'."
+   "notaEn": "'El hastío' is boredom gone sour — tedium with a curl of disgust in it. From 'hastiar', to sicken. Heavier than plain 'aburrimiento'.",
+   "sinonimosEs": [
+    "el tedio",
+    "el aburrimiento"
+   ]
   },
   {
    "idioma": "es",
@@ -6864,7 +7068,11 @@
     "adjetivo"
    ],
    "nota": "'Una idea descabellada' = uma ideia sem pé nem cabeça.",
-   "notaEn": "'Una idea descabellada' = a wild, half-baked idea. Literally hairless, as though the thing had lost its head."
+   "notaEn": "'Una idea descabellada' = a wild, half-baked idea. Literally hairless, as though the thing had lost its head.",
+   "sinonimosEs": [
+    "absurdo",
+    "disparatado"
+   ]
   },
   {
    "idioma": "es",
@@ -6903,7 +7111,11 @@
     "adjetivo"
    ],
    "nota": "'Una necesidad acuciante' = uma necessidade premente.",
-   "notaEn": "'Una necesidad acuciante' = a pressing need. From 'acuciar', to urge on — the word has a push behind it."
+   "notaEn": "'Una necesidad acuciante' = a pressing need. From 'acuciar', to urge on — the word has a push behind it.",
+   "sinonimosEs": [
+    "apremiante",
+    "urgente"
+   ]
   },
   {
    "idioma": "es",
@@ -6946,7 +7158,11 @@
     "expressão"
    ],
    "nota": "Literalmente 'rangendo os dentes'. Fazer algo sem querer.",
-   "notaEn": "Literally with grinding teeth: doing the thing while making plain you would rather not. 'Aceptó a regañadientes'."
+   "notaEn": "Literally with grinding teeth: doing the thing while making plain you would rather not. 'Aceptó a regañadientes'.",
+   "sinonimosEs": [
+    "a disgusto",
+    "de mala gana"
+   ]
   },
   {
    "idioma": "es",
@@ -6992,7 +7208,11 @@
     "adjetivo"
    ],
    "nota": "Esperteza com má intenção. Não confundir com 'teimoso' = 'tozudo'.",
-   "notaEn": "'Taimado' is cleverness with bad intent — cunning that is planning something. Plain stubbornness is 'tozudo'."
+   "notaEn": "'Taimado' is cleverness with bad intent — cunning that is planning something. Plain stubbornness is 'tozudo'.",
+   "sinonimosEs": [
+    "astuto",
+    "ladino"
+   ]
   },
   {
    "idioma": "es",
@@ -7082,7 +7302,11 @@
     "adjetivo"
    ],
    "nota": "'Un rostro adusto' = um rosto fechado, sem simpatia.",
-   "notaEn": "'Un rostro adusto' = a stern, closed face. It describes manner more than character: severe, unsmiling, hard to approach."
+   "notaEn": "'Un rostro adusto' = a stern, closed face. It describes manner more than character: severe, unsmiling, hard to approach.",
+   "sinonimosEs": [
+    "austero",
+    "severo"
+   ]
   },
   {
    "idioma": "es",
@@ -7123,7 +7347,11 @@
     "verbo"
    ],
    "nota": "Também no sentido figurado: 'soterrar un proyecto' = engavetar um projeto.",
-   "notaEn": "'Soterrar' is to put underground — cables, pipes, a body. Figuratively it buries a project or a piece of news: 'soterrar el informe'."
+   "notaEn": "'Soterrar' is to put underground — cables, pipes, a body. Figuratively it buries a project or a piece of news: 'soterrar el informe'.",
+   "sinonimosEs": [
+    "enterrar",
+    "sepultar"
+   ]
   },
   {
    "idioma": "es",
@@ -7402,7 +7630,7 @@
    "tags": [
     "cotidiano"
    ],
-   "nota": "Cuidado com 'acordar', que em espanhol é combinar, não despertar.",
+   "nota": "Cuidado com 'acordar', que em espanhol é combinar, não despertar. «De acuerdo» sozinho é o «combinado», «tá bom»; para dizer que concorda com alguém, «estoy de acuerdo».",
    "notaEn": "'Estar de acuerdo' = to agree. 'Un acuerdo' is an agreement and 'acordar' is to agree on something — not to wake up, which is 'despertarse'."
   },
   {
@@ -7666,7 +7894,7 @@
     "cotidiano",
     "Espanha"
    ],
-   "nota": "'Apetecer' = dar vontade. Na América Latina: '¿se te antoja?'.",
+   "nota": "«Apetecer» funciona como «gustar»: o verbo concorda com o que se deseja, e quem sente a vontade vem no pronome — «¿te apetece un café?», «¿te apetecen unas tapas?». Por isso não leva o -s do tú. Na América Latina: «¿se te antoja?».",
    "notaEn": "'Apetecer' works backwards, like 'gustar': the coffee appeals to you. Very Spanish — in Latin America you would hear '¿se te antoja un café?'"
   },
   {
@@ -8075,7 +8303,9 @@
     "em vista disso ele renunciou",
     "por causa disso ele renunciou",
     "sabendo disso renunciou",
-    "sabendo disso ele renunciou"
+    "sabendo disso ele renunciou",
+    "ciente disso renunciou",
+    "ciente disso ele renunciou"
    ],
    "aceitasEn": [
     "in view of that he resigned",
@@ -11037,7 +11267,10 @@
     "escola"
    ],
    "nota": "Par de 'borracho' (bêbado). Aqui o material é 'goma'; na América Latina, 'borrador'.",
-   "notaEn": "'Goma' is the rubber itself, so 'goma de borrar' is the thing you rub out with. In Latin America it is 'el borrador' — which in Spain means a rough draft."
+   "notaEn": "'Goma' is the rubber itself, so 'goma de borrar' is the thing you rub out with. In Latin America it is 'el borrador' — which in Spain means a rough draft.",
+   "sinonimosEs": [
+    "el borrador"
+   ]
   },
   {
    "idioma": "es",
@@ -11077,7 +11310,10 @@
     "escola"
    ],
    "nota": "'Cola' em espanhol é rabo ou fila. A cola de colar é 'pegamento'.",
-   "notaEn": "From 'pegar', to stick. Watch out for 'la cola', which in Spanish is a tail or a queue, never the stuff in the tube."
+   "notaEn": "From 'pegar', to stick. Watch out for 'la cola', which in Spanish is a tail or a queue, never the stuff in the tube.",
+   "sinonimosEs": [
+    "la cola"
+   ]
   },
   {
    "idioma": "es",
@@ -11116,7 +11352,10 @@
     "casa"
    ],
    "nota": "Par de 'vaso' (copo). O vaso de flores é 'jarrón' ou 'florero'.",
-   "notaEn": "'El jarrón' is the ornamental vase; 'el florero' is the one you actually put flowers in. Neither is 'el vaso', which you drink from."
+   "notaEn": "'El jarrón' is the ornamental vase; 'el florero' is the one you actually put flowers in. Neither is 'el vaso', which you drink from.",
+   "sinonimosEs": [
+    "el florero"
+   ]
   },
   {
    "idioma": "es",
@@ -11424,7 +11663,11 @@
     "falso-amigo"
    ],
    "nota": "Par de 'apellido' (sobrenome). O apelido é 'apodo' ou 'sobrenombre'.",
-   "notaEn": "'El apodo' is the nickname; 'el apellido' is the family name. Latin America also says 'el sobrenombre' for the nickname."
+   "notaEn": "'El apodo' is the nickname; 'el apellido' is the family name. Latin America also says 'el sobrenombre' for the nickname.",
+   "sinonimosEs": [
+    "el mote",
+    "el sobrenombre"
+   ]
   },
   {
    "idioma": "es",
@@ -11503,7 +11746,10 @@
     "falso-amigo"
    ],
    "nota": "Falso amigo perigoso: 'suceso' é acontecimento, às vezes ruim. Sucesso é 'éxito'.",
-   "notaEn": "'Un suceso' is an event, often an unpleasant one — the crime pages of a Spanish paper are 'la sección de sucesos'. Success is 'el éxito'."
+   "notaEn": "'Un suceso' is an event, often an unpleasant one — the crime pages of a Spanish paper are 'la sección de sucesos'. Success is 'el éxito'.",
+   "sinonimosEs": [
+    "el acontecimiento"
+   ]
   },
   {
    "idioma": "es",
@@ -11544,7 +11790,11 @@
     "falso-amigo"
    ],
    "nota": "'Llevarse un disgusto' = levar um desgosto. Não é 'nojo', que é 'asco'.",
-   "notaEn": "'Llevarse un disgusto' = to get bad news, to be upset. It is annoyance and distress, not revulsion — disgust in that sense is 'el asco'."
+   "notaEn": "'Llevarse un disgusto' = to get bad news, to be upset. It is annoyance and distress, not revulsion — disgust in that sense is 'el asco'.",
+   "sinonimosEs": [
+    "el enfado",
+    "el fastidio"
+   ]
   },
   {
    "idioma": "es",
@@ -11957,7 +12207,10 @@
     "Espanha"
    ],
    "nota": "Na Espanha é 'zumo'; na América Latina, 'jugo'.",
-   "notaEn": "In Spain, 'zumo de naranja'. Across Latin America it is 'el jugo' — ask for 'zumo' in Mexico and you may get a puzzled look."
+   "notaEn": "In Spain, 'zumo de naranja'. Across Latin America it is 'el jugo' — ask for 'zumo' in Mexico and you may get a puzzled look.",
+   "sinonimosEs": [
+    "el jugo"
+   ]
   },
   {
    "idioma": "es",
@@ -11990,7 +12243,10 @@
     "comida"
    ],
    "nota": "Na América Latina se diz 'durazno'.",
-   "notaEn": "'El melocotón' in Spain, 'el durazno' across most of Latin America. Both mean the same fruit; the word marks where you learned your Spanish."
+   "notaEn": "'El melocotón' in Spain, 'el durazno' across most of Latin America. Both mean the same fruit; the word marks where you learned your Spanish.",
+   "sinonimosEs": [
+    "el durazno"
+   ]
   },
   {
    "idioma": "es",
@@ -12024,7 +12280,10 @@
     "comida"
    ],
    "nota": "Vem do formato de pinha. 'Piña colada' é literalmente abacaxi coado.",
-   "notaEn": "Named for its resemblance to a pine cone, which is also 'una piña'. 'Piña colada' is literally strained pineapple."
+   "notaEn": "Named for its resemblance to a pine cone, which is also 'una piña'. 'Piña colada' is literally strained pineapple.",
+   "sinonimosEs": [
+    "el ananás"
+   ]
   },
   {
    "idioma": "es",
@@ -12090,7 +12349,10 @@
     "comida"
    ],
    "nota": "Na Argentina e no Uruguai se diz 'manteca'.",
-   "notaEn": "'La mantequilla' in Spain and most of Latin America; in Argentina and Uruguay it is 'la manteca', which elsewhere means lard."
+   "notaEn": "'La mantequilla' in Spain and most of Latin America; in Argentina and Uruguay it is 'la manteca', which elsewhere means lard.",
+   "sinonimosEs": [
+    "la manteca"
+   ]
   },
   {
    "idioma": "es",
@@ -12396,7 +12658,10 @@
     "roupa"
    ],
    "nota": "'Cinturón de seguridad' = cinto de segurança.",
-   "notaEn": "'Cinturón de seguridad' = seat belt. 'La cintura' is the waist it goes around, and 'apretarse el cinturón' tightens the belt in the money sense too."
+   "notaEn": "'Cinturón de seguridad' = seat belt. 'La cintura' is the waist it goes around, and 'apretarse el cinturón' tightens the belt in the money sense too.",
+   "sinonimosEs": [
+    "el cinto"
+   ]
   },
   {
    "idioma": "es",
@@ -12466,7 +12731,10 @@
     "roupa"
    ],
    "nota": "Meia-calça é 'medias' — justamente o falso amigo.",
-   "notaEn": "'Los calcetines' are socks. Watch out for 'las medias', which are stockings or tights — though in parts of Latin America they mean socks after all."
+   "notaEn": "'Los calcetines' are socks. Watch out for 'las medias', which are stockings or tights — though in parts of Latin America they mean socks after all.",
+   "sinonimosEs": [
+    "las medias"
+   ]
   },
   {
    "idioma": "es",
@@ -12504,7 +12772,11 @@
     "roupa"
    ],
    "nota": "Na América Latina se diz 'lentes' ou 'anteojos'.",
-   "notaEn": "'Las gafas' in Spain; 'los lentes' or 'los anteojos' across Latin America. Sunglasses are 'las gafas de sol'."
+   "notaEn": "'Las gafas' in Spain; 'los lentes' or 'los anteojos' across Latin America. Sunglasses are 'las gafas de sol'.",
+   "sinonimosEs": [
+    "los lentes",
+    "los anteojos"
+   ]
   },
   {
    "idioma": "es",
@@ -12611,7 +12883,10 @@
     "casa"
    ],
    "nota": "'Darse una ducha' = tomar banho.",
-   "notaEn": "'Darse una ducha' or plain 'ducharse' = to have a shower. The bath you lie in is 'la bañera'."
+   "notaEn": "'Darse una ducha' or plain 'ducharse' = to have a shower. The bath you lie in is 'la bañera'.",
+   "sinonimosEs": [
+    "la regadera"
+   ]
   },
   {
    "idioma": "es",
@@ -12790,7 +13065,10 @@
     "casa"
    ],
    "nota": "'Tener enchufe' também significa ter pistolão, ter QI.",
-   "notaEn": "'El enchufe' is the socket and 'enchufar' is to plug in. Figuratively, 'tener enchufe' means having connections in the right places."
+   "notaEn": "'El enchufe' is the socket and 'enchufar' is to plug in. Figuratively, 'tener enchufe' means having connections in the right places.",
+   "sinonimosEs": [
+    "la toma de corriente"
+   ]
   },
   {
    "idioma": "es",
@@ -12826,7 +13104,10 @@
     "casa"
    ],
    "nota": "Na Argentina, 'bombilla' é o canudo do chimarrão.",
-   "notaEn": "'La bombilla' is the light bulb in Spain; in Latin America you may hear 'el foco' or 'la bombita'. In Argentina a 'bombilla' is the metal straw for mate."
+   "notaEn": "'La bombilla' is the light bulb in Spain; in Latin America you may hear 'el foco' or 'la bombita'. In Argentina a 'bombilla' is the metal straw for mate.",
+   "sinonimosEs": [
+    "el foco"
+   ]
   },
   {
    "idioma": "es",
@@ -12865,7 +13146,10 @@
     "casa"
    ],
    "nota": "'Mando a distancia'. Também significa comando, chefia.",
-   "notaEn": "Short for 'mando a distancia'. On its own, 'el mando' is command or authority: 'estar al mando' is to be in charge."
+   "notaEn": "Short for 'mando a distancia'. On its own, 'el mando' is command or authority: 'estar al mando' is to be in charge.",
+   "sinonimosEs": [
+    "el control remoto"
+   ]
   },
   {
    "idioma": "es",
@@ -13037,7 +13321,10 @@
     "cidade"
    ],
    "nota": "De 'ascender'. Na Colômbia e no México se diz 'elevador'.",
-   "notaEn": "From 'ascender', to go up. Spain says 'el ascensor'; Mexico and Colombia say 'el elevador'."
+   "notaEn": "From 'ascender', to go up. Spain says 'el ascensor'; Mexico and Colombia say 'el elevador'.",
+   "sinonimosEs": [
+    "el elevador"
+   ]
   },
   {
    "idioma": "es",
@@ -13075,7 +13362,10 @@
     "cidade"
    ],
    "nota": "Na Argentina, 'vereda'. No México, 'banqueta'.",
-   "notaEn": "'La acera' in Spain, 'la vereda' in Argentina, 'la banqueta' in Mexico. Same strip of concrete, three different words."
+   "notaEn": "'La acera' in Spain, 'la vereda' in Argentina, 'la banqueta' in Mexico. Same strip of concrete, three different words.",
+   "sinonimosEs": [
+    "la vereda"
+   ]
   },
   {
    "idioma": "es",
@@ -13192,7 +13482,10 @@
     "viagem"
    ],
    "nota": "A plataforma da estação de trem ou metrô.",
-   "notaEn": "'El andén' is the platform at a railway or metro station: 'el tren sale del andén cuatro'. In Colombia it also means the pavement."
+   "notaEn": "'El andén' is the platform at a railway or metro station: 'el tren sale del andén cuatro'. In Colombia it also means the pavement.",
+   "sinonimosEs": [
+    "la plataforma"
+   ]
   },
   {
    "idioma": "es",
@@ -13230,7 +13523,10 @@
     "viagem"
    ],
    "nota": "'Hacer la maleta' = fazer as malas.\n🇪🇸 mala → 🇧🇷 má, ruim",
-   "notaEn": "'Hacer la maleta' = to pack. The small one is 'el maletín', a briefcase, and the car boot in Spain is 'el maletero'."
+   "notaEn": "'Hacer la maleta' = to pack. The small one is 'el maletín', a briefcase, and the car boot in Spain is 'el maletero'.",
+   "sinonimosEs": [
+    "la valija"
+   ]
   },
   {
    "idioma": "es",
@@ -13301,7 +13597,10 @@
     "profissões"
    ],
    "nota": "Na América Latina, 'plomero'. De 'fontana' (fonte).",
-   "notaEn": "From 'fontana', a spring or fountain. Spain says 'fontanero'; most of Latin America says 'plomero', after the lead in old pipes."
+   "notaEn": "From 'fontana', a spring or fountain. Spain says 'fontanero'; most of Latin America says 'plomero', after the lead in old pipes.",
+   "sinonimosEs": [
+    "el plomero"
+   ]
   },
   {
    "idioma": "es",
@@ -13413,7 +13712,10 @@
     "trabalho"
    ],
    "nota": "Também 'salario'. 'Sueldo mínimo' = salário mínimo.",
-   "notaEn": "'El sueldo' is the wage you draw each month; 'el salario' works too, and 'el sueldo mínimo' is the minimum wage."
+   "notaEn": "'El sueldo' is the wage you draw each month; 'el salario' works too, and 'el sueldo mínimo' is the minimum wage.",
+   "sinonimosEs": [
+    "el salario"
+   ]
   },
   {
    "idioma": "es",
@@ -13450,7 +13752,10 @@
     "trabalho"
    ],
    "nota": "'Jubilarse' = aposentar-se. Vem de júbilo, a alegria de parar.",
-   "notaEn": "'Jubilarse' = to retire. It shares a root with 'júbilo', joy — the language is optimistic about the moment you stop."
+   "notaEn": "'Jubilarse' = to retire. It shares a root with 'júbilo', joy — the language is optimistic about the moment you stop.",
+   "sinonimosEs": [
+    "el retiro"
+   ]
   },
   {
    "idioma": "es",
@@ -13489,7 +13794,10 @@
     "Espanha"
    ],
    "nota": "'Estar en el paro' = estar desempregado. Também significa paralisação.",
-   "notaEn": "'Estar en el paro' = to be out of work, in Spain. It also means a stoppage or a strike: 'un paro general'. Latin America says 'el desempleo'."
+   "notaEn": "'Estar en el paro' = to be out of work, in Spain. It also means a stoppage or a strike: 'un paro general'. Latin America says 'el desempleo'.",
+   "sinonimosEs": [
+    "el desempleo"
+   ]
   },
   {
    "idioma": "es",
@@ -13582,14 +13890,20 @@
    "aceitas": [
     "rascunho",
     "esboco",
-    "minuta"
+    "minuta",
+    "borracha",
+    "apagador"
    ],
    "aceitasEn": [
     "draft",
     "the draft",
     "rough draft",
     "the rough draft",
-    "first draft"
+    "first draft",
+    "eraser",
+    "the eraser",
+    "board eraser",
+    "rubber"
    ],
    "distratores": [
     "o bordado",
@@ -13607,7 +13921,7 @@
    "tags": [
     "escola"
    ],
-   "nota": "De 'borrar' (apagar). Na América Latina também é a borracha de apagar.",
+   "nota": "De «borrar» (apagar): o rascunho é o que ainda vai ser apagado. Na Espanha também é o apagador do quadro, e na América Latina, a borracha de apagar.",
    "notaEn": "From 'borrar', to rub out — a draft is what you will still be erasing. In Latin America the same word also names the rubber you erase with."
   },
   {
@@ -13802,7 +14116,12 @@
     "economia"
    ],
    "nota": "'Repunte económico' = retomada da economia. O oposto é 'caída'.",
-   "notaEn": "'Repunte económico' = economic upturn. It marks a rise after a fall; the opposite is 'la caída'."
+   "notaEn": "'Repunte económico' = economic upturn. It marks a rise after a fall; the opposite is 'la caída'.",
+   "sinonimosEs": [
+    "el alza",
+    "el aumento",
+    "la subida"
+   ]
   },
   {
    "idioma": "es",
@@ -13847,7 +14166,11 @@
     "economia"
    ],
    "nota": "Serve para prédio que cai e para bolsa que despenca.",
-   "notaEn": "'El desplome' works for a building coming down and for a market falling out of the sky: 'el desplome de la bolsa'."
+   "notaEn": "'El desplome' works for a building coming down and for a market falling out of the sky: 'el desplome de la bolsa'.",
+   "sinonimosEs": [
+    "el derrumbe",
+    "el colapso"
+   ]
   },
   {
    "idioma": "es",
@@ -13886,7 +14209,11 @@
     "política"
    ],
    "nota": "Cuidado com a grafia: injerencia com j, de 'injerir' (intrometer-se).",
-   "notaEn": "Spelled with a j, from 'injerirse', to meddle. 'Injerencia extranjera' = foreign interference. Do not confuse it with 'ingerir', to swallow."
+   "notaEn": "Spelled with a j, from 'injerirse', to meddle. 'Injerencia extranjera' = foreign interference. Do not confuse it with 'ingerir', to swallow.",
+   "sinonimosEs": [
+    "la intromisión",
+    "la interferencia"
+   ]
   },
   {
    "idioma": "es",
@@ -13963,7 +14290,11 @@
     "substantivo"
    ],
    "nota": "'Embustero' é o mentiroso contumaz.",
-   "notaEn": "'Un embuste' is a lie built to deceive, more elaborate than a plain 'mentira'. 'Un embustero' is the habitual liar who tells them."
+   "notaEn": "'Un embuste' is a lie built to deceive, more elaborate than a plain 'mentira'. 'Un embustero' is the habitual liar who tells them.",
+   "sinonimosEs": [
+    "la mentira",
+    "el engaño"
+   ]
   },
   {
    "idioma": "es",
@@ -14005,7 +14336,11 @@
     "substantivo"
    ],
    "nota": "'Con ahínco' = com afinco. O h é mudo: a-ÍN-co.",
-   "notaEn": "'Con ahínco' = with determination, doggedly. The h is silent, as always: a-ÍN-co, with the stress in the middle."
+   "notaEn": "'Con ahínco' = with determination, doggedly. The h is silent, as always: a-ÍN-co, with the stress in the middle.",
+   "sinonimosEs": [
+    "el empeño",
+    "el esmero"
+   ]
   },
   {
    "idioma": "es",
@@ -14048,7 +14383,10 @@
     "substantivo"
    ],
    "nota": "'Sin mesura' = sem moderação. Não é a mesura de reverência.",
-   "notaEn": "'Sin mesura' = without restraint. It names moderation and self-control, not the act of measuring, which is 'la medición'."
+   "notaEn": "'Sin mesura' = without restraint. It names moderation and self-control, not the act of measuring, which is 'la medición'.",
+   "sinonimosEs": [
+    "la moderación"
+   ]
   },
   {
    "idioma": "es",
@@ -14091,7 +14429,11 @@
     "jurídico"
    ],
    "nota": "'No es óbice para' = não impede que. Bem formal.",
-   "notaEn": "Almost always in one formula: 'no es óbice para', it is no bar to. Formal and legal, and rarely met anywhere else."
+   "notaEn": "Almost always in one formula: 'no es óbice para', it is no bar to. Formal and legal, and rarely met anywhere else.",
+   "sinonimosEs": [
+    "el obstáculo",
+    "el impedimento"
+   ]
   },
   {
    "idioma": "es",
@@ -14133,7 +14475,12 @@
     "substantivo"
    ],
    "nota": "'Tenerle inquina a alguien' = ter ojeriza de alguém.",
-   "notaEn": "'Tenerle inquina a alguien' = to have it in for somebody. It is a settled, personal dislike, not a passing irritation."
+   "notaEn": "'Tenerle inquina a alguien' = to have it in for somebody. It is a settled, personal dislike, not a passing irritation.",
+   "sinonimosEs": [
+    "la antipatía",
+    "la aversión",
+    "la ojeriza"
+   ]
   },
   {
    "idioma": "es",
@@ -14175,7 +14522,10 @@
     "substantivo"
    ],
    "nota": "Zombaria cruel, feita em público.",
-   "notaEn": "'El escarnio' is cruel mockery made in public, meant to humiliate. Heavier than 'la burla', which can still be affectionate."
+   "notaEn": "'El escarnio' is cruel mockery made in public, meant to humiliate. Heavier than 'la burla', which can still be affectionate.",
+   "sinonimosEs": [
+    "la burla"
+   ]
   },
   {
    "idioma": "es",
@@ -14219,7 +14569,11 @@
     "substantivo"
    ],
    "nota": "'Sosegado' é o sossegado. Note o -ie- que o português não tem.",
-   "notaEn": "'El sosiego' is settled quiet, of a place or of a mind. 'Sosegado' is the person who has it, and 'sosegar' is to calm somebody down."
+   "notaEn": "'El sosiego' is settled quiet, of a place or of a mind. 'Sosegado' is the person who has it, and 'sosegar' is to calm somebody down.",
+   "sinonimosEs": [
+    "la tranquilidad",
+    "la calma"
+   ]
   },
   {
    "idioma": "es",
@@ -14262,7 +14616,11 @@
     "substantivo"
    ],
    "nota": "De 'arrojarse' (lançar-se). 'Arroyo' com y é riacho.",
-   "notaEn": "From 'arrojarse', to throw oneself in. It is courage of the headlong kind. Spelled with a y, 'el arroyo' is a stream — quite another thing."
+   "notaEn": "From 'arrojarse', to throw oneself in. It is courage of the headlong kind. Spelled with a y, 'el arroyo' is a stream — quite another thing.",
+   "sinonimosEs": [
+    "la osadía",
+    "la audacia"
+   ]
   },
   {
    "idioma": "es",
@@ -14304,7 +14662,11 @@
     "substantivo"
    ],
    "nota": "Tristeza pesada e duradoura. Mesmo sufixo de 'muchedumbre' (multidão).",
-   "notaEn": "Grief with weight to it, from 'pesado', heavy — sadness that settles and stays. Same -umbre ending as 'muchedumbre', a crowd."
+   "notaEn": "Grief with weight to it, from 'pesado', heavy — sadness that settles and stays. Same -umbre ending as 'muchedumbre', a crowd.",
+   "sinonimosEs": [
+    "el pesar",
+    "la tristeza"
+   ]
   },
   {
    "idioma": "es",
@@ -14388,7 +14750,11 @@
     "substantivo"
    ],
    "nota": "Argumento esperto mas falso, feito para enganar.",
-   "notaEn": "'Una argucia' is a clever argument that is false on purpose — reasoning bent to deceive. Related to 'agudo', sharp."
+   "notaEn": "'Una argucia' is a clever argument that is false on purpose — reasoning bent to deceive. Related to 'agudo', sharp.",
+   "sinonimosEs": [
+    "el sofisma",
+    "la artimaña"
+   ]
   },
   {
    "idioma": "es",
@@ -14432,7 +14798,10 @@
     "adjetivo"
    ],
    "nota": "'Remilgos' são os melindres, o fricote.",
-   "notaEn": "'Remilgado' is fussy and easily put out, with a show of delicacy about it. 'Los remilgos' are the airs themselves: 'déjate de remilgos'."
+   "notaEn": "'Remilgado' is fussy and easily put out, with a show of delicacy about it. 'Los remilgos' are the airs themselves: 'déjate de remilgos'.",
+   "sinonimosEs": [
+    "melindroso"
+   ]
   },
   {
    "idioma": "es",
@@ -14476,7 +14845,11 @@
     "adjetivo"
    ],
    "nota": "'Una respuesta escueta' = uma resposta seca, sem rodeios.",
-   "notaEn": "'Una respuesta escueta' = a bare, curt answer. It means concise, sometimes to the point of coldness — no ornament, no padding."
+   "notaEn": "'Una respuesta escueta' = a bare, curt answer. It means concise, sometimes to the point of coldness — no ornament, no padding.",
+   "sinonimosEs": [
+    "sucinto",
+    "conciso"
+   ]
   },
   {
    "idioma": "es",
@@ -14520,7 +14893,11 @@
     "adjetivo"
    ],
    "nota": "'Un día aciago' = um dia funesto, de má sorte.",
-   "notaEn": "'Un día aciago' = a fateful, unlucky day. Literary, and always about misfortune: the word carries the omen along with it."
+   "notaEn": "'Un día aciago' = a fateful, unlucky day. Literary, and always about misfortune: the word carries the omen along with it.",
+   "sinonimosEs": [
+    "funesto",
+    "nefasto"
+   ]
   },
   {
    "idioma": "es",
@@ -14565,7 +14942,11 @@
     "adjetivo"
    ],
    "nota": "Quem foge do convívio. Não confunda com 'huracán'.",
-   "notaEn": "'Huraño' describes the person who avoids company — shyness shading into surliness. The h is silent: u-RA-ño."
+   "notaEn": "'Huraño' describes the person who avoids company — shyness shading into surliness. The h is silent: u-RA-ño.",
+   "sinonimosEs": [
+    "arisco",
+    "insociable"
+   ]
   },
   {
    "idioma": "es",
@@ -14607,7 +14988,10 @@
     "verbo"
    ],
    "nota": "'Acaparar la atención' = monopolizar a atenção.",
-   "notaEn": "'Acaparar' is to corner a supply, or to take up more than your share: 'acaparar la atención' is to hog the limelight."
+   "notaEn": "'Acaparar' is to corner a supply, or to take up more than your share: 'acaparar la atención' is to hog the limelight.",
+   "sinonimosEs": [
+    "monopolizar"
+   ]
   },
   {
    "idioma": "es",
@@ -14647,7 +15031,10 @@
     "verbo"
    ],
    "nota": "'Esmerarse en algo' = caprichar em algo. 'Esmero' é o capricho.",
-   "notaEn": "'Esmerarse en algo' = to take real care over something, to do it properly. The noun 'el esmero' is that care itself."
+   "notaEn": "'Esmerarse en algo' = to take real care over something, to do it properly. The noun 'el esmero' is that care itself.",
+   "sinonimosEs": [
+    "esforzarse"
+   ]
   },
   {
    "idioma": "es",
@@ -14689,7 +15076,12 @@
     "verbo"
    ],
    "nota": "'Rehuir la mirada' = desviar o olhar. O h é mudo: re-u-ÍR.",
-   "notaEn": "'Rehuir la mirada' = to avoid someone's eye. The h is silent and the word runs to three syllables: re-u-ÍR."
+   "notaEn": "'Rehuir la mirada' = to avoid someone's eye. The h is silent and the word runs to three syllables: re-u-ÍR.",
+   "sinonimosEs": [
+    "esquivar",
+    "eludir",
+    "evitar"
+   ]
   },
   {
    "idioma": "es",
@@ -14815,7 +15207,11 @@
     "verbo"
    ],
    "nota": "'Zanjar una discusión' = encerrar de vez uma discussão. De 'zanja' (vala).",
-   "notaEn": "'Zanjar una discusión' = to settle an argument for good. From 'una zanja', a ditch — you dig the thing to a close."
+   "notaEn": "'Zanjar una discusión' = to settle an argument for good. From 'una zanja', a ditch — you dig the thing to a close.",
+   "sinonimosEs": [
+    "resolver",
+    "solucionar"
+   ]
   },
   {
    "idioma": "es",
@@ -15367,7 +15763,10 @@
     "verbo"
    ],
    "nota": "'Asistir a clase' = ir à aula. Não é ver: assistir a um filme é 'ver una película'. Também não é participar: quem asiste está presente, e pode ficar calado a reunião inteira. E 'asistir' ainda é socorrer, como em 'asistir a un herido'.",
-   "notaEn": "'Asistir a clase' = to attend class. It looks like 'assist' and is not — helping someone is 'ayudar', though 'asistir a un herido' does mean to give aid."
+   "notaEn": "'Asistir a clase' = to attend class. It looks like 'assist' and is not — helping someone is 'ayudar', though 'asistir a un herido' does mean to give aid.",
+   "sinonimosEs": [
+    "comparecer"
+   ]
   },
   {
    "idioma": "es",
@@ -15406,7 +15805,10 @@
     "verbo"
    ],
    "nota": "'No me contestó' = não me respondeu. Contestar no sentido de discordar é 'impugnar' ou 'rebatir'. O substantivo é 'la contestación', a resposta.",
-   "notaEn": "'No me contestó' = he didn't answer me. Nothing to do with contesting something, which is 'impugnar'. The noun is 'la contestación', the reply."
+   "notaEn": "'No me contestó' = he didn't answer me. Nothing to do with contesting something, which is 'impugnar'. The noun is 'la contestación', the reply.",
+   "sinonimosEs": [
+    "responder"
+   ]
   },
   {
    "idioma": "es",
@@ -15448,7 +15850,10 @@
     "trabalho"
    ],
    "nota": "'Cobro el día 30' = recebo no dia 30. É o oposto do português: quem 'cobra' em espanhol é quem recebe. Cobrar de alguém é 'cobrar a alguien' — a preposição decide.",
-   "notaEn": "'Cobro el día 30' = I get paid on the 30th. The same verb also means to charge someone: 'me cobraron veinte euros'. Which side you are on depends on the preposition."
+   "notaEn": "'Cobro el día 30' = I get paid on the 30th. The same verb also means to charge someone: 'me cobraron veinte euros'. Which side you are on depends on the preposition.",
+   "sinonimosEs": [
+    "recibir"
+   ]
   },
   {
    "idioma": "es",
@@ -15489,7 +15894,10 @@
     "corpo"
    ],
    "nota": "'El corazón le latía muy rápido' = o coração dele batia muito rápido. O cachorro que late 'ladra'. O substantivo é 'el latido', a batida.",
-   "notaEn": "'El corazón le latía muy rápido' = his heart was beating fast. A dog does not do this in Spanish — barking is 'ladrar'. The noun is 'el latido', a heartbeat."
+   "notaEn": "'El corazón le latía muy rápido' = his heart was beating fast. A dog does not do this in Spanish — barking is 'ladrar'. The noun is 'el latido', a heartbeat.",
+   "sinonimosEs": [
+    "palpitar"
+   ]
   },
   {
    "idioma": "es",
@@ -15531,7 +15939,10 @@
     "verbo"
    ],
    "nota": "'¿Qué pretendes con eso?' = o que você quer com isso? Costuma vir com um quê de desconfiança, como quem pergunta qual é a sua.",
-   "notaEn": "'¿Qué pretendes con eso?' = what are you trying to achieve? It looks like 'pretend' and is not — faking is 'fingir'. It often carries a note of suspicion."
+   "notaEn": "'¿Qué pretendes con eso?' = what are you trying to achieve? It looks like 'pretend' and is not — faking is 'fingir'. It often carries a note of suspicion.",
+   "sinonimosEs": [
+    "intentar"
+   ]
   },
   {
    "idioma": "es",
@@ -15573,7 +15984,10 @@
     "escola"
    ],
    "nota": "'Borra eso' = apaga isso. Borrar no sentido de manchar é 'emborronar' ou 'manchar'. Daí vêm 'la goma de borrar' e 'el borrador'.\n🇪🇸 apagar → 🇧🇷 desligar",
-   "notaEn": "'Borra eso' = rub that out. It gives us 'la goma de borrar', the eraser, and 'el borrador', a rough draft — the thing you will still be erasing."
+   "notaEn": "'Borra eso' = rub that out. It gives us 'la goma de borrar', the eraser, and 'el borrador', a rough draft — the thing you will still be erasing.",
+   "sinonimosEs": [
+    "eliminar"
+   ]
   },
   {
    "idioma": "es",
@@ -15613,7 +16027,11 @@
     "verbo"
    ],
    "nota": "'¡Fíjate!' = repara só! É dos verbos mais usados na conversa espanhola, sempre pronominal e com 'en': 'me fijé en su cara'.\n🇪🇸 reparar → 🇧🇷 consertar",
-   "notaEn": "'¡Fíjate!' = just look at that! One of the most used verbs in Spanish conversation, always reflexive and with 'en': 'me fijé en su cara'."
+   "notaEn": "'¡Fíjate!' = just look at that! One of the most used verbs in Spanish conversation, always reflexive and with 'en': 'me fijé en su cara'.",
+   "sinonimosEs": [
+    "notar",
+    "darse cuenta"
+   ]
   },
   {
    "idioma": "es",
@@ -15730,7 +16148,11 @@
     "comida"
    ],
    "nota": "'Un pastel de cumpleaños' = um bolo de aniversário. Na Espanha o bolo grande costuma ser 'la tarta'; 'pastel' vale mais para o individual.",
-   "notaEn": "'Un pastel de cumpleaños' = a birthday cake. In Spain the big one is usually 'la tarta', while 'pastel' leans towards an individual portion."
+   "notaEn": "'Un pastel de cumpleaños' = a birthday cake. In Spain the big one is usually 'la tarta', while 'pastel' leans towards an individual portion.",
+   "sinonimosEs": [
+    "la tarta",
+    "la torta"
+   ]
   },
   {
    "idioma": "es",
@@ -15845,7 +16267,11 @@
     "casa"
    ],
    "nota": "Par do anterior, e o mais escorregadio dos dois: 'el desván' é em cima, debaixo do telhado. Na América Latina se diz mais 'el ático' ou 'la buhardilla'.",
-   "notaEn": "The other half of the pair: 'el desván' is up under the roof. Across Latin America you will hear 'el ático' or 'la buhardilla' instead."
+   "notaEn": "The other half of the pair: 'el desván' is up under the roof. Across Latin America you will hear 'el ático' or 'la buhardilla' instead.",
+   "sinonimosEs": [
+    "el ático",
+    "la buhardilla"
+   ]
   },
   {
    "idioma": "es",
@@ -16380,7 +16806,12 @@
     "corpo"
    ],
    "nota": "De 'morado', roxo. Na Espanha se diz mais 'el cardenal' ou 'el moratón'; na América Latina, 'el moretón'.",
-   "notaEn": "From 'morado', purple. In Spain you will hear 'el cardenal' or 'el moratón'; across Latin America, 'el moretón'."
+   "notaEn": "From 'morado', purple. In Spain you will hear 'el cardenal' or 'el moratón'; across Latin America, 'el moretón'.",
+   "sinonimosEs": [
+    "el cardenal",
+    "el hematoma",
+    "el moratón"
+   ]
   },
   {
    "idioma": "es",
@@ -16421,7 +16852,10 @@
     "saúde"
    ],
    "nota": "Diminutivo de 'tira'. É palavra de Espanha; na América Latina se diz 'la curita', que vem da marca Curitas.",
-   "notaEn": "A diminutive of 'tira', a strip. Very much a Spain word — across Latin America it is 'la curita', after the brand."
+   "notaEn": "A diminutive of 'tira', a strip. Very much a Spain word — across Latin America it is 'la curita', after the brand.",
+   "sinonimosEs": [
+    "la curita"
+   ]
   },
   {
    "idioma": "es",
@@ -16461,7 +16895,10 @@
     "saúde"
    ],
    "nota": "Sempre no plural: 'lo llevaron a urgencias'. O hospital inteiro é 'el hospital'; o postinho de bairro, 'el ambulatorio' ou 'el centro de salud'.",
-   "notaEn": "Always plural: 'lo llevaron a urgencias'. The neighbourhood clinic is 'el ambulatorio' or 'el centro de salud'."
+   "notaEn": "Always plural: 'lo llevaron a urgencias'. The neighbourhood clinic is 'el ambulatorio' or 'el centro de salud'.",
+   "sinonimosEs": [
+    "emergencias"
+   ]
   },
   {
    "idioma": "es",
@@ -16726,7 +17163,11 @@
     "viagem"
    ],
    "nota": "Palavra de Espanha. Na América Latina se diz 'el carro' ou 'el auto'; 'coche' por lá soa a carruagem ou a carrinho de bebê.",
-   "notaEn": "The Spain word. Across Latin America it is 'el carro' or 'el auto', and 'coche' there suggests a carriage or a pram."
+   "notaEn": "The Spain word. Across Latin America it is 'el carro' or 'el auto', and 'coche' there suggests a carriage or a pram.",
+   "sinonimosEs": [
+    "el carro",
+    "el auto"
+   ]
   },
   {
    "idioma": "es",
@@ -16766,7 +17207,11 @@
     "viagem"
    ],
    "nota": "'El carné' sozinho serve para qualquer carteirinha. Na América Latina se diz 'la licencia de conducir' ou 'el brevete'.",
-   "notaEn": "'El carné' on its own covers any membership card. Latin America says 'la licencia de conducir', or 'el brevete' in Peru."
+   "notaEn": "'El carné' on its own covers any membership card. Latin America says 'la licencia de conducir', or 'el brevete' in Peru.",
+   "sinonimosEs": [
+    "la licencia de conducir",
+    "el permiso de conducir"
+   ]
   },
   {
    "idioma": "es",
@@ -16804,7 +17249,10 @@
     "escola"
    ],
    "nota": "Os dois sentidos estão certos: a placa do carro e a matrícula na escola. O card cobra a placa porque é o sentido que o português não tem — a matrícula você já sabe.",
-   "notaEn": "Both senses are correct: the plate on a car and enrolment at a school. The card drills the plate, which is the one you are less likely to guess."
+   "notaEn": "Both senses are correct: the plate on a car and enrolment at a school. The card drills the plate, which is the one you are less likely to guess.",
+   "sinonimosEs": [
+    "la placa"
+   ]
   },
   {
    "idioma": "es",
@@ -16843,7 +17291,11 @@
     "cidade"
    ],
    "nota": "De 'la maleta', a mala. Também é a pessoa que carrega malas no hotel. Na América Latina o do carro é 'el baúl' ou 'la cajuela'.",
-   "notaEn": "From 'la maleta', a suitcase. It also names the porter who carries them. In Latin America the car's is 'el baúl' or 'la cajuela'."
+   "notaEn": "From 'la maleta', a suitcase. It also names the porter who carries them. In Latin America the car's is 'el baúl' or 'la cajuela'.",
+   "sinonimosEs": [
+    "el baúl",
+    "la cajuela"
+   ]
   },
   {
    "idioma": "es",
@@ -17000,7 +17452,10 @@
     "cidade"
    ],
    "nota": "Sempre no plural quando é a época: 'las rebajas de enero'. De 'rebajar', baixar o preço. Um desconto avulso é 'el descuento'.",
-   "notaEn": "Plural when it means the season: 'las rebajas de enero'. From 'rebajar', to lower a price. A single discount is 'el descuento'."
+   "notaEn": "Plural when it means the season: 'las rebajas de enero'. From 'rebajar', to lower a price. A single discount is 'el descuento'.",
+   "sinonimosEs": [
+    "la liquidación"
+   ]
   },
   {
    "idioma": "es",
@@ -18252,8 +18707,11 @@
     "falso-amigo",
     "cotidiano"
    ],
-   "nota": "Na Espanha a gorjeta é opcional e modesta: costuma ser o troco arredondado, e não uma porcentagem da conta.\n🇪🇸 la propina → 🇧🇷 a gorjeta\n🇪🇸 el soborno → 🇧🇷 a propina, o suborno",
-   "notaEn": "In Spain the tip is optional and small — usually rounding the change up rather than a percentage of the bill."
+   "nota": "«Deja» é o imperativo de tú; para usted, «deje». O «deixe» do português serve aos dois, e o espanhol separa. Na Espanha a gorjeta é opcional e modesta: costuma ser o troco arredondado, e não uma porcentagem da conta.\n🇪🇸 la propina → 🇧🇷 a gorjeta\n🇪🇸 el soborno → 🇧🇷 a propina, o suborno",
+   "notaEn": "'Deja' is the tú imperative; to usted it is 'deje'. In Spain the tip is optional and small — usually rounding the change up rather than a percentage of the bill.",
+   "aceitasEs": [
+    "Deje la propina en la mesa."
+   ]
   },
   {
    "idioma": "es",
@@ -20256,13 +20714,15 @@
    "tipo": "frase",
    "requer": "p040",
    "es": "La sopa está sosa, le falta sal.",
-   "pt": "A sopa está sem sal, falta sal.",
+   "pt": "A sopa está insossa, falta sal.",
    "en": "The soup is bland, it needs salt.",
    "aceitas": [
+    "a sopa esta insossa falta sal",
     "a sopa esta sem sal falta sal",
     "a sopa esta sem gosto falta sal",
-    "a sopa esta insossa falta sal",
+    "a sopa esta insossa precisa de sal",
     "a sopa esta sem sal precisa de sal",
+    "a sopa esta insossa esta faltando sal",
     "a sopa esta sem graca falta sal"
    ],
    "aceitasEn": [
@@ -20286,7 +20746,7 @@
    "tags": [
     "adjetivo"
    ],
-   "nota": "«Soso» concorda: «la sopa sosa», «el chico soso». Na comida é sem sal; na pessoa, sem graça.",
+   "nota": "«Soso» é o insosso sem o «in-», e concorda: «la sopa sosa», «el chico soso». Na comida é sem sal; na pessoa, sem graça.",
    "notaEn": "'Soso' agrees with its noun — 'la sopa sosa'. Food that is 'soso' lacks salt; a person who is 'soso' lacks spark."
   },
   {
@@ -25196,7 +25656,10 @@
     "a economia caiu num marasmo",
     "a economia caiu no marasmo",
     "a economia afundou no marasmo",
-    "a economia afundou num marasmo"
+    "a economia afundou num marasmo",
+    "a economia esta mergulhada num marasmo",
+    "a economia esta afundada num marasmo",
+    "a economia esta atolada num marasmo"
    ],
    "aceitasEn": [
     "the economy is mired in stagnation",
@@ -25606,7 +26069,9 @@
     "deram o assunto por encerrado com um acordo",
     "liquidaram o assunto com um acordo",
     "puseram fim ao assunto com um acordo",
-    "encerraram a questao com um acordo"
+    "encerraram a questao com um acordo",
+    "resolveram a questao com um acordo",
+    "liquidaram a questao com um acordo"
    ],
    "aceitasEn": [
     "they settled the matter with an agreement",
@@ -30342,7 +30807,10 @@
     "adjetivo"
    ],
    "nota": "«Rojo» é vermelho; o roxo é «morado». É das trocas mais comuns de quem começa.\n🇪🇸 rojo → 🇧🇷 vermelho\n🇪🇸 morado → 🇧🇷 roxo",
-   "notaEn": "'Rojo' is red. Purple is 'morado' — easy to mix up because 'rojo' sounds darker than it is."
+   "notaEn": "'Rojo' is red. Purple is 'morado' — easy to mix up because 'rojo' sounds darker than it is.",
+   "sinonimosEs": [
+    "colorado"
+   ]
   },
   {
    "idioma": "es",
@@ -30456,7 +30924,11 @@
     "casa"
    ],
    "nota": "«Acostarse» é deitar para dormir. Acostumar-se é «acostumbrarse».\n🇪🇸 acostarse → 🇧🇷 deitar-se\n🇪🇸 acostumbrarse → 🇧🇷 acostumar-se",
-   "notaEn": "'Acostarse' is to go to bed or lie down. Getting used to something is 'acostumbrarse'."
+   "notaEn": "'Acostarse' is to go to bed or lie down. Getting used to something is 'acostumbrarse'.",
+   "sinonimosEs": [
+    "tumbarse",
+    "echarse"
+   ]
   },
   {
    "idioma": "es",
@@ -30494,7 +30966,10 @@
     "verbo"
    ],
    "nota": "Na América Latina «prender» é acender o fogo ou ligar a luz; na Espanha se diz mais «encender». Prender alguém é «detener».\n🇪🇸 prender → 🇧🇷 acender\n🇪🇸 detener → 🇧🇷 prender",
-   "notaEn": "In Latin America 'prender' is to light a fire or switch something on; Spain prefers 'encender'. To arrest is 'detener'."
+   "notaEn": "In Latin America 'prender' is to light a fire or switch something on; Spain prefers 'encender'. To arrest is 'detener'.",
+   "sinonimosEs": [
+    "encender"
+   ]
   },
   {
    "idioma": "es",
@@ -30612,7 +31087,11 @@
     "Espanha"
    ],
    "nota": "É a tampa da panela e o petisco do bar espanhol. O tapa na cara é «la bofetada».\n🇪🇸 la tapa → 🇧🇷 a tampa, o petisco\n🇪🇸 la bofetada → 🇧🇷 o tapa",
-   "notaEn": "Both the lid of a pot and the small dish served in Spanish bars. A slap in the face is 'la bofetada'."
+   "notaEn": "Both the lid of a pot and the small dish served in Spanish bars. A slap in the face is 'la bofetada'.",
+   "sinonimosEs": [
+    "el aperitivo",
+    "la tapadera"
+   ]
   },
   {
    "idioma": "es",
@@ -30652,7 +31131,10 @@
     "comida"
    ],
    "nota": "No restaurante, «la carta» é o cardápio. É também a carta de correio e a carta do baralho. O cartão é «la tarjeta».\n🇪🇸 la carta → 🇧🇷 o cardápio, a carta\n🇪🇸 la tarjeta → 🇧🇷 o cartão",
-   "notaEn": "In a restaurant 'la carta' is the menu; it is also a letter and a playing card. A plastic card is 'la tarjeta'."
+   "notaEn": "In a restaurant 'la carta' is the menu; it is also a letter and a playing card. A plastic card is 'la tarjeta'.",
+   "sinonimosEs": [
+    "el menú"
+   ]
   },
   {
    "idioma": "es",
@@ -30727,7 +31209,10 @@
     "Espanha"
    ],
    "nota": "Na Espanha, «pipas» são as sementes de girassol que se comem descascando com os dentes. A pipa de soltar é «la cometa».\n🇪🇸 las pipas → 🇧🇷 as sementes de girassol\n🇪🇸 la cometa → 🇧🇷 a pipa",
-   "notaEn": "In Spain 'pipas' are sunflower seeds you crack open with your teeth. A kite is 'la cometa'."
+   "notaEn": "In Spain 'pipas' are sunflower seeds you crack open with your teeth. A kite is 'la cometa'.",
+   "sinonimosEs": [
+    "las semillas de girasol"
+   ]
   },
   {
    "idioma": "es",
@@ -30764,7 +31249,10 @@
     "falso-amigo"
    ],
    "nota": "«Apenas» é mal, quase nada. O «apenas» português, de somente, é «solo».\n🇪🇸 apenas → 🇧🇷 mal, quase não\n🇪🇸 solo → 🇧🇷 apenas, só",
-   "notaEn": "'Apenas' means hardly or barely. 'Only' is 'solo' (or 'solamente')."
+   "notaEn": "'Apenas' means hardly or barely. 'Only' is 'solo' (or 'solamente').",
+   "sinonimosEs": [
+    "casi no"
+   ]
   },
   {
    "idioma": "es",
@@ -30802,7 +31290,11 @@
     "falso-amigo"
    ],
    "nota": "«Pronto» é logo, em breve, e também cedo. Pronto de preparado é «listo».\n🇪🇸 pronto → 🇧🇷 logo, cedo\n🇪🇸 listo → 🇧🇷 pronto",
-   "notaEn": "'Pronto' means soon, and sometimes early. Ready is 'listo'. 'Hasta pronto' is see you soon."
+   "notaEn": "'Pronto' means soon, and sometimes early. Ready is 'listo'. 'Hasta pronto' is see you soon.",
+   "sinonimosEs": [
+    "temprano",
+    "enseguida"
+   ]
   },
   {
    "idioma": "es",
@@ -30838,7 +31330,10 @@
     "corpo"
    ],
    "nota": "«Pelo» é o cabelo da cabeça, e também o pelo do bicho. O pelo fininho do corpo é «el vello».\n🇪🇸 el pelo → 🇧🇷 o cabelo\n🇪🇸 el vello → 🇧🇷 o pelo do corpo",
-   "notaEn": "'Pelo' is the hair on your head, and also an animal's fur. Fine body hair is 'el vello'."
+   "notaEn": "'Pelo' is the hair on your head, and also an animal's fur. Fine body hair is 'el vello'.",
+   "sinonimosEs": [
+    "el cabello"
+   ]
   },
   {
    "idioma": "es",
@@ -30913,7 +31408,11 @@
     "Espanha"
    ],
    "nota": "«Ordenador» é o computador na Espanha; na América Latina, «la computadora». Vem do francês «ordinateur».",
-   "notaEn": "'Ordenador' is Spain's word for computer; Latin America says 'la computadora'. It comes from French 'ordinateur'."
+   "notaEn": "'Ordenador' is Spain's word for computer; Latin America says 'la computadora'. It comes from French 'ordinateur'.",
+   "sinonimosEs": [
+    "la computadora",
+    "el computador"
+   ]
   },
   {
    "idioma": "es",
@@ -30951,7 +31450,10 @@
     "tecnologia"
    ],
    "nota": "«Portátil» sozinho, com artigo, já é o notebook. Como adjetivo serve para tudo que se carrega: «una radio portátil».",
-   "notaEn": "'El portátil' on its own means the laptop. As an adjective it describes anything portable."
+   "notaEn": "'El portátil' on its own means the laptop. As an adjective it describes anything portable.",
+   "sinonimosEs": [
+    "la laptop"
+   ]
   },
   {
    "idioma": "es",
@@ -30987,7 +31489,10 @@
     "tecnologia"
    ],
    "nota": "É a senha de computador, de cofre e de porta. Vem de «seña», sinal: é o sinal combinado para passar.",
-   "notaEn": "'Contraseña' is a password — for a computer, a safe or a door. It comes from 'seña', a sign agreed in advance."
+   "notaEn": "'Contraseña' is a password — for a computer, a safe or a door. It comes from 'seña', a sign agreed in advance.",
+   "sinonimosEs": [
+    "la clave"
+   ]
   },
   {
    "idioma": "es",
@@ -31024,7 +31529,10 @@
     "verbo"
    ],
    "nota": "«Descargar» é baixar um arquivo, e também descarregar um caminhão. Carregar a bateria é «cargar».",
-   "notaEn": "'Descargar' is to download a file — and to unload a lorry. Charging a battery is 'cargar'."
+   "notaEn": "'Descargar' is to download a file — and to unload a lorry. Charging a battery is 'cargar'.",
+   "sinonimosEs": [
+    "bajar"
+   ]
   },
   {
    "idioma": "es",
@@ -31061,7 +31569,11 @@
     "tecnologia"
    ],
    "nota": "«Enlace» é o link da internet e qualquer ligação entre duas coisas. Em registro formal, é também o casamento: «el enlace de los príncipes».",
-   "notaEn": "'Enlace' is a web link, or any connection. In formal register it is also a wedding: 'el enlace de los príncipes'."
+   "notaEn": "'Enlace' is a web link, or any connection. In formal register it is also a wedding: 'el enlace de los príncipes'.",
+   "sinonimosEs": [
+    "el vínculo",
+    "el link"
+   ]
   },
   {
    "idioma": "es",
@@ -31099,7 +31611,10 @@
     "trabalho"
    ],
    "nota": "«Adjuntar» é anexar, em e-mail ou documento. O arquivo anexo é «el archivo adjunto», ou só «el adjunto».",
-   "notaEn": "'Adjuntar' is to attach, in an email or a document. The attachment is 'el archivo adjunto' or just 'el adjunto'."
+   "notaEn": "'Adjuntar' is to attach, in an email or a document. The attachment is 'el archivo adjunto' or just 'el adjunto'.",
+   "sinonimosEs": [
+    "anexar"
+   ]
   },
   {
    "idioma": "es",
@@ -33425,8 +33940,8 @@
     "reír",
     "irregular"
    ],
-   "nota": "«Reír» perde o e no presente: río, ríes, ríe, reímos, reís, ríen. Rir de alguma coisa pede o «se» e o «de» — «reírse de algo».",
-   "notaEn": "«Reír» drops its e in the present: río, ríes, ríe, reímos, reís, ríen. To laugh at something is «reírse de».",
+   "nota": "O e de «reír» vira í onde a força cai no radical: río, ríes, ríe, ríen — só reímos e reís guardam o e. Rir de alguma coisa pede o «se» e o «de» — «reírse de algo».",
+   "notaEn": "The e of «reír» becomes í wherever the stress falls on the stem: río, ríes, ríe, ríen — only reímos and reís keep the e. To laugh at something is «reírse de».",
    "formasEs": {
     "Yo me reí de todo": "pretérito",
     "Yo me reía de todo": "imperfeito",
@@ -34061,7 +34576,10 @@
     "substantivo"
    ],
    "nota": "Da «percha» vem o «perchero», o cabideiro de pé ou de parede. A mesma palavra serve para o poleiro das aves, que foi de onde ela saiu.",
-   "notaEn": "«Percha» gives «perchero», the coat stand. The same word names a birds perch, which is where it came from."
+   "notaEn": "«Percha» gives «perchero», the coat stand. The same word names a birds perch, which is where it came from.",
+   "sinonimosEs": [
+    "el gancho"
+   ]
   },
   {
    "idioma": "es",
@@ -34139,7 +34657,10 @@
     "substantivo"
    ],
    "nota": "Na limpeza, «el cubo» é o balde, e a lixeira é «el cubo de la basura». O sólido de seis faces também é «el cubo» — a palavra é a mesma, mas o sentido de todo dia é o balde.\n🇪🇸 el cubo → 🇧🇷 o balde\n🇪🇸 el cubo de la basura → 🇧🇷 a lixeira",
-   "notaEn": "In cleaning, «el cubo» is the bucket, and the bin is «el cubo de la basura». The six sided solid carries the same name."
+   "notaEn": "In cleaning, «el cubo» is the bucket, and the bin is «el cubo de la basura». The six sided solid carries the same name.",
+   "sinonimosEs": [
+    "el balde"
+   ]
   },
   {
    "idioma": "es",
@@ -34222,7 +34743,10 @@
     "substantivo"
    ],
    "nota": "Na Espanha, «un piso de tres habitaciones» é um apartamento de três quartos — o imóvel, e não o andar. A palavra também é o chão que se pisa e o andar do prédio, e o contexto resolve.\n🇪🇸 el piso → 🇧🇷 o apartamento, o andar, o chão",
-   "notaEn": "In Spain «un piso de tres habitaciones» is a three bedroom flat — the home, not the storey. The word also covers the floor underfoot and the storey of a building."
+   "notaEn": "In Spain «un piso de tres habitaciones» is a three bedroom flat — the home, not the storey. The word also covers the floor underfoot and the storey of a building.",
+   "sinonimosEs": [
+    "el apartamento"
+   ]
   },
   {
    "idioma": "es",
@@ -34377,7 +34901,10 @@
     "substantivo"
    ],
    "nota": "Na «taquilla» se compram as entradas, e um sucesso de bilheteria é «un taquillazo». No ginásio e na escola, a mesma palavra é o armário de guardar coisas.\n🇪🇸 la taquilla → 🇧🇷 a bilheteria, o armário",
-   "notaEn": "You buy tickets at the «taquilla», and a box office hit is «un taquillazo». At the gym or school the same word means a locker."
+   "notaEn": "You buy tickets at the «taquilla», and a box office hit is «un taquillazo». At the gym or school the same word means a locker.",
+   "sinonimosEs": [
+    "la boletería"
+   ]
   },
   {
    "idioma": "es",
@@ -34453,7 +34980,11 @@
     "substantivo"
    ],
    "nota": "«El ayuntamiento» é ao mesmo tempo o prédio, o governo da cidade e os vereadores. Quem manda nele é «el alcalde».",
-   "notaEn": "«El ayuntamiento» is at once the building, the city government and the councillors. The person in charge is «el alcalde»."
+   "notaEn": "«El ayuntamiento» is at once the building, the city government and the councillors. The person in charge is «el alcalde».",
+   "sinonimosEs": [
+    "la alcaldía",
+    "la municipalidad"
+   ]
   },
   {
    "idioma": "es",
@@ -34530,7 +35061,11 @@
     "substantivo"
    ],
    "nota": "«La azafata» é quem atende os passageiros no avião; a bordo também se ouve «auxiliar de vuelo», que serve para qualquer gênero. No masculino, «el azafato».",
-   "notaEn": "«La azafata» looks after passengers on a plane; «auxiliar de vuelo» works for any gender. The masculine is «el azafato»."
+   "notaEn": "«La azafata» looks after passengers on a plane; «auxiliar de vuelo» works for any gender. The masculine is «el azafato».",
+   "sinonimosEs": [
+    "la aeromoza",
+    "la auxiliar de vuelo"
+   ]
   },
   {
    "idioma": "es",
@@ -34770,7 +35305,10 @@
     "substantivo"
    ],
    "nota": "«El becario» vive de uma «beca»: tanto o estagiário da empresa quanto o bolsista da universidade. A bolsa de estudos e a de estágio têm o mesmo nome.",
-   "notaEn": "«El becario» lives on a «beca»: either the intern at a company or the scholarship student at university."
+   "notaEn": "«El becario» lives on a «beca»: either the intern at a company or the scholarship student at university.",
+   "sinonimosEs": [
+    "el pasante"
+   ]
   },
   {
    "idioma": "es",
@@ -35006,7 +35544,11 @@
     "substantivo"
    ],
    "nota": "Na Espanha encurta-se para «el boli»: «¿me dejas un boli?». Na América Latina ouve-se «el lapicero», «la lapicera» ou «la pluma», conforme o país.",
-   "notaEn": "Spain shortens it to «el boli». Latin America says «lapicero», «lapicera» or «pluma», depending on the country."
+   "notaEn": "Spain shortens it to «el boli». Latin America says «lapicero», «lapicera» or «pluma», depending on the country.",
+   "sinonimosEs": [
+    "la pluma",
+    "el lapicero"
+   ]
   },
   {
    "idioma": "es",
@@ -35167,7 +35709,11 @@
     "substantivo"
    ],
    "nota": "Vai quase sempre no plural: «unos auriculares». Na América Latina ouve-se «los audífonos», que na Espanha são os aparelhos de surdez.",
-   "notaEn": "Nearly always plural: «unos auriculares». Latin America says «los audífonos», which in Spain means hearing aids."
+   "notaEn": "Nearly always plural: «unos auriculares». Latin America says «los audífonos», which in Spain means hearing aids.",
+   "sinonimosEs": [
+    "los audífonos",
+    "los cascos"
+   ]
   },
   {
    "idioma": "es",
@@ -35246,7 +35792,10 @@
     "substantivo"
    ],
    "nota": "«Altavoz» é literalmente «voz alta». Pôr a chamada no viva-voz é «poner el altavoz», e o aviso do aeroporto sai «por megafonía».",
-   "notaEn": "«Altavoz» is literally «loud voice». Putting a call on speaker is «poner el altavoz»."
+   "notaEn": "«Altavoz» is literally «loud voice». Putting a call on speaker is «poner el altavoz».",
+   "sinonimosEs": [
+    "el parlante"
+   ]
   },
   {
    "idioma": "es",
@@ -35324,7 +35873,10 @@
     "substantivo"
    ],
    "nota": "«Una pastilla para el dolor de cabeza» é um comprimido. A mesma palavra serve para a barra de sabão e para as pastilhas de freio do carro.",
-   "notaEn": "«Una pastilla para el dolor de cabeza» is a tablet. The same word covers a bar of soap and the brake pads of a car."
+   "notaEn": "«Una pastilla para el dolor de cabeza» is a tablet. The same word covers a bar of soap and the brake pads of a car.",
+   "sinonimosEs": [
+    "el comprimido"
+   ]
   },
   {
    "idioma": "es",
@@ -35402,7 +35954,10 @@
     "substantivo"
    ],
    "nota": "«Un esguince de tobillo» é a entorse no tornozelo, a lesão do ligamento. O osso quebrado é «una fractura», e o osso fora do lugar, «una luxación».",
-   "notaEn": "«Un esguince de tobillo» is a sprained ankle, a ligament injury. A broken bone is «una fractura»."
+   "notaEn": "«Un esguince de tobillo» is a sprained ankle, a ligament injury. A broken bone is «una fractura».",
+   "sinonimosEs": [
+    "la torcedura"
+   ]
   },
   {
    "idioma": "es",
@@ -35480,7 +36035,10 @@
     "substantivo"
    ],
    "nota": "«El ambulatorio» é o posto do bairro, da rede pública, onde se marca consulta com «el médico de cabecera». Caso grave vai para «urgencias», no hospital.",
-   "notaEn": "«El ambulatorio» is the neighbourhood public health centre, where you see «el médico de cabecera». Emergencies go to «urgencias»."
+   "notaEn": "«El ambulatorio» is the neighbourhood public health centre, where you see «el médico de cabecera». Emergencies go to «urgencias».",
+   "sinonimosEs": [
+    "el centro de salud"
+   ]
   },
   {
    "idioma": "es",
@@ -35558,7 +36116,10 @@
     "substantivo"
    ],
    "nota": "«Las gambas» são a base das tapas: «gambas al ajillo». O camarão miúdo é «la quisquilla», e na América Latina diz-se «el camarón».",
-   "notaEn": "«Las gambas» are a tapas staple: «gambas al ajillo». Latin America says «el camarón»."
+   "notaEn": "«Las gambas» are a tapas staple: «gambas al ajillo». Latin America says «el camarón».",
+   "sinonimosEs": [
+    "los camarones"
+   ]
   },
   {
    "idioma": "es",
@@ -35638,7 +36199,10 @@
     "substantivo"
    ],
    "nota": "O «bocadillo» é feito com pão de casca, cortado ao meio; o de pão de forma é «un sándwich». Na fala vira «un bocata». Nos quadrinhos, é o balão da fala.",
-   "notaEn": "A «bocadillo» is made with a crusty roll cut in half; sliced bread makes «un sándwich». Speech shortens it to «un bocata»."
+   "notaEn": "A «bocadillo» is made with a crusty roll cut in half; sliced bread makes «un sándwich». Speech shortens it to «un bocata».",
+   "sinonimosEs": [
+    "el sándwich"
+   ]
   },
   {
    "idioma": "es",
@@ -35799,7 +36363,11 @@
     "substantivo"
    ],
    "nota": "«Las setas» são os cogumelos, sobretudo os do campo; o de cultivo é «el champiñón». A seta que aponta o caminho é «la flecha».\n🇪🇸 la flecha → 🇧🇷 a seta",
-   "notaEn": "«Las setas» are mushrooms, especially wild ones; the cultivated kind is «el champiñón»."
+   "notaEn": "«Las setas» are mushrooms, especially wild ones; the cultivated kind is «el champiñón».",
+   "sinonimosEs": [
+    "el hongo",
+    "el champiñón"
+   ]
   },
   {
    "idioma": "es",
@@ -35876,7 +36444,11 @@
     "substantivo"
    ],
    "nota": "Na Espanha, «el plátano» é a banana de comer, e a das Canárias tem fama. A árvore de tronco descascado das praças também se chama «plátano».\n🇪🇸 el plátano → 🇧🇷 a banana",
-   "notaEn": "In Spain «el plátano» is the banana you eat, the Canary Islands ones being the most prized. The plane tree in city squares carries the same name."
+   "notaEn": "In Spain «el plátano» is the banana you eat, the Canary Islands ones being the most prized. The plane tree in city squares carries the same name.",
+   "sinonimosEs": [
+    "la banana",
+    "el banano"
+   ]
   },
   {
    "idioma": "es",
@@ -36034,7 +36606,10 @@
     "substantivo"
    ],
    "nota": "«El alquiler» é tanto o contrato quanto o valor que se paga por mês. O verbo «alquilar» serve para os dois lados: quem cede e quem ocupa.",
-   "notaEn": "«El alquiler» is both the rental agreement and the monthly payment. The verb «alquilar» works for landlord and tenant alike."
+   "notaEn": "«El alquiler» is both the rental agreement and the monthly payment. The verb «alquilar» works for landlord and tenant alike.",
+   "sinonimosEs": [
+    "el arriendo"
+   ]
   },
   {
    "idioma": "es",
@@ -36191,7 +36766,10 @@
     "substantivo"
    ],
    "nota": "«El ocio» é o tempo livre e tudo o que se faz nele — «el ocio nocturno» é a vida noturna. O ócio de não fazer nada é «la ociosidad».\n🇪🇸 la ociosidad → 🇧🇷 o ócio",
-   "notaEn": "«El ocio» is free time and what you fill it with; «el ocio nocturno» is nightlife. Idleness in the negative sense is «la ociosidad»."
+   "notaEn": "«El ocio» is free time and what you fill it with; «el ocio nocturno» is nightlife. Idleness in the negative sense is «la ociosidad».",
+   "sinonimosEs": [
+    "el tiempo libre"
+   ]
   },
   {
    "idioma": "es",
@@ -36271,7 +36849,10 @@
     "substantivo"
    ],
    "nota": "«El cotilleo» é a fofoca, e quem a espalha é «un cotilla» — palavra que não muda de forma no feminino. O verbo é «cotillear».",
-   "notaEn": "«El cotilleo» is gossip, and whoever spreads it is «un cotilla», the same form for any gender. The verb is «cotillear»."
+   "notaEn": "«El cotilleo» is gossip, and whoever spreads it is «un cotilla», the same form for any gender. The verb is «cotillear».",
+   "sinonimosEs": [
+    "el chisme"
+   ]
   },
   {
    "idioma": "es",
@@ -36351,7 +36932,11 @@
     "substantivo"
    ],
    "nota": "«El chaval» é o garoto ou o rapaz novo, no registro da conversa — o neutro é «el chico» ou «el niño». No feminino, «la chavala».",
-   "notaEn": "«El chaval» is a kid or young lad in casual speech; the neutral words are «el chico» and «el niño». The feminine is «la chavala»."
+   "notaEn": "«El chaval» is a kid or young lad in casual speech; the neutral words are «el chico» and «el niño». The feminine is «la chavala».",
+   "sinonimosEs": [
+    "el chico",
+    "el muchacho"
+   ]
   },
   {
    "idioma": "es",
@@ -37700,7 +38285,9 @@
     "agendei consulta com {o medico|a medica}",
     "marquei hora com {o medico|a medica}",
     "pedi uma consulta com {o medico|a medica}",
-    "marquei consulta n{o medico|a medica}"
+    "marquei consulta n{o medico|a medica}",
+    "marquei consulta com {o doutor|a doutora}",
+    "marquei uma consulta com {o doutor|a doutora}"
    ],
    "aceitasEn": [
     "i have made an appointment with the doctor",
@@ -38582,7 +39169,10 @@
     "tecnologia"
    ],
    "nota": "«Un bulo» é a notícia falsa posta a circular de propósito, hoje quase sempre por rede social; o verbo é «difundir un bulo». A fofoca sobre alguém é «el cotilleo», e o boato sem má-fé, «el rumor».",
-   "notaEn": "«Un bulo» is a false story spread on purpose, these days usually online; the verb is «difundir un bulo». Gossip about someone is «el cotilleo»."
+   "notaEn": "«Un bulo» is a false story spread on purpose, these days usually online; the verb is «difundir un bulo». Gossip about someone is «el cotilleo».",
+   "sinonimosEs": [
+    "el rumor"
+   ]
   },
   {
    "idioma": "es",
@@ -38660,7 +39250,10 @@
     "saúde"
    ],
    "nota": "«La escayola» é o gesso que imobiliza o osso quebrado, e o verbo é «escayolar». O pó de gesso da obra é «el yeso», e tirar o gesso é «quitar la escayola».",
-   "notaEn": "«La escayola» is the plaster cast that holds a broken bone; the verb is «escayolar». Builders plaster is «el yeso»."
+   "notaEn": "«La escayola» is the plaster cast that holds a broken bone; the verb is «escayolar». Builders plaster is «el yeso».",
+   "sinonimosEs": [
+    "el yeso"
+   ]
   },
   {
    "idioma": "es",
@@ -38820,7 +39413,11 @@
     "economia"
    ],
    "nota": "«Ingresar» é dar entrada: no hospital, «lo ingresaron ayer»; no banco, «ingresar dinero en la cuenta», o contrário de «sacar». Entrar para uma instituição também é «ingresar en el ejército».\n🇪🇸 sacar → 🇧🇷 sacar, tirar",
-   "notaEn": "«Ingresar» is to put in: a patient into hospital — «lo ingresaron ayer» — or money into an account, the opposite of «sacar». Joining an institution is also «ingresar en»."
+   "notaEn": "«Ingresar» is to put in: a patient into hospital — «lo ingresaron ayer» — or money into an account, the opposite of «sacar». Joining an institution is also «ingresar en».",
+   "sinonimosEs": [
+    "internar",
+    "depositar"
+   ]
   },
   {
    "idioma": "es",
@@ -38974,7 +39571,10 @@
     "objetos"
    ],
    "nota": "«La grapadora» põe «grapas», os grampos, e o verbo é «grapar». O furador é «la perforadora», o clipe é «el clip» e o apontador, «el sacapuntas».",
-   "notaEn": "«La grapadora» fires «grapas», staples, and the verb is «grapar». A hole punch is «la perforadora»."
+   "notaEn": "«La grapadora» fires «grapas», staples, and the verb is «grapar». A hole punch is «la perforadora».",
+   "sinonimosEs": [
+    "la engrapadora"
+   ]
   },
   {
    "idioma": "es",
@@ -39133,7 +39733,10 @@
     "cidade"
    ],
    "nota": "A mesma palavra é a fruta e o quarteirão: «vivo a dos manzanas de aquí». Na América Latina o quarteirão costuma ser «la cuadra», e «manzana» fica só para a fruta.",
-   "notaEn": "The same word covers the fruit and the city block: «vivo a dos manzanas de aquí». In Latin America a block is usually «la cuadra»."
+   "notaEn": "The same word covers the fruit and the city block: «vivo a dos manzanas de aquí». In Latin America a block is usually «la cuadra».",
+   "sinonimosEs": [
+    "la cuadra"
+   ]
   },
   {
    "idioma": "es",
@@ -39292,7 +39895,10 @@
     "cidade"
    ],
    "nota": "O nome vem das listras da zebra. Também se diz «paso de peatones», e quem anda a pé é «el peatón».",
-   "notaEn": "The name comes from the zebra stripes. It is also called «paso de peatones», and a pedestrian is «el peatón»."
+   "notaEn": "The name comes from the zebra stripes. It is also called «paso de peatones», and a pedestrian is «el peatón».",
+   "sinonimosEs": [
+    "el paso de peatones"
+   ]
   },
   {
    "idioma": "es",
@@ -39372,7 +39978,10 @@
     "cultura"
    ],
    "nota": "«El casco antiguo» é a parte velha da cidade, a de dentro das antigas muralhas; «casco» aqui é o miolo urbano, e não o capacete.\n🇪🇸 el casco → 🇧🇷 o capacete",
-   "notaEn": "«El casco antiguo» is the old part of town, inside the former walls; «casco» here means the core of the city, not a helmet."
+   "notaEn": "«El casco antiguo» is the old part of town, inside the former walls; «casco» here means the core of the city, not a helmet.",
+   "sinonimosEs": [
+    "el centro histórico"
+   ]
   },
   {
    "idioma": "es",
@@ -39524,7 +40133,10 @@
     "comida"
    ],
    "nota": "«La fresa» é o morango, e o maior e mais firme chama-se «el fresón». A broca do dentista também é «la fresa» — é a mesma palavra de «fresar», furar.",
-   "notaEn": "«La fresa» is the strawberry; the bigger, firmer kind is «el fresón». A dentists drill is also «la fresa»."
+   "notaEn": "«La fresa» is the strawberry; the bigger, firmer kind is «el fresón». A dentists drill is also «la fresa».",
+   "sinonimosEs": [
+    "la frutilla"
+   ]
   },
   {
    "idioma": "es",
@@ -39600,7 +40212,12 @@
     "comida"
    ],
    "nota": "«Las judías» são os grãos de feijão; as de vagem, ainda verdes, são «las judías verdes». Na América Latina o feijão é «el frijol», e em parte da Espanha, «las alubias».",
-   "notaEn": "«Las judías» are beans; the green pods are «las judías verdes». Latin America says «el frijol», and parts of Spain «las alubias»."
+   "notaEn": "«Las judías» are beans; the green pods are «las judías verdes». Latin America says «el frijol», and parts of Spain «las alubias».",
+   "sinonimosEs": [
+    "los frijoles",
+    "las alubias",
+    "los porotos"
+   ]
   },
   {
    "idioma": "es",
@@ -39677,7 +40294,10 @@
     "comida"
    ],
    "nota": "«La nata» é o creme de leite; batida com açúcar vira «nata montada», o chantili. O creme doce de confeitaria é «la crema», e o creme de leite de caixinha, «nata para cocinar».",
-   "notaEn": "«La nata» is cream; whipped with sugar it becomes «nata montada». Pastry cream is «la crema»."
+   "notaEn": "«La nata» is cream; whipped with sugar it becomes «nata montada». Pastry cream is «la crema».",
+   "sinonimosEs": [
+    "la crema"
+   ]
   },
   {
    "idioma": "es",
@@ -40067,7 +40687,10 @@
     "cotidiano"
    ],
    "nota": "«Fregar» é lavar a louça — «fregar los platos» — e também esfregar o chão, «fregar el suelo». A pia onde se lava é «el fregadero». Na América Latina diz-se «lavar los platos» e «trapear».",
-   "notaEn": "«Fregar» is to wash the dishes — «fregar los platos» — and also to scrub the floor. The sink is «el fregadero»."
+   "notaEn": "«Fregar» is to wash the dishes — «fregar los platos» — and also to scrub the floor. The sink is «el fregadero».",
+   "sinonimosEs": [
+    "lavar los platos"
+   ]
   },
   {
    "idioma": "es",
@@ -40150,7 +40773,11 @@
     "tecnologia"
    ],
    "nota": "«Estropearse» é deixar de funcionar ou perder a qualidade: «se me ha estropeado el móvil», «la fruta se estropea con el calor». Sem pronome, é estragar o que é de alguém: «me estropeaste la fiesta».",
-   "notaEn": "«Estropearse» is to break down or go bad: «se me ha estropeado el móvil», «la fruta se estropea con el calor»."
+   "notaEn": "«Estropearse» is to break down or go bad: «se me ha estropeado el móvil», «la fruta se estropea con el calor».",
+   "sinonimosEs": [
+    "romperse",
+    "averiarse"
+   ]
   },
   {
    "idioma": "es",
@@ -40228,7 +40855,11 @@
     "roupa"
    ],
    "nota": "«Los vaqueros» é a calça jeans, sempre no plural, como «los pantalones». O nome vem do vaqueiro que a usava; também se diz «los tejanos», e o tecido é «la tela vaquera».",
-   "notaEn": "«Los vaqueros» are jeans, always plural like «los pantalones». The name comes from the cowboys who wore them."
+   "notaEn": "«Los vaqueros» are jeans, always plural like «los pantalones». The name comes from the cowboys who wore them.",
+   "sinonimosEs": [
+    "los jeans",
+    "los tejanos"
+   ]
   },
   {
    "idioma": "es",
@@ -40305,7 +40936,10 @@
     "roupa"
    ],
    "nota": "«La sudadera» vem de «sudar», suar: é o moletom de treino que virou roupa de rua. O conjunto de agasalho é «el chándal», e a versão com capuz, «sudadera con capucha».",
-   "notaEn": "«La sudadera» comes from «sudar», to sweat. A full tracksuit is «el chándal»."
+   "notaEn": "«La sudadera» comes from «sudar», to sweat. A full tracksuit is «el chándal».",
+   "sinonimosEs": [
+    "el buzo"
+   ]
   },
   {
    "idioma": "es",
@@ -40460,7 +41094,11 @@
     "objetos"
    ],
    "nota": "«El bolso» é a bolsa de mão. O bolso da calça é «el bolsillo», a sacola do mercado é «la bolsa», a bolsa de estudos é «la beca» e a de valores, «la bolsa».\n🇪🇸 el bolsillo → 🇧🇷 o bolso\n🇪🇸 la beca → 🇧🇷 a bolsa de estudos",
-   "notaEn": "«El bolso» is a handbag. A trouser pocket is «el bolsillo» and a shopping bag is «la bolsa»."
+   "notaEn": "«El bolso» is a handbag. A trouser pocket is «el bolsillo» and a shopping bag is «la bolsa».",
+   "sinonimosEs": [
+    "la cartera",
+    "la bolsa"
+   ]
   },
   {
    "idioma": "es",
@@ -40614,7 +41252,10 @@
     "escola"
    ],
    "nota": "«Los deberes» são a lição de casa, sempre no plural: «hacer los deberes». O dever moral é «el deber», no singular — «el deber de votar».\n🇪🇸 el deber → 🇧🇷 o dever",
-   "notaEn": "«Los deberes» is school homework, always plural: «hacer los deberes». A moral duty is «el deber», singular."
+   "notaEn": "«Los deberes» is school homework, always plural: «hacer los deberes». A moral duty is «el deber», singular.",
+   "sinonimosEs": [
+    "la tarea"
+   ]
   },
   {
    "idioma": "es",
@@ -40854,7 +41495,10 @@
     "cotidiano"
    ],
    "nota": "«Coger» é o verbo mais usado da Espanha para pegar qualquer coisa: «coger el autobús», «coger el teléfono», «coger frío». Em boa parte da América Latina é palavrão, e lá se diz «tomar» ou «agarrar».",
-   "notaEn": "«Coger» is Spains all purpose verb for taking or catching: «coger el autobús», «coger el teléfono», «coger frío». In much of Latin America it is obscene; they say «tomar» or «agarrar»."
+   "notaEn": "«Coger» is Spains all purpose verb for taking or catching: «coger el autobús», «coger el teléfono», «coger frío». In much of Latin America it is obscene; they say «tomar» or «agarrar».",
+   "sinonimosEs": [
+    "tomar"
+   ]
   },
   {
    "idioma": "es",
@@ -41018,7 +41662,11 @@
     "comida"
    ],
    "nota": "Falando de comida, «rico» é gostoso: «está muy rico». Falando de gente, é rico de dinheiro — «es muy rico» —, e de uma criança querida, «¡qué niño más rico!». Com «estar» é o sabor; com «ser», a fortuna.",
-   "notaEn": "About food, «rico» means tasty: «está muy rico». About people, it means wealthy. «Estar» points to flavour, «ser» to money."
+   "notaEn": "About food, «rico» means tasty: «está muy rico». About people, it means wealthy. «Estar» points to flavour, «ser» to money.",
+   "sinonimosEs": [
+    "sabroso",
+    "delicioso"
+   ]
   },
   {
    "idioma": "es",
@@ -41100,7 +41748,11 @@
     "gíria"
    ],
    "nota": "Falando de gente, «pesado» é o chato que não larga do pé: «no seas pesado». Falando de coisa, é pesado de peso mesmo, e um trabalho «pesado» é puxado.",
-   "notaEn": "About people, «pesado» is someone who will not let up. About objects it simply means heavy."
+   "notaEn": "About people, «pesado» is someone who will not let up. About objects it simply means heavy.",
+   "sinonimosEs": [
+    "aburrido",
+    "molesto"
+   ]
   },
   {
    "idioma": "es",
@@ -41181,7 +41833,11 @@
     "viagem"
    ],
    "nota": "Na Espanha a placa do banheiro público diz «aseos», e às vezes «servicios». «El aseo» também é a higiene pessoal, «el aseo diario», e o banheiro de casa é «el cuarto de baño».\n🇪🇸 el aseo → 🇧🇷 a higiene, o asseio",
-   "notaEn": "In Spain the sign on a public toilet reads «aseos», sometimes «servicios». «El aseo» also means personal hygiene."
+   "notaEn": "In Spain the sign on a public toilet reads «aseos», sometimes «servicios». «El aseo» also means personal hygiene.",
+   "sinonimosEs": [
+    "los baños",
+    "los servicios"
+   ]
   },
   {
    "idioma": "es",
@@ -41262,7 +41918,10 @@
     "cotidiano"
    ],
    "nota": "«Arreglar» é consertar o que quebrou e arrumar o que está bagunçado: «arreglar el coche», «arreglar la habitación». «Arreglarse» é se arrumar para sair, e «ya se arreglará» é «vai se resolver».",
-   "notaEn": "«Arreglar» is to fix what is broken and to tidy what is messy. «Arreglarse» is to get ready to go out."
+   "notaEn": "«Arreglar» is to fix what is broken and to tidy what is messy. «Arreglarse» is to get ready to go out.",
+   "sinonimosEs": [
+    "reparar"
+   ]
   },
   {
    "idioma": "es",
@@ -41494,7 +42153,10 @@
     "cotidiano"
    ],
    "nota": "«El mechero» vem de «mecha», o pavio. Também se diz «el encendedor», mais comum na América Latina, e a caixa de fósforos é «una caja de cerillas».",
-   "notaEn": "«El mechero» comes from «mecha», a wick. It is also «el encendedor», commoner in Latin America; a box of matches is «una caja de cerillas»."
+   "notaEn": "«El mechero» comes from «mecha», a wick. It is also «el encendedor», commoner in Latin America; a box of matches is «una caja de cerillas».",
+   "sinonimosEs": [
+    "el encendedor"
+   ]
   },
   {
    "idioma": "es",

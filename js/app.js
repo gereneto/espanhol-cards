@@ -50,6 +50,21 @@
 
   let progresso = carregarProgresso();
   let sessao = novaSessao();
+  /* ── a sessão que não chegou a subir ──
+     A sessão morava só na memória da página, e subia quando a aba era
+     escondida. Só que a subida começa lendo o progresso.json, e no celular a
+     página escondida é congelada no meio do caminho; se o sistema a
+     descarta, ou se outra sincronização estava em curso, o fim da sessão
+     nunca sobe. Foi assim que 136 das 1.202 respostas desde 15 de setembro
+     sumiram dos logs — sempre os últimos minutos de uma sessão — e, com
+     elas, o u184 comentado sem a resposta que o motivou.
+
+     Agora cada resposta também grava a sessão neste navegador, e a próxima
+     abertura manda o que tinha ficado para trás. Só com token: sem ele nada
+     sobe mesmo. */
+  const CHAVE_SESSOES = 'espanhol-cards:sessoes';
+  let sessoesPendentes = lerSessoesGuardadas();
+  const sessoesSubidas = [];   // as pendentes que esta abertura já mandou
   let cardAtual = null;
   let generoAtual = 0;      // 0 masculino, 1 feminino — só no card que muda de gênero
   let outraForma = null;    // o mesmo card no outro gênero, para a nota
@@ -359,8 +374,74 @@
     return {
       id: new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19),
       inicio: new Date().toISOString(),
-      eventos: []
+      eventos: [],
+      enviados: 0          // quantos eventos já estão no arquivo do GitHub
     };
+  }
+
+  function faltaSubir(s) {
+    return !!s && Array.isArray(s.eventos) && s.eventos.length > (s.enviados || 0);
+  }
+
+  /* As sessões de aberturas anteriores que ainda têm resposta por subir. */
+  function lerSessoesGuardadas() {
+    let lista;
+    try { lista = JSON.parse(localStorage.getItem(CHAVE_SESSOES) || '[]'); } catch (e) { lista = []; }
+    return (Array.isArray(lista) ? lista : []).filter(s => s && s.id && faltaSubir(s));
+  }
+
+  /* Grava as pendentes e a atual, se ela tiver o que subir. Duas abas abertas
+     dividem a chave: a lista guardada é mesclada por id, e nenhuma apaga a
+     sessão da outra. */
+  function guardarSessoes() {
+    if (!GH.configurado()) return;
+    const porId = new Map();
+    lerSessoesGuardadas().forEach(s => porId.set(s.id, s));
+    sessoesPendentes.concat(sessoesSubidas, [sessao]).forEach(s => {
+      if (faltaSubir(s)) { porId.set(s.id, s); return; }
+      /* subiu: sai da lista — a menos que a cópia guardada tenha mais do
+         que subiu, e aí é de outra aba, que ainda está respondendo nela */
+      const guardada = porId.get(s.id);
+      if (guardada && guardada.eventos.length <= (s.enviados || 0)) porId.delete(s.id);
+    });
+    /* teto: sem subir por semanas, a lista não cresce sem fim */
+    const lista = [...porId.values()].sort((a, b) => (a.id < b.id ? -1 : 1)).slice(-20);
+    try {
+      if (lista.length) localStorage.setItem(CHAVE_SESSOES, JSON.stringify(lista));
+      else localStorage.removeItem(CHAVE_SESSOES);
+    } catch (e) {
+      console.warn('não consegui guardar a sessão no localStorage', e);
+    }
+  }
+
+  function textoDaSessao(s, eventos, fim) {
+    return JSON.stringify({
+      id: s.id, inicio: s.inicio, fim: fim,
+      respostas: eventos.length,
+      acertos: eventos.filter(e => e.acertou).length,
+      eventos: eventos
+    }, null, 1);
+  }
+
+  /* A sessão de antes pode ter subido pela metade. O arquivo do GitHub é
+     lido e juntado ao que ficou aqui, evento por evento, para que a subida
+     atrasada nunca troque um arquivo maior por um menor. */
+  async function subirSessaoPendente(s, opcoes) {
+    const caminho = 'sessoes/' + s.id + '.json';
+    /* arquivo que não existe volta null; leitura que falha interrompe a
+       subida, e a sessão fica guardada para a próxima — escrever sem ter
+       lido poderia trocar o arquivo inteiro por um pedaço dele */
+    const arq = await GH.ler(caminho);
+    let remotos = [];
+    if (arq) {
+      try { remotos = JSON.parse(arq.texto).eventos || []; } catch (e) { remotos = []; }
+    }
+    const juntos = new Map();
+    remotos.concat(s.eventos).forEach(e => juntos.set(e.em + '|' + e.card, e));
+    const eventos = [...juntos.values()].sort((a, b) => (a.em < b.em ? -1 : 1));
+    const fim = eventos.length ? eventos[eventos.length - 1].em : s.inicio;
+    await GH.escrever(caminho, textoDaSessao(s, eventos, fim), 'sessão ' + s.id + ' (o que faltava)',
+      { keepalive: opcoes.keepalive, sha: arq ? arq.sha : undefined });
   }
 
   function estadoDe(id) {
@@ -535,10 +616,13 @@
     el['meta-modo'].textContent = modoAtual === 'multipla' ? 'múltipla escolha' : 'escreva a resposta';
 
     /* A frase destravada diz de que palavra veio — ela está aqui porque
-       você venceu aquela palavra, e ver as duas juntas é metade da lição. */
+       você venceu aquela palavra, e ver as duas juntas é metade da lição.
+       Mas só depois de responder: na volta, «de la ducha» em cima de «Vou
+       tomar um banho» entrega metade da resposta; e na ida diz qual palavra
+       da frase é a que conta. Quem mostra é o concluir. */
     const palavra = cardAtual.requer && PORID[cardAtual.requer];
     el['meta-origem'].textContent = palavra ? 'de ' + palavra.es : '';
-    el['meta-origem'].classList.toggle('oculto', !palavra);
+    el['meta-origem'].classList.add('oculto');
     /* O nível vive na aba do fichário e fica à mostra o tempo todo: saber que
        o card é A1 ou C2 não entrega resposta nenhuma, e ajuda a calibrar o
        esforço antes de ler. */
@@ -661,6 +745,9 @@
     if (conferencia === 'errado' && !desistiu && !chanceUsada) {
       const troca = Motor.linguaTrocada(cardAtual, texto, direcaoAtual);
       if (troca) { avisarLinguaTrocada(troca); return; }
+      /* o espanhol certo, mas não o do card: «trabajar» para «currar» */
+      const sinonimo = Motor.sinonimoDoCard(cardAtual, texto, direcaoAtual);
+      if (sinonimo) { avisarSinonimo(sinonimo); return; }
       /* e o espelho, na volta: a pergunta portuguesa lida como espanhol */
       const leitura = Motor.leituraEspanhola(cardAtual, texto, direcaoAtual, indiceEspanhol());
       if (leitura) { avisarLeituraEspanhola(leitura); return; }
@@ -698,6 +785,19 @@
     el.entrada.focus({ preventScroll: true });
   }
 
+  /* Mesma regra da língua trocada: uma vez por aparição, sem contar erro, e
+     com o relógio correndo. A dica é a primeira letra — o bastante para
+     puxar a palavra da memória, pouco para entregá-la. */
+  function avisarSinonimo(s) {
+    chanceUsada = true;
+    el['aviso-lingua'].innerHTML =
+      '<b>' + escapar(s.palavra) + '</b> também está certo, mas não é a palavra deste card. ' +
+      'Tente de novo' + (s.dica ? ': começa com <b>' + escapar(s.dica) + '</b>.' : '.');
+    el['aviso-lingua'].classList.remove('oculto');
+    el.entrada.value = '';
+    el.entrada.focus({ preventScroll: true });
+  }
+
   function avisarLinguaTrocada(troca) {
     chanceUsada = true;
     el['aviso-lingua'].innerHTML = troca.propria
@@ -724,13 +824,18 @@
     /* Neutra por padrão: quem pinta de verde é o veredito, e no caso do
        "deu quase" ele só chega depois que você julgar. */
     el['caixa-resposta'].classList.remove('certa');
-    /* O card saiu num dos dois gêneros; o outro entra no fim da nota, que é
-       onde o card ensina. Ver «Tu hermana es muy maja» depois de responder o
-       masculino é a outra metade da lição — e é de graça, porque o card já
-       traz as duas formas. */
+    /* A palavra de onde a frase veio, escondida enquanto se respondia. */
+    el['meta-origem'].classList.toggle('oculto', !el['meta-origem'].textContent);
+    /* O card saiu num dos dois gêneros, e o outro entra no fim da nota só
+       quando o português é o mesmo para os dois: «A criança não quer comer»
+       serve a «El niño» e a «La niña», e ver as duas respostas certas da
+       mesma pergunta é lição. Quando o português muda junto («o médico», «a
+       médica»), a outra forma é só a mesma frase no feminino, e ocupa a nota
+       sem ensinar nada. */
     const nota = [cardAtual.nota,
-      outraForma ? '🔁 ' + (generoAtual ? 'No masculino' : 'No feminino') +
-        ': «' + outraForma.es + '» — ' + outraForma.pt : ''
+      outraForma && outraForma.pt === cardAtual.pt
+        ? '🔁 ' + (generoAtual ? 'No masculino' : 'No feminino') +
+          ': «' + outraForma.es + '» — ' + outraForma.pt : ''
     ].filter(Boolean).join('\n');
     el.nota.textContent = nota;
     el.nota.classList.toggle('oculto', !nota);
@@ -800,27 +905,27 @@
       /* a diferença pintada dos dois lados, como no acento: achar uma letra
          numa frase inteira, a olho, custa mais do que devia */
       const dif = Motor.diferencaDoQuase(cardAtual, r.resposta, r.direcao);
-      if (dif) {
-        const pintar = ps => ps.map(p => p.destaque
-          ? '<mark class="acento">' + escapar(p.texto) + '</mark>' : escapar(p.texto)).join('');
-        el['texto-dado'].innerHTML = pintar(dif.dada);
-        /* a forma mais próxima pode ser uma variante, e não a que está na
-           caixa: se ela estiver lá dentro («o galho / o ramo»), pinta no
-           lugar; se não, aparece ao lado do que foi escrito */
-        const onde = alvoAtual.indexOf(dif.forma);
-        if (onde >= 0) {
-          el['resposta-certa'].innerHTML = escapar(alvoAtual.slice(0, onde)) + pintar(dif.certa) +
-            escapar(alvoAtual.slice(onde + dif.forma.length));
-        } else {
-          el['texto-dado'].innerHTML += ' <span class="forma-rotulo variante">também vale «' +
-            pintar(dif.certa) + '»</span>';
-        }
-      }
+      if (dif) pintarDiferenca(dif);
       el['resposta-dada'].classList.remove('oculto');
       el['area-julgamento'].classList.remove('oculto');
       el['btn-proximo'].classList.add('oculto');
     } else {
-      if (!forma && !genero && !acento && !flexao) el['resposta-dada'].classList.add('oculto');
+      /* Errou escrevendo, e o erro não tem nome (gênero, ñ, conjugação). A
+         resposta certa sozinha obrigava a comparar de cabeça com o que foi
+         escrito, que já tinha sumido da tela: «necesito um poco de sosiego»
+         dava «não foi dessa vez», e ficava por achar que o erro era o «um»
+         (u184). Agora o que foi escrito fica à mostra, e, quando chegou
+         perto, com a diferença pintada como no «deu quase». */
+      const semNome = !forma && !genero && !acento && !flexao;
+      if (escrevendo && !r.acertou && semNome) {
+        el['texto-dado'].textContent = r.resposta;
+        const dif = Motor.diferencaDoQuase(cardAtual, r.resposta, r.direcao);
+        if (dif && poucoPintado(dif)) pintarDiferenca(dif);
+        el['resposta-dada'].classList.remove('oculto');
+        el['resposta-dada'].classList.add('conjugacao');
+      } else if (semNome) {
+        el['resposta-dada'].classList.add('oculto');
+      }
       el['area-julgamento'].classList.add('oculto');
       el['btn-proximo'].classList.remove('oculto');
       mostrarVeredito(r);
@@ -831,6 +936,37 @@
     el['area-feedback'].classList.remove('oculto');
     el['btn-proximo'].focus({ preventScroll: true });
     trazerBotaoParaAVista();
+  }
+
+  function pintarPedacos(ps) {
+    return ps.map(p => p.destaque
+      ? '<mark class="acento">' + escapar(p.texto) + '</mark>' : escapar(p.texto)).join('');
+  }
+
+  /* O que foi escrito e a forma aceita mais próxima, com o que não casa
+     pintado dos dois lados (ver Motor.diferencaDoQuase). */
+  function pintarDiferenca(dif) {
+    el['texto-dado'].innerHTML = pintarPedacos(dif.dada);
+    /* a forma mais próxima pode ser uma variante, e não a que está na
+       caixa: se ela estiver lá dentro («o galho / o ramo»), pinta no
+       lugar; se não, aparece ao lado do que foi escrito */
+    const onde = alvoAtual.indexOf(dif.forma);
+    if (onde >= 0) {
+      el['resposta-certa'].innerHTML = escapar(alvoAtual.slice(0, onde)) + pintarPedacos(dif.certa) +
+        escapar(alvoAtual.slice(onde + dif.forma.length));
+    } else {
+      el['texto-dado'].innerHTML += ' <span class="forma-rotulo variante">também vale «' +
+        pintarPedacos(dif.certa) + '»</span>';
+    }
+  }
+
+  /* No erro, a pintura só ajuda quando a diferença é um pedaço da frase.
+     Resposta que não tem nada a ver sairia pintada de ponta a ponta, e
+     tinta em tudo não aponta nada. */
+  function poucoPintado(dif) {
+    const conta = ps => ps.reduce((s, p) => s + (p.destaque ? p.texto.replace(/\s/g, '').length : 0), 0);
+    const tamanho = dif.forma.replace(/\s/g, '').length;
+    return conta(dif.certa) + conta(dif.dada) <= Math.max(3, 0.3 * tamanho);
   }
 
   /* ── a rolagem ──
@@ -848,11 +984,19 @@
 
      Agora é uma animação só, feita à mão, quadro a quadro. A cada quadro ela
      mede quanto ainda falta para o alvo caber na parte visível — contra o
-     visualViewport, que é quem sabe o que o teclado cobre — e se move como
-     uma mola com amortecimento crítico: sai parada, acelera, freia e chega
-     sem passar do ponto. Se o teclado fecha no meio, o que falta muda e a
-     mola segue o novo alvo sem recomeçar. Termina quando fica parada no
-     lugar por alguns quadros, depois de um mínimo que dá tempo ao teclado.
+     visualViewport, que é quem sabe o que o teclado cobre. Se o teclado fecha
+     no meio, o alvo muda e a animação segue o novo sem recomeçar. Termina
+     quando fica parada no lugar por alguns quadros, depois de um mínimo que
+     dá tempo ao teclado.
+
+     O movimento era uma mola com amortecimento crítico, e a mola sai do
+     repouso com a força toda: num trecho de 400 px ela passava de 1.000 px/s
+     em 15 ms. Na resposta escrita o teclado fechando disfarçava; na múltipla
+     escolha não há teclado, e o tranco aparecia — «brusco», duas vezes (f167,
+     p250). Agora é um deslizamento com hora para acabar: sai devagar, ganha
+     velocidade no meio e freia no fim, e leva mais tempo quanto maior o
+     trecho (de 0,45 a 0,9 s). Se o alvo ainda se mexer depois disso — o
+     teclado que fechou tarde —, uma perna curta termina o caminho.
 
      O chão só cresce durante a animação, e no fim sai apenas a sobra que
      está abaixo da tela: tirar o que ninguém está vendo não move nada.
@@ -882,19 +1026,35 @@
   let rolagemAtual = null;
 
   /* Anima a rolagem até «falta()» chegar a zero. «falta» devolve pixels,
-     positivos para descer e negativos para subir. */
+     positivos para descer e negativos para subir. «opcoes.subida» é a volta
+     ao topo do card novo: essa pode ser mais ligeira, porque é o card que
+     troca, e ninguém está lendo no meio do caminho. */
   function rolarSuave(falta, aoTerminar, opcoes) {
     if (rolagemAtual) rolagemAtual.parar();
     const esperarTeclado = !!(opcoes && opcoes.esperarTeclado);
+    const subida = !!(opcoes && opcoes.subida);
     const ESPERA_TECLADO = 500;   // ms: se ele não fechar nisso, desce assim mesmo
     const raiz = document.documentElement;
     const chao = el['area-feedback'];
     const instantaneo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const W = 13;             // rad/s: rigidez da mola (chega em ~0,4 s)
     const MINIMO = 450;       // ms: tempo para o teclado terminar de fechar
-    const MAXIMO = 1600;      // ms: nunca fica rolando para sempre
+    const MAXIMO = 2200;      // ms: nunca fica rolando para sempre
     const inicio = performance.now();
-    let anterior = inicio, parado = 0, quadro = 0, vivo = true, vel = 0;
+    let perna = null, pernas = 0, parado = 0, quadro = 0, vivo = true;
+
+    /* Quanto dura cada perna: cresce com o trecho, dentro de uma faixa. A
+       primeira descida leva de 0,45 a 0,9 s; a perna que só termina o
+       caminho, e a subida para o card novo, são mais curtas. */
+    function duracao(d) {
+      const a = Math.abs(d);
+      if (subida) return Math.min(550, Math.max(300, 250 + 0.4 * a));
+      if (pernas) return Math.min(450, Math.max(250, 200 + 0.8 * a));
+      return Math.min(900, Math.max(450, 300 + 0.9 * a));
+    }
+    /* Sai parada, ganha velocidade no meio e freia no fim. A senoide é das
+       curvas assim a de pico mais baixo: 1,6 vez a velocidade média, contra
+       3 vezes da cúbica — que partia macia mas passava zunindo no meio. */
+    const suave = p => (1 - Math.cos(Math.PI * p)) / 2;
 
     const interromper = () => parar();
     window.addEventListener('touchstart', interromper, { passive: true, once: true });
@@ -917,44 +1077,48 @@
       if (concluiu && aoTerminar) aoTerminar();
     }
 
+    /* Leva a tela até «y». Descer além do fim da página precisa de chão:
+       ele cresce o quanto faltar, e no fim sai o que sobrou (ver parar). */
+    function irPara(y) {
+      const andar = y - window.scrollY;
+      if (andar > 0) {
+        const podeRolar = raiz.scrollHeight - window.scrollY - window.innerHeight;
+        if (andar > podeRolar) {
+          const pad = parseFloat(chao.style.paddingBottom) || 0;
+          chao.style.paddingBottom = Math.ceil(pad + andar - podeRolar) + 'px';
+        }
+      }
+      window.scrollTo(0, y);
+    }
+
     function passo(agora) {
       if (!vivo) return;
       /* Responder por escrito fecha o teclado, e ele leva uns 300 ms para
-         sair. Descer nesse intervalo é medir a tela pela metade: a mola
+         sair. Descer nesse intervalo é medir a tela pela metade: a animação
          chegava ao alvo com o teclado ainda aberto, o teclado saía, e a
          página ficava descida demais. Espera ele sair, e só então mede. */
       if (esperarTeclado && agora - inicio < ESPERA_TECLADO && tecladoAberto()) {
-        anterior = agora;
         quadro = requestAnimationFrame(passo);
         return;
       }
-      const dt = Math.min(64, agora - anterior) / 1000;
-      anterior = agora;
+      /* O alvo é medido de novo a cada quadro: se ele se mexe no meio da
+         perna, a perna o acompanha sem recomeçar. */
       const d = falta();
-      if (Math.abs(d) < 0.5 && Math.abs(vel) < 20) {
-        vel = 0;
-        parado++;
-        if (parado >= 6 && agora - inicio >= MINIMO) return parar(true);
-      } else {
-        parado = 0;
-        let andar;
-        if (instantaneo) {
-          andar = d;
+      const alvo = window.scrollY + d;
+      if (!perna) {
+        if (Math.abs(d) < 0.5) {
+          parado++;
+          if (parado >= 6 && agora - inicio >= MINIMO) return parar(true);
         } else {
-          vel += (W * W * d - 2 * W * vel) * dt;
-          andar = vel * dt;
-          /* nunca passa do alvo; e o fim não se arrasta em frações de pixel */
-          if (Math.abs(andar) > Math.abs(d) || Math.sign(andar) !== Math.sign(d)) { andar = d; vel = 0; }
-          else if (Math.abs(andar) < 1 && Math.abs(d) <= 4) andar = d;
+          parado = 0;
+          perna = { de: window.scrollY, t0: agora, dur: instantaneo ? 0 : duracao(d) };
+          pernas++;
         }
-        if (andar > 0) {
-          const podeRolar = raiz.scrollHeight - window.scrollY - window.innerHeight;
-          if (andar > podeRolar) {
-            const pad = parseFloat(chao.style.paddingBottom) || 0;
-            chao.style.paddingBottom = Math.ceil(pad + andar - podeRolar) + 'px';
-          }
-        }
-        window.scrollTo(0, window.scrollY + andar);
+      }
+      if (perna) {
+        const p = perna.dur ? Math.min(1, (agora - perna.t0) / perna.dur) : 1;
+        irPara(perna.de + (alvo - perna.de) * suave(p));
+        if (p >= 1) perna = null;
       }
       if (agora - inicio >= MAXIMO) return parar(true);
       quadro = requestAnimationFrame(passo);
@@ -996,7 +1160,7 @@
     rolarSuave(() => -window.scrollY, () => {
       el['tela-card'].style.minHeight = '';
       if (aoTerminar) aoTerminar();
-    });
+    }, { subida: true });
   }
 
   function mostrarVeredito(r) {
@@ -1108,6 +1272,7 @@
     };
     if (r.modo === 'multipla' && dinamicosAtuais.length) evento.dinamicos = dinamicosAtuais.slice();
     sessao.eventos.push(evento);
+    guardarSessoes();
 
     ultimoRegistro = { id, est, evento, r };
 
@@ -2245,16 +2410,25 @@
         return;
       }
 
+      /* primeiro o que ficou de aberturas anteriores (ver CHAVE_SESSOES) */
+      for (const s of sessoesPendentes.slice()) {
+        await subirSessaoPendente(s, opcoes);
+        sessoesPendentes = sessoesPendentes.filter(x => x !== s);
+        s.enviados = s.eventos.length;
+        sessoesSubidas.push(s);
+        guardarSessoes();
+      }
+
       if (sessao.eventos.length) {
+        /* o texto sai agora, e o que for respondido durante a subida fica
+           para a próxima: por isso a conta dos enviados é tirada antes */
+        const eventos = sessao.eventos.slice();
         await GH.escrever('sessoes/' + sessao.id + '.json',
-          JSON.stringify({
-            id: sessao.id, inicio: sessao.inicio, fim: agora,
-            respostas: sessao.eventos.length,
-            acertos: sessao.eventos.filter(e => e.acertou).length,
-            eventos: sessao.eventos
-          }, null, 1),
+          textoDaSessao(sessao, eventos, agora),
           'sessão ' + sessao.id,
           { keepalive: opcoes.keepalive });
+        sessao.enviados = Math.max(sessao.enviados || 0, eventos.length);
+        guardarSessoes();
       }
 
       const contestacoes = progresso.contestacoes || [];
@@ -2670,6 +2844,8 @@
   el['btn-zerar'].addEventListener('click', () => {
     if (!confirm('Apagar todo o progresso guardado neste navegador?')) return;
     localStorage.removeItem(CHAVE_PROGRESSO);
+    localStorage.removeItem(CHAVE_SESSOES);
+    sessoesPendentes = [];
     progresso = progressoVazio();
     cardAtual = null;
     salvarProgresso();
@@ -2748,7 +2924,14 @@
      subida apagava o progresso do outro aparelho. Agora todo arranque com
      token configurado mescla o que está no GitHub antes de qualquer coisa. */
   if (GH.configurado()) {
-    baixar({ silencioso: true }).then(() => { conciliarFila(progresso); salvarProgresso(); });
+    baixar({ silencioso: true }).then(() => {
+      conciliarFila(progresso);
+      salvarProgresso();
+      /* sessão de antes que não subiu inteira: sobe agora, com calma, em vez
+         de esperar a próxima vez que a aba for escondida — que é justamente
+         a hora em que a subida costuma morrer */
+      if (sessoesPendentes.length) sincronizar({ silencioso: true, completo: true });
+    });
   }
 
   window.Espanhol = { progresso: () => progresso, sessao: () => sessao, resumo: gerarResumo };

@@ -94,6 +94,7 @@ for, e leva nova é arquivo novo.
 | `pt` | a resposta mostrada em português |
 | `aceitas` | as **outras** maneiras de dizer a mesma coisa (seção 5) |
 | `aceitasEs` | variantes espanholas igualmente certas (opcional) |
+| `sinonimosEs` | espanhol certo que o card **não** ensina (opcional, seção 5.1) |
 | `distratores` | exatamente quatro (seção 6) |
 | `nivel` | `A1` a `C2` |
 | `tags` | temas, todos presentes em `fonte/tags.json` (seção 8) |
@@ -173,6 +174,11 @@ chaves não muda — é por isso que a marcação sai barata.
   `["No seas tan quisquillos{a|o} con la comida."]` —, e assim a que é aceita
   é sempre a que não está na tela. Quando o `pt` diz o gênero («Minha irmã é
   loira»), a concordância é cobrada, e é lição.
+- **A nota mostra a outra forma só quando o `pt` é o mesmo para as duas.** Em
+  «A criança não quer comer», «El niño» e «La niña» são as duas respostas
+  certas da mesma pergunta, e vê-las juntas ensina. Em «Marquei consulta com o
+  médico», o feminino é a mesma frase com outra terminação, e só ocupa a nota —
+  quem decide é o app, e a marcação não precisa de nada a mais.
 - **Feminino que muda de assunto não entra.** «Ese político es un zorro» é
   raposa; «una zorra» é xingamento. O mesmo vale para o feminino que ninguém
   diz («la albañila») e para o que estraga os distratores. Na dúvida, o card
@@ -187,7 +193,10 @@ já dá de graça não precisa ser listado**:
 
 - acento, maiúscula, pontuação, espaço;
 - plural e singular (`sentir saudade` = `sentir saudades`);
-- artigo e pronome-sujeito (`eu concordo` = `concordo`; `ele é gente boa` = `é gente boa`);
+- artigo e pronome-sujeito (`eu concordo` = `concordo`; `ele é gente boa` = `é gente boa`).
+  No espanhol, só o sujeito cai (`yo`, `él`, `ella`, `usted`…) e o artigo da
+  frente: a preposição «a», o «nos», o «os» e o possessivo «tu» contam, e
+  «Voy darme una ducha» é erro;
 - contração e grafia de conversa (`pra`, `pro`, `tô`, `tá`, `vc`);
 - número por extenso (`3 anos` = `três anos`);
 - `este` / `esse`, `isto` / `isso` (mas não `aquele`);
@@ -209,7 +218,13 @@ já dá de graça não precisa ser listado**:
   motorista»; «na sexta» por «na sexta-feira»);
 - o equivalente idiomático brasileiro **e** a tradução ao pé da letra, quando
   as duas são português de verdade («num piscar de olhos», «num abrir e fechar
-  de olhos»).
+  de olhos»);
+- o jeito de conversa de chamar a mesma coisa («o doutor» por «o médico»);
+- em `aceitasEs`, **o outro tratamento quando o `pt` não o diz**: «Deixe a
+  gorjeta na mesa» serve a «Deja» (tú) e a «Deje» (usted), como o `pt` sem
+  gênero serve às duas formas do card de gênero;
+- em `aceitasEs`, **a forma padrão ao lado do leísmo** da Espanha: «Le puso
+  verde» e «Lo puso verde».
 
 Escreva a lista **em minúscula, sem acento e sem pontuação**, como o resto do
 baralho. Uma frase comum tem de cinco a dez variantes; expressão idiomática,
@@ -225,6 +240,32 @@ de olhar a lista.
 - qualquer coisa que esteja, inteira ou pela metade, num **distrator** do card.
 
 ---
+
+### 5.1 `sinonimosEs`: certo, mas não é a palavra do card
+
+Na volta, «trabalhar» pede «currar». Quem escreve «trabajar» acertou o
+espanhol, só não o que o card ensina. Não é erro nem acerto: o app diz que está
+certo, que não é essa, e dá a primeira letra da que é. As palavras que valem
+esse aviso ficam em `sinonimosEs`:
+
+- a **variante latino-americana** de uma palavra da Espanha, quando o card
+  ensina a da Espanha: «la computadora» em `el ordenador`, «el jugo» em
+  `el zumo`;
+- a **palavra neutra** da gíria ou do registro: «trabajar» em `currar`, «el
+  chisme» em `el cotilleo`, «la negligencia» em `la desidia`;
+- o **sinônimo corrente**: «recordar» em `acordarse`, «aún» em `todavía`;
+- o **cognato que também é espanhol**: «absurdo» em `descabellado`,
+  «resolver» em `zanjar`.
+
+A diferença para `aceitasEs` é o que o card quer ensinar. O que vale igual,
+e que o card não tem por que recusar, vai em `aceitasEs`; o que é espanhol
+certo mas deixaria a palavra do card sem aprender vai em `sinonimosEs`. As duas
+listas não se cruzam — o build barra o sinônimo que o conferidor já aceita —, e
+o sinônimo nunca sai como alternativa errada na múltipla escolha.
+
+Não há como adivinhá-los pelo baralho: o índice das traduções confunde
+homônimo com sinônimo («a colher» é `la cuchara` e é `coger`). Então a lista é
+escrita à mão, e card novo de palavra deve trazê-la quando houver o que pôr.
 
 ## 6. Distratores
 
@@ -350,6 +391,16 @@ de quatro feitos à mão — hoje nenhum precisa.
 
   Não é enfeite: o app monta com esses pares o aviso de **resposta certa na
   língua errada**, que devolve a vez em vez de contar erro.
+- **A forma que tropeça um brasileiro ganha uma linha.** O imperativo, que o
+  português do Brasil mistura entre tu e você («deja» é de tú, «deje» de
+  usted); o verbo que concorda com a coisa desejada, como «gustar»
+  («¿te apetece un café?», sem o -s); o pronome colado («ponte» = «pon» +
+  «te»). Quem erra ali não erra por não saber a palavra.
+- **Regra de gramática conferida forma a forma.** «Reír perde o e no presente»
+  era falso para «reímos» e «reís», e o que acontece é o e virar í. Antes de
+  afirmar a regra, escreva a conjugação inteira.
+- **Ensina o espanhol, não conta a história do card.** Se o card mudou por
+  causa de um comentário, o porquê vai no commit; a nota não explica a troca.
 - Aspas angulares «», curta (o teto é 900 caracteres; a boa tem duas ou três
   frases), sem repetir o que o `pt` já diz.
 
@@ -455,7 +506,8 @@ forma nua não é aceita; distrator — ou metade de
 distrator — que o motor lê como resposta certa; dois distratores iguais; formato
 que entrega a certa (barra, parêntese, comprimento); conjugação sem quatro
 `formasEs`, ou com forma igual à certa; `requer` quebrado; etiqueta sem
-tradução; inglês pela metade; marcação de gênero malformada. **O card de
+tradução; inglês pela metade; marcação de gênero malformada; sinônimo em
+`sinonimosEs` que o card já aceita como certo. **O card de
 gênero passa duas vezes por tudo isso**, uma por forma: é assim que se
 descobre que o feminino repete outro card ou que um distrator virou a resposta
 certa de um dos lados. **E avisa**: palavra de conteúdo nos quatro
@@ -546,6 +598,18 @@ sem ele o navegador serve o baralho velho.
 | Uma ficha, duas formas, para o que muda de gênero | `u023` «Tu hermano es muy majo», pedido do Gere, e mais 37 cards |
 | Cada contestação é decidida junto | combinado desde a primeira leva |
 | Contestação recusada entra na nota do card | `p201` «participar» para `asistir`: quem assiste está presente e pode ficar calado |
+| `sinonimosEs`: certo, mas não é a palavra do card | `p042` currar: «se eu respondesse trabajar, o que aconteceria?» |
+| A nota mostra a outra forma só quando o `pt` é o mesmo | `f225` «não precisa mostrar o feminino»; `u006` «nesse caso vale» |
+| A forma que tropeça um brasileiro ganha uma linha na nota | `f083` «por que não tem s?»; `f021` «explique esse ponte»; `u014` imperativo de tú |
+| Regra de gramática conferida forma a forma | `v067` «reír perde o e»: o e vira í, e reímos e reís o guardam |
+| A nota não conta a história do card | `f045` «a nota está explicando a mudança que eu pedi» |
+| No espanhol, só o sujeito cai no funil | `u184` «necesito um poco»: o «um» sumia e o erro ficava sem explicação |
+| `pt` natural | `u064` «A sopa está sem sal, falta sal» virou «insossa» |
+| Dois sentidos correntes: o outro entra em `aceitas` | `p171` el borrador: «a borracha» (América Latina) e «o apagador» (Espanha) |
+| O jeito de conversa de chamar a mesma coisa | `f225` «marquei uma consulta com o doutor» |
+| O `pt` que não diz o tratamento aceita tú e usted | `u014` «Deje la propina en la mesa», recusado no «quase» sem estar errado |
+| A forma padrão ao lado do leísmo | `f031` «Lo puso verde», recusado duas vezes no «quase» sem estar errado |
+| Recusa que também vai para a nota | `f077` «de acuerdo» sozinho é «combinado»; `f046` o «lo» de «de haberlo sabido» |
 
 ---
 

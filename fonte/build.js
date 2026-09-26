@@ -329,6 +329,24 @@ for (const bruto of cards) {
     }
   }
 
+  /* O espanhol certo que o card não ensina («trabajar» no card de «currar»)
+     dá uma segunda chance com a primeira letra (ver Motor.sinonimoDoCard).
+     Se o conferidor já o aceita, a segunda chance nunca chega — e a lista
+     está dizendo que a palavra não vale enquanto o card diz que vale. */
+  const campoSin = idioma === 'pt' ? 'sinonimos' : 'sinonimos' + idioma[0].toUpperCase() + idioma[1];
+  if (c[campoSin] !== undefined) {
+    if (!Array.isArray(c[campoSin]) || !c[campoSin].every(s => typeof s === 'string' && s.trim())) {
+      erros.push(campoSin + ' tem de ser uma lista de textos: ' + onde);
+    } else {
+      for (const s of c[campoSin]) {
+        if (Motor.conferir(c, s, audiencias[0] + '-' + idioma) === 'certo') {
+          erros.push('sinônimo que o card já aceita como certo: ' + onde + ' → ' + s +
+            ' (tire de "' + campoSin + '" ou das aceitas)');
+        }
+      }
+    }
+  }
+
   /* ── as duas línguas de quem estuda ──
      Cada uma tem de estar inteira: texto, aceitas, quatro distratores e nota.
      Card com metade de uma língua é tradução pela metade, e foi por isso que

@@ -140,9 +140,17 @@ window.Motor = (function () {
      «él» e «tú» entram com acento. A lista nasceu quando o espanhol chegava
      sem acento nenhum, e «el» cobria os dois; quando o acento passou a
      contar, «Él dijo la verdad» e «él está hecho un lío» deixaram de soltar o
-     sujeito, e a resposta com pronome virou erro. */
+     sujeito, e a resposta com pronome virou erro.
+
+     A lista também herdava a do português inteira, e cinco daquelas palavras
+     são espanhol de outra coisa: «a» é a preposição, «o» é o «ou», «os» e
+     «nos» são pronomes de objeto e «tu» é o possessivo. Caíam sem ninguém
+     ver — «Voy darme una ducha» passava por «Voy a darme una ducha», e
+     «Hermano es muy majo» por «Tu hermano es muy majo». E o «um» português
+     escrito no lugar do «un» sumia da frase, que perdia uma palavra inteira
+     e caía no erro seco em vez do «deu quase» (u184: «necesito um poco de
+     sosiego»). Agora só o sujeito espanhol cai. */
   const OMISSIVEIS_ES = new Set([
-    ...OMISSIVEIS_PT,
     'yo', 'tú', 'el', 'él', 'ella', 'ellos', 'ellas',
     'nosotros', 'nosotras', 'vosotros', 'vosotras', 'usted', 'ustedes'
   ]);
@@ -344,9 +352,9 @@ window.Motor = (function () {
      Quem manda é a língua da resposta, não a direção: 'en-es' e 'pt-es'
      cobram o mesmo espanhol, e cada língua tem seu par de campos no card. */
   const CAMPOS = {
-    pt: { certa: 'pt', aceitas: 'aceitas',   distratores: 'distratores',   formas: 'formasPt' },
-    es: { certa: 'es', aceitas: 'aceitasEs', distratores: 'distratoresEs', formas: 'formasEs' },
-    en: { certa: 'en', aceitas: 'aceitasEn', distratores: 'distratoresEn', formas: 'formasEn' }
+    pt: { certa: 'pt', aceitas: 'aceitas',   distratores: 'distratores',   formas: 'formasPt', sinonimos: 'sinonimos' },
+    es: { certa: 'es', aceitas: 'aceitasEs', distratores: 'distratoresEs', formas: 'formasEs', sinonimos: 'sinonimosEs' },
+    en: { certa: 'en', aceitas: 'aceitasEn', distratores: 'distratoresEn', formas: 'formasEn', sinonimos: 'sinonimosEn' }
   };
 
   /* ── a língua que o baralho ensina ──
@@ -708,6 +716,43 @@ window.Motor = (function () {
       }
     }
     return null;
+  }
+
+  /* ── certo, mas não é a palavra do card ──
+     «currar» é trabalhar, na gíria da Espanha. Na volta, a pergunta é
+     «trabalhar», e quem escreve «trabajar» acertou o espanhol — só não o
+     espanhol que o card ensina. Contar erro seria punir quem sabe; contar
+     acerto seria deixar a gíria para sempre sem aprender. Então o app faz o
+     que faria um professor: diz que está certo, que não é essa, e dá a
+     primeira letra da que é (pedido do p042).
+
+     As outras palavras vêm do próprio card, em «sinonimosEs» (e
+     «sinonimosEn», «sinonimos», para os outros baralhos): o espanhol
+     corrente que diz a mesma coisa. Não há como adivinhá-las pelo baralho —
+     o índice das traduções confunde homônimo com sinônimo («a colher» é
+     «la cuchara» e é «coger»; «a cadeira» é «la silla» e é «la asignatura»),
+     e o aviso sairia para quem escreveu outra coisa.
+
+     A régua é a frouxa, como a da língua trocada: aqui não se corrige
+     grafia, só se reconhece a palavra. Quem chama é o app, e só depois de a
+     resposta ter sido dada como errada. */
+  function sinonimoDoCard(card, texto, direcao) {
+    const lingua = linguaDaResposta(direcao);
+    const lista = (card && card[CAMPOS[lingua].sinonimos]) || [];
+    const dado = semAcento(normalizar(texto, lingua));
+    if (!dado || !lista.length) return null;
+    const palavra = lista.find(s => semAcento(normalizar(s, lingua)) === dado);
+    return palavra ? { palavra: String(palavra).trim(), dica: primeiraLetra(card[CAMPOS[lingua].certa]) } : null;
+  }
+
+  /* A primeira letra do que se pede, sem o artigo e sem o «¿» da frente:
+     «el ordenador» começa com «o», «¿Te apetece?» com «t». */
+  function primeiraLetra(txt) {
+    const t = String(txt || '').normalize('NFC').toLowerCase().trim()
+      .replace(/^[¿¡"«(\s]+/, '')
+      .replace(/^(el|la|los|las|un|una|unos|unas|o|a|os|as|um|uma|the|an)\s+/, '');
+    const m = t.match(/[a-záéíóúüñ]/);
+    return m ? m[0] : '';
   }
 
   /* ── o gênero que muda a palavra inteira ──
@@ -1114,8 +1159,20 @@ window.Motor = (function () {
      pisos de 10 puxam as filas para um lado, e só um desvio de alguns cards
      gerava peso para compensar — as filas assentaram em 96 e 106. Com o
      desvio multiplicado por quatro, o mesmo empurrão sai de um desvio quatro
-     vezes menor. */
-  const ALVO_FILA = 100;     // cards que se quer ter em cada direção
+     vezes menor.
+
+     O alvo era cem, e cem é demais para quem responde uns 110 cards por dia.
+     O tamanho da fila não muda quantos cards novos entram por dia — isso quem
+     decide é o ritmo de quem estuda, e na simulação ficou em ~10 por dia com
+     qualquer alvo —; muda só quanto cada card espera na fila. Com cem de cada
+     lado, o card que acabou de ser escrito certo pela primeira vez pedia
+     voltar em umas 60 respostas e voltava em 700, oito dias depois, sem estar
+     aprendido ainda («demorou demais», em p094, p243 e v045). Com quarenta, as
+     primeiras voltas caem para cerca de um dia, e o card novo chega a
+     dominado em dez dias em vez de quinze. O preço é a passagem: com as filas
+     acima do alvo, quase não entra card novo até elas descerem — uma semana,
+     mais ou menos, trabalhando o que já estava em circulação. */
+  const ALVO_FILA = 40;      // cards que se quer ter em cada direção
   const GANHO = 4;           // quanto pesa cada card de desvio do alvo
   const PISO_REVISAO = 10;   // nenhuma fila de revisão morre de fome
   const PISO_INEDITO = 2;    // card novo nunca deixa de vir, mas em conta-gotas
@@ -1956,7 +2013,10 @@ window.Motor = (function () {
        mão» — um não serve de pegadinha para o outro. A comparação é feita na
        língua de casa do baralho. */
     const casa = CAMPOS[AUDIENCIA_PRINCIPAL[lingua] || 'pt'];
-    const certas = new Set(respostasAceitas(card, direcao));
+    /* o sinônimo que o card não ensina também é espanhol certo: «trabajar»
+       não pode ser a alternativa errada de «currar» */
+    const certas = new Set(respostasAceitas(card, direcao)
+      .concat((card[campo.sinonimos] || []).map(s => normalizar(s, lingua))));
     const traducoes = c => [String(c[casa.certa] || '')]
       .concat(String(c[casa.certa] || '').split('/'), c[casa.aceitas] || [])
       .map(t => normalizar(t, AUDIENCIA_PRINCIPAL[lingua] || 'pt')).filter(Boolean);
@@ -2012,7 +2072,7 @@ window.Motor = (function () {
     estadoInicial, registrar, modoDe, direcaoDe, faseDe, anotarDiario, diaLocal, medianaDasFaixas,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
-    linguaTrocada, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando, diferencaDoQuase,
+    linguaTrocada, sinonimoDoCard, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando, diferencaDoQuase,
     indiceEspanhol, leituraEspanhola, erroDeFlexao,
     descontoDePassos, acertosParaVirar, ACERTOS_PARA_VIRAR,
     linguaDaPergunta, linguaDaResposta,

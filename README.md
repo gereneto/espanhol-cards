@@ -100,7 +100,7 @@ fila quando a data chega — com espaço entre eles (ver adiante).
 
 #### De qual fila vem o próximo card
 
-Entre as outras três, a escolha persegue um alvo: **100 cards em cada
+Entre as outras três, a escolha persegue um alvo: **40 cards em cada
 direção**. Quem está abaixo do alvo precisa de entrada, quem está acima precisa
 de saída — e cada fila mexe no que mexe:
 
@@ -117,11 +117,11 @@ excesso de cada lado puxa trabalho no próprio lado, que é por onde ele escoa.
 | `es → pt` | `pt → es` | inédito | `es → pt` | `pt → es` |
 |---:|---:|---:|---:|---:|
 | 0 | 0 | 100% | — | — |
-| 50 | 0 | 30% | 64% | 6% |
-| 100 | 0 | 2% | 90% | 8% |
-| 100 | 100 | 9% | 45% | 45% |
-| 137 | 137 | 2% | 71% | 27% |
-| 50 | 150 | 43% | 8% | 49% |
+| 20 | 0 | 41% | 54% | 5% |
+| 40 | 0 | 2% | 90% | 8% |
+| 40 | 40 | 9% | 45% | 45% |
+| 55 | 55 | 1% | 49% | 49% |
+| 20 | 60 | 45% | 5% | 49% |
 
 **Não é uma porta que abre e fecha — é peso**, e ele cede aos poucos conforme a
 fila chega perto do alvo. Cada card de desvio pesa **quatro** pontos: com um
@@ -133,6 +133,25 @@ media a coisa errada, que era o intervalo, e não o tamanho das filas.
 
 Card novo nunca deixa de vir: há um piso de peso para os inéditos, porque um
 limite que pudesse virar "nunca" recriaria a seca que a regra veio resolver.
+
+**Por que quarenta, e não cem.** O alvo era cem, e o tamanho da fila não muda
+quantos cards novos entram por dia: isso quem decide é o ritmo de quem estuda.
+Na simulação com o progresso de 26 de setembro, 110 respostas por dia davam uns
+dez cards novos por dia com qualquer alvo, de vinte a cem. O que o tamanho muda
+é a espera. Com cem de cada lado, o card que tinha acabado de ser escrito
+certo pela primeira vez pedia voltar em umas 60 respostas e voltava em 700 —
+oito dias depois, ainda sem estar aprendido («demorou demais», em três
+comentários de 22/09). Com quarenta:
+
+| | alvo 100 | alvo 40 |
+|---|---:|---:|
+| as três primeiras voltas de um card novo (mediana · 90%) | 3,0 · 5,0 dias | 1,0 · 2,0 dias |
+| do card novo ao dominado (mediana) | 15 dias | 10 dias |
+| cards novos por dia, da terceira semana em diante | ~11 | ~10 |
+
+O preço é a passagem: com as filas acima do alvo, quase não entra card novo
+até elas descerem — cerca de uma semana trabalhando o que já estava em
+circulação, e mais uma com uns oito novos por dia.
 
 Simulando 1500 respostas com a taxa de acerto real, partindo do zero, as duas
 direções chegam ao alvo por volta da resposta 1000 e ficam lá:
@@ -185,7 +204,7 @@ posição 78 dava um passo à frente e levava um empurrão para trás, a cada ve
 histórico achou cards parados assim havia **1.600 respostas**.
 
 Não dá para devolver cada card na distância exata: com cem cards numa fila que
-leva um terço das respostas, a espera média é de umas trezentas respostas,
+leva um terço das respostas (era o alvo até 26/09), a espera média é de umas trezentas respostas,
 qualquer que seja a ordem. Alguém espera mais do que pediu — e a regra antiga
 escolhia sempre os mesmos. Simulando 1000 respostas com a taxa de acerto real:
 
@@ -332,7 +351,11 @@ onde são gravados estes arquivos:
   verdadeiros): é o arquivo que sobe e desce inteiro a cada três respostas, e
   assim ele tem pouco mais da metade do tamanho. Passando de 1 MB, o app o lê
   pela API de blobs do GitHub, que a de conteúdo não entrega
-- `sessoes/<data>.json` — registro de cada resposta da sessão
+- `sessoes/<data>.json` — registro de cada resposta da sessão. A sessão também
+  fica guardada no navegador a cada resposta, e o que não chegou a subir — a
+  aba escondida que o celular congelou no meio da subida — sobe na abertura
+  seguinte, juntado ao que o arquivo já tinha. Antes disso, 136 das 1.202
+  respostas de 15 a 26 de setembro nunca chegaram aos logs
 - `resumo.md` — relatório legível, base para calibrar a próxima leva
 - `contestacoes.json` — respostas que você achou que deveriam ter sido aceitas
 - `comentarios.json` — o que você comentou num card, pelo botão do rodapé
@@ -401,8 +424,11 @@ formas no mesmo texto, entre chaves, masculino antes da barra:
 A cada aparição o app sorteia um lado (`Motor.formaDoCard`) e ele vale para o
 card inteiro — a pergunta, a resposta certa, as respostas aceitas, os quatro
 distratores e as formas verbais saem todos do mesmo gênero. Depois de
-responder, a nota mostra a outra forma; na lista de todos os cards ela aparece
-embaixo, com o 🔁. O resto do app — busca, painel, relatório, distratores
+responder, a nota mostra a outra forma só quando o português é o mesmo para as
+duas — «A criança não quer comer» serve a «El niño» e a «La niña», e ver as
+duas respostas certas da mesma pergunta é lição; «o médico» e «a médica» não
+precisam disso. Na lista de todos os cards ela aparece sempre, embaixo, com o
+🔁. O resto do app — busca, painel, relatório, distratores
 tirados de outros cards — trabalha com a forma masculina, que é a canônica.
 
 As duas formas passam pelo `build.js` separadamente, como se fossem dois
@@ -609,6 +635,30 @@ outras 17 ganharam o par na nota — «a tela» (o tecido), «o marco» (a
 moldura), «a mala» (má), «reparar» (consertar), «apagar» (desligar),
 «o escritório» (a escrivaninha), entre outras. Card novo com pergunta que se
 lê como outra palavra espanhola deve trazer o par na nota.
+
+**Certo, mas não é a palavra do card.** Na volta, «trabalhar» pede «currar»,
+a gíria da Espanha. Quem escreve «trabajar» acertou o espanhol, só não o que o
+card ensina — contar erro puniria quem sabe, contar acerto deixaria a gíria
+sem aprender. O app faz o que faria um professor:
+
+> **trabajar** também está certo, mas não é a palavra deste card. Tente de
+> novo: começa com **c**.
+
+As outras palavras vêm do próprio card, em `sinonimosEs`: 275 em 182 cards de
+palavra — a variante latino-americana de uma palavra da Espanha («la
+computadora», «el jugo»), a palavra neutra da gíria («trabajar», «el chisme»),
+o sinônimo corrente («recordar» para «acordarse», «aún» para «todavía») e o
+cognato que também é espanhol («absurdo» para «descabellado»). Não há como
+tirá-las do baralho sozinho: o índice das traduções confunde homônimo com
+sinônimo («a colher» é «la cuchara» e é «coger»). Vale a mesma regra da língua
+trocada — uma vez por aparição, relógio correndo —, e nenhuma dessas palavras
+aparece como alternativa errada na múltipla escolha.
+
+**O erro sem nome mostra o que foi escrito.** Gênero, «ñ» e conjugação já
+tinham rótulo próprio; o resto dava só «não foi dessa vez» ao lado da resposta
+certa, e achar a diferença ficava por conta de quem lia. Agora o que foi
+escrito fica à mostra, e, quando chegou perto, com a diferença pintada como no
+«quase».
 
 **Quase — e aí quem decide é você.** Se a resposta chegou perto mas não bate,
 o app não dá nem tira ponto: mostra o que você escreveu ao lado da resposta
