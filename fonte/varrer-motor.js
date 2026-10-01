@@ -49,6 +49,14 @@ if (!fs.existsSync(caminho)) {
 }
 const FONTE = JSON.parse(fs.readFileSync(caminho, 'utf8')).cards;
 
+/* Os cards de verso ficam fora do baralho (ver fonte/build.js), mas sao cards
+   como os outros e vao ser respondidos como os outros: entram na varredura,
+   com o baralho inteiro de vizinhanca. */
+const arqTextos = path.join(RAIZ, 'data', 'textos-' + idioma + '.json');
+const DE_TEXTO = fs.existsSync(arqTextos)
+  ? JSON.parse(fs.readFileSync(arqTextos, 'utf8')).textos.reduce((a, t) => a.concat(t.cards || []), [])
+  : [];
+
 /* o quarteto de cada língua, e de onde sai a lista de respostas aceitas */
 const CAMPOS = {
   pt: { certa: 'pt', aceitas: 'aceitas', regionais: 'regionais' },
@@ -64,14 +72,14 @@ audiencias.forEach(a => { direcoes.push(idioma + '-' + a); direcoes.push(a + '-'
 /* estado de quem já viu o card algumas vezes: é o que destrava a múltipla
    escolha e os distratores dinâmicos */
 const estados = {};
-FONTE.forEach(c => { estados[c.id] = Object.assign(M.estadoInicial(c.id), { vistas: 3, erros: 1 }); });
+FONTE.concat(DE_TEXTO).forEach(c => { estados[c.id] = Object.assign(M.estadoInicial(c.id), { vistas: 3, erros: 1 }); });
 
 const problemas = [];
 const erro = (id, msg) => problemas.push('  - ' + id + '  ' + msg);
 
 const CARDS = FONTE.map(c => M.formaDoCard(c, 0));
 
-for (const bruto of FONTE) {
+for (const bruto of FONTE.concat(DE_TEXTO)) {
   /* card de gênero rende duas formas, e as duas têm de passar */
   for (const c of M.formasDoCard(bruto)) {
 
@@ -114,7 +122,8 @@ for (const bruto of FONTE) {
 }
 
 console.log('');
-console.log('  ' + FONTE.length + ' card(s) do baralho de ' + idioma + ', ' + SORTEIOS +
+console.log('  ' + FONTE.length + ' card(s) do baralho de ' + idioma +
+            (DE_TEXTO.length ? ' e ' + DE_TEXTO.length + ' de verso' : '') + ', ' + SORTEIOS +
             ' sorteios em cada uma das ' + direcoes.length + ' direções (' + direcoes.join(', ') + ').');
 if (!problemas.length) {
   console.log('  passaram: cinco alternativas distintas, a certa entre elas, nenhum distrator lido como certo, aceitas de pé.');

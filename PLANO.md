@@ -182,6 +182,7 @@ baralhos de feitios bem diferentes.
 | 9 | Inglês, leva 9: 100 cards, e os pares entre o inglês americano e o britânico | **feito** (01/10) — o baralho está em 830 |
 | 10 | Inglês, leva 10: 100 cards de base — cozinha, roupa, feira, tempo, loja — e trinta de conversa | **feito** (01/10) — o baralho está em 930 |
 | 11 | Inglês, leva 11: 70 cards para fechar os mil | **feito** (01/10) — o baralho está em **1000** |
+| 12 | Textos: a trilha, o formato e o primeiro poema (Machado) | **feito** (01/10) — falta o lado do app |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -285,3 +286,86 @@ sujeito. Três lições, nessa ordem de importância:
   palavra espanhola serve ao aparelho e à sala.
 
 Depois disso, commit e push. É o commit que serve de memória, não a conversa.
+
+---
+
+## 6. Os textos (trilhas)
+
+Decidido com o Gere em 01/10. **Um texto não é um card: é uma trilha.** O aluno
+liga a trilha de um texto, e ela vai soltando cards na fila até o texto estar
+inteiro na cabeça. No fim o app anuncia e mostra o texto completo.
+
+As regras, todas do Gere:
+
+- **só textos em domínio público, reconhecidos pela qualidade** — poemas,
+  principalmente, e também excertos curtos de prosa de ficção e de não-ficção.
+  Cada texto é aprovado por ele antes de qualquer card existir, e o arquivo
+  guarda em `dominio` a conta que põe o texto em domínio público;
+- **as palavras do texto ganham card**, as que ainda não tiverem — e só as que
+  mereceriam card pela seção 2 do manual. «De», «la», «y» e «camino» ficam de
+  fora: não ensinam nada a quem fala português, e card de acerto fácil mexe no
+  agendamento de todos os outros;
+- **a cada verso, ou a cada frase completa na prosa, um card** — do primeiro em
+  diante;
+- **o card do verso só é liberado quando todas as palavras dele estiverem
+  dominadas.** Palavra sem card não entra na conta: ela não tem como ser
+  dominada, e quem fala português já a entende;
+- **nada disso começa antes de 500 cards dominados.** Daí em diante, **a cada
+  três cards novos, um é do texto da vez**;
+- quando o último verso for dominado, o app avisa e mostra o texto inteiro.
+
+### O formato
+
+O texto mora em `fonte/textos/<idioma>/`, fora de `fonte/cards/`, e **leva
+os cards dos versos dentro de si**. Não é organização: é proteção. Card de verso
+em `fonte/cards/` cairia na fila normal no primeiro build, antes de a
+trilha existir — apareceria no estudo do Gere no dia seguinte, solto, fora de
+ordem e sem as palavras dele vistas.
+
+O arquivo tem `id`, `titulo`, `autor`, `obra`, `ano`,
+`dominio`, `nota`/`notaEn`, a lista `versos` e a lista
+`cards`. Cada verso é `{n, card}`, e **o mesmo id de card pode
+aparecer duas vezes**: «caminante, no hay camino» é o verso 3 e o verso 9 do
+Machado, e dois cards com o mesmo espanhol o build barra — então a lista aponta
+para ids. Cada card de verso leva `texto` (o id da trilha) e, quando precisa,
+`requerTodas` com os ids das palavras que têm de estar dominadas.
+
+O build junta os cards de verso ao baralho **só para validá-los** — passam pelas
+mesmas checagens de todo card — e depois os separa: o baralho sai em
+`data/cards-<idioma>.js` e as trilhas em `data/textos-<idioma>.js`, que
+põe tudo em `window.TEXTOS[idioma]`. A varredura do motor também corre por
+eles, porque vão ser respondidos como qualquer card.
+
+### O primeiro texto, e o que ele ensinou
+
+«Caminante, no hay camino», de Antonio Machado (1912), dez versos. Rendeu **três
+palavras novas** — «la huella», «sino» e «la estela» — com as três frases de uso,
+e **nove cards de verso** para dez linhas. Três coisas que só apareceram ao
+fazer:
+
+- **o verso repetido**, que obrigou a lista de versos a apontar para ids;
+- **a régua do manual quase não tranca nada.** Das nove linhas, só duas têm
+  palavra com card: a 1 («huellas») e a 10 («sino», «estelas»). As outras sete
+  abrem na hora. Quem manda no ritmo, então, é a ordem dos versos, e não o
+  domínio das palavras. Se o Gere quiser que a trava morda, o critério das
+  palavras tem de ser mais largo que o do manual — e aí entram «camino»,
+  «andar», «senda», que o português entrega;
+- **o baralho de espanhol saiu dos mil**: está em 1006, porque as três palavras
+  e as três frases são cards de verdade e estudam-se na fila normal. Os nove
+  versos estão fora da conta.
+
+### O que falta, e é do app
+
+Nada disso aparece para o aluno ainda. O que está feito é a fonte: formato,
+validação no build, o texto, os cards, e a varredura passando neles. **O lado do
+motor e das telas não foi tocado** — e é justamente onde a outra conversa
+trabalha, então vale combinar antes de mexer. Falta:
+
+1. contar os cards dominados e destravar a trilha em 500;
+2. a escolha do texto da vez, na tela;
+3. a injeção de 1 card de trilha a cada 3 cards novos — e isso conversa com o
+   piso e o teto de card novo (um a cada vinte respostas, no máximo um a cada
+   cinco), que é de 01/10: o card da trilha conta como card novo ou entra por
+   fora? Decisão pendente;
+4. a liberação do verso quando as palavras dele estiverem dominadas;
+5. o anúncio e a tela do texto inteiro ao fim.

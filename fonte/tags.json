@@ -1218,5 +1218,10 @@
     "en": "paint",
     "es": "paint",
     "cards": 0
+  },
+  "poema": {
+    "en": "poem",
+    "es": "poema",
+    "cards": 0
   }
 }

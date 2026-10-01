@@ -709,3 +709,36 @@ aqui fica só o que muda para quem escreve um card.
 - **O resto do manual vale igual.** Distrator, parêntese, `aceitas`, frase de
   uso, etiqueta, gênero: as regras são das seções 2 a 14, e nenhuma delas é do
   espanhol.
+
+---
+
+## 16. O card de verso
+
+O baralho ganhou um vizinho: as **trilhas de texto**, em
+`fonte/textos/<idioma>/`. O texto não é card — é uma faixa que o app liga e
+que vai soltando cards na ordem. O plano inteiro está em
+[`../PLANO.md`](../PLANO.md); aqui fica só o que muda para quem escreve
+um card de verso.
+
+- **O card de verso é um card de frase**, e obedece a este manual inteiro: quatro
+  distratores, régua de formato, `aceitas` que não afrouxa, nota que ensina. O
+  build o valida junto com o baralho, e a varredura do motor corre por ele.
+- **Ele mora dentro do arquivo do texto**, na lista `cards`, e não em
+  `fonte/cards/`. Card de verso no baralho entra na fila normal no primeiro
+  build, antes de a trilha existir.
+- **Leva `texto`** com o id da trilha, e **`requerTodas`** com os ids das
+  palavras que têm de estar dominadas antes de ele aparecer. Não é o
+  `requer` da frase de uso, que é uma palavra só.
+- **O verso pode repetir.** A lista `versos` aponta para ids de card, e o
+  mesmo id pode aparecer duas vezes — o verso 3 e o verso 9 do Machado são a
+  mesma linha, e dois cards com o mesmo espanhol o build barra.
+- **O verso pode ser um pedaço de frase**, e isso é normal em poema: «se ve la
+  senda que nunca» fecha só no verso seguinte. Nesse caso a nota mostra a frase
+  inteira, para a pessoa saber onde o pedaço se encaixa.
+- **A nota do verso ensina o que o verso traz**: a palavra nova, a construção, a
+  inversão. E pode falar do poema — onde a linha está, que rima faz, que ideia
+  carrega. É a única nota do projeto que tem direito de falar do card em si,
+  porque aqui o texto é o assunto.
+- **As palavras do texto seguem a seção 2**: ganha card o que o português e o
+  inglês não entregam. «Camino» e «andar» ficam de fora; «la huella», «sino» e
+  «la estela» entram, com frase de uso como qualquer palavra.

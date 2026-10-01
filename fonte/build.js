@@ -93,6 +93,35 @@ for (const idioma of IDIOMAS) {
   if (cards.length) baralhos.push({ idioma, cards });
 }
 
+/* ── os textos ──
+   Um texto não é card: é uma TRILHA, que o app liga e que vai soltando os
+   cards dos versos na ordem. Por isso ele mora em fonte/textos/<idioma>/ e
+   não em fonte/cards/ — se os cards de verso entrassem no baralho, eles
+   cairiam na fila normal antes de a trilha existir.
+
+   Os cards de verso vêm dentro do próprio arquivo do texto, e aqui são
+   juntados ao baralho só para passar pelas MESMAS checagens de todo card:
+   distrator que o motor lê como certo, formato que entrega a resposta, card
+   repetido, inglês pela metade. Na hora de gravar eles se separam outra vez.
+
+   Um verso pode repetir — «caminante, no hay camino» é o verso 3 e o 9 do
+   Machado —, então a lista de versos aponta para ids, e o mesmo id pode
+   aparecer duas vezes. */
+const pastaTextos = path.join(__dirname, 'textos');
+for (const b of baralhos) {
+  b.textos = [];
+  const pasta = path.join(pastaTextos, b.idioma);
+  if (!fs.existsSync(pasta)) continue;
+  for (const f of fs.readdirSync(pasta).filter(f => f.endsWith('.json')).sort()) {
+    const texto = JSON.parse(fs.readFileSync(path.join(pasta, f), 'utf8'));
+    const quantos = (texto.cards || []).length;
+    console.log('  ' + ('textos/' + b.idioma + '/' + f).padEnd(36) + quantos + ' versos, ' +
+      (texto.versos || []).length + ' linhas');
+    b.textos.push(texto);
+    b.cards = b.cards.concat((texto.cards || []).map(c => Object.assign({ idioma: b.idioma }, c)));
+  }
+}
+
 /* ── validação ──
    Duas passagens iguais: uma sobre a resposta portuguesa, outra sobre a
    inglesa. O inglês é opcional enquanto a tradução avança leva a leva —
@@ -549,6 +578,52 @@ for (const { idioma, cards } of baralhos) {
   }
 }
 
+/* ── o que é só do texto ──
+   Checagem própria da trilha, e depois a separação: daqui para baixo «cards»
+   é só o baralho, e os versos vivem em b.cardsDeTexto. */
+const idsDeTexto = new Set();
+for (const b of baralhos) {
+  const doBaralho = new Set(b.cards.filter(c => !c.texto).map(c => c.id));
+  for (const txt of b.textos || []) {
+    const onde = 'texto ' + (txt.id || '(sem id)');
+    if (!txt.id) erros.push(onde + ': falta o id');
+    else if (idsDeTexto.has(txt.id)) erros.push(onde + ': id de texto repetido');
+    idsDeTexto.add(txt.id);
+    for (const campo of ['idioma', 'tipo', 'titulo', 'autor', 'dominio']) {
+      if (!txt[campo]) erros.push(onde + ': falta «' + campo + '»');
+    }
+    if (txt.idioma && txt.idioma !== b.idioma) {
+      erros.push(onde + ': diz idioma «' + txt.idioma + '» e está na pasta de ' + b.idioma);
+    }
+    const seus = new Map((txt.cards || []).map(c => [c.id, c]));
+    if (!seus.size) erros.push(onde + ': nenhum card de verso');
+    if (!(txt.versos || []).length) erros.push(onde + ': nenhum verso');
+
+    (txt.versos || []).forEach((v, i) => {
+      if (v.n !== i + 1) erros.push(onde + ': o verso na posição ' + (i + 1) + ' diz n=' + v.n);
+      if (!seus.has(v.card)) erros.push(onde + ': o verso ' + v.n + ' aponta para «' + v.card + '», que não está nos cards do texto');
+    });
+    const usados = new Set((txt.versos || []).map(v => v.card));
+    for (const id of seus.keys()) {
+      if (!usados.has(id)) erros.push(onde + ': o card ' + id + ' não é usado por verso nenhum');
+    }
+    for (const c of seus.values()) {
+      if (c.texto !== txt.id) erros.push(onde + ': o card ' + c.id + ' aponta para o texto «' + c.texto + '»');
+      /* A regra do Gere: o verso só é liberado quando TODAS as palavras dele
+         estiverem dominadas. Palavra que não merece card não entra na conta —
+         ela não tem como ser dominada, e quem fala português já a entende. */
+      for (const req of c.requerTodas || []) {
+        if (!doBaralho.has(req)) {
+          erros.push(onde + ': o card ' + c.id + ' exige «' + req + '», que não existe no baralho');
+        }
+      }
+      if (c.requer) erros.push(onde + ': o card ' + c.id + ' usa «requer», que é da frase de uso; no verso é «requerTodas»');
+    }
+  }
+  b.cardsDeTexto = b.cards.filter(c => c.texto);
+  b.cards = b.cards.filter(c => !c.texto);
+}
+
 /* ── estatísticas, um bloco por baralho ── */
 for (const { idioma, cards } of baralhos) {
   const L = CAMPOS_DA_LINGUA[idioma];
@@ -563,6 +638,13 @@ for (const { idioma, cards } of baralhos) {
   if (presas.length) {
     const palavras = new Set(presas.map(c => c.requer));
     console.log('  presas à palavra . ' + presas.length + ' frases, sobre ' + palavras.size + ' palavras');
+  }
+
+  const bar = baralhos.find(b => b.idioma === idioma);
+  if ((bar.textos || []).length) {
+    const versos = bar.textos.reduce((a, t) => a + (t.versos || []).length, 0);
+    console.log('  textos (trilha) .. ' + bar.textos.length + ', com ' + versos +
+      ' verso(s) em ' + bar.cardsDeTexto.length + ' card(s) — fora da fila normal');
   }
 
   for (const a of audienciasDe(idioma)) {
@@ -643,6 +725,24 @@ for (const { idioma, cards } of baralhos) {
   }
 }
 
+/* ── os textos, à parte do baralho ──
+   data/textos-<idioma>.js põe as trilhas em window.TEXTOS[idioma]. Ficam fora
+   do baralho de propósito: o app só vai lê-las quando a trilha existir, e até
+   lá nenhum verso aparece na fila de ninguém. */
+for (const b of baralhos) {
+  if (!(b.textos || []).length) continue;
+  const comVersos = b.textos.map(txt => Object.assign({}, txt, {
+    cards: (txt.cards || []).map(c => Object.assign({ idioma: b.idioma }, c))
+  }));
+  const pacote = { versao: 1, idioma: b.idioma, total: comVersos.length, textos: comVersos };
+  fs.writeFileSync(path.join(raiz, 'data', 'textos-' + b.idioma + '.json'),
+    JSON.stringify(pacote, null, 1), 'utf8');
+  fs.writeFileSync(path.join(raiz, 'data', 'textos-' + b.idioma + '.js'),
+    '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
+    'window.TEXTOS = window.TEXTOS || {};\n' +
+    "window.TEXTOS['" + b.idioma + "'] = " + JSON.stringify(pacote) + ';\n', 'utf8');
+}
+
 /* ── carimbo de versão nos assets ──
    Sem isso o navegador pode servir um data/cards.js velho junto de um
    index.html novo, misturando baralho antigo com código novo.
@@ -657,7 +757,8 @@ const assets = [
   'js/motor.js', 'js/github.js', 'js/app.js',
   'js/revisao.js', 'js/revisar-es-en.js', 'js/revisar-en-pt.js',
   'data/cards.js', 'data/cards-revisao.js', 'data/tags.js', 'data/historico.js',
-  'data/cards-es.js', 'data/cards-en.js', 'data/cards-pt.js'
+  'data/cards-es.js', 'data/cards-en.js', 'data/cards-pt.js',
+  'data/textos-es.js', 'data/textos-en.js', 'data/textos-pt.js'
 ].filter(a => fs.existsSync(path.join(raiz, a)));   // as páginas de revisão podem ainda não existir
 
 const versaoDe = {};

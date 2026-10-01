@@ -2,7 +2,7 @@
  "versao": 1,
  "idioma": "es",
  "gerado_em": "2026-10-01",
- "total": 1000,
+ "total": 1006,
  "cards": [
   {
    "idioma": "es",
@@ -42621,6 +42621,242 @@
    ],
    "nota": "«La autopista» é a estrada de pista dupla com pedágio; a rodovia comum é «la carretera».",
    "notaEn": "«La autopista» is the dual carriageway with tolls; an ordinary road is «la carretera»."
+  },
+  {
+   "idioma": "es",
+   "id": "p348",
+   "tipo": "palavra",
+   "es": "la huella",
+   "pt": "a pegada",
+   "en": "the footprint",
+   "aceitas": [
+    "a pegada",
+    "pegada",
+    "as pegadas",
+    "a marca",
+    "o rastro"
+   ],
+   "aceitasEn": [
+    "the footprint",
+    "footprint",
+    "footprints",
+    "the print",
+    "the trace",
+    "the mark"
+   ],
+   "distratores": [
+    "a pedra",
+    "a poeira",
+    "a sombra",
+    "a semente"
+   ],
+   "distratoresEn": [
+    "the stone",
+    "the dust",
+    "the shadow",
+    "the seed"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«La huella» é a marca que o pé deixa, e também a que fica de qualquer passagem: «las huellas de la crisis». A do dedo é «la huella digital», e deixar marca na história é «dejar huella», no singular.",
+   "notaEn": "'La huella' is the mark a foot leaves, and the trace anything leaves behind: 'las huellas de la crisis'. A fingerprint is 'la huella digital', and to leave a mark on history is 'dejar huella', singular."
+  },
+  {
+   "idioma": "es",
+   "id": "p349",
+   "tipo": "palavra",
+   "es": "sino",
+   "pt": "mas sim",
+   "en": "but rather",
+   "aceitas": [
+    "mas sim",
+    "e sim",
+    "senao",
+    "a nao ser"
+   ],
+   "aceitasEn": [
+    "but rather",
+    "but",
+    "rather",
+    "except",
+    "but instead"
+   ],
+   "distratores": [
+    "portanto",
+    "no entanto",
+    "ou seja",
+    "além disso"
+   ],
+   "distratoresEn": [
+    "therefore",
+    "nevertheless",
+    "that is",
+    "besides"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "falso-amigo",
+    "gramática"
+   ],
+   "nota": "«Sino» corrige o que a negativa acabou de dizer: «no es blanco sino negro» é «não é branco, mas sim preto». Antes de verbo conjugado vira «sino que». O sino que toca é «la campana».\n🇪🇸 sino → 🇧🇷 mas sim\n🇪🇸 la campana → 🇧🇷 o sino",
+   "notaEn": "'Sino' corrects what the negative just said: 'no es blanco sino negro' is 'it isn't white but black'. Before a conjugated verb it becomes 'sino que'. Keep it apart from 'si no', two words, which is 'if not'."
+  },
+  {
+   "idioma": "es",
+   "id": "p350",
+   "tipo": "palavra",
+   "es": "la estela",
+   "pt": "a esteira",
+   "en": "the wake",
+   "aceitas": [
+    "a esteira",
+    "esteira",
+    "o rastro",
+    "rastro",
+    "o sulco"
+   ],
+   "aceitasEn": [
+    "the wake",
+    "wake",
+    "the trail",
+    "trail",
+    "the wash"
+   ],
+   "distratores": [
+    "a estrela",
+    "a estaca",
+    "a estampa",
+    "a escada"
+   ],
+   "distratoresEn": [
+    "the star",
+    "the stake",
+    "the stamp",
+    "the ladder"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo",
+    "falso-amigo"
+   ],
+   "nota": "«La estela» é o rastro que fica atrás: do navio na água, do avião no céu, do cometa. A estela de pedra com inscrição também é «la estela», e a estrela é «la estrella».\n🇪🇸 la estela → 🇧🇷 a esteira, o rastro\n🇪🇸 la estrella → 🇧🇷 a estrela",
+   "notaEn": "'La estela' is the trail left behind: a ship's wake, a plane's contrail, a comet's tail. The carved stone slab is also 'la estela', and the star is 'la estrella'."
+  },
+  {
+   "idioma": "es",
+   "id": "u344",
+   "tipo": "frase",
+   "requer": "p348",
+   "es": "Dejó huellas en la arena.",
+   "pt": "Deixou pegadas na areia.",
+   "en": "It left footprints in the sand.",
+   "aceitas": [
+    "deixou pegadas na areia",
+    "deixou as pegadas na areia",
+    "deixou marcas na areia"
+   ],
+   "aceitasEn": [
+    "it left footprints in the sand",
+    "he left footprints in the sand",
+    "she left footprints in the sand",
+    "left footprints in the sand"
+   ],
+   "distratores": [
+    "Deixou conchas na areia.",
+    "Deixou moedas na areia.",
+    "Deixou garrafas na areia.",
+    "Deixou sandálias na areia."
+   ],
+   "distratoresEn": [
+    "It left shells in the sand.",
+    "It left coins in the sand.",
+    "It left bottles in the sand.",
+    "It left sandals in the sand."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "No plural são as pegadas mesmo; no singular, «dejar huella» é deixar marca na história. E cuidado com a areia: «la arena» é a da praia, e a arena de espetáculo é «el ruedo».\n🇪🇸 la arena → 🇧🇷 a areia\n🇪🇸 el ruedo → 🇧🇷 a arena",
+   "notaEn": "In the plural these are actual footprints; in the singular, 'dejar huella' is to leave a mark on history. And 'la arena' is sand, not the arena, which is 'el ruedo' or 'el estadio'."
+  },
+  {
+   "idioma": "es",
+   "id": "u345",
+   "tipo": "frase",
+   "requer": "p349",
+   "es": "No es tarde sino temprano.",
+   "pt": "Não é tarde, mas sim cedo.",
+   "en": "It isn't late but early.",
+   "aceitas": [
+    "nao e tarde mas sim cedo",
+    "nao e tarde e sim cedo",
+    "nao e tarde senao cedo",
+    "nao esta tarde esta cedo"
+   ],
+   "aceitasEn": [
+    "it isnt late but early",
+    "it is not late but early",
+    "its not late but rather early"
+   ],
+   "distratores": [
+    "Não é tarde nem cedo.",
+    "Se não é tarde, é cedo.",
+    "É tarde, e não cedo.",
+    "Não é tarde, e também não é cedo."
+   ],
+   "distratoresEn": [
+    "It's neither late nor early.",
+    "If it isn't late, it's early.",
+    "It's late, and not early.",
+    "It isn't late, and it isn't early either."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "falso-amigo",
+    "gramática"
+   ],
+   "nota": "Com «sino» a frase corrige a negativa: nega uma coisa e põe outra no lugar. Cuidado com «si no», separado — «si no es tarde, vamos» é «se não é tarde, vamos»: som igual, sentido outro.",
+   "notaEn": "With 'sino' the sentence corrects the negative: it denies one thing and puts another in its place. Watch out for 'si no', two words — 'si no es tarde, vamos' is 'if it isn't late, let's go': same sound, different meaning."
+  },
+  {
+   "idioma": "es",
+   "id": "u346",
+   "tipo": "frase",
+   "requer": "p350",
+   "es": "El barco dejaba una estela blanca.",
+   "pt": "O barco deixava uma esteira branca.",
+   "en": "The boat left a white wake.",
+   "aceitas": [
+    "o barco deixava uma esteira branca",
+    "o barco deixava um rastro branco",
+    "o navio deixava uma esteira branca"
+   ],
+   "aceitasEn": [
+    "the boat left a white wake",
+    "the ship left a white wake",
+    "the boat was leaving a white wake"
+   ],
+   "distratores": [
+    "O barco deixava uma fumaça branca.",
+    "O barco deixava uma mancha branca.",
+    "O barco deixava uma luz branca.",
+    "O barco deixava uma bandeira branca."
+   ],
+   "distratoresEn": [
+    "The boat left white smoke.",
+    "The boat left a white stain.",
+    "The boat left a white light.",
+    "The boat left a white flag."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "A espuma que fica atrás do barco é «la estela», e a palavra serve igual ao avião e ao cometa. O adjetivo concorda com ela, que é feminina: «una estela blanca».",
+   "notaEn": "The foam left behind a boat is 'la estela', and the word serves planes and comets just the same. The adjective agrees with it, and it is feminine: 'una estela blanca'."
   }
  ]
 }
