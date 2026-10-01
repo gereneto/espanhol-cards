@@ -32,8 +32,10 @@ Leva nova não se escreve no escuro. Nesta ordem:
      legítima (entra em `aceitas`).
 3. **`dados/resumo.md`**: até que nível o acerto se mantém alto; que temas estão
    fracos; o que foi marcado como «já conhecia» (não gastar card com isso);
-   acerto lento em múltipla escolha de card que ele disse não conhecer é
-   provável chute, e não conta como sabido.
+   acerto em múltipla escolha de card que ele disse não conhecer pode ser
+   chute, e não conta como sabido — o tempo da resposta, que ajuda a separar
+   uma coisa da outra, está no `ms` de cada evento em `dados/sessoes/` (o app
+   não o usa mais para nada, nem o mostra).
 
 Procure o **padrão por trás do caso**, não só o caso. «simpática» recusada para
 «majo» virou o feminino em todos os adjetivos; `d'água` virou regra do

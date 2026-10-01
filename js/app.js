@@ -268,6 +268,22 @@
       });
     }
 
+
+    /* O relógio saiu do motor (out/2026), e com ele o que o progresso guardava
+       por causa dele: a conta de velocidades de cada card, o tempo e a
+       classificação em cada resposta do histórico, e as faixas de tempo do
+       diário. Eram 18% do progresso.json, que sobe e desce inteiro a cada
+       três respostas. O tempo de cada resposta continua no log da
+       sessão, que é onde a calibragem o procura. */
+    Object.keys(p.cards).forEach(id => {
+      const e = p.cards[id];
+      delete e.velocidades;
+      (e.historico || []).forEach(h => { delete h.ms; delete h.velocidade; delete h.pausado; });
+    });
+    if (p.diario && typeof p.diario === 'object') {
+      Object.keys(p.diario).forEach(d => { if (p.diario[d]) { delete p.diario[d].m; delete p.diario[d].e; } });
+    }
+
     ordenarIneditos(p);
     return p;
   }
@@ -737,11 +753,7 @@
        portuguesa e responde o espanhol dela. Não é desconhecimento, é a
        palavra enganando — então o app avisa e devolve a vez, sem contar
        erro nem gravar nada. Uma vez por aparição do card: com duas viraria
-       tentativa livre, e a medida do tempo perderia o sentido.
-
-       O relógio segue correndo, de propósito. O tropeço não é erro, mas
-       também não sai de graça: a resposta vai chegar mais lenta, e o card
-       volta um pouco mais cedo por causa disso. */
+       tentativa livre. */
     const conferencia = desistiu ? 'errado' : Motor.conferir(cardAtual, texto, direcaoAtual);
     if (conferencia === 'errado' && !desistiu && !chanceUsada) {
       const troca = Motor.linguaTrocada(cardAtual, texto, direcaoAtual);
@@ -786,8 +798,8 @@
     el.entrada.focus({ preventScroll: true });
   }
 
-  /* Mesma regra da língua trocada: uma vez por aparição, sem contar erro, e
-     com o relógio correndo. A dica é a primeira letra — o bastante para
+  /* Mesma regra da língua trocada: uma vez por aparição, sem contar erro.
+     A dica é a primeira letra — o bastante para
      puxar a palavra da memória, pouco para entregá-la. */
   function avisarSinonimo(s) {
     chanceUsada = true;
@@ -814,11 +826,12 @@
   /* Mostra o feedback. Grava na hora, salvo quando a resposta caiu na
      tolerância — aí quem decide é você, e só então grava. */
   function concluir(r) {
-    /* "pausado" quer dizer tempo não confiável, e há duas maneiras de
-       chegar lá: sair da aba, ou demorar tanto que é evidente que o card
-       ficou sozinho na tela. Nos dois casos o número não mede nada. */
+    /* O tempo não decide mais nada e não aparece na tela (ver «o relógio
+       saiu do motor», no motor.js): segue só para o log da sessão, com a
+       marca de quando ele não é confiável. "pausado" quer dizer isso, e há
+       duas maneiras de chegar lá: sair da aba, ou demorar tanto que é
+       evidente que o card ficou sozinho na tela. */
     r.pausado = pausou || r.ms >= Motor.MS_ABANDONO;
-    r.velocidade = Motor.velocidade(cardAtual, r.modo, r.ms, r.pausado);
     respostaPendente = r;
 
     el['resposta-certa'].textContent = alvoAtual;
@@ -841,17 +854,10 @@
     el.nota.textContent = nota;
     el.nota.classList.toggle('oculto', !nota);
 
-    const rotuloVel = { rapido: 'rápido', medio: 'no tempo médio', lento: 'devagar' }[r.velocidade];
+    /* Só as etiquetas: o nível já está na aba do fichário, e o tempo da
+       resposta saiu daqui junto com o relógio. */
     el.medidas.innerHTML =
-      /* tempo desconsiderado não aparece: o número não mediu nada */
-      (r.pausado ? ''
-        : '<span class="medida"><b>' + (r.ms / 1000).toFixed(1) + 's</b> — ' + rotuloVel + '</span>') +
-      /* o nível já está na aba do fichário; repeti-lo aqui só ocupa lugar */
-      (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('') +
-      (r.pausado
-        ? '<span class="medida">tempo não contado (' +
-          (pausou ? 'você saiu da aba' : 'demorou demais, o card ficou parado') + ')</span>'
-        : '');
+      (cardAtual.tags || []).map(t => '<span class="medida">' + escapar(t) + '</span>').join('');
 
     /* Escreveu outra conjugação: mostra qual foi, para o erro ensinar algo. */
     const escrevendo = r.modo === 'escrita' && !r.desistiu;
@@ -1276,7 +1282,6 @@
       quase: !!r.quase,
       desistiu: !!r.desistiu,
       ms: r.ms,
-      velocidade: r.velocidade,
       resposta: r.resposta || null,
       pausado: !!r.pausado,
       julgado_por_voce: !!r.julgadoPorVoce,
@@ -2469,23 +2474,22 @@
     const porNivel = agregar(c => c.nivel);
     L.push('## Desempenho por nível');
     L.push('');
-    L.push('| Nível | Cards | Respostas | Acerto | Tempo médio | Já conhecia |');
-    L.push('|---|---:|---:|---:|---:|---:|');
+    L.push('| Nível | Cards | Respostas | Acerto | Já conhecia |');
+    L.push('|---|---:|---:|---:|---:|');
     Motor.NIVEIS.forEach(n => {
       const g = porNivel[n]; if (!g) return;
-      L.push('| ' + n + ' | ' + g.cards + ' | ' + g.total + ' | ' + pct(g) + ' | ' +
-        seg(g) + ' | ' + g.conhecia + ' |');
+      L.push('| ' + n + ' | ' + g.cards + ' | ' + g.total + ' | ' + pct(g) + ' | ' + g.conhecia + ' |');
     });
     L.push('');
 
     const porTipo = agregar(c => c.tipo);
     L.push('## Palavras x frases');
     L.push('');
-    L.push('| Tipo | Cards | Respostas | Acerto | Tempo médio |');
-    L.push('|---|---:|---:|---:|---:|');
+    L.push('| Tipo | Cards | Respostas | Acerto |');
+    L.push('|---|---:|---:|---:|');
     ['palavra', 'frase'].forEach(k => {
       const g = porTipo[k]; if (!g) return;
-      L.push('| ' + k + ' | ' + g.cards + ' | ' + g.total + ' | ' + pct(g) + ' | ' + seg(g) + ' |');
+      L.push('| ' + k + ' | ' + g.cards + ' | ' + g.total + ' | ' + pct(g) + ' |');
     });
     L.push('');
 
@@ -2493,10 +2497,10 @@
     ids.forEach(id => {
       const c = PORID[id]; if (!c) return;
       (c.tags || []).forEach(tg => {
-        const g = porTag[tg] || (porTag[tg] = { cards: 0, certas: 0, total: 0, ms: 0, conhecia: 0 });
+        const g = porTag[tg] || (porTag[tg] = { cards: 0, certas: 0, total: 0, conhecia: 0 });
         g.cards++;
         (progresso.cards[id].historico || []).forEach(h => {
-          g.total++; if (h.acertou) g.certas++; if (!h.pausado) g.ms += h.ms;
+          g.total++; if (h.acertou) g.certas++;
         });
       });
     });
@@ -2579,19 +2583,17 @@
       ids.forEach(id => {
         const c = PORID[id]; if (!c) return;
         const k = chave(c);
-        const x = g[k] || (g[k] = { cards: 0, certas: 0, total: 0, ms: 0, msN: 0, conhecia: 0 });
+        const x = g[k] || (g[k] = { cards: 0, certas: 0, total: 0, conhecia: 0 });
         x.cards++;
         if (progresso.cards[id].conhecia === 'sim') x.conhecia++;
         (progresso.cards[id].historico || []).forEach(h => {
           x.total++;
           if (h.acertou) x.certas++;
-          if (!h.pausado) { x.ms += h.ms; x.msN++; }
         });
       });
       return g;
     }
     function pct(g) { return g.total ? Math.round(100 * g.certas / g.total) + '%' : '—'; }
-    function seg(g) { return g.msN ? (g.ms / g.msN / 1000).toFixed(1) + 's' : '—'; }
   }
 
   /* ═══════════════ exportar / importar ═══════════════ */

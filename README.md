@@ -25,8 +25,10 @@ muy maja», sorteadas na hora de perguntar.
    da pergunta, outra ao lado da resposta — para não haver dúvida de que lado
    traduzir. Vencer as duas direções não aposenta o card: ele passa a voltar
    cada vez mais espaçado, mas nunca sai do baralho.
-4. O app cronometra cada resposta e classifica em **rápido / médio / lento**,
-   com limiares diferentes para palavra e frase, e para escolher e escrever.
+4. **Não há relógio.** O tempo de cada resposta já classificou o acerto em
+   rápido, médio ou lento e mexia em quando o card voltava; saiu em outubro de
+   2026 (ver «O relógio que saiu»). O tempo ainda é medido, em silêncio, e vai
+   só para o log da sessão.
 5. A resposta é **gravada assim que você responde** — não há botão de confirmar.
    O **Próximo card** só serve para avançar, então dá para ficar lendo a nota.
    A exceção é o quase-certo: aí o app pergunta antes se conta como acerto.
@@ -173,15 +175,33 @@ distância depende de como foi:
 |---|---:|
 | Errou em `es → pt` | 10 respostas (cresce a cada erro seguido no mesmo card) |
 | Errou em `pt → es` | 30 (idem) |
-| Acertou na múltipla, devagar | 14 |
-| Acertou na múltipla, rápido | 32 |
-| Acertou escrevendo, devagar | 35 |
-| Acertou escrevendo, no tempo médio | 48 |
-| Acertou escrevendo, rápido | 64 |
+| Acertou na múltipla | 32 |
+| Acertou escrevendo | 64 |
 | Acertou escrevendo 3× seguidas | 128 — fecha a direção |
 
-Escrever rápido já pediu 110, mais de três vezes o que pede a escolha rápida.
-Hoje é o dobro: **32 e 64**.
+Escrever já pediu 110, mais de três vezes o que pede a escolha. Hoje é o
+dobro: **32 e 64**.
+
+#### O relógio que saiu
+
+Até outubro de 2026 cada acerto era classificado em rápido, médio ou lento, e
+o lento voltava mais cedo (14 e 35 respostas, contra 32 e 64). Saiu por três
+motivos:
+
+- **decidia pouco** — de 82% a 92% das respostas eram «rápido», conforme o
+  tipo de card, e quase nenhuma «lento»: a distância era quase sempre a mesma;
+- **media mal** — teclado do celular, frase longa, cinco alternativas para ler,
+  uma distração. O sinal existe (na estreia em múltipla escolha, quem responde
+  rápido acerta 87%, contra 74% no tempo médio), mas é fraco;
+- **os limiares eram de uma pessoa só** — quatro segundos para escolher uma
+  palavra, oito para escrevê-la. Com mais gente usando, quem digita devagar
+  passaria por quem sabe menos.
+
+As distâncias que ficaram são as da resposta rápida. O tempo continua sendo
+medido e vai para o log da sessão (`ms` e `pausado`), onde serve à
+calibragem das levas; nada no agendamento nem na tela depende dele. O
+`progresso.json` perdeu o que guardava por causa do relógio, e ficou 18%
+menor.
 
 **A distância é contada em respostas, e o card não ganha posição.** Ele anota
 quando entrou na fila e a distância que pediu, e na hora de tirar um card da
@@ -248,29 +268,31 @@ acabou de aparecer na tela, e o card cai na múltipla escolha da mesma direção
 Voltar em dez posições seria pedir que você reconhecesse o que acabou de ler.
 
 O painel mostra os dois lados com o alvo ao lado («es → pt e pt → es (alvo
-100 · 100)») e a **chance de o próximo card ser inédito**, que é o que o
+40 · 40)») e a **chance de o próximo card ser inédito**, que é o que o
 sorteio de fato promete — não uma data.
 
 ### O atalho de quem não erra
 
-Seis respostas é o caminho de quem tropeça pelo menos uma vez. Card que
-ninguém erra e que sai depressa não precisa das seis, e o desconto sai do que
-o próprio card já mostrou:
+Seis respostas é o caminho de quem tropeça pelo menos uma vez. Card que nunca
+foi errado fecha com **cinco**:
 
 | O que o card mostrou | Passos | Caminho |
 |---|---:|---|
-| erro, ou alguma resposta lenta | **6** | escolha + 2 escritas de cada lado |
-| erro nenhum, nunca lento | **5** | perde uma escrita na volta |
-| erro nenhum, sempre rápido | **4** | uma escolha e uma escrita de cada lado |
+| algum erro | **6** | escolha + 2 escritas de cada lado |
+| erro nenhum | **5** | escolha + 2 escritas na ida; escolha + **1** escrita na volta |
 
-O desconto é gasto **o mais tarde possível**: primeiro no portão da volta, e
-só com o desconto cheio também no da ida. Não é escrúpulo, é o que a evidência
+**A resposta que sai é a última: a segunda escrita em `pt → es`.** O desconto
+é gasto no portão da volta, e não no da ida, porque é o que a evidência
 permite — no portão da ida o card tem três respostas e ainda pode tropeçar
 depois; no da volta, o histórico já está quase completo.
 
-Um erro depois disso **apaga o desconto**: o portão volta a pedir três, e o
-card que errou na primeira resposta e acertou tudo depois chega ao domínio em
-sete.
+Havia um segundo passo de desconto, para o card «sempre rápido», que fechava
+com quatro. Saiu junto com o relógio: 41 dos 317 dominados tinham passado por
+ali, e passam a custar uma resposta a mais — uns 2% a mais de respostas até o
+domínio.
+
+Um erro **apaga o desconto**: o portão volta a pedir três, e o card que errou
+na primeira resposta e acertou tudo depois chega ao domínio em sete.
 
 ### O card dominado, e a única data do app
 
@@ -346,9 +368,9 @@ O progresso fica no `localStorage` do navegador e é enviado para
 **[espanhol-cards-dados](https://github.com/gereneto/espanhol-cards-dados)**,
 onde são gravados estes arquivos:
 
-- `progresso.json` — estado de cada card (etapa, acertos, erros, tempos, histórico).
-  Vai **sem indentação** e com o histórico enxuto (`quase` e `pausado` só quando
-  verdadeiros): é o arquivo que sobe e desce inteiro a cada três respostas, e
+- `progresso.json` — estado de cada card (etapa, acertos, erros, histórico).
+  Vai **sem indentação** e com o histórico enxuto (`quase` só quando
+  verdadeiro, e sem o tempo das respostas): é o arquivo que sobe e desce inteiro a cada três respostas, e
   assim ele tem pouco mais da metade do tamanho. Passando de 1 MB, o app o lê
   pela API de blobs do GitHub, que a de conteúdo não entrega
 - `sessoes/<data>.json` — registro de cada resposta da sessão. A sessão também
@@ -615,9 +637,7 @@ Ele sabe quais palavras espanholas valem como aviso porque a nota do card já as
 carrega, uma por linha, no formato «🇪🇸 x → 🇧🇷 y» — são 156 pares em 73 cards.
 Junto com elas entra a própria palavra da pergunta.
 
-Vale **uma vez por aparição do card**: com duas viraria tentativa livre. O
-relógio continua correndo de propósito: o tropeço não é erro, mas também não
-sai de graça.
+Vale **uma vez por aparição do card**: com duas viraria tentativa livre.
 
 **Na volta, o mesmo tropeço ao contrário.** A pergunta é «a cola», em
 português, e pede «el pegamento». Mas «cola» também é palavra espanhola — a
@@ -650,7 +670,7 @@ corrente («recordar» para «acordarse», «aún» para «todavía») e o cogna
 também é espanhol («absurdo» para «descabellado»). Não há como
 tirá-las do baralho sozinho: o índice das traduções confunde homônimo com
 sinônimo («a colher» é «la cuchara» e é «coger»). Vale a mesma regra da língua
-trocada — uma vez por aparição, relógio correndo —, e nenhuma dessas palavras
+trocada — uma vez por aparição —, e nenhuma dessas palavras
 aparece como alternativa errada na múltipla escolha.
 
 **A palavra de outro lugar vale.** O baralho traz o espanhol da Espanha, mas
@@ -833,8 +853,7 @@ basta passar por cima.
 
 Nada disso sai das respostas uma a uma, que não cabem no `progresso.json`. O
 app anota a cada resposta um **resumo do dia** em `progresso.diario` — quantas
-respostas, quantas certas, quantas em cada hora, e os tempos dos acertos
-contados em faixas 18% mais largas a cada passo, das quais sai a mediana —, as
+respostas, quantas certas e quantas em cada hora —, as
 revisões por degrau em `progresso.retencao`, e em cada card o `ateDominar`. O
 passado vem da mesma semente da curva: o `fonte/historico.js` refaz cada
 resposta desde o primeiro dia pelo histórico dos cards nas fotografias do

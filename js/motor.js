@@ -3,20 +3,13 @@
 
    São quatro filas: inéditos, es→pt, pt→es e dominados (ver pesosDasFilas).
    Ao responder, o card volta para a fila da etapa dele e anota a distância
-   que pediu; quanto mais fácil foi a resposta, mais longe ele vai.
+   que pediu: curta depois de um erro, longa depois de um acerto escrito.
 
    A única exceção é o card já dominado nas duas direções: esse ganha uma
    data de retorno, que cresce a cada revisão certa. Nunca sai do baralho —
    só espera mais (ver DIAS_DOMINADO).
    ──────────────────────────────────────────────────────────────── */
 window.Motor = (function () {
-
-  /* Limiares de tempo (ms) para classificar a resposta em
-     rápido / médio / lento. Variam por tipo de card e por modo. */
-  const LIMIARES = {
-    palavra: { multipla: [4000, 12000], escrita: [8000, 25000] },
-    frase:   { multipla: [7000, 20000], escrita: [15000, 45000] }
-  };
 
   /* Um eixo só: o CEFR. Conjugação é assunto de etiqueta ('conjugação',
      'irregular', 'pretérito'), não de faixa — o nível de um card de verbo
@@ -1120,16 +1113,19 @@ window.Motor = (function () {
     return !saiuDaAba && ms < MS_ABANDONO;
   }
 
-  /* Tempo que não é confiável não pode virar "lento": lento empurra o card
-     de volta mais cedo e alimenta a suspeita de chute. Na dúvida, o meio,
-     que não pune nem premia. */
-  function velocidade(card, modo, ms, saiuDaAba) {
-    if (!tempoConfiavel(ms, saiuDaAba)) return 'medio';
-    const [rapido, lento] = LIMIARES[card.tipo][modo];
-    if (ms <= rapido) return 'rapido';
-    if (ms >= lento) return 'lento';
-    return 'medio';
-  }
+  /* ── o relógio saiu do motor ──
+     O tempo de resposta classificava cada acerto em rápido, médio ou lento, e
+     disso saíam a distância da volta e um atalho para o domínio. Saiu em
+     outubro de 2026, por três motivos. Decidia pouco: de 82% a 92% das
+     respostas eram «rápido» e quase nenhuma «lento», então a distância era
+     quase sempre a mesma. Media mal: teclado do celular, frase longa, cinco
+     alternativas para ler, uma distração. E os limiares eram de uma pessoa
+     só — quatro segundos para escolher uma palavra, oito para escrevê-la —;
+     com mais gente usando, quem digita devagar passaria por quem sabe menos.
+
+     O tempo continua sendo medido, em silêncio, e vai só para o log da
+     sessão («ms» e «pausado»), onde serve à calibragem das levas. Nada no
+     agendamento nem na tela depende dele. */
 
   /* ── estado por card ── */
   function estadoInicial(id) {
@@ -1145,7 +1141,6 @@ window.Motor = (function () {
       revisoes: 0,         // revisões certas já feitas depois de dominado
       voltaEm: null,       // ISO: só o card dominado espera uma data
       porModo: contadoresPorModo(),
-      velocidades: { rapido: 0, medio: 0, lento: 0 },
       historico: []        // últimas 12 respostas
     };
   }
@@ -1444,8 +1439,11 @@ window.Motor = (function () {
     return est.voltaEm > (agora || new Date().toISOString());
   }
 
-  /* Quantas posições à frente o card volta para a fila.
-     Errou → volta logo. Acertou rápido e já escrevendo → some lá no fim. */
+  /* Quantas respostas à frente o card volta para a fila.
+     Errou → volta logo. Acertou escrevendo → some lá no fim. O tempo que a
+     resposta levou não entra na conta (ver «o relógio saiu do motor»): as
+     distâncias são as que valiam para a resposta rápida, que eram nove em
+     cada dez. */
   function distanciaNaFila(est, r) {
     let base;
 
@@ -1462,9 +1460,7 @@ window.Motor = (function () {
       base *= (1 + 0.5 * Math.min(est.errosSeguidos || 0, 4));
     } else if (r.modo === 'multipla') {
       // acertar na múltipla escolha vale pouco: pode ter sido chute
-      if (r.velocidade === 'lento') base = 14;
-      else if (r.velocidade === 'medio') base = 22;
-      else base = 32;
+      base = 32;
 
       /* Na volta, acertar entre cinco e ir escrever logo depois não prova
          nada: a grafia espanhola acabou de passar na frente dos olhos, e o
@@ -1472,15 +1468,11 @@ window.Motor = (function () {
          reaparece bem mais adiante, quando a imagem já não sirva de muleta. */
       if (r.acertou && r.direcao === 'pt-es') base = Math.max(base, 90);
     } else {
-      /* Escrever rápido pedia 110, mais de três vezes o que pede a escolha
-         rápida (32). Agora é o dobro: 32 e 64, com o meio-termo entre eles. */
-      if (r.velocidade === 'lento') base = 35;
-      else if (r.velocidade === 'medio') base = 48;
-      else base = 64;
+      /* Escrever pedia 110, mais de três vezes o que pede a escolha (32).
+         Agora é o dobro. */
+      base = 64;
       if (est.seguidas >= 3) base *= 2;   // acabou de fechar a direção
     }
-
-    if (r.pausado) base *= 0.9;   // tempo não é confiável, seja conservador
 
     const ruido = 0.85 + Math.random() * 0.3;
     return Math.max(3, Math.round(base * ruido));
@@ -1492,66 +1484,35 @@ window.Motor = (function () {
      escolher de escrever, então o acerto na múltipla já conta para o portão
      — o caminho é multipla, escrita, escrita | multipla, escrita, escrita.
 
-     Card que ninguém erra e que sai depressa não precisa das seis. O
-     desconto sai do que o próprio card já mostrou:
+     Card que nunca foi errado não precisa das seis: fecha com CINCO. O passo
+     que sai é o último — a segunda escrita em pt→es —, e o caminho fica
+     multipla, escrita, escrita | multipla, escrita. O desconto é gasto no
+     portão da volta, e não no da ida, porque é o que a evidência permite: no
+     portão da ida o card tem três respostas e ainda pode tropeçar depois; no
+     da volta o histórico está quase completo.
 
-       erro nenhum, nunca lento    →  1 passo a menos  (5 respostas)
-       erro nenhum, sempre rápido  →  2 passos a menos (4 respostas)
+     Havia um segundo passo de desconto, para o card «sempre rápido», que
+     fechava com quatro. Saiu junto com o relógio: 41 dos 317 dominados tinham
+     passado por ali.
 
-     Ele é gasto o mais tarde possível: primeiro no portão da volta, e só
-     com o desconto cheio também no da ida. Não é escrúpulo, é o que a
-     evidência permite — no portão da ida o card tem três respostas e ainda
-     pode tropeçar depois; no da volta o histórico está quase completo.
-
-     Um erro depois disso apaga o desconto: «erros» deixa de ser zero e o
-     portão volta a pedir três. Quem já é dominado não passa por aqui. */
+     Um erro apaga o desconto: «erros» deixa de ser zero e o portão volta a
+     pedir três. Quem já é dominado não passa por aqui. */
   const ACERTOS_PARA_VIRAR = 3;
 
   function descontoDePassos(est) {
-    const v = est && est.velocidades;
-    /* Sem a conta não há atalho. Progresso gravado antes deste contador
-       existir passa a tê-lo na primeira resposta nova, e só a partir daí o
-       card pode encurtar o caminho — o desconto se ganha com evidência. */
-    if (!v) return 0;
-    if (est.erros || v.lento) return 0;
-    return v.medio ? 1 : 2;
+    return est && !est.erros ? 1 : 0;
   }
 
   function acertosParaVirar(est, inversa) {
-    const desconto = descontoDePassos(est);
-    if (desconto >= 2) return ACERTOS_PARA_VIRAR - 1;            // os dois portões cedem
-    if (desconto === 1 && inversa) return ACERTOS_PARA_VIRAR - 1;  // só o da volta
-    return ACERTOS_PARA_VIRAR;
+    /* o desconto só vale no portão da volta */
+    return ACERTOS_PARA_VIRAR - (inversa ? descontoDePassos(est) : 0);
   }
 
   /* ── o diário ──
      Uma linha por dia, no fuso do aparelho, com o que os gráficos do painel
-     precisam e nada além: quantas respostas, quantas certas, quantas em
-     cada hora, e o tempo dos acertos de cada modo. O tempo não vai resposta
-     a resposta: vai contado em faixas, cada uma 18% mais larga que a
-     anterior, de 0,3 s a dois minutos, e só as faixas usadas são gravadas.
-     Das faixas sai a mediana da semana com erro de poucos centésimos, e um
-     ano de estudo cabe em umas dezenas de KB. */
-  const FAIXAS_POR_E = 6, TEMPO_BASE = 300, FAIXAS = 36;
-  const faixaDoTempo = ms =>
-    Math.max(0, Math.min(FAIXAS - 1, Math.floor(FAIXAS_POR_E * Math.log(ms / TEMPO_BASE))));
-
-  /* A mediana de um punhado de faixas somadas, interpolando dentro da faixa
-     onde cai a metade. */
-  function medianaDasFaixas(faixas) {
-    let total = 0;
-    for (const k in faixas) total += faixas[k];
-    if (!total) return null;
-    const metade = total / 2;
-    let soma = 0;
-    const chaves = Object.keys(faixas).map(Number).sort((a, b) => a - b);
-    for (const k of chaves) {
-      const c = faixas[k];
-      if (soma + c >= metade) return TEMPO_BASE * Math.exp((k + (metade - soma) / c) / FAIXAS_POR_E);
-      soma += c;
-    }
-    return null;
-  }
+     precisam e nada além: quantas respostas, quantas certas e quantas em
+     cada hora. (Guardava também o tempo dos acertos, contado em faixas, para
+     o gráfico de velocidade; os dois saíram.) */
   function diaLocal(quando) {
     const t = new Date(quando);
     const dd = n => (n < 10 ? '0' : '') + n;
@@ -1561,15 +1522,10 @@ window.Motor = (function () {
   function anotarDiario(diario, r, quando) {
     const t = new Date(quando);
     const d = diaLocal(t);
-    const g = diario[d] || (diario[d] = { n: 0, ok: 0, h: new Array(24).fill(0), m: {}, e: {} });
+    const g = diario[d] || (diario[d] = { n: 0, ok: 0, h: new Array(24).fill(0) });
     g.n++;
     if (r.acertou) g.ok++;
     g.h[t.getHours()]++;
-    const tempo = r.modo === 'multipla' ? g.m : r.modo === 'escrita' ? g.e : null;
-    if (tempo && r.acertou && !r.pausado && r.ms > 0) {
-      const k = faixaDoTempo(r.ms);
-      tempo[k] = (tempo[k] || 0) + 1;
-    }
   }
 
   /* Registra uma resposta no estado do card. */
@@ -1591,24 +1547,6 @@ window.Motor = (function () {
     }
     const noModo = est.porModo[r.modo];
     if (noModo) { noModo.n++; if (r.acertou) noModo.certas++; }
-
-    /* Mesma história para as velocidades, que o atalho do domínio consulta —
-       com um cuidado a mais. O histórico guarda 12 respostas, e um card com
-       mais do que isso tem um pedaço do passado que ninguém sabe. Essas
-       respostas perdidas entram como «médio»: não barram o atalho, mas tiram
-       o desconto cheio, que é a posição honesta para quem não sabe. */
-    if (!est.velocidades) {
-      est.velocidades = { rapido: 0, medio: 0, lento: 0 };
-      const guardadas = est.historico || [];
-      guardadas.forEach(h => {
-        if (est.velocidades[h.velocidade] !== undefined) est.velocidades[h.velocidade]++;
-      });
-      /* «vistas» já contou a resposta de agora, e o histórico dela só entra no
-         fim desta função — daí o menos um. */
-      const perdidas = Math.max(0, (est.vistas || 1) - 1 - guardadas.length);
-      est.velocidades.medio += perdidas;
-    }
-    if (est.velocidades[r.velocidade] !== undefined) est.velocidades[r.velocidade]++;
 
     if (r.acertou) {
       est.acertos++;
@@ -1684,20 +1622,18 @@ window.Motor = (function () {
     // a estreia é a única medida limpa do que já se sabia antes do app
     if (est.vistas === 1) est.primeiraCerta = !!r.acertou;
 
-    /* «quase» e «pausado» só são gravados quando verdadeiros. Quase sempre
-       são falsos, e escritos em todas as doze respostas de cada card eram um
-       terço do progresso.json — que sobe inteiro a cada três respostas. Quem
-       lê o histórico já trata o campo ausente como falso. */
+    /* O tempo da resposta não entra aqui: vai só para o log da sessão.
+       «quase» só é gravado quando verdadeiro. Quase sempre é falso, e campo
+       falso escrito nas doze respostas de cada card era um terço do
+       progresso.json — que sobe inteiro a cada três respostas. Quem lê o
+       histórico já trata o campo ausente como falso. */
     const entrada = {
       em: est.ultima,
       modo: r.modo,
       acertou: r.acertou,
-      ms: r.ms,
-      velocidade: r.velocidade,
       resposta: r.resposta || null
     };
     if (r.quase) entrada.quase = true;
-    if (r.pausado) entrada.pausado = true;
     est.historico.push(entrada);
     if (est.historico.length > 12) est.historico = est.historico.slice(-12);
 
@@ -2102,9 +2038,9 @@ window.Motor = (function () {
   }
 
   return {
-    NIVEIS, ROTULO_NIVEL, LIMIARES,
-    normalizar, conferir, velocidade,
-    estadoInicial, registrar, modoDe, direcaoDe, faseDe, anotarDiario, diaLocal, medianaDasFaixas,
+    NIVEIS, ROTULO_NIVEL,
+    normalizar, conferir,
+    estadoInicial, registrar, modoDe, direcaoDe, faseDe, anotarDiario, diaLocal,
     pergunta, resposta, normalizarEs, normalizarEn, formaReconhecida,
     erroDeGenero, formasAceitas, LIMITES, cortar,
     linguaTrocada, sinonimoDoCard, regionalDoCard, espanhoisDoCard, erroDeEne, acentoRelevado, acentoFaltando, diferencaDoQuase,
