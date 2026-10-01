@@ -528,6 +528,7 @@ mexer no inglês tem de devolvê-las, ou o card passa a variar de um lado só.
 ```bash
 node fonte/build.js          # valida, regenera data/ e recarimba os ?v=
 node fonte/revisar.js 12-    # a leva em cinco linhas por card, para ler
+node fonte/varrer-motor.js en   # o motor por cima do data/, nas quatro direções
 ```
 
 **O que o build pega** (e barra): id ou `es` repetido; campo faltando; nível ou
@@ -545,6 +546,16 @@ certa de um dos lados. **E avisa**: palavra de conteúdo nos quatro
 distratores e não na certa; frase que não parece usar a palavra que requer;
 palavra sem frase de uso.
 
+**O que a varredura pega, e o build não**: o build confere o distrator contra
+o funil na fonte, e a varredura roda `js/motor.js` por cima do `data/` — que é
+o que o app serve — montando a múltipla escolha de verdade, nas quatro
+direções e algumas vezes em cada uma. Ela exige cinco alternativas distintas,
+a certa entre elas e nenhuma das quatro erradas lida como certa, e confere de
+pé cada `aceitas` e cada variante de `regionais`. Pega o que só existe na hora
+do sorteio: a frase vizinha que o app escolhe e que o funil iguala à certa, a
+forma do verbo que colide com uma aceita, a troca de palavra da frase de uso.
+Quatro sorteios bastam e custam dois minutos nos mil cards.
+
 **O que ele não pega, e só a leitura pega**: outro sentido da palavra
 espanhola; categoria sem palavra repetida; palavra que não existe; distrator
 absurdo; `aceitas` curta ou generosa demais; nota que só o autor entende; nível
@@ -555,8 +566,8 @@ Por isso a leva só está pronta depois de **lida card a card** com o
 de setembro de 2026 achou dez distratores que eram resposta certa num baralho
 que passava no build sem um aviso.
 
-Depois: abrir o app, responder alguns cards novos nas duas direções, `git add
--A`, commit no estilo do repositório e push. Sempre com o build rodado antes —
+Depois: rodar a varredura, abrir o app, responder alguns cards novos nas duas
+direções, commit no estilo do repositório e push. Sempre com o build rodado antes —
 sem ele o navegador serve o baralho velho.
 
 ---

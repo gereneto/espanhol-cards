@@ -1158,5 +1158,50 @@
     "en": "live",
     "es": "live",
     "cards": 0
+  },
+  "work": {
+    "en": "work",
+    "es": "work",
+    "cards": 0
+  },
+  "rain": {
+    "en": "rain",
+    "es": "rain",
+    "cards": 0
+  },
+  "wait": {
+    "en": "wait",
+    "es": "wait",
+    "cards": 0
+  },
+  "ask": {
+    "en": "ask",
+    "es": "ask",
+    "cards": 0
+  },
+  "walk": {
+    "en": "walk",
+    "es": "walk",
+    "cards": 0
+  },
+  "like": {
+    "en": "like",
+    "es": "like",
+    "cards": 0
+  },
+  "worry": {
+    "en": "worry",
+    "es": "worry",
+    "cards": 0
+  },
+  "start": {
+    "en": "start",
+    "es": "start",
+    "cards": 0
+  },
+  "condicional composto": {
+    "en": "perfect conditional",
+    "es": "condicional compuesto",
+    "cards": 0
   }
 }

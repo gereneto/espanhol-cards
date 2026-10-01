@@ -179,7 +179,8 @@ baralhos de feitios bem diferentes.
 | 6 | Inglês, leva 6: 100 cards, o A1 e o A2 que faltavam, mais um bloco de C2 | **feito** (21/09) — o baralho está em 530 |
 | 7 | Inglês, leva 7: 100 cards de base e de conversa | **feito** (21/09) — o baralho está em 630 |
 | 8 | Inglês, leva 8: 100 cards de corpo, de base e de conversa | **feito** (22/09) — o baralho está em 730 |
-| 9… | Inglês, levas de ~100 até fechar mil | — |
+| 9 | Inglês, leva 9: 100 cards, e os pares entre o inglês americano e o britânico | **feito** (01/10) — o baralho está em 830 |
+| 10… | Inglês, levas de ~100 até fechar mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -205,12 +206,18 @@ de setenta e cinco, e eu vinha relatando só a falta de C2. Em 530 cards o
 inglês está em **A1:20 A2:120 B1:155 B2:130 C1:80 C2:25**, contra o alvo do
 espanhol, que é A1:75 A2:285 B1:307 B2:177 C1:100 C2:56.
 
-Em 730, depois da leva 8, o inglês está em **A1:44 A2:190 B1:220 B2:153
-C1:86 C2:37**, e o que falta para as duas ou três levas que sobram é **A2
-+95, B1 +87, A1 +31, B2 +24, C2 +19, C1 +14**. O B2 e o C1 estão
-praticamente pagos, e o C2 já passou de dois terços; o que resta é quase tudo
-base. As últimas levas são de vocabulário A1 e A2 e de frase de conversa B1,
-com seis ou sete C2 em cada uma para fechar a faixa alta junto com o resto.
+Em 830, depois da leva 9, o inglês está em **A1:56 A2:225 B1:253 B2:162
+C1:90 C2:44**, e o que falta para as duas levas que fecham os mil é **A2 +60,
+B1 +54, A1 +19, B2 +15, C2 +12, C1 +10**. O B2 e o C1 estão quase pagos; o
+grosso continua sendo base, e dá para fechar com uma leva de 100 e outra de
+70, ambas de vocabulário A1 e A2 e frase de conversa B1, com meia dúzia de C2
+em cada uma.
+
+A leva 9 também mudou a série dos verbos de ofício, e por necessidade: depois
+de cento e trinta verbos irregulares, o poço secou. A série `v` continua sendo
+o que o nome diz — **forma verbal** —, e passa a cobrir modal, condicional,
+passiva e aspecto composto, que é justamente o B1 que falta. Dos vinte cards
+de verbo da leva 9, dezenove são de forma e um só é de verbo irregular novo.
 
 Cada leva termina fechada: `node fonte/build.js`, leitura no `revisar.js`,
 varredura do motor, e mais uma conferência que a leva 5 mostrou ser
@@ -225,4 +232,20 @@ A leva 8 acrescentou uma segunda conferência de uma linha só, e ela também
 pagou na estreia: **nenhum campo espanhol pode ter «ç», «ã» ou «õ»**, que são
 letras que o espanhol não tem. Um distrator de `en-f251` estava
 escrito «cabeça», com a cedilha portuguesa, e nem o build nem a leitura viram.
+A leva 9 encontrou um terceiro campo que o baralho de inglês não usava: os
+dois que a outra conversa criou para o espanhol em 26/09, `sinonimosEs` e
+`regionaisEs`, têm nome genérico no build e no motor, e por isso
+`regionaisEn` já funcionava sem precisar de código. **A decisão 3 — inglês
+americano, com o britânico em `aceitasEn` e na nota — fica melhor servida
+por ele**: o britânico continua valendo e agora o app diz de onde é. Treze
+cards antigos passaram para lá e a leva 9 nasceu com onze pares novos.
+
+A varredura do motor virou ferramenta do projeto na leva 9, e por um susto:
+ela vivia num arquivo de rascunho, numa pasta temporária, e a limpeza o apagou
+no meio da leva. Agora é `fonte/varrer-motor.js`, ao lado do build, e a seção
+12 do manual a põe na lista. Quatro sorteios por direção bastam: o distrator
+escrito no card sai sempre, e o que muda a cada vez é o que o app escolhe do
+baralho. Lição além do script: **nada que a leva precisa pode morar fora do
+repositório.**
+
 Depois disso, commit e push. É o commit que serve de memória, não a conversa.
