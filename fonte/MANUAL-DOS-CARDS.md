@@ -531,10 +531,19 @@ mexer no inglês tem de devolvê-las, ou o card passa a variar de um lado só.
 ## 12. Conferir
 
 ```bash
+node fonte/conferir-candidatos.js lista.json en   # ANTES de escrever: já existe?
 node fonte/build.js          # valida, regenera data/ e recarimba os ?v=
 node fonte/revisar.js 12-    # a leva em cinco linhas por card, para ler
 node fonte/varrer-motor.js en   # o motor por cima do data/, nas quatro direções
 ```
+
+**A primeira linha vem antes de todas as outras.** Monte a lista de candidatos
+— uma tripla `["inglês","português","espanhol"]` por card — e passe por ela
+antes de escrever `aceitas`, distrator ou nota. A conferência usa a régua do
+motor, então pega o que a letra não pega, e custa um segundo. Na leva 10 do
+inglês eu escrevi cem cards primeiro: onze já existiam, e as onze tiveram de
+ser refeitas do zero. Na leva 11, conferida antes, os onze choques apareceram
+antes de o primeiro card nascer.
 
 **O que o build pega** (e barra): id ou `es` repetido; campo faltando; nível ou
 tipo inválido; menos ou mais de quatro distratores; resposta com parêntese cuja

@@ -181,7 +181,7 @@ baralhos de feitios bem diferentes.
 | 8 | Inglês, leva 8: 100 cards de corpo, de base e de conversa | **feito** (22/09) — o baralho está em 730 |
 | 9 | Inglês, leva 9: 100 cards, e os pares entre o inglês americano e o britânico | **feito** (01/10) — o baralho está em 830 |
 | 10 | Inglês, leva 10: 100 cards de base — cozinha, roupa, feira, tempo, loja — e trinta de conversa | **feito** (01/10) — o baralho está em 930 |
-| 11 | Inglês, leva 11: 70 cards para fechar os mil | — |
+| 11 | Inglês, leva 11: 70 cards para fechar os mil | **feito** (01/10) — o baralho está em **1000** |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -207,11 +207,18 @@ de setenta e cinco, e eu vinha relatando só a falta de C2. Em 530 cards o
 inglês está em **A1:20 A2:120 B1:155 B2:130 C1:80 C2:25**, contra o alvo do
 espanhol, que é A1:75 A2:285 B1:307 B2:177 C1:100 C2:56.
 
-Em 930, depois da leva 10, o inglês está em **A1:68 A2:261 B1:285 B2:171
-C1:95 C2:50**, e falta exatamente uma leva de **70**: A2 +24, B1 +22, A1 +7,
-B2 +6, C2 +6, C1 +5. A leva 10 entregou 12 A1, 36 A2, 32 B1, 9 B2, 5 C1 e 6
-C2, na proporção que o plano pedia, e a última repete a receita em escala
-menor — vocabulário de casa e de rua, frase de conversa, meia dúzia de C2.
+**O baralho de inglês está fechado em mil**, e a curva de níveis saiu
+idêntica à do espanhol: **A1:75 A2:285 B1:307 B2:177 C1:100 C2:56** nos dois.
+Não foi coincidência — a leva 11 foi calculada para isso, com A1 +7, A2 +24,
+B1 +22, B2 +6, C1 +5 e C2 +6, que era exatamente o que faltava. São 211
+palavras com a frase de uso ao lado, 194 formas verbais e 395 frases.
+
+A próxima etapa é o **baralho de português**, do zero, para quem fala espanhol
+e para quem fala inglês. O que o inglês ensinou sobre ordem de trabalho vale
+inteiro ali, e uma coisa a mais: o baralho de português é o primeiro em que as
+duas línguas de casa são línguas que eu não falo de nascença, então a régua de
+«isto soa natural?» passa a depender mais da leitura card a card e menos do
+ouvido.
 
 A leva 9 também mudou a série dos verbos de ofício, e por necessidade: depois
 de cento e trinta verbos irregulares, o poço secou. A série `v` continua sendo
@@ -247,6 +254,14 @@ no meio da leva. Agora é `fonte/varrer-motor.js`, ao lado do build, e a seção
 escrito no card sai sempre, e o que muda a cada vez é o que o app escolhe do
 baralho. Lição além do script: **nada que a leva precisa pode morar fora do
 repositório.**
+
+A leva 11 confirmou, com número, a lição que a leva 10 cobrou caro: a
+conferência dos **candidatos** antes de escrever. Das 36 frases que eu ia
+escrever, **onze já estavam no baralho** — e o script que as compara pelo funil
+nas três línguas as achou em um segundo, antes de qualquer card existir. Mais
+duas foram pegas depois porque eu as acrescentei sem passar pela conferência,
+o que é o mesmo erro em escala menor. O script virou parte do fechamento de
+leva, ao lado do build e da varredura.
 
 A leva 10 cobrou o preço de uma conferência que eu fazia na ordem errada.
 Onze das cem frases **já estavam no baralho**: eu tinha conferido a lista de
