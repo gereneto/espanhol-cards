@@ -321,7 +321,7 @@
     const chances = Motor.chancesDasFilas(p.cards, {
       ineditos: (p.ineditos || []).length > 0,
       esPt: p.filaEsPt.length > 0, ptEs: p.filaPtEs.length > 0
-    });
+    }, Motor.alvoDaFila(p.diario));
     [['esPt', p.filaEsPt], ['ptEs', p.filaPtEs]].forEach(([k, fila]) => {
       fila.forEach((id, i) => {
         const e = p.cards[id];
@@ -512,7 +512,9 @@
   /* ── de qual fila vem o próximo card ──
      Primeiro os dominados: quem venceu a data fura a fila, e é só isso que
      eles obedecem. Depois o sorteio entre inéditos, es→pt e pt→es, com os
-     pesos que perseguem ALVO_FILA cards em cada direção (ver motor.js).
+     pesos que perseguem o alvo de cards em cada direção (ver motor.js).
+     Por cima do sorteio passam, nesta ordem: o card que esperou demais na
+     fila, e o card novo quando faz vinte respostas que nenhum estreia.
 
      Se não sobrou nada em lugar nenhum, entra o dominado de data mais
      próxima: ficar sem card seria pior do que adiantar um. */
@@ -525,6 +527,18 @@
     const e = id && progresso.cards[id];
     desdeDominado = e && e.etapa === 'dominado' ? 0 : desdeDominado + 1;
     return id;
+  }
+
+  /* Quantas respostas desde a última estreia. Cada card guarda em que
+     resposta estreou («estreouNa»); o que estreou antes de o campo existir
+     não conta, e aí a primeira escolha já deve um card novo. */
+  function respostasDesdeNovo() {
+    let ultima = -Infinity;
+    for (const id in progresso.cards) {
+      const n = progresso.cards[id].estreouNa;
+      if (n !== undefined && n > ultima) ultima = n;
+    }
+    return progresso.totais.respostas - ultima;
   }
 
   function escolherProximoId() {
@@ -542,7 +556,20 @@
       return progresso.dominados.splice(dominadoMaisProximo(agora), 1)[0];
     }
 
-    const escolhida = Motor.sortearFila(Motor.pesosDasFilas(progresso.cards, tem));
+    /* quem esperou demais fura a fila, qualquer que seja o peso dela */
+    const fura = Motor.atrasadoQueFura(
+      { esPt: progresso.filaEsPt, ptEs: progresso.filaPtEs }, progresso.cards, progresso.totais.respostas);
+    if (fura) {
+      return (fura.fila === 'esPt' ? progresso.filaEsPt : progresso.filaPtEs).splice(fura.indice, 1)[0];
+    }
+
+    /* o piso e o teto do card novo */
+    const novo = tem.ineditos ? Motor.vezDoNovo(respostasDesdeNovo()) : 'vetado';
+    if (novo === 'obrigado') { ordenarIneditos(progresso); return progresso.ineditos.shift(); }
+    if (novo === 'vetado' && (tem.esPt || tem.ptEs)) tem.ineditos = false;
+
+    const escolhida = Motor.sortearFila(
+      Motor.pesosDasFilas(progresso.cards, tem, Motor.alvoDaFila(progresso.diario)));
     if (escolhida === 'ineditos') { ordenarIneditos(progresso); return progresso.ineditos.shift(); }
     if (escolhida === 'esPt' || escolhida === 'ptEs') {
       const fila = escolhida === 'esPt' ? progresso.filaEsPt : progresso.filaPtEs;
@@ -1241,6 +1268,9 @@
     const est = progresso.cards[id] || (progresso.cards[id] = Motor.estadoInicial(id));
     const etapaAntes = est.etapa;
     const degrauAntes = Math.min(est.revisoes || 0, 5);
+    /* a resposta em que o card estreou: é dela que sai a conta do piso e do
+       teto de card novo (ver respostasDesdeNovo) */
+    if (!est.vistas) est.estreouNa = progresso.totais.respostas;
     Motor.registrar(est, r);
     /* Para o painel: o dia, a hora e o tempo desta resposta, e — se era a
        revisão de um dominado — se a memória aguentou a espera daquele degrau. */
@@ -1449,11 +1479,13 @@
        regressiva: o sorteio pesa as três filas a cada card, e o que dá para
        prometer é a probabilidade, não a data. */
     const temIneditos = (progresso.ineditos || []).length > 0;
+    const alvo = Motor.alvoDaFila(progresso.diario);
+    const recente = Motor.acertoRecente(progresso.diario);
     const chances = Motor.chancesDasFilas(progresso.cards, {
       ineditos: temIneditos,
       esPt: progresso.filaEsPt.length > 0,
       ptEs: progresso.filaPtEs.length > 0
-    });
+    }, alvo);
 
     let html = '<div class="grade">' +
       /* a ordem faz pares na tela de duas colunas: o que já saiu e a chance
@@ -1471,7 +1503,8 @@
       /* É o alvo que a escolha de fila persegue — vê-lo explica por que o
          card novo às vezes vem depressa e às vezes rareia. */
       metrica(dir.esPt + ' · ' + dir.ptEs,
-              'es → pt e pt → es (alvo ' + Motor.ALVO_FILA + ' · ' + Motor.ALVO_FILA + ')') +
+              'es → pt e pt → es (alvo ' + alvo + ' em cada, pelos ' +
+                Math.round(100 * recente.taxa) + '% de acerto recente)') +
       metrica(dominados, 'dominados nas duas direções') +
       '</div>';
 

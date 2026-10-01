@@ -102,8 +102,9 @@ fila quando a data chega — com espaço entre eles (ver adiante).
 
 #### De qual fila vem o próximo card
 
-Entre as outras três, a escolha persegue um alvo: **40 cards em cada
-direção**. Quem está abaixo do alvo precisa de entrada, quem está acima precisa
+Entre as outras três, a escolha persegue um alvo: **de 40 a 60 cards em cada
+direção**, conforme o acerto recente (ver adiante; a tabela abaixo é a do
+alvo 40). Quem está abaixo do alvo precisa de entrada, quem está acima precisa
 de saída — e cada fila mexe no que mexe:
 
 | Tirar um card de | O que isso faz com as contagens |
@@ -154,6 +155,33 @@ comentários de 22/09). Com quarenta:
 O preço é a passagem: com as filas acima do alvo, quase não entra card novo
 até elas descerem — cerca de uma semana trabalhando o que já estava em
 circulação, e mais uma com uns oito novos por dia.
+
+**A semana seca, e o que saiu dela.** A passagem veio de 27/09 a 01/10, com
+zero a três cards novos por dia, e foi seca demais. Três acertos, de outubro
+de 2026:
+
+- **O alvo acompanha o acerto.** Quem acerta muito aguenta mais cards em
+  circulação; quem está errando precisa de menos, voltando mais cedo. Com 65%
+  de acerto ou menos o alvo é **40** por direção; com 85% ou mais, **60**; no
+  meio, cresce em linha reta. Vale o acerto das **últimas ~300 respostas**
+  (os dias mais recentes do diário), e não o geral, que depois de milhares de
+  respostas já não se mexe. Com menos de cinquenta respostas, vale 40.
+- **Card novo tem piso e teto.** Pelo menos **um a cada vinte respostas**, por
+  mais cheias que as filas estejam — a seca não se repete. E no máximo **um a
+  cada cinco** — quando o alvo sobe, a fila enche em dias, e não com quarenta
+  estreias numa tarde. Cada card guarda a resposta em que estreou
+  (`estreouNa`), e é dela que sai a conta.
+- **Quem esperou demais fura a fila.** Os pesos decidem quantas vezes cada
+  fila é chamada, e fila no alvo recebe pouco: era assim que um card esperava
+  oito dias. Agora, passadas **300 respostas** na fila, o card mais antigo das
+  duas direções ganha chance de sair antes de qualquer sorteio, e aos **450**
+  sai com certeza. A conta é em respostas de espera, e não em vezes a
+  distância pedida: medida em proporção, a regra dispararia setenta vezes por
+  dia e tomaria o lugar do sorteio.
+
+Na simulação com o progresso de 1º de outubro e 115 respostas por dia: 13, 16
+e 13 cards novos nos três primeiros dias (o maior dia teve 19), depois uns 9
+por dia; espera mediana de 1,7 dia entre as voltas, e a maior de 3,5 dias.
 
 Simulando 1500 respostas com a taxa de acerto real, partindo do zero, as duas
 direções chegam ao alvo por volta da resposta 1000 e ficam lá:
@@ -268,7 +296,7 @@ acabou de aparecer na tela, e o card cai na múltipla escolha da mesma direção
 Voltar em dez posições seria pedir que você reconhecesse o que acabou de ler.
 
 O painel mostra os dois lados com o alvo ao lado («es → pt e pt → es (alvo
-40 · 40)») e a **chance de o próximo card ser inédito**, que é o que o
+60 em cada, pelos 87% de acerto recente)») e a **chance de o próximo card ser inédito**, que é o que o
 sorteio de fato promete — não uma data.
 
 ### O atalho de quem não erra

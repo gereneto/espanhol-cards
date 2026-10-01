@@ -1166,7 +1166,7 @@ window.Motor = (function () {
      furam a fila quando a data chega, com espaço entre eles (ver
      vezDoDominado).
 
-     Entre as outras três, a escolha persegue um alvo: **ALVO_FILA cards em cada
+     Entre as outras três, a escolha persegue um alvo: **de ALVO_MIN a ALVO_MAX cards em cada
      direção**. Quem está abaixo do alvo precisa de entrada, quem está acima
      precisa de saída — e cada fila mexe no que mexe:
 
@@ -1201,8 +1201,29 @@ window.Motor = (function () {
      primeiras voltas caem para cerca de um dia, e o card novo chega a
      dominado em dez dias em vez de quinze. O preço é a passagem: com as filas
      acima do alvo, quase não entra card novo até elas descerem — uma semana,
-     mais ou menos, trabalhando o que já estava em circulação. */
-  const ALVO_FILA = 40;      // cards que se quer ter em cada direção
+     mais ou menos, trabalhando o que já estava em circulação.
+
+     Essa semana veio, de 27/09 a 01/10, com zero a três cards novos por dia,
+     e foi seca demais. Daí três acertos, de outubro de 2026:
+
+     — O ALVO ACOMPANHA O ACERTO. Quem acerta muito aguenta mais cards em
+       circulação; quem está errando precisa de menos, voltando mais cedo. O
+       alvo vai de ALVO_MIN, com 65% de acerto ou menos, a ALVO_MAX, com 85%
+       ou mais, em linha reta entre os dois. O acerto é o das últimas
+       trezentas respostas, e não o geral, que depois de milhares de
+       respostas já não se mexe (ver alvoDaFila).
+     — CARD NOVO TEM PISO E TETO. Pelo menos um a cada vinte respostas, por
+       mais cheias que as filas estejam: a seca da passagem não se repete.
+       E no máximo um a cada cinco: quando o alvo sobe, a fila enche em
+       dias, e não com quarenta estreias numa tarde (ver vezDoNovo).
+     — QUEM ESPEROU DEMAIS FURA A FILA, qualquer que seja o peso da fila dele
+       (ver atrasadoQueFura). */
+  const ALVO_MIN = 40;       // cards em cada direção, para quem acerta pouco
+  const ALVO_MAX = 60;       // e para quem acerta muito
+  const ACERTO_DO_MIN = 0.65, ACERTO_DO_MAX = 0.85;
+  const JANELA_DO_ACERTO = 300;   // respostas recentes que contam
+  const NOVO_A_CADA_NO_MAXIMO = 20;   // piso: um card novo a cada vinte respostas, pelo menos
+  const NOVO_A_CADA_NO_MINIMO = 5;    // teto: nunca mais de um a cada cinco
   const GANHO = 4;           // quanto pesa cada card de desvio do alvo
   const PISO_REVISAO = 10;   // nenhuma fila de revisão morre de fome
   const PISO_INEDITO = 2;    // card novo nunca deixa de vir, mas em conta-gotas
@@ -1228,15 +1249,50 @@ window.Motor = (function () {
     return { esPt: esPt, ptEs: ptEs };
   }
 
+  /* O acerto das últimas respostas, tirado do diário: os dias mais recentes,
+     de trás para a frente, até juntar a janela. O dia entra inteiro — a
+     janela é uma ordem de grandeza, não uma conta de centavos. */
+  function acertoRecente(diario) {
+    let n = 0, ok = 0;
+    for (const d of Object.keys(diario || {}).sort().reverse()) {
+      const g = diario[d];
+      if (!g || !g.n) continue;
+      n += g.n; ok += g.ok || 0;
+      if (n >= JANELA_DO_ACERTO) break;
+    }
+    return { n: n, taxa: n ? ok / n : 0 };
+  }
+
+  /* Quantos cards se quer em cada direção, para este acerto. Com menos de
+     cinquenta respostas a taxa ainda não diz nada, e vale o alvo menor: quem
+     está começando não precisa de sessenta cards abertos. */
+  function alvoDaFila(diario) {
+    const a = acertoRecente(diario);
+    if (a.n < 50) return ALVO_MIN;
+    const t = Math.min(1, Math.max(0, (a.taxa - ACERTO_DO_MIN) / (ACERTO_DO_MAX - ACERTO_DO_MIN)));
+    return Math.round(ALVO_MIN + t * (ALVO_MAX - ALVO_MIN));
+  }
+
+  /* O piso e o teto do card novo, pela conta de respostas desde a última
+     estreia: 'obrigado' quando passou do piso, 'vetado' quando ainda não
+     chegou ao teto, e 'livre' no meio, que é onde o sorteio decide. */
+  function vezDoNovo(desdeNovo) {
+    if (desdeNovo >= NOVO_A_CADA_NO_MAXIMO) return 'obrigado';
+    if (desdeNovo < NOVO_A_CADA_NO_MINIMO) return 'vetado';
+    return 'livre';
+  }
+
   /* O peso de cada fila no sorteio. «tem» diz quais filas têm card para dar;
-     fila vazia sai da conta em vez de roubar chance das outras. */
-  function pesosDasFilas(estados, tem) {
+     fila vazia sai da conta em vez de roubar chance das outras. «alvo» é o
+     de alvoDaFila; sem ele, vale o menor. */
+  function pesosDasFilas(estados, tem, alvo) {
     const c = contarDirecoes(estados);
+    const A = alvo || ALVO_MIN;
     const corta = v => Math.min(TETO_PESO, Math.max(0, GANHO * v));
     const p = {
-      ineditos: PISO_INEDITO + corta(ALVO_FILA - c.esPt),
-      esPt:     PISO_REVISAO + corta(ALVO_FILA - c.ptEs) + corta(c.esPt - ALVO_FILA),
-      ptEs:     PISO_REVISAO + corta(c.ptEs - ALVO_FILA)
+      ineditos: PISO_INEDITO + corta(A - c.esPt),
+      esPt:     PISO_REVISAO + corta(A - c.ptEs) + corta(c.esPt - A),
+      ptEs:     PISO_REVISAO + corta(c.ptEs - A)
     };
     if (tem) for (const k in p) if (!tem[k]) p[k] = 0;
     return p;
@@ -1244,8 +1300,8 @@ window.Motor = (function () {
 
   /* A chance de cada fila, em fração de 1. É o que o painel mostra e o que
      converte distância em posição, logo abaixo. */
-  function chancesDasFilas(estados, tem) {
-    const p = pesosDasFilas(estados, tem);
+  function chancesDasFilas(estados, tem, alvo) {
+    const p = pesosDasFilas(estados, tem, alvo);
     const soma = p.ineditos + p.esPt + p.ptEs;
     if (!soma) return { ineditos: 0, esPt: 0, ptEs: 0 };
     return { ineditos: p.ineditos / soma, esPt: p.esPt / soma, ptEs: p.ptEs / soma };
@@ -1324,6 +1380,41 @@ window.Motor = (function () {
     const espera = respostas - f.desde;
     const atraso = Math.max(0, espera - dist);
     return espera / (dist * dist) + PESO_DO_ATRASO * Math.pow(atraso / ATRASO_QUE_FURA, 3);
+  }
+
+  /* ── quem esperou demais fura a fila ──
+     A urgência acima escolhe QUEM sai de uma fila; quantas vezes a fila é
+     chamada, quem decide são os pesos. E fila no alvo tem peso de piso: em
+     setembro a es→pt recebia uma resposta em cada seis, e o card dela esperava
+     oito dias sem que urgência nenhuma pudesse ajudar.
+
+     Então há uma saída por cima do sorteio (ideia do Gere): passadas
+     ESPERA_QUE_FURA respostas na fila — uns dois dias e meio —, o card mais
+     antigo das duas direções ganha chance de sair antes de qualquer sorteio,
+     e a chance cresce até virar certeza em ESPERA_QUE_FURA_SEMPRE.
+
+     A conta é em respostas de espera, e não em vezes a distância pedida: com
+     quarenta a sessenta cards por fila quase todo card passa várias vezes do
+     que pediu, e medida assim a regra dispararia a cada resposta e tomaria o
+     lugar do sorteio (na simulação, setenta vezes por dia). Em respostas, ela
+     só pega a cauda: a maior espera cai de 5,5 para 3,5 dias. */
+  const ESPERA_QUE_FURA = 300;
+  const ESPERA_QUE_FURA_SEMPRE = 450;
+
+  /* Devolve { fila: 'esPt' | 'ptEs', indice } do card que fura agora, ou null. */
+  function atrasadoQueFura(filas, estados, respostas) {
+    let pior = null;
+    for (const nome of ['esPt', 'ptEs']) {
+      (filas[nome] || []).forEach((id, i) => {
+        const f = estados[id] && estados[id].naFila;
+        if (!f) return;
+        const espera = respostas - f.desde;
+        if (!pior || espera > pior.espera) pior = { fila: nome, indice: i, espera: espera };
+      });
+    }
+    if (!pior || pior.espera <= ESPERA_QUE_FURA) return null;
+    const chance = (pior.espera - ESPERA_QUE_FURA) / (ESPERA_QUE_FURA_SEMPRE - ESPERA_QUE_FURA);
+    return Math.random() < Math.min(1, chance) ? pior : null;
   }
 
   function cumpriu(est, respostas) {
@@ -2053,7 +2144,7 @@ window.Motor = (function () {
     contarDirecoes,
     filaDe, pesosDasFilas, chancesDasFilas, sortearFila,
     urgencia, cumpriu, escolherNaFila, vezDoDominado, ESPACO_DOMINADO,
-    ALVO_FILA,
+    ALVO_MIN, ALVO_MAX, alvoDaFila, acertoRecente, vezDoNovo, atrasadoQueFura,
     liberado, liberadaEm, venceuEm,
     montarFila, alternativas, distratoresDinamicos, distratoresDaLingua, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
