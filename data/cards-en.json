@@ -1,7 +1,7 @@
 {
  "versao": 1,
  "idioma": "en",
- "gerado_em": "2026-09-22",
+ "gerado_em": "2026-10-01",
  "total": 730,
  "cards": [
   {
@@ -2446,9 +2446,7 @@
    ],
    "aceitasEn": [
     "the faucet",
-    "faucet",
-    "the tap",
-    "tap"
+    "faucet"
    ],
    "distratores": [
     "a mangueira",
@@ -2469,7 +2467,11 @@
     "substantivo"
    ],
    "nota": "«Faucet» é a palavra dos Estados Unidos; na Inglaterra e na Austrália é «tap», que também é a torneira do chope. As duas valem como resposta.",
-   "notaEs": "«Faucet» es la palabra de Estados Unidos; en Inglaterra y en Australia es «tap», que también es el grifo de la cerveza. Las dos valen como respuesta."
+   "notaEs": "«Faucet» es la palabra de Estados Unidos; en Inglaterra y en Australia es «tap», que también es el grifo de la cerveza. Las dos valen como respuesta.",
+   "regionaisEn": {
+    "the tap": "na Inglaterra",
+    "tap": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -2492,7 +2494,6 @@
    ],
    "aceitasEn": [
     "turn off the faucet",
-    "turn off the tap",
     "shut off the faucet"
    ],
    "distratores": [
@@ -2513,7 +2514,10 @@
     "cotidiano"
    ],
    "nota": "O inglês não usa «close» para o que tem fluxo: água, gás, luz e rádio se desligam com «turn off», e se abrem com «turn on». «Close the faucet» não se diz.",
-   "notaEs": "El inglés no usa «close» para lo que tiene flujo: agua, gas, luz y radio se cierran con «turn off» y se abren con «turn on». «Close the faucet» no se dice."
+   "notaEs": "El inglés no usa «close» para lo que tiene flujo: agua, gas, luz y radio se cierran con «turn off» y se abren con «turn on». «Close the faucet» no se dice.",
+   "regionaisEn": {
+    "turn off the tap": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -2792,8 +2796,7 @@
    ],
    "aceitasEn": [
     "the sidewalk",
-    "sidewalk",
-    "the pavement"
+    "sidewalk"
    ],
    "distratores": [
     "a rua",
@@ -2813,7 +2816,11 @@
     "substantivo"
    ],
    "nota": "«Sidewalk» é dos Estados Unidos; na Inglaterra é «pavement» — que nos Estados Unidos quer dizer o asfalto da rua, justamente o contrário.",
-   "notaEs": "«Sidewalk» es de Estados Unidos; en Inglaterra es «pavement», que en Estados Unidos significa el asfalto de la calzada, justo lo contrario."
+   "notaEs": "«Sidewalk» es de Estados Unidos; en Inglaterra es «pavement», que en Estados Unidos significa el asfalto de la calzada, justo lo contrario.",
+   "regionaisEn": {
+    "the pavement": "na Inglaterra",
+    "pavement": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -2834,8 +2841,7 @@
     "La acera estaba llena de personas"
    ],
    "aceitasEn": [
-    "the sidewalk was full of people",
-    "the pavement was full of people"
+    "the sidewalk was full of people"
    ],
    "distratores": [
     "A rua estava cheia de gente.",
@@ -2855,7 +2861,10 @@
     "cotidiano"
    ],
    "nota": "«People» é plural por natureza e pede verbo no plural: «people are», nunca «people is». Uma pessoa só é «a person».",
-   "notaEs": "«People» es plural por naturaleza y pide verbo en plural: «people are», nunca «people is». Una sola persona es «a person»."
+   "notaEs": "«People» es plural por naturaleza y pide verbo en plural: «people are», nunca «people is». Una sola persona es «a person».",
+   "regionaisEn": {
+    "the pavement was full of people": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -3872,8 +3881,7 @@
    ],
    "aceitasEn": [
     "shes good at math",
-    "she is good at math",
-    "shes good at maths"
+    "she is good at math"
    ],
    "distratores": [
     "Ela é fraca em matemática.",
@@ -3893,7 +3901,10 @@
     "escola"
    ],
    "nota": "Ser bom numa coisa pede «at»: «good at math», «bad at sports», «terrible at names». Nos Estados Unidos a matéria é «math»; na Inglaterra, «maths».",
-   "notaEs": "Ser bueno en algo pide «at»: «good at math», «bad at sports», «terrible at names». En Estados Unidos la asignatura es «math»; en Inglaterra, «maths»."
+   "notaEs": "Ser bueno en algo pide «at»: «good at math», «bad at sports», «terrible at names». En Estados Unidos la asignatura es «math»; en Inglaterra, «maths».",
+   "regionaisEn": {
+    "shes good at maths": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -10554,9 +10565,7 @@
    ],
    "aceitasEn": [
     "to realize",
-    "realize",
-    "to realise",
-    "realise"
+    "realize"
    ],
    "distratores": [
     "resolver",
@@ -10576,7 +10585,11 @@
     "verbo"
    ],
    "nota": "«Realize» é a ficha caindo, não a tarefa cumprida. Quem realiza um sonho ou um projeto em inglês faz «carry out», «fulfill» ou «make it happen».\n🇺🇸 realize → 🇧🇷 perceber, dar-se conta\n🇺🇸 carry out → 🇧🇷 realizar",
-   "notaEs": "«Realize» es darse cuenta, no llevar a cabo. Un proyecto en inglés se «carries out» y un sueño se «fulfills».\n🇺🇸 realize → 🇪🇸 darse cuenta\n🇺🇸 carry out → 🇪🇸 realizar"
+   "notaEs": "«Realize» es darse cuenta, no llevar a cabo. Un proyecto en inglés se «carries out» y un sueño se «fulfills».\n🇺🇸 realize → 🇪🇸 darse cuenta\n🇺🇸 carry out → 🇪🇸 realizar",
+   "regionaisEn": {
+    "to realise": "na Inglaterra",
+    "realise": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -10598,8 +10611,7 @@
     "De repente me percaté de mi error"
    ],
    "aceitasEn": [
-    "i suddenly realized my mistake",
-    "i suddenly realised my mistake"
+    "i suddenly realized my mistake"
    ],
    "distratores": [
     "De repente esqueci meu erro.",
@@ -10619,7 +10631,10 @@
     "verbo"
    ],
    "nota": "«Suddenly» pode ir no começo da frase ou antes do verbo: «Suddenly I realized» e «I suddenly realized» valem as duas. Depois do verbo, não.",
-   "notaEs": "«Suddenly» va al principio de la frase o delante del verbo: «Suddenly I realized» y «I suddenly realized» valen las dos. Detrás del verbo, no."
+   "notaEs": "«Suddenly» va al principio de la frase o delante del verbo: «Suddenly I realized» y «I suddenly realized» valen las dos. Detrás del verbo, no.",
+   "regionaisEn": {
+    "i suddenly realised my mistake": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -23770,8 +23785,7 @@
     "La tostada quedó quemada"
    ],
    "aceitasEn": [
-    "the toast burned",
-    "the toast burnt"
+    "the toast burned"
    ],
    "distratores": [
     "A torrada queima.",
@@ -23806,7 +23820,10 @@
     "comida"
    ],
    "nota": "burn, burned, burned nos Estados Unidos; burn, burnt, burnt na Inglaterra. As duas estão certas, e o americano guarda o «burnt» só como adjetivo: «burnt toast». O mesmo acontece com learn, spell, smell, spill e dream.",
-   "notaEs": "burn, burned, burned en Estados Unidos; burn, burnt, burnt en Inglaterra. Las dos son correctas, y el americano guarda el «burnt» solo como adjetivo: «burnt toast». Lo mismo pasa con learn, spell, smell, spill y dream."
+   "notaEs": "burn, burned, burned en Estados Unidos; burn, burnt, burnt en Inglaterra. Las dos son correctas, y el americano guarda el «burnt» solo como adjetivo: «burnt toast». Lo mismo pasa con learn, spell, smell, spill y dream.",
+   "regionaisEn": {
+    "the toast burnt": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -23829,8 +23846,7 @@
     "La cocina olió raro"
    ],
    "aceitasEn": [
-    "the kitchen smelled strange",
-    "the kitchen smelt strange"
+    "the kitchen smelled strange"
    ],
    "distratores": [
     "A cozinha cheira estranho.",
@@ -23865,7 +23881,10 @@
     "casa"
    ],
    "nota": "smell, smelled, smelled nos Estados Unidos; smelt na Inglaterra. E repare que depois de «smell» vem adjetivo, e não advérbio: «it smells strange», nunca «strangely» — regra que vale para todos os verbos de sentido.",
-   "notaEs": "smell, smelled, smelled en Estados Unidos; smelt en Inglaterra. Y fíjate en que después de «smell» va adjetivo, y no adverbio: «it smells strange», nunca «strangely» — regla que vale para todos los verbos de los sentidos."
+   "notaEs": "smell, smelled, smelled en Estados Unidos; smelt en Inglaterra. Y fíjate en que después de «smell» va adjetivo, y no adverbio: «it smells strange», nunca «strangely» — regla que vale para todos los verbos de los sentidos.",
+   "regionaisEn": {
+    "the kitchen smelt strange": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -23886,8 +23905,7 @@
     "Me deletreó el nombre"
    ],
    "aceitasEn": [
-    "she spelled her name for me",
-    "she spelt her name for me"
+    "she spelled her name for me"
    ],
    "distratores": [
     "Ela soletra o nome para mim.",
@@ -23922,7 +23940,10 @@
     "social"
    ],
    "nota": "spell, spelled, spelled nos Estados Unidos; spelt na Inglaterra. «How do you spell it?» é a pergunta que todo estrangeiro ouve, e soletrar em inglês é obrigação prática: nome, e-mail, endereço.",
-   "notaEs": "spell, spelled, spelled en Estados Unidos; spelt en Inglaterra. «How do you spell it?» es la pregunta que todo extranjero oye, y deletrear en inglés es obligación práctica: nombre, correo, dirección."
+   "notaEs": "spell, spelled, spelled en Estados Unidos; spelt en Inglaterra. «How do you spell it?» es la pregunta que todo extranjero oye, y deletrear en inglés es obligación práctica: nombre, correo, dirección.",
+   "regionaisEn": {
+    "she spelt her name for me": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -28270,8 +28291,7 @@
     "Lo pillé rápido"
    ],
    "aceitasEn": [
-    "i learned it fast",
-    "i learnt it fast"
+    "i learned it fast"
    ],
    "distratores": [
     "Aprendo rápido.",
@@ -28306,7 +28326,10 @@
     "escola"
    ],
    "nota": "learn, learned, learned nos Estados Unidos; learnt na Inglaterra. É o mesmo par de burn, spell, smell, spill e dream — seis verbos que o americano regularizou e o britânico guardou com «t».",
-   "notaEs": "learn, learned, learned en Estados Unidos; learnt en Inglaterra. Es la misma pareja de burn, spell, smell, spill y dream — seis verbos que el americano regularizó y el británico guardó con «t»."
+   "notaEs": "learn, learned, learned en Estados Unidos; learnt en Inglaterra. Es la misma pareja de burn, spell, smell, spill y dream — seis verbos que el americano regularizó y el británico guardó con «t».",
+   "regionaisEn": {
+    "i learnt it fast": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -28385,7 +28408,6 @@
    ],
    "aceitasEn": [
     "i dreamed about you",
-    "i dreamt about you",
     "i dreamed of you"
    ],
    "distratores": [
@@ -28420,7 +28442,10 @@
     "pretérito"
    ],
    "nota": "dream, dreamed, dreamed nos Estados Unidos; dreamt na Inglaterra. E a preposição muda o tom: «dream about» é o sonho da noite, e «dream of» é o sonho de vida — «I dream of being a pilot».",
-   "notaEs": "dream, dreamed, dreamed en Estados Unidos; dreamt en Inglaterra. Y la preposición cambia el tono: «dream about» es el sueño de la noche, y «dream of» es el sueño de la vida — «I dream of being a pilot»."
+   "notaEs": "dream, dreamed, dreamed en Estados Unidos; dreamt en Inglaterra. Y la preposición cambia el tono: «dream about» es el sueño de la noche, y «dream of» es el sueño de la vida — «I dream of being a pilot».",
+   "regionaisEn": {
+    "i dreamt about you": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
@@ -28615,8 +28640,7 @@
     "Él se apoyó en la pared"
    ],
    "aceitasEn": [
-    "he leaned against the wall",
-    "he leant against the wall"
+    "he leaned against the wall"
    ],
    "distratores": [
     "Ele se encosta na parede.",
@@ -28651,7 +28675,10 @@
     "corpo"
    ],
    "nota": "lean, leaned, leaned nos Estados Unidos; leant na Inglaterra. A preposição é «against» quando há apoio físico, e «on» quando se depende de alguém: «lean on me» é «conte comigo».",
-   "notaEs": "lean, leaned, leaned en Estados Unidos; leant en Inglaterra. La preposición es «against» cuando hay apoyo físico, y «on» cuando se depende de alguien: «lean on me» es «cuenta conmigo»."
+   "notaEs": "lean, leaned, leaned en Estados Unidos; leant en Inglaterra. La preposición es «against» cuando hay apoyo físico, y «on» cuando se depende de alguien: «lean on me» es «cuenta conmigo».",
+   "regionaisEn": {
+    "he leant against the wall": "na Inglaterra"
+   }
   },
   {
    "idioma": "en",
