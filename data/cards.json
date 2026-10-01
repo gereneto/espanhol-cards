@@ -1,7 +1,7 @@
 {
  "versao": 1,
  "idioma": "es",
- "gerado_em": "2026-09-26",
+ "gerado_em": "2026-10-01",
  "total": 1000,
  "cards": [
   {
@@ -5403,7 +5403,9 @@
     "quem madruga deus ajuda",
     "a quem madruga deus ajuda",
     "deus ajuda quem madruga",
-    "deus ajuda quem cedo acorda"
+    "deus ajuda quem cedo acorda",
+    "quem cedo madruga deus ajuda",
+    "a quem cedo madruga deus ajuda"
    ],
    "aceitasEn": [
     "the early bird catches the worm",
@@ -17907,17 +17909,22 @@
    "id": "f119",
    "tipo": "frase",
    "es": "Me suena a chino.",
-   "pt": "Para mim isso é grego.",
+   "pt": "Não entendo nada disso.",
    "en": "It's all Greek to me.",
    "aceitas": [
+    "nao entendo nada disso",
+    "nao entendo nada",
+    "nao estou entendendo nada",
+    "isso para mim e grego",
+    "para mim isso e grego",
     "isso e grego para mim",
     "para mim e grego",
-    "nao entendo nada disso",
-    "e grego",
-    "isso e chines para mim",
-    "isso para mim e grego",
+    "isso e grego",
+    "parece grego",
+    "parece que esta falando grego",
+    "esta falando grego",
     "nao entendo patavina",
-    "isso e grego"
+    "isso e chines para mim"
    ],
    "aceitasEn": [
     "its all greek to me",
@@ -17927,10 +17934,10 @@
     "its double dutch to me"
    ],
    "distratores": [
-    "Para mim isso é fácil.",
     "Isso me parece familiar.",
-    "Já ouvi isso em algum lugar.",
-    "Acho que isso é chinês mesmo."
+    "Acho que isso é chinês.",
+    "Não acredito em nada disso.",
+    "Não gosto nada disso."
    ],
    "distratoresEn": [
     "That sounds easy to me.",
@@ -17942,7 +17949,7 @@
    "tags": [
     "expressão"
    ],
-   "nota": "Cada língua escolhe a sua: o espanhol acha o chinês incompreensível, e o inglês, o grego. Não confunda com 'me suena' sozinho, que é justamente o contrário — soa familiar.",
+   "nota": "É o que se diz do que não dá para entender — em português, de quem «está falando grego». Cada língua escolhe a sua: para o espanhol o incompreensível é o chinês. Não confunda com «me suena» sozinho, que é o contrário: soa familiar.",
    "notaEn": "Every language picks a different one: Spanish finds Chinese impenetrable, English picks Greek. Careful — plain 'me suena' means the opposite, that it does ring a bell."
   },
   {
@@ -18747,7 +18754,7 @@
     "falso-amigo",
     "cotidiano"
    ],
-   "nota": "«Deja» é o imperativo de tú; para usted, «deje». O «deixe» do português serve aos dois, e o espanhol separa. Na Espanha a gorjeta é opcional e modesta: costuma ser o troco arredondado, e não uma porcentagem da conta.\n🇪🇸 la propina → 🇧🇷 a gorjeta\n🇪🇸 el soborno → 🇧🇷 a propina, o suborno",
+   "nota": "«Deja» é o imperativo do tratamento informal, tú; no formal, usted, é «deje». A pergunta em português não diz se a conversa é formal, então as duas respostas valem. Na Espanha a gorjeta é opcional e modesta: costuma ser o troco arredondado, e não uma porcentagem da conta.\n🇪🇸 la propina → 🇧🇷 a gorjeta\n🇪🇸 el soborno → 🇧🇷 a propina, o suborno",
    "notaEn": "'Deja' is the tú imperative; to usted it is 'deje'. In Spain the tip is optional and small — usually rounding the change up rather than a percentage of the bill.",
    "aceitasEs": [
     "Deje la propina en la mesa."
@@ -19508,7 +19515,10 @@
     "sempre foge do assunto",
     "ele sempre se esquiva do assunto",
     "ele sempre evita o assunto",
-    "sempre evita o assunto"
+    "sempre evita o assunto",
+    "ele sempre foge do tema",
+    "sempre foge do tema",
+    "ele sempre evita o tema"
    ],
    "aceitasEn": [
     "he always avoids the subject",
@@ -20820,7 +20830,10 @@
     "jantamos num bar caindo aos pedacos",
     "jantamos num bar muito pe sujo",
     "jantamos num bar muito brega",
-    "jantamos num bar bem vagabundo"
+    "jantamos num bar bem vagabundo",
+    "jantamos num bar muito fuleiro",
+    "jantamos em um bar muito fuleiro",
+    "jantamos num bar bem fuleiro"
    ],
    "aceitasEn": [
     "we had dinner in a really grotty bar",
@@ -20862,7 +20875,11 @@
     "amanha trabalho o dia inteiro",
     "amanha eu trabalho o dia todo",
     "amanha vou trabalhar o dia todo",
-    "amanha ralo o dia todo"
+    "amanha ralo o dia todo",
+    "amanha vou trampar o dia inteiro",
+    "amanha vou trampar o dia todo",
+    "amanha trampo o dia inteiro",
+    "amanha vou trabalhar o dia inteiro"
    ],
    "aceitasEn": [
     "i m working all day tomorrow",
@@ -21717,7 +21734,10 @@
     "escritório"
    ],
    "nota": "«Carpeta» é a pasta, de papel ou do computador. O carpete é «la moqueta».\n🇪🇸 la carpeta → 🇧🇷 a pasta\n🇪🇸 la moqueta → 🇧🇷 o carpete",
-   "notaEn": "'Carpeta' is a folder, paper or digital. Wall-to-wall carpet is 'la moqueta', and a rug is 'la alfombra'."
+   "notaEn": "'Carpeta' is a folder, paper or digital. Wall-to-wall carpet is 'la moqueta', and a rug is 'la alfombra'.",
+   "aceitasEs": [
+    "Guarda los documentos en esa carpeta."
+   ]
   },
   {
    "idioma": "es",
@@ -22019,7 +22039,8 @@
     "a chegada a lua foi um marco historico",
     "a ida a lua foi um marco",
     "a chegada do homem a lua foi um marco",
-    "o pouso na lua foi um marco"
+    "o pouso na lua foi um marco",
+    "a chegada na lua foi um marco"
    ],
    "aceitasEn": [
     "the moon landing was a milestone",
@@ -22143,7 +22164,8 @@
     "a disparidade salarial continua enorme",
     "a diferenca de salarios continua enorme",
     "a lacuna salarial continua enorme",
-    "a diferenca salarial ainda e enorme"
+    "a diferenca salarial ainda e enorme",
+    "a diferenca salarial continua sendo enorme"
    ],
    "aceitasEn": [
     "the pay gap is still huge",
@@ -23116,7 +23138,8 @@
     "pendurei o quadro na parede",
     "penduramos a pintura na parede",
     "colocamos o quadro na parede",
-    "pregamos o quadro na parede"
+    "pregamos o quadro na parede",
+    "prendemos o quadro na parede"
    ],
    "aceitasEn": [
     "we hung the picture on the wall",
@@ -27202,7 +27225,12 @@
     "se cortou no queixo fazendo a barba",
     "fez um corte no queixo ao se barbear",
     "cortou o queixo ao fazer a barba",
-    "se cortou no queixo ao se barbear"
+    "se cortou no queixo ao se barbear",
+    "cortou o queixo ao barbear-se",
+    "se cortou no queixo ao barbear-se",
+    "cortou o queixo ao se barbear",
+    "se cortou no queixo ao barbear se",
+    "cortou o queixo ao barbear se"
    ],
    "aceitasEn": [
     "he cut his chin while shaving",
@@ -27492,7 +27520,8 @@
     "esta de licenca medica por uma lesao",
     "esta afastado por lesao",
     "esta de atestado por uma lesao",
-    "ela esta afastada por causa de uma lesao"
+    "ela esta afastada por causa de uma lesao",
+    "esta afastado por conta de uma lesao"
    ],
    "aceitasEn": [
     "he s on sick leave with an injury",
@@ -29490,7 +29519,11 @@
     "faz tempo que estou esperando",
     "estou esperando ha um bom tempo",
     "estou esperando faz tempo",
-    "ja faz um tempo que estou esperando"
+    "ja faz um tempo que estou esperando",
+    "estou ha um tempao esperando",
+    "estou a um tempao esperando",
+    "estou faz um tempao esperando",
+    "estou ha um bom tempo esperando"
    ],
    "aceitasEn": [
     "i ve been waiting for ages",
@@ -29973,7 +30006,8 @@
     "esqueci a chave dentro de casa",
     "deixei as chaves la dentro",
     "tranquei as chaves dentro",
-    "esqueci as chaves la dentro"
+    "esqueci as chaves la dentro",
+    "esqueci as chaves dentro"
    ],
    "aceitasEn": [
     "i ve left my keys inside",
@@ -33532,7 +33566,9 @@
     "escolho o azul",
     "prefiro o azul",
     "vou levar o azul",
-    "fico com o azul mesmo"
+    "fico com o azul mesmo",
+    "vou ficar com o azul",
+    "eu vou ficar com o azul"
    ],
    "aceitasEn": [
     "ill take the blue one",
@@ -37218,7 +37254,9 @@
     "a cola de prova",
     "a cola",
     "a pescadinha",
-    "a costeleta"
+    "a costeleta",
+    "a cola da prova",
+    "cola da prova"
    ],
    "aceitasEn": [
     "the crib sheet",
@@ -37670,7 +37708,14 @@
     "total que no fim nao fomos",
     "resultado no fim a gente nao foi",
     "no fim das contas a gente nao foi",
-    "conclusao a gente nao foi"
+    "conclusao a gente nao foi",
+    "resumindo acabamos nao indo",
+    "resumindo acabou que nao fomos",
+    "resumindo acabou que a gente nao foi",
+    "enfim acabamos nao indo",
+    "enfim acabou que nao fomos",
+    "resumindo no fim nao fomos",
+    "resumindo nao fomos"
    ],
    "aceitasEn": [
     "anyway in the end we didnt go",
@@ -37694,7 +37739,7 @@
     "Espanha",
     "cotidiano"
    ],
-   "nota": "«Total, que…» fecha uma história longa e anuncia o desfecho, como «resumindo» ou «enfim». Nada a ver com soma: a vírgula depois de «total» é obrigatória.",
+   "nota": "«Total, que…» fecha uma história longa e anuncia o desfecho, como «resumindo» ou «enfim» — e é essa abertura que o card cobra: só o desfecho («acabou que não fomos») não basta. Nada a ver com soma: a vírgula depois de «total» é obrigatória.",
    "notaEn": "«Total, que…» wraps up a long story and announces the upshot, like «anyway» or «long story short». Nothing to do with totals."
   },
   {
@@ -37835,7 +37880,9 @@
     "estou animada com a viagem",
     "fico animado com a viagem",
     "estou ansioso pela viagem",
-    "a viagem me empolga"
+    "a viagem me empolga",
+    "estou animado para a viagem",
+    "estou animada para a viagem"
    ],
    "aceitasEn": [
     "i am excited about the trip",

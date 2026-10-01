@@ -277,6 +277,9 @@ window.Motor = (function () {
   function normalizar(txt, lingua, opcoes) {
     const L = LINGUAS[lingua] || LINGUAS.pt;
     const comPlural = !opcoes || opcoes.plural !== false;
+    /* «opcoes.cru» deixa o sujeito na frase e o advérbio de tempo onde está.
+       Só o «deu quase» usa (ver conferir). */
+    const cru = !!(opcoes && opcoes.cru);
 
     let texto = String(txt || '').toLowerCase();
     if (L.guardaAcento) {
@@ -295,13 +298,14 @@ window.Motor = (function () {
       /* a grafia vem primeiro porque pode render mais de uma palavra, e cada
          uma tem de descer o resto do funil como se tivesse sido escrita */
       for (let p of (L.grafias[bruta] || bruta).split(' ')) {
-        if (L.omissiveis.has(p)) continue;                // antes de mexer na palavra
+        if (!cru && L.omissiveis.has(p)) continue;        // antes de mexer na palavra
         if (L.numeros[p]) p = L.numeros[p];               // "3 anos" = "três anos"
         if (comPlural) p = L.plural(p);                   // plural = singular
-        if (L.omissiveis.has(p)) continue;                // e de novo, para "eles" → "ele"
+        if (!cru && L.omissiveis.has(p)) continue;        // e de novo, para "eles" → "ele"
         saida.push(p);
       }
     }
+    if (cru) return saida.join(' ');
     return tempoParaOFim(saida, lingua in LINGUAS ? lingua : 'pt').join(' ');
   }
 
@@ -875,6 +879,19 @@ window.Motor = (function () {
     if (acentoRelevado(card, texto, direcao)) return 'certo';
 
     if (aceitas.some(alvo => parecido(dado, alvo, lingua))) return 'quase';
+
+    /* O erro de digitação que cai justo numa palavra que o funil trata.
+       «elles estudiarán» por «ellos estudiarán»: o sujeito certo sairia da
+       frase, o errado fica, e a conta via uma palavra a mais. «No hoy sitio»
+       por «no hay sitio»: o «hoy» é advérbio de tempo, vai para o fim, e a
+       frase vira outra. Nos dois casos foi uma letra, e caiu como erro seco
+       (v045, u053). Então, antes de desistir, compara-se também sem tirar o
+       sujeito e sem mexer no advérbio. Só abre a pergunta do «quase»: quem
+       decide continua sendo a pessoa. */
+    const cru = normalizar(texto, lingua, { cru: true });
+    if (formasAceitas(card, direcao).some(f => parecido(cru, normalizar(f, lingua, { cru: true }), lingua))) {
+      return 'quase';
+    }
     return 'errado';
   }
 
@@ -1062,10 +1079,45 @@ window.Motor = (function () {
     while (i > 0 || j > 0) {
       if (i > 0 && j > 0 && a[i - 1].chave === b[j - 1].chave && d[i][j] === d[i - 1][j - 1]) { i--; j--; }
       else if (i > 0 && j > 0 && d[i][j] === d[i - 1][j - 1] + 1) { a[i - 1].destaque = b[j - 1].destaque = true; i--; j--; }
-      else if (i > 0 && d[i][j] === d[i - 1][j] + 1) { a[i - 1].destaque = true; i--; }
-      else { b[j - 1].destaque = true; j--; }
+      else if (i > 0 && d[i][j] === d[i - 1][j] + 1) { a[i - 1].destaque = a[i - 1].so = true; i--; }
+      else { b[j - 1].destaque = b[j - 1].so = true; j--; }
     }
+    encostarNaPalavra(a);
+    encostarNaPalavra(b);
     return d[m][n];
+  }
+
+  /* A palavra que sobrou (ou faltou) pode ser pintada em mais de um lugar
+     com a mesma conta: em «unta la mantequilla», tanto faz tirar «la » como
+     «a l» — e o alinhamento escolhia o segundo, que não é palavra nenhuma
+     (u131). Aqui o trecho pintado desliza, sem mudar de tamanho, até começar
+     no começo de uma palavra. Só vale para o que sobrou ou faltou inteiro;
+     letra trocada fica onde está. */
+  function encostarNaPalavra(l) {
+    const livre = k => k >= 0 && k < l.length && !l[k].destaque;
+    const comecaPalavra = k => l[k].chave !== ' ' && (k === 0 || l[k - 1].chave === ' ');
+    let k = 0;
+    while (k < l.length) {
+      if (!(l[k].destaque && l[k].so)) { k++; continue; }
+      let ini = k, fim = k;
+      while (fim < l.length && l[fim].destaque && l[fim].so) fim++;
+      const tem = (fim < l.length && l[fim].destaque) || (ini > 0 && l[ini - 1].destaque);
+      k = fim;
+      if (tem || comecaPalavra(ini)) continue;       // colado numa troca, ou já está no lugar
+      const tam = fim - ini;
+      /* para a direita: a letra que entra tem de ser igual à que sai */
+      let a = ini;
+      while (livre(a + tam) && l[a].chave === l[a + tam].chave) { a++; if (comecaPalavra(a)) break; }
+      if (a === ini || !comecaPalavra(a)) {
+        /* e para a esquerda */
+        a = ini;
+        while (livre(a - 1) && l[a - 1].chave === l[a + tam - 1].chave) { a--; if (comecaPalavra(a)) break; }
+        if (!comecaPalavra(a)) continue;
+      }
+      for (let x = ini; x < fim; x++) l[x].destaque = l[x].so = false;
+      for (let x = a; x < a + tam; x++) l[x].destaque = l[x].so = true;
+      k = Math.max(fim, a + tam);
+    }
   }
 
   function juntarPedacos(letras) {
@@ -2054,6 +2106,110 @@ window.Motor = (function () {
      entram primeiro; o sorteio só completa o que faltar (há cards com três). */
   const AUDIENCIA_PRINCIPAL = { es: 'pt', en: 'pt', pt: 'es' };
 
+  /* As palavras de uma frase, já no funil, para medir o que duas frases têm
+     em comum. */
+  const cachePalavras = new Map();
+  function palavrasDe(txt, lingua) {
+    const chave = lingua + '|' + txt;
+    let conj = cachePalavras.get(chave);
+    if (!conj) {
+      conj = new Set(normalizar(txt, lingua).split(' ').filter(Boolean));
+      cachePalavras.set(chave, conj);
+    }
+    return conj;
+  }
+
+  /* ── a mesma frase, com outra palavra ──
+     Na volta, as alternativas erradas de uma frase eram outras frases do
+     baralho, e frase inteira diferente se descarta de longe: «¿Cuánto se
+     tarda en llegar?» ao lado de «Deja la propina en la mesa» não pergunta
+     nada (comentário do f167: «os distratores têm que ser mais sutis»).
+
+     A frase de uso tem como ser sutil sem ninguém escrever nada: ela existe
+     por causa de UMA palavra, e essa palavra está nela. Trocada por outra
+     palavra do baralho, da mesma classe e do mesmo gênero, a frase fica
+     igual em tudo menos no que o card cobra — «No hay sitio para aparcar»
+     contra «No hay atasco para aparcar» e «No hay billete para aparcar».
+
+     Só entra a palavra que cabe: substantivo com o mesmo artigo (o artigo
+     fica na frase), adjetivo por adjetivo com a mesma terminação, verbo por
+     verbo quando a frase traz o infinitivo. E nunca a que também estaria
+     certa — o sinônimo, a variante de outro lugar, a que divide uma tradução
+     com a palavra do card. Quando a palavra não aparece na frase tal como
+     está no card (verbo conjugado, plural), não há troca, e valem as frases
+     vizinhas, como antes. */
+  const ARTIGO_DA_LINGUA = { es: /^(el|la|los|las)\s+/i, en: /^(the)\s+/i, pt: /^(o|a|os|as)\s+/i };
+  const cacheTraducoes = new Map();
+  const LETRA_U = '\\p{L}';
+  function trocasDePalavra(card, todos, lingua, certas) {
+    if (!card.requer || card.tipo !== 'frase') return [];
+    const campo = CAMPOS[lingua];
+    const palavra = todos.find(c => c.id === card.requer);
+    if (!palavra) return [];
+    const artigoRe = ARTIGO_DA_LINGUA[lingua] || /^$/;
+    const partes = t => { const m = String(t).match(artigoRe); return { artigo: m ? m[1].toLowerCase() : '', nucleo: String(t).replace(artigoRe, '').trim() }; };
+    const minha = partes(palavra[campo.certa] || '');
+    if (!minha.nucleo) return [];
+    const frase = String(card[campo.certa] || '');
+    const escapado = minha.nucleo.replace(/[.*+?^${}()|[\]\\]/g, '\\  function distratoresDaLingua(card, todos, lingua) {');
+    const onde = new RegExp('(^|[^' + LETRA_U + '])(' + escapado + ')(?![' + LETRA_U + '])', 'iu').exec(frase);
+    if (!onde) return [];
+    const ini = onde.index + onde[1].length, fim = ini + onde[2].length;
+    const maiuscula = /^\p{Lu}/u.test(onde[2]);
+
+    const classe = c => ((c.tags || []).includes('verbo') ? 'verbo' : (c.tags || []).includes('adjetivo') ? 'adjetivo' : '');
+    const casa = CAMPOS[AUDIENCIA_PRINCIPAL[lingua] || 'pt'];
+    /* as traduções de cada palavra, guardadas: refazê-las a cada sorteio
+       custava 70 ms por pergunta */
+    const traducoes = c => {
+      const chave = lingua + '|' + c.id;
+      let t = cacheTraducoes.get(chave);
+      if (!t) {
+        t = String(c[casa.certa] || '').split('/').concat(c[casa.aceitas] || [])
+          .map(x => normalizar(x, AUDIENCIA_PRINCIPAL[lingua] || 'pt')).filter(Boolean);
+        cacheTraducoes.set(chave, t);
+      }
+      return t;
+    };
+    const minhas = new Set(traducoes(palavra));
+    const proibidas = new Set([palavra[campo.certa]].concat(palavra[campo.aceitas] || [],
+      palavra[campo.sinonimos] || [], Object.keys(palavra[campo.regionais] || {})).map(t => normalizar(t, lingua)));
+    const tags = new Set((palavra.tags || []).filter(t => !TAGS_GERAIS.has(t)));
+    const final = t => t.slice(-1).toLowerCase();
+
+    const saida = [];
+    const vistos = new Set();
+    const candidatas = todos
+      .filter(c => c.tipo === 'palavra' && c.id !== palavra.id && c[campo.certa])
+      .map(c => ({ c, p: partes(c[campo.certa]) }))
+      .filter(x => x.p.nucleo && x.p.artigo === minha.artigo &&
+        (minha.artigo ? true : classe(x.c) === classe(palavra) && classe(palavra) &&
+          (classe(palavra) !== 'adjetivo' || final(x.p.nucleo) === final(minha.nucleo))) &&
+        !x.p.nucleo.includes(' ') === !minha.nucleo.includes(' ') &&
+        !proibidas.has(normalizar(x.c[campo.certa], lingua)) &&
+        !traducoes(x.c).some(t => minhas.has(t)))
+      .map(x => {
+        let nota = Math.random() * 2;
+        if (x.c.nivel === palavra.nivel) nota += 1;
+        if ((x.c.tags || []).some(t => tags.has(t))) nota += 2;
+        const maior = Math.max(x.p.nucleo.length, minha.nucleo.length);
+        nota += 2 * (1 - distancia(semAcento(x.p.nucleo), semAcento(minha.nucleo)) / maior);
+        return { x, nota };
+      })
+      .sort((a, b) => b.nota - a.nota)
+      .slice(0, 12);
+    for (const { x } of embaralhar(candidatas)) {
+      const nucleo = maiuscula ? x.p.nucleo[0].toUpperCase() + x.p.nucleo.slice(1) : x.p.nucleo;
+      const nova = frase.slice(0, ini) + nucleo + frase.slice(fim);
+      const n = normalizar(nova, lingua);
+      if (certas.has(n) || vistos.has(n)) continue;
+      vistos.add(n);
+      saida.push(nova);
+      if (saida.length === 4) break;
+    }
+    return saida;
+  }
+
   function distratoresDaLingua(card, todos, lingua) {
     const campo = CAMPOS[lingua];
     const prontos = card[campo.distratores];
@@ -2079,9 +2235,20 @@ window.Motor = (function () {
        não pode ser a alternativa errada de «currar» */
     const certas = new Set(respostasAceitas(card, direcao)
       .concat((card[campo.sinonimos] || []).map(s => normalizar(s, lingua))));
-    const traducoes = c => [String(c[casa.certa] || '')]
-      .concat(String(c[casa.certa] || '').split('/'), c[casa.aceitas] || [])
-      .map(t => normalizar(t, AUDIENCIA_PRINCIPAL[lingua] || 'pt')).filter(Boolean);
+    /* guardadas por card: é uma conta sobre o baralho inteiro a cada pergunta.
+       O card da vez fica fora da guarda — ele pode vir numa das duas formas
+       de gênero, e a guarda é pelo id. */
+    const traducoes = c => {
+      const chave = 'f|' + lingua + '|' + c.id;
+      let t = c === card ? null : cacheTraducoes.get(chave);
+      if (!t) {
+        t = [String(c[casa.certa] || '')]
+          .concat(String(c[casa.certa] || '').split('/'), c[casa.aceitas] || [])
+          .map(x => normalizar(x, AUDIENCIA_PRINCIPAL[lingua] || 'pt')).filter(Boolean);
+        if (c !== card) cacheTraducoes.set(chave, t);
+      }
+      return t;
+    };
     const minhas = new Set(traducoes(card));
     /* nem repetir forma que já entrou: «Ojalá viniera mañana» é forma do v034
        e é também a frase de outro card */
@@ -2099,12 +2266,24 @@ window.Motor = (function () {
         nota += 1.5 * Math.min(texto(c).length, texto(card).length) /
           Math.max(texto(c).length, texto(card).length);
         if (texto(c)[0].toLowerCase() === texto(card)[0].toLowerCase()) nota += 1;
+        /* Numa frase, o que pesa mais é parecer com a certa: as mesmas
+           palavras, a mesma armação. Sorteada só por nível e tema, a
+           alternativa saía tão diferente que bastava bater o olho (f167). */
+        if (card.tipo === 'frase') {
+          const minhasPalavras = palavrasDe(texto(card), lingua);
+          const comuns = [...palavrasDe(texto(c), lingua)].filter(p => minhasPalavras.has(p)).length;
+          nota += 3 * Math.min(3, comuns);
+        }
         return { c, nota };
       })
       .sort((a, b) => b.nota - a.nota)
-      .slice(0, 10);
+      .slice(0, card.tipo === 'frase' ? 7 : 10);
 
-    return formas.concat(embaralhar(candidatos).slice(0, 4 - formas.length).map(x => texto(x.c)));
+    /* Na frase de uso, antes das frases vizinhas vêm as trocas de palavra. */
+    const trocas = formas.length ? [] : trocasDePalavra(card, todos, lingua, certas);
+    const faltam = 4 - formas.length - trocas.length;
+    return formas.concat(trocas,
+      embaralhar(candidatos).slice(0, Math.max(0, faltam)).map(x => texto(x.c)));
   }
 
   /* As formas vêm sem pontuação («Viene aquí»), e a resposta certa vem com

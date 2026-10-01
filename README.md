@@ -714,6 +714,21 @@ o card que traz a palavra de lá («el moretón») aceita a da Espanha («el
 cardenal»). Na lista de todos os cards elas aparecem embaixo da nota, com o 🌎,
 e entram na busca.
 
+**O erro de digitação que cai numa palavra «especial».** «Elles estudiarán»
+por «ellos estudiarán» e «no hoy sitio» por «no hay sitio» eram uma letra, e
+caíam como erro seco: o funil tira o sujeito certo e deixa o errado, e leva o
+«hoy» para o fim da frase por ser advérbio de tempo. Antes de dar o erro, o
+conferidor compara de novo sem tirar o sujeito e sem mexer no advérbio — e
+abre a pergunta do «quase». E a tinta do que sobrou ou faltou encosta na
+palavra inteira: em «unta la mantequilla» pinta «la », e não «a l».
+
+**Na volta, a frase de uso troca só a palavra.** As alternativas erradas de
+uma frase em espanhol eram outras frases do baralho, fáceis de descartar de
+longe. Na frase de uso (266 das 347), agora é a mesma frase com a palavra do
+card trocada por outra do baralho, da mesma classe e do mesmo gênero — nunca
+um sinônimo nem a variante de outro lugar. Nas demais frases, pesam mais as
+que dividem palavras com a certa.
+
 **O erro sem nome mostra o que foi escrito.** Gênero, «ñ» e conjugação já
 tinham rótulo próprio; o resto dava só «não foi dessa vez» ao lado da resposta
 certa, e achar a diferença ficava por conta de quem lia. Agora o que foi

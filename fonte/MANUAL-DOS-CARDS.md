@@ -397,8 +397,13 @@ aparecem para quem está começando.
 ### 6.6 Na volta (`pt → es`)
 
 Não se escreve nada: nos cards de conjugação as alternativas erradas são as
-`formasEs`; nos outros, o app sorteia o espanhol de cards parecidos (mesmo
-tipo, nível, tema, tamanho). `distratoresEs` existe para o card que precisar
+`formasEs`; na **frase de uso**, é a própria frase com a palavra trocada por
+outra do baralho, da mesma classe e do mesmo gênero («No hay sitio para
+aparcar» contra «No hay atasco para aparcar») — desde que a palavra apareça na
+frase como está no card dela; nos outros, o app sorteia o espanhol de cards
+parecidos (mesmo tipo, nível, tema, tamanho, e nas frases as que dividem
+palavras com a certa). A frase de uso que traz a palavra no singular e sem
+conjugar ganha, de graça, as alternativas mais sutis. `distratoresEs` existe para o card que precisar
 de quatro feitos à mão — hoje nenhum precisa.
 
 ---
@@ -647,7 +652,10 @@ sem ele o navegador serve o baralho velho.
 | Regra de gramática conferida forma a forma | `v067` «reír perde o e»: o e vira í, e reímos e reís o guardam |
 | A nota não conta a história do card | `f045` «a nota está explicando a mudança que eu pedi» |
 | No espanhol, só o sujeito cai no funil | `u184` «necesito um poco»: o «um» sumia e o erro ficava sem explicação |
-| `pt` natural | `u064` «A sopa está sem sal, falta sal» virou «insossa» |
+| `pt` natural | `u064` «A sopa está sem sal, falta sal» virou «insossa»; `f119` «Para mim isso é grego» virou «Não entendo nada disso» (o que se diz é «está falando grego») |
+| Na volta, a frase de uso troca só a palavra | `f167` «os distratores têm que ser mais sutis» |
+| A nota não deixa dúvida sobre de quem fala | `u014` «parece que em português deixe serve para segunda e terceira pessoa» |
+| Aceitar o desfecho sem a abertura que o card ensina, não | `f204` «acabou que não fomos» sem o «resumindo» |
 | Dois sentidos correntes: o outro entra em `aceitas` | `p171` el borrador: «a borracha» (América Latina) e «o apagador» (Espanha) |
 | O jeito de conversa de chamar a mesma coisa | `f225` «marquei uma consulta com o doutor» |
 | O `pt` que não diz o tratamento aceita tú e usted | `u014` «Deje la propina en la mesa», recusado no «quase» sem estar errado |
