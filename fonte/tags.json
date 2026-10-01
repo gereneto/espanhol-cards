@@ -1203,5 +1203,20 @@
     "en": "perfect conditional",
     "es": "condicional compuesto",
     "cards": 0
+  },
+  "natureza": {
+    "en": "nature",
+    "es": "naturaleza",
+    "cards": 0
+  },
+  "compras": {
+    "en": "shopping",
+    "es": "compras",
+    "cards": 0
+  },
+  "paint": {
+    "en": "paint",
+    "es": "paint",
+    "cards": 0
   }
 }

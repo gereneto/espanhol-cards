@@ -2,7 +2,7 @@
  "versao": 1,
  "idioma": "en",
  "gerado_em": "2026-10-01",
- "total": 830,
+ "total": 930,
  "cards": [
   {
    "idioma": "en",
@@ -30233,17 +30233,18 @@
    "tipo": "palavra",
    "en": "the stove",
    "pt": "o fogão",
-   "es": "la cocina",
+   "es": "el fogón",
    "aceitas": [
     "o fogao",
     "fogao",
     "a boca do fogao"
    ],
    "aceitasEs": [
+    "el fogón",
+    "fogón",
+    "los fogones",
     "la cocina",
-    "cocina",
-    "la estufa",
-    "los fogones"
+    "cocina"
    ],
    "aceitasEn": [
     "the stove",
@@ -30269,7 +30270,10 @@
     "comida"
    ],
    "nota": "«Stove» é o fogão de boca, e o forno é «oven» — duas palavras onde o português tem uma só para o móvel inteiro. E «on the stove» é na boca do fogão, com a panela em cima.",
-   "notaEs": "«Stove» son los fogones, y el horno es «oven» — dos palabras separadas. Ojo con el español: aquí «la cocina» es el aparato, y no la habitación, que en inglés es «kitchen»."
+   "notaEs": "«Stove» son los fogones, y el horno es «oven» — dos palabras separadas. Ojo: «la cocina» sirve al aparato y a la habitación, y en inglés son «stove» y «kitchen», nunca la misma palabra.",
+   "regionaisEs": {
+    "la estufa": "na América Latina"
+   }
   },
   {
    "idioma": "en",
@@ -30289,7 +30293,8 @@
     "La olla está en el fuego",
     "La olla está en la cocina",
     "La olla está en los fogones",
-    "La olla está al fuego"
+    "La olla está al fuego",
+    "La olla está en el fogón"
    ],
    "aceitasEn": [
     "the pot is on the stove"
@@ -38555,6 +38560,4652 @@
    ],
    "nota": "Duas contrações de «would» na mesma frase, e é assim que ela sai na fala: «I'd have thought he'd know». A fórmula é crítica educada — quem diz isso está apontando que o outro devia saber e não sabia.",
    "notaEs": "Dos contracciones de «would» en la misma frase, y así es como sale al hablar: «I'd have thought he'd know». La fórmula es crítica educada — quien la dice señala que el otro debía saberlo y no lo sabía."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p185",
+   "tipo": "palavra",
+   "en": "the kitchen",
+   "pt": "a cozinha",
+   "es": "la cocina",
+   "aceitas": [
+    "a cozinha",
+    "cozinha",
+    "as cozinhas"
+   ],
+   "aceitasEs": [
+    "la cocina",
+    "cocina",
+    "las cocinas"
+   ],
+   "aceitasEn": [
+    "the kitchen",
+    "kitchen",
+    "a kitchen",
+    "kitchens"
+   ],
+   "distratores": [
+    "a sala",
+    "o quarto",
+    "o banheiro",
+    "a varanda"
+   ],
+   "distratoresEs": [
+    "la sala",
+    "el dormitorio",
+    "el baño",
+    "el balcón"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "«Kitchen» é só o lugar: cozinhar é «to cook» e quem cozinha é «a cook». O armário de cozinha é «cupboard», a pia é «sink», e a cozinha de restaurante também é «the kitchen».",
+   "notaEs": "«Kitchen» es solo el lugar: cocinar es «to cook» y quien cocina es «a cook». El armario de cocina es «cupboard», el fregadero es «sink», y la cocina de un restaurante también es «the kitchen»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p186",
+   "tipo": "palavra",
+   "en": "the knife",
+   "pt": "a faca",
+   "es": "el cuchillo",
+   "aceitas": [
+    "a faca",
+    "faca",
+    "as facas"
+   ],
+   "aceitasEs": [
+    "el cuchillo",
+    "cuchillo",
+    "los cuchillos"
+   ],
+   "aceitasEn": [
+    "the knife",
+    "knife",
+    "a knife",
+    "knives"
+   ],
+   "distratores": [
+    "a colher",
+    "o garfo",
+    "a tesoura",
+    "o prato"
+   ],
+   "distratoresEs": [
+    "la cuchara",
+    "el tenedor",
+    "las tijeras",
+    "el plato"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "comida",
+    "objetos"
+   ],
+   "nota": "O plural é «knives», com v, e o verbo «to knife» é esfaquear. Na mesa o jogo inteiro sai nesta ordem: «a knife, a fork and a spoon».",
+   "notaEs": "El plural es «knives», con v, y el verbo «to knife» es acuchillar. En la mesa el juego entero sale en este orden: «a knife, a fork and a spoon»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p187",
+   "tipo": "palavra",
+   "en": "the weather",
+   "pt": "o tempo",
+   "es": "el tiempo",
+   "aceitas": [
+    "o tempo",
+    "tempo",
+    "o clima",
+    "clima"
+   ],
+   "aceitasEs": [
+    "el tiempo",
+    "tiempo",
+    "el clima",
+    "clima"
+   ],
+   "aceitasEn": [
+    "the weather",
+    "weather"
+   ],
+   "distratores": [
+    "o céu",
+    "a chuva",
+    "a estação",
+    "a previsão"
+   ],
+   "distratoresEs": [
+    "el cielo",
+    "la lluvia",
+    "la estación",
+    "el pronóstico"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "natureza"
+   ],
+   "nota": "São duas palavras onde temos uma: «weather» é o do céu e «time» é o que passa, e nunca se trocam. Pergunta-se «What's the weather like?», e a resposta começa por «it»: «it's cold», «it's raining».\n🇺🇸 weather → 🇧🇷 o tempo do céu\n🇺🇸 time → 🇧🇷 o tempo que passa",
+   "notaEs": "Son dos palabras donde hay una: «weather» es el del cielo y «time» es el que pasa, y nunca se cambian. Se pregunta «What's the weather like?», y la respuesta empieza por «it»: «it's cold», «it's raining».\n🇺🇸 weather → 🇪🇸 el tiempo del cielo\n🇺🇸 time → 🇪🇸 el tiempo que pasa"
+  },
+  {
+   "idioma": "en",
+   "id": "en-p188",
+   "tipo": "palavra",
+   "en": "the bird",
+   "pt": "o pássaro",
+   "es": "el pájaro",
+   "aceitas": [
+    "o passaro",
+    "passaro",
+    "os passaros",
+    "a ave",
+    "ave"
+   ],
+   "aceitasEs": [
+    "el pájaro",
+    "pájaro",
+    "los pájaros",
+    "el ave",
+    "ave"
+   ],
+   "aceitasEn": [
+    "the bird",
+    "bird",
+    "a bird",
+    "birds"
+   ],
+   "distratores": [
+    "o peixe",
+    "o rato",
+    "o inseto",
+    "o morcego"
+   ],
+   "distratoresEs": [
+    "el pez",
+    "el ratón",
+    "el insecto",
+    "el murciélago"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "animais"
+   ],
+   "nota": "Uma palavra só para pássaro e ave: «bird» serve ao pardal e à galinha. O filhote é «a chick», o bico é «the beak», e «to fly» é o verbo que quase sempre vem com ela.",
+   "notaEs": "Una sola palabra para pájaro y ave: «bird» sirve al gorrión y a la gallina. La cría es «a chick», el pico es «the beak», y «to fly» es el verbo que casi siempre la acompaña."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p189",
+   "tipo": "palavra",
+   "en": "lunch",
+   "pt": "o almoço",
+   "es": "el almuerzo",
+   "aceitas": [
+    "o almoco",
+    "almoco",
+    "os almocos"
+   ],
+   "aceitasEs": [
+    "el almuerzo",
+    "almuerzo",
+    "los almuerzos"
+   ],
+   "aceitasEn": [
+    "lunch",
+    "the lunch",
+    "a lunch"
+   ],
+   "regionaisEs": {
+    "la comida": "na Espanha"
+   },
+   "distratores": [
+    "o jantar",
+    "o café da manhã",
+    "a sobremesa",
+    "a entrada"
+   ],
+   "distratoresEs": [
+    "la cena",
+    "el desayuno",
+    "el postre",
+    "la entrada"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "As refeições vão sem artigo: «after lunch», «before dinner». O verbo «to lunch» existe mas soa afetado — quem fala diz «have lunch». A pausa do almoço é «the lunch break».",
+   "notaEs": "Las comidas van sin artículo: «after lunch», «before dinner». El verbo «to lunch» existe pero suena afectado — quien habla dice «have lunch». La pausa del almuerzo es «the lunch break»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p190",
+   "tipo": "palavra",
+   "en": "the job",
+   "pt": "o trabalho",
+   "es": "el trabajo",
+   "aceitas": [
+    "o trabalho",
+    "trabalho",
+    "o emprego",
+    "emprego",
+    "a tarefa"
+   ],
+   "aceitasEs": [
+    "el trabajo",
+    "trabajo",
+    "el empleo",
+    "empleo",
+    "la tarea"
+   ],
+   "aceitasEn": [
+    "the job",
+    "job",
+    "a job",
+    "jobs"
+   ],
+   "distratores": [
+    "o salário",
+    "o chefe",
+    "o escritório",
+    "a carreira"
+   ],
+   "distratoresEs": [
+    "el sueldo",
+    "el jefe",
+    "la oficina",
+    "la carrera"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "trabalho"
+   ],
+   "nota": "«Job» é o posto e também a tarefa: «it's a tough job». O trabalho como atividade é «work», e esse não tem plural: diz-se «two jobs», nunca «two works». E «Good job!» é «muito bem!».",
+   "notaEs": "«Job» es el puesto y también la tarea: «it's a tough job». El trabajo como actividad es «work», y ese no tiene plural: se dice «two jobs», nunca «two works». Y «Good job!» es «¡muy bien!»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p191",
+   "tipo": "palavra",
+   "en": "the fridge",
+   "pt": "a geladeira",
+   "es": "la nevera",
+   "aceitas": [
+    "a geladeira",
+    "geladeira",
+    "as geladeiras",
+    "o frigorifico"
+   ],
+   "aceitasEs": [
+    "la nevera",
+    "nevera",
+    "las neveras",
+    "el frigorífico",
+    "frigorífico"
+   ],
+   "aceitasEn": [
+    "the fridge",
+    "fridge",
+    "a fridge",
+    "the refrigerator",
+    "refrigerator"
+   ],
+   "regionaisEs": {
+    "el refrigerador": "na América Latina"
+   },
+   "distratores": [
+    "o congelador",
+    "o forno",
+    "o armário",
+    "a pia"
+   ],
+   "distratoresEs": [
+    "el congelador",
+    "el horno",
+    "el armario",
+    "el fregadero"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa",
+    "comida"
+   ],
+   "nota": "«Fridge» é como todo mundo diz; «refrigerator» fica para o manual e a etiqueta da loja. O congelador de dentro é «the freezer», e nada disso tem a ver com «frigid», que é glacial.",
+   "notaEs": "«Fridge» es como todo el mundo dice; «refrigerator» queda para el manual y la etiqueta de la tienda. El congelador de dentro es «the freezer», y nada de esto tiene que ver con «frigid», que es glacial."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p192",
+   "tipo": "palavra",
+   "en": "the roof",
+   "pt": "o telhado",
+   "es": "el tejado",
+   "aceitas": [
+    "o telhado",
+    "telhado",
+    "os telhados",
+    "o teto"
+   ],
+   "aceitasEs": [
+    "el tejado",
+    "tejado",
+    "los tejados",
+    "el techo"
+   ],
+   "aceitasEn": [
+    "the roof",
+    "roof",
+    "a roof",
+    "roofs"
+   ],
+   "distratores": [
+    "a parede",
+    "o chão",
+    "a janela",
+    "a chaminé"
+   ],
+   "distratoresEs": [
+    "la pared",
+    "el suelo",
+    "la ventana",
+    "la chimenea"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "O plural é «roofs», sem o v de «knives». «Roof» serve ao telhado da casa e ao teto do carro, e «rooftop» é o terraço de cima, onde se faz festa.",
+   "notaEs": "El plural es «roofs», sin la v de «knives». «Roof» sirve al tejado de la casa y al techo del coche, y «rooftop» es la terraza de arriba, donde se hacen fiestas."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p193",
+   "tipo": "palavra",
+   "en": "the glove",
+   "pt": "a luva",
+   "es": "el guante",
+   "aceitas": [
+    "a luva",
+    "luva",
+    "as luvas"
+   ],
+   "aceitasEs": [
+    "el guante",
+    "guante",
+    "los guantes"
+   ],
+   "aceitasEn": [
+    "the glove",
+    "glove",
+    "a glove",
+    "gloves"
+   ],
+   "distratores": [
+    "a meia",
+    "o cachecol",
+    "a manga",
+    "o chapéu"
+   ],
+   "distratoresEs": [
+    "el calcetín",
+    "la bufanda",
+    "la manga",
+    "el sombrero"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "roupa"
+   ],
+   "nota": "«Glove» tem dedos; a luva fechada, de uma peça, é «a mitten». «It fits like a glove» é o mesmo elogio que se faz aqui, e no carro o porta-luvas é «the glove compartment».",
+   "notaEs": "«Glove» tiene dedos; el guante cerrado, de una pieza, es «a mitten». «It fits like a glove» es el mismo elogio que se hace aquí, y en el coche la guantera es «the glove compartment»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p194",
+   "tipo": "palavra",
+   "en": "the scarf",
+   "pt": "o cachecol",
+   "es": "la bufanda",
+   "aceitas": [
+    "o cachecol",
+    "cachecol",
+    "os cachecois",
+    "a echarpe"
+   ],
+   "aceitasEs": [
+    "la bufanda",
+    "bufanda",
+    "las bufandas"
+   ],
+   "aceitasEn": [
+    "the scarf",
+    "scarf",
+    "a scarf",
+    "scarves",
+    "scarfs"
+   ],
+   "distratores": [
+    "o boné",
+    "a gravata",
+    "o cinto",
+    "a touca"
+   ],
+   "distratoresEs": [
+    "la gorra",
+    "la corbata",
+    "el cinturón",
+    "el gorro"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "roupa"
+   ],
+   "nota": "«Scarf» é o do frio e também o lenço de cabeça ou de pescoço — o contexto escolhe. O plural tem duas formas de pé, «scarves» e «scarfs», e a primeira é a mais comum.",
+   "notaEs": "«Scarf» es el del frío y también el pañuelo de cabeza o de cuello — el contexto elige. El plural tiene dos formas en pie, «scarves» y «scarfs», y la primera es la más común."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p195",
+   "tipo": "palavra",
+   "en": "the backpack",
+   "pt": "a mochila",
+   "es": "la mochila",
+   "aceitas": [
+    "a mochila",
+    "mochila",
+    "as mochilas"
+   ],
+   "aceitasEs": [
+    "la mochila",
+    "mochila",
+    "las mochilas"
+   ],
+   "aceitasEn": [
+    "the backpack",
+    "backpack",
+    "a backpack",
+    "backpacks"
+   ],
+   "regionaisEn": {
+    "the rucksack": "na Inglaterra",
+    "rucksack": "na Inglaterra"
+   },
+   "distratores": [
+    "a mala",
+    "a bolsa",
+    "a sacola",
+    "o estojo"
+   ],
+   "distratoresEs": [
+    "la maleta",
+    "el bolso",
+    "la bolsa",
+    "el estuche"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "objetos",
+    "viagem"
+   ],
+   "nota": "«Backpack» é a de costas, com duas alças; a de uma alça só é «a shoulder bag». Quem viaja com ela é «a backpacker», e o verbo «to backpack» é viajar assim.",
+   "notaEs": "«Backpack» es la de espalda, con dos tirantes; la de un solo tirante es «a shoulder bag». Quien viaja con ella es «a backpacker», y el verbo «to backpack» es viajar así."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p196",
+   "tipo": "palavra",
+   "en": "the bowl",
+   "pt": "a tigela",
+   "es": "el cuenco",
+   "aceitas": [
+    "a tigela",
+    "tigela",
+    "as tigelas",
+    "a vasilha"
+   ],
+   "aceitasEs": [
+    "el cuenco",
+    "cuenco",
+    "los cuencos",
+    "el bol",
+    "el tazón"
+   ],
+   "aceitasEn": [
+    "the bowl",
+    "bowl",
+    "a bowl",
+    "bowls"
+   ],
+   "distratores": [
+    "o prato",
+    "a panela",
+    "a bandeja",
+    "a jarra"
+   ],
+   "distratoresEs": [
+    "el plato",
+    "la olla",
+    "la bandeja",
+    "la jarra"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida",
+    "objetos"
+   ],
+   "nota": "«Bowl» é qualquer recipiente fundo e redondo: o da sopa, o do cereal, o do cachorro. Serve também para o conteúdo — «a bowl of rice» — e, como verbo, é jogar boliche.",
+   "notaEs": "«Bowl» es cualquier recipiente hondo y redondo: el de la sopa, el del cereal, el del perro. Sirve también para el contenido — «a bowl of rice» — y, como verbo, es jugar a los bolos."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p197",
+   "tipo": "palavra",
+   "en": "the napkin",
+   "pt": "o guardanapo",
+   "es": "la servilleta",
+   "aceitas": [
+    "o guardanapo",
+    "guardanapo",
+    "os guardanapos"
+   ],
+   "aceitasEs": [
+    "la servilleta",
+    "servilleta",
+    "las servilletas"
+   ],
+   "aceitasEn": [
+    "the napkin",
+    "napkin",
+    "a napkin",
+    "napkins"
+   ],
+   "distratores": [
+    "a toalha",
+    "o pano",
+    "o avental",
+    "a esponja"
+   ],
+   "distratoresEs": [
+    "la toalla",
+    "el paño",
+    "el delantal",
+    "la esponja"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida",
+    "objetos"
+   ],
+   "nota": "«Napkin» é o de pano e o de papel, os dois. Cuidado com o parente britânico: lá «nappy» é fralda, e o de papel aparece em cardápio antigo como «serviette».",
+   "notaEs": "«Napkin» es el de tela y el de papel, los dos. Cuidado con el pariente británico: allí «nappy» es pañal, y el de papel aparece en cartas antiguas como «serviette»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p198",
+   "tipo": "palavra",
+   "en": "the garlic",
+   "pt": "o alho",
+   "es": "el ajo",
+   "aceitas": [
+    "o alho",
+    "alho"
+   ],
+   "aceitasEs": [
+    "el ajo",
+    "ajo",
+    "los ajos"
+   ],
+   "aceitasEn": [
+    "the garlic",
+    "garlic"
+   ],
+   "distratores": [
+    "a cebola",
+    "o gengibre",
+    "o salsão",
+    "o tomilho"
+   ],
+   "distratoresEs": [
+    "la cebolla",
+    "el jengibre",
+    "el apio",
+    "el tomillo"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "«Garlic» não tem plural: um dente é «a clove of garlic» e a cabeça inteira, «a head of garlic». O pão de alho é «garlic bread», e quem comeu demais tem «garlic breath».",
+   "notaEs": "«Garlic» no tiene plural: un diente es «a clove of garlic» y la cabeza entera, «a head of garlic». El pan de ajo es «garlic bread», y quien comió demasiado tiene «garlic breath»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p199",
+   "tipo": "palavra",
+   "en": "the strawberry",
+   "pt": "o morango",
+   "es": "la fresa",
+   "aceitas": [
+    "o morango",
+    "morango",
+    "os morangos"
+   ],
+   "aceitasEs": [
+    "la fresa",
+    "fresa",
+    "las fresas"
+   ],
+   "aceitasEn": [
+    "the strawberry",
+    "strawberry",
+    "a strawberry",
+    "strawberries"
+   ],
+   "regionaisEs": {
+    "la frutilla": "na Argentina e no Chile"
+   },
+   "distratores": [
+    "a framboesa",
+    "a amora",
+    "a cereja",
+    "o mirtilo"
+   ],
+   "distratoresEs": [
+    "la frambuesa",
+    "la mora",
+    "la cereza",
+    "el arándano"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "O plural é «strawberries»: palavra acabada em consoante mais y troca o y por -ies. O «straw» de dentro é a palha, e de onde ele veio ninguém sabe ao certo.",
+   "notaEs": "El plural es «strawberries»: la palabra acabada en consonante más y cambia la y por -ies. El «straw» de dentro es la paja, y de dónde salió nadie lo sabe a ciencia cierta."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p200",
+   "tipo": "palavra",
+   "en": "the peach",
+   "pt": "o pêssego",
+   "es": "el melocotón",
+   "aceitas": [
+    "o pessego",
+    "pessego",
+    "os pessegos"
+   ],
+   "aceitasEs": [
+    "el melocotón",
+    "melocotón",
+    "los melocotones"
+   ],
+   "aceitasEn": [
+    "the peach",
+    "peach",
+    "a peach",
+    "peaches"
+   ],
+   "regionaisEs": {
+    "el durazno": "na América Latina"
+   },
+   "distratores": [
+    "a ameixa",
+    "a pera",
+    "o damasco",
+    "o figo"
+   ],
+   "distratoresEs": [
+    "la ciruela",
+    "la pera",
+    "el albaricoque",
+    "el higo"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "Plural «peaches», com -es depois do ch, como «beaches» e «matches». «Peachy» é ótimo na conversa, e quem é um doce de pessoa também é «a peach».",
+   "notaEs": "Plural «peaches», con -es tras la ch, como «beaches» y «matches». «Peachy» es fenomenal en la conversación, y quien es un encanto también es «a peach»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p201",
+   "tipo": "palavra",
+   "en": "to sweep",
+   "pt": "varrer",
+   "es": "barrer",
+   "aceitas": [
+    "varrer"
+   ],
+   "aceitasEs": [
+    "barrer"
+   ],
+   "aceitasEn": [
+    "to sweep",
+    "sweep",
+    "sweeping"
+   ],
+   "distratores": [
+    "esfregar",
+    "polir",
+    "sacudir",
+    "peneirar"
+   ],
+   "distratoresEs": [
+    "fregar",
+    "pulir",
+    "sacudir",
+    "cribar"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "casa"
+   ],
+   "nota": "Verbo irregular de uma forma só: «swept» serve de passado e de particípio. Vale para tudo que passa de ponta a ponta — quem ganha todas as cadeiras «sweeps the election».",
+   "notaEs": "Verbo irregular de una sola forma: «swept» sirve de pasado y de participio. Vale para todo lo que pasa de punta a punta — quien gana todos los escaños «sweeps the election»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p202",
+   "tipo": "palavra",
+   "en": "to boil",
+   "pt": "ferver",
+   "es": "hervir",
+   "aceitas": [
+    "ferver"
+   ],
+   "aceitasEs": [
+    "hervir"
+   ],
+   "aceitasEn": [
+    "to boil",
+    "boil",
+    "boiling"
+   ],
+   "distratores": [
+    "assar",
+    "fritar",
+    "derreter",
+    "escorrer"
+   ],
+   "distratoresEs": [
+    "hornear",
+    "freír",
+    "derretir",
+    "colar"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "«Boil» é a água no ponto e também o que está dentro dela: «boil the eggs». O ovo cozido é «a boiled egg», e quem perde a paciência «boils over».",
+   "notaEs": "«Boil» es el agua en su punto y también lo que está dentro: «boil the eggs». El huevo duro es «a boiled egg», y quien pierde la paciencia «boils over»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p203",
+   "tipo": "palavra",
+   "en": "to peel",
+   "pt": "descascar",
+   "es": "pelar",
+   "aceitas": [
+    "descascar",
+    "tirar a casca"
+   ],
+   "aceitasEs": [
+    "pelar",
+    "quitar la piel"
+   ],
+   "aceitasEn": [
+    "to peel",
+    "peel",
+    "peeling"
+   ],
+   "distratores": [
+    "picar",
+    "ralar",
+    "amassar",
+    "temperar"
+   ],
+   "distratoresEs": [
+    "picar",
+    "rallar",
+    "machacar",
+    "aliñar"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "«Peel» é o verbo e a casca que sai dele: «orange peel». A batata já descascada fica «peeled», e quem tomou sol demais «peels» — a pele é que descasca.",
+   "notaEs": "«Peel» es el verbo y la piel que sale de él: «orange peel». La patata ya pelada queda «peeled», y quien tomó demasiado sol «peels» — la piel es la que se descama."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p204",
+   "tipo": "palavra",
+   "en": "the leaf",
+   "pt": "a folha",
+   "es": "la hoja",
+   "aceitas": [
+    "a folha",
+    "folha",
+    "as folhas"
+   ],
+   "aceitasEs": [
+    "la hoja",
+    "hoja",
+    "las hojas"
+   ],
+   "aceitasEn": [
+    "the leaf",
+    "leaf",
+    "a leaf",
+    "leaves"
+   ],
+   "distratores": [
+    "o galho",
+    "a raiz",
+    "a casca",
+    "a semente"
+   ],
+   "distratoresEs": [
+    "la rama",
+    "la raíz",
+    "la corteza",
+    "la semilla"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "natureza"
+   ],
+   "nota": "Plural «leaves», com v, como «knives» e «wives». «Leaf» é a folha da árvore e a do livro; a de papel solta é «a sheet». E «to leaf through a book» é folhear.",
+   "notaEs": "Plural «leaves», con v, como «knives» y «wives». «Leaf» es la hoja del árbol y la del libro; la de papel suelta es «a sheet». Y «to leaf through a book» es hojear."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p205",
+   "tipo": "palavra",
+   "en": "the wage",
+   "pt": "o salário",
+   "es": "el sueldo",
+   "aceitas": [
+    "o salario",
+    "salario",
+    "os salarios",
+    "o ordenado"
+   ],
+   "aceitasEs": [
+    "el sueldo",
+    "sueldo",
+    "los sueldos",
+    "el salario"
+   ],
+   "aceitasEn": [
+    "the wage",
+    "wage",
+    "wages",
+    "the wages",
+    "a wage"
+   ],
+   "distratores": [
+    "o imposto",
+    "o bônus",
+    "a dívida",
+    "o orçamento"
+   ],
+   "distratoresEs": [
+    "el impuesto",
+    "el bono",
+    "la deuda",
+    "el presupuesto"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "economia",
+    "trabalho"
+   ],
+   "nota": "«Wage» é o pago por hora ou por semana, e aparece quase sempre no plural: «weekly wages». O do mês fechado é «salary», e o piso legal é «the minimum wage».",
+   "notaEs": "«Wage» es lo que se paga por hora o por semana, y aparece casi siempre en plural: «weekly wages». El del mes cerrado es «salary», y el mínimo legal es «the minimum wage»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p206",
+   "tipo": "palavra",
+   "en": "the loan",
+   "pt": "o empréstimo",
+   "es": "el préstamo",
+   "aceitas": [
+    "o emprestimo",
+    "emprestimo",
+    "os emprestimos"
+   ],
+   "aceitasEs": [
+    "el préstamo",
+    "préstamo",
+    "los préstamos"
+   ],
+   "aceitasEn": [
+    "the loan",
+    "loan",
+    "a loan",
+    "loans"
+   ],
+   "distratores": [
+    "a dívida",
+    "a hipoteca",
+    "o juro",
+    "a prestação"
+   ],
+   "distratoresEs": [
+    "la deuda",
+    "la hipoteca",
+    "el interés",
+    "la cuota"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "economia"
+   ],
+   "nota": "«Loan» é o dinheiro emprestado. Quem empresta «lends» — nos Estados Unidos «loans» também corre —, quem pede é «the borrower», e pedir é «to take out a loan».",
+   "notaEs": "«Loan» es el dinero prestado. Quien presta «lends» — en Estados Unidos «loans» también corre —, quien lo pide es «the borrower», y pedirlo es «to take out a loan»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p207",
+   "tipo": "palavra",
+   "en": "to stir",
+   "pt": "mexer",
+   "es": "remover",
+   "aceitas": [
+    "mexer",
+    "misturar"
+   ],
+   "aceitasEs": [
+    "remover",
+    "revolver"
+   ],
+   "aceitasEn": [
+    "to stir",
+    "stir",
+    "stirring"
+   ],
+   "distratores": [
+    "bater",
+    "escorrer",
+    "provar",
+    "aquecer"
+   ],
+   "distratoresEs": [
+    "batir",
+    "colar",
+    "probar",
+    "calentar"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "«Stir» é a colher girando devagar; bater com força é «to beat» ou «to whisk». Fora da cozinha serve a mexer com as pessoas: «the news stirred the crowd».",
+   "notaEs": "«Stir» es la cuchara girando despacio; batir con fuerza es «to beat» o «to whisk». Fuera de la cocina sirve para agitar a la gente: «the news stirred the crowd»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p208",
+   "tipo": "palavra",
+   "en": "the fitting room",
+   "pt": "o provador",
+   "es": "el probador",
+   "aceitas": [
+    "o provador",
+    "provador",
+    "os provadores",
+    "a cabine de prova"
+   ],
+   "aceitasEs": [
+    "el probador",
+    "probador",
+    "los probadores"
+   ],
+   "aceitasEn": [
+    "the fitting room",
+    "fitting room",
+    "a fitting room",
+    "the dressing room",
+    "dressing room"
+   ],
+   "distratores": [
+    "o balcão",
+    "o caixa",
+    "a vitrine",
+    "o depósito"
+   ],
+   "distratoresEs": [
+    "el mostrador",
+    "la caja",
+    "el escaparate",
+    "el almacén"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "compras",
+    "roupa"
+   ],
+   "nota": "«Fitting room» e «dressing room» valem as duas na loja; a segunda é também o camarim do teatro. Para experimentar se pergunta «Can I try this on?», com o «on» no fim.",
+   "notaEs": "«Fitting room» y «dressing room» valen las dos en la tienda; la segunda es también el camerino del teatro. Para probarse algo se pregunta «Can I try this on?», con el «on» al final."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p209",
+   "tipo": "palavra",
+   "en": "the lightning",
+   "pt": "o relâmpago",
+   "es": "el relámpago",
+   "aceitas": [
+    "o relampago",
+    "relampago",
+    "os relampagos",
+    "o raio"
+   ],
+   "aceitasEs": [
+    "el relámpago",
+    "relámpago",
+    "los relámpagos",
+    "el rayo"
+   ],
+   "aceitasEn": [
+    "the lightning",
+    "lightning"
+   ],
+   "distratores": [
+    "o trovão",
+    "o granizo",
+    "o vendaval",
+    "o arco-íris"
+   ],
+   "distratoresEs": [
+    "el trueno",
+    "el granizo",
+    "el vendaval",
+    "el arcoíris"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "natureza"
+   ],
+   "nota": "«Lightning» não tem plural nem artigo indefinido: «lightning struck the tree». O estrondo é «thunder», e os dois juntos fazem «a thunderstorm». Nada a ver com «lightening», que é clarear.",
+   "notaEs": "«Lightning» no tiene plural ni artículo indefinido: «lightning struck the tree». El estruendo es «thunder», y los dos juntos hacen «a thunderstorm». Nada que ver con «lightening», que es aclarar."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p210",
+   "tipo": "palavra",
+   "en": "to rinse",
+   "pt": "enxaguar",
+   "es": "enjuagar",
+   "aceitas": [
+    "enxaguar"
+   ],
+   "aceitasEs": [
+    "enjuagar",
+    "aclarar"
+   ],
+   "aceitasEn": [
+    "to rinse",
+    "rinse",
+    "rinsing"
+   ],
+   "distratores": [
+    "esfregar",
+    "secar",
+    "torcer",
+    "mergulhar"
+   ],
+   "distratoresEs": [
+    "fregar",
+    "secar",
+    "escurrir",
+    "sumergir"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo",
+    "casa"
+   ],
+   "nota": "«Rinse» é passar água, sem sabão: «rinse your mouth», «rinse the dishes». A última água da louça é «the rinse», e «rinse and repeat» virou piada para o que se faz sempre igual.",
+   "notaEs": "«Rinse» es pasar agua, sin jabón: «rinse your mouth», «rinse the dishes». La última agua de la vajilla es «the rinse», y «rinse and repeat» se volvió broma para lo que se hace siempre igual."
+  },
+  {
+   "idioma": "en",
+   "id": "en-p211",
+   "tipo": "palavra",
+   "en": "the hunch",
+   "pt": "o palpite",
+   "es": "la intuición",
+   "aceitas": [
+    "o palpite",
+    "palpite",
+    "os palpites",
+    "a intuicao",
+    "o pressentimento"
+   ],
+   "aceitasEs": [
+    "la intuición",
+    "intuición",
+    "el presentimiento",
+    "la corazonada"
+   ],
+   "aceitasEn": [
+    "the hunch",
+    "hunch",
+    "a hunch",
+    "hunches"
+   ],
+   "distratores": [
+    "o boato",
+    "a aposta",
+    "a lembrança",
+    "a certeza"
+   ],
+   "distratoresEs": [
+    "el rumor",
+    "la apuesta",
+    "el recuerdo",
+    "la certeza"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo",
+    "cotidiano"
+   ],
+   "nota": "«Hunch» é o palpite que não se explica: «I had a hunch». O verbo é outra coisa — «to hunch» é curvar as costas —, e dele vem «hunchback», o corcunda.",
+   "notaEs": "«Hunch» es la intuición que no se explica: «I had a hunch». El verbo es otra cosa — «to hunch» es encorvar la espalda —, y de él viene «hunchback», el jorobado."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u185",
+   "tipo": "frase",
+   "requer": "en-p185",
+   "en": "The kitchen is small.",
+   "pt": "A cozinha é pequena.",
+   "es": "La cocina es pequeña.",
+   "aceitas": [
+    "a cozinha e pequena",
+    "a cozinha e pequenina",
+    "a cozinha e apertada"
+   ],
+   "aceitasEs": [
+    "La cocina es pequeña",
+    "La cocina es chica",
+    "La cocina es estrecha"
+   ],
+   "aceitasEn": [
+    "the kitchen is small",
+    "the kitchens small",
+    "the kitchen is little"
+   ],
+   "distratores": [
+    "A sala é pequena.",
+    "A janela é pequena.",
+    "A porta é pequena.",
+    "A escada é pequena."
+   ],
+   "distratoresEs": [
+    "La sala es pequeña.",
+    "La ventana es pequeña.",
+    "La puerta es pequeña.",
+    "La escalera es pequeña."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "«Small» é a medida; «little» carrega afeto ou desprezo, e «a little kitchen» soa a comentário, não a tamanho. Cômodo apertado de verdade é «cramped».",
+   "notaEs": "«Small» es la medida; «little» carga afecto o desprecio, y «a little kitchen» suena a comentario, no a tamaño. Habitación de verdad estrecha es «cramped»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u186",
+   "tipo": "frase",
+   "requer": "en-p186",
+   "en": "This knife doesn't cut.",
+   "pt": "Esta faca não corta.",
+   "es": "Este cuchillo no corta.",
+   "aceitas": [
+    "esta faca nao corta",
+    "essa faca nao corta",
+    "a faca nao corta",
+    "esta faca esta cega"
+   ],
+   "aceitasEs": [
+    "Este cuchillo no corta",
+    "Ese cuchillo no corta",
+    "El cuchillo no corta",
+    "Este cuchillo está desafilado"
+   ],
+   "aceitasEn": [
+    "this knife doesnt cut",
+    "this knife does not cut",
+    "this knife wont cut"
+   ],
+   "distratores": [
+    "Esta tesoura não corta.",
+    "Esta serra não corta.",
+    "Esta navalha não corta.",
+    "Esta espada não corta."
+   ],
+   "distratoresEs": [
+    "Este serrucho no corta.",
+    "Este cúter no corta.",
+    "Este sable no corta.",
+    "Este machete no corta."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "comida",
+    "objetos"
+   ],
+   "nota": "Faca sem corte é «dull» nos Estados Unidos e «blunt» na Inglaterra; afiada é «sharp», e amolar é «to sharpen». O fio em si é «the edge».",
+   "notaEs": "Cuchillo sin filo es «dull» en Estados Unidos y «blunt» en Inglaterra; afilado es «sharp», y afilar es «to sharpen». El filo en sí es «the edge»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u187",
+   "tipo": "frase",
+   "requer": "en-p187",
+   "en": "The weather was awful.",
+   "pt": "O tempo estava horrível.",
+   "es": "El tiempo estaba horrible.",
+   "aceitas": [
+    "o tempo estava horrivel",
+    "o tempo estava terrivel",
+    "o tempo estava pessimo",
+    "o clima estava horrivel"
+   ],
+   "aceitasEs": [
+    "El tiempo estaba horrible",
+    "El tiempo era horrible",
+    "El tiempo estaba terrible",
+    "Hacía un tiempo horrible"
+   ],
+   "aceitasEn": [
+    "the weather was awful",
+    "the weather was terrible",
+    "the weather was horrible"
+   ],
+   "distratores": [
+    "O cheiro estava horrível.",
+    "O barulho estava horrível.",
+    "O caminho estava horrível.",
+    "O serviço estava horrível."
+   ],
+   "distratoresEs": [
+    "El olor estaba horrible.",
+    "El ruido estaba horrible.",
+    "El camino estaba horrible.",
+    "El servicio estaba horrible."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "natureza"
+   ],
+   "nota": "«Awful» é forte: é o tempo que estragou o dia. O tempo bom se diz com «nice» ou «lovely», e a notícia dele se pede com «How's the weather?».",
+   "notaEs": "«Awful» es fuerte: es el tiempo que estropeó el día. El tiempo bueno se dice con «nice» o «lovely», y se pregunta por él con «How's the weather?»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u188",
+   "tipo": "frase",
+   "requer": "en-p188",
+   "en": "A bird landed on the car.",
+   "pt": "Um pássaro pousou no carro.",
+   "es": "Un pájaro se posó en el coche.",
+   "aceitas": [
+    "um passaro pousou no carro",
+    "um passaro pousou sobre o carro",
+    "um passaro desceu no carro"
+   ],
+   "aceitasEs": [
+    "Un pájaro se posó en el coche",
+    "Un pájaro se posó sobre el coche",
+    "Un ave se posó en el coche"
+   ],
+   "aceitasEn": [
+    "a bird landed on the car",
+    "the bird landed on the car",
+    "a bird landed on top of the car"
+   ],
+   "distratores": [
+    "Um inseto pousou no carro.",
+    "Um morcego pousou no carro.",
+    "Um besouro pousou no carro.",
+    "Um mosquito pousou no carro."
+   ],
+   "distratoresEs": [
+    "Un insecto se posó en el coche.",
+    "Un murciélago se posó en el coche.",
+    "Un escarabajo se posó en el coche.",
+    "Un mosquito se posó en el coche."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "animais"
+   ],
+   "nota": "«To land» é pousar, e serve ao pássaro, ao avião e a quem salta e cai de pé. Como substantivo, «landing» é a aterrissagem e também o patamar da escada.",
+   "notaEs": "«To land» es posarse, y sirve al pájaro, al avión y a quien salta y cae de pie. Como sustantivo, «landing» es el aterrizaje y también el descansillo de la escalera."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u189",
+   "tipo": "frase",
+   "requer": "en-p189",
+   "en": "Lunch is at noon.",
+   "pt": "O almoço é ao meio-dia.",
+   "es": "El almuerzo es a mediodía.",
+   "aceitas": [
+    "o almoco e ao meio dia",
+    "o almoco e meio dia",
+    "o almoco sai ao meio dia",
+    "almoco ao meio dia"
+   ],
+   "aceitasEs": [
+    "El almuerzo es a mediodía",
+    "El almuerzo es al mediodía",
+    "El almuerzo es a las doce"
+   ],
+   "aceitasEn": [
+    "lunch is at noon",
+    "lunch is at twelve",
+    "lunch is at midday"
+   ],
+   "regionaisEs": {
+    "La comida es a mediodía": "na Espanha"
+   },
+   "distratores": [
+    "O jantar é ao meio-dia.",
+    "O ensaio é ao meio-dia.",
+    "O desfile é ao meio-dia.",
+    "O exame é ao meio-dia."
+   ],
+   "distratoresEs": [
+    "El desayuno es a mediodía.",
+    "El ensayo es a mediodía.",
+    "El desfile es a mediodía.",
+    "El examen es a mediodía."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "«Noon» é o meio-dia e «midday» vale igual; na prática se diz «at twelve». Meia-noite é «midnight», e «afternoon» é, ao pé da letra, o depois do meio-dia.",
+   "notaEs": "«Noon» es el mediodía y «midday» vale igual; en la práctica se dice «at twelve». Medianoche es «midnight», y «afternoon» es, al pie de la letra, el después del mediodía."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u190",
+   "tipo": "frase",
+   "requer": "en-p190",
+   "en": "She got the job.",
+   "pt": "Ela conseguiu o emprego.",
+   "es": "Ella consiguió el empleo.",
+   "aceitas": [
+    "ela conseguiu o emprego",
+    "ela conseguiu o trabalho",
+    "ela pegou o emprego",
+    "ela foi contratada"
+   ],
+   "aceitasEs": [
+    "Ella consiguió el empleo",
+    "Ella consiguió el trabajo",
+    "Consiguió el trabajo",
+    "La contrataron"
+   ],
+   "aceitasEn": [
+    "she got the job",
+    "she has got the job",
+    "she landed the job"
+   ],
+   "distratores": [
+    "Ela conseguiu o aumento.",
+    "Ela conseguiu o visto.",
+    "Ela conseguiu o desconto.",
+    "Ela conseguiu o assento."
+   ],
+   "distratoresEs": [
+    "Ella consiguió el aumento.",
+    "Ella consiguió el visado.",
+    "Ella consiguió el descuento.",
+    "Ella consiguió el asiento."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "trabalho"
+   ],
+   "nota": "«To get the job» é ser escolhido. O caminho até lá é «to apply for a job» e depois «a job interview», e quem conta com entusiasmo diz «she landed the job».",
+   "notaEs": "«To get the job» es ser elegido. El camino hasta ahí es «to apply for a job» y después «a job interview», y quien lo cuenta con entusiasmo dice «she landed the job»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u191",
+   "tipo": "frase",
+   "requer": "en-p191",
+   "en": "The fridge is empty.",
+   "pt": "A geladeira está vazia.",
+   "es": "La nevera está vacía.",
+   "aceitas": [
+    "a geladeira esta vazia",
+    "a geladeira ta vazia",
+    "nao tem nada na geladeira"
+   ],
+   "aceitasEs": [
+    "La nevera está vacía",
+    "No hay nada en la nevera",
+    "La nevera no tiene nada"
+   ],
+   "aceitasEn": [
+    "the fridge is empty",
+    "the fridges empty",
+    "theres nothing in the fridge",
+    "the refrigerator is empty"
+   ],
+   "regionaisEs": {
+    "El refrigerador está vacío": "na América Latina"
+   },
+   "distratores": [
+    "A garrafa está vazia.",
+    "A despensa está vazia.",
+    "A piscina está vazia.",
+    "A mala está vazia."
+   ],
+   "distratoresEs": [
+    "La botella está vacía.",
+    "La despensa está vacía.",
+    "La piscina está vacía.",
+    "La maleta está vacía."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa",
+    "comida"
+   ],
+   "nota": "«Empty» é o adjetivo e o verbo na mesma forma: «an empty fridge», «empty the fridge». O contrário é «full», e o meio é «half empty» ou «half full», como no otimista da piada.",
+   "notaEs": "«Empty» es el adjetivo y el verbo en la misma forma: «an empty fridge», «empty the fridge». El contrario es «full», y el medio es «half empty» o «half full», como en el optimista del chiste."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u192",
+   "tipo": "frase",
+   "requer": "en-p192",
+   "en": "The roof is leaking.",
+   "pt": "O telhado está vazando.",
+   "es": "El tejado gotea.",
+   "aceitas": [
+    "o telhado esta vazando",
+    "o telhado ta vazando",
+    "o telhado esta gotejando",
+    "o teto esta vazando",
+    "entra agua pelo telhado"
+   ],
+   "aceitasEs": [
+    "El tejado gotea",
+    "El tejado tiene una fuga",
+    "El techo gotea",
+    "Se filtra agua por el tejado"
+   ],
+   "aceitasEn": [
+    "the roof is leaking",
+    "the roof leaks",
+    "theres a leak in the roof"
+   ],
+   "distratores": [
+    "O cano está vazando.",
+    "O tanque está vazando.",
+    "O barco está vazando.",
+    "O filtro está vazando."
+   ],
+   "distratoresEs": [
+    "El tubo gotea.",
+    "El depósito gotea.",
+    "El barco gotea.",
+    "El filtro gotea."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "«To leak» é vazar nos dois sentidos: a água do telhado e a notícia que escapa — «the report leaked». O furo em si é «a leak», e quem vazou é «the leaker».",
+   "notaEs": "«To leak» es filtrarse en los dos sentidos: el agua del tejado y la noticia que se escapa — «the report leaked». El agujero en sí es «a leak», y quien la filtró es «the leaker»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u193",
+   "tipo": "frase",
+   "requer": "en-p193",
+   "en": "I lost a glove.",
+   "pt": "Perdi uma luva.",
+   "es": "Perdí un guante.",
+   "aceitas": [
+    "perdi uma luva",
+    "eu perdi uma luva",
+    "perdi uma das luvas"
+   ],
+   "aceitasEs": [
+    "Perdí un guante",
+    "Yo perdí un guante",
+    "Perdí uno de los guantes"
+   ],
+   "aceitasEn": [
+    "i lost a glove",
+    "ive lost a glove",
+    "i lost one glove"
+   ],
+   "distratores": [
+    "Perdi uma meia.",
+    "Perdi uma sandália.",
+    "Perdi uma caneta.",
+    "Perdi uma pulseira."
+   ],
+   "distratoresEs": [
+    "Perdí un calcetín.",
+    "Perdí un zapato.",
+    "Perdí un bolígrafo.",
+    "Perdí un pendiente."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "roupa"
+   ],
+   "nota": "«Lost» é passado e particípio de «lose»: «I lost it» e «I have lost it» se escrevem igual. A que ficou sem par é «the odd glove», e o achados e perdidos é «lost and found».",
+   "notaEs": "«Lost» es pasado y participio de «lose»: «I lost it» y «I have lost it» se escriben igual. El que quedó sin pareja es «the odd glove», y la oficina de objetos perdidos es «lost and found»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u194",
+   "tipo": "frase",
+   "requer": "en-p194",
+   "en": "She was wearing a red scarf.",
+   "pt": "Ela usava um cachecol vermelho.",
+   "es": "Llevaba una bufanda roja.",
+   "aceitas": [
+    "ela usava um cachecol vermelho",
+    "ela estava de cachecol vermelho",
+    "ela vestia um cachecol vermelho",
+    "usava um cachecol vermelho"
+   ],
+   "aceitasEs": [
+    "Llevaba una bufanda roja",
+    "Ella llevaba una bufanda roja",
+    "Llevaba puesta una bufanda roja"
+   ],
+   "aceitasEn": [
+    "she was wearing a red scarf",
+    "she wore a red scarf",
+    "she had a red scarf on"
+   ],
+   "distratores": [
+    "Ela usava um chapéu vermelho.",
+    "Ela usava um vestido vermelho.",
+    "Ela usava um casaco vermelho.",
+    "Ela usava um colar vermelho."
+   ],
+   "distratoresEs": [
+    "Llevaba una gorra roja.",
+    "Llevaba una falda roja.",
+    "Llevaba una chaqueta roja.",
+    "Llevaba una pulsera roja."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "roupa"
+   ],
+   "nota": "«To wear» é o verbo de tudo que está no corpo: roupa, óculos, perfume, barba. Vestir-se é «to get dressed», e pôr uma peça agora é «to put on».",
+   "notaEs": "«To wear» es el verbo de todo lo que está en el cuerpo: ropa, gafas, perfume, barba. Vestirse es «to get dressed», y ponerse una prenda ahora es «to put on»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u195",
+   "tipo": "frase",
+   "requer": "en-p195",
+   "en": "My backpack is too heavy.",
+   "pt": "Minha mochila está muito pesada.",
+   "es": "Mi mochila está demasiado pesada.",
+   "aceitas": [
+    "minha mochila esta muito pesada",
+    "minha mochila ta muito pesada",
+    "a minha mochila esta pesada demais"
+   ],
+   "aceitasEs": [
+    "Mi mochila está demasiado pesada",
+    "Mi mochila pesa demasiado",
+    "Mi mochila está muy pesada"
+   ],
+   "aceitasEn": [
+    "my backpack is too heavy",
+    "my backpacks too heavy",
+    "my backpack is really heavy"
+   ],
+   "distratores": [
+    "Minha mala está muito pesada.",
+    "Minha bolsa está muito pesada.",
+    "Minha bicicleta está muito pesada.",
+    "Minha caixa está muito pesada."
+   ],
+   "distratoresEs": [
+    "Mi maleta está demasiado pesada.",
+    "Mi bolsa está demasiado pesada.",
+    "Mi bicicleta está demasiado pesada.",
+    "Mi caja está demasiado pesada."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "objetos",
+    "viagem"
+   ],
+   "nota": "«Too» antes do adjetivo é «demais», não «muito»: «too heavy» é pesada além do que serve, e «very heavy» é só muito pesada. Trocar um pelo outro muda o recado.",
+   "notaEs": "«Too» antes del adjetivo es «demasiado», no «muy»: «too heavy» es pesada más de lo que sirve, y «very heavy» es solo muy pesada. Cambiar uno por otro cambia el mensaje."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u196",
+   "tipo": "frase",
+   "requer": "en-p196",
+   "en": "The bowl broke.",
+   "pt": "A tigela quebrou.",
+   "es": "El cuenco se rompió.",
+   "aceitas": [
+    "a tigela quebrou",
+    "a tigela se quebrou",
+    "a tigela esta quebrada",
+    "a tigela partiu"
+   ],
+   "aceitasEs": [
+    "El cuenco se rompió",
+    "El bol se rompió",
+    "El tazón se rompió",
+    "Se rompió el cuenco"
+   ],
+   "aceitasEn": [
+    "the bowl broke",
+    "the bowl is broken",
+    "the bowl got broken"
+   ],
+   "distratores": [
+    "A garrafa quebrou.",
+    "A janela quebrou.",
+    "A xícara quebrou.",
+    "A jarra quebrou."
+   ],
+   "distratoresEs": [
+    "El vaso se rompió.",
+    "El plato se rompió.",
+    "El espejo se rompió.",
+    "El jarrón se rompió."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida",
+    "objetos"
+   ],
+   "nota": "«Broke» é o passado de «break», e em inglês o verbo vai sozinho: «the bowl broke», sem o «se» que o português pede. Quebrar alguma coisa é «to break something».",
+   "notaEs": "«Broke» es el pasado de «break», y en inglés el verbo va solo: «the bowl broke», sin el «se» que el español pide. Romper algo es «to break something»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u197",
+   "tipo": "frase",
+   "requer": "en-p197",
+   "en": "Could I have a napkin?",
+   "pt": "Pode me dar um guardanapo?",
+   "es": "¿Me puede dar una servilleta?",
+   "aceitas": [
+    "pode me dar um guardanapo",
+    "me da um guardanapo",
+    "poderia me dar um guardanapo",
+    "queria um guardanapo"
+   ],
+   "aceitasEs": [
+    "¿Me puede dar una servilleta?",
+    "Me puede dar una servilleta",
+    "¿Me da una servilleta?",
+    "¿Podría darme una servilleta?"
+   ],
+   "aceitasEn": [
+    "could i have a napkin",
+    "can i have a napkin",
+    "may i have a napkin"
+   ],
+   "distratores": [
+    "Pode me dar um copo?",
+    "Pode me dar um garfo?",
+    "Pode me dar um palito?",
+    "Pode me dar um canudo?"
+   ],
+   "distratoresEs": [
+    "¿Me puede dar una copa?",
+    "¿Me puede dar una cuchara?",
+    "¿Me puede dar una pajita?",
+    "¿Me puede dar una silla?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida",
+    "objetos"
+   ],
+   "nota": "«Could I have…?» é o pedido de mesa, mais usado que «can» e muito mais que «I want», que soa a ordem. A resposta costuma vir com «Here you go».",
+   "notaEs": "«Could I have…?» es la petición de mesa, más usada que «can» y mucho más que «I want», que suena a orden. La respuesta suele venir con «Here you go»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u198",
+   "tipo": "frase",
+   "requer": "en-p198",
+   "en": "This sauce has too much garlic.",
+   "pt": "Este molho tem alho demais.",
+   "es": "Esta salsa tiene demasiado ajo.",
+   "aceitas": [
+    "este molho tem alho demais",
+    "esse molho tem alho demais",
+    "este molho esta com alho demais",
+    "tem alho demais neste molho"
+   ],
+   "aceitasEs": [
+    "Esta salsa tiene demasiado ajo",
+    "Esa salsa tiene demasiado ajo",
+    "Esta salsa lleva demasiado ajo",
+    "Hay demasiado ajo en esta salsa"
+   ],
+   "aceitasEn": [
+    "this sauce has too much garlic",
+    "this sauce has too much garlic in it",
+    "theres too much garlic in this sauce"
+   ],
+   "distratores": [
+    "Este molho tem açúcar demais.",
+    "Este molho tem tomate demais.",
+    "Este molho tem vinagre demais.",
+    "Este molho tem óleo demais."
+   ],
+   "distratoresEs": [
+    "Esta salsa tiene demasiado azúcar.",
+    "Esta salsa tiene demasiado tomate.",
+    "Esta salsa tiene demasiado vinagre.",
+    "Esta salsa tiene demasiado aceite."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "«Too much» vai com o que não se conta — «too much garlic» —, e «too many» com o que se conta: «too many cloves». É o deslize mais comum de quem já fala bem.",
+   "notaEs": "«Too much» va con lo que no se cuenta — «too much garlic» —, y «too many» con lo que se cuenta: «too many cloves». Es el descuido más común de quien ya habla bien."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u199",
+   "tipo": "frase",
+   "requer": "en-p199",
+   "en": "The strawberries are ripe.",
+   "pt": "Os morangos estão maduros.",
+   "es": "Las fresas están maduras.",
+   "aceitas": [
+    "os morangos estao maduros",
+    "os morangos ja estao maduros",
+    "os morangos estao no ponto"
+   ],
+   "aceitasEs": [
+    "Las fresas están maduras",
+    "Las fresas ya están maduras",
+    "Las fresas están en su punto"
+   ],
+   "aceitasEn": [
+    "the strawberries are ripe",
+    "the strawberries are already ripe"
+   ],
+   "distratores": [
+    "Os figos estão maduros.",
+    "Os limões estão maduros.",
+    "Os abacates estão maduros.",
+    "Os tomates estão maduros."
+   ],
+   "distratoresEs": [
+    "Las uvas están maduras.",
+    "Las ciruelas están maduras.",
+    "Las peras están maduras.",
+    "Las manzanas están maduras."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "«Ripe» é o ponto da fruta: passada é «overripe», e verde é «unripe». Fora da feira, «the time is ripe» é a hora certa de agir.",
+   "notaEs": "«Ripe» es el punto de la fruta: pasada es «overripe», y verde es «unripe». Fuera del mercado, «the time is ripe» es el momento justo de actuar."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u200",
+   "tipo": "frase",
+   "requer": "en-p200",
+   "en": "The peach is still hard.",
+   "pt": "O pêssego ainda está duro.",
+   "es": "El melocotón todavía está duro.",
+   "aceitas": [
+    "o pessego ainda esta duro",
+    "o pessego esta duro ainda",
+    "o pessego ainda nao esta maduro"
+   ],
+   "aceitasEs": [
+    "El melocotón todavía está duro",
+    "El melocotón aún está duro",
+    "El melocotón todavía no está maduro"
+   ],
+   "aceitasEn": [
+    "the peach is still hard",
+    "the peachs still hard",
+    "the peach is still firm"
+   ],
+   "regionaisEs": {
+    "El durazno todavía está duro": "na América Latina"
+   },
+   "distratores": [
+    "O abacate ainda está duro.",
+    "O pão ainda está duro.",
+    "O queijo ainda está duro.",
+    "O biscoito ainda está duro."
+   ],
+   "distratoresEs": [
+    "El aguacate todavía está duro.",
+    "El pan todavía está duro.",
+    "El queso todavía está duro.",
+    "El bizcocho todavía está duro."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "«Hard» é o duro de morder; «tough» é o duro de cortar e mastigar, que serve mais à carne. A fruta no ponto fica «soft», sem chegar a «mushy».",
+   "notaEs": "«Hard» es el duro de morder; «tough» es el duro de cortar y masticar, que sirve más a la carne. La fruta en su punto queda «soft», sin llegar a «mushy»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u201",
+   "tipo": "frase",
+   "requer": "en-p201",
+   "en": "I have to sweep the floor.",
+   "pt": "Tenho que varrer o chão.",
+   "es": "Tengo que barrer el suelo.",
+   "aceitas": [
+    "tenho que varrer o chao",
+    "preciso varrer o chao",
+    "eu tenho que varrer o chao",
+    "tenho de varrer o chao"
+   ],
+   "aceitasEs": [
+    "Tengo que barrer el suelo",
+    "Tengo que barrer el piso",
+    "Debo barrer el suelo",
+    "Necesito barrer el suelo"
+   ],
+   "aceitasEn": [
+    "i have to sweep the floor",
+    "ive got to sweep the floor",
+    "i need to sweep the floor"
+   ],
+   "distratores": [
+    "Tenho que lavar o chão.",
+    "Tenho que secar o chão.",
+    "Tenho que encerar o chão.",
+    "Tenho que consertar o chão."
+   ],
+   "distratoresEs": [
+    "Tengo que lavar el suelo.",
+    "Tengo que secar el suelo.",
+    "Tengo que encerar el suelo.",
+    "Tengo que arreglar el suelo."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "casa"
+   ],
+   "nota": "O chão de dentro é «the floor» e o de fora, a terra, é «the ground» — dois substantivos para o nosso único chão. A vassoura é «a broom».",
+   "notaEs": "El suelo de dentro es «the floor» y el de fuera, la tierra, es «the ground» — dos sustantivos para un solo suelo. La escoba es «a broom»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u202",
+   "tipo": "frase",
+   "requer": "en-p202",
+   "en": "Let the water boil.",
+   "pt": "Deixe a água ferver.",
+   "es": "Deja que el agua hierva.",
+   "aceitas": [
+    "deixe a agua ferver",
+    "deixa a agua ferver",
+    "espere a agua ferver",
+    "deixe ferver a agua"
+   ],
+   "aceitasEs": [
+    "Deja que el agua hierva",
+    "Deja hervir el agua",
+    "Espera a que el agua hierva",
+    "Que hierva el agua"
+   ],
+   "aceitasEn": [
+    "let the water boil",
+    "let the water come to a boil",
+    "wait for the water to boil"
+   ],
+   "distratores": [
+    "Deixe a água esfriar.",
+    "Deixe a água escorrer.",
+    "Deixe a água assentar.",
+    "Deixe a água secar."
+   ],
+   "distratoresEs": [
+    "Deja que el agua se enfríe.",
+    "Deja que el agua escurra.",
+    "Deja que el agua se asiente.",
+    "Deja que el agua se seque."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "Depois de «let» o infinitivo vai sem «to»: «let it boil», «let me see», «let him go». E a água no ponto é «boiling water».",
+   "notaEs": "Después de «let» el infinitivo va sin «to»: «let it boil», «let me see», «let him go». Y el agua en su punto es «boiling water»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u203",
+   "tipo": "frase",
+   "requer": "en-p203",
+   "en": "Can you peel the potatoes?",
+   "pt": "Você pode descascar as batatas?",
+   "es": "¿Puedes pelar las patatas?",
+   "aceitas": [
+    "voce pode descascar as batatas",
+    "pode descascar as batatas",
+    "da para descascar as batatas",
+    "descasca as batatas"
+   ],
+   "aceitasEs": [
+    "¿Puedes pelar las patatas?",
+    "Puedes pelar las patatas",
+    "¿Puede pelar las patatas?",
+    "¿Me pelas las patatas?"
+   ],
+   "aceitasEn": [
+    "can you peel the potatoes",
+    "could you peel the potatoes",
+    "would you peel the potatoes"
+   ],
+   "distratores": [
+    "Você pode cozinhar as batatas?",
+    "Você pode picar as batatas?",
+    "Você pode lavar as batatas?",
+    "Você pode amassar as batatas?"
+   ],
+   "distratoresEs": [
+    "¿Puedes cocer las patatas?",
+    "¿Puedes picar las patatas?",
+    "¿Puedes lavar las patatas?",
+    "¿Puedes machacar las patatas?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "«Potato» faz o plural em «potatoes», com -es, e a doce é «sweet potato». Entre gente próxima, «Can you…?» é pedido, não pergunta sobre ser capaz.",
+   "notaEs": "«Potato» hace el plural en «potatoes», con -es, y la dulce es «sweet potato». Entre gente cercana, «Can you…?» es petición, no pregunta sobre ser capaz."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u204",
+   "tipo": "frase",
+   "requer": "en-p204",
+   "en": "A leaf fell on the table.",
+   "pt": "Uma folha caiu na mesa.",
+   "es": "Una hoja cayó en la mesa.",
+   "aceitas": [
+    "uma folha caiu na mesa",
+    "caiu uma folha na mesa",
+    "uma folha caiu sobre a mesa"
+   ],
+   "aceitasEs": [
+    "Una hoja cayó en la mesa",
+    "Cayó una hoja en la mesa",
+    "Una hoja cayó sobre la mesa"
+   ],
+   "aceitasEn": [
+    "a leaf fell on the table",
+    "a leaf fell onto the table",
+    "a leaf landed on the table"
+   ],
+   "distratores": [
+    "Uma gota caiu na mesa.",
+    "Uma moeda caiu na mesa.",
+    "Uma migalha caiu na mesa.",
+    "Uma pena caiu na mesa."
+   ],
+   "distratoresEs": [
+    "Una gota cayó en la mesa.",
+    "Una moneda cayó en la mesa.",
+    "Una miga cayó en la mesa.",
+    "Una pluma cayó en la mesa."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "natureza"
+   ],
+   "nota": "«Fell» é o passado de «fall», e «fallen» o particípio. São essas folhas que dão à estação o nome americano: o outono é «fall».",
+   "notaEs": "«Fell» es el pasado de «fall», y «fallen» el participio. Son esas hojas las que dan a la estación su nombre americano: el otoño es «fall»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u205",
+   "tipo": "frase",
+   "requer": "en-p205",
+   "en": "Wages haven't gone up.",
+   "pt": "Os salários não subiram.",
+   "es": "Los sueldos no han subido.",
+   "aceitas": [
+    "os salarios nao subiram",
+    "os salarios nao aumentaram",
+    "nao houve aumento de salario"
+   ],
+   "aceitasEs": [
+    "Los sueldos no han subido",
+    "Los salarios no han subido",
+    "Los sueldos no subieron",
+    "No han subido los sueldos"
+   ],
+   "aceitasEn": [
+    "wages havent gone up",
+    "wages have not gone up",
+    "wages havent risen"
+   ],
+   "distratores": [
+    "Os preços não subiram.",
+    "Os juros não subiram.",
+    "Os impostos não subiram.",
+    "Os aluguéis não subiram."
+   ],
+   "distratoresEs": [
+    "Los precios no han subido.",
+    "Los intereses no han subido.",
+    "Los impuestos no han subido.",
+    "Los alquileres no han subido."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "economia",
+    "trabalho"
+   ],
+   "nota": "«To go up» é o subir do dia a dia e «to rise» o do noticiário. O aumento em si é «a raise» nos Estados Unidos e «a rise» na Inglaterra.",
+   "notaEs": "«To go up» es el subir del día a día y «to rise» el del noticiario. El aumento en sí es «a raise» en Estados Unidos y «a rise» en Inglaterra."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u206",
+   "tipo": "frase",
+   "requer": "en-p206",
+   "en": "They took out a loan.",
+   "pt": "Eles fizeram um empréstimo.",
+   "es": "Pidieron un préstamo.",
+   "aceitas": [
+    "eles fizeram um emprestimo",
+    "eles pegaram um emprestimo",
+    "eles tomaram um emprestimo",
+    "fizeram um emprestimo"
+   ],
+   "aceitasEs": [
+    "Pidieron un préstamo",
+    "Ellos pidieron un préstamo",
+    "Sacaron un préstamo",
+    "Tomaron un préstamo"
+   ],
+   "aceitasEn": [
+    "they took out a loan",
+    "they got a loan",
+    "they took a loan out"
+   ],
+   "distratores": [
+    "Eles fizeram um seguro.",
+    "Eles fizeram um orçamento.",
+    "Eles fizeram um depósito.",
+    "Eles fizeram um acordo."
+   ],
+   "distratoresEs": [
+    "Pidieron un seguro.",
+    "Pidieron un presupuesto.",
+    "Pidieron un depósito.",
+    "Pidieron un acuerdo."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "economia"
+   ],
+   "nota": "«To take out» é o verbo de contratar no banco: «take out a loan», «take out insurance». Quitar é «to pay off», e deixar de pagar é «to default».",
+   "notaEs": "«To take out» es el verbo de contratar en el banco: «take out a loan», «take out insurance». Liquidarlo es «to pay off», y dejar de pagar es «to default»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u207",
+   "tipo": "frase",
+   "requer": "en-p207",
+   "en": "You have to stir it constantly.",
+   "pt": "Você tem que mexer sem parar.",
+   "es": "Hay que removerlo sin parar.",
+   "aceitas": [
+    "voce tem que mexer sem parar",
+    "tem que mexer sem parar",
+    "e preciso mexer sem parar",
+    "voce tem que mexer o tempo todo"
+   ],
+   "aceitasEs": [
+    "Hay que removerlo sin parar",
+    "Tienes que removerlo sin parar",
+    "Hay que revolverlo sin parar",
+    "Tienes que remover sin parar"
+   ],
+   "aceitasEn": [
+    "you have to stir it constantly",
+    "you have to keep stirring",
+    "you need to stir it constantly"
+   ],
+   "distratores": [
+    "Você tem que bater sem parar.",
+    "Você tem que soprar sem parar.",
+    "Você tem que provar sem parar.",
+    "Você tem que vigiar sem parar."
+   ],
+   "distratoresEs": [
+    "Hay que batirlo sin parar.",
+    "Hay que soplarlo sin parar.",
+    "Hay que probarlo sin parar.",
+    "Hay que vigilarlo sin parar."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "«Constantly» é sem parar, e «to keep stirring» diz o mesmo pelo verbo. Na frigideira funda, o refogado rápido é «a stir-fry».",
+   "notaEs": "«Constantly» es sin parar, y «to keep stirring» dice lo mismo por el verbo. En el wok, el sofrito rápido es «a stir-fry»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u208",
+   "tipo": "frase",
+   "requer": "en-p208",
+   "en": "The fitting room is occupied.",
+   "pt": "O provador está ocupado.",
+   "es": "El probador está ocupado.",
+   "aceitas": [
+    "o provador esta ocupado",
+    "o provador ta ocupado",
+    "tem alguem no provador"
+   ],
+   "aceitasEs": [
+    "El probador está ocupado",
+    "Hay alguien en el probador",
+    "El probador está lleno"
+   ],
+   "aceitasEn": [
+    "the fitting room is occupied",
+    "the fitting rooms occupied",
+    "the fitting room is taken",
+    "someones in the fitting room"
+   ],
+   "distratores": [
+    "O banheiro está ocupado.",
+    "O caixa está ocupado.",
+    "O elevador está ocupado.",
+    "O estacionamento está ocupado."
+   ],
+   "distratoresEs": [
+    "El baño está ocupado.",
+    "El cajero está ocupado.",
+    "El ascensor está ocupado.",
+    "El aparcamiento está ocupado."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "compras",
+    "roupa"
+   ],
+   "nota": "«Occupied» é o aviso escrito na porta; na fala se diz «it's taken» ou «someone's in there». Quem está ocupado de trabalho é «busy», que é outra palavra.",
+   "notaEs": "«Occupied» es el aviso escrito en la puerta; al hablar se dice «it's taken» o «someone's in there». Quien está ocupado de trabajo es «busy», que es otra palabra."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u209",
+   "tipo": "frase",
+   "requer": "en-p209",
+   "en": "Lightning hit the tower.",
+   "pt": "Um raio atingiu a torre.",
+   "es": "Un rayo alcanzó la torre.",
+   "aceitas": [
+    "um raio atingiu a torre",
+    "um relampago atingiu a torre",
+    "a torre foi atingida por um raio",
+    "caiu um raio na torre"
+   ],
+   "aceitasEs": [
+    "Un rayo alcanzó la torre",
+    "Un rayo cayó en la torre",
+    "Un rayo golpeó la torre",
+    "La torre fue alcanzada por un rayo"
+   ],
+   "aceitasEn": [
+    "lightning hit the tower",
+    "lightning struck the tower",
+    "the lightning hit the tower"
+   ],
+   "distratores": [
+    "Um míssil atingiu a torre.",
+    "Um drone atingiu a torre.",
+    "Um caminhão atingiu a torre.",
+    "Um tiro atingiu a torre."
+   ],
+   "distratoresEs": [
+    "Un misil alcanzó la torre.",
+    "Un dron alcanzó la torre.",
+    "Un camión alcanzó la torre.",
+    "Un disparo alcanzó la torre."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "natureza"
+   ],
+   "nota": "«Lightning» vai sem artigo: «lightning hit», nunca «a lightning». O verbo do noticiário é «to strike», com passado «struck», e o para-raios é «a lightning rod».",
+   "notaEs": "«Lightning» va sin artículo: «lightning hit», nunca «a lightning». El verbo del noticiario es «to strike», con pasado «struck», y el pararrayos es «a lightning rod»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u210",
+   "tipo": "frase",
+   "requer": "en-p210",
+   "en": "You should rinse the glass first.",
+   "pt": "É melhor enxaguar o copo primeiro.",
+   "es": "Es mejor enjuagar el vaso primero.",
+   "aceitas": [
+    "e melhor enxaguar o copo primeiro",
+    "melhor enxaguar o copo primeiro",
+    "e melhor passar o copo na agua primeiro"
+   ],
+   "aceitasEs": [
+    "Es mejor enjuagar el vaso primero",
+    "Mejor enjuagar el vaso primero",
+    "Es mejor aclarar el vaso primero"
+   ],
+   "aceitasEn": [
+    "you should rinse the glass first",
+    "its better to rinse the glass first",
+    "you ought to rinse the glass first"
+   ],
+   "distratores": [
+    "É melhor secar o copo primeiro.",
+    "É melhor esquentar o copo primeiro.",
+    "É melhor cheirar o copo primeiro.",
+    "É melhor guardar o copo primeiro."
+   ],
+   "distratoresEs": [
+    "Es mejor secar el vaso primero.",
+    "Es mejor calentar el vaso primero.",
+    "Es mejor oler el vaso primero.",
+    "Es mejor guardar el vaso primero."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo",
+    "casa"
+   ],
+   "nota": "«You should» é conselho, não ordem: equivale a «é melhor». O copo de água é «a glass» e o de vinho, «a wine glass»; o de plástico da festa é «a cup».",
+   "notaEs": "«You should» es consejo, no orden: equivale a «es mejor». El vaso de agua es «a glass» y el de vino, «a wine glass»; el de plástico de la fiesta es «a cup»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-u211",
+   "tipo": "frase",
+   "requer": "en-p211",
+   "en": "I had a hunch about him.",
+   "pt": "Eu tinha um palpite sobre ele.",
+   "es": "Tenía una intuición sobre él.",
+   "aceitas": [
+    "eu tinha um palpite sobre ele",
+    "tinha um palpite sobre ele",
+    "eu tinha um pressentimento sobre ele",
+    "eu tinha uma intuicao sobre ele"
+   ],
+   "aceitasEs": [
+    "Tenía una intuición sobre él",
+    "Yo tenía una intuición sobre él",
+    "Tenía un presentimiento sobre él",
+    "Tenía una corazonada sobre él"
+   ],
+   "aceitasEn": [
+    "i had a hunch about him",
+    "ive had a hunch about him"
+   ],
+   "distratores": [
+    "Eu tinha um dossiê sobre ele.",
+    "Eu tinha um recado sobre ele.",
+    "Eu tinha um relato sobre ele.",
+    "Eu tinha um livro sobre ele."
+   ],
+   "distratoresEs": [
+    "Tenía una carpeta sobre él.",
+    "Tenía una nota sobre él.",
+    "Tenía una queja sobre él.",
+    "Tenía una duda sobre él."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo",
+    "cotidiano"
+   ],
+   "nota": "A preposição do palpite é «about»: «a hunch about him», nunca «of him». E quando dá certo se diz «my hunch was right».",
+   "notaEs": "La preposición de la intuición es «about»: «a hunch about him», nunca «of him». Y cuando acierta se dice «my hunch was right»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v167",
+   "tipo": "frase",
+   "en": "I'm going to call her.",
+   "pt": "Vou ligar para ela.",
+   "es": "Voy a llamarla.",
+   "aceitas": [
+    "vou ligar para ela",
+    "eu vou ligar para ela",
+    "vou telefonar para ela",
+    "vou ligar pra ela"
+   ],
+   "aceitasEs": [
+    "Voy a llamarla",
+    "La voy a llamar",
+    "Voy a telefonearla",
+    "Voy a llamar a ella"
+   ],
+   "aceitasEn": [
+    "im going to call her",
+    "i am going to call her",
+    "im gonna call her"
+   ],
+   "distratores": [
+    "Liguei para ela.",
+    "Ligarei para ela.",
+    "Ligaria para ela.",
+    "Tinha ligado para ela."
+   ],
+   "distratoresEs": [
+    "La llamé.",
+    "La llamaré.",
+    "La llamaría.",
+    "La había llamado."
+   ],
+   "formasEn": {
+    "I called her": "pretérito",
+    "I call her": "presente",
+    "I would call her": "condicional",
+    "I had called her": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "I called her": "pretérito",
+    "I call her": "presente",
+    "I would call her": "condicional",
+    "I had called her": "pluscuamperfecto"
+   },
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "regular",
+    "call",
+    "futuro",
+    "social"
+   ],
+   "nota": "«Be going to» é o futuro de quem já decidiu; «will» é o que se resolve na hora da fala. Na conversa «going to» encolhe: «I'm gonna call her».",
+   "notaEs": "«Be going to» es el futuro de quien ya decidió; «will» es lo que se resuelve en el momento de hablar. Al conversar «going to» se encoge: «I'm gonna call her»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v168",
+   "tipo": "frase",
+   "en": "She doesn't speak English.",
+   "pt": "Ela não fala inglês.",
+   "es": "Ella no habla inglés.",
+   "aceitas": [
+    "ela nao fala ingles",
+    "ela nao sabe ingles",
+    "ela nao fala o ingles"
+   ],
+   "aceitasEs": [
+    "Ella no habla inglés",
+    "No habla inglés",
+    "Ella no sabe inglés"
+   ],
+   "aceitasEn": [
+    "she doesnt speak english",
+    "she does not speak english",
+    "she doesnt speak any english"
+   ],
+   "distratores": [
+    "Ela não falou inglês.",
+    "Ela não falará inglês.",
+    "Ela não falaria inglês.",
+    "Ela não tinha falado inglês."
+   ],
+   "distratoresEs": [
+    "Ella no habló inglés.",
+    "Ella no hablará inglés.",
+    "Ella no hablaría inglés.",
+    "Ella no había hablado inglés."
+   ],
+   "formasEn": {
+    "She didn't speak English": "pretérito",
+    "She won't speak English": "futuro",
+    "She wouldn't speak English": "condicional",
+    "She hadn't spoken English": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "She didn't speak English": "pretérito",
+    "She won't speak English": "futuro",
+    "She wouldn't speak English": "condicional",
+    "She hadn't spoken English": "pluscuamperfecto"
+   },
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "speak",
+    "presente"
+   ],
+   "nota": "A negativa do presente pede «doesn't» mais o infinitivo nu: «she doesn't speak», nunca «she doesn't speaks». O -s da terceira pessoa migra para o «does» e sai do verbo.",
+   "notaEs": "La negativa del presente pide «doesn't» más el infinitivo desnudo: «she doesn't speak», nunca «she doesn't speaks». La -s de la tercera persona se va al «does» y sale del verbo."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v169",
+   "tipo": "frase",
+   "en": "We were eating when he arrived.",
+   "pt": "Estávamos comendo quando ele chegou.",
+   "es": "Estábamos comiendo cuando él llegó.",
+   "aceitas": [
+    "estavamos comendo quando ele chegou",
+    "nos estavamos comendo quando ele chegou",
+    "estavamos a comer quando ele chegou"
+   ],
+   "aceitasEs": [
+    "Estábamos comiendo cuando él llegó",
+    "Estábamos comiendo cuando llegó",
+    "Nosotros estábamos comiendo cuando él llegó"
+   ],
+   "aceitasEn": [
+    "we were eating when he arrived",
+    "we were eating when he came"
+   ],
+   "distratores": [
+    "Comemos quando ele chegou.",
+    "Comeremos quando ele chegar.",
+    "Comeríamos quando ele chegasse.",
+    "Tínhamos comido quando ele chegou."
+   ],
+   "distratoresEs": [
+    "Comimos cuando él llegó.",
+    "Comeremos cuando él llegue.",
+    "Comeríamos cuando él llegara.",
+    "Habíamos comido cuando él llegó."
+   ],
+   "formasEn": {
+    "We ate when he arrived": "pretérito",
+    "We eat when he arrives": "presente",
+    "We will eat when he arrives": "futuro",
+    "We had eaten when he arrived": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "We ate when he arrived": "pretérito",
+    "We eat when he arrives": "presente",
+    "We will eat when he arrives": "futuro",
+    "We had eaten when he arrived": "pluscuamperfecto"
+   },
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "eat",
+    "imperfeito",
+    "comida"
+   ],
+   "nota": "O «was/were + -ing» é a ação em curso que outra interrompe. Na mesma frase cada verbo fica no seu tempo: o que durava no contínuo, o que cortou no passado simples.",
+   "notaEs": "El «was/were + -ing» es la acción en curso que otra interrumpe. En la misma frase cada verbo queda en su tiempo: lo que duraba en continuo, lo que la cortó en pasado simple."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v170",
+   "tipo": "frase",
+   "en": "Have you ever been to Spain?",
+   "pt": "Você já foi à Espanha?",
+   "es": "¿Has estado alguna vez en España?",
+   "aceitas": [
+    "voce ja foi a espanha",
+    "ja foi a espanha",
+    "voce ja esteve na espanha",
+    "voce ja visitou a espanha"
+   ],
+   "aceitasEs": [
+    "¿Has estado alguna vez en España?",
+    "Has estado alguna vez en España",
+    "¿Alguna vez has estado en España?",
+    "¿Has ido alguna vez a España?"
+   ],
+   "aceitasEn": [
+    "have you ever been to spain",
+    "have you been to spain"
+   ],
+   "distratores": [
+    "Você foi à Espanha no ano passado?",
+    "Você irá à Espanha?",
+    "Você iria à Espanha?",
+    "Você tinha ido à Espanha?"
+   ],
+   "distratoresEs": [
+    "¿Fuiste a España el año pasado?",
+    "¿Irás a España?",
+    "¿Irías a España?",
+    "¿Habías ido a España?"
+   ],
+   "formasEn": {
+    "Did you go to Spain?": "pretérito",
+    "Will you go to Spain?": "futuro",
+    "Would you go to Spain?": "condicional",
+    "Had you been to Spain?": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "Did you go to Spain?": "pretérito",
+    "Will you go to Spain?": "futuro",
+    "Would you go to Spain?": "condicional",
+    "Had you been to Spain?": "pluscuamperfecto"
+   },
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "be",
+    "present perfect",
+    "viagem"
+   ],
+   "nota": "Para experiência de vida o inglês usa o present perfect com «ever». E o verbo é «be», não «go»: quem esteve lá «has been to Spain»; «has gone to Spain» é quem está lá agora.",
+   "notaEs": "Para la experiencia de vida el inglés usa el present perfect con «ever». Y el verbo es «be», no «go»: quien estuvo allí «has been to Spain»; «has gone to Spain» es quien está allí ahora."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v171",
+   "tipo": "frase",
+   "en": "It must be broken.",
+   "pt": "Deve estar quebrado.",
+   "es": "Debe de estar roto.",
+   "aceitas": [
+    "deve estar quebrado",
+    "deve estar com defeito",
+    "deve ter quebrado",
+    "provavelmente esta quebrado"
+   ],
+   "aceitasEs": [
+    "Debe de estar roto",
+    "Debe estar roto",
+    "Tiene que estar roto",
+    "Seguramente está roto"
+   ],
+   "aceitasEn": [
+    "it must be broken",
+    "it must be broken down",
+    "it has to be broken"
+   ],
+   "distratores": [
+    "Devia estar quebrado.",
+    "Deverá estar quebrado.",
+    "Deveria estar quebrado.",
+    "Devia ter quebrado."
+   ],
+   "distratoresEs": [
+    "Debía de estar roto.",
+    "Deberá estar roto.",
+    "Debería estar roto.",
+    "Debió de estar roto."
+   ],
+   "formasEn": {
+    "It was broken": "pretérito",
+    "It will be broken": "futuro",
+    "It would be broken": "condicional",
+    "It had been broken": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "It was broken": "pretérito",
+    "It will be broken": "futuro",
+    "It would be broken": "condicional",
+    "It had been broken": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "be",
+    "presente"
+   ],
+   "nota": "«Must» aqui não é obrigação: é a dedução de quem olha e conclui. O passado disso é «it must have been broken», e a dúvida pelo outro lado é «it can't be broken».",
+   "notaEs": "«Must» aquí no es obligación: es la deducción de quien mira y concluye. El pasado de eso es «it must have been broken», y la duda por el otro lado es «it can't be broken»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v172",
+   "tipo": "frase",
+   "en": "I was told to wait.",
+   "pt": "Me disseram para esperar.",
+   "es": "Me dijeron que esperara.",
+   "aceitas": [
+    "me disseram para esperar",
+    "disseram para eu esperar",
+    "mandaram eu esperar",
+    "me pediram para esperar"
+   ],
+   "aceitasEs": [
+    "Me dijeron que esperara",
+    "Me dijeron que esperase",
+    "Me mandaron esperar",
+    "Me pidieron que esperara"
+   ],
+   "aceitasEn": [
+    "i was told to wait",
+    "they told me to wait"
+   ],
+   "distratores": [
+    "Me diziam para esperar.",
+    "Vão me dizer para esperar.",
+    "Me diriam para esperar.",
+    "Tinham me dito para esperar."
+   ],
+   "distratoresEs": [
+    "Me decían que esperara.",
+    "Me van a decir que espere.",
+    "Me dirían que esperara.",
+    "Me habían dicho que esperara."
+   ],
+   "formasEn": {
+    "I am told to wait": "presente",
+    "I will be told to wait": "futuro",
+    "I would be told to wait": "condicional",
+    "I had been told to wait": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "I am told to wait": "presente",
+    "I will be told to wait": "futuro",
+    "I would be told to wait": "condicional",
+    "I had been told to wait": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "tell",
+    "pretérito",
+    "trabalho"
+   ],
+   "nota": "A passiva resolve o que em português pede sujeito indeterminado: «I was told» no lugar de «me disseram». É comuníssima, e quem mandou só aparece se interessar: «I was told by the manager».",
+   "notaEs": "La pasiva resuelve lo que en español pide sujeto indeterminado: «I was told» en lugar de «me dijeron». Es muy común, y quien lo mandó solo aparece si importa: «I was told by the manager»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v173",
+   "tipo": "frase",
+   "en": "The bridge was built in 1920.",
+   "pt": "A ponte foi construída em 1920.",
+   "es": "El puente fue construido en 1920.",
+   "aceitas": [
+    "a ponte foi construida em 1920",
+    "a ponte foi feita em 1920",
+    "construiram a ponte em 1920"
+   ],
+   "aceitasEs": [
+    "El puente fue construido en 1920",
+    "El puente se construyó en 1920",
+    "Construyeron el puente en 1920"
+   ],
+   "aceitasEn": [
+    "the bridge was built in 1920",
+    "the bridge was constructed in 1920"
+   ],
+   "distratores": [
+    "A ponte é construída em 1920.",
+    "A ponte será construída em 1920.",
+    "A ponte seria construída em 1920.",
+    "A ponte tinha sido construída em 1920."
+   ],
+   "distratoresEs": [
+    "El puente es construido en 1920.",
+    "El puente será construido en 1920.",
+    "El puente sería construido en 1920.",
+    "El puente había sido construido en 1920."
+   ],
+   "formasEn": {
+    "The bridge is built in 1920": "presente",
+    "The bridge will be built in 1920": "futuro",
+    "The bridge would be built in 1920": "condicional",
+    "The bridge had been built in 1920": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "The bridge is built in 1920": "presente",
+    "The bridge will be built in 1920": "futuro",
+    "The bridge would be built in 1920": "condicional",
+    "The bridge had been built in 1920": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "build",
+    "pretérito"
+   ],
+   "nota": "A passiva é «be» mais particípio: «was built». Quem fez entra com «by» — «built by the Romans» — e, quando não interessa, simplesmente não aparece, que é o caso mais comum.",
+   "notaEs": "La pasiva es «be» más participio: «was built». Quien lo hizo entra con «by» — «built by the Romans» — y, cuando no importa, simplemente no aparece, que es el caso más común."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v174",
+   "tipo": "frase",
+   "en": "The house is being painted.",
+   "pt": "A casa está sendo pintada.",
+   "es": "La casa está siendo pintada.",
+   "aceitas": [
+    "a casa esta sendo pintada",
+    "estao pintando a casa",
+    "a casa ta sendo pintada"
+   ],
+   "aceitasEs": [
+    "La casa está siendo pintada",
+    "Están pintando la casa",
+    "Se está pintando la casa"
+   ],
+   "aceitasEn": [
+    "the house is being painted",
+    "theyre painting the house"
+   ],
+   "distratores": [
+    "A casa foi pintada.",
+    "A casa será pintada.",
+    "A casa seria pintada.",
+    "A casa tinha sido pintada."
+   ],
+   "distratoresEs": [
+    "La casa fue pintada.",
+    "La casa será pintada.",
+    "La casa sería pintada.",
+    "La casa había sido pintada."
+   ],
+   "formasEn": {
+    "The house was being painted": "imperfeito",
+    "The house will be painted": "futuro",
+    "The house would be painted": "condicional",
+    "The house had been painted": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "The house was being painted": "imperfecto",
+    "The house will be painted": "futuro",
+    "The house would be painted": "condicional",
+    "The house had been painted": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "regular",
+    "paint",
+    "presente",
+    "casa"
+   ],
+   "nota": "A passiva em curso junta o «be» duas vezes: «is being painted». Soa pesada e é mesmo assim que se diz; em português se prefere a ativa, «estão pintando a casa».",
+   "notaEs": "La pasiva en curso junta el «be» dos veces: «is being painted». Suena pesada y es así como se dice; en español se prefiere la activa, «están pintando la casa»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v175",
+   "tipo": "frase",
+   "en": "He's lived here for ten years.",
+   "pt": "Ele mora aqui há dez anos.",
+   "es": "Vive aquí desde hace diez años.",
+   "aceitas": [
+    "ele mora aqui ha dez anos",
+    "ele vive aqui ha dez anos",
+    "mora aqui ha dez anos",
+    "ele esta morando aqui ha dez anos"
+   ],
+   "aceitasEs": [
+    "Vive aquí desde hace diez años",
+    "Él vive aquí desde hace diez años",
+    "Lleva diez años viviendo aquí",
+    "Vive aquí hace diez años"
+   ],
+   "aceitasEn": [
+    "hes lived here for ten years",
+    "he has lived here for ten years",
+    "hes been living here for ten years"
+   ],
+   "distratores": [
+    "Ele morou aqui dez anos.",
+    "Ele morará aqui dez anos.",
+    "Ele moraria aqui dez anos.",
+    "Ele tinha morado aqui dez anos."
+   ],
+   "distratoresEs": [
+    "Vivió aquí diez años.",
+    "Vivirá aquí diez años.",
+    "Viviría aquí diez años.",
+    "Había vivido aquí diez años."
+   ],
+   "formasEn": {
+    "He lived here for ten years": "pretérito",
+    "He will live here for ten years": "futuro",
+    "He would live here for ten years": "condicional",
+    "He had lived here for ten years": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "He lived here for ten years": "pretérito",
+    "He will live here for ten years": "futuro",
+    "He would live here for ten years": "condicional",
+    "He had lived here for ten years": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "regular",
+    "live",
+    "present perfect"
+   ],
+   "nota": "O que começou e continua vai no present perfect. «He lives here for ten years» é erro, e «he lived here» joga tudo para o passado — nesse caso ele já se mudou.",
+   "notaEs": "Lo que empezó y sigue va en present perfect. «He lives here for ten years» es error, y «he lived here» lo manda todo al pasado — en ese caso ya se mudó."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v176",
+   "tipo": "frase",
+   "en": "He would have won.",
+   "pt": "Ele teria ganhado.",
+   "es": "Habría ganado.",
+   "aceitas": [
+    "ele teria ganhado",
+    "ele teria ganho",
+    "ele teria vencido",
+    "teria ganhado"
+   ],
+   "aceitasEs": [
+    "Habría ganado",
+    "Él habría ganado",
+    "Hubiera ganado",
+    "Habría vencido"
+   ],
+   "aceitasEn": [
+    "he would have won",
+    "he wouldve won",
+    "hed have won"
+   ],
+   "distratores": [
+    "Ele ganhou.",
+    "Ele ganhará.",
+    "Ele ganharia.",
+    "Ele tinha ganhado."
+   ],
+   "distratoresEs": [
+    "Ganó.",
+    "Ganará.",
+    "Ganaría.",
+    "Había ganado."
+   ],
+   "formasEn": {
+    "He won": "pretérito",
+    "He will win": "futuro",
+    "He would win": "condicional",
+    "He had won": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "He won": "pretérito",
+    "He will win": "futuro",
+    "He would win": "condicional",
+    "He had won": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "win",
+    "condicional composto"
+   ],
+   "nota": "«Would have» mais particípio é o que não aconteceu: «he would have won if…». Na fala vira «he would've won» ou «he'd have won», e «won» se diz como «one».",
+   "notaEs": "«Would have» más participio es lo que no ocurrió: «he would have won if…». Al hablar se vuelve «he would've won» o «he'd have won», y «won» se pronuncia como «one»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v177",
+   "tipo": "frase",
+   "en": "I'm used to it.",
+   "pt": "Já estou acostumado.",
+   "es": "Ya estoy acostumbrado.",
+   "aceitas": [
+    "ja estou acostumado",
+    "estou acostumado",
+    "ja me acostumei",
+    "ja estou habituado"
+   ],
+   "aceitasEs": [
+    "Ya estoy acostumbrado",
+    "Estoy acostumbrado",
+    "Ya me acostumbré",
+    "Ya estoy habituado"
+   ],
+   "aceitasEn": [
+    "im used to it",
+    "i am used to it",
+    "im used to it now"
+   ],
+   "distratores": [
+    "Eu estava acostumado.",
+    "Vou ficar acostumado.",
+    "Eu ficaria acostumado.",
+    "Eu tinha ficado acostumado."
+   ],
+   "distratoresEs": [
+    "Estaba acostumbrado.",
+    "Me acostumbraré.",
+    "Me acostumbraría.",
+    "Me había acostumbrado."
+   ],
+   "formasEn": {
+    "I was used to it": "imperfeito",
+    "I will be used to it": "futuro",
+    "I would be used to it": "condicional",
+    "I had been used to it": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "I was used to it": "imperfecto",
+    "I will be used to it": "futuro",
+    "I would be used to it": "condicional",
+    "I had been used to it": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "be",
+    "presente",
+    "cotidiano"
+   ],
+   "nota": "São dois «used to» diferentes: «I used to smoke» é o que eu fazia e não faço mais; «I'm used to it» é estar acostumado. O segundo pede o verbo «be» e nunca dispensa o «to».",
+   "notaEs": "Son dos «used to» distintos: «I used to smoke» es lo que hacía y ya no hago; «I'm used to it» es estar acostumbrado. El segundo pide el verbo «be» y nunca prescinde del «to»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v178",
+   "tipo": "frase",
+   "en": "I'd rather walk.",
+   "pt": "Prefiro ir andando.",
+   "es": "Prefiero ir andando.",
+   "aceitas": [
+    "prefiro ir andando",
+    "prefiro ir a pe",
+    "eu prefiro ir andando",
+    "prefiro caminhar"
+   ],
+   "aceitasEs": [
+    "Prefiero ir andando",
+    "Prefiero ir a pie",
+    "Yo prefiero ir andando",
+    "Prefiero caminar"
+   ],
+   "aceitasEn": [
+    "id rather walk",
+    "i would rather walk",
+    "id prefer to walk"
+   ],
+   "distratores": [
+    "Preferi ir andando.",
+    "Vou preferir ir andando.",
+    "Preferiria ir andando.",
+    "Tinha preferido ir andando."
+   ],
+   "distratoresEs": [
+    "Preferí ir andando.",
+    "Preferiré ir andando.",
+    "Preferiría ir andando.",
+    "Había preferido ir andando."
+   ],
+   "formasEn": {
+    "I preferred to walk": "pretérito",
+    "I prefer to walk": "presente",
+    "I would rather have walked": "condicional composto",
+    "I had preferred to walk": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "I preferred to walk": "pretérito",
+    "I prefer to walk": "presente",
+    "I would rather have walked": "condicional compuesto",
+    "I had preferred to walk": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "regular",
+    "walk",
+    "condicional"
+   ],
+   "nota": "«Would rather» pede infinitivo sem «to»: «I'd rather walk», nunca «I'd rather to walk». O que se recusa entra com «than»: «I'd rather walk than wait».",
+   "notaEs": "«Would rather» pide infinitivo sin «to»: «I'd rather walk», nunca «I'd rather to walk». Lo que se rechaza entra con «than»: «I'd rather walk than wait»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v179",
+   "tipo": "frase",
+   "en": "They may not have heard.",
+   "pt": "Pode ser que não tenham ouvido.",
+   "es": "Puede que no hayan oído.",
+   "aceitas": [
+    "pode ser que nao tenham ouvido",
+    "talvez nao tenham ouvido",
+    "e possivel que nao tenham ouvido"
+   ],
+   "aceitasEs": [
+    "Puede que no hayan oído",
+    "Puede ser que no hayan oído",
+    "Tal vez no hayan oído",
+    "Quizá no hayan oído"
+   ],
+   "aceitasEn": [
+    "they may not have heard",
+    "they might not have heard",
+    "they may not have heard it"
+   ],
+   "distratores": [
+    "Pode ser que não ouçam.",
+    "Pode ser que não ouvissem.",
+    "Eles não ouviram.",
+    "Eles não tinham ouvido."
+   ],
+   "distratoresEs": [
+    "Puede que no oigan.",
+    "Puede que no oyeran.",
+    "Ellos no oyeron.",
+    "Ellos no habían oído."
+   ],
+   "formasEn": {
+    "They didn't hear": "pretérito",
+    "They don't hear": "presente",
+    "They won't hear": "futuro",
+    "They hadn't heard": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "They didn't hear": "pretérito",
+    "They don't hear": "presente",
+    "They won't hear": "futuro",
+    "They hadn't heard": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "hear",
+    "condicional composto"
+   ],
+   "nota": "«May» e «might» valem igual aqui, e o «have» mais particípio joga a dúvida para o passado. «May not have heard» é «talvez não tenham ouvido», e não «não podem ter ouvido».",
+   "notaEs": "«May» y «might» valen igual aquí, y el «have» más participio lleva la duda al pasado. «May not have heard» es «quizá no hayan oído», y no «no pueden haber oído»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v180",
+   "tipo": "frase",
+   "en": "He keeps forgetting.",
+   "pt": "Ele vive esquecendo.",
+   "es": "Siempre se le olvida.",
+   "aceitas": [
+    "ele vive esquecendo",
+    "ele esquece sempre",
+    "ele fica esquecendo",
+    "ele nao para de esquecer"
+   ],
+   "aceitasEs": [
+    "Siempre se le olvida",
+    "Se le olvida siempre",
+    "Siempre se olvida",
+    "No deja de olvidarse"
+   ],
+   "aceitasEn": [
+    "he keeps forgetting",
+    "he keeps on forgetting",
+    "he keeps forgetting it"
+   ],
+   "distratores": [
+    "Ele esqueceu.",
+    "Ele vai esquecer.",
+    "Ele esqueceria.",
+    "Ele tinha esquecido."
+   ],
+   "distratoresEs": [
+    "Se le olvidó.",
+    "Se le olvidará.",
+    "Se le olvidaría.",
+    "Se le había olvidado."
+   ],
+   "formasEn": {
+    "He kept forgetting": "pretérito",
+    "He will keep forgetting": "futuro",
+    "He would keep forgetting": "condicional",
+    "He had kept forgetting": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "He kept forgetting": "pretérito",
+    "He will keep forgetting": "futuro",
+    "He would keep forgetting": "condicional",
+    "He had kept forgetting": "pluscuamperfecto"
+   },
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "forget",
+    "gerúndio"
+   ],
+   "nota": "«Keep» mais gerúndio é o que não para de acontecer: «he keeps forgetting», «it keeps raining». «Keep on» diz o mesmo com mais ênfase, e o infinitivo não entra aí.",
+   "notaEs": "«Keep» más gerundio es lo que no deja de pasar: «he keeps forgetting», «it keeps raining». «Keep on» dice lo mismo con más énfasis, y el infinitivo no entra ahí."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v181",
+   "tipo": "frase",
+   "en": "Had we left earlier, we'd have made it.",
+   "pt": "Se tivéssemos saído mais cedo, teríamos chegado.",
+   "es": "Si hubiéramos salido antes, habríamos llegado.",
+   "aceitas": [
+    "se tivessemos saido mais cedo teriamos chegado",
+    "se tivessemos saido antes teriamos chegado",
+    "teriamos chegado se tivessemos saido mais cedo"
+   ],
+   "aceitasEs": [
+    "Si hubiéramos salido antes, habríamos llegado",
+    "Si hubiésemos salido antes, habríamos llegado",
+    "Habríamos llegado si hubiéramos salido antes"
+   ],
+   "aceitasEn": [
+    "had we left earlier wed have made it",
+    "if we had left earlier we would have made it",
+    "had we left earlier we would have made it"
+   ],
+   "distratores": [
+    "Se saíssemos mais cedo, chegaríamos.",
+    "Se sairmos mais cedo, chegaremos.",
+    "Saímos mais cedo e chegamos.",
+    "Tínhamos saído mais cedo e chegamos."
+   ],
+   "distratoresEs": [
+    "Si saliéramos antes, llegaríamos.",
+    "Si salimos antes, llegaremos.",
+    "Salimos antes y llegamos.",
+    "Habíamos salido antes y llegamos."
+   ],
+   "formasEn": {
+    "If we left earlier, we would make it": "condicional",
+    "If we leave earlier, we will make it": "presente",
+    "We left earlier": "pretérito",
+    "We had left earlier": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "If we left earlier, we would make it": "condicional",
+    "If we leave earlier, we will make it": "presente",
+    "We left earlier": "pretérito",
+    "We had left earlier": "pluscuamperfecto"
+   },
+   "nivel": "B2",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "leave",
+    "condicional composto"
+   ],
+   "nota": "Tirando o «if» e pondo o verbo na frente, a condicional sobe de registro: «had we left» vale «if we had left» e soa a escrito. A inversão serve também com «were» e com «should».",
+   "notaEs": "Quitando el «if» y poniendo el verbo delante, la condicional sube de registro: «had we left» vale «if we had left» y suena a escrito. La inversión sirve también con «were» y con «should»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v182",
+   "tipo": "frase",
+   "en": "It is said to be the oldest.",
+   "pt": "Dizem que é o mais antigo.",
+   "es": "Se dice que es el más antiguo.",
+   "aceitas": [
+    "dizem que e o mais antigo",
+    "dizem ser o mais antigo",
+    "e tido como o mais antigo",
+    "consta que e o mais antigo"
+   ],
+   "aceitasEs": [
+    "Se dice que es el más antiguo",
+    "Dicen que es el más antiguo",
+    "Se lo considera el más antiguo"
+   ],
+   "aceitasEn": [
+    "it is said to be the oldest",
+    "its said to be the oldest",
+    "it is said to be the oldest one"
+   ],
+   "distratores": [
+    "Diziam que era o mais antigo.",
+    "Dirão que é o mais antigo.",
+    "Diriam que é o mais antigo.",
+    "Tinham dito que era o mais antigo."
+   ],
+   "distratoresEs": [
+    "Decían que era el más antiguo.",
+    "Dirán que es el más antiguo.",
+    "Dirían que es el más antiguo.",
+    "Habían dicho que era el más antiguo."
+   ],
+   "formasEn": {
+    "It was said to be the oldest": "pretérito",
+    "It will be said to be the oldest": "futuro",
+    "It would be said to be the oldest": "condicional",
+    "It had been said to be the oldest": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "It was said to be the oldest": "pretérito",
+    "It will be said to be the oldest": "futuro",
+    "It would be said to be the oldest": "condicional",
+    "It had been said to be the oldest": "pluscuamperfecto"
+   },
+   "nivel": "B2",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "say",
+    "presente",
+    "mídia"
+   ],
+   "nota": "A passiva com infinitivo encurta o relato: «it is said to be» no lugar de «people say that it is». É a forma do jornal e do verbete, e vale com «believed», «thought» e «known».",
+   "notaEs": "La pasiva con infinitivo acorta el relato: «it is said to be» en lugar de «people say that it is». Es la forma del periódico y de la entrada de diccionario, y vale con «believed», «thought» y «known»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-v183",
+   "tipo": "frase",
+   "en": "There's no telling what he'll do.",
+   "pt": "Não há como saber o que ele vai fazer.",
+   "es": "No hay manera de saber qué va a hacer.",
+   "aceitas": [
+    "nao ha como saber o que ele vai fazer",
+    "nao da para saber o que ele vai fazer",
+    "e impossivel saber o que ele vai fazer",
+    "nao se sabe o que ele vai fazer"
+   ],
+   "aceitasEs": [
+    "No hay manera de saber qué va a hacer",
+    "No hay forma de saber qué va a hacer",
+    "Es imposible saber qué va a hacer"
+   ],
+   "aceitasEn": [
+    "theres no telling what hell do",
+    "there is no telling what he will do",
+    "theres no telling what hes going to do"
+   ],
+   "distratores": [
+    "Não havia como saber o que ele faria.",
+    "Não haverá como saber o que ele vai fazer.",
+    "Não haveria como saber o que ele faria.",
+    "Não tinha havido como saber o que ele faria."
+   ],
+   "distratoresEs": [
+    "No había manera de saber qué haría.",
+    "No habrá manera de saber qué va a hacer.",
+    "No habría manera de saber qué haría.",
+    "No había habido manera de saber qué haría."
+   ],
+   "formasEn": {
+    "There was no telling what he would do": "pretérito",
+    "There will be no telling what he will do": "futuro",
+    "There would be no telling what he would do": "condicional",
+    "There had been no telling what he would do": "mais-que-perfeito"
+   },
+   "formasEnEs": {
+    "There was no telling what he would do": "pretérito",
+    "There will be no telling what he will do": "futuro",
+    "There would be no telling what he would do": "condicional",
+    "There had been no telling what he would do": "pluscuamperfecto"
+   },
+   "nivel": "B2",
+   "tags": [
+    "conjugação",
+    "irregular",
+    "tell",
+    "gerúndio"
+   ],
+   "nota": "«There's no» mais gerúndio é a construção do impossível: «there's no telling», «there's no knowing», «there's no stopping him». Aqui «tell» é saber, e não contar.",
+   "notaEs": "«There's no» más gerundio es la construcción de lo imposible: «there's no telling», «there's no knowing», «there's no stopping him». Aquí «tell» es saber, y no contar."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f297",
+   "tipo": "frase",
+   "en": "Do you take cards?",
+   "pt": "Vocês aceitam cartão?",
+   "es": "¿Aceptan tarjeta?",
+   "aceitas": [
+    "voces aceitam cartao",
+    "aceitam cartao",
+    "da para pagar com cartao",
+    "posso pagar com cartao"
+   ],
+   "aceitasEs": [
+    "¿Aceptan tarjeta?",
+    "Aceptan tarjeta",
+    "¿Se puede pagar con tarjeta?",
+    "¿Puedo pagar con tarjeta?"
+   ],
+   "aceitasEn": [
+    "do you take cards",
+    "do you take card",
+    "do you accept cards"
+   ],
+   "distratores": [
+    "Vocês aceitam cheque?",
+    "Vocês aceitam devolução?",
+    "Vocês aceitam reserva?",
+    "Vocês aceitam encomenda?"
+   ],
+   "distratoresEs": [
+    "¿Aceptan cheque?",
+    "¿Aceptan devoluciones?",
+    "¿Aceptan reservas?",
+    "¿Aceptan encargos?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "expressão",
+    "compras"
+   ],
+   "nota": "«To take» é o verbo do caixa: «we take cards», «we don't take checks». O de crédito é «a credit card» e o de débito «a debit card» — «card» sozinho serve aos dois.",
+   "notaEs": "«To take» es el verbo de la caja: «we take cards», «we don't take checks». La de crédito es «a credit card» y la de débito «a debit card» — «card» a secas sirve a las dos."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f298",
+   "tipo": "frase",
+   "en": "Could you spell that?",
+   "pt": "Pode soletrar?",
+   "es": "¿Me lo puede deletrear?",
+   "aceitas": [
+    "pode soletrar",
+    "pode soletrar isso",
+    "poderia soletrar",
+    "como se escreve"
+   ],
+   "aceitasEs": [
+    "¿Me lo puede deletrear?",
+    "Me lo puede deletrear",
+    "¿Puede deletrearlo?",
+    "¿Cómo se escribe?"
+   ],
+   "aceitasEn": [
+    "could you spell that",
+    "can you spell that",
+    "could you spell it"
+   ],
+   "distratores": [
+    "Pode repetir?",
+    "Pode explicar?",
+    "Pode traduzir?",
+    "Pode anotar?"
+   ],
+   "distratoresEs": [
+    "¿Me lo puede repetir?",
+    "¿Me lo puede explicar?",
+    "¿Me lo puede traducir?",
+    "¿Me lo puede apuntar?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«To spell» é dizer letra por letra, e não tem verbo correspondente em português. O substantivo é «spelling», e «How do you spell it?» é o jeito mais direto de pedir.",
+   "notaEs": "«To spell» es decir letra por letra, y no tiene verbo correspondiente en español. El sustantivo es «spelling», y «How do you spell it?» es la forma más directa de pedirlo."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f299",
+   "tipo": "frase",
+   "en": "Can you take a picture of us?",
+   "pt": "Pode tirar uma foto da gente?",
+   "es": "¿Nos puede sacar una foto?",
+   "aceitas": [
+    "pode tirar uma foto da gente",
+    "pode tirar uma foto nossa",
+    "voce pode tirar uma foto da gente",
+    "tira uma foto da gente"
+   ],
+   "aceitasEs": [
+    "¿Nos puede sacar una foto?",
+    "Nos puede sacar una foto",
+    "¿Nos puedes sacar una foto?",
+    "¿Nos hace una foto?"
+   ],
+   "aceitasEn": [
+    "can you take a picture of us",
+    "could you take a picture of us",
+    "can you take our picture"
+   ],
+   "distratores": [
+    "Pode tirar uma foto com a gente?",
+    "Pode mandar a foto para a gente?",
+    "Pode mostrar a foto para a gente?",
+    "Pode apagar a foto da gente?"
+   ],
+   "distratoresEs": [
+    "¿Se puede sacar una foto con nosotros?",
+    "¿Nos puede mandar la foto?",
+    "¿Nos puede mostrar la foto?",
+    "¿Nos puede borrar la foto?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "expressão",
+    "viagem"
+   ],
+   "nota": "«Of us» é a foto em que aparecemos nós; «with us» é a foto em que a pessoa entra junto. A preposição decide quem sai no retrato.",
+   "notaEs": "«Of us» es la foto en la que salimos nosotros; «with us» es la foto en la que la persona entra también. La preposición decide quién sale en el retrato."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f300",
+   "tipo": "frase",
+   "en": "I'll take it.",
+   "pt": "Vou levar.",
+   "es": "Me lo llevo.",
+   "aceitas": [
+    "vou levar",
+    "eu vou levar",
+    "vou ficar com ele",
+    "vou levar esse"
+   ],
+   "aceitasEs": [
+    "Me lo llevo",
+    "Me la llevo",
+    "Lo compro",
+    "Me quedo con eso"
+   ],
+   "aceitasEn": [
+    "ill take it",
+    "i will take it",
+    "ill take this one"
+   ],
+   "distratores": [
+    "Vou pensar.",
+    "Vou pegar depois.",
+    "Vou devolver.",
+    "Vou experimentar."
+   ],
+   "distratoresEs": [
+    "Lo pienso un rato.",
+    "Lo recojo después.",
+    "Lo devuelvo mañana.",
+    "Me lo pruebo primero."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "expressão",
+    "compras"
+   ],
+   "nota": "«I'll take it» é como se fecha a compra; «I'll buy it» soa a declaração de intenção. E o verbo é «take», não «carry»: quem decide levar «takes», quem carrega no braço «carries».",
+   "notaEs": "«I'll take it» es como se cierra la compra; «I'll buy it» suena a declaración de intenciones. Y el verbo es «take», no «carry»: quien decide llevárselo «takes», quien lo lleva en brazos «carries»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f301",
+   "tipo": "frase",
+   "en": "Let's get down to business.",
+   "pt": "Vamos ao que interessa.",
+   "es": "Vamos a lo que importa.",
+   "aceitas": [
+    "vamos ao que interessa",
+    "vamos direto ao assunto",
+    "vamos ao trabalho",
+    "maos a obra"
+   ],
+   "aceitasEs": [
+    "Vamos a lo que importa",
+    "Vamos al grano",
+    "Manos a la obra",
+    "Vamos a lo nuestro"
+   ],
+   "aceitasEn": [
+    "lets get down to business",
+    "let us get down to business",
+    "lets get down to it"
+   ],
+   "distratores": [
+    "Vamos descer ao comércio.",
+    "Vamos abrir um negócio.",
+    "Vamos encerrar o assunto.",
+    "Vamos deixar para amanhã."
+   ],
+   "distratoresEs": [
+    "Vamos a bajar al comercio.",
+    "Vamos a abrir un negocio.",
+    "Vamos a cerrar el tema.",
+    "Vamos a dejarlo para mañana."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "trabalho"
+   ],
+   "nota": "«Business» aqui não é empresa nem comércio: é o assunto que interessa. «Get down to» é pôr-se a fazer, e «get down to brass tacks» é a versão antiga da mesma frase.",
+   "notaEs": "«Business» aquí no es empresa ni comercio: es el asunto que importa. «Get down to» es ponerse a hacer, y «get down to brass tacks» es la versión antigua de la misma frase."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f302",
+   "tipo": "frase",
+   "en": "I didn't catch that.",
+   "pt": "Não peguei o que você disse.",
+   "es": "No he entendido lo que dijiste.",
+   "aceitas": [
+    "nao peguei o que voce disse",
+    "nao entendi o que voce disse",
+    "nao captei",
+    "nao ouvi bem"
+   ],
+   "aceitasEs": [
+    "No he entendido lo que dijiste",
+    "No te he entendido",
+    "No he captado lo que dijiste",
+    "No he pillado lo que dijiste"
+   ],
+   "aceitasEn": [
+    "i didnt catch that",
+    "i did not catch that",
+    "i didnt catch what you said"
+   ],
+   "distratores": [
+    "Não peguei o que você jogou.",
+    "Não aceitei o que você disse.",
+    "Não acreditei no que você disse.",
+    "Não gostei do que você disse."
+   ],
+   "distratoresEs": [
+    "No he cogido lo que me lanzaste.",
+    "No he aceptado lo que dijiste.",
+    "No he creído lo que dijiste.",
+    "No me ha gustado lo que dijiste."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«To catch» é pegar com o ouvido: «I didn't catch your name». É mais educado que «I didn't understand», porque joga a culpa no barulho e não em quem falou.",
+   "notaEs": "«To catch» es pillar con el oído: «I didn't catch your name». Es más cortés que «I didn't understand», porque echa la culpa al ruido y no a quien habló."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f303",
+   "tipo": "frase",
+   "en": "Let me get this straight.",
+   "pt": "Deixa eu ver se entendi.",
+   "es": "Déjame ver si entendí.",
+   "aceitas": [
+    "deixa eu ver se entendi",
+    "deixe eu ver se entendi",
+    "so para eu entender",
+    "entao deixa eu ver se entendi"
+   ],
+   "aceitasEs": [
+    "Déjame ver si entendí",
+    "A ver si lo he entendido",
+    "A ver si entendí bien",
+    "Déjame ver si lo entendí"
+   ],
+   "aceitasEn": [
+    "let me get this straight",
+    "let me get this right",
+    "so let me get this straight"
+   ],
+   "distratores": [
+    "Deixa eu endireitar isso.",
+    "Deixa eu alinhar isso aqui.",
+    "Deixa eu falar sem rodeios.",
+    "Deixa eu resolver isso logo."
+   ],
+   "distratoresEs": [
+    "Déjame enderezar esto.",
+    "Déjame alinear los papeles.",
+    "Déjame hablar sin rodeos.",
+    "Déjame resolver esto ya."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«Straight» é reto, e «to get something straight» é pôr a informação em ordem. Vem quase sempre antes de repetir o que se ouviu, para confirmar.",
+   "notaEs": "«Straight» es recto, y «to get something straight» es poner la información en orden. Viene casi siempre antes de repetir lo que se oyó, para confirmarlo."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f304",
+   "tipo": "frase",
+   "en": "That's news to me.",
+   "pt": "Essa é nova para mim.",
+   "es": "Eso es nuevo para mí.",
+   "aceitas": [
+    "essa e nova para mim",
+    "essa e novidade para mim",
+    "nao sabia disso",
+    "e a primeira vez que ouco isso"
+   ],
+   "aceitasEs": [
+    "Eso es nuevo para mí",
+    "Eso es una novedad para mí",
+    "No lo sabía",
+    "Es la primera vez que lo oigo"
+   ],
+   "aceitasEn": [
+    "thats news to me",
+    "that is news to me",
+    "well thats news to me"
+   ],
+   "distratores": [
+    "Essa é a notícia que eu tenho.",
+    "Essa é a notícia para mim.",
+    "Essa é velha para mim.",
+    "Essa é fácil para mim."
+   ],
+   "distratoresEs": [
+    "Esa es la noticia que tengo.",
+    "Esa es la noticia para mí.",
+    "Eso es viejo para mí.",
+    "Eso es fácil para mí."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«News» é sempre singular: «that's news», «the news is good». Aqui não é notícia de jornal, e sim o espanto de quem acaba de ser informado — costuma vir com um «well» na frente.",
+   "notaEs": "«News» es siempre singular: «that's news», «the news is good». Aquí no es noticia de periódico, sino el asombro de quien acaba de enterarse — suele venir con un «well» delante."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f305",
+   "tipo": "frase",
+   "en": "What's the catch?",
+   "pt": "Qual é a pegadinha?",
+   "es": "¿Cuál es la trampa?",
+   "aceitas": [
+    "qual e a pegadinha",
+    "onde esta a pegadinha",
+    "qual e o truque",
+    "onde e que esta a armadilha"
+   ],
+   "aceitasEs": [
+    "¿Cuál es la trampa?",
+    "Cuál es la trampa",
+    "¿Dónde está la trampa?",
+    "¿Cuál es el truco?"
+   ],
+   "aceitasEn": [
+    "whats the catch",
+    "what is the catch",
+    "so whats the catch"
+   ],
+   "distratores": [
+    "Qual é a captura?",
+    "Qual é o pescado do dia?",
+    "Qual é a vantagem disso?",
+    "Qual é o preço final?"
+   ],
+   "distratoresEs": [
+    "¿Cuál es la captura?",
+    "¿Cuál es el pescado del día?",
+    "¿Cuál es la ventaja de esto?",
+    "¿Cuál es el precio final?"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«The catch» é a condição escondida que estraga a oferta boa demais. Vem do que se prende: a trava da porta e o peixe pescado também são «catch».",
+   "notaEs": "«The catch» es la condición escondida que estropea la oferta demasiado buena. Viene de lo que se agarra: el pestillo de la puerta y el pescado capturado también son «catch»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f306",
+   "tipo": "frase",
+   "en": "I can't help it.",
+   "pt": "Não consigo evitar.",
+   "es": "No lo puedo evitar.",
+   "aceitas": [
+    "nao consigo evitar",
+    "nao posso evitar",
+    "e mais forte que eu",
+    "nao da para evitar"
+   ],
+   "aceitasEs": [
+    "No lo puedo evitar",
+    "No puedo evitarlo",
+    "Es más fuerte que yo",
+    "No lo puedo remediar"
+   ],
+   "aceitasEn": [
+    "i cant help it",
+    "i can not help it",
+    "i cannot help it"
+   ],
+   "distratores": [
+    "Não consigo ajudar.",
+    "Não consigo ajudar nisso.",
+    "Não consigo melhorar.",
+    "Não consigo decidir."
+   ],
+   "distratoresEs": [
+    "No puedo ayudar.",
+    "No puedo ayudar en eso.",
+    "No puedo mejorar.",
+    "No puedo decidir."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "falso-amigo",
+    "social"
+   ],
+   "nota": "«Can't help» mais gerúndio é não conseguir deixar de fazer: «I can't help laughing». Sozinho, «I can't help it» é a desculpa de quem não se controla — e nada tem de ajudar.",
+   "notaEs": "«Can't help» más gerundio es no poder dejar de hacer algo: «I can't help laughing». Solo, «I can't help it» es la disculpa de quien no se controla — y nada tiene de ayudar."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f307",
+   "tipo": "frase",
+   "en": "Don't bother.",
+   "pt": "Não precisa se incomodar.",
+   "es": "No te molestes.",
+   "aceitas": [
+    "nao precisa se incomodar",
+    "nao se incomode",
+    "nao precisa",
+    "deixa que nao precisa"
+   ],
+   "aceitasEs": [
+    "No te molestes",
+    "No hace falta",
+    "Déjalo, no hace falta",
+    "No te tomes la molestia"
+   ],
+   "aceitasEn": [
+    "dont bother",
+    "do not bother",
+    "dont bother with it"
+   ],
+   "distratores": [
+    "Não precisa insistir.",
+    "Não precisa reclamar.",
+    "Não precisa agradecer.",
+    "Não precisa repetir."
+   ],
+   "distratoresEs": [
+    "No insistas.",
+    "No te quejes.",
+    "No me lo agradezcas.",
+    "No lo repitas."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«Bother» é dar-se o trabalho, e «don't bother» recusa o favor antes que a pessoa se levante. Com objeto o verbo muda de lado: «don't bother him» é não o incomodar.",
+   "notaEs": "«Bother» es tomarse la molestia, y «don't bother» rechaza el favor antes de que la persona se levante. Con objeto el verbo cambia de lado: «don't bother him» es no molestarlo."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f308",
+   "tipo": "frase",
+   "en": "That's beside the point.",
+   "pt": "Isso não é a questão.",
+   "es": "Esa no es la cuestión.",
+   "aceitas": [
+    "isso nao e a questao",
+    "isso nao vem ao caso",
+    "isso e irrelevante",
+    "isso foge do assunto"
+   ],
+   "aceitasEs": [
+    "Esa no es la cuestión",
+    "Eso no viene al caso",
+    "Eso es irrelevante",
+    "Eso se sale del tema"
+   ],
+   "aceitasEn": [
+    "thats beside the point",
+    "that is beside the point",
+    "thats not the point"
+   ],
+   "distratores": [
+    "Isso não é o ponto final.",
+    "Isso não é a ponta do lápis.",
+    "Isso é o principal do caso.",
+    "Isso prova o que eu digo."
+   ],
+   "distratoresEs": [
+    "Ese no es el punto final.",
+    "Esa no es la punta del lápiz.",
+    "Eso es lo principal del caso.",
+    "Eso prueba lo que digo."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«The point» é o assunto em discussão, não o ponto gráfico. «Beside the point» é ficar ao lado dele, «to the point» é ir direto, e «you've got a point» é dar razão a alguém.",
+   "notaEs": "«The point» es el asunto en discusión, no el punto gráfico. «Beside the point» es quedar al lado de él, «to the point» es ir directo, y «you've got a point» es dar la razón a alguien."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f309",
+   "tipo": "frase",
+   "en": "I'm running late.",
+   "pt": "Vou chegar atrasado.",
+   "es": "Voy a llegar tarde.",
+   "aceitas": [
+    "vou chegar atrasado",
+    "estou atrasado",
+    "vou me atrasar",
+    "vou chegar tarde"
+   ],
+   "aceitasEs": [
+    "Voy a llegar tarde",
+    "Llego tarde",
+    "Voy con retraso",
+    "Me voy a retrasar"
+   ],
+   "aceitasEn": [
+    "im running late",
+    "i am running late",
+    "im going to be late"
+   ],
+   "distratores": [
+    "Vou chegar correndo.",
+    "Vou sair correndo.",
+    "Vou chegar antes.",
+    "Vou chegar de bicicleta."
+   ],
+   "distratoresEs": [
+    "Voy a llegar corriendo.",
+    "Voy a salir corriendo.",
+    "Voy a llegar antes.",
+    "Voy a llegar en bici."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "cotidiano"
+   ],
+   "nota": "«To run late» não é correr: é estar fora do horário, e serve à pessoa, à reunião e ao trem. O contrário é «to run early», e quem está no horário «is on time».",
+   "notaEs": "«To run late» no es correr: es ir fuera de hora, y sirve a la persona, a la reunión y al tren. El contrario es «to run early», y quien va a su hora «is on time»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f310",
+   "tipo": "frase",
+   "en": "There's no rush.",
+   "pt": "Não há pressa.",
+   "es": "No hay prisa.",
+   "aceitas": [
+    "nao ha pressa",
+    "nao tem pressa",
+    "nao precisa correr",
+    "nao e urgente"
+   ],
+   "aceitasEs": [
+    "No hay prisa",
+    "No hay apuro",
+    "No hace falta correr",
+    "No es urgente"
+   ],
+   "aceitasEn": [
+    "theres no rush",
+    "there is no rush",
+    "no rush"
+   ],
+   "distratores": [
+    "Não há corrida.",
+    "Não há fila.",
+    "Não há tempo.",
+    "Não há saída."
+   ],
+   "distratoresEs": [
+    "No hay carrera.",
+    "No hay cola.",
+    "No hay tiempo.",
+    "No hay salida."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«Rush» é a pressa e também o empurrão da multidão: «rush hour» é a hora do aperto. «There's no rush» acalma quem está se apressando, e «don't rush me» é o pedido contrário.",
+   "notaEs": "«Rush» es la prisa y también el empujón de la multitud: «rush hour» es la hora punta. «There's no rush» calma a quien se está apurando, y «don't rush me» es la petición contraria."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f311",
+   "tipo": "frase",
+   "en": "I'm drawing a blank.",
+   "pt": "Estou com um branco.",
+   "es": "Estoy en blanco.",
+   "aceitas": [
+    "estou com um branco",
+    "deu um branco em mim",
+    "deu um branco",
+    "nao consigo lembrar"
+   ],
+   "aceitasEs": [
+    "Estoy en blanco",
+    "Me he quedado en blanco",
+    "Me quedé en blanco",
+    "No consigo acordarme"
+   ],
+   "aceitasEn": [
+    "im drawing a blank",
+    "i am drawing a blank",
+    "im drawing a complete blank"
+   ],
+   "distratores": [
+    "Estou desenhando no papel branco.",
+    "Estou tirando um papel em branco.",
+    "Estou deixando o espaço vazio.",
+    "Estou começando do zero."
+   ],
+   "distratoresEs": [
+    "Estoy dibujando en papel blanco.",
+    "Estoy sacando un papel en blanco.",
+    "Estoy dejando el espacio vacío.",
+    "Estoy empezando de cero."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão",
+    "cotidiano"
+   ],
+   "nota": "«To draw» aqui é tirar na sorte, como quem puxa um bilhete — e o bilhete sai em branco. Diz-se de quem tenta lembrar e não encontra nada.",
+   "notaEs": "«To draw» aquí es sacar en suerte, como quien saca un boleto — y el boleto sale en blanco. Se dice de quien intenta acordarse y no encuentra nada."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f312",
+   "tipo": "frase",
+   "en": "It doesn't add up.",
+   "pt": "Isso não fecha.",
+   "es": "Eso no cuadra.",
+   "aceitas": [
+    "isso nao fecha",
+    "isso nao faz sentido",
+    "nao bate",
+    "isso nao se encaixa"
+   ],
+   "aceitasEs": [
+    "Eso no cuadra",
+    "Eso no tiene sentido",
+    "No cuadra",
+    "Eso no encaja"
+   ],
+   "aceitasEn": [
+    "it doesnt add up",
+    "it does not add up",
+    "that doesnt add up"
+   ],
+   "distratores": [
+    "Isso não soma.",
+    "Isso não aumenta.",
+    "Isso não ajuda em nada.",
+    "Isso não muda nada."
+   ],
+   "distratoresEs": [
+    "Eso no suma.",
+    "Eso no aumenta.",
+    "Eso no ayuda en nada.",
+    "Eso no cambia nada."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«To add up» é somar e dar certo: a conta que fecha e a história que se sustenta. A negativa é desconfiança — «his story doesn't add up» —, e «it all adds up» é a ficha caindo.",
+   "notaEs": "«To add up» es sumar y cuadrar: la cuenta que sale y la historia que se sostiene. La negativa es sospecha — «his story doesn't add up» —, y «it all adds up» es la ficha que cae."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f313",
+   "tipo": "frase",
+   "en": "That's a stretch.",
+   "pt": "Isso é forçar a barra.",
+   "es": "Eso es forzar las cosas.",
+   "aceitas": [
+    "isso e forcar a barra",
+    "isso e exagerar",
+    "isso e muita viagem",
+    "isso e forcado"
+   ],
+   "aceitasEs": [
+    "Eso es forzar las cosas",
+    "Eso es exagerar",
+    "Eso es traído por los pelos",
+    "Eso está forzado"
+   ],
+   "aceitasEn": [
+    "thats a stretch",
+    "that is a stretch",
+    "thats a bit of a stretch"
+   ],
+   "distratores": [
+    "Isso é um alongamento.",
+    "Isso é um trecho da estrada.",
+    "Isso é um passo adiante.",
+    "Isso é uma boa saída."
+   ],
+   "distratoresEs": [
+    "Eso es un estiramiento.",
+    "Eso es un tramo de carretera.",
+    "Eso es un paso adelante.",
+    "Eso es una buena salida."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«A stretch» é o que se esticou além do que dava: a conclusão que não cabe nos fatos. Também é o alongamento e o trecho de estrada, e aqui não é nenhum dos dois.",
+   "notaEs": "«A stretch» es lo que se estiró más de lo que daba: la conclusión que no cabe en los hechos. También es el estiramiento y el tramo de carretera, y aquí no es ninguno de los dos."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f314",
+   "tipo": "frase",
+   "en": "That went over my head.",
+   "pt": "Isso passou longe de mim.",
+   "es": "Eso se me escapó.",
+   "aceitas": [
+    "isso passou longe de mim",
+    "isso passou por cima da minha cabeca",
+    "eu nao entendi nada disso",
+    "isso foi alem de mim"
+   ],
+   "aceitasEs": [
+    "Eso se me escapó",
+    "Eso me superó",
+    "Eso no lo entendí",
+    "Eso se me fue por encima"
+   ],
+   "aceitasEn": [
+    "that went over my head",
+    "it went over my head",
+    "that one went over my head"
+   ],
+   "distratores": [
+    "Isso passou acima da porta.",
+    "Isso bateu na minha cabeça.",
+    "Isso ficou gravado em mim.",
+    "Isso me pegou de jeito."
+   ],
+   "distratoresEs": [
+    "Eso pasó por encima de la puerta.",
+    "Eso me golpeó en la cabeza.",
+    "Eso se me quedó grabado.",
+    "Eso me pilló de lleno."
+   ],
+   "nivel": "B2",
+   "tags": [
+    "expressão",
+    "social"
+   ],
+   "nota": "«To go over someone's head» é passar por cima sem ser entendido: a piada ou a explicação que não pega. Com gente no meio muda de sentido — decidir «over my head» é me passar por cima.",
+   "notaEs": "«To go over someone's head» es pasar por encima sin ser entendido: el chiste o la explicación que no entra. Con gente en medio cambia de sentido — decidir «over my head» es pasar por encima de mí."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f315",
+   "tipo": "frase",
+   "en": "He left no stone unturned.",
+   "pt": "Ele não deixou nada por tentar.",
+   "es": "No dejó nada por intentar.",
+   "aceitas": [
+    "ele nao deixou nada por tentar",
+    "ele tentou de tudo",
+    "ele revirou tudo",
+    "ele nao deixou nada sem procurar"
+   ],
+   "aceitasEs": [
+    "No dejó nada por intentar",
+    "Lo intentó todo",
+    "Removió cielo y tierra",
+    "No dejó nada sin buscar"
+   ],
+   "aceitasEn": [
+    "he left no stone unturned",
+    "he has left no stone unturned"
+   ],
+   "distratores": [
+    "Ele não deixou pedra sobre pedra.",
+    "Ele não virou nenhuma pedra.",
+    "Ele não deixou nada no lugar.",
+    "Ele não desistiu no meio."
+   ],
+   "distratoresEs": [
+    "No dejó piedra sobre piedra.",
+    "No volteó ninguna piedra.",
+    "No dejó nada en su sitio.",
+    "No se rindió a medio camino."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "formal",
+    "social"
+   ],
+   "nota": "A imagem é de quem vira todas as pedras à procura de algo: esgotar os recursos. Em português a pedra entra em outra expressão, de destruição — e aqui é o contrário, é empenho.",
+   "notaEs": "La imagen es de quien voltea todas las piedras buscando algo: agotar los recursos. En español la piedra entra en otra expresión, de destrucción — y aquí es lo contrario, es empeño."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f316",
+   "tipo": "frase",
+   "en": "It cuts both ways.",
+   "pt": "Isso vale para os dois lados.",
+   "es": "Eso vale para los dos lados.",
+   "aceitas": [
+    "isso vale para os dois lados",
+    "vale para os dois lados",
+    "e uma faca de dois gumes",
+    "o argumento serve para os dois lados"
+   ],
+   "aceitasEs": [
+    "Eso vale para los dos lados",
+    "Vale para los dos lados",
+    "Es un arma de doble filo",
+    "El argumento sirve para los dos lados"
+   ],
+   "aceitasEn": [
+    "it cuts both ways",
+    "it can cut both ways",
+    "this cuts both ways"
+   ],
+   "distratores": [
+    "Isso corta de um lado só.",
+    "Isso corta o caminho pela metade.",
+    "Isso agrada aos dois lados.",
+    "Isso resolve os dois problemas."
+   ],
+   "distratoresEs": [
+    "Eso corta de un solo lado.",
+    "Eso corta el camino por la mitad.",
+    "Eso agrada a los dos lados.",
+    "Eso resuelve los dos problemas."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "social",
+    "formal"
+   ],
+   "nota": "«To cut both ways» é o argumento que serve igual ao adversário: quem o usa pode ser atingido por ele. A imagem é da lâmina de dois fios, que também dá «a double-edged sword».",
+   "notaEs": "«To cut both ways» es el argumento que sirve igual al adversario: quien lo usa puede ser alcanzado por él. La imagen es de la hoja de dos filos, que también da «a double-edged sword»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f317",
+   "tipo": "frase",
+   "en": "He paid lip service to it.",
+   "pt": "Ele só apoiou da boca para fora.",
+   "es": "Lo apoyó solo de boquilla.",
+   "aceitas": [
+    "ele so apoiou da boca para fora",
+    "ele apoiou so de boca",
+    "ele fingiu apoiar",
+    "ele apoiou so na aparencia"
+   ],
+   "aceitasEs": [
+    "Lo apoyó solo de boquilla",
+    "Lo apoyó de boquilla",
+    "Solo lo apoyó de palabra",
+    "Fingió apoyarlo"
+   ],
+   "aceitasEn": [
+    "he paid lip service to it",
+    "he only paid lip service to it"
+   ],
+   "distratores": [
+    "Ele pagou o serviço de lábios.",
+    "Ele pagou pelo serviço à vista.",
+    "Ele apoiou com entusiasmo.",
+    "Ele recusou apoiar o projeto."
+   ],
+   "distratoresEs": [
+    "Pagó el servicio de labios.",
+    "Pagó el servicio al contado.",
+    "Lo apoyó con entusiasmo.",
+    "Se negó a apoyar el proyecto."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "política",
+    "formal"
+   ],
+   "nota": "«Lip service» é o apoio que fica nos lábios e não chega aos atos. Vem quase sempre com «to pay», e é acusação: quem paga assim diz que concorda e não faz nada.",
+   "notaEs": "«Lip service» es el apoyo que se queda en los labios y no llega a los actos. Viene casi siempre con «to pay», y es acusación: quien paga así dice que está de acuerdo y no hace nada."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f318",
+   "tipo": "frase",
+   "en": "I'll go out on a limb here.",
+   "pt": "Vou me arriscar a dizer uma coisa.",
+   "es": "Me voy a arriesgar a decir algo.",
+   "aceitas": [
+    "vou me arriscar a dizer uma coisa",
+    "vou arriscar um palpite",
+    "vou me expor aqui",
+    "vou dar uma opiniao arriscada"
+   ],
+   "aceitasEs": [
+    "Me voy a arriesgar a decir algo",
+    "Voy a arriesgar una opinión",
+    "Me voy a exponer aquí",
+    "Voy a jugarme el cuello"
+   ],
+   "aceitasEn": [
+    "ill go out on a limb here",
+    "i will go out on a limb here",
+    "ill go out on a limb"
+   ],
+   "distratores": [
+    "Vou subir no galho mais alto.",
+    "Vou sair pela porta de trás.",
+    "Vou mudar de assunto agora.",
+    "Vou ficar fora dessa discussão."
+   ],
+   "distratoresEs": [
+    "Me voy a subir a la rama más alta.",
+    "Me voy a ir por la puerta de atrás.",
+    "Voy a cambiar de tema ahora.",
+    "Me voy a quedar fuera de esta discusión."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "social",
+    "formal"
+   ],
+   "nota": "«A limb» é o galho, e quem vai até a ponta dele fica onde pode quebrar. Diz-se antes da opinião que talvez não se sustente, e ficar lá depois é «to be out on a limb».",
+   "notaEs": "«A limb» es la rama, y quien va hasta su punta se queda donde puede quebrarse. Se dice antes de la opinión que tal vez no se sostenga, y quedarse ahí después es «to be out on a limb»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f319",
+   "tipo": "frase",
+   "en": "He's hedging his bets.",
+   "pt": "Ele está jogando nos dois times.",
+   "es": "Está jugando a dos bandas.",
+   "aceitas": [
+    "ele esta jogando nos dois times",
+    "ele esta se garantindo dos dois lados",
+    "ele esta em cima do muro",
+    "ele nao quer se comprometer"
+   ],
+   "aceitasEs": [
+    "Está jugando a dos bandas",
+    "Está cubriéndose las espaldas",
+    "Está nadando entre dos aguas",
+    "No quiere comprometerse"
+   ],
+   "aceitasEn": [
+    "hes hedging his bets",
+    "he is hedging his bets",
+    "hes hedging"
+   ],
+   "distratores": [
+    "Ele está podando a cerca viva.",
+    "Ele está apostando tudo numa só.",
+    "Ele está perdendo as apostas.",
+    "Ele está cobrando as apostas."
+   ],
+   "distratoresEs": [
+    "Está podando el seto.",
+    "Está apostando todo a una.",
+    "Está perdiendo las apuestas.",
+    "Está cobrando las apuestas."
+   ],
+   "nivel": "C1",
+   "tags": [
+    "expressão",
+    "economia",
+    "formal"
+   ],
+   "nota": "«A hedge» é a cerca viva, e «to hedge» é cercar-se: repartir as apostas para não perder tudo numa só. No mercado é a operação de proteção; na conversa, é não se comprometer.",
+   "notaEs": "«A hedge» es el seto, y «to hedge» es cercarse: repartir las apuestas para no perderlo todo en una sola. En el mercado es la operación de cobertura; en la conversación, es no comprometerse."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f320",
+   "tipo": "frase",
+   "en": "By the same token, we owe him an apology.",
+   "pt": "Pela mesma razão, devemos uma desculpa a ele.",
+   "es": "Por la misma razón, le debemos una disculpa.",
+   "aceitas": [
+    "pela mesma razao devemos uma desculpa a ele",
+    "pelo mesmo motivo devemos desculpas a ele",
+    "na mesma linha devemos uma desculpa a ele"
+   ],
+   "aceitasEs": [
+    "Por la misma razón, le debemos una disculpa",
+    "Por el mismo motivo, le debemos una disculpa",
+    "En la misma línea, le debemos una disculpa"
+   ],
+   "aceitasEn": [
+    "by the same token we owe him an apology",
+    "by the same token we also owe him an apology"
+   ],
+   "distratores": [
+    "Pela mesma ficha, devemos uma desculpa a ele.",
+    "Pelo mesmo símbolo, devemos uma desculpa a ele.",
+    "Pela primeira vez, devemos uma desculpa a ele.",
+    "Por outro lado, devemos uma desculpa a ele."
+   ],
+   "distratoresEs": [
+    "Por la misma ficha, le debemos una disculpa.",
+    "Por el mismo símbolo, le debemos una disculpa.",
+    "Por primera vez, le debemos una disculpa.",
+    "Por otro lado, le debemos una disculpa."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "formal"
+   ],
+   "nota": "«By the same token» liga duas conclusões tiradas do mesmo princípio: se vale uma, vale a outra. «Token» aqui é o sinal, a prova — e não a ficha nem a senha.",
+   "notaEs": "«By the same token» enlaza dos conclusiones sacadas del mismo principio: si vale una, vale la otra. «Token» aquí es la señal, la prueba — y no la ficha ni el vale."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f321",
+   "tipo": "frase",
+   "en": "For all intents and purposes, it's over.",
+   "pt": "Para todos os efeitos, está encerrado.",
+   "es": "A todos los efectos, está terminado.",
+   "aceitas": [
+    "para todos os efeitos esta encerrado",
+    "para todos os efeitos acabou",
+    "na pratica esta encerrado",
+    "para todos os fins esta encerrado"
+   ],
+   "aceitasEs": [
+    "A todos los efectos, está terminado",
+    "A todos los efectos, se acabó",
+    "En la práctica, está terminado",
+    "Para todos los efectos, está terminado"
+   ],
+   "aceitasEn": [
+    "for all intents and purposes its over",
+    "for all intents and purposes it is over"
+   ],
+   "regionaisEn": {
+    "to all intents and purposes its over": "na Inglaterra"
+   },
+   "distratores": [
+    "Para todas as intenções, está encerrado.",
+    "Para todos os propósitos, está encerrado.",
+    "Para alguns efeitos, está encerrado.",
+    "Para o que der e vier, está encerrado."
+   ],
+   "distratoresEs": [
+    "A todas las intenciones, está terminado.",
+    "A todos los propósitos, está terminado.",
+    "A algunos efectos, está terminado.",
+    "A lo que venga, está terminado."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "jurídico",
+    "formal"
+   ],
+   "nota": "Fórmula de contrato que entrou na fala: diz que, na prática, a coisa já se dá por feita. Nos Estados Unidos é «for all intents and purposes»; na Inglaterra, «to all intents and purposes».",
+   "notaEs": "Fórmula de contrato que entró en el habla: dice que, en la práctica, la cosa ya se da por hecha. En Estados Unidos es «for all intents and purposes»; en Inglaterra, «to all intents and purposes»."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f322",
+   "tipo": "frase",
+   "en": "Be that as it may, the deadline stands.",
+   "pt": "Seja como for, o prazo está mantido.",
+   "es": "Sea como sea, el plazo se mantiene.",
+   "aceitas": [
+    "seja como for o prazo esta mantido",
+    "de todo modo o prazo esta mantido",
+    "ainda assim o prazo esta mantido",
+    "seja como for o prazo continua"
+   ],
+   "aceitasEs": [
+    "Sea como sea, el plazo se mantiene",
+    "De todos modos, el plazo se mantiene",
+    "Aun así, el plazo se mantiene",
+    "Sea como fuere, el plazo se mantiene"
+   ],
+   "aceitasEn": [
+    "be that as it may the deadline stands",
+    "be that as it may the deadline still stands"
+   ],
+   "distratores": [
+    "Que isso seja assim, o prazo está mantido.",
+    "Como isso pode ser, o prazo está mantido.",
+    "Por esse motivo, o prazo está mantido.",
+    "Se for assim, o prazo está mantido."
+   ],
+   "distratoresEs": [
+    "Que eso sea así, el plazo se mantiene.",
+    "Como eso puede ser, el plazo se mantiene.",
+    "Por lo mismo, el plazo se mantiene.",
+    "Si es así, el plazo se mantiene."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "formal",
+    "trabalho"
+   ],
+   "nota": "«Be that as it may» é a concessão que não cede nada: admite o argumento e mantém a decisão. É o «seja como for» do registro escrito, com o verbo num subjuntivo antigo.",
+   "notaEs": "«Be that as it may» es la concesión que no cede nada: admite el argumento y mantiene la decisión. Es el «sea como sea» del registro escrito, con el verbo en un subjuntivo antiguo."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f323",
+   "tipo": "frase",
+   "en": "I beg to differ.",
+   "pt": "Permita-me discordar.",
+   "es": "Permítame discrepar.",
+   "aceitas": [
+    "permita me discordar",
+    "com todo respeito eu discordo",
+    "peco licenca para discordar",
+    "discordo"
+   ],
+   "aceitasEs": [
+    "Permítame discrepar",
+    "Permítame disentir",
+    "Con todo respeto, discrepo",
+    "Discrepo"
+   ],
+   "aceitasEn": [
+    "i beg to differ",
+    "id beg to differ"
+   ],
+   "distratores": [
+    "Imploro que seja diferente.",
+    "Peço uma coisa diferente.",
+    "Concordo inteiramente.",
+    "Prefiro não opinar."
+   ],
+   "distratoresEs": [
+    "Imploro que sea diferente.",
+    "Pido una cosa diferente.",
+    "Estoy totalmente de acuerdo.",
+    "Prefiero no opinar."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "formal"
+   ],
+   "nota": "«To beg» aqui não é implorar: é a fórmula cortês de quem pede licença, a mesma de «I beg your pardon». Serve para discordar sem brigar, e é dos modos mais educados de dizer não.",
+   "notaEs": "«To beg» aquí no es implorar: es la fórmula cortés de quien pide permiso, la misma de «I beg your pardon». Sirve para discrepar sin pelear, y es de los modos más corteses de decir no."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f324",
+   "tipo": "frase",
+   "en": "It has run its course.",
+   "pt": "Já cumpriu seu ciclo.",
+   "es": "Ya cumplió su ciclo.",
+   "aceitas": [
+    "ja cumpriu seu ciclo",
+    "ja deu o que tinha que dar",
+    "ja se esgotou",
+    "chegou ao fim natural"
+   ],
+   "aceitasEs": [
+    "Ya cumplió su ciclo",
+    "Ya dio lo que tenía que dar",
+    "Ya se agotó",
+    "Llegó a su fin natural"
+   ],
+   "aceitasEn": [
+    "it has run its course",
+    "its run its course"
+   ],
+   "distratores": [
+    "Já correu o percurso todo.",
+    "Já fez o curso inteiro.",
+    "Já começou a dar certo.",
+    "Já mudou de direção."
+   ],
+   "distratoresEs": [
+    "Ya corrió todo el recorrido.",
+    "Ya hizo el curso entero.",
+    "Ya empezó a funcionar.",
+    "Ya cambió de dirección."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "formal"
+   ],
+   "nota": "«To run its course» é chegar ao fim por si, sem que ninguém interrompa: a febre, a moda, a discussão. «Course» aqui é o percurso, e não o curso de estudar.",
+   "notaEs": "«To run its course» es llegar al final por sí mismo, sin que nadie lo interrumpa: la fiebre, la moda, la discusión. «Course» aquí es el recorrido, y no el curso de estudios."
+  },
+  {
+   "idioma": "en",
+   "id": "en-f325",
+   "tipo": "frase",
+   "en": "Suffice it to say, we won't be back.",
+   "pt": "Basta dizer que não voltaremos.",
+   "es": "Basta decir que no volveremos.",
+   "aceitas": [
+    "basta dizer que nao voltaremos",
+    "basta dizer que nao vamos voltar",
+    "e suficiente dizer que nao voltaremos"
+   ],
+   "aceitasEs": [
+    "Basta decir que no volveremos",
+    "Basta decir que no vamos a volver",
+    "Es suficiente decir que no volveremos"
+   ],
+   "aceitasEn": [
+    "suffice it to say we wont be back",
+    "suffice it to say that we wont be back"
+   ],
+   "distratores": [
+    "Sofremos ao dizer que não voltaremos.",
+    "Insistimos em dizer que não voltaremos.",
+    "Resta dizer que não voltaremos.",
+    "Convém dizer que não voltaremos."
+   ],
+   "distratoresEs": [
+    "Sufrimos al decir que no volveremos.",
+    "Insistimos en decir que no volveremos.",
+    "Resta decir que no volveremos.",
+    "Conviene decir que no volveremos."
+   ],
+   "nivel": "C2",
+   "tags": [
+    "expressão",
+    "formal"
+   ],
+   "nota": "«Suffice it to say» avisa que se vai resumir e não detalhar, com um subjuntivo antigo fossilizado na fórmula. Nada a ver com sofrer: a raiz é a de «sufficient».",
+   "notaEs": "«Suffice it to say» avisa que se va a resumir y no a detallar, con un subjuntivo antiguo fosilizado en la fórmula. Nada que ver con sufrir: la raíz es la de «sufficient»."
   }
  ]
 }

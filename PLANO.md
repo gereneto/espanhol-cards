@@ -180,7 +180,8 @@ baralhos de feitios bem diferentes.
 | 7 | Inglês, leva 7: 100 cards de base e de conversa | **feito** (21/09) — o baralho está em 630 |
 | 8 | Inglês, leva 8: 100 cards de corpo, de base e de conversa | **feito** (22/09) — o baralho está em 730 |
 | 9 | Inglês, leva 9: 100 cards, e os pares entre o inglês americano e o britânico | **feito** (01/10) — o baralho está em 830 |
-| 10… | Inglês, levas de ~100 até fechar mil | — |
+| 10 | Inglês, leva 10: 100 cards de base — cozinha, roupa, feira, tempo, loja — e trinta de conversa | **feito** (01/10) — o baralho está em 930 |
+| 11 | Inglês, leva 11: 70 cards para fechar os mil | — |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -206,12 +207,11 @@ de setenta e cinco, e eu vinha relatando só a falta de C2. Em 530 cards o
 inglês está em **A1:20 A2:120 B1:155 B2:130 C1:80 C2:25**, contra o alvo do
 espanhol, que é A1:75 A2:285 B1:307 B2:177 C1:100 C2:56.
 
-Em 830, depois da leva 9, o inglês está em **A1:56 A2:225 B1:253 B2:162
-C1:90 C2:44**, e o que falta para as duas levas que fecham os mil é **A2 +60,
-B1 +54, A1 +19, B2 +15, C2 +12, C1 +10**. O B2 e o C1 estão quase pagos; o
-grosso continua sendo base, e dá para fechar com uma leva de 100 e outra de
-70, ambas de vocabulário A1 e A2 e frase de conversa B1, com meia dúzia de C2
-em cada uma.
+Em 930, depois da leva 10, o inglês está em **A1:68 A2:261 B1:285 B2:171
+C1:95 C2:50**, e falta exatamente uma leva de **70**: A2 +24, B1 +22, A1 +7,
+B2 +6, C2 +6, C1 +5. A leva 10 entregou 12 A1, 36 A2, 32 B1, 9 B2, 5 C1 e 6
+C2, na proporção que o plano pedia, e a última repete a receita em escala
+menor — vocabulário de casa e de rua, frase de conversa, meia dúzia de C2.
 
 A leva 9 também mudou a série dos verbos de ofício, e por necessidade: depois
 de cento e trinta verbos irregulares, o poço secou. A série `v` continua sendo
@@ -247,5 +247,26 @@ no meio da leva. Agora é `fonte/varrer-motor.js`, ao lado do build, e a seção
 escrito no card sai sempre, e o que muda a cada vez é o que o app escolhe do
 baralho. Lição além do script: **nada que a leva precisa pode morar fora do
 repositório.**
+
+A leva 10 cobrou o preço de uma conferência que eu fazia na ordem errada.
+Onze das cem frases **já estavam no baralho**: eu tinha conferido a lista de
+palavras antes de escrever, e as frases não. O build pegou dez pela letra, e a
+décima primeira só a varredura viu — «It is not for me to say.» contra o
+`en-f157` «It's not for me to say.», que o funil iguala porque derruba o
+sujeito. Três lições, nessa ordem de importância:
+
+- **a conferência de repetido vale para os candidatos, não para o resultado**:
+  antes de escrever cem cards, passar a lista de frases pelo funil do motor
+  nas três línguas custa um comando e poupa onze reescritas;
+- **o build ganhou a guarda que faltava**: além do texto igual, ele agora barra
+  dois cards que o funil não distingue. Os 1930 cards passam limpos, então a
+  guarda nasceu sem dívida;
+- **dividir a resposta já é repetir o card**. Quatro pares tinham o inglês
+  diferente e a resposta igual nas duas línguas de casa — «Quanto custa?» em
+  dois cards, «Isso não vem ao caso» em dois, «Vale a tentativa» em dois. Pior
+  que isso, `en-p185` «the kitchen» chegou pedindo «la cocina», que já era a
+  resposta do `en-p153` «the stove»: **card novo pode quebrar card velho**. O
+  fogão passou a «el fogón», com «la cocina» ainda aceita e o aviso de que a
+  palavra espanhola serve ao aparelho e à sala.
 
 Depois disso, commit e push. É o commit que serve de memória, não a conversa.

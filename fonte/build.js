@@ -280,6 +280,16 @@ for (const { idioma, cards } of baralhos) {
   /* as línguas de quem estuda este baralho são as outras duas */
   const audiencias = audienciasDe(idioma);
   const textos = new Map();
+  /* ── e o mesmo card pelo funil ──
+     Dois textos diferentes podem ser o MESMO card para quem responde, porque
+     o funil do app derruba artigo, pronome e plural: «It is not for me to
+     say.» e «It's not for me to say.» viram os dois «is not for me to say»,
+     e aí não há pergunta que distinga um do outro — qualquer resposta serve
+     aos dois cards. O normalizar() daqui de cima não vê isso, porque para ele
+     são textos diferentes. Esta segunda guarda usa a régua do motor, e as duas
+     se completam: a de cima pega «él» contra «el», que o funil espanhol
+     distingue de propósito. */
+  const pelaRegua = new Map();
 
 for (const bruto of cards) {
   if (ids.has(bruto.id)) erros.push('id repetido: ' + bruto.id + ' (' + bruto[L.texto] + ')');
@@ -296,6 +306,13 @@ for (const bruto of cards) {
     erros.push('card repetido: ' + onde + ' já existe em ' + textos.get(normalizar(c[L.texto])));
   }
   textos.set(normalizar(c[L.texto]), c.id);
+
+  const pelaMesmaRegua = Motor.normalizar(c[L.texto], idioma);
+  if (pelaMesmaRegua && pelaRegua.has(pelaMesmaRegua) && pelaRegua.get(pelaMesmaRegua) !== c.id) {
+    erros.push('o funil não distingue este card de ' + pelaRegua.get(pelaMesmaRegua) + ': ' + onde +
+      ' — os dois viram «' + pelaMesmaRegua + '»');
+  }
+  if (pelaMesmaRegua) pelaRegua.set(pelaMesmaRegua, c.id);
 
   for (const campo of ['tipo', L.texto, 'nivel']) {
     if (typeof c[campo] !== 'string' || !c[campo].trim()) erros.push('falta "' + campo + '": ' + onde);

@@ -539,7 +539,8 @@ node fonte/varrer-motor.js en   # o motor por cima do data/, nas quatro direçõ
 **O que o build pega** (e barra): id ou `es` repetido; campo faltando; nível ou
 tipo inválido; menos ou mais de quatro distratores; resposta com parêntese cuja
 forma nua não é aceita; distrator — ou metade de
-distrator — que o motor lê como resposta certa; dois distratores iguais; formato
+distrator — que o motor lê como resposta certa; dois distratores iguais;
+dois cards que o funil não distingue; formato
 que entrega a certa (barra, parêntese, comprimento); conjugação sem quatro
 `formasEs`, ou com forma igual à certa; `requer` quebrado; etiqueta sem
 tradução; inglês pela metade; marcação de gênero malformada; sinônimo em
@@ -619,6 +620,8 @@ sem ele o navegador serve o baralho velho.
 |---|---|
 | Distrator não pode ser outro sentido da palavra | `p031` tirar/atirar, `p060` zozobra/naufrágio, `p201` asistir/ajudar, `p247` ola do estádio, `p268` enlace matrimonial, `p073` soalho, `p239` inscrição |
 | Nem o sentido raro do dicionário | dez cards de inglês: `en-p053` realize/realizar, `en-p001` pretend/pretender, `en-p007` support/suportar, `en-p012` attend/atender, `en-p014` sensible/perceptível, `en-p035` injury/injúria, `en-p056` assist/comparecer, `en-p075` stranger/estrangeiro, `en-p078` terrific/terrível, `en-p079` apology/apologia |
+| Card novo não pode repetir card velho — nem pelo funil | `en-f323` «It is not for me to say.» contra o `en-f157` «It's not for me to say.»: o funil derruba o sujeito e os dois viram «is not for me to say» |
+| Nem dividir a resposta com outro card | `en-f297`/`en-f031` «Quanto custa?», `en-f308`/`en-f160` «Isso não vem ao caso», `en-f305`/`en-f201` «Vale a tentativa», `en-p185`/`en-p153` «la cocina» |
 | Nem metade de distrator pode estar certa | `f004` «Me dê a mão. / Vamos atravessar.»; `p035` «the note», «the bill» |
 | `aceitas` não afrouxa o sentido | `v022` «ele levou o livro» para «trajo»; `v030` «durmo mal»; `v014` «acho que sim» |
 | Formato igual ao da certa | `p046` sobremesa: «a resposta certa está se destacando» |
