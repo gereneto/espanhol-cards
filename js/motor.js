@@ -1334,6 +1334,83 @@ window.Motor = (function () {
     return 'livre';
   }
 
+  /* ── a trilha de um texto ──
+     Um texto não é card: é uma TRILHA. O Gere liga a trilha de um poema ou de
+     um trecho de prosa em domínio público, e ela vai soltando na fila os cards
+     daquele texto, na ordem dos versos, até o texto estar inteiro na cabeça.
+     As regras são dele (ver PLANO, seção 6):
+
+       — a trilha só destrava com DOMINADOS_PARA_TRILHA cards dominados;
+       — a cada NOVOS_POR_CARD_DE_TRILHA cards novos, um é da trilha — e ele
+         CONTA COMO CARD NOVO, então passa pelo piso e pelo teto como qualquer
+         estreia (decisão do Gere em 01/10). A trilha não abre uma torneira
+         nova: ela ocupa um dos lugares que já existiam;
+       — o card de um verso só aparece quando TODAS as palavras dele estiverem
+         dominadas. Palavra que não merece card não entra na conta — ela não
+         tem como ser dominada, e quem fala português já a entende.
+
+     O verso que ainda espera uma palavra NÃO trava a trilha: ela passa para o
+     próximo verso que tenha o que dar. Travar pararia a injeção de um em três,
+     e a pessoa ficaria com a trilha ligada e nada vindo dela — o contrário do
+     que a trilha existe para fazer. */
+  const DOMINADOS_PARA_TRILHA = 500;
+  const NOVOS_POR_CARD_DE_TRILHA = 3;
+
+  function dominadosNoTotal(estados) {
+    let n = 0;
+    for (const id in estados) if (estados[id] && estados[id].etapa === 'dominado') n++;
+    return n;
+  }
+
+  function trilhaLiberada(estados) {
+    return dominadosNoTotal(estados) >= DOMINADOS_PARA_TRILHA;
+  }
+
+  /* Um a cada três: dois cards novos do baralho e o terceiro da trilha. A
+     conta é de estreias desde a última da trilha, e por isso o card de trilha
+     zera o contador em vez de incrementá-lo. */
+  function vezDaTrilha(novosDesdeTrilha) {
+    return (novosDesdeTrilha || 0) >= NOVOS_POR_CARD_DE_TRILHA - 1;
+  }
+
+  const jaVisto = (estados, id) => !!(estados[id] && estados[id].vistas);
+  const jaDominadoId = (estados, id) => !!(estados[id] && estados[id].etapa === 'dominado');
+
+  /* O próximo card que a trilha tem para dar, ou null quando ela não tem nada
+     agora. Anda os versos na ordem: primeiro as palavras do verso que ainda
+     não apareceram, depois o card do verso — e este só quando as palavras
+     estiverem dominadas. */
+  function proximoDaTrilha(texto, estados) {
+    if (!texto || !texto.versos) return null;
+    const porId = {};
+    (texto.cards || []).forEach(c => { porId[c.id] = c; });
+    for (const v of texto.versos) {
+      const card = porId[v.card];
+      if (!card) continue;
+      const palavras = card.requerTodas || [];
+      for (const pal of palavras) if (!jaVisto(estados, pal)) return pal;
+      if (jaVisto(estados, card.id)) continue;
+      if (palavras.every(pal => jaDominadoId(estados, pal))) return card.id;
+    }
+    return null;
+  }
+
+  /* Quanto da trilha já está de pé. O verso repetido conta uma vez: a conta é
+     por card, e não por linha — «caminante, no hay camino» é o verso 3 e o 9
+     do Machado, e é um card só. */
+  function andamentoDaTrilha(texto, estados) {
+    const ids = [];
+    (texto && texto.versos || []).forEach(v => { if (ids.indexOf(v.card) < 0) ids.push(v.card); });
+    const prontos = ids.filter(id => jaDominadoId(estados, id));
+    const vistos = ids.filter(id => jaVisto(estados, id));
+    return {
+      versos: ids.length,
+      vistos: vistos.length,
+      dominados: prontos.length,
+      completo: ids.length > 0 && prontos.length === ids.length
+    };
+  }
+
   /* O peso de cada fila no sorteio. «tem» diz quais filas têm card para dar;
      fila vazia sai da conta em vez de roubar chance das outras. «alvo» é o
      de alvoDaFila; sem ele, vale o menor. */
@@ -2324,6 +2401,8 @@ window.Motor = (function () {
     filaDe, pesosDasFilas, chancesDasFilas, sortearFila,
     urgencia, cumpriu, escolherNaFila, vezDoDominado, ESPACO_DOMINADO,
     ALVO_MIN, ALVO_MAX, alvoDaFila, acertoRecente, vezDoNovo, atrasadoQueFura,
+    DOMINADOS_PARA_TRILHA, NOVOS_POR_CARD_DE_TRILHA, dominadosNoTotal,
+    trilhaLiberada, vezDaTrilha, proximoDaTrilha, andamentoDaTrilha,
     liberado, liberadaEm, venceuEm,
     montarFila, alternativas, distratoresDinamicos, distratoresDaLingua, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,

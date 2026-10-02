@@ -354,18 +354,29 @@ fazer:
   e as três frases são cards de verdade e estudam-se na fila normal. Os nove
   versos estão fora da conta.
 
-### O que falta, e é do app
+### O lado do app, feito em 01/10
 
-Nada disso aparece para o aluno ainda. O que está feito é a fonte: formato,
-validação no build, o texto, os cards, e a varredura passando neles. **O lado do
-motor e das telas não foi tocado** — e é justamente onde a outra conversa
-trabalha, então vale combinar antes de mexer. Falta:
+**O card da trilha conta como card novo** — decisão do Gere. Ele ocupa um dos
+lugares de estreia que já existiam e passa pelo piso e pelo teto como qualquer
+outro; a trilha não abre uma torneira nova. Com isso o motor ganhou cinco
+funções (`trilhaLiberada`, `vezDaTrilha`,
+`proximoDaTrilha`, `andamentoDaTrilha`, `dominadosNoTotal`),
+o app ganhou a tela **Textos**, e o resto é consequência:
 
-1. contar os cards dominados e destravar a trilha em 500;
-2. a escolha do texto da vez, na tela;
-3. a injeção de 1 card de trilha a cada 3 cards novos — e isso conversa com o
-   piso e o teto de card novo (um a cada vinte respostas, no máximo um a cada
-   cinco), que é de 01/10: o card da trilha conta como card novo ou entra por
-   fora? Decisão pendente;
-4. a liberação do verso quando as palavras dele estiverem dominadas;
-5. o anúncio e a tela do texto inteiro ao fim.
+- os cards de verso entram no `PORID`, para serem perguntados e corrigidos
+  como qualquer card, e **nunca no `CARDS`**, que é de onde sai a fila de
+  inéditos. Depois de respondidos eles entram nas filas de revisão normalmente:
+  a trilha manda na estreia do card, não na vida dele depois;
+- a vaga de card novo passou a ter dois donos. A cada três estreias, uma é da
+  trilha — e quando o baralho não tem mais inédito, a trilha fica com todas;
+- o verso que espera palavra **não trava a trilha**: ela passa ao próximo verso
+  que tenha o que dar. Travar pararia a injeção, e a pessoa ficaria com a trilha
+  ligada e nada vindo dela;
+- a tela mostra em que pé está cada verso (dominado, em andamento, esperando tal
+  palavra, pode vir) e, quando o último verso é dominado, troca a lista pelo
+  **texto inteiro com a tradução ao lado**.
+
+Conferido no navegador com 500 dominados semeados: duas estreias do baralho, a
+terceira «la huella» — e o contador voltou a zero. Com «la huella» vista e não
+dominada, a trilha pula o verso 1 e dá o verso 2; com ela dominada, dá o verso
+1; com tudo dominado, dá `null` e a tela anuncia o texto fechado.

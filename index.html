@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=44d63784">
+<link rel="stylesheet" href="style.css?v=9a32c5d1">
 </head>
 <body>
 
@@ -38,6 +38,13 @@
         <path d="M7.4 20.4v-5.6"/>
         <path d="M12 20.4V9.2"/>
         <path d="M16.6 20.4v-8.2"/>
+      </svg>
+    </button>
+    <button class="icone" id="btn-texto" title="Textos" aria-label="Textos">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 6.4C9.8 4.9 6.9 4.6 4 5v13c2.9-.4 5.8-.1 8 1.4"/>
+        <path d="M12 6.4c2.2-1.5 5.1-1.8 8-1.4v13c-2.9-.4-5.8-.1-8 1.4"/>
+        <path d="M12 6.4v13"/>
       </svg>
     </button>
     <button class="icone" id="btn-config" title="Configurações" aria-label="Configurações">
@@ -200,6 +207,13 @@
     <button class="secundario" data-voltar>Voltar</button>
   </section>
 
+  <!-- ══════════ TEXTOS (TRILHAS) ══════════ -->
+  <section id="tela-texto" class="tela oculto">
+    <h2>Textos</h2>
+    <div id="texto-conteudo"></div>
+    <button class="secundario" data-voltar>Voltar</button>
+  </section>
+
   <!-- ══════════ CONFIGURAÇÕES ══════════ -->
   <section id="tela-config" class="tela oculto">
     <h2>Configurações</h2>
@@ -272,10 +286,11 @@
   <span id="rodape-sync">•</span>
 </footer>
 
+<script src="data/textos-es.js?v=510827a6"></script>
 <script src="data/cards.js?v=eb343bd4"></script>
 <script src="data/historico.js?v=fcb2ebb0"></script>
-<script src="js/motor.js?v=a697c49f"></script>
+<script src="js/motor.js?v=2a3da34c"></script>
 <script src="js/github.js?v=5713c2d2"></script>
-<script src="js/app.js?v=f1eb9b21"></script>
+<script src="js/app.js?v=8d18c817"></script>
 </body>
 </html>

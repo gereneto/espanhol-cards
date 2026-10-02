@@ -23,6 +23,31 @@
   const PORID = {};
   CARDS.forEach(c => { PORID[c.id] = c; });
 
+  /* ── as trilhas de texto ──
+     Um texto não é card, é uma trilha (ver PLANO, seção 6). Os cards dos
+     versos vêm em data/textos-es.js, FORA do baralho, e aqui entram só no
+     PORID — para serem perguntados, mostrados e corrigidos como qualquer
+     card — e nunca no CARDS, que é de onde sai a fila de inéditos. Se
+     entrassem lá, os versos cairiam na fila normal soltos e fora de ordem,
+     que é o contrário do que a trilha faz. */
+  const TEXTOS = (window.TEXTOS && window.TEXTOS['es'] && window.TEXTOS['es'].textos) || [];
+  const TEXTO_POR_ID = {};
+  const CARDS_DE_TEXTO = [];
+  TEXTOS.forEach(txt => {
+    TEXTO_POR_ID[txt.id] = txt;
+    (txt.cards || []).forEach(c => {
+      PORID_FONTE[c.id] = c;
+      const forma = Motor.formaDoCard(c, 0);
+      PORID[c.id] = forma;
+      CARDS_DE_TEXTO.push(forma);
+    });
+  });
+
+  function trilhaVazia() {
+    return { texto: null, novosDesde: 0, completoEm: null, anunciado: false };
+  }
+
+
   const $ = s => document.querySelector(s);
   const el = {};
   [
@@ -41,6 +66,7 @@
     'comentario-fundo', 'comentario-alvo', 'comentario-texto', 'comentario-restam',
     'btn-comentario-enviar', 'btn-comentario-fechar',
     'btn-proximo', 'painel-conteudo', 'dica',
+    'btn-texto', 'tela-texto', 'texto-conteudo',
     'cfg-repo', 'cfg-token', 'cfg-auto', 'btn-salvar-cfg', 'btn-enviar',
     'btn-baixar', 'estado-sync', 'btn-exportar', 'btn-importar',
     'arquivo-importar', 'btn-zerar', 'rodape-sync'
@@ -97,7 +123,8 @@
       cards: {},
       contestacoes: [],
       comentarios: [],
-      totais: { respostas: 0, acertos: 0, sessoes: 0 }
+      totais: { respostas: 0, acertos: 0, sessoes: 0 },
+      trilha: trilhaVazia()
     };
   }
 
@@ -114,6 +141,7 @@
      progresso vem no formato antigo, de uma fila só. */
   function conciliarFila(p) {
     p.cards = p.cards || {};
+    p.trilha = Object.assign(trilhaVazia(), p.trilha || {});
 
     /* Card apagado do baralho deixa para trás o estado dele. Sem varrer, ele
        continuaria contando em "cards já vistos" e nas tabelas do painel, e
@@ -186,7 +214,11 @@
     const lugar = id => (posicao[id] === undefined ? 1e9 : posicao[id]);
 
     const filas = { esPt: [], ptEs: [], dominados: [] };
-    CARDS.forEach(c => { if (visto(c.id)) filas[Motor.filaDe(p.cards[c.id])].push(c.id); });
+    /* O card de verso já respondido entra nas filas de revisão como qualquer
+       outro: a trilha manda na ESTREIA dele, e não na vida dele depois. */
+    CARDS.concat(CARDS_DE_TEXTO).forEach(c => {
+      if (visto(c.id)) filas[Motor.filaDe(p.cards[c.id])].push(c.id);
+    });
     for (const k in filas) filas[k].sort((a, b) => lugar(a) - lugar(b));
     p.filaEsPt = filas.esPt;
     p.filaPtEs = filas.ptEs;
@@ -470,11 +502,12 @@
      ela é para onde o «começar» leva, não um destino do menu. */
   const BOTAO_DA_TELA = {
     'tela-inicio': 'btn-inicio', 'tela-cards': 'btn-cards',
-    'tela-painel': 'btn-painel', 'tela-config': 'btn-config'
+    'tela-painel': 'btn-painel', 'tela-config': 'btn-config',
+    'tela-texto': 'btn-texto'
   };
 
   function mostrar(tela) {
-    ['tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards']
+    ['tela-inicio', 'tela-card', 'tela-painel', 'tela-config', 'tela-cards', 'tela-texto']
       .forEach(t => el[t].classList.toggle('oculto', t !== tela));
     el.dica.hidden = true;
     const aceso = BOTAO_DA_TELA[tela];
@@ -546,7 +579,7 @@
     const vencidos = progresso.dominados.filter(id =>
       progresso.cards[id] && !Motor.esperando(progresso.cards[id], agora)).length;
     const tem = {
-      ineditos: progresso.ineditos.length > 0,
+      ineditos: progresso.ineditos.length > 0 || !!idDaTrilha(),
       esPt: progresso.filaEsPt.length > 0,
       ptEs: progresso.filaPtEs.length > 0
     };
@@ -565,12 +598,12 @@
 
     /* o piso e o teto do card novo */
     const novo = tem.ineditos ? Motor.vezDoNovo(respostasDesdeNovo()) : 'vetado';
-    if (novo === 'obrigado') { ordenarIneditos(progresso); return progresso.ineditos.shift(); }
+    if (novo === 'obrigado') return proximoNovo();
     if (novo === 'vetado' && (tem.esPt || tem.ptEs)) tem.ineditos = false;
 
     const escolhida = Motor.sortearFila(
       Motor.pesosDasFilas(progresso.cards, tem, Motor.alvoDaFila(progresso.diario)));
-    if (escolhida === 'ineditos') { ordenarIneditos(progresso); return progresso.ineditos.shift(); }
+    if (escolhida === 'ineditos') return proximoNovo();
     if (escolhida === 'esPt' || escolhida === 'ptEs') {
       const fila = escolhida === 'esPt' ? progresso.filaEsPt : progresso.filaPtEs;
       const i = Motor.escolherNaFila(fila, progresso.cards, progresso.totais.respostas);
@@ -579,6 +612,38 @@
 
     const proximo = dominadoMaisProximo(null);
     return proximo === null ? null : progresso.dominados.splice(proximo, 1)[0];
+  }
+
+  /* ── o card novo: do baralho ou da trilha ──
+     A vaga de card novo é UMA. A cada três, uma é da trilha do texto da vez —
+     decisão do Gere em 01/10: o card da trilha conta como card novo e passa
+     pelo piso e pelo teto como qualquer estreia, em vez de abrir uma torneira
+     a mais. Quando o baralho não tem mais inédito, a trilha fica com todas. */
+  function idDaTrilha() {
+    const tr = progresso.trilha;
+    const txt = tr && tr.texto && TEXTO_POR_ID[tr.texto];
+    if (!txt) return null;
+    if (!Motor.trilhaLiberada(progresso.cards)) return null;
+    if (!Motor.vezDaTrilha(tr.novosDesde) && progresso.ineditos.length) return null;
+    return Motor.proximoDaTrilha(txt, progresso.cards);
+  }
+
+  function proximoNovo() {
+    const daTrilha = idDaTrilha();
+    if (daTrilha) return daTrilha;
+    ordenarIneditos(progresso);
+    return progresso.ineditos.shift();
+  }
+
+  /* O id é do texto da vez? Vale para o card de verso e para as palavras que
+     ele exige — a palavra pode estrear pela fila normal, e quando estreia a
+     trilha já recebeu a vez dela. */
+  function pertenceATrilha(id) {
+    const tr = progresso.trilha;
+    const txt = tr && tr.texto && TEXTO_POR_ID[tr.texto];
+    if (!txt) return false;
+    if (PORID[id] && PORID[id].texto === txt.id) return true;
+    return (txt.cards || []).some(c => (c.requerTodas || []).indexOf(id) >= 0);
   }
 
   /* O índice do dominado que já venceu a data — ou, com «agora» nulo, o de
@@ -1272,6 +1337,15 @@
        teto de card novo (ver respostasDesdeNovo) */
     if (!est.vistas) est.estreouNa = progresso.totais.respostas;
     Motor.registrar(est, r);
+    /* A conta do um-em-três: estreia do baralho soma, estreia da trilha zera.
+       E quando o último verso é dominado, o texto fecha — fica anotado para a
+       tela de textos anunciar e mostrar o poema inteiro. */
+    if (est.vistas === 1) {
+      progresso.trilha = progresso.trilha || trilhaVazia();
+      if (pertenceATrilha(id)) progresso.trilha.novosDesde = 0;
+      else progresso.trilha.novosDesde = (progresso.trilha.novosDesde || 0) + 1;
+    }
+    conferirTextoFechado();
     /* Para o painel: o dia, a hora e o tempo desta resposta, e — se era a
        revisão de um dominado — se a memória aguentou a espera daquele degrau. */
     Motor.anotarDiario(progresso.diario, r, est.ultima);
@@ -2718,9 +2792,136 @@
     mostrar('tela-inicio');
   }
 
+  /* ═══════════════ textos (trilhas) ═══════════════ */
+
+  /* O texto fechou quando o último verso virou dominado. Fica a data, e a tela
+     anuncia e mostra o poema de ponta a ponta. */
+  function conferirTextoFechado() {
+    const tr = progresso.trilha;
+    const txt = tr && tr.texto && TEXTO_POR_ID[tr.texto];
+    if (!txt || tr.completoEm) return;
+    if (Motor.andamentoDaTrilha(txt, progresso.cards).completo) {
+      tr.completoEm = new Date().toISOString();
+      tr.anunciado = false;
+    }
+  }
+
+  function abrirTexto() {
+    renderizarTexto();
+    mostrar('tela-texto');
+    const tr = progresso.trilha;
+    if (tr && tr.completoEm && !tr.anunciado) { tr.anunciado = true; salvarProgresso(); }
+  }
+
+  /* Em que pé está cada verso. Quatro situações, e a trava é a do Gere: o
+     verso espera as palavras dele, e palavra sem card não entra na conta. */
+  function situacaoDoVerso(card) {
+    const est = progresso.cards[card.id];
+    if (est && est.etapa === 'dominado') return { marca: '✓', texto: 'dominado' };
+    if (est && est.vistas) return { marca: '·', texto: 'em andamento' };
+    const faltam = (card.requerTodas || []).filter(id => {
+      const e = progresso.cards[id];
+      return !e || e.etapa !== 'dominado';
+    });
+    if (faltam.length) {
+      const nomes = faltam.map(id => (PORID[id] || {}).es || id).join(', ');
+      return { marca: '🔒', texto: 'espera ' + nomes };
+    }
+    return { marca: '○', texto: 'pode vir' };
+  }
+
+  function listaDeVersos(txt) {
+    const porId = {};
+    (txt.cards || []).forEach(c => { porId[c.id] = c; });
+    const linhas = (txt.versos || []).map(v => {
+      const card = porId[v.card];
+      if (!card) return '';
+      const s = situacaoDoVerso(card);
+      return '<tr><td class="verso-marca">' + s.marca + '</td>' +
+             '<td class="verso-es">' + escapar(card.es) + '</td>' +
+             '<td class="verso-situacao">' + escapar(s.texto) + '</td></tr>';
+    });
+    return '<table class="tabela-versos">' + linhas.join('') + '</table>';
+  }
+
+  /* O texto inteiro, original e tradução lado a lado — a recompensa de fechar
+     a trilha. */
+  function tabelaDoTexto(txt) {
+    const porId = {};
+    (txt.cards || []).forEach(c => { porId[c.id] = c; });
+    const linhas = (txt.versos || []).map(v => {
+      const card = porId[v.card];
+      if (!card) return '';
+      return '<tr><td class="verso-es">' + escapar(card.es) + '</td>' +
+             '<td class="verso-pt">' + escapar(card.pt) + '</td></tr>';
+    });
+    return '<table class="tabela-texto">' + linhas.join('') + '</table>';
+  }
+
+  function renderizarTexto() {
+    const alvo = el['texto-conteudo'];
+    if (!TEXTOS.length) {
+      alvo.innerHTML = '<p class="ajuda">Nenhum texto no app ainda.</p>';
+      return;
+    }
+    progresso.trilha = progresso.trilha || trilhaVazia();
+    const tr = progresso.trilha;
+    const dominados = Motor.dominadosNoTotal(progresso.cards);
+    const liberada = dominados >= Motor.DOMINADOS_PARA_TRILHA;
+    const partes = [];
+
+    partes.push('<p class="ajuda">Um texto não é um card: é uma <b>trilha</b>. ' +
+      'Ligada, ela ocupa <b>um de cada três</b> cards novos — primeiro as palavras ' +
+      'de cada verso, e depois o verso, que só aparece quando todas as palavras ' +
+      'dele estiverem dominadas.</p>');
+
+    partes.push(liberada
+      ? '<p class="ajuda">Trilha destravada: <b>' + dominados + '</b> cards dominados.</p>'
+      : '<p class="ajuda">A trilha destrava com <b>' + Motor.DOMINADOS_PARA_TRILHA +
+        '</b> cards dominados. Você tem <b>' + dominados + '</b>.</p>');
+
+    partes.push('<div class="grupo"><h3>Texto da vez</h3>');
+    partes.push('<label class="linha-check"><input type="radio" name="trilha-texto" value=""' +
+      (tr.texto ? '' : ' checked') + '><span>nenhum</span></label>');
+    TEXTOS.forEach(txt => {
+      const a = Motor.andamentoDaTrilha(txt, progresso.cards);
+      partes.push('<label class="linha-check"><input type="radio" name="trilha-texto" value="' +
+        escapar(txt.id) + '"' + (tr.texto === txt.id ? ' checked' : '') + '><span><b>' +
+        escapar(txt.titulo) + '</b> — ' + escapar(txt.autor) + ' (' + txt.ano + '): ' +
+        a.dominados + ' de ' + a.versos + ' versos dominados</span></label>');
+    });
+    partes.push('</div>');
+
+    const txt = tr.texto && TEXTO_POR_ID[tr.texto];
+    if (txt) {
+      const a = Motor.andamentoDaTrilha(txt, progresso.cards);
+      if (a.completo) {
+        partes.push('<div class="grupo"><h3>Você fechou este texto</h3>' +
+          '<p class="ajuda">Os ' + a.versos + ' versos estão dominados. Ele fica aqui inteiro.</p>' +
+          tabelaDoTexto(txt) + '</div>');
+      } else {
+        partes.push('<div class="grupo"><h3>Onde você está</h3>' + listaDeVersos(txt) + '</div>');
+      }
+      if (txt.nota) partes.push('<p class="ajuda">' + escapar(txt.nota) + '</p>');
+      partes.push('<p class="ajuda">' + escapar(txt.obra || '') + '. ' +
+        escapar(txt.dominio || '') + '</p>');
+    }
+
+    alvo.innerHTML = partes.join('');
+    alvo.querySelectorAll('input[name="trilha-texto"]').forEach(r => {
+      r.addEventListener('change', () => {
+        progresso.trilha.texto = r.value || null;
+        progresso.trilha.novosDesde = 0;
+        salvarProgresso();
+        renderizarTexto();
+      });
+    });
+  }
+
   el['btn-inicio'].addEventListener('click', irParaInicio);
   el['btn-cards'].addEventListener('click', abrirCards);
   el['btn-painel'].addEventListener('click', abrirPainel);
+  el['btn-texto'].addEventListener('click', abrirTexto);
 
   ['filtro-tipo', 'filtro-nivel', 'filtro-tag', 'filtro-estado'].forEach(f => {
     el[f].addEventListener('change', renderizarCards);

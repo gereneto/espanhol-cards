@@ -561,3 +561,14 @@ label input:focus{outline:0;border-color:var(--acento)}
   .filtros{position:static}
   .filtro{min-width:calc(50% - 5px)}
 }
+
+/* ── a trilha de um texto ──
+   Duas tabelas: a dos versos, com a situação de cada um, e a do texto fechado,
+   com original e tradução lado a lado. */
+.tabela-versos,.tabela-texto{width:100%;border-collapse:collapse;font-size:14px}
+.tabela-versos td,.tabela-texto td{padding:5px 8px;vertical-align:top;border-bottom:1px solid var(--borda)}
+.tabela-versos tr:last-child td,.tabela-texto tr:last-child td{border-bottom:none}
+.verso-marca{width:1.6em;text-align:center;color:var(--texto-2)}
+.verso-es{color:var(--texto);font-style:italic}
+.verso-pt,.verso-situacao{color:var(--texto-2)}
+.tabela-texto .verso-es{width:50%}
