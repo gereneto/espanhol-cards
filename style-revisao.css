@@ -208,3 +208,48 @@
   .rev-decisao button{flex:1 1 100%}
   .rev-progresso{width:100%;margin-left:0}
 }
+
+/* ── escolher textos ──
+   O original e a tradução lado a lado, e embaixo o que pesa a favor e contra.
+   No celular as duas colunas viram uma só, com a tradução logo abaixo do verso. */
+.esc-titulo{margin:4px 0 2px;font-size:21px}
+.esc-autoria{margin:0 0 16px;color:var(--texto-2);font-size:14px}
+.esc-tipo{font-size:12px;color:var(--texto-2);background:var(--fundo-3);
+  border-radius:999px;padding:2px 9px}
+.esc-texto{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:15px}
+.esc-texto th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--texto-2);font-weight:600;padding:0 10px 6px;border-bottom:1px solid var(--borda)}
+.esc-texto td{padding:4px 10px;vertical-align:top}
+.esc-es{width:50%;color:var(--texto);font-style:italic}
+.esc-pt{color:var(--texto-2)}
+.esc-razoes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 16px}
+.esc-razoes h3{margin:0 0 5px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.esc-razoes p{margin:0;font-size:14px;line-height:1.5;color:var(--texto-2)}
+.esc-pro h3{color:var(--ok)}
+.esc-contra h3{color:var(--quase)}
+.esc-dominio{font-size:13px;color:var(--texto-2);margin:0 0 8px;line-height:1.5}
+.esc-custo{font-size:13px;color:var(--texto-2);margin:0 0 16px}
+.esc-custo summary{cursor:pointer}
+.esc-custo p{margin:8px 0 0;line-height:1.6}
+.esc-recado{display:block;margin:0 0 14px;font-size:13px;color:var(--texto-2)}
+.esc-recado textarea{display:block;width:100%;margin-top:6px;padding:9px 11px;
+  background:var(--fundo);color:var(--texto);border:1px solid var(--borda);
+  border-radius:9px;font:inherit;font-size:14px;resize:vertical}
+.esc-botoes{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.esc-botoes button{padding:9px 18px;border-radius:999px;border:1px solid var(--borda);
+  background:var(--fundo-3);color:var(--texto);font:inherit;font-weight:700;cursor:pointer}
+.esc-entra{border-color:var(--ok-borda) !important;color:var(--ok) !important}
+.esc-fora{border-color:var(--erro-borda) !important;color:var(--erro) !important}
+.esc-duvida{color:var(--texto-2) !important}
+.esc-limpar{background:none !important;border:none !important;font-weight:400 !important;
+  color:var(--texto-2) !important;text-decoration:underline;font-size:13px}
+.esc-selo{font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px}
+.esc-selo-entra{background:var(--ok-fraco);color:var(--ok)}
+.esc-selo-fora{background:var(--erro-fraco);color:var(--erro)}
+.esc-selo-duvida{background:var(--quase-fraco);color:var(--quase)}
+@media (max-width:700px){
+  .esc-razoes{grid-template-columns:1fr}
+  .esc-texto thead{display:none}
+  .esc-texto tr{display:block;padding:5px 0;border-bottom:1px solid var(--borda)}
+  .esc-texto td{display:block;width:auto;padding:1px 0}
+}

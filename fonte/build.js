@@ -743,6 +743,28 @@ for (const b of baralhos) {
     "window.TEXTOS['" + b.idioma + "'] = " + JSON.stringify(pacote) + ';\n', 'utf8');
 }
 
+/* ── os candidatos a texto ──
+   Nada disso é card nem trilha: é a lista do que PODE virar trilha, para o
+   Gere ler e aprovar em escolher-textos.html. Sai em data/candidatos-<idioma>.js
+   e não toca no baralho. O texto aprovado vira um arquivo em fonte/textos/,
+   escrito à mão, com os cards de verso — a aprovação é o começo do trabalho,
+   e não o fim. */
+const pastaCandidatos = path.join(__dirname, 'candidatos');
+if (fs.existsSync(pastaCandidatos)) {
+  for (const f of fs.readdirSync(pastaCandidatos).filter(f => f.endsWith('.json')).sort()) {
+    const idioma = f.replace(/.json$/, '');
+    const lista = JSON.parse(fs.readFileSync(path.join(pastaCandidatos, f), 'utf8'));
+    const pacote = { versao: 1, idioma: idioma, total: lista.length, candidatos: lista };
+    fs.writeFileSync(path.join(raiz, 'data', 'candidatos-' + idioma + '.json'),
+      JSON.stringify(pacote, null, 1), 'utf8');
+    fs.writeFileSync(path.join(raiz, 'data', 'candidatos-' + idioma + '.js'),
+      '/* GERADO POR fonte/build.js — não edite à mão. */\n' +
+      'window.CANDIDATOS = window.CANDIDATOS || {};\n' +
+      "window.CANDIDATOS['" + idioma + "'] = " + JSON.stringify(pacote) + ';\n', 'utf8');
+    console.log('  ' + ('candidatos/' + f).padEnd(36) + lista.length + ' textos para aprovar');
+  }
+}
+
 /* ── carimbo de versão nos assets ──
    Sem isso o navegador pode servir um data/cards.js velho junto de um
    index.html novo, misturando baralho antigo com código novo.
@@ -758,7 +780,8 @@ const assets = [
   'js/revisao.js', 'js/revisar-es-en.js', 'js/revisar-en-pt.js',
   'data/cards.js', 'data/cards-revisao.js', 'data/tags.js', 'data/historico.js',
   'data/cards-es.js', 'data/cards-en.js', 'data/cards-pt.js',
-  'data/textos-es.js', 'data/textos-en.js', 'data/textos-pt.js'
+  'data/textos-es.js', 'data/textos-en.js', 'data/textos-pt.js',
+  'data/candidatos-es.js', 'js/revisao.js', 'js/escolher-textos.js'
 ].filter(a => fs.existsSync(path.join(raiz, a)));   // as páginas de revisão podem ainda não existir
 
 const versaoDe = {};

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1614">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<title>Escolher textos</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=9a32c5d1">
+<link rel="stylesheet" href="style-revisao.css?v=a599f1f3">
+</head>
+<body>
+
+<header class="rev-topo">
+  <div class="marca">Escolher <span>textos</span></div>
+  <div class="rev-progresso">
+    <span id="contagem">…</span>
+    <span class="rev-barra"><i id="barra"></i></span>
+  </div>
+</header>
+
+<main class="rev-corpo">
+
+  <details class="rev-instrucoes" id="instrucoes" open>
+    <summary>Como funciona</summary>
+    <p>
+      Cada texto desta lista é candidato a virar uma <strong>trilha</strong> no app:
+      um poema ou um trecho de prosa em domínio público que você estuda verso a
+      verso, até saber o texto inteiro. Aqui você lê o original com a tradução ao
+      lado e decide se ele entra.
+    </p>
+    <p>Três botões, e nenhum deles é definitivo — dá para mudar de ideia depois:</p>
+    <ul>
+      <li><strong>Entra</strong> — vale a pena. Eu escrevo os cards das palavras e
+        dos versos, e o texto aparece na tela <em>Textos</em> do app.</li>
+      <li><strong>Não entra</strong> — não vale. Diga por quê, se souber:
+        é o que me ensina a escolher melhor o próximo.</li>
+      <li><strong>Fico em dúvida</strong> — deixa para depois, e some da conta
+        de pendentes.</li>
+    </ul>
+    <p>
+      O <strong>custo em cards</strong> que aparece em cada texto é uma estimativa
+      grosseira e alta: são as palavras do texto que não aparecem em card nenhum,
+      contadas sem juntar as formas de um mesmo verbo. Na prática, só uma parte
+      delas vira card — a régua é a mesma de sempre, o que o português e o inglês
+      não entregam.
+    </p>
+    <p>
+      Nada precisa ser feito de uma vez: tudo fica gravado neste navegador e sobe
+      para o repositório de dados quando houver token.
+    </p>
+  </details>
+
+  <div id="tela"></div>
+
+  <nav class="rev-nav">
+    <button id="btn-anterior" type="button">← Anterior</button>
+    <button id="btn-pendente" type="button">Próximo sem decisão</button>
+    <button id="btn-proximo" type="button">Próximo →</button>
+  </nav>
+
+</main>
+
+<div class="rev-config" id="config" data-pronto="nao">
+  <details id="det-config">
+    <summary id="resumo-config">Conexão com o GitHub — clique para configurar</summary>
+    <p class="ajuda">
+      As decisões vão para o seu repositório de dados,
+      <code>gereneto/espanhol-cards-dados</code>, no arquivo
+      <code>textos-escolhidos.json</code> — ao lado do progresso do estudo. É o
+      mesmo token que o app usa; se ele já está configurado lá, aqui também está.
+    </p>
+    <label>Repositório
+      <input type="text" id="cfg-repo" placeholder="gereneto/espanhol-cards-dados">
+    </label>
+    <label>Token
+      <input type="password" id="cfg-token" placeholder="github_pat_…" autocomplete="off">
+    </label>
+    <div class="linha-botoes">
+      <button id="btn-salvar-cfg" type="button">Salvar</button>
+      <button id="btn-enviar" type="button">Enviar agora</button>
+      <button id="btn-baixar" type="button">Baixar o que já decidi</button>
+      <button id="btn-exportar" type="button">Baixar arquivo</button>
+      <button id="btn-importar" type="button">Carregar arquivo</button>
+      <input type="file" id="arquivo-importar" accept="application/json" hidden>
+    </div>
+    <p class="rev-estado" id="estado"></p>
+  </details>
+</div>
+
+<script src="data/candidatos-es.js?v=c4587718"></script>
+<script src="js/github.js?v=5713c2d2"></script>
+<script src="js/revisao.js?v=3c695575"></script>
+<script src="js/escolher-textos.js?v=305c9549"></script>
+</body>
+</html>

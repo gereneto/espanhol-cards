@@ -183,6 +183,7 @@ baralhos de feitios bem diferentes.
 | 10 | Inglês, leva 10: 100 cards de base — cozinha, roupa, feira, tempo, loja — e trinta de conversa | **feito** (01/10) — o baralho está em 930 |
 | 11 | Inglês, leva 11: 70 cards para fechar os mil | **feito** (01/10) — o baralho está em **1000** |
 | 12 | Textos: a trilha, o formato e o primeiro poema (Machado) | **feito** (01/10) — falta o lado do app |
+| 13 | Dez textos candidatos e a tela de aprovar (`escolher-textos.html`) | **feito** (02/10) — espera a sua leitura |
 | n | Português, leva de estreia e depois o resto | — |
 | — | Telas do app (escolha do curso) | do Gere |
 
@@ -353,6 +354,35 @@ fazer:
 - **o baralho de espanhol saiu dos mil**: está em 1006, porque as três palavras
   e as três frases são cards de verdade e estudam-se na fila normal. Os nove
   versos estão fora da conta.
+
+### Escolher o próximo texto
+
+Aprovar texto é decisão do Gere, e decisão que precisa de leitura: o original ao
+lado da tradução, o que o texto ensina, o que pesa contra, e quanto ele custa em
+cards. Daí a página **`escolher-textos.html`**, que serve dez candidatos um a
+um — seis poemas e quatro trechos de prosa, todos em domínio público conferido
+pela data de morte do autor. Três botões (entra, não entra, fico em dúvida) e um
+campo de recado, que é onde mora a parte útil: «entra, mas só as duas primeiras
+estrofes» vale mais que o botão.
+
+As decisões vão para o repositório de **dados**, em
+`textos-escolhidos.json`, ao lado do progresso — e não para o de revisão,
+que é dos revisores de fora. Para isso o ferramental de revisão
+(`js/revisao.js`) passou a aceitar o repositório como opção, em vez de ter o
+de revisão escrito dentro.
+
+**O custo em cards é estimativa, e dita como tal na tela**: são as palavras do
+texto que não aparecem no espanhol de card nenhum, contadas sem juntar as formas
+de um mesmo verbo — «volverán» não encontra «volver». O número sai alto de
+propósito, como teto. Ele vai de 14 («Hombres necios») a 45 («En paz»).
+
+E uma ressalva que a tela repete em todo texto: **escrevi os dez de cabeça**.
+Antes de qualquer um virar card, o texto tem de ser batido com uma edição
+impressa — a pontuação, sobretudo, varia de edição para edição.
+
+Aprovar não cria nada. O texto aprovado vira depois um arquivo em
+`fonte/textos/`, escrito à mão, com os cards de cada verso: a aprovação é o
+começo do trabalho, e não o fim dele.
 
 ### O lado do app, feito em 01/10
 

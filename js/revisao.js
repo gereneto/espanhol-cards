@@ -19,6 +19,10 @@ window.Revisao = (function () {
     const ARQUIVO = opcoes.arquivo;
     const REVISOR = opcoes.revisor;
     const aoMudarEstado = opcoes.aoMudarEstado || function () {};
+    /* Em qual repositório isto mora. As telas de revisão gravam no de
+       revisão; a de escolher textos é do próprio Gere e grava no de dados,
+       junto do progresso dele. */
+    const GH_DAQUI = opcoes.gh || GH_REV;
 
     let dados = carregar();
     let desdeEnvio = 0;
@@ -67,14 +71,14 @@ window.Revisao = (function () {
     async function enviar(op) {
       op = op || {};
       if (enviando) return;
-      if (!GH_REV.configurado()) {
+      if (!GH_DAQUI.configurado()) {
         if (!op.silencioso) aoMudarEstado(opcoes.textoSemToken, 'erro');
         return;
       }
       enviando = true;
       if (!op.silencioso) aoMudarEstado(opcoes.textoEnviando, '');
       try {
-        await GH_REV.escrever(
+        await GH_DAQUI.escrever(
           ARQUIVO,
           JSON.stringify(dados, null, 1),
           REVISOR + ' — ' + dados.atualizado_em,
@@ -92,12 +96,12 @@ window.Revisao = (function () {
        um aparelho sem uma sessão apagar a outra. */
     async function baixar(op) {
       op = op || {};
-      if (!GH_REV.configurado()) {
+      if (!GH_DAQUI.configurado()) {
         if (!op.silencioso) aoMudarEstado(opcoes.textoSemToken, 'erro');
         return false;
       }
       try {
-        const arq = await GH_REV.ler(ARQUIVO);
+        const arq = await GH_DAQUI.ler(ARQUIVO);
         if (!arq) { if (!op.silencioso) aoMudarEstado(opcoes.textoVazio, ''); return false; }
         const remoto = JSON.parse(arq.texto);
         for (const [id, r] of Object.entries(remoto.cartas || {})) {
@@ -116,8 +120,8 @@ window.Revisao = (function () {
     /* Lê um arquivo de revisão do repositório sem mexer no estado local —
        é assim que a página do Gere enxerga o que o Yoisser já decidiu. */
     async function lerOutro(arquivo) {
-      if (!GH_REV.configurado()) return null;
-      const arq = await GH_REV.ler(arquivo);
+      if (!GH_DAQUI.configurado()) return null;
+      const arq = await GH_DAQUI.ler(arquivo);
       return arq ? JSON.parse(arq.texto) : null;
     }
 
