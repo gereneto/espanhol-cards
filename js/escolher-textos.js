@@ -35,6 +35,7 @@
     arquivo: 'textos-escolhidos.json',
     revisor: 'gere',
     gh: window.GH,
+    enviarACada: 1,   // são dez textos: cada decisão sobe na hora
     aoMudarEstado: estado,
     textoSemToken: 'Sem token do GitHub — está tudo gravado só neste navegador.',
     textoEnviando: 'Enviando…',
@@ -198,7 +199,15 @@
 
   (async function () {
     if (GH.configurado()) {
+      /* Decisão que ficou só neste navegador sobe agora. O contador de envio
+         automático reinicia a cada abertura da página, então uma lista curta
+         podia nunca alcançar o número e ficar presa aqui — e foi o que
+         aconteceu na estreia. Comparar com o que está lá resolve sem
+         commitar à toa quando nada mudou. */
+      const remoto = await rev.lerOutro('textos-escolhidos.json');
+      const laFora = remoto ? Object.keys(remoto.cartas || {}).length : 0;
       await rev.baixar({ silencioso: true });
+      if (rev.decididos() > laFora) await rev.enviar();
       atualizarProgresso();
     }
     fila.pularParaPendente(id => !!rev.decisao(id), true);

@@ -12,7 +12,13 @@
    ──────────────────────────────────────────────────────────────── */
 window.Revisao = (function () {
 
-  const ENVIAR_A_CADA = 8;   // decisões
+  /* De quantas em quantas decisões o arquivo sobe sozinho. Oito serve a uma
+   revisão de mil cards, em que subir a cada ficha seria um commit por ficha.
+   Não serve a uma lista de dez textos: ali o contador reinicia a cada abertura
+   da página e as decisões podem nunca chegar aos oito — foi o que aconteceu
+   com os textos escolhidos em 02/10, que ficaram só no navegador. Quem cria
+   escolhe o número. */
+  const ENVIAR_A_CADA_PADRAO = 8;
 
   function criar(opcoes) {
     const CHAVE = 'espanhol-cards:' + opcoes.chave;
@@ -23,6 +29,7 @@ window.Revisao = (function () {
        revisão; a de escolher textos é do próprio Gere e grava no de dados,
        junto do progresso dele. */
     const GH_DAQUI = opcoes.gh || GH_REV;
+    const ENVIAR_A_CADA = opcoes.enviarACada || ENVIAR_A_CADA_PADRAO;
 
     let dados = carregar();
     let desdeEnvio = 0;
