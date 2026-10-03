@@ -1014,7 +1014,10 @@ window.Motor = (function () {
     if (!d) return true;
 
     if (!a.includes(' ') && !b.includes(' ')) {
-      return inversa ? (d === 1 && maior >= 6) : d <= (maior >= 8 ? 2 : 1);
+      /* Em espanhol, uma letra a menos ou a mais vale a pergunta a partir de
+         quatro letras: era a partir de seis, e «la buca» por «la beca» caía
+         como erro seco (p170). Quem decide se foi a mão é a pessoa. */
+      return inversa ? (d === 1 && maior >= 4) : d <= (maior >= 8 ? 2 : 1);
     }
     /* Uma letra só, em espanhol, também vale a pergunta numa frase curta.
        A régua de 92% pedia onze letras por erro, e «etuve allí» contra

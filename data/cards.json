@@ -1,7 +1,7 @@
 {
  "versao": 1,
  "idioma": "es",
- "gerado_em": "2026-10-01",
+ "gerado_em": "2026-10-03",
  "total": 1006,
  "cards": [
   {
@@ -1702,7 +1702,7 @@
    "id": "p042",
    "tipo": "palavra",
    "es": "currar",
-   "pt": "trabalhar",
+   "pt": "trampar (trabalhar)",
    "en": "to work",
    "aceitas": [
     "trabalhar",
@@ -1720,10 +1720,10 @@
     "to slog"
    ],
    "distratores": [
-    "curar",
-    "correr",
-    "cursar",
-    "estudar"
+    "curar (sarar)",
+    "correr (disparar)",
+    "cursar (estudar)",
+    "cobrar (receber)"
    ],
    "distratoresEn": [
     "to heal",
@@ -17924,7 +17924,9 @@
     "parece que esta falando grego",
     "esta falando grego",
     "nao entendo patavina",
-    "isso e chines para mim"
+    "isso e chines para mim",
+    "nao entendi nada",
+    "nao entendi nada disso"
    ],
    "aceitasEn": [
     "its all greek to me",
@@ -19130,7 +19132,10 @@
     "Espanha"
    ],
    "nota": "Palavra da Espanha, muito usada e sempre elogiosa. Aplicada a coisa, muda de sentido e vira bonitinho.\n🇪🇸 majo (persona) → 🇧🇷 simpático, gente boa\n🇪🇸 majo (cosa) → 🇧🇷 bonitinho, bacana",
-   "notaEn": "A Spain word, very common and always positive. Applied to an object it shifts meaning and describes something pretty rather than friendly."
+   "notaEn": "A Spain word, very common and always positive. Applied to an object it shifts meaning and describes something pretty rather than friendly.",
+   "aceitasEs": [
+    "Su herman{o|a} es muy maj{o|a}."
+   ]
   },
   {
    "idioma": "es",
@@ -19951,7 +19956,11 @@
     "falso-amigo"
    ],
    "nota": "«Taller» é onde se conserta e onde se cria: a oficina mecânica, o ateliê, o curso prático. O escritório é «la oficina».\n🇪🇸 el taller → 🇧🇷 a oficina mecânica\n🇪🇸 la oficina → 🇧🇷 o escritório",
-   "notaEn": "'El taller' is any place where things are made or fixed: the mechanic's garage, the artist's studio, a hands-on workshop. 'La oficina' is the office."
+   "notaEn": "'El taller' is any place where things are made or fixed: the mechanic's garage, the artist's studio, a hands-on workshop. 'La oficina' is the office.",
+   "regionaisEs": {
+    "Llevé el carro al taller.": "em boa parte da América Latina",
+    "Llevé el auto al taller.": "na Argentina, no Chile e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -20313,7 +20322,10 @@
     "falso-amigo"
    ],
    "nota": "«Todavía no» é o «ainda não» de todo dia. O «todavia» de contraste é «sin embargo».\n🇪🇸 todavía no → 🇧🇷 ainda não\n🇪🇸 sin embargo → 🇧🇷 todavia",
-   "notaEn": "'Todavía no' is not yet. It never means however — that is 'sin embargo'."
+   "notaEn": "'Todavía no' is not yet. It never means however — that is 'sin embargo'.",
+   "regionaisEs": {
+    "Todavía no comí.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -21453,7 +21465,11 @@
     "adjetivo"
    ],
    "nota": "«Ufano» é o orgulho satisfeito de si, que se nota por fora. Registro literário.",
-   "notaEn": "'Ufano' is a pleased, visible pride in oneself — literary rather than everyday."
+   "notaEn": "'Ufano' is a pleased, visible pride in oneself — literary rather than everyday.",
+   "regionaisEs": {
+    "Iba muy ufan{o|a} con su carro nuevo.": "em boa parte da América Latina",
+    "Iba muy ufan{o|a} con su auto nuevo.": "na Argentina, no Chile e no Uruguai"
+   }
   },
   {
    "idioma": "es",
@@ -21863,7 +21879,8 @@
    "notaEn": "'Grifo' is the tap; turn it on and off with 'abrir' and 'cerrar'. The 'que' in the middle means 'because', a very spoken usage.",
    "regionaisEs": {
     "Cierra la llave, que se gasta el agua.": "em boa parte da América Latina",
-    "Cierra la canilla, que se gasta el agua.": "na Argentina e no Uruguai"
+    "Cierra la canilla, que se gasta el agua.": "na Argentina e no Uruguai",
+    "Cierra el caño, que se gasta el agua.": "no Peru"
    }
   },
   {
@@ -24236,7 +24253,8 @@
     "precisa trocar os lencois",
     "temos que trocar os lencois",
     "e preciso trocar a roupa de cama",
-    "tem que trocar o lencol"
+    "tem que trocar o lencol",
+    "e preciso mudar os lencois"
    ],
    "aceitasEn": [
     "the sheets need changing",
@@ -24832,7 +24850,8 @@
    "notaEn": "'Hacer la maleta' is to pack; unpacking is 'deshacer la maleta'.",
    "regionaisEs": {
     "Todavía no hice la maleta.": "na América Latina",
-    "Todavía no empaqué.": "na América Latina"
+    "Todavía no empaqué.": "na América Latina",
+    "Todavía no he hecho la valija.": "na Argentina e no Uruguai"
    }
   },
   {
@@ -24914,7 +24933,9 @@
    "notaEn": "'Fontanero' is Spain's plumber; Latin America says 'plomero'. 'Gotear' is to drip, from 'gota'.",
    "regionaisEs": {
     "Hay que llamar al plomero, gotea la llave.": "em boa parte da América Latina",
-    "Hay que llamar al plomero, gotea la canilla.": "na Argentina e no Uruguai"
+    "Hay que llamar al plomero, gotea la canilla.": "na Argentina e no Uruguai",
+    "Hay que llamar al fontanero, gotea el caño.": "no Peru",
+    "Hay que llamar al plomero, gotea el grifo.": "na América Latina"
    }
   },
   {
@@ -26364,7 +26385,10 @@
     "trabalho"
    ],
    "nota": "Quem «cobra» é quem recebe. Cobrar alguém, no sentido brasileiro, é «reclamar el pago» ou «cobrarle a alguien».\n🇪🇸 he cobrado → 🇧🇷 recebi\n🇪🇸 cobrarle a alguien → 🇧🇷 cobrar de alguém",
-   "notaEn": "Whoever 'cobra' is the one getting paid. 'Cobrarle a alguien' is to charge someone."
+   "notaEn": "Whoever 'cobra' is the one getting paid. 'Cobrarle a alguien' is to charge someone.",
+   "regionaisEs": {
+    "Todavía no cobré este mes.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -26532,7 +26556,10 @@
     "verbo"
    ],
    "nota": "«Fijarse en» é reparar em algo. «Fijar» sem «se» é fixar: «fijar una fecha».",
-   "notaEn": "'Fijarse en' is to notice. Without 'se', 'fijar' is to fix or set: 'fijar una fecha'."
+   "notaEn": "'Fijarse en' is to notice. Without 'se', 'fijar' is to fix or set: 'fijar una fecha'.",
+   "regionaisEs": {
+    "¿Te fijaste en su corte de pelo?": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -27797,7 +27824,8 @@
    "nota": "«Sacarse el carné» é tirar a carteira. Na América Latina se diz «la licencia de conducir».",
    "notaEn": "'Sacarse el carné' is to get your licence. Latin America says 'la licencia de conducir'.",
    "regionaisEs": {
-    "Me sacaré la licencia de conducir este año.": "na América Latina"
+    "Me sacaré la licencia de conducir este año.": "na América Latina",
+    "Me sacaré el brevete este año.": "no Peru"
    }
   },
   {
@@ -27842,7 +27870,8 @@
    "notaEn": "'Matrícula' is a number plate, and also enrolment. 'No me dio tiempo a' means I didn't have time to.",
    "regionaisEs": {
     "No me dio tiempo a ver la placa.": "na América Latina",
-    "No alcancé a ver la placa.": "na América Latina"
+    "No alcancé a ver la placa.": "na América Latina",
+    "No me dio tiempo a ver la patente.": "na Argentina e no Chile"
    }
   },
   {
@@ -29464,7 +29493,10 @@
     "tecnologia"
    ],
    "nota": "«Quedarse sin» é ficar sem: bateria, dinheiro, palavras. Serve para tudo o que acaba.",
-   "notaEn": "'Quedarse sin' is to run out of something — battery, money, words."
+   "notaEn": "'Quedarse sin' is to run out of something — battery, money, words.",
+   "regionaisEs": {
+    "Me quedé sin batería.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -29671,7 +29703,10 @@
     "tecnologia"
    ],
    "nota": "«Equivocarse de» é errar de: «de número», «de calle», «de persona». O «se ha» é «usted».",
-   "notaEn": "'Equivocarse de' is to get the wrong one: 'de número', 'de calle', 'de persona'."
+   "notaEn": "'Equivocarse de' is to get the wrong one: 'de número', 'de calle', 'de persona'.",
+   "regionaisEs": {
+    "Se equivocó de número.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -30033,7 +30068,14 @@
     "casa"
    ],
    "nota": "«Dejarse algo» é esquecer algo em algum lugar. O «me» mostra que foi sem querer.",
-   "notaEn": "'Dejarse algo' is to leave something behind by mistake; the 'me' marks it as accidental."
+   "notaEn": "'Dejarse algo' is to leave something behind by mistake; the 'me' marks it as accidental.",
+   "regionaisEs": {
+    "Me dejé las llaves dentro.": "na América Latina",
+    "Me dejé las llaves dentro de casa.": "na América Latina"
+   },
+   "aceitasEs": [
+    "Me he dejado las llaves dentro de casa."
+   ]
   },
   {
    "idioma": "es",
@@ -30114,7 +30156,10 @@
     "cotidiano"
    ],
    "nota": "«Perdona» é o desculpa informal; com «usted», «perdone». «Oír» é ouvir, e o particípio «oído» leva acento.",
-   "notaEn": "'Perdona' is informal sorry; with 'usted' it is 'perdone'. The participle of 'oír' is 'oído'."
+   "notaEn": "'Perdona' is informal sorry; with 'usted' it is 'perdone'. The participle of 'oír' is 'oído'.",
+   "regionaisEs": {
+    "Perdona, no te oí.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -32198,7 +32243,10 @@
     "comida"
    ],
    "nota": "O aparelho de espremer é «el exprimidor». Para ideias, sentimentos e opiniões, o verbo é «expresar».\n🇪🇸 exprimir una naranja → 🇧🇷 espremer uma laranja\n🇪🇸 expresar una opinión → 🇧🇷 exprimir uma opinião",
-   "notaEn": "A juicer is 'el exprimidor'. For ideas and feelings, the verb is 'expresar'."
+   "notaEn": "A juicer is 'el exprimidor'. For ideas and feelings, the verb is 'expresar'.",
+   "regionaisEs": {
+    "Exprime dos naranjas para el jugo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -32608,7 +32656,9 @@
    "notaEn": "'Colgarse' is to freeze or hang, for computers and apps. Without 'se', 'colgar' is to hang something up or end a call.",
    "regionaisEs": {
     "Se me colgó la computadora.": "na América Latina",
-    "Se me ha colgado la computadora.": "na América Latina"
+    "Se me ha colgado la computadora.": "na América Latina",
+    "Se me ha colgado el computador.": "na Colômbia e no Chile",
+    "Se me colgó el ordenador.": "na América Latina"
    }
   },
   {
@@ -32690,7 +32740,10 @@
     "tecnologia"
    ],
    "nota": "«Correo» sozinho já é o e-mail; o correio de cartas é «correos», a instituição. «Olvidar» dispensa o «de» quando não é pronominal.",
-   "notaEn": "'Correo' alone means email; the postal service is 'Correos'. 'Olvidar' takes a direct object; 'olvidarse de' is the pronominal alternative."
+   "notaEn": "'Correo' alone means email; the postal service is 'Correos'. 'Olvidar' takes a direct object; 'olvidarse de' is the pronominal alternative.",
+   "regionaisEs": {
+    "Olvidé la contraseña del correo.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -33803,15 +33856,15 @@
    "id": "f191",
    "tipo": "frase",
    "es": "Por poco me caigo.",
-   "pt": "Por pouco eu caí.",
+   "pt": "Quase caí.",
    "en": "I almost fell.",
    "aceitas": [
-    "por pouco eu cai",
     "quase cai",
     "quase que eu cai",
     "por pouco nao cai",
     "faltou pouco para eu cair",
-    "quase levei um tombo"
+    "quase levei um tombo",
+    "eu quase cai"
    ],
    "aceitasEn": [
     "i almost fell",
@@ -33836,7 +33889,7 @@
     "gramática",
     "cotidiano"
    ],
-   "nota": "«Por poco» conta um susto que já passou, mas com o verbo no presente: «por poco me caigo», «por poco pierdo el tren». Traduzir por «quase» resolve; copiar o presente, não.",
+   "nota": "«Por poco me caigo» é quase caí: o tombo não aconteceu. O verbo vai no presente, mas fala de um susto que já passou — «por poco pierdo el tren», quase perdi o trem. Por isso «por pouco eu caí», que em português diz que caiu, não traduz.",
    "notaEn": "«Por poco» tells of a near miss in the past, yet keeps the verb in the present: «por poco me caigo», «por poco pierdo el tren»."
   },
   {
@@ -35830,7 +35883,8 @@
    "regionaisEs": {
     "¿Me prestas una pluma?": "no México",
     "¿Me prestas un lapicero?": "no Peru e na América Central",
-    "¿Me prestas una lapicera?": "na Argentina e no Uruguai"
+    "¿Me prestas una lapicera?": "na Argentina e no Uruguai",
+    "¿Me dejas un lapicero?": "no Peru e na América Central"
    },
    "aceitasEs": [
     "¿Me dejas un boli?"
@@ -38553,7 +38607,10 @@
     "cotidiano"
    ],
    "nota": "«Salir caro» é o preço que se descobre depois, somando tudo — e vale também para o prejuízo: «esa mentira le salió cara». O preço de etiqueta é «costar».",
-   "notaEn": "«Salir caro» is the price you find out afterwards, once everything is added up; it also covers a costly mistake."
+   "notaEn": "«Salir caro» is the price you find out afterwards, once everything is added up; it also covers a costly mistake.",
+   "regionaisEs": {
+    "Me salió muy caro.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -38595,7 +38652,10 @@
     "cotidiano"
    ],
    "nota": "«Pedir cita» é marcar; «tener cita» é já ter a hora marcada. No posto de saúde pede-se «cita previa», e no consultório particular se diz «hora».",
-   "notaEn": "«Pedir cita» is to book; «tener cita» is to have the slot already. Health centres ask for «cita previa»."
+   "notaEn": "«Pedir cita» is to book; «tener cita» is to have the slot already. Health centres ask for «cita previa».",
+   "regionaisEs": {
+    "Pedí cita con {el médico|la médica}.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -38636,7 +38696,10 @@
     "trabalho"
    ],
    "nota": "«Dar el alta» é liberar o paciente; o contrário, o afastamento por doença, é «la baja». Quem começa num emprego também é «dado de alta» na previdência.",
-   "notaEn": "«Dar el alta» is to discharge a patient; the opposite, sick leave, is «la baja». Starting a job also means being «dado de alta» with social security."
+   "notaEn": "«Dar el alta» is to discharge a patient; the opposite, sick leave, is «la baja». Starting a job also means being «dado de alta» with social security.",
+   "regionaisEs": {
+    "Me dieron el alta.": "na América Latina"
+   }
   },
   {
    "idioma": "es",
@@ -41130,7 +41193,10 @@
     "cotidiano"
    ],
    "nota": "Esse «me» tira a culpa de quem fala: a frase diz que o aparelho estragou sozinho, como em «se me cayó» e «se me olvidó».",
-   "notaEn": "That «me» shifts the blame off the speaker: the phone broke on its own, as in «se me cayó» and «se me olvidó»."
+   "notaEn": "That «me» shifts the blame off the speaker: the phone broke on its own, as in «se me cayó» and «se me olvidó».",
+   "regionaisEs": {
+    "Se me estropeó el móvil.": "na América Latina"
+   }
   },
   {
    "idioma": "es",

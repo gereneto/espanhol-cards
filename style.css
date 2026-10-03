@@ -248,7 +248,11 @@ tr.vago td{opacity:.42}
 #entrada{
   width:100%;background:var(--fundo);border:1px solid var(--borda);
   color:var(--texto);border-radius:11px;padding:14px 15px;font-size:18px;
+  /* é um textarea que cresce para baixo com a resposta (ver ajustarEntrada) */
+  display:block;font-family:inherit;line-height:1.35;resize:none;overflow:hidden;
+  transition:height .18s ease;
 }
+@media (prefers-reduced-motion:reduce){#entrada{transition:none}}
 #entrada:focus{outline:0;border-color:var(--acento)}
 
 /* ── feedback ── */

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="style.css?v=9a32c5d1">
+<link rel="stylesheet" href="style.css?v=1960f822">
 </head>
 <body>
 
@@ -97,12 +97,16 @@
 
       <!-- múltipla escolha -->
       <div id="area-multipla" class="alternativas"></div>
+      <!-- não saber também é resposta, e conta como erro sem chute -->
+      <div id="area-nao-sei-multipla" class="linha-botoes oculto">
+        <button class="secundario" id="btn-nao-sei-multipla">Não sei</button>
+      </div>
 
       <!-- escrita -->
       <div id="area-escrita" class="oculto">
-        <input type="text" id="entrada" autocomplete="off" autocorrect="off"
+        <textarea id="entrada" rows="1" autocomplete="off" autocorrect="off"
                autocapitalize="off" spellcheck="false" maxlength="120"
-               placeholder="escreva o significado…">
+               placeholder="escreva o significado…"></textarea>
         <div class="linha-botoes">
           <button class="primario" id="btn-responder">Responder</button>
           <button class="secundario" id="btn-nao-sei">Não sei</button>
@@ -287,10 +291,10 @@
 </footer>
 
 <script src="data/textos-es.js?v=510827a6"></script>
-<script src="data/cards.js?v=eb343bd4"></script>
+<script src="data/cards.js?v=169aabf8"></script>
 <script src="data/historico.js?v=fcb2ebb0"></script>
-<script src="js/motor.js?v=2a3da34c"></script>
+<script src="js/motor.js?v=6c96f418"></script>
 <script src="js/github.js?v=5713c2d2"></script>
-<script src="js/app.js?v=8d18c817"></script>
+<script src="js/app.js?v=664fd7b7"></script>
 </body>
 </html>

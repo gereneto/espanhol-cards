@@ -58,6 +58,7 @@
     'meta-tipo', 'meta-modo', 'aba-nivel', 'enunciado', 'termo',
     'bandeira-pergunta', 'bandeira-resposta', 'rotulo-resposta-txt', 'bandeira-feedback',
     'area-multipla', 'area-escrita', 'entrada', 'btn-responder', 'btn-nao-sei',
+    'area-nao-sei-multipla', 'btn-nao-sei-multipla',
     'aviso-lingua', 'aviso-acento', 'aviso-regiao',
     'meta-origem',
     'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
@@ -629,10 +630,29 @@
   }
 
   function proximoNovo() {
+    /* Em cada cinco cards novos, pelo menos um é de vocabulário (pedido do
+       Gere, 03/10): se as quatro últimas estreias foram frase — do baralho
+       ou da trilha —, a próxima é a primeira palavra da fila de inéditos. É
+       só um teto para as frases; palavra seguida pode vir à vontade. */
+    if (quatroFrasesSeguidas()) {
+      ordenarIneditos(progresso);
+      const i = progresso.ineditos.findIndex(id => (PORID[id] || {}).tipo === 'palavra');
+      if (i >= 0) return progresso.ineditos.splice(i, 1)[0];
+    }
     const daTrilha = idDaTrilha();
     if (daTrilha) return daTrilha;
     ordenarIneditos(progresso);
     return progresso.ineditos.shift();
+  }
+
+  /* As quatro estreias mais recentes, pela resposta em que cada card estreou
+     («estreouNa»). Card que estreou antes do campo existir não entra. */
+  function quatroFrasesSeguidas() {
+    const recentes = Object.keys(progresso.cards)
+      .filter(id => progresso.cards[id].estreouNa !== undefined)
+      .sort((a, b) => progresso.cards[b].estreouNa - progresso.cards[a].estreouNa)
+      .slice(0, 4);
+    return recentes.length === 4 && recentes.every(id => (PORID[id] || {}).tipo !== 'palavra');
   }
 
   /* O id é do texto da vez? Vale para o card de verso e para as palavras que
@@ -771,11 +791,15 @@
     if (modoAtual === 'multipla') {
       montarAlternativas();
       el['area-multipla'].classList.remove('oculto');
+      el['area-nao-sei-multipla'].classList.remove('oculto');
+      el['btn-nao-sei-multipla'].disabled = false;
       el['area-escrita'].classList.add('oculto');
     } else {
       el['area-multipla'].classList.add('oculto');
+      el['area-nao-sei-multipla'].classList.add('oculto');
       el['area-escrita'].classList.remove('oculto');
       el.entrada.value = '';
+      ajustarEntrada();
       el.entrada.disabled = false;
       el['btn-responder'].disabled = false;
       el['btn-nao-sei'].disabled = false;
@@ -817,10 +841,14 @@
     return Math.max(0, Math.round(performance.now() - inicioResposta));
   }
 
+  /* «botao» nulo é o «Não sei»: nenhuma alternativa escolhida, a certa
+     aparece, e conta como erro — o mesmo do «Não sei» da escrita. */
   function responderMultipla(texto, botao) {
     if (respostaPendente) return;
     const ms = tempoGasto();
-    const acertou = texto === alvoAtual;
+    const desistiu = !botao;
+    const acertou = !desistiu && texto === alvoAtual;
+    el['btn-nao-sei-multipla'].disabled = true;
 
     [...el['area-multipla'].children].forEach(b => {
       b.disabled = true;
@@ -829,7 +857,8 @@
       else if (b === botao && !acertou) b.classList.add('errada');
     });
 
-    concluir({ modo: 'multipla', direcao: direcaoAtual, acertou, quase: false, ms, resposta: texto });
+    concluir({ modo: 'multipla', direcao: direcaoAtual, acertou, quase: false, ms,
+      resposta: desistiu ? '' : texto, desistiu: desistiu });
   }
 
   function responderEscrita(desistiu) {
@@ -887,6 +916,7 @@
       'português 🇧🇷, e o que se pede é o espanhol dela — tente de novo.';
     el['aviso-lingua'].classList.remove('oculto');
     el.entrada.value = '';
+      ajustarEntrada();
     el.entrada.focus({ preventScroll: true });
   }
 
@@ -900,6 +930,7 @@
       'Tente de novo' + (s.dica ? ': começa com <b>' + escapar(s.dica) + '</b>.' : '.');
     el['aviso-lingua'].classList.remove('oculto');
     el.entrada.value = '';
+      ajustarEntrada();
     el.entrada.focus({ preventScroll: true });
   }
 
@@ -912,6 +943,7 @@
         'pergunta ao contrário. Aqui a tradução vai em português 🇧🇷 — tente de novo.';
     el['aviso-lingua'].classList.remove('oculto');
     el.entrada.value = '';
+      ajustarEntrada();
     el.entrada.focus({ preventScroll: true });
   }
 
@@ -1298,7 +1330,9 @@
     registrar(r);
     mostrarContestar(r);
     el['btn-proximo'].focus({ preventScroll: true });
-    trazerBotaoParaAVista();
+    /* Sem rolar (pedido do Gere, 03/10): quem julgou o próprio «quase» está
+       olhando para a resposta, e a tela que desce depois do clique tira dela
+       os olhos. Muda só a cor — o veredito e a caixa da resposta. */
   }
   /* Frases cuja palavra foi dominada até ontem e que ainda não estão nos
      inéditos. Antes elas entravam na hora do domínio; agora esperam o dia
@@ -2754,6 +2788,20 @@
   });
   el['btn-responder'].addEventListener('click', () => responderEscrita(false));
   el['btn-nao-sei'].addEventListener('click', () => responderEscrita(true));
+  el['btn-nao-sei-multipla'].addEventListener('click', () => responderMultipla(null, null));
+
+  /* A caixa de escrever cresce para baixo quando a resposta não cabe numa
+     linha (comentário do u141), e o Enter responde em vez de quebrar a
+     linha: a quebra é só do desenho, a resposta continua sendo uma linha. */
+  function ajustarEntrada() {
+    const t = el.entrada;
+    t.style.height = 'auto';
+    t.style.height = t.scrollHeight + 'px';
+  }
+  el.entrada.addEventListener('input', () => {
+    if (/\n/.test(el.entrada.value)) el.entrada.value = el.entrada.value.replace(/\s*\n\s*/g, ' ');
+    ajustarEntrada();
+  });
   el.entrada.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.keyCode === 13) { e.preventDefault(); responderEscrita(false); }
   });

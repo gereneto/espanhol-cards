@@ -729,6 +729,17 @@ card trocada por outra do baralho, da mesma classe e do mesmo gênero — nunca
 um sinônimo nem a variante de outro lugar. Nas demais frases, pesam mais as
 que dividem palavras com a certa.
 
+**Em cada cinco cards novos, pelo menos um é de vocabulário.** Se as quatro
+últimas estreias foram frase (do baralho ou da trilha de texto), a próxima é
+a primeira palavra da fila de inéditos. É só um teto para as frases.
+
+**«Não sei» também na múltipla escolha**, embaixo das alternativas: mostra a
+certa e conta como erro, como o da escrita. E a caixa de escrever cresce para
+baixo quando a resposta não cabe numa linha.
+
+**O «quase» julgado não mexe na tela.** Depois do «Acertei» ou «Errei», muda
+só a cor do veredito e da resposta; a tela fica onde está.
+
 **O erro sem nome mostra o que foi escrito.** Gênero, «ñ» e conjugação já
 tinham rótulo próprio; o resto dava só «não foi dessa vez» ao lado da resposta
 certa, e achar a diferença ficava por conta de quem lia. Agora o que foi

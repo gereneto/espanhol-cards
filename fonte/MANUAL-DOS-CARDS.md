@@ -293,9 +293,14 @@ Latina. A forma deste card é **el ordenador**.»
   só avisa quando o artigo escrito é o da variante.
 - **O espanhol igual de qualquer lugar não é regional**: «Buen provecho»,
   «el boli», «ponerse colorado» vão em `aceitasEs`, sem aviso.
-- Diferença de **tempo verbal** entre as regiões (o «he hecho» da Espanha
-  contra o «hice» da América) não entra por aqui, card a card; fica para uma
-  regra do conferidor, se um dia for o caso.
+- **O pretérito composto da Espanha aceita o simples da América.** «Me he
+  quedado sin batería» leva «Me quedé sin batería» em `regionaisEs`, «na
+  América Latina» (comentário do f154). Fora o card de conjugação, que cobra
+  o tempo: ali o simples é a forma errada, e mora em `formasEs`.
+- **A palavra regional alcança as outras frases.** Se `el coche` aceita «el
+  carro», «Llevé el coche al taller» também aceita «Llevé el carro al taller»
+  (contestação do u043). Card novo com palavra que tem variante leva a
+  variante na frase.
 
 ## 6. Distratores
 
@@ -668,6 +673,10 @@ sem ele o navegador serve o baralho velho.
 | Na volta, a frase de uso troca só a palavra | `f167` «os distratores têm que ser mais sutis» |
 | A nota não deixa dúvida sobre de quem fala | `u014` «parece que em português deixe serve para segunda e terceira pessoa» |
 | Aceitar o desfecho sem a abertura que o card ensina, não | `f204` «acabou que não fomos» sem o «resumindo» |
+| O pretérito simples da América vale onde a Espanha usa o composto | `f154` «Me he quedado sin batería»: «esse jeito não é aceito na América Latina?» |
+| A palavra regional vale em todas as frases | `u043` «lleve el carro al taller» |
+| O `pt` que diz o contrário do espanhol | `f191` «Por pouco eu caí» — caiu ou não caiu? Virou «Quase caí» |
+| Gíria tem `pt` de gíria, com o neutro no parêntese | `p042` currar: «trampar (trabalhar)» |
 | Dois sentidos correntes: o outro entra em `aceitas` | `p171` el borrador: «a borracha» (América Latina) e «o apagador» (Espanha) |
 | O jeito de conversa de chamar a mesma coisa | `f225` «marquei uma consulta com o doutor» |
 | O `pt` que não diz o tratamento aceita tú e usted | `u014` «Deje la propina en la mesa», recusado no «quase» sem estar errado |
