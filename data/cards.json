@@ -2,7 +2,7 @@
  "versao": 1,
  "idioma": "es",
  "gerado_em": "2026-10-05",
- "total": 1460,
+ "total": 1564,
  "cards": [
   {
    "idioma": "es",
@@ -44436,7 +44436,10 @@
     "verbo"
    ],
    "nota": "Terminar e acabar: «la película termina a las diez».",
-   "notaEn": "To finish or end: «la película termina a las diez»."
+   "notaEn": "To finish or end: «la película termina a las diez».",
+   "sinonimosEs": [
+    "acabar"
+   ]
   },
   {
    "idioma": "es",
@@ -45372,7 +45375,10 @@
     "escola"
    ],
    "nota": "Na escola, é a prova. Passar é «aprobar»; reprovar, «suspender».",
-   "notaEn": "At school, the exam. To pass is «aprobar»; to fail, «suspender»."
+   "notaEn": "At school, the exam. To pass is «aprobar»; to fail, «suspender».",
+   "sinonimosEs": [
+    "la prueba"
+   ]
   },
   {
    "idioma": "es",
@@ -45598,7 +45604,10 @@
     "economia"
    ],
    "nota": "A conta do restaurante («¿nos trae la cuenta?») e a do banco. «Darse cuenta» é perceber; «a fin de cuentas», afinal.",
-   "notaEn": "The restaurant bill and a bank account. «Darse cuenta» is to realise; «a fin de cuentas», after all."
+   "notaEn": "The restaurant bill and a bank account. «Darse cuenta» is to realise; «a fin de cuentas», after all.",
+   "sinonimosEs": [
+    "la factura"
+   ]
   },
   {
    "idioma": "es",
@@ -45786,7 +45795,10 @@
     "verbo"
    ],
    "nota": "Tirar de dentro: «saca la basura», «sacar dinero». Também é conseguir: «sacar buena nota», «sacarse el carné».",
-   "notaEn": "To take out: «saca la basura». Also to get: «sacar buena nota», to get a good mark."
+   "notaEn": "To take out: «saca la basura». Also to get: «sacar buena nota», to get a good mark.",
+   "sinonimosEs": [
+    "quitar"
+   ]
   },
   {
    "idioma": "es",
@@ -45818,7 +45830,10 @@
     "cotidiano"
    ],
    "nota": "Cedo. Na Espanha «pronto» também quer dizer cedo, mas é mais logo: «hasta pronto».",
-   "notaEn": "Early. In Spain «pronto» can also mean early, but usually soon."
+   "notaEn": "Early. In Spain «pronto» can also mean early, but usually soon.",
+   "sinonimosEs": [
+    "pronto"
+   ]
   },
   {
    "idioma": "es",
@@ -46140,7 +46155,10 @@
     "roupa"
    ],
    "nota": "O casaco grosso de inverno. Agasalhar-se é «abrigarse»: «abrígate, que hace frío».",
-   "notaEn": "A winter coat. «Abrigarse» is to wrap up warm."
+   "notaEn": "A winter coat. «Abrigarse» is to wrap up warm.",
+   "sinonimosEs": [
+    "la chaqueta"
+   ]
   },
   {
    "idioma": "es",
@@ -46179,7 +46197,10 @@
     "casa"
    ],
    "nota": "O banheiro e o banho: «darse un baño». Na Espanha também se diz «el servicio» ou «los aseos».",
-   "notaEn": "The bathroom and the bath. In Spain also «el servicio» or «los aseos»."
+   "notaEn": "The bathroom and the bath. In Spain also «el servicio» or «los aseos».",
+   "sinonimosEs": [
+    "los aseos"
+   ]
   },
   {
    "idioma": "es",
@@ -46321,7 +46342,10 @@
     "cotidiano"
    ],
    "nota": "«Fin de semana» é fim de semana; «a fin de cuentas», no fim das contas; «por fin», finalmente.",
-   "notaEn": "«Fin de semana» is weekend; «por fin», at last."
+   "notaEn": "«Fin de semana» is weekend; «por fin», at last.",
+   "sinonimosEs": [
+    "el final"
+   ]
   },
   {
    "idioma": "es",
@@ -47456,7 +47480,10 @@
     "verbo"
    ],
    "nota": "A bebida é «la bebida». Tomar algo no bar é «tomar algo».",
-   "notaEn": "A drink is «la bebida»."
+   "notaEn": "A drink is «la bebida».",
+   "sinonimosEs": [
+    "tomar"
+   ]
   },
   {
    "idioma": "es",
@@ -47663,7 +47690,10 @@
     "verbo"
    ],
    "nota": "«¿Cuánto cuesta?» é quanto custa? Também é ser difícil: «me cuesta madrugar». O o vira ue.",
-   "notaEn": "«¿Cuánto cuesta?» is how much is it? Also to be hard: «me cuesta madrugar»."
+   "notaEn": "«¿Cuánto cuesta?» is how much is it? Also to be hard: «me cuesta madrugar».",
+   "sinonimosEs": [
+    "valer"
+   ]
   },
   {
    "idioma": "es",
@@ -50457,7 +50487,10 @@
     "verbo"
    ],
    "nota": "«Acabar de» + infinitivo é acabar de: «acabo de llegar».",
-   "notaEn": "«Acabar de» + infinitive is to have just: «acabo de llegar»."
+   "notaEn": "«Acabar de» + infinitive is to have just: «acabo de llegar».",
+   "sinonimosEs": [
+    "terminar"
+   ]
   },
   {
    "idioma": "es",
@@ -51268,7 +51301,10 @@
     "adjetivo"
    ],
    "nota": "«Salir caro» é sair caro. Querido, numa carta, também pode ser «caro», mas o comum é «querido».",
-   "notaEn": "«Salir caro» is to turn out expensive."
+   "notaEn": "«Salir caro» is to turn out expensive.",
+   "sinonimosEs": [
+    "costoso"
+   ]
   },
   {
    "idioma": "es",
@@ -51379,7 +51415,10 @@
     "verbo"
    ],
    "nota": "Conseguir algo e conseguir fazer: «conseguí terminar». O e vira i: «consigo», «consiguió».",
-   "notaEn": "To get, or to manage to: «conseguí terminar». The e becomes i: «consigo»."
+   "notaEn": "To get, or to manage to: «conseguí terminar». The e becomes i: «consigo».",
+   "sinonimosEs": [
+    "lograr"
+   ]
   },
   {
    "idioma": "es",
@@ -51804,7 +51843,10 @@
     "falso-amigo"
    ],
    "nota": "Devagar, não espaçoso: «habla más despacio, por favor». Espaçoso é «espacioso».",
-   "notaEn": "Slowly: «habla más despacio, por favor». Roomy is «espacioso»."
+   "notaEn": "Slowly: «habla más despacio, por favor». Roomy is «espacioso».",
+   "sinonimosEs": [
+    "lento"
+   ]
   },
   {
    "idioma": "es",
@@ -51991,7 +52033,7 @@
    "id": "p607",
    "tipo": "palavra",
    "es": "el alta",
-   "pt": "a alta",
+   "pt": "a alta (do hospital)",
    "en": "the discharge",
    "aceitas": [
     "alta",
@@ -52004,10 +52046,10 @@
     "medical discharge"
    ],
    "distratores": [
-    "a entrada",
-    "a internação",
-    "a altura",
-    "a consulta"
+    "a entrada (no hospital)",
+    "a internação (no hospital)",
+    "a altura (do prédio)",
+    "a consulta (médica)"
    ],
    "distratoresEn": [
     "the entry",
@@ -52237,7 +52279,10 @@
     "trabalho"
    ],
    "nota": "«El asunto del correo», o assunto do e-mail. «Asuntos exteriores», relações exteriores.",
-   "notaEn": "«El asunto del correo», the e-mail subject."
+   "notaEn": "«El asunto del correo», the e-mail subject.",
+   "sinonimosEs": [
+    "el tema"
+   ]
   },
   {
    "idioma": "es",
@@ -52585,7 +52630,11 @@
     "social"
    ],
    "nota": "Feminino «la chica». Na Espanha, chega até uns trinta e tantos: «los chicos de la oficina».",
-   "notaEn": "Feminine «la chica». Used well into adulthood: «los chicos de la oficina»."
+   "notaEn": "Feminine «la chica». Used well into adulthood: «los chicos de la oficina».",
+   "sinonimosEs": [
+    "el niño",
+    "el chaval"
+   ]
   },
   {
    "idioma": "es",
@@ -52859,7 +52908,7 @@
    "id": "p630",
    "tipo": "palavra",
    "es": "el cuadro",
-   "pt": "o quadro",
+   "pt": "o quadro (pintura)",
    "en": "the painting",
    "aceitas": [
     "quadro",
@@ -52874,10 +52923,10 @@
     "frame"
    ],
    "distratores": [
-    "o quarto",
-    "a quadra",
-    "o espelho",
-    "o retrato"
+    "o quarto (de dormir)",
+    "a quadra (de esportes)",
+    "o espelho (de parede)",
+    "o retrato (de família)"
    ],
    "distratoresEn": [
     "the room",
@@ -53069,7 +53118,10 @@
     "trabalho"
    ],
    "nota": "Também «el paro», o mais comum na Espanha: «estoy en el paro».",
-   "notaEn": "Also «el paro», the usual word in Spain."
+   "notaEn": "Also «el paro», the usual word in Spain.",
+   "sinonimosEs": [
+    "el paro"
+   ]
   },
   {
    "idioma": "es",
@@ -53371,7 +53423,10 @@
     "cotidiano"
    ],
    "nota": "«Al final», no fim: «al final no fuimos». «A finales de mes», no fim do mês.",
-   "notaEn": "«Al final», in the end. «A finales de mes», at the end of the month."
+   "notaEn": "«Al final», in the end. «A finales de mes», at the end of the month.",
+   "sinonimosEs": [
+    "el fin"
+   ]
   },
   {
    "idioma": "es",
@@ -53449,7 +53504,10 @@
     "social"
    ],
    "nota": "O gesto e a expressão do rosto: «con gesto serio», com cara séria.",
-   "notaEn": "Gesture and facial expression: «con gesto serio»."
+   "notaEn": "Gesture and facial expression: «con gesto serio».",
+   "sinonimosEs": [
+    "el ademán"
+   ]
   },
   {
    "idioma": "es",
@@ -53633,7 +53691,10 @@
     "escola"
    ],
    "nota": "Masculino apesar do -a: «el idioma», «los idiomas».",
-   "notaEn": "Masculine despite the -a."
+   "notaEn": "Masculine despite the -a.",
+   "sinonimosEs": [
+    "la lengua"
+   ]
   },
   {
    "idioma": "es",
@@ -54848,7 +54909,10 @@
     "mídia"
    ],
    "nota": "O boato e o murmúrio: «el rumor del mar».",
-   "notaEn": "A rumour, and a murmur: «el rumor del mar»."
+   "notaEn": "A rumour, and a murmur: «el rumor del mar».",
+   "sinonimosEs": [
+    "el bulo"
+   ]
   },
   {
    "idioma": "es",
@@ -56785,7 +56849,10 @@
     "substantivo"
    ],
    "nota": "Bola em geral; a de futebol costuma ser «el balón». Coloquial, mentira: «¡qué bola!». «No da pie con bola», não acerta uma.",
-   "notaEn": "Ball in general; a football is «el balón». Colloquially, a lie."
+   "notaEn": "Ball in general; a football is «el balón». Colloquially, a lie.",
+   "sinonimosEs": [
+    "la pelota"
+   ]
   },
   {
    "idioma": "es",
@@ -57252,7 +57319,10 @@
     "roupa"
    ],
    "nota": "Casaco leve ou paletó. O casaco grosso é «el abrigo».",
-   "notaEn": "A jacket. A heavy coat is «el abrigo»."
+   "notaEn": "A jacket. A heavy coat is «el abrigo».",
+   "sinonimosEs": [
+    "el abrigo"
+   ]
   },
   {
    "idioma": "es",
@@ -57367,7 +57437,10 @@
     "Espanha"
    ],
    "nota": "Vulgar, da Espanha. «Ni de coña», nem a pau. «Estar de coña», estar de brincadeira.",
-   "notaEn": "Vulgar, Spain. «Ni de coña», no way."
+   "notaEn": "Vulgar, Spain. «Ni de coña», no way.",
+   "sinonimosEs": [
+    "la broma"
+   ]
   },
   {
    "idioma": "es",
@@ -58201,7 +58274,10 @@
     "corpo"
    ],
    "nota": "O órgão e o idioma. «No tener pelos en la lengua», não ter papas na língua.",
-   "notaEn": "Tongue and language. «No tener pelos en la lengua», to be outspoken."
+   "notaEn": "Tongue and language. «No tener pelos en la lengua», to be outspoken.",
+   "sinonimosEs": [
+    "el idioma"
+   ]
   },
   {
    "idioma": "es",
@@ -59062,7 +59138,10 @@
     "substantivo"
    ],
    "nota": "A bola de jogar. «Ser un pelota», ser puxa-saco, e aí é «el pelota» ou «la pelota». «Hacer la pelota», puxar o saco.",
-   "notaEn": "A ball. «Ser un pelota», to be a crawler."
+   "notaEn": "A ball. «Ser un pelota», to be a crawler.",
+   "sinonimosEs": [
+    "la bola"
+   ]
   },
   {
    "idioma": "es",
@@ -59210,13 +59289,12 @@
    "id": "p804",
    "tipo": "palavra",
    "es": "la pinta",
-   "pt": "a cara",
+   "pt": "a aparência",
    "en": "the look",
    "aceitas": [
     "cara",
     "a aparencia",
     "o aspecto",
-    "o jeito",
     "a pinta",
     "aparencia",
     "aspecto"
@@ -59246,6 +59324,3773 @@
    ],
    "nota": "A aparência: «tiene buena pinta», está com uma cara boa. «Pinta» também é pintinha.",
    "notaEn": "Appearance: «tiene buena pinta», it looks good."
+  },
+  {
+   "idioma": "es",
+   "id": "p805",
+   "tipo": "palavra",
+   "es": "la pizarra",
+   "pt": "a lousa",
+   "en": "the board",
+   "aceitas": [
+    "quadro",
+    "a lousa",
+    "lousa",
+    "o quadro-negro",
+    "a ardosia"
+   ],
+   "aceitasEn": [
+    "board",
+    "the board",
+    "blackboard",
+    "whiteboard",
+    "slate"
+   ],
+   "distratores": [
+    "o caderno",
+    "a borracha",
+    "o giz",
+    "a pizza"
+   ],
+   "distratoresEn": [
+    "the notebook",
+    "the eraser",
+    "the chalk",
+    "the pizza"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "escola"
+   ],
+   "nota": "O quadro da sala de aula; e a ardósia do telhado. O quadro de pendurar é «el cuadro».",
+   "notaEn": "The classroom board. A painting is «el cuadro»."
+  },
+  {
+   "idioma": "es",
+   "id": "p806",
+   "tipo": "palavra",
+   "es": "la pizza",
+   "pt": "a pizza",
+   "en": "the pizza",
+   "aceitas": [
+    "pizza"
+   ],
+   "aceitasEn": [
+    "pizza",
+    "the pizza"
+   ],
+   "distratores": [
+    "a massa",
+    "a torta",
+    "o pão",
+    "a pizarra"
+   ],
+   "distratoresEn": [
+    "the pasta",
+    "the pie",
+    "the bread",
+    "the board"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "comida"
+   ],
+   "nota": "Os dois z soam como ts, igual ao italiano.",
+   "notaEn": "The double z sounds like ts, as in Italian."
+  },
+  {
+   "idioma": "es",
+   "id": "p807",
+   "tipo": "palavra",
+   "es": "la planta",
+   "pt": "a planta",
+   "en": "the plant / the floor",
+   "aceitas": [
+    "planta",
+    "o andar",
+    "o piso"
+   ],
+   "aceitasEn": [
+    "plant",
+    "the plant",
+    "floor",
+    "the floor",
+    "storey"
+   ],
+   "distratores": [
+    "a plantação",
+    "o plano",
+    "a placa",
+    "a prancha"
+   ],
+   "distratoresEn": [
+    "the plantation / the farm",
+    "the plan / the project",
+    "the sign / the plate",
+    "the board / the plank"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "A planta e o andar do prédio: «vivo en la tercera planta». «Planta baja», o térreo.",
+   "notaEn": "Plant, and storey: «planta baja», ground floor."
+  },
+  {
+   "idioma": "es",
+   "id": "p808",
+   "tipo": "palavra",
+   "es": "la prueba",
+   "pt": "a prova",
+   "en": "the proof / the test",
+   "aceitas": [
+    "prova",
+    "o teste",
+    "a evidencia"
+   ],
+   "aceitasEn": [
+    "proof",
+    "the proof",
+    "test",
+    "the test",
+    "evidence"
+   ],
+   "distratores": [
+    "a provocação",
+    "o provérbio",
+    "a proveta",
+    "a praia"
+   ],
+   "distratoresEn": [
+    "the provocation / the dare",
+    "the proverb / the saying",
+    "the test tube / the tube",
+    "the beach / the coast"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "jurídico",
+    "escola"
+   ],
+   "nota": "A prova do crime e o teste: «prueba de embarazo». Provar é «probar».",
+   "notaEn": "Proof and test. To try is «probar».",
+   "sinonimosEs": [
+    "el examen"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p809",
+   "tipo": "palavra",
+   "es": "la punta",
+   "pt": "a ponta",
+   "en": "the tip",
+   "aceitas": [
+    "ponta",
+    "a pontinha"
+   ],
+   "aceitasEn": [
+    "tip",
+    "the tip",
+    "point",
+    "end"
+   ],
+   "distratores": [
+    "a ponte",
+    "o ponto",
+    "a pontada",
+    "a punhalada"
+   ],
+   "distratoresEn": [
+    "the bridge",
+    "the dot",
+    "the twinge",
+    "the stab"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«De punta en blanco», nos trinques. «En la punta de la lengua», na ponta da língua.",
+   "notaEn": "«De punta en blanco», dressed to the nines."
+  },
+  {
+   "idioma": "es",
+   "id": "p810",
+   "tipo": "palavra",
+   "es": "la ración",
+   "pt": "a porção",
+   "en": "the portion",
+   "aceitas": [
+    "porcao",
+    "a racao",
+    "a dose"
+   ],
+   "aceitasEn": [
+    "portion",
+    "the portion",
+    "serving",
+    "ration"
+   ],
+   "distratores": [
+    "a razão",
+    "a reação",
+    "a receita",
+    "a ração animal"
+   ],
+   "distratoresEn": [
+    "the reason",
+    "the reaction",
+    "the recipe",
+    "the animal feed"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "comida",
+    "falso-amigo"
+   ],
+   "nota": "O prato para dividir no bar: «una ración de jamón». Ração de bicho é «el pienso».",
+   "notaEn": "A sharing plate in a bar. Animal feed is «el pienso»."
+  },
+  {
+   "idioma": "es",
+   "id": "p811",
+   "tipo": "palavra",
+   "es": "la rama",
+   "pt": "o galho",
+   "en": "the branch",
+   "aceitas": [
+    "galho",
+    "o ramo"
+   ],
+   "aceitasEn": [
+    "branch",
+    "the branch",
+    "bough"
+   ],
+   "distratores": [
+    "a raiz",
+    "o tronco",
+    "a folha",
+    "a grama"
+   ],
+   "distratoresEn": [
+    "the root",
+    "the trunk",
+    "the leaf",
+    "the grass"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«Andarse por las ramas», enrolar, fugir do assunto.",
+   "notaEn": "«Andarse por las ramas», to beat about the bush."
+  },
+  {
+   "idioma": "es",
+   "id": "p812",
+   "tipo": "palavra",
+   "es": "la reforma",
+   "pt": "a reforma",
+   "en": "the renovation",
+   "aceitas": [
+    "reforma",
+    "a obra"
+   ],
+   "aceitasEn": [
+    "renovation",
+    "the renovation",
+    "reform",
+    "refurbishment"
+   ],
+   "distratores": [
+    "a forma",
+    "a reforma agrária",
+    "a mudança",
+    "a aposentadoria"
+   ],
+   "distratoresEn": [
+    "the shape",
+    "the land reform",
+    "the move",
+    "the retirement"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "A obra em casa e a reforma política. Aposentadoria é «la jubilación».",
+   "notaEn": "Renovation and reform. Retirement is «la jubilación»."
+  },
+  {
+   "idioma": "es",
+   "id": "p813",
+   "tipo": "palavra",
+   "es": "la respuesta",
+   "pt": "a resposta",
+   "en": "the answer",
+   "aceitas": [
+    "resposta"
+   ],
+   "aceitasEn": [
+    "answer",
+    "the answer",
+    "reply",
+    "response"
+   ],
+   "distratores": [
+    "a pergunta",
+    "a proposta",
+    "a aposta",
+    "a resposta errada"
+   ],
+   "distratoresEn": [
+    "the question",
+    "the proposal",
+    "the bet",
+    "the wrong answer"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "escola"
+   ],
+   "nota": "Responder é «responder» ou «contestar».",
+   "notaEn": "To answer is «responder» or «contestar»."
+  },
+  {
+   "idioma": "es",
+   "id": "p814",
+   "tipo": "palavra",
+   "es": "la reunión",
+   "pt": "a reunião",
+   "en": "the meeting",
+   "aceitas": [
+    "reuniao"
+   ],
+   "aceitasEn": [
+    "meeting",
+    "the meeting",
+    "gathering"
+   ],
+   "distratores": [
+    "a união",
+    "a revisão",
+    "a decisão",
+    "a reação"
+   ],
+   "distratoresEn": [
+    "the union",
+    "the review",
+    "the decision",
+    "the reaction"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "trabalho"
+   ],
+   "nota": "«Estar reunido», estar em reunião.",
+   "notaEn": "«Estar reunido», to be in a meeting."
+  },
+  {
+   "idioma": "es",
+   "id": "p815",
+   "tipo": "palavra",
+   "es": "la rutina",
+   "pt": "a rotina",
+   "en": "the routine",
+   "aceitas": [
+    "rotina"
+   ],
+   "aceitasEn": [
+    "routine",
+    "the routine"
+   ],
+   "distratores": [
+    "a ruína",
+    "a retina",
+    "a rotatória",
+    "a novidade"
+   ],
+   "distratoresEn": [
+    "the ruin",
+    "the retina",
+    "the roundabout",
+    "the novelty"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "cotidiano"
+   ],
+   "nota": "Com u: «rutina». «Romper la rutina», sair da rotina.",
+   "notaEn": "Spelled with u."
+  },
+  {
+   "idioma": "es",
+   "id": "p816",
+   "tipo": "palavra",
+   "es": "la salud",
+   "pt": "a saúde",
+   "en": "the health",
+   "aceitas": [
+    "saude"
+   ],
+   "aceitasEn": [
+    "health",
+    "the health"
+   ],
+   "distratores": [
+    "a saudade",
+    "o saudável",
+    "a doença",
+    "o saldo"
+   ],
+   "distratoresEn": [
+    "the longing",
+    "the healthy",
+    "the illness",
+    "the balance"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "saúde"
+   ],
+   "nota": "«¡Salud!», saúde! no brinde e no espirro. Saudável é «sano» ou «saludable».",
+   "notaEn": "«¡Salud!», cheers, or bless you."
+  },
+  {
+   "idioma": "es",
+   "id": "p817",
+   "tipo": "palavra",
+   "es": "la sequía",
+   "pt": "a seca",
+   "en": "the drought",
+   "aceitas": [
+    "seca",
+    "a estiagem"
+   ],
+   "aceitasEn": [
+    "drought",
+    "the drought",
+    "dry spell"
+   ],
+   "distratores": [
+    "a enchente",
+    "a sede",
+    "a sequência",
+    "a secura"
+   ],
+   "distratoresEn": [
+    "the flood",
+    "the thirst",
+    "the sequence",
+    "the dryness"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo",
+    "economia"
+   ],
+   "nota": "A falta de chuva. Seco é «seco».",
+   "notaEn": "Lack of rain. Dry is «seco»."
+  },
+  {
+   "idioma": "es",
+   "id": "p818",
+   "tipo": "palavra",
+   "es": "la solución",
+   "pt": "a solução",
+   "en": "the solution",
+   "aceitas": [
+    "solucao"
+   ],
+   "aceitasEn": [
+    "solution",
+    "the solution",
+    "answer"
+   ],
+   "distratores": [
+    "o soluço",
+    "a resolução",
+    "a poluição",
+    "a sujeição"
+   ],
+   "distratoresEn": [
+    "the hiccup",
+    "the resolution",
+    "the pollution",
+    "the subjection"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Igual ao português. «No tiene solución», não tem jeito.",
+   "notaEn": "«No tiene solución», it's hopeless."
+  },
+  {
+   "idioma": "es",
+   "id": "p819",
+   "tipo": "palavra",
+   "es": "la sorpresa",
+   "pt": "a surpresa",
+   "en": "the surprise",
+   "aceitas": [
+    "surpresa"
+   ],
+   "aceitasEn": [
+    "surprise",
+    "the surprise"
+   ],
+   "distratores": [
+    "a pressa",
+    "a sobremesa",
+    "a promessa",
+    "a represa"
+   ],
+   "distratoresEn": [
+    "the hurry",
+    "the dessert",
+    "the promise",
+    "the dam"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "Com o: «sorpresa». «Pillar de sorpresa», pegar de surpresa.",
+   "notaEn": "Spelled with o."
+  },
+  {
+   "idioma": "es",
+   "id": "p820",
+   "tipo": "palavra",
+   "es": "la tarjeta",
+   "pt": "o cartão",
+   "en": "the card",
+   "aceitas": [
+    "cartao"
+   ],
+   "aceitasEn": [
+    "card",
+    "the card",
+    "credit card"
+   ],
+   "distratores": [
+    "a tarefa",
+    "a etiqueta",
+    "o envelope",
+    "a tarja"
+   ],
+   "distratoresEn": [
+    "the task",
+    "the label",
+    "the envelope",
+    "the stripe"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "economia"
+   ],
+   "nota": "«Pagar con tarjeta», pagar com cartão. O cartão-postal é «la postal».",
+   "notaEn": "«Pagar con tarjeta», to pay by card."
+  },
+  {
+   "idioma": "es",
+   "id": "p821",
+   "tipo": "palavra",
+   "es": "la tele",
+   "pt": "a tevê",
+   "en": "the telly",
+   "aceitas": [
+    "teve",
+    "tv",
+    "a tv",
+    "a televisao",
+    "televisao"
+   ],
+   "aceitasEn": [
+    "telly",
+    "the telly",
+    "tv",
+    "the tv",
+    "television"
+   ],
+   "distratores": [
+    "o telefone",
+    "a tela",
+    "o rádio",
+    "o controle"
+   ],
+   "distratoresEn": [
+    "the phone",
+    "the screen",
+    "the radio",
+    "the remote"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "Encurtamento de «la televisión». O controle remoto é «el mando».",
+   "notaEn": "Short for «la televisión». The remote is «el mando»."
+  },
+  {
+   "idioma": "es",
+   "id": "p822",
+   "tipo": "palavra",
+   "es": "la toalla",
+   "pt": "a toalha",
+   "en": "the towel",
+   "aceitas": [
+    "toalha"
+   ],
+   "aceitasEn": [
+    "towel",
+    "the towel"
+   ],
+   "distratores": [
+    "a toalha de mesa",
+    "o lençol",
+    "o sabonete",
+    "a tolha"
+   ],
+   "distratoresEn": [
+    "the tablecloth",
+    "the sheet",
+    "the soap",
+    "the tulle"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "«Tirar la toalla», jogar a toalha. A toalha de mesa é «el mantel».",
+   "notaEn": "«Tirar la toalla», to throw in the towel. A tablecloth is «el mantel»."
+  },
+  {
+   "idioma": "es",
+   "id": "p823",
+   "tipo": "palavra",
+   "es": "la tos",
+   "pt": "a tosse",
+   "en": "the cough",
+   "aceitas": [
+    "tosse"
+   ],
+   "aceitasEn": [
+    "cough",
+    "the cough"
+   ],
+   "distratores": [
+    "a febre",
+    "o espirro",
+    "a dor",
+    "a gripe"
+   ],
+   "distratoresEn": [
+    "the fever",
+    "the sneeze",
+    "the pain",
+    "the flu"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "saúde"
+   ],
+   "nota": "Tossir é «toser». «Jarabe para la tos», xarope para tosse.",
+   "notaEn": "To cough is «toser»."
+  },
+  {
+   "idioma": "es",
+   "id": "p824",
+   "tipo": "palavra",
+   "es": "la tripa",
+   "pt": "a tripa",
+   "en": "the gut",
+   "aceitas": [
+    "tripa",
+    "a barriga",
+    "o intestino"
+   ],
+   "aceitasEn": [
+    "gut",
+    "the gut",
+    "belly",
+    "tummy",
+    "intestine"
+   ],
+   "distratores": [
+    "a tribo",
+    "a trilha",
+    "a tropa",
+    "a trapaça"
+   ],
+   "distratoresEn": [
+    "the tribe",
+    "the trail",
+    "the troop",
+    "the trick"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "substantivo",
+    "corpo"
+   ],
+   "nota": "Coloquial, a barriga: «me duele la tripa». «Hacer de tripas corazón», tirar forças de onde não tem.",
+   "notaEn": "Colloquially, the belly. «Hacer de tripas corazón», to pluck up courage."
+  },
+  {
+   "idioma": "es",
+   "id": "p825",
+   "tipo": "palavra",
+   "es": "la universidad",
+   "pt": "a universidade",
+   "en": "the university",
+   "aceitas": [
+    "universidade",
+    "a faculdade"
+   ],
+   "aceitasEn": [
+    "university",
+    "the university",
+    "college"
+   ],
+   "distratores": [
+    "a universalidade",
+    "a escola",
+    "o universo",
+    "a diversidade"
+   ],
+   "distratoresEn": [
+    "the universality",
+    "the school",
+    "the universe",
+    "the diversity"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "escola"
+   ],
+   "nota": "Coloquial: «la uni». O curso é «la carrera».",
+   "notaEn": "Colloquially «la uni». A degree course is «la carrera»."
+  },
+  {
+   "idioma": "es",
+   "id": "p826",
+   "tipo": "palavra",
+   "es": "la verdad",
+   "pt": "a verdade",
+   "en": "the truth",
+   "aceitas": [
+    "verdade"
+   ],
+   "aceitasEn": [
+    "truth",
+    "the truth"
+   ],
+   "distratores": [
+    "a mentira",
+    "a vontade",
+    "a verba",
+    "a vaidade"
+   ],
+   "distratoresEn": [
+    "the lie",
+    "the will",
+    "the budget",
+    "the vanity"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«¿Verdad?», né? «De verdad», de verdade. «A decir verdad», para falar a verdade.",
+   "notaEn": "«¿Verdad?», right?"
+  },
+  {
+   "idioma": "es",
+   "id": "p827",
+   "tipo": "palavra",
+   "es": "la vergüenza",
+   "pt": "a vergonha",
+   "en": "the shame / the embarrassment",
+   "aceitas": [
+    "vergonha"
+   ],
+   "aceitasEn": [
+    "shame",
+    "the shame",
+    "embarrassment",
+    "the embarrassment"
+   ],
+   "distratores": [
+    "a vingança",
+    "a verga",
+    "a virgem",
+    "a varanda"
+   ],
+   "distratoresEn": [
+    "the revenge / the payback",
+    "the rod / the stick",
+    "the virgin / the maiden",
+    "the balcony / the porch"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«Me da vergüenza», tenho vergonha. «¡Qué vergüenza!», que vergonha!",
+   "notaEn": "«Me da vergüenza», I'm embarrassed."
+  },
+  {
+   "idioma": "es",
+   "id": "p828",
+   "tipo": "palavra",
+   "es": "la vez",
+   "pt": "a vez",
+   "en": "the time",
+   "aceitas": [
+    "vez"
+   ],
+   "aceitasEn": [
+    "time",
+    "the time",
+    "turn",
+    "occasion"
+   ],
+   "distratores": [
+    "a voz",
+    "o vício",
+    "a véspera",
+    "a hora"
+   ],
+   "distratoresEn": [
+    "the voice",
+    "the vice",
+    "the eve",
+    "the hour"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "cotidiano"
+   ],
+   "nota": "Plural «veces». «A veces», às vezes. «Otra vez», de novo. «Tal vez», talvez.",
+   "notaEn": "«A veces», sometimes. «Otra vez», again."
+  },
+  {
+   "idioma": "es",
+   "id": "p829",
+   "tipo": "palavra",
+   "es": "la vista",
+   "pt": "a vista",
+   "en": "the sight / the view",
+   "aceitas": [
+    "vista",
+    "a visao"
+   ],
+   "aceitasEn": [
+    "sight",
+    "the sight",
+    "view",
+    "the view",
+    "eyesight"
+   ],
+   "distratores": [
+    "a visita",
+    "a revista",
+    "a vítima",
+    "a vitrine"
+   ],
+   "distratoresEn": [
+    "the visit / the guest",
+    "the magazine / the journal",
+    "the victim / the wounded",
+    "the shop window / the shop"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«Hasta la vista», até mais. «Hacer la vista gorda», fazer vista grossa.",
+   "notaEn": "«Hacer la vista gorda», to turn a blind eye."
+  },
+  {
+   "idioma": "es",
+   "id": "p830",
+   "tipo": "palavra",
+   "es": "lanzar",
+   "pt": "lançar",
+   "en": "to throw / to launch",
+   "aceitas": [
+    "lancar",
+    "jogar",
+    "arremessar",
+    "atirar"
+   ],
+   "aceitasEn": [
+    "to throw",
+    "to launch",
+    "to hurl",
+    "throw"
+   ],
+   "distratores": [
+    "lavar",
+    "lambar",
+    "alcançar",
+    "dançar"
+   ],
+   "distratoresEn": [
+    "to wash / to scrub",
+    "to lick / to lap",
+    "to reach / to attain",
+    "to dance / to sway"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Jogar e lançar: «lanzar un producto». «Lanzarse», atirar-se.",
+   "notaEn": "To throw, and to launch."
+  },
+  {
+   "idioma": "es",
+   "id": "p831",
+   "tipo": "palavra",
+   "es": "las matemáticas",
+   "pt": "a matemática",
+   "en": "maths",
+   "aceitas": [
+    "matematica",
+    "as matematicas"
+   ],
+   "aceitasEn": [
+    "maths",
+    "math",
+    "mathematics"
+   ],
+   "distratores": [
+    "a gramática",
+    "a física",
+    "a química",
+    "a temática"
+   ],
+   "distratoresEn": [
+    "grammar",
+    "physics",
+    "chemistry",
+    "theme"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "escola"
+   ],
+   "nota": "No plural, em espanhol: «las matemáticas». Coloquial: «las mates».",
+   "notaEn": "Plural in Spanish. Colloquially «las mates»."
+  },
+  {
+   "idioma": "es",
+   "id": "p832",
+   "tipo": "palavra",
+   "es": "las tijeras",
+   "pt": "a tesoura",
+   "en": "the scissors",
+   "aceitas": [
+    "tesoura",
+    "as tesouras"
+   ],
+   "aceitasEn": [
+    "scissors",
+    "the scissors",
+    "a pair of scissors"
+   ],
+   "distratores": [
+    "a tigela",
+    "a faca",
+    "a lixa",
+    "a régua"
+   ],
+   "distratoresEn": [
+    "the bowl",
+    "the knife",
+    "the file",
+    "the ruler"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "objetos"
+   ],
+   "nota": "No plural, em espanhol: «las tijeras». Tesouro é «el tesoro».",
+   "notaEn": "Plural in Spanish."
+  },
+  {
+   "idioma": "es",
+   "id": "p833",
+   "tipo": "palavra",
+   "es": "lavar",
+   "pt": "lavar",
+   "en": "to wash",
+   "aceitas": [
+    "lavar"
+   ],
+   "aceitasEn": [
+    "to wash",
+    "wash"
+   ],
+   "distratores": [
+    "levar",
+    "lavrar",
+    "levantar",
+    "lamber"
+   ],
+   "distratoresEn": [
+    "to take",
+    "to plough",
+    "to lift",
+    "to lick"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Lavarse las manos», lavar as mãos. «Lavar los platos», lavar a louça (ou «fregar»).",
+   "notaEn": "«Lavarse las manos», to wash one's hands."
+  },
+  {
+   "idioma": "es",
+   "id": "p834",
+   "tipo": "palavra",
+   "es": "legal",
+   "pt": "legal (da lei)",
+   "en": "legal",
+   "aceitas": [
+    "legal",
+    "licito",
+    "juridico"
+   ],
+   "aceitasEn": [
+    "legal",
+    "lawful",
+    "legitimate"
+   ],
+   "distratores": [
+    "leal (ao amigo)",
+    "ilegal (contra a lei)",
+    "letal (que mata)",
+    "regular (de rotina)"
+   ],
+   "distratoresEn": [
+    "loyal",
+    "illegal",
+    "lethal",
+    "regular"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "adjetivo",
+    "jurídico",
+    "falso-amigo"
+   ],
+   "nota": "Só no sentido da lei. Legal, bacana, é «guay» na Espanha ou «chévere» em partes da América.",
+   "notaEn": "Only in the legal sense. Cool is «guay»."
+  },
+  {
+   "idioma": "es",
+   "id": "p835",
+   "tipo": "palavra",
+   "es": "lento",
+   "pt": "lento",
+   "en": "slow",
+   "aceitas": [
+    "lento",
+    "devagar",
+    "vagaroso"
+   ],
+   "aceitasEn": [
+    "slow",
+    "sluggish"
+   ],
+   "distratores": [
+    "rápido",
+    "lenço",
+    "lerdo",
+    "leve"
+   ],
+   "distratoresEn": [
+    "fast",
+    "handkerchief",
+    "dense",
+    "light"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«A cámara lenta», em câmera lenta. Devagar, advérbio, é «despacio».",
+   "notaEn": "«A cámara lenta», in slow motion."
+  },
+  {
+   "idioma": "es",
+   "id": "p836",
+   "tipo": "palavra",
+   "es": "libre",
+   "pt": "livre",
+   "en": "free",
+   "aceitas": [
+    "livre"
+   ],
+   "aceitasEn": [
+    "free",
+    "vacant",
+    "available"
+   ],
+   "distratores": [
+    "livro",
+    "lebre",
+    "leve",
+    "preso"
+   ],
+   "distratoresEn": [
+    "book",
+    "hare",
+    "light",
+    "imprisoned"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Livre e vago: «¿está libre?», está livre? De graça é «gratis».",
+   "notaEn": "Free and vacant. Free of charge is «gratis»."
+  },
+  {
+   "idioma": "es",
+   "id": "p837",
+   "tipo": "palavra",
+   "es": "limpiar",
+   "pt": "limpar",
+   "en": "to clean",
+   "aceitas": [
+    "limpar"
+   ],
+   "aceitasEn": [
+    "to clean",
+    "clean",
+    "to wipe"
+   ],
+   "distratores": [
+    "limitar",
+    "lixar",
+    "lavar",
+    "limar"
+   ],
+   "distratoresEn": [
+    "to limit",
+    "to sand",
+    "to wash",
+    "to file"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Limpiarse la boca», limpar a boca. Limpo é «limpio».",
+   "notaEn": "Clean is «limpio»."
+  },
+  {
+   "idioma": "es",
+   "id": "p838",
+   "tipo": "palavra",
+   "es": "lograr",
+   "pt": "conseguir",
+   "en": "to achieve",
+   "aceitas": [
+    "conseguir",
+    "alcancar",
+    "obter",
+    "lograr"
+   ],
+   "aceitasEn": [
+    "to achieve",
+    "to manage",
+    "to get",
+    "to attain"
+   ],
+   "distratores": [
+    "lucrar",
+    "enganar",
+    "largar",
+    "rogar"
+   ],
+   "distratoresEn": [
+    "to profit",
+    "to deceive",
+    "to drop",
+    "to beg"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo",
+    "falso-amigo"
+   ],
+   "nota": "Alcançar, conseguir: «logró terminar». Lograr, enganar, é «engañar». A conquista é «el logro».",
+   "notaEn": "To achieve: «logró terminar». An achievement is «el logro».",
+   "sinonimosEs": [
+    "conseguir"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p839",
+   "tipo": "palavra",
+   "es": "maduro",
+   "pt": "maduro",
+   "en": "ripe / mature",
+   "aceitas": [
+    "maduro"
+   ],
+   "aceitasEn": [
+    "ripe",
+    "mature"
+   ],
+   "distratores": [
+    "verde",
+    "duro",
+    "mudo",
+    "madeira"
+   ],
+   "distratoresEn": [
+    "unripe / green",
+    "hard / tough",
+    "mute / silent",
+    "wooden / timber"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Fruta madura e pessoa madura. Verde, não madura, é «verde».",
+   "notaEn": "Ripe fruit and mature person."
+  },
+  {
+   "idioma": "es",
+   "id": "p840",
+   "tipo": "palavra",
+   "es": "malo",
+   "pt": "mau",
+   "en": "bad",
+   "aceitas": [
+    "mau",
+    "ruim",
+    "mal",
+    "malvado"
+   ],
+   "aceitasEn": [
+    "bad",
+    "evil",
+    "nasty",
+    "ill"
+   ],
+   "distratores": [
+    "bom",
+    "mala",
+    "malha",
+    "manso"
+   ],
+   "distratoresEn": [
+    "good",
+    "suitcase",
+    "mesh",
+    "tame"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Antes de substantivo masculino perde o o: «un mal día». «Estar malo», estar doente.",
+   "notaEn": "Before a masculine noun it drops the o: «un mal día». «Estar malo», to be ill."
+  },
+  {
+   "idioma": "es",
+   "id": "p841",
+   "tipo": "palavra",
+   "es": "mayor",
+   "pt": "mais velho",
+   "en": "older",
+   "aceitas": [
+    "mais velho",
+    "maior",
+    "mais velha",
+    "idoso",
+    "o mais velho"
+   ],
+   "aceitasEn": [
+    "older",
+    "bigger",
+    "elder",
+    "greater",
+    "elderly"
+   ],
+   "distratores": [
+    "menor",
+    "mais novo",
+    "melhor",
+    "pior"
+   ],
+   "distratoresEn": [
+    "younger",
+    "smaller",
+    "better",
+    "worse"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Mais velho e maior: «mi hermano mayor». «Las personas mayores», os idosos. «Al por mayor», no atacado.",
+   "notaEn": "Older, and bigger: «mi hermano mayor». «Las personas mayores», the elderly."
+  },
+  {
+   "idioma": "es",
+   "id": "p842",
+   "tipo": "palavra",
+   "es": "menudo",
+   "pt": "miúdo",
+   "en": "tiny / what a",
+   "aceitas": [
+    "miudo",
+    "pequeno",
+    "que baita"
+   ],
+   "aceitasEn": [
+    "tiny",
+    "small",
+    "what a",
+    "quite a",
+    "slight"
+   ],
+   "distratores": [
+    "grande",
+    "menor",
+    "minuto",
+    "mudo"
+   ],
+   "distratoresEn": [
+    "huge / enormous",
+    "lesser / smaller",
+    "minute / moment",
+    "mute / silent"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Pequeno e, em exclamação, que baita: «¡menudo lío!», que confusão! «A menudo», com frequência.",
+   "notaEn": "Tiny, and in exclamations, what a: «¡menudo lío!». «A menudo», often."
+  },
+  {
+   "idioma": "es",
+   "id": "p843",
+   "tipo": "palavra",
+   "es": "merendar",
+   "pt": "lanchar",
+   "en": "to have a snack",
+   "aceitas": [
+    "lanchar",
+    "fazer lanche",
+    "comer o lanche"
+   ],
+   "aceitasEn": [
+    "to have a snack",
+    "to have an afternoon snack",
+    "to have tea",
+    "snack"
+   ],
+   "distratores": [
+    "almoçar",
+    "jantar",
+    "merecer",
+    "mendigar"
+   ],
+   "distratoresEn": [
+    "to have lunch",
+    "to have dinner",
+    "to deserve",
+    "to beg"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "O lanche da tarde: «merendamos a las cinco». O lanche é «la merienda». O e vira ie: «meriendo».",
+   "notaEn": "The afternoon snack, «la merienda»."
+  },
+  {
+   "idioma": "es",
+   "id": "p844",
+   "tipo": "palavra",
+   "es": "millonario",
+   "pt": "milionário",
+   "en": "millionaire",
+   "aceitas": [
+    "milionario",
+    "milionaria"
+   ],
+   "aceitasEn": [
+    "millionaire",
+    "wealthy",
+    "rich"
+   ],
+   "distratores": [
+    "mendigo",
+    "bilionário",
+    "mercenário",
+    "funcionário"
+   ],
+   "distratoresEn": [
+    "beggar",
+    "billionaire",
+    "mercenary",
+    "employee"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Com dois l: «millonario». Milhão é «millón».",
+   "notaEn": "Double l. A million is «un millón»."
+  },
+  {
+   "idioma": "es",
+   "id": "p845",
+   "tipo": "palavra",
+   "es": "mirar",
+   "pt": "olhar",
+   "en": "to look",
+   "aceitas": [
+    "olhar",
+    "ver",
+    "mirar"
+   ],
+   "aceitasEn": [
+    "to look",
+    "to look at",
+    "to watch",
+    "look"
+   ],
+   "distratores": [
+    "admirar",
+    "apontar",
+    "morar",
+    "virar"
+   ],
+   "distratoresEn": [
+    "to admire",
+    "to aim",
+    "to dwell",
+    "to turn"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo",
+    "falso-amigo"
+   ],
+   "nota": "Olhar: «mira», olha. «Mirarse en el espejo», olhar-se no espelho. Mirar, apontar a arma, é «apuntar».",
+   "notaEn": "To look: «mira», look. To aim is «apuntar»."
+  },
+  {
+   "idioma": "es",
+   "id": "p846",
+   "tipo": "palavra",
+   "es": "mojar",
+   "pt": "molhar",
+   "en": "to wet",
+   "aceitas": [
+    "molhar",
+    "molhar-se"
+   ],
+   "aceitasEn": [
+    "to wet",
+    "to get wet",
+    "to soak",
+    "to dip"
+   ],
+   "distratores": [
+    "morar",
+    "mofar",
+    "moer",
+    "mudar"
+   ],
+   "distratoresEn": [
+    "to live",
+    "to mould",
+    "to grind",
+    "to change"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Mojarse», molhar-se e, coloquial, comprometer-se. «Llover sobre mojado», chover no molhado.",
+   "notaEn": "«Mojarse», to get wet, and to take a stand."
+  },
+  {
+   "idioma": "es",
+   "id": "p847",
+   "tipo": "palavra",
+   "es": "molar",
+   "pt": "curtir",
+   "en": "to be cool",
+   "aceitas": [
+    "curtir",
+    "ser legal",
+    "ser maneiro",
+    "ser massa",
+    "agradar"
+   ],
+   "aceitasEn": [
+    "to be cool",
+    "to love",
+    "to like",
+    "to rock"
+   ],
+   "distratores": [
+    "moer",
+    "morar",
+    "moldar",
+    "molhar"
+   ],
+   "distratoresEn": [
+    "to grind",
+    "to live",
+    "to mould",
+    "to wet"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo",
+    "gíria",
+    "Espanha"
+   ],
+   "nota": "Coloquial da Espanha, funciona como «gustar»: «me mola», curto. «¡Cómo mola!», que da hora!",
+   "notaEn": "Colloquial, Spain, like «gustar»: «me mola», I love it."
+  },
+  {
+   "idioma": "es",
+   "id": "p848",
+   "tipo": "palavra",
+   "es": "morado",
+   "pt": "roxo",
+   "en": "purple",
+   "aceitas": [
+    "roxo",
+    "roxa",
+    "lilas",
+    "morado"
+   ],
+   "aceitasEn": [
+    "purple",
+    "violet"
+   ],
+   "distratores": [
+    "amarelo",
+    "morador",
+    "corado",
+    "rosa"
+   ],
+   "distratoresEn": [
+    "yellow",
+    "resident",
+    "flushed",
+    "pink"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo",
+    "falso-amigo"
+   ],
+   "nota": "A cor roxa. «Ponerse morado», encher a pança. Vermelho é «rojo».",
+   "notaEn": "Purple. «Ponerse morado», to stuff oneself. Red is «rojo»."
+  },
+  {
+   "idioma": "es",
+   "id": "p849",
+   "tipo": "palavra",
+   "es": "mostrar",
+   "pt": "mostrar",
+   "en": "to show",
+   "aceitas": [
+    "mostrar",
+    "exibir",
+    "demonstrar"
+   ],
+   "aceitasEn": [
+    "to show",
+    "show",
+    "to display"
+   ],
+   "distratores": [
+    "monstrar",
+    "mastigar",
+    "montar",
+    "morar"
+   ],
+   "distratoresEn": [
+    "to deform",
+    "to chew",
+    "to assemble",
+    "to live"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "O o vira ue: «muestro». A amostra é «la muestra».",
+   "notaEn": "The o becomes ue: «muestro»."
+  },
+  {
+   "idioma": "es",
+   "id": "p850",
+   "tipo": "palavra",
+   "es": "necesitar",
+   "pt": "precisar",
+   "en": "to need",
+   "aceitas": [
+    "precisar",
+    "necessitar"
+   ],
+   "aceitasEn": [
+    "to need",
+    "need",
+    "to require"
+   ],
+   "distratores": [
+    "necessário",
+    "negociar",
+    "nascer",
+    "precipitar"
+   ],
+   "distratoresEn": [
+    "necessary",
+    "to negotiate",
+    "to be born",
+    "to rush"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Necesito ayuda», preciso de ajuda — sem preposição. «Se necesita camarero», precisa-se.",
+   "notaEn": "«Necesito ayuda», I need help, no preposition."
+  },
+  {
+   "idioma": "es",
+   "id": "p851",
+   "tipo": "palavra",
+   "es": "negro",
+   "pt": "preto",
+   "en": "black",
+   "aceitas": [
+    "preto",
+    "negro",
+    "preta",
+    "negra"
+   ],
+   "aceitasEn": [
+    "black",
+    "dark"
+   ],
+   "distratores": [
+    "branco",
+    "cinza",
+    "grosso",
+    "negado"
+   ],
+   "distratoresEn": [
+    "white",
+    "grey",
+    "thick",
+    "denied"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "A cor preta: «zapatos negros». «Estar negro», estar furioso. «Ponerse negro», irritar-se.",
+   "notaEn": "Black. «Estar negro», to be furious."
+  },
+  {
+   "idioma": "es",
+   "id": "p852",
+   "tipo": "palavra",
+   "es": "ninguno",
+   "pt": "nenhum",
+   "en": "no / none",
+   "aceitas": [
+    "nenhum",
+    "nenhuma"
+   ],
+   "aceitasEn": [
+    "no",
+    "none",
+    "not any",
+    "neither"
+   ],
+   "distratores": [
+    "nada",
+    "algum",
+    "nunca",
+    "nenhures"
+   ],
+   "distratoresEn": [
+    "nothing / not a thing",
+    "some / any",
+    "never / not ever",
+    "nowhere / no place"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Antes de substantivo masculino vira «ningún»: «ningún enchufe». Ninguém é «nadie».",
+   "notaEn": "Before a masculine noun: «ningún». Nobody is «nadie»."
+  },
+  {
+   "idioma": "es",
+   "id": "p853",
+   "tipo": "palavra",
+   "es": "nueve",
+   "pt": "nove",
+   "en": "nine",
+   "aceitas": [
+    "nove",
+    "9"
+   ],
+   "aceitasEn": [
+    "nine",
+    "9"
+   ],
+   "distratores": [
+    "dezenove",
+    "noventa",
+    "oito",
+    "novo"
+   ],
+   "distratoresEn": [
+    "nineteen",
+    "ninety",
+    "eight",
+    "new"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Dezenove é «diecinueve»; noventa, «noventa».",
+   "notaEn": "Nineteen is «diecinueve»."
+  },
+  {
+   "idioma": "es",
+   "id": "p854",
+   "tipo": "palavra",
+   "es": "ocurrir",
+   "pt": "acontecer",
+   "en": "to happen",
+   "aceitas": [
+    "acontecer",
+    "ocorrer"
+   ],
+   "aceitasEn": [
+    "to happen",
+    "to occur",
+    "happen"
+   ],
+   "distratores": [
+    "acorrer",
+    "correr",
+    "ocupar",
+    "socorrer"
+   ],
+   "distratoresEn": [
+    "to rush to",
+    "to run",
+    "to occupy",
+    "to help"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«¿Qué ocurre?», o que houve? «Se me ocurrió», me ocorreu. «Ni se te ocurra», nem pense nisso.",
+   "notaEn": "«Se me ocurrió», it occurred to me.",
+   "sinonimosEs": [
+    "pasar"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p855",
+   "tipo": "palavra",
+   "es": "odiar",
+   "pt": "odiar",
+   "en": "to hate",
+   "aceitas": [
+    "odiar",
+    "detestar"
+   ],
+   "aceitasEn": [
+    "to hate",
+    "hate",
+    "to loathe"
+   ],
+   "distratores": [
+    "adiar",
+    "ouvir",
+    "ajudar",
+    "odiar-se"
+   ],
+   "distratoresEn": [
+    "to postpone",
+    "to hear",
+    "to help",
+    "to hate oneself"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "O ódio é «el odio».",
+   "notaEn": "Hatred is «el odio»."
+  },
+  {
+   "idioma": "es",
+   "id": "p856",
+   "tipo": "palavra",
+   "es": "oler",
+   "pt": "cheirar",
+   "en": "to smell",
+   "aceitas": [
+    "cheirar",
+    "ter cheiro"
+   ],
+   "aceitasEn": [
+    "to smell",
+    "smell"
+   ],
+   "distratores": [
+    "olhar",
+    "ouvir",
+    "soar",
+    "colar"
+   ],
+   "distratoresEn": [
+    "to look",
+    "to hear",
+    "to sound",
+    "to stick"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Muito irregular: «huelo», «hueles». «Huele a gas», cheira a gás. «Me huele mal», não estou gostando disso.",
+   "notaEn": "Irregular: «huelo». «Huele a gas», it smells of gas."
+  },
+  {
+   "idioma": "es",
+   "id": "p857",
+   "tipo": "palavra",
+   "es": "once",
+   "pt": "onze",
+   "en": "eleven",
+   "aceitas": [
+    "onze",
+    "11"
+   ],
+   "aceitasEn": [
+    "eleven",
+    "11"
+   ],
+   "distratores": [
+    "doze",
+    "um",
+    "dez",
+    "treze"
+   ],
+   "distratoresEn": [
+    "twelve",
+    "one",
+    "ten",
+    "thirteen"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«A las once», às onze. «Las once» é o lanchinho, no Chile.",
+   "notaEn": "«A las once», at eleven."
+  },
+  {
+   "idioma": "es",
+   "id": "p858",
+   "tipo": "palavra",
+   "es": "otro",
+   "pt": "outro",
+   "en": "other / another",
+   "aceitas": [
+    "outro",
+    "outra"
+   ],
+   "aceitasEn": [
+    "other",
+    "another",
+    "else"
+   ],
+   "distratores": [
+    "mesmo",
+    "ouro",
+    "outono",
+    "oito"
+   ],
+   "distratoresEn": [
+    "same / identical",
+    "gold / metal",
+    "autumn / season",
+    "eight / number"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Sem artigo indefinido: «otro café», outro café, nunca «un otro». «Otra vez», de novo.",
+   "notaEn": "Never «un otro»: «otro café», another coffee."
+  },
+  {
+   "idioma": "es",
+   "id": "p859",
+   "tipo": "palavra",
+   "es": "paciente",
+   "pt": "paciente",
+   "en": "patient",
+   "aceitas": [
+    "paciente"
+   ],
+   "aceitasEn": [
+    "patient"
+   ],
+   "distratores": [
+    "impaciente",
+    "presente",
+    "parente",
+    "doente"
+   ],
+   "distratoresEn": [
+    "impatient",
+    "present",
+    "relative",
+    "ill"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo",
+    "saúde"
+   ],
+   "nota": "O adjetivo e a pessoa: «el paciente», o paciente.",
+   "notaEn": "Adjective and noun: «el paciente»."
+  },
+  {
+   "idioma": "es",
+   "id": "p860",
+   "tipo": "palavra",
+   "es": "pegar",
+   "pt": "colar",
+   "en": "to stick / to hit",
+   "aceitas": [
+    "colar",
+    "bater",
+    "grudar",
+    "grampear"
+   ],
+   "aceitasEn": [
+    "to stick",
+    "to glue",
+    "to hit",
+    "to beat",
+    "to paste"
+   ],
+   "distratores": [
+    "pagar",
+    "pescar",
+    "pegar",
+    "apagar"
+   ],
+   "distratoresEn": [
+    "to pay / to settle",
+    "to fish / to hook",
+    "to grab / to seize",
+    "to switch off / to erase"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "falso-amigo"
+   ],
+   "nota": "Colar e bater: «pega la foto», «le pegó». Pegar, segurar, é «coger». Ganha u antes de e: «pegué».",
+   "notaEn": "To stick, and to hit. To grab is «coger»."
+  },
+  {
+   "idioma": "es",
+   "id": "p861",
+   "tipo": "palavra",
+   "es": "pensar",
+   "pt": "pensar",
+   "en": "to think",
+   "aceitas": [
+    "pensar",
+    "achar",
+    "pretender"
+   ],
+   "aceitasEn": [
+    "to think",
+    "think",
+    "to intend",
+    "to plan"
+   ],
+   "distratores": [
+    "pesar",
+    "passar",
+    "pescar",
+    "penar"
+   ],
+   "distratoresEn": [
+    "to weigh",
+    "to pass",
+    "to fish",
+    "to suffer"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "O e vira ie: «pienso». «Pensar en», pensar em. «Pienso ir», pretendo ir.",
+   "notaEn": "«Pienso», I think. «Pienso ir», I intend to go."
+  },
+  {
+   "idioma": "es",
+   "id": "p862",
+   "tipo": "palavra",
+   "es": "perdonar",
+   "pt": "perdoar",
+   "en": "to forgive",
+   "aceitas": [
+    "perdoar",
+    "desculpar"
+   ],
+   "aceitasEn": [
+    "to forgive",
+    "to excuse",
+    "forgive",
+    "to pardon"
+   ],
+   "distratores": [
+    "perder",
+    "pedir",
+    "doar",
+    "perguntar"
+   ],
+   "distratoresEn": [
+    "to lose",
+    "to ask",
+    "to donate",
+    "to question"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Perdona», desculpa, para chamar a atenção ou pedir desculpa. «Perdone», no formal.",
+   "notaEn": "«Perdona», sorry, or excuse me."
+  },
+  {
+   "idioma": "es",
+   "id": "p863",
+   "tipo": "palavra",
+   "es": "perezoso",
+   "pt": "preguiçoso",
+   "en": "lazy",
+   "aceitas": [
+    "preguicoso",
+    "preguicosa",
+    "o bicho-preguica",
+    "a preguica"
+   ],
+   "aceitasEn": [
+    "lazy",
+    "idle",
+    "sloth"
+   ],
+   "distratores": [
+    "perigoso",
+    "precioso",
+    "pesaroso",
+    "pegajoso"
+   ],
+   "distratoresEn": [
+    "dangerous",
+    "precious",
+    "sorrowful",
+    "sticky"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "A preguiça é «la pereza». O animal também é «el perezoso». «Ni corto ni perezoso», sem pensar duas vezes.",
+   "notaEn": "Laziness is «la pereza»."
+  },
+  {
+   "idioma": "es",
+   "id": "p864",
+   "tipo": "palavra",
+   "es": "picar",
+   "pt": "picar",
+   "en": "to sting / to bite",
+   "aceitas": [
+    "picar",
+    "cocar",
+    "morder",
+    "beliscar",
+    "ferroar"
+   ],
+   "aceitasEn": [
+    "to sting",
+    "to bite",
+    "to itch",
+    "to nibble",
+    "to chop"
+   ],
+   "distratores": [
+    "pisar",
+    "pescar",
+    "pintar",
+    "pecar"
+   ],
+   "distratoresEn": [
+    "to tread / to stamp",
+    "to fish / to hook",
+    "to paint / to colour",
+    "to sin / to err"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Picar, coçar, ser picante e beliscar: «me picó una abeja», «me pica la espalda», «esta salsa pica», «algo para picar».",
+   "notaEn": "To sting, to itch, to be spicy, to nibble."
+  },
+  {
+   "idioma": "es",
+   "id": "p865",
+   "tipo": "palavra",
+   "es": "pleno",
+   "pt": "pleno",
+   "en": "full",
+   "aceitas": [
+    "pleno",
+    "cheio",
+    "completo"
+   ],
+   "aceitasEn": [
+    "full",
+    "complete",
+    "mid",
+    "height"
+   ],
+   "distratores": [
+    "plano",
+    "pequeno",
+    "plural",
+    "ameno"
+   ],
+   "distratoresEn": [
+    "flat",
+    "small",
+    "plural",
+    "mild"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«En pleno verano», em pleno verão. «En pleno centro», bem no centro.",
+   "notaEn": "«En pleno verano», in the middle of summer."
+  },
+  {
+   "idioma": "es",
+   "id": "p866",
+   "tipo": "palavra",
+   "es": "policíaco",
+   "pt": "policial",
+   "en": "detective",
+   "aceitas": [
+    "policial",
+    "de detetive",
+    "policiaco"
+   ],
+   "aceitasEn": [
+    "detective",
+    "crime",
+    "police"
+   ],
+   "distratores": [
+    "político",
+    "polido",
+    "poético",
+    "pacífico"
+   ],
+   "distratoresEn": [
+    "political",
+    "polished",
+    "poetic",
+    "peaceful"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo",
+    "cultura"
+   ],
+   "nota": "«Novela policíaca», romance policial. O policial, a pessoa, é «el policía».",
+   "notaEn": "«Novela policíaca», a crime novel. A police officer is «el policía»."
+  },
+  {
+   "idioma": "es",
+   "id": "p867",
+   "tipo": "palavra",
+   "es": "preferir",
+   "pt": "preferir",
+   "en": "to prefer",
+   "aceitas": [
+    "preferir"
+   ],
+   "aceitasEn": [
+    "to prefer",
+    "prefer",
+    "would rather"
+   ],
+   "distratores": [
+    "perfurar",
+    "proferir",
+    "referir",
+    "prender"
+   ],
+   "distratoresEn": [
+    "to pierce",
+    "to utter",
+    "to refer",
+    "to arrest"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "O e vira ie e i: «prefiero», «prefirió».",
+   "notaEn": "«Prefiero», «prefirió»."
+  },
+  {
+   "idioma": "es",
+   "id": "p868",
+   "tipo": "palavra",
+   "es": "preguntar",
+   "pt": "perguntar",
+   "en": "to ask",
+   "aceitas": [
+    "perguntar"
+   ],
+   "aceitasEn": [
+    "to ask",
+    "ask",
+    "to enquire"
+   ],
+   "distratores": [
+    "responder",
+    "pregar",
+    "perdoar",
+    "pagar"
+   ],
+   "distratoresEn": [
+    "to answer",
+    "to preach",
+    "to forgive",
+    "to pay"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Perguntar. Pedir algo é «pedir». «Preguntar por alguien», perguntar por alguém.",
+   "notaEn": "To ask a question. To ask for something is «pedir»."
+  },
+  {
+   "idioma": "es",
+   "id": "p869",
+   "tipo": "palavra",
+   "es": "preocupar",
+   "pt": "preocupar",
+   "en": "to worry",
+   "aceitas": [
+    "preocupar",
+    "preocupar-se"
+   ],
+   "aceitasEn": [
+    "to worry",
+    "worry",
+    "to concern"
+   ],
+   "distratores": [
+    "ocupar",
+    "procurar",
+    "prender",
+    "provocar"
+   ],
+   "distratoresEn": [
+    "to occupy",
+    "to look for",
+    "to arrest",
+    "to provoke"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«No te preocupes», não se preocupe. «Me preocupa», isso me preocupa.",
+   "notaEn": "«No te preocupes», don't worry."
+  },
+  {
+   "idioma": "es",
+   "id": "p870",
+   "tipo": "palavra",
+   "es": "preparar",
+   "pt": "preparar",
+   "en": "to prepare",
+   "aceitas": [
+    "preparar",
+    "preparar-se",
+    "fazer"
+   ],
+   "aceitasEn": [
+    "to prepare",
+    "prepare",
+    "to make",
+    "to get ready"
+   ],
+   "distratores": [
+    "reparar",
+    "separar",
+    "comparar",
+    "parar"
+   ],
+   "distratoresEn": [
+    "to repair",
+    "to separate",
+    "to compare",
+    "to stop"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Prepararse para», preparar-se para. «Me preparé un bocadillo», fiz um sanduíche.",
+   "notaEn": "«Prepararse para», to get ready for."
+  },
+  {
+   "idioma": "es",
+   "id": "p871",
+   "tipo": "palavra",
+   "es": "prestar",
+   "pt": "emprestar",
+   "en": "to lend",
+   "aceitas": [
+    "emprestar",
+    "prestar"
+   ],
+   "aceitasEn": [
+    "to lend",
+    "lend",
+    "to loan"
+   ],
+   "distratores": [
+    "pedir emprestado",
+    "testar",
+    "pagar",
+    "apostar"
+   ],
+   "distratoresEn": [
+    "to borrow",
+    "to test",
+    "to pay",
+    "to bet"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "falso-amigo"
+   ],
+   "nota": "«¿Me prestas el boli?», me empresta a caneta? Pegar emprestado é «pedir prestado». «Prestar atención», prestar atenção.",
+   "notaEn": "To lend. To borrow is «pedir prestado».",
+   "sinonimosEs": [
+    "dejar"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p872",
+   "tipo": "palavra",
+   "es": "principal",
+   "pt": "principal",
+   "en": "main",
+   "aceitas": [
+    "principal"
+   ],
+   "aceitasEn": [
+    "main",
+    "principal",
+    "chief",
+    "leading"
+   ],
+   "distratores": [
+    "secundário",
+    "principiante",
+    "princesa",
+    "provincial"
+   ],
+   "distratoresEn": [
+    "secondary",
+    "beginner",
+    "princess",
+    "provincial"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«Plato principal», prato principal. «Lo principal», o mais importante.",
+   "notaEn": "«Lo principal», the main thing."
+  },
+  {
+   "idioma": "es",
+   "id": "p873",
+   "tipo": "palavra",
+   "es": "probar",
+   "pt": "provar",
+   "en": "to try",
+   "aceitas": [
+    "provar",
+    "experimentar",
+    "testar",
+    "provar-se"
+   ],
+   "aceitasEn": [
+    "to try",
+    "to taste",
+    "to try on",
+    "to test",
+    "to prove"
+   ],
+   "distratores": [
+    "aprovar",
+    "comprovar",
+    "roubar",
+    "provocar"
+   ],
+   "distratoresEn": [
+    "to approve",
+    "to confirm",
+    "to steal",
+    "to provoke"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Provar comida, roupa e tentar: «pruébalo», prova. O o vira ue: «pruebo». «Probarse», experimentar roupa.",
+   "notaEn": "To taste, to try on, to test: «pruébalo»."
+  },
+  {
+   "idioma": "es",
+   "id": "p874",
+   "tipo": "palavra",
+   "es": "profundo",
+   "pt": "profundo",
+   "en": "deep",
+   "aceitas": [
+    "profundo",
+    "fundo"
+   ],
+   "aceitasEn": [
+    "deep",
+    "profound"
+   ],
+   "distratores": [
+    "raso",
+    "fecundo",
+    "imundo",
+    "redondo"
+   ],
+   "distratoresEn": [
+    "shallow",
+    "fertile",
+    "filthy",
+    "round"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Fundo e profundo: «un pozo profundo», «un profundo hastío».",
+   "notaEn": "Deep, and profound."
+  },
+  {
+   "idioma": "es",
+   "id": "p875",
+   "tipo": "palavra",
+   "es": "público",
+   "pt": "público",
+   "en": "public",
+   "aceitas": [
+    "publico",
+    "publica"
+   ],
+   "aceitasEn": [
+    "public",
+    "audience"
+   ],
+   "distratores": [
+    "privado",
+    "político",
+    "publicado",
+    "púbere"
+   ],
+   "distratoresEn": [
+    "private",
+    "political",
+    "published",
+    "pubescent"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Adjetivo e o público de um show: «el público aplaudió».",
+   "notaEn": "Adjective, and the audience."
+  },
+  {
+   "idioma": "es",
+   "id": "p876",
+   "tipo": "palavra",
+   "es": "puro",
+   "pt": "puro",
+   "en": "pure",
+   "aceitas": [
+    "puro",
+    "mero"
+   ],
+   "aceitasEn": [
+    "pure",
+    "sheer",
+    "mere",
+    "cigar"
+   ],
+   "distratores": [
+    "impuro",
+    "duro",
+    "turvo",
+    "maduro"
+   ],
+   "distratoresEn": [
+    "impure",
+    "hard",
+    "cloudy",
+    "ripe"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«Por pura casualidad», por puro acaso. «El puro», o charuto.",
+   "notaEn": "«Por pura casualidad», by sheer chance. «El puro», a cigar."
+  },
+  {
+   "idioma": "es",
+   "id": "p877",
+   "tipo": "palavra",
+   "es": "quinto",
+   "pt": "quinto",
+   "en": "fifth",
+   "aceitas": [
+    "quinto"
+   ],
+   "aceitasEn": [
+    "fifth",
+    "5th"
+   ],
+   "distratores": [
+    "quarto",
+    "sexto",
+    "quinta",
+    "quinze"
+   ],
+   "distratoresEn": [
+    "fourth",
+    "sixth",
+    "thursday",
+    "fifteen"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«Estar en el quinto pino», ficar onde Judas perdeu as botas.",
+   "notaEn": "«En el quinto pino», in the middle of nowhere."
+  },
+  {
+   "idioma": "es",
+   "id": "p878",
+   "tipo": "palavra",
+   "es": "rápido",
+   "pt": "rápido",
+   "en": "fast",
+   "aceitas": [
+    "rapido",
+    "depressa"
+   ],
+   "aceitasEn": [
+    "fast",
+    "quick",
+    "quickly",
+    "rapid"
+   ],
+   "distratores": [
+    "lento",
+    "rapaz",
+    "rasgado",
+    "rígido"
+   ],
+   "distratoresEn": [
+    "slow",
+    "lad",
+    "torn",
+    "rigid"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Adjetivo e advérbio: «un tren rápido», «hazlo rápido».",
+   "notaEn": "Adjective and adverb."
+  },
+  {
+   "idioma": "es",
+   "id": "p879",
+   "tipo": "palavra",
+   "es": "raro",
+   "pt": "estranho",
+   "en": "strange / rare",
+   "aceitas": [
+    "estranho",
+    "esquisito",
+    "raro",
+    "incomum"
+   ],
+   "aceitasEn": [
+    "strange",
+    "weird",
+    "odd",
+    "rare"
+   ],
+   "distratores": [
+    "caro",
+    "claro",
+    "ralo",
+    "rato"
+   ],
+   "distratoresEn": [
+    "expensive / costly",
+    "clear / evident",
+    "sparse / thin",
+    "rat / rodent"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo",
+    "falso-amigo"
+   ],
+   "nota": "Mais que raro, é estranho: «¡qué raro!», que estranho! Também raro, pouco frequente.",
+   "notaEn": "Strange, more than rare: «¡qué raro!»."
+  },
+  {
+   "idioma": "es",
+   "id": "p880",
+   "tipo": "palavra",
+   "es": "reducir",
+   "pt": "reduzir",
+   "en": "to reduce",
+   "aceitas": [
+    "reduzir",
+    "diminuir"
+   ],
+   "aceitasEn": [
+    "to reduce",
+    "reduce",
+    "to cut",
+    "to lower"
+   ],
+   "distratores": [
+    "traduzir",
+    "produzir",
+    "seduzir",
+    "conduzir"
+   ],
+   "distratoresEn": [
+    "to translate",
+    "to produce",
+    "to seduce",
+    "to drive"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Pretérito com j: «redujo», «redujeron», como «conducir».",
+   "notaEn": "Past with j: «redujo»."
+  },
+  {
+   "idioma": "es",
+   "id": "p881",
+   "tipo": "palavra",
+   "es": "rellenar",
+   "pt": "rechear",
+   "en": "to fill",
+   "aceitas": [
+    "rechear",
+    "preencher",
+    "encher"
+   ],
+   "aceitasEn": [
+    "to fill",
+    "to stuff",
+    "to fill in",
+    "to refill"
+   ],
+   "distratores": [
+    "reler",
+    "relaxar",
+    "ralar",
+    "relatar"
+   ],
+   "distratoresEn": [
+    "to reread",
+    "to relax",
+    "to grate",
+    "to report"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Rechear e preencher: «rellenar el formulario». O recheio é «el relleno».",
+   "notaEn": "To stuff, and to fill in a form."
+  },
+  {
+   "idioma": "es",
+   "id": "p882",
+   "tipo": "palavra",
+   "es": "renunciar",
+   "pt": "renunciar",
+   "en": "to give up",
+   "aceitas": [
+    "renunciar",
+    "desistir",
+    "abrir mao"
+   ],
+   "aceitasEn": [
+    "to give up",
+    "to resign",
+    "to renounce",
+    "to quit"
+   ],
+   "distratores": [
+    "anunciar",
+    "denunciar",
+    "pronunciar",
+    "reunir"
+   ],
+   "distratoresEn": [
+    "to announce",
+    "to report",
+    "to pronounce",
+    "to gather"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Renunciar a», abrir mão de. Também pedir demissão do cargo.",
+   "notaEn": "To give up, or to resign."
+  },
+  {
+   "idioma": "es",
+   "id": "p883",
+   "tipo": "palavra",
+   "es": "repartir",
+   "pt": "distribuir",
+   "en": "to hand out",
+   "aceitas": [
+    "distribuir",
+    "repartir",
+    "dividir",
+    "entregar"
+   ],
+   "aceitasEn": [
+    "to hand out",
+    "to share out",
+    "to distribute",
+    "to deliver"
+   ],
+   "distratores": [
+    "repetir",
+    "repousar",
+    "partir",
+    "reparar"
+   ],
+   "distratoresEn": [
+    "to repeat",
+    "to rest",
+    "to leave",
+    "to repair"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Distribuir e entregar: «repartir el correo». O entregador é «el repartidor».",
+   "notaEn": "To hand out, to deliver. A delivery person is «el repartidor»."
+  },
+  {
+   "idioma": "es",
+   "id": "p884",
+   "tipo": "palavra",
+   "es": "resfriado",
+   "pt": "resfriado",
+   "en": "with a cold",
+   "aceitas": [
+    "resfriado",
+    "gripado",
+    "resfriada"
+   ],
+   "aceitasEn": [
+    "with a cold",
+    "having a cold",
+    "cold",
+    "ill"
+   ],
+   "distratores": [
+    "refrigerado",
+    "resolvido",
+    "aquecido",
+    "ressecado"
+   ],
+   "distratoresEn": [
+    "refrigerated",
+    "resolved",
+    "heated",
+    "dried out"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo",
+    "saúde"
+   ],
+   "nota": "«Estoy resfriado», estou resfriado. O resfriado é «el resfriado» ou «el catarro».",
+   "notaEn": "«Estoy resfriado», I have a cold."
+  },
+  {
+   "idioma": "es",
+   "id": "p885",
+   "tipo": "palavra",
+   "es": "robar",
+   "pt": "roubar",
+   "en": "to steal",
+   "aceitas": [
+    "roubar",
+    "furtar"
+   ],
+   "aceitasEn": [
+    "to steal",
+    "to rob",
+    "steal"
+   ],
+   "distratores": [
+    "rolar",
+    "rodar",
+    "sobrar",
+    "rezar"
+   ],
+   "distratoresEn": [
+    "to roll",
+    "to spin",
+    "to be left over",
+    "to pray"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Me robaron el móvil», roubaram meu celular.",
+   "notaEn": "«Me robaron el móvil», my phone was stolen."
+  },
+  {
+   "idioma": "es",
+   "id": "p886",
+   "tipo": "palavra",
+   "es": "rotundo",
+   "pt": "rotundo",
+   "en": "resounding",
+   "aceitas": [
+    "rotundo",
+    "categorico",
+    "estrondoso",
+    "retumbante"
+   ],
+   "aceitasEn": [
+    "resounding",
+    "emphatic",
+    "categorical",
+    "flat"
+   ],
+   "distratores": [
+    "redondo",
+    "rotineiro",
+    "risonho",
+    "rouco"
+   ],
+   "distratoresEn": [
+    "round",
+    "routine",
+    "smiling",
+    "hoarse"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«Un éxito rotundo», um sucesso estrondoso. «Un no rotundo», um não categórico.",
+   "notaEn": "«Un éxito rotundo», a resounding success."
+  },
+  {
+   "idioma": "es",
+   "id": "p887",
+   "tipo": "palavra",
+   "es": "salarial",
+   "pt": "salarial",
+   "en": "wage",
+   "aceitas": [
+    "salarial",
+    "de salario"
+   ],
+   "aceitasEn": [
+    "wage",
+    "salary",
+    "pay"
+   ],
+   "distratores": [
+    "social",
+    "sanitário",
+    "solar",
+    "semanal"
+   ],
+   "distratoresEn": [
+    "social",
+    "sanitary",
+    "solar",
+    "weekly"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "adjetivo",
+    "trabalho",
+    "economia"
+   ],
+   "nota": "«Brecha salarial», diferença salarial. O salário é «el sueldo» ou «el salario».",
+   "notaEn": "«Brecha salarial», pay gap."
+  },
+  {
+   "idioma": "es",
+   "id": "p888",
+   "tipo": "palavra",
+   "es": "segundo",
+   "pt": "segundo",
+   "en": "second",
+   "aceitas": [
+    "segundo"
+   ],
+   "aceitasEn": [
+    "second",
+    "2nd"
+   ],
+   "distratores": [
+    "primeiro",
+    "terceiro",
+    "seguinte",
+    "secundário"
+   ],
+   "distratoresEn": [
+    "first",
+    "third",
+    "next",
+    "secondary"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Número ordinal e o segundo do relógio: «un segundo».",
+   "notaEn": "Ordinal, and a second of time."
+  },
+  {
+   "idioma": "es",
+   "id": "p889",
+   "tipo": "palavra",
+   "es": "seis",
+   "pt": "seis",
+   "en": "six",
+   "aceitas": [
+    "seis",
+    "6"
+   ],
+   "aceitasEn": [
+    "six",
+    "6"
+   ],
+   "distratores": [
+    "dezesseis",
+    "sessenta",
+    "sete",
+    "cinco"
+   ],
+   "distratoresEn": [
+    "sixteen",
+    "sixty",
+    "seven",
+    "five"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Dezesseis é «dieciséis»; sessenta, «sesenta».",
+   "notaEn": "Sixteen is «dieciséis»."
+  },
+  {
+   "idioma": "es",
+   "id": "p890",
+   "tipo": "palavra",
+   "es": "sordo",
+   "pt": "surdo",
+   "en": "deaf",
+   "aceitas": [
+    "surdo",
+    "surda"
+   ],
+   "aceitasEn": [
+    "deaf"
+   ],
+   "distratores": [
+    "mudo",
+    "cego",
+    "sujo",
+    "gordo"
+   ],
+   "distratoresEn": [
+    "mute",
+    "blind",
+    "dirty",
+    "fat"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«Quedarse sordo», ficar surdo. «Hacerse el sordo», fazer-se de surdo.",
+   "notaEn": "«Hacerse el sordo», to turn a deaf ear."
+  },
+  {
+   "idioma": "es",
+   "id": "p891",
+   "tipo": "palavra",
+   "es": "sorprender",
+   "pt": "surpreender",
+   "en": "to surprise",
+   "aceitas": [
+    "surpreender",
+    "surpreender-se",
+    "espantar"
+   ],
+   "aceitasEn": [
+    "to surprise",
+    "surprise",
+    "to amaze",
+    "to catch"
+   ],
+   "distratores": [
+    "prender",
+    "aprender",
+    "surtar",
+    "suspender"
+   ],
+   "distratoresEn": [
+    "to arrest",
+    "to learn",
+    "to freak out",
+    "to suspend"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Com o: «sorprender». «Me sorprende que» leva subjuntivo.",
+   "notaEn": "Spelled with o. «Me sorprende que» takes the subjunctive."
+  },
+  {
+   "idioma": "es",
+   "id": "p892",
+   "tipo": "palavra",
+   "es": "sueco",
+   "pt": "sueco",
+   "en": "Swedish",
+   "aceitas": [
+    "sueco",
+    "sueca"
+   ],
+   "aceitasEn": [
+    "swedish",
+    "swede"
+   ],
+   "distratores": [
+    "suíço",
+    "seco",
+    "suco",
+    "surdo"
+   ],
+   "distratoresEn": [
+    "swiss",
+    "dry",
+    "juice",
+    "deaf"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo",
+    "expressão"
+   ],
+   "nota": "Da Suécia. «Hacerse el sueco», fazer-se de desentendido.",
+   "notaEn": "«Hacerse el sueco», to play dumb."
+  },
+  {
+   "idioma": "es",
+   "id": "p893",
+   "tipo": "palavra",
+   "es": "sufrir",
+   "pt": "sofrer",
+   "en": "to suffer",
+   "aceitas": [
+    "sofrer"
+   ],
+   "aceitasEn": [
+    "to suffer",
+    "suffer",
+    "to undergo",
+    "to endure"
+   ],
+   "distratores": [
+    "sorrir",
+    "surgir",
+    "sumir",
+    "soprar"
+   ],
+   "distratoresEn": [
+    "to smile",
+    "to arise",
+    "to vanish",
+    "to blow"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Com u: «sufrir». «Sufrir un accidente», sofrer um acidente.",
+   "notaEn": "Spelled with u."
+  },
+  {
+   "idioma": "es",
+   "id": "p894",
+   "tipo": "palavra",
+   "es": "sumir",
+   "pt": "mergulhar",
+   "en": "to plunge",
+   "aceitas": [
+    "mergulhar",
+    "afundar",
+    "submergir"
+   ],
+   "aceitasEn": [
+    "to plunge",
+    "to sink",
+    "to immerse",
+    "to submerge"
+   ],
+   "distratores": [
+    "sumir",
+    "somar",
+    "subir",
+    "supor"
+   ],
+   "distratoresEn": [
+    "to vanish",
+    "to add",
+    "to rise",
+    "to suppose"
+   ],
+   "nivel": "C1",
+   "tags": [
+    "verbo",
+    "falso-amigo"
+   ],
+   "nota": "Afundar, mergulhar: «sumido en la crisis». Sumir, desaparecer, é «desaparecer».",
+   "notaEn": "To plunge: «sumido en la crisis». To vanish is «desaparecer»."
+  },
+  {
+   "idioma": "es",
+   "id": "p895",
+   "tipo": "palavra",
+   "es": "tampoco",
+   "pt": "também não",
+   "en": "neither",
+   "aceitas": [
+    "tambem nao",
+    "tampouco",
+    "nem"
+   ],
+   "aceitasEn": [
+    "neither",
+    "nor",
+    "not either",
+    "either"
+   ],
+   "distratores": [
+    "também",
+    "nunca",
+    "talvez",
+    "pouco"
+   ],
+   "distratoresEn": [
+    "also",
+    "little time",
+    "maybe",
+    "little"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Yo tampoco», eu também não. Nunca «también no».",
+   "notaEn": "«Yo tampoco», me neither."
+  },
+  {
+   "idioma": "es",
+   "id": "p896",
+   "tipo": "palavra",
+   "es": "tocar",
+   "pt": "tocar",
+   "en": "to touch / to be one's turn",
+   "aceitas": [
+    "tocar",
+    "ser a vez",
+    "caber"
+   ],
+   "aceitasEn": [
+    "to touch",
+    "to play",
+    "to be one's turn",
+    "to ring",
+    "touch"
+   ],
+   "distratores": [
+    "tossir",
+    "trocar",
+    "torcer",
+    "tomar"
+   ],
+   "distratoresEn": [
+    "to cough / to clear one's throat",
+    "to swap / to change",
+    "to twist / to bend",
+    "to take / to drink"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Tocar, tocar instrumento e ser a vez: «hoy te toca fregar», hoje é sua vez. «Me tocó la lotería».",
+   "notaEn": "To touch, to play, and to be one's turn: «hoy te toca»."
+  },
+  {
+   "idioma": "es",
+   "id": "p897",
+   "tipo": "palavra",
+   "es": "total",
+   "pt": "total",
+   "en": "total / in short",
+   "aceitas": [
+    "total",
+    "resumindo",
+    "enfim"
+   ],
+   "aceitasEn": [
+    "total",
+    "in short",
+    "anyway",
+    "so"
+   ],
+   "distratores": [
+    "parcial",
+    "tonal",
+    "fatal",
+    "normal"
+   ],
+   "distratoresEn": [
+    "partial / incomplete",
+    "tonal / sonic",
+    "fatal / deadly",
+    "normal / ordinary"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Total e, no começo da frase, enfim: «total, que al final no fuimos».",
+   "notaEn": "Total, and at the start of a sentence, in short."
+  },
+  {
+   "idioma": "es",
+   "id": "p898",
+   "tipo": "palavra",
+   "es": "trabajar",
+   "pt": "trabalhar",
+   "en": "to work",
+   "aceitas": [
+    "trabalhar"
+   ],
+   "aceitasEn": [
+    "to work",
+    "work"
+   ],
+   "distratores": [
+    "trapacear",
+    "trocar",
+    "tragar",
+    "traçar"
+   ],
+   "distratoresEn": [
+    "to cheat",
+    "to swap",
+    "to swallow",
+    "to trace"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Trabajar de camarero», trabalhar como garçom. Na gíria da Espanha, «currar».",
+   "notaEn": "«Trabajar de camarero», to work as a waiter.",
+   "sinonimosEs": [
+    "currar"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p899",
+   "tipo": "palavra",
+   "es": "tranquilo",
+   "pt": "tranquilo",
+   "en": "calm",
+   "aceitas": [
+    "tranquilo",
+    "calmo",
+    "sossegado"
+   ],
+   "aceitasEn": [
+    "calm",
+    "quiet",
+    "peaceful",
+    "relaxed"
+   ],
+   "distratores": [
+    "agitado",
+    "tranquilizante",
+    "trancado",
+    "tímido"
+   ],
+   "distratoresEn": [
+    "agitated",
+    "sedative",
+    "locked",
+    "shy"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«¡Tranquilo!», calma! «Un barrio tranquilo», um bairro sossegado.",
+   "notaEn": "«¡Tranquilo!», relax!"
+  },
+  {
+   "idioma": "es",
+   "id": "p900",
+   "tipo": "palavra",
+   "es": "último",
+   "pt": "último",
+   "en": "last",
+   "aceitas": [
+    "ultimo",
+    "derradeiro"
+   ],
+   "aceitasEn": [
+    "last",
+    "latest",
+    "final"
+   ],
+   "distratores": [
+    "primeiro",
+    "próximo",
+    "ótimo",
+    "único"
+   ],
+   "distratoresEn": [
+    "first",
+    "next",
+    "great",
+    "only"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "«Por último», por último. «A última hora», em cima da hora.",
+   "notaEn": "«A última hora», at the last minute."
+  },
+  {
+   "idioma": "es",
+   "id": "p901",
+   "tipo": "palavra",
+   "es": "uno",
+   "pt": "um",
+   "en": "one",
+   "aceitas": [
+    "um",
+    "1",
+    "uma"
+   ],
+   "aceitasEn": [
+    "one",
+    "1",
+    "a",
+    "an"
+   ],
+   "distratores": [
+    "dois",
+    "nenhum",
+    "único",
+    "onze"
+   ],
+   "distratoresEn": [
+    "two",
+    "none",
+    "only",
+    "eleven"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Antes de substantivo masculino vira «un»: «un libro». «Cada uno», cada um.",
+   "notaEn": "Before a masculine noun: «un»."
+  },
+  {
+   "idioma": "es",
+   "id": "p902",
+   "tipo": "palavra",
+   "es": "untar",
+   "pt": "passar (no pão)",
+   "en": "to spread",
+   "aceitas": [
+    "passar",
+    "espalhar",
+    "untar",
+    "besuntar"
+   ],
+   "aceitasEn": [
+    "to spread",
+    "to smear",
+    "to grease",
+    "to butter"
+   ],
+   "distratores": [
+    "juntar (as coisas)",
+    "cortar (o pão)",
+    "tostar (o pão)",
+    "ungir (com óleo)"
+   ],
+   "distratoresEn": [
+    "to gather",
+    "to cut",
+    "to toast",
+    "to anoint"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo",
+    "comida"
+   ],
+   "nota": "Passar manteiga, geleia: «unta mantequilla en el pan».",
+   "notaEn": "To spread: «unta mantequilla en el pan»."
+  },
+  {
+   "idioma": "es",
+   "id": "p903",
+   "tipo": "palavra",
+   "es": "usar",
+   "pt": "usar",
+   "en": "to use",
+   "aceitas": [
+    "usar",
+    "utilizar"
+   ],
+   "aceitasEn": [
+    "to use",
+    "use",
+    "to wear"
+   ],
+   "distratores": [
+    "abusar",
+    "ousar",
+    "suar",
+    "assar"
+   ],
+   "distratoresEn": [
+    "to abuse",
+    "to dare",
+    "to sweat",
+    "to roast"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Usar e vestir: «uso gafas», uso óculos.",
+   "notaEn": "To use, and to wear."
+  },
+  {
+   "idioma": "es",
+   "id": "p904",
+   "tipo": "palavra",
+   "es": "vegetariano",
+   "pt": "vegetariano",
+   "en": "vegetarian",
+   "aceitas": [
+    "vegetariano",
+    "vegetariana"
+   ],
+   "aceitasEn": [
+    "vegetarian",
+    "veggie"
+   ],
+   "distratores": [
+    "vegano",
+    "carnívoro",
+    "vegetal",
+    "verdureiro"
+   ],
+   "distratoresEn": [
+    "vegan",
+    "carnivore",
+    "vegetable",
+    "greengrocer"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "adjetivo",
+    "comida"
+   ],
+   "nota": "Vegano é «vegano».",
+   "notaEn": "Vegan is «vegano»."
+  },
+  {
+   "idioma": "es",
+   "id": "p905",
+   "tipo": "palavra",
+   "es": "vender",
+   "pt": "vender",
+   "en": "to sell",
+   "aceitas": [
+    "vender"
+   ],
+   "aceitasEn": [
+    "to sell",
+    "sell"
+   ],
+   "distratores": [
+    "comprar",
+    "vencer",
+    "vendar",
+    "render"
+   ],
+   "distratoresEn": [
+    "to buy",
+    "to win",
+    "to blindfold",
+    "to yield"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "«Se vende», vende-se. O vendedor é «el vendedor».",
+   "notaEn": "«Se vende», for sale."
+  },
+  {
+   "idioma": "es",
+   "id": "p906",
+   "tipo": "palavra",
+   "es": "verde",
+   "pt": "verde",
+   "en": "green",
+   "aceitas": [
+    "verde"
+   ],
+   "aceitasEn": [
+    "green",
+    "unripe"
+   ],
+   "distratores": [
+    "azul",
+    "amarelo",
+    "vermelho",
+    "verdade"
+   ],
+   "distratoresEn": [
+    "blue",
+    "yellow",
+    "red",
+    "truth"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Verde e não madura. «Poner verde a alguien», falar mal de alguém. «Chiste verde», piada suja.",
+   "notaEn": "«Poner verde», to badmouth."
+  },
+  {
+   "idioma": "es",
+   "id": "p907",
+   "tipo": "palavra",
+   "es": "viajar",
+   "pt": "viajar",
+   "en": "to travel",
+   "aceitas": [
+    "viajar"
+   ],
+   "aceitasEn": [
+    "to travel",
+    "travel",
+    "to go on a trip"
+   ],
+   "distratores": [
+    "vigiar",
+    "vibrar",
+    "vagar",
+    "vingar"
+   ],
+   "distratoresEn": [
+    "to watch",
+    "to vibrate",
+    "to wander",
+    "to avenge"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "A viagem é «el viaje». «Viajar en tren», viajar de trem.",
+   "notaEn": "«Viajar en tren», to travel by train."
+  },
+  {
+   "idioma": "es",
+   "id": "p908",
+   "tipo": "palavra",
+   "es": "volcar",
+   "pt": "virar (tombar)",
+   "en": "to overturn",
+   "aceitas": [
+    "virar",
+    "capotar",
+    "tombar",
+    "derramar",
+    "emborcar"
+   ],
+   "aceitasEn": [
+    "to overturn",
+    "to tip over",
+    "to capsize",
+    "to spill"
+   ],
+   "distratores": [
+    "voltar (para casa)",
+    "voar (pelo ar)",
+    "colar (com cola)",
+    "vomitar (de enjoo)"
+   ],
+   "distratoresEn": [
+    "to return",
+    "to fly",
+    "to stick",
+    "to vomit"
+   ],
+   "nivel": "B2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "Virar, tombar, derramar: «el coche volcó». O o vira ue: «vuelca».",
+   "notaEn": "To overturn: «el coche volcó»."
   }
  ]
 }
