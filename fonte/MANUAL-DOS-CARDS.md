@@ -514,6 +514,25 @@ Os distratores em português seguem a mesma lógica: a frase nos outros tempos.
 Onde o português não distingue («nós andamos» é presente e pretérito), o tempo
 ambíguo fica de fora.
 
+**Card de conjugação é para a irregularidade, não para o paradigma** (pedido do
+Gere, outubro de 2026). Conjugação regular não ganha card por pessoa nem por
+tempo — ela se aprende nas frases. Ganha card cada forma que foge da regra, uma
+vez por padrão: o futuro que perde a vogal («podré», «sabré») ou ganha o d
+(«tendré», «saldré»), o imperativo curto de tú («ten», «sal», «di», «ve», «sé»),
+o particípio irregular («visto», «puesto», «vuelto», «escrito», «abierto»), o
+subjuntivo que sai do «yo» irregular («haga», «diga»), o pretérito forte. A
+mudança de radical (e→ie, o→ue) já tem um card de cada tipo; mais um seria
+repetição.
+
+Duas armadilhas da leva 25:
+
+- **o imperativo brasileiro é a forma do presente**: «tem cuidado», «sai daí»,
+  «me diz» são ordens no Brasil. No card de imperativo, o presente não pode ser
+  distrator em português;
+- **o pretérito perfeito da Espanha é o pretérito simples da América**: «¿has
+  visto mis llaves?» lá é «¿viste mis llaves?». No card de perfeito, o pretérito
+  simples não entra em `formasEs` — vai em `regionaisEs`, com o lugar.
+
 ---
 
 ## 11. O lado inglês

@@ -1218,5 +1218,17 @@
     "en": "paint",
     "es": "paint",
     "cards": 0
+  },
+  "volver": {
+    "en": "volver",
+    "es": "volver"
+  },
+  "escribir": {
+    "en": "escribir",
+    "es": "escribir"
+  },
+  "abrir": {
+    "en": "abrir",
+    "es": "abrir"
   }
 }

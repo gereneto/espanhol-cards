@@ -2,7 +2,7 @@
  "versao": 1,
  "idioma": "es",
  "gerado_em": "2026-10-05",
- "total": 1869,
+ "total": 1897,
  "cards": [
   {
    "idioma": "es",
@@ -53903,7 +53903,10 @@
     "cotidiano"
    ],
    "nota": "Longe dos dois que conversam. Perto de quem ouve é «ahí».",
-   "notaEn": "Far from both speakers. Near the listener is «ahí»."
+   "notaEn": "Far from both speakers. Near the listener is «ahí».",
+   "sinonimosEs": [
+    "ahí"
+   ]
   },
   {
    "idioma": "es",
@@ -78684,6 +78687,1583 @@
    ],
    "nota": "Também bom, legal: «un detalle muy bonito». O peixe bonito também é «el bonito».",
    "notaEn": "Also nice: «un detalle muy bonito»."
+  },
+  {
+   "idioma": "es",
+   "id": "v089",
+   "tipo": "frase",
+   "es": "Tendré más tiempo para ti.",
+   "pt": "Terei mais tempo para você.",
+   "en": "I'll have more time for you.",
+   "aceitas": [
+    "terei mais tempo para voce",
+    "vou ter mais tempo para voce",
+    "vou ter mais tempo pra voce",
+    "terei mais tempo pra voce"
+   ],
+   "aceitasEn": [
+    "i ll have more time for you",
+    "i will have more time for you"
+   ],
+   "distratores": [
+    "Tive mais tempo para você.",
+    "Eu tinha mais tempo para você.",
+    "Eu teria mais tempo para você.",
+    "Tenho tido mais tempo para você."
+   ],
+   "distratoresEn": [
+    "I had more time for you.",
+    "I used to have more time for you.",
+    "I would have more time for you.",
+    "I've had more time for you."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "tener",
+    "irregular"
+   ],
+   "nota": "O futuro de «tener» perde o e e ganha um d: «tendré». O mesmo em «poner» (pondré), «salir» (saldré), «venir» (vendré). Na conversa, «voy a tener» é o mais comum.",
+   "notaEn": "The future of «tener» drops the e and adds a d: «tendré». So do «pondré», «saldré», «vendré».",
+   "formasEs": {
+    "Tuve más tiempo para ti": "pretérito",
+    "Tenía más tiempo para ti": "imperfeito",
+    "Tendría más tiempo para ti": "condicional",
+    "He tenido más tiempo para ti": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "Tuve más tiempo para ti": "preterite",
+    "Tenía más tiempo para ti": "imperfect",
+    "Tendría más tiempo para ti": "conditional",
+    "He tenido más tiempo para ti": "present perfect"
+   },
+   "requerTodas": [
+    "p354",
+    "p403",
+    "p424"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v090",
+   "tipo": "frase",
+   "es": "Pondré la alarma a las siete.",
+   "pt": "Vou pôr o alarme para as sete.",
+   "en": "I'll set the alarm for seven.",
+   "aceitas": [
+    "vou por o alarme para as sete",
+    "porei o despertador para as sete",
+    "vou colocar o despertador para as sete",
+    "vou por o despertador as sete",
+    "colocarei o alarme para as sete",
+    "vou botar o despertador para as sete",
+    "vou colocar o alarme para as sete"
+   ],
+   "aceitasEn": [
+    "i ll set the alarm for seven",
+    "i will set the alarm for seven",
+    "ill set my alarm for seven"
+   ],
+   "distratores": [
+    "Pus o alarme para as sete.",
+    "Eu punha o alarme para as sete.",
+    "Eu poria o alarme para as sete.",
+    "Eu tinha posto o alarme para as sete."
+   ],
+   "distratoresEn": [
+    "I set the alarm for seven.",
+    "I used to set the alarm for seven.",
+    "I would set the alarm for seven.",
+    "I had set the alarm for seven."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "poner",
+    "irregular"
+   ],
+   "nota": "«Pondré»: o futuro de «poner» troca o e por d. Pôr o despertador é «poner la alarma» ou «poner el despertador».",
+   "notaEn": "«Pondré»: the future of «poner».",
+   "formasEs": {
+    "Puse la alarma a las siete": "pretérito",
+    "Ponía la alarma a las siete": "imperfeito",
+    "Pondría la alarma a las siete": "condicional",
+    "He puesto la alarma a las siete": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "Puse la alarma a las siete": "preterite",
+    "Ponía la alarma a las siete": "imperfect",
+    "Pondría la alarma a las siete": "conditional",
+    "He puesto la alarma a las siete": "present perfect"
+   },
+   "requerTodas": [
+    "p357",
+    "p1070",
+    "p997"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v091",
+   "tipo": "frase",
+   "es": "Saldré de casa a las ocho.",
+   "pt": "Vou sair de casa às oito.",
+   "en": "I'll leave home at eight.",
+   "aceitas": [
+    "vou sair de casa as oito",
+    "sairei de casa as oito",
+    "saio de casa as oito",
+    "eu vou sair de casa as oito"
+   ],
+   "aceitasEn": [
+    "i ll leave home at eight",
+    "i will leave home at eight",
+    "ill leave the house at eight"
+   ],
+   "distratores": [
+    "Saí de casa às oito.",
+    "Eu saía de casa às oito.",
+    "Eu sairia de casa às oito.",
+    "Eu tinha saído de casa às oito."
+   ],
+   "distratoresEn": [
+    "I left home at eight.",
+    "I used to leave home at eight.",
+    "I would leave home at eight.",
+    "I had left home at eight."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "salir",
+    "irregular"
+   ],
+   "nota": "«Saldré»: o futuro de «salir» também ganha o d. O presente é «salgo», com g.",
+   "notaEn": "«Saldré»: the future of «salir». Present: «salgo».",
+   "formasEs": {
+    "Salí de casa a las ocho": "pretérito",
+    "Salía de casa a las ocho": "imperfeito",
+    "Saldría de casa a las ocho": "condicional",
+    "He salido de casa a las ocho": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "Salí de casa a las ocho": "preterite",
+    "Salía de casa a las ocho": "imperfect",
+    "Saldría de casa a las ocho": "conditional",
+    "He salido de casa a las ocho": "present perfect"
+   },
+   "requerTodas": [
+    "p373",
+    "p400",
+    "p467"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v092",
+   "tipo": "frase",
+   "es": "Lo haré yo.",
+   "pt": "Eu vou fazer.",
+   "en": "I'll do it.",
+   "aceitas": [
+    "eu vou fazer",
+    "eu farei",
+    "eu faco isso",
+    "vou fazer eu",
+    "eu mesmo faco",
+    "deixa que eu faco",
+    "eu faco"
+   ],
+   "aceitasEn": [
+    "i ll do it",
+    "i will do it",
+    "ill do it myself"
+   ],
+   "distratores": [
+    "Eu fiz.",
+    "Eu fazia.",
+    "Eu faria.",
+    "Eu tenho feito."
+   ],
+   "distratoresEn": [
+    "I did it.",
+    "I used to do it.",
+    "I would do it.",
+    "I've done it."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "hacer",
+    "irregular"
+   ],
+   "nota": "O futuro de «hacer» encurta: «haré», «harás». O de «decir» também: «diré». O «yo» no fim põe a ênfase: sou eu que vou fazer.",
+   "notaEn": "The future of «hacer» shortens: «haré». So does «decir»: «diré».",
+   "formasEs": {
+    "Lo hice yo": "pretérito",
+    "Lo hacía yo": "imperfeito",
+    "Lo haría yo": "condicional",
+    "Lo he hecho yo": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "Lo hice yo": "preterite",
+    "Lo hacía yo": "imperfect",
+    "Lo haría yo": "conditional",
+    "Lo he hecho yo": "present perfect"
+   },
+   "requerTodas": [
+    "p353"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v093",
+   "tipo": "frase",
+   "es": "No podré ir a la fiesta.",
+   "pt": "Não vou poder ir à festa.",
+   "en": "I won't be able to go to the party.",
+   "aceitas": [
+    "nao vou poder ir a festa",
+    "nao poderei ir a festa",
+    "nao vou conseguir ir a festa",
+    "nao vou poder ir na festa",
+    "eu nao vou poder ir a festa"
+   ],
+   "aceitasEn": [
+    "i won t be able to go to the party",
+    "i will not be able to go to the party",
+    "i cant make it to the party"
+   ],
+   "distratores": [
+    "Não pude ir à festa.",
+    "Eu não podia ir à festa.",
+    "Eu não poderia ir à festa.",
+    "Até agora não pude ir à festa."
+   ],
+   "distratoresEn": [
+    "I couldn't go to the party.",
+    "I wasn't allowed to go to the party.",
+    "I wouldn't be able to go to the party.",
+    "I haven't been able to go to the party."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "poder",
+    "irregular"
+   ],
+   "nota": "O futuro de «poder» perde o e: «podré». Igual «saber» (sabré), «haber» (habrá), «querer» (querré), «caber» (cabré).",
+   "notaEn": "The future of «poder» drops the e: «podré». So do «sabré», «habrá», «querré».",
+   "formasEs": {
+    "No pude ir a la fiesta": "pretérito",
+    "No podía ir a la fiesta": "imperfeito",
+    "No podría ir a la fiesta": "condicional",
+    "No he podido ir a la fiesta": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "No pude ir a la fiesta": "preterite",
+    "No podía ir a la fiesta": "imperfect",
+    "No podría ir a la fiesta": "conditional",
+    "No he podido ir a la fiesta": "present perfect"
+   },
+   "requerTodas": [
+    "p383",
+    "p355",
+    "p766"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v094",
+   "tipo": "frase",
+   "es": "Sabré la verdad.",
+   "pt": "Vou saber a verdade.",
+   "en": "I'll find out the truth.",
+   "aceitas": [
+    "vou saber a verdade",
+    "saberei a verdade",
+    "eu vou saber a verdade",
+    "vou descobrir a verdade",
+    "eu saberei a verdade"
+   ],
+   "aceitasEn": [
+    "i ll find out the truth",
+    "i will know the truth",
+    "ill know the truth",
+    "i will find out the truth"
+   ],
+   "distratores": [
+    "Soube a verdade.",
+    "Eu sabia a verdade.",
+    "Eu saberia a verdade.",
+    "Eu teria sabido a verdade."
+   ],
+   "distratoresEn": [
+    "I found out the truth.",
+    "I knew the truth.",
+    "I would know the truth.",
+    "I would have found out the truth."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "saber",
+    "irregular"
+   ],
+   "nota": "«Sabré», sem o e. No pretérito, «saber» é ficar sabendo: «supe la verdad», soube, descobri.",
+   "notaEn": "«Sabré». In the preterite «saber» means to find out.",
+   "formasEs": {
+    "Supe la verdad": "pretérito",
+    "Sabía la verdad": "imperfeito",
+    "Sabría la verdad": "condicional",
+    "He sabido la verdad": "pretérito perfeito"
+   },
+   "formasEsEn": {
+    "Supe la verdad": "preterite",
+    "Sabía la verdad": "imperfect",
+    "Sabría la verdad": "conditional",
+    "He sabido la verdad": "present perfect"
+   },
+   "requerTodas": [
+    "p392",
+    "p826"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v095",
+   "tipo": "frase",
+   "es": "¿Podrías ayudarme?",
+   "pt": "Você poderia me ajudar?",
+   "en": "Could you help me?",
+   "aceitas": [
+    "voce poderia me ajudar",
+    "poderia me ajudar",
+    "voce podia me ajudar",
+    "podia me ajudar",
+    "voce poderia me dar uma ajuda"
+   ],
+   "aceitasEn": [
+    "could you help me",
+    "would you be able to help me",
+    "could you give me a hand"
+   ],
+   "distratores": [
+    "Você pôde me ajudar?",
+    "Você poderá me ajudar?",
+    "Você tem podido me ajudar?",
+    "Se você pudesse me ajudar?"
+   ],
+   "distratoresEn": [
+    "Did you help me?",
+    "Will you help me?",
+    "Have you helped me?",
+    "If only you'd help me?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "condicional",
+    "poder",
+    "irregular"
+   ],
+   "nota": "O condicional é o pedido gentil: «¿podrías…?», «¿me dirías…?». Com usted, «¿podría ayudarme?». O radical é o do futuro: «podr-».",
+   "notaEn": "The conditional is the polite request. With usted, «¿podría…?».",
+   "formasEs": {
+    "Pudiste ayudarme": "pretérito",
+    "Podrás ayudarme": "futuro",
+    "Has podido ayudarme": "pretérito perfeito",
+    "Puedas ayudarme": "subjuntivo"
+   },
+   "formasEsEn": {
+    "Pudiste ayudarme": "preterite",
+    "Podrás ayudarme": "future",
+    "Has podido ayudarme": "present perfect",
+    "Puedas ayudarme": "subjunctive"
+   },
+   "requerTodas": [
+    "p383",
+    "p437"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v096",
+   "tipo": "frase",
+   "es": "Yo que tú, no lo haría.",
+   "pt": "Se eu fosse você, não faria isso.",
+   "en": "If I were you, I wouldn't do it.",
+   "aceitas": [
+    "se eu fosse voce nao faria isso",
+    "no seu lugar eu nao faria isso",
+    "eu no seu lugar nao faria isso",
+    "se eu fosse voce nao faria",
+    "eu nao faria isso se fosse voce",
+    "no seu lugar nao faria isso"
+   ],
+   "aceitasEn": [
+    "if i were you i wouldn t do it",
+    "if i were you i wouldnt do that",
+    "in your place i wouldnt do it"
+   ],
+   "distratores": [
+    "Se eu fosse você, não fiz isso.",
+    "Se eu fosse você, não farei isso.",
+    "Se eu fosse você, não tenho feito isso.",
+    "Se eu fosse você, não vou fazer isso."
+   ],
+   "distratoresEn": [
+    "If I were you, I didn't do it.",
+    "If I were you, I won't do it.",
+    "If I were you, I haven't done it.",
+    "If I were you, I'm not doing it."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "condicional",
+    "hacer",
+    "irregular"
+   ],
+   "nota": "«Yo que tú», se eu fosse você, sem verbo nenhum: o conselho vem no condicional. Na fala da Espanha também se ouve «yo que tú, no lo hacía».",
+   "notaEn": "«Yo que tú», if I were you: the advice goes in the conditional.",
+   "formasEs": {
+    "Yo que tú, no lo hice": "pretérito, que aqui não cabe",
+    "Yo que tú, no lo haré": "futuro do indicativo, que aqui não cabe",
+    "Yo que tú, no lo he hecho": "pretérito perfeito",
+    "Yo que tú, no lo había hecho": "mais-que-perfeito"
+   },
+   "formasEsEn": {
+    "Yo que tú, no lo hice": "preterite, which does not fit here",
+    "Yo que tú, no lo haré": "future indicative, which does not fit here",
+    "Yo que tú, no lo he hecho": "present perfect",
+    "Yo que tú, no lo había hecho": "pluperfect"
+   },
+   "aceitasEs": [
+    "Yo que tú, no lo hacía.",
+    "Si yo fuera tú, no lo haría."
+   ],
+   "requerTodas": [
+    "p353"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v097",
+   "tipo": "frase",
+   "es": "Ten cuidado con el perro.",
+   "pt": "Tenha cuidado com o cachorro.",
+   "en": "Be careful with the dog.",
+   "aceitas": [
+    "tenha cuidado com o cachorro",
+    "cuidado com o cachorro",
+    "toma cuidado com o cachorro",
+    "tem cuidado com o cachorro",
+    "cuidado com o cao",
+    "toma cuidado com o cao"
+   ],
+   "aceitasEn": [
+    "be careful with the dog",
+    "watch out for the dog",
+    "be careful of the dog"
+   ],
+   "distratores": [
+    "Você teve cuidado com o cachorro.",
+    "Você vai ter cuidado com o cachorro.",
+    "Você tinha cuidado com o cachorro.",
+    "Você teria cuidado com o cachorro."
+   ],
+   "distratoresEn": [
+    "You were careful with the dog.",
+    "You'll be careful with the dog.",
+    "You used to be careful with the dog.",
+    "You'd be careful with the dog."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "imperativo",
+    "tener",
+    "irregular"
+   ],
+   "nota": "Os imperativos curtos de tú: «ten», «pon», «sal», «haz», «di», «ven», «ve», «sé». Com usted: «tenga cuidado».",
+   "notaEn": "The short tú imperatives: ten, pon, sal, haz, di, ven, ve, sé.",
+   "formasEs": {
+    "Tienes cuidado con el perro": "presente",
+    "Tuviste cuidado con el perro": "pretérito",
+    "Tendrás cuidado con el perro": "futuro",
+    "Tenías cuidado con el perro": "imperfeito"
+   },
+   "formasEsEn": {
+    "Tienes cuidado con el perro": "present",
+    "Tuviste cuidado con el perro": "preterite",
+    "Tendrás cuidado con el perro": "future",
+    "Tenías cuidado con el perro": "imperfect"
+   },
+   "requerTodas": [
+    "p354",
+    "p1071",
+    "p671"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v098",
+   "tipo": "frase",
+   "es": "Sal de ahí ahora mismo.",
+   "pt": "Sai daí agora mesmo.",
+   "en": "Get out of there right now.",
+   "aceitas": [
+    "sai dai agora mesmo",
+    "saia dai agora mesmo",
+    "sai dai ja",
+    "sai dai agora",
+    "sai dai ja ja"
+   ],
+   "aceitasEn": [
+    "get out of there right now",
+    "come out of there right now",
+    "get out of there now"
+   ],
+   "distratores": [
+    "Você saiu daí agora mesmo.",
+    "Você vai sair daí agora mesmo.",
+    "Você sairia daí agora mesmo.",
+    "Você tinha saído daí agora mesmo."
+   ],
+   "distratoresEn": [
+    "You got out of there just now.",
+    "You'll get out of there right now.",
+    "You'd get out of there right now.",
+    "You had got out of there just now."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "imperativo",
+    "salir",
+    "irregular"
+   ],
+   "nota": "«Sal» é o imperativo de «salir» — e também o sal; a frase decide. Com usted, «salga».",
+   "notaEn": "«Sal» is the imperative of «salir», and also salt.",
+   "formasEs": {
+    "Sales de ahí ahora mismo": "presente",
+    "Saliste de ahí ahora mismo": "pretérito",
+    "Saldrás de ahí ahora mismo": "futuro",
+    "Salías de ahí ahora mismo": "imperfeito"
+   },
+   "formasEsEn": {
+    "Sales de ahí ahora mismo": "present",
+    "Saliste de ahí ahora mismo": "preterite",
+    "Saldrás de ahí ahora mismo": "future",
+    "Salías de ahí ahora mismo": "imperfect"
+   },
+   "requerTodas": [
+    "p535",
+    "p1069",
+    "p568",
+    "p973"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v099",
+   "tipo": "frase",
+   "es": "Dime la verdad.",
+   "pt": "Me diga a verdade.",
+   "en": "Tell me the truth.",
+   "aceitas": [
+    "me diga a verdade",
+    "diz a verdade",
+    "me diz a verdade",
+    "fala a verdade",
+    "me fala a verdade",
+    "diga-me a verdade",
+    "diga a verdade"
+   ],
+   "aceitasEn": [
+    "tell me the truth",
+    "tell me the truth please"
+   ],
+   "distratores": [
+    "Você me disse a verdade.",
+    "Você vai me dizer a verdade.",
+    "Você me dizia a verdade.",
+    "Você me diria a verdade."
+   ],
+   "distratoresEn": [
+    "You told me the truth.",
+    "You'll tell me the truth.",
+    "You used to tell me the truth.",
+    "You'd tell me the truth."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "conjugação",
+    "imperativo",
+    "decir",
+    "irregular"
+   ],
+   "nota": "«Dime» é «di» + «me»: o imperativo de «decir» tem uma letra só. Com usted, «dígame», que é também o «alô» do telefone na Espanha.",
+   "notaEn": "«Dime» = «di» + «me». With usted, «dígame».",
+   "formasEs": {
+    "Me dices la verdad": "presente",
+    "Me dijiste la verdad": "pretérito",
+    "Me dirás la verdad": "futuro",
+    "Me decías la verdad": "imperfeito"
+   },
+   "formasEsEn": {
+    "Me dices la verdad": "present",
+    "Me dijiste la verdad": "preterite",
+    "Me dirás la verdad": "future",
+    "Me decías la verdad": "imperfect"
+   },
+   "requerTodas": [
+    "p371",
+    "p826"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v100",
+   "tipo": "frase",
+   "es": "Ve tú primero.",
+   "pt": "Vai você primeiro.",
+   "en": "You go first.",
+   "aceitas": [
+    "vai voce primeiro",
+    "va voce primeiro",
+    "vai na frente",
+    "va na frente",
+    "pode ir primeiro",
+    "pode ir na frente"
+   ],
+   "aceitasEn": [
+    "you go first",
+    "go first",
+    "you go ahead"
+   ],
+   "distratores": [
+    "Você foi primeiro.",
+    "Você irá primeiro.",
+    "Você ia primeiro.",
+    "Você tinha ido primeiro."
+   ],
+   "distratoresEn": [
+    "You went first.",
+    "You'll go first.",
+    "You used to go first.",
+    "You had gone first."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "imperativo",
+    "ir",
+    "irregular"
+   ],
+   "nota": "«Ve» é o imperativo de «ir» — e também «él ve», de «ver». «Vete», com o pronome, é vá embora.",
+   "notaEn": "«Ve», the imperative of «ir». «Vete», go away.",
+   "formasEs": {
+    "Fuiste tú primero": "pretérito",
+    "Irás tú primero": "futuro",
+    "Ibas tú primero": "imperfeito",
+    "Habías ido tú primero": "mais-que-perfeito"
+   },
+   "formasEsEn": {
+    "Fuiste tú primero": "preterite",
+    "Irás tú primero": "future",
+    "Ibas tú primero": "imperfect",
+    "Habías ido tú primero": "pluperfect"
+   },
+   "requerTodas": [
+    "p368",
+    "p468"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v101",
+   "tipo": "frase",
+   "es": "Sé bueno con tu hermana.",
+   "pt": "Seja bonzinho com a sua irmã.",
+   "en": "Be nice to your sister.",
+   "aceitas": [
+    "seja bonzinho com a sua irma",
+    "seja bom com sua irma",
+    "seja legal com a sua irma",
+    "seja bonzinho com sua irma",
+    "seja bom com a sua irma",
+    "se comporta com a sua irma"
+   ],
+   "aceitasEn": [
+    "be nice to your sister",
+    "be good to your sister",
+    "be kind to your sister"
+   ],
+   "distratores": [
+    "Você é bonzinho com a sua irmã.",
+    "Você foi bonzinho com a sua irmã.",
+    "Você vai ser bonzinho com a sua irmã.",
+    "Você era bonzinho com a sua irmã."
+   ],
+   "distratoresEn": [
+    "You're nice to your sister.",
+    "You were nice to your sister.",
+    "You'll be nice to your sister.",
+    "You used to be nice to your sister."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "imperativo",
+    "ser",
+    "irregular"
+   ],
+   "nota": "«Sé», com acento, é o imperativo de «ser» e também «eu sei», de «saber». Sem acento, «se» é o pronome.",
+   "notaEn": "«Sé» is the imperative of «ser» and «I know».",
+   "formasEs": {
+    "Eres bueno con tu hermana": "presente",
+    "Fuiste bueno con tu hermana": "pretérito",
+    "Serás bueno con tu hermana": "futuro",
+    "Eras bueno con tu hermana": "imperfeito"
+   },
+   "formasEsEn": {
+    "Eres bueno con tu hermana": "present",
+    "Fuiste bueno con tu hermana": "preterite",
+    "Serás bueno con tu hermana": "future",
+    "Eras bueno con tu hermana": "imperfect"
+   },
+   "requerTodas": [
+    "p392",
+    "p412",
+    "p217"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v102",
+   "tipo": "frase",
+   "es": "¿Has visto mis llaves?",
+   "pt": "Você viu as minhas chaves?",
+   "en": "Have you seen my keys?",
+   "aceitas": [
+    "voce viu as minhas chaves",
+    "voce viu minhas chaves",
+    "viu minhas chaves",
+    "viu as minhas chaves"
+   ],
+   "aceitasEn": [
+    "have you seen my keys",
+    "did you see my keys",
+    "have you seen my keys anywhere"
+   ],
+   "distratores": [
+    "Você via as minhas chaves?",
+    "Você vai ver as minhas chaves?",
+    "Você tinha visto as minhas chaves?",
+    "Você veria as minhas chaves?"
+   ],
+   "distratoresEn": [
+    "Did you use to see my keys?",
+    "Will you see my keys?",
+    "Had you seen my keys?",
+    "Would you see my keys?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "ver",
+    "irregular"
+   ],
+   "nota": "O particípio de «ver» é «visto». A Espanha usa o perfeito para o que tem a ver com agora; a América diz «¿viste mis llaves?».",
+   "notaEn": "The participle of «ver» is «visto». Latin America says «¿viste…?».",
+   "formasEs": {
+    "Veías mis llaves": "imperfeito",
+    "Verás mis llaves": "futuro",
+    "Habías visto mis llaves": "mais-que-perfeito",
+    "Verías mis llaves": "condicional"
+   },
+   "formasEsEn": {
+    "Veías mis llaves": "imperfect",
+    "Verás mis llaves": "future",
+    "Habías visto mis llaves": "pluperfect",
+    "Verías mis llaves": "conditional"
+   },
+   "regionaisEs": {
+    "¿Viste mis llaves?": "na América Latina"
+   },
+   "requerTodas": [
+    "p352",
+    "p368",
+    "p074"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v103",
+   "tipo": "frase",
+   "es": "¿Dónde has puesto el mando?",
+   "pt": "Onde você colocou o controle?",
+   "en": "Where have you put the remote?",
+   "aceitas": [
+    "onde voce colocou o controle",
+    "onde voce pos o controle",
+    "onde voce botou o controle",
+    "onde voce deixou o controle",
+    "onde voce colocou o controle remoto",
+    "onde voce enfiou o controle"
+   ],
+   "aceitasEn": [
+    "where have you put the remote",
+    "where did you put the remote",
+    "where have you put the remote control"
+   ],
+   "distratores": [
+    "Onde você punha o controle?",
+    "Onde você vai pôr o controle?",
+    "Onde você tinha posto o controle?",
+    "Onde você poria o controle?"
+   ],
+   "distratoresEn": [
+    "Where did you use to put the remote?",
+    "Where will you put the remote?",
+    "Where had you put the remote?",
+    "Where would you put the remote?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "poner",
+    "irregular"
+   ],
+   "nota": "O particípio de «poner» é «puesto». «El mando» é o controle remoto na Espanha; na América, «el control».",
+   "notaEn": "The participle of «poner» is «puesto».",
+   "formasEs": {
+    "Dónde ponías el mando": "imperfeito",
+    "Dónde pondrás el mando": "futuro",
+    "Dónde habías puesto el mando": "mais-que-perfeito",
+    "Dónde pondrías el mando": "condicional"
+   },
+   "formasEsEn": {
+    "Dónde ponías el mando": "imperfect",
+    "Dónde pondrás el mando": "future",
+    "Dónde habías puesto el mando": "pluperfect",
+    "Dónde pondrías el mando": "conditional"
+   },
+   "regionaisEs": {
+    "¿Dónde pusiste el control?": "na América Latina"
+   },
+   "requerTodas": [
+    "p352",
+    "p357",
+    "p151"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v104",
+   "tipo": "frase",
+   "es": "Ya he vuelto.",
+   "pt": "Já voltei.",
+   "en": "I've come back.",
+   "aceitas": [
+    "ja voltei",
+    "voltei",
+    "eu ja voltei",
+    "ja estou de volta",
+    "estou de volta"
+   ],
+   "aceitasEn": [
+    "i ve come back",
+    "im back",
+    "i have returned",
+    "im back now",
+    "ive got back"
+   ],
+   "distratores": [
+    "Eu já voltava.",
+    "Já vou voltar.",
+    "Eu já tinha voltado.",
+    "Eu já voltaria."
+   ],
+   "distratoresEn": [
+    "I was coming back.",
+    "I'll be back.",
+    "I had come back.",
+    "I'd come back."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "volver",
+    "irregular"
+   ],
+   "nota": "«Volver» dá «vuelto», e «devolver», «devuelto». «Ya he vuelto», cheguei, estou de volta.",
+   "notaEn": "«Volver» gives «vuelto»; «devolver», «devuelto».",
+   "formasEs": {
+    "Ya volvía": "imperfeito",
+    "Ya volveré": "futuro",
+    "Ya había vuelto": "mais-que-perfeito",
+    "Ya volvería": "condicional"
+   },
+   "formasEsEn": {
+    "Ya volvía": "imperfect",
+    "Ya volveré": "future",
+    "Ya había vuelto": "pluperfect",
+    "Ya volvería": "conditional"
+   },
+   "regionaisEs": {
+    "Ya volví.": "na América Latina"
+   },
+   "requerTodas": [
+    "p395",
+    "p352",
+    "p536"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v105",
+   "tipo": "frase",
+   "es": "He escrito una carta a mi abuela.",
+   "pt": "Escrevi uma carta para a minha avó.",
+   "en": "I've written a letter to my grandmother.",
+   "aceitas": [
+    "escrevi uma carta para a minha avo",
+    "escrevi uma carta pra minha avo",
+    "eu escrevi uma carta para minha avo",
+    "escrevi uma carta a minha avo"
+   ],
+   "aceitasEn": [
+    "i ve written a letter to my grandmother",
+    "i wrote a letter to my grandmother",
+    "ive written my grandma a letter"
+   ],
+   "distratores": [
+    "Eu escrevia uma carta para a minha avó.",
+    "Vou escrever uma carta para a minha avó.",
+    "Eu tinha escrito uma carta para a minha avó.",
+    "Eu escreveria uma carta para a minha avó."
+   ],
+   "distratoresEn": [
+    "I used to write a letter to my grandmother.",
+    "I'll write a letter to my grandmother.",
+    "I had written a letter to my grandmother.",
+    "I would write a letter to my grandmother."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "escribir",
+    "irregular"
+   ],
+   "nota": "«Escribir» tem o particípio irregular «escrito», como «describir», «descrito». O resto do verbo é regular.",
+   "notaEn": "«Escribir» has the irregular participle «escrito».",
+   "formasEs": {
+    "Escribía una carta a mi abuela": "imperfeito",
+    "Escribiré una carta a mi abuela": "futuro",
+    "Había escrito una carta a mi abuela": "mais-que-perfeito",
+    "Escribiría una carta a mi abuela": "condicional"
+   },
+   "formasEsEn": {
+    "Escribía una carta a mi abuela": "imperfect",
+    "Escribiré una carta a mi abuela": "future",
+    "Había escrito una carta a mi abuela": "pluperfect",
+    "Escribiría una carta a mi abuela": "conditional"
+   },
+   "regionaisEs": {
+    "Escribí una carta a mi abuela.": "na América Latina"
+   },
+   "requerTodas": [
+    "p352",
+    "p518",
+    "p257",
+    "p1019"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v106",
+   "tipo": "frase",
+   "es": "¿Quién ha abierto la ventana?",
+   "pt": "Quem abriu a janela?",
+   "en": "Who's opened the window?",
+   "aceitas": [
+    "quem abriu a janela",
+    "quem foi que abriu a janela"
+   ],
+   "aceitasEn": [
+    "who s opened the window",
+    "who opened the window",
+    "who has opened the window"
+   ],
+   "distratores": [
+    "Quem abria a janela?",
+    "Quem vai abrir a janela?",
+    "Quem tinha aberto a janela?",
+    "Quem abriria a janela?"
+   ],
+   "distratoresEn": [
+    "Who used to open the window?",
+    "Who will open the window?",
+    "Who had opened the window?",
+    "Who would open the window?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "abrir",
+    "irregular"
+   ],
+   "nota": "«Abrir» dá «abierto», como «cubrir», «cubierto». O adjetivo é o mesmo: «la puerta está abierta».",
+   "notaEn": "«Abrir» gives «abierto», like «cubrir», «cubierto».",
+   "formasEs": {
+    "Quién abría la ventana": "imperfeito",
+    "Quién abrirá la ventana": "futuro",
+    "Quién había abierto la ventana": "mais-que-perfeito",
+    "Quién abriría la ventana": "condicional"
+   },
+   "formasEsEn": {
+    "Quién abría la ventana": "imperfect",
+    "Quién abrirá la ventana": "future",
+    "Quién había abierto la ventana": "pluperfect",
+    "Quién abriría la ventana": "conditional"
+   },
+   "regionaisEs": {
+    "¿Quién abrió la ventana?": "na América Latina"
+   },
+   "requerTodas": [
+    "p352",
+    "p410",
+    "p072"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v107",
+   "tipo": "frase",
+   "es": "¿Qué has dicho?",
+   "pt": "O que você disse?",
+   "en": "What did you say?",
+   "aceitas": [
+    "o que voce disse",
+    "que voce disse",
+    "o que foi que voce disse",
+    "o que voce falou",
+    "que foi que voce disse"
+   ],
+   "aceitasEn": [
+    "what did you say",
+    "what have you said",
+    "sorry what did you say"
+   ],
+   "distratores": [
+    "O que você dizia?",
+    "O que você vai dizer?",
+    "O que você tinha dito?",
+    "O que você diria?"
+   ],
+   "distratoresEn": [
+    "What were you saying?",
+    "What will you say?",
+    "What had you said?",
+    "What would you say?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "decir",
+    "irregular"
+   ],
+   "nota": "O particípio de «decir» é «dicho»: «lo dicho, dicho», o dito pelo não dito não vale. A América diz «¿qué dijiste?».",
+   "notaEn": "The participle of «decir» is «dicho».",
+   "formasEs": {
+    "Qué decías": "imperfeito",
+    "Qué dirás": "futuro",
+    "Qué habías dicho": "mais-que-perfeito",
+    "Qué dirías": "condicional"
+   },
+   "formasEsEn": {
+    "Qué decías": "imperfect",
+    "Qué dirás": "future",
+    "Qué habías dicho": "pluperfect",
+    "Qué dirías": "conditional"
+   },
+   "regionaisEs": {
+    "¿Qué dijiste?": "na América Latina"
+   },
+   "requerTodas": [
+    "p352",
+    "p371"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v108",
+   "tipo": "frase",
+   "es": "¿Qué has hecho hoy?",
+   "pt": "O que você fez hoje?",
+   "en": "What have you done today?",
+   "aceitas": [
+    "o que voce fez hoje",
+    "que voce fez hoje",
+    "o que fez hoje",
+    "o que voce fez no dia de hoje"
+   ],
+   "aceitasEn": [
+    "what have you done today",
+    "what did you do today",
+    "what have you been up to today"
+   ],
+   "distratores": [
+    "O que você fazia hoje?",
+    "O que você vai fazer hoje?",
+    "O que você tinha feito hoje?",
+    "O que você faria hoje?"
+   ],
+   "distratoresEn": [
+    "What were you doing today?",
+    "What will you do today?",
+    "What had you done today?",
+    "What would you do today?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "conjugação",
+    "pretérito perfeito",
+    "hacer",
+    "irregular"
+   ],
+   "nota": "O particípio de «hacer» é «hecho». Com «hoy», a Espanha pede o perfeito: «hoy he trabajado»; a América, «¿qué hiciste hoy?».",
+   "notaEn": "The participle of «hacer» is «hecho». With «hoy», Spain uses the perfect.",
+   "formasEs": {
+    "Qué hacías hoy": "imperfeito",
+    "Qué harás hoy": "futuro",
+    "Qué habías hecho hoy": "mais-que-perfeito",
+    "Qué harías hoy": "condicional"
+   },
+   "formasEsEn": {
+    "Qué hacías hoy": "imperfect",
+    "Qué harás hoy": "future",
+    "Qué habías hecho hoy": "pluperfect",
+    "Qué harías hoy": "conditional"
+   },
+   "regionaisEs": {
+    "¿Qué hiciste hoy?": "na América Latina"
+   },
+   "requerTodas": [
+    "p352",
+    "p353",
+    "p391"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v109",
+   "tipo": "frase",
+   "es": "Ojalá haga buen tiempo mañana.",
+   "pt": "Tomara que faça tempo bom amanhã.",
+   "en": "I hope the weather's good tomorrow.",
+   "aceitas": [
+    "tomara que faca tempo bom amanha",
+    "tomara que o tempo esteja bom amanha",
+    "espero que faca tempo bom amanha",
+    "oxala faca bom tempo amanha",
+    "tomara que faca sol amanha",
+    "tomara que faca bom tempo amanha"
+   ],
+   "aceitasEn": [
+    "i hope the weather s good tomorrow",
+    "hopefully the weather will be good tomorrow",
+    "i hope its nice tomorrow",
+    "i hope the weather is nice tomorrow"
+   ],
+   "distratores": [
+    "Acho que vai fazer tempo bom amanhã.",
+    "Ontem fez tempo bom.",
+    "Amanhã vai fazer tempo bom.",
+    "Ontem fazia tempo bom."
+   ],
+   "distratoresEn": [
+    "I think the weather will be good tomorrow.",
+    "The weather was good yesterday.",
+    "The weather will be good tomorrow.",
+    "The weather used to be good yesterday."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "subjuntivo",
+    "hacer",
+    "irregular"
+   ],
+   "nota": "«Ojalá» pede subjuntivo sempre: «ojalá haga», «ojalá venga». O subjuntivo de «hacer» sai do «hago»: «haga».",
+   "notaEn": "«Ojalá» always takes the subjunctive. «Haga» comes from «hago».",
+   "formasEs": {
+    "Ojalá hace buen tiempo mañana": "indicativo, onde o subjuntivo é obrigatório",
+    "Ojalá hizo buen tiempo mañana": "pretérito, que aqui não cabe",
+    "Ojalá hará buen tiempo mañana": "futuro do indicativo, que aqui não cabe",
+    "Ojalá hacía buen tiempo mañana": "imperfeito"
+   },
+   "formasEsEn": {
+    "Ojalá hace buen tiempo mañana": "indicative, where the subjunctive is required",
+    "Ojalá hizo buen tiempo mañana": "preterite, which does not fit here",
+    "Ojalá hará buen tiempo mañana": "future indicative, which does not fit here",
+    "Ojalá hacía buen tiempo mañana": "imperfect"
+   },
+   "requerTodas": [
+    "p550",
+    "p353",
+    "p412",
+    "p424",
+    "p372"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v110",
+   "tipo": "frase",
+   "es": "Espero que estés bien.",
+   "pt": "Espero que você esteja bem.",
+   "en": "I hope you're well.",
+   "aceitas": [
+    "espero que voce esteja bem",
+    "espero que esteja bem",
+    "espero que estejas bem",
+    "espero que voce esteja bem de saude"
+   ],
+   "aceitasEn": [
+    "i hope you re well",
+    "i hope you are well",
+    "i hope youre doing well"
+   ],
+   "distratores": [
+    "Sei que você está bem.",
+    "Espero que você estivesse bem.",
+    "Vejo que você está bem.",
+    "Acho que você estava bem."
+   ],
+   "distratoresEn": [
+    "I know you're well.",
+    "I hoped you were well.",
+    "I can see you're well.",
+    "I think you were well."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "subjuntivo",
+    "estar",
+    "irregular"
+   ],
+   "nota": "«Esperar que» pede subjuntivo. O de «estar» leva acento: «esté», «estés», «estén».",
+   "notaEn": "«Esperar que» takes the subjunctive: «esté», with an accent.",
+   "formasEs": {
+    "Espero que estás bien": "indicativo, onde o subjuntivo é obrigatório",
+    "Espero que estuviste bien": "pretérito, que aqui não cabe",
+    "Espero que estarás bien": "futuro do indicativo, que aqui não cabe",
+    "Espero que estabas bien": "imperfeito"
+   },
+   "formasEsEn": {
+    "Espero que estás bien": "indicative, where the subjunctive is required",
+    "Espero que estuviste bien": "preterite, which does not fit here",
+    "Espero que estarás bien": "future indicative, which does not fit here",
+    "Espero que estabas bien": "imperfect"
+   },
+   "requerTodas": [
+    "p389",
+    "p358",
+    "p369"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v111",
+   "tipo": "frase",
+   "es": "Quiero que vayas tú.",
+   "pt": "Quero que você vá.",
+   "en": "I want you to go.",
+   "aceitas": [
+    "quero que voce va",
+    "quero que seja voce a ir",
+    "eu quero que voce va"
+   ],
+   "aceitasEn": [
+    "i want you to go",
+    "i want you to be the one who goes"
+   ],
+   "distratores": [
+    "Quero que você venha.",
+    "Quero que você fique.",
+    "Quero que você saia.",
+    "Quero que você volte."
+   ],
+   "distratoresEn": [
+    "I want you to come.",
+    "I want you to stay.",
+    "I want you to leave.",
+    "I want you to come back."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "subjuntivo",
+    "ir",
+    "irregular"
+   ],
+   "nota": "«Querer que» pede subjuntivo. O de «ir» é «vaya» — a mesma forma da exclamação «¡vaya!».",
+   "notaEn": "«Querer que» takes the subjunctive: «vaya».",
+   "formasEs": {
+    "Quiero que vas tú": "indicativo, onde o subjuntivo é obrigatório",
+    "Quiero que fuiste tú": "pretérito, que aqui não cabe",
+    "Quiero que irás tú": "futuro do indicativo, que aqui não cabe",
+    "Quiero que ibas tú": "imperfeito"
+   },
+   "formasEsEn": {
+    "Quiero que vas tú": "indicative, where the subjunctive is required",
+    "Quiero que fuiste tú": "preterite, which does not fit here",
+    "Quiero que irás tú": "future indicative, which does not fit here",
+    "Quiero que ibas tú": "imperfect"
+   },
+   "requerTodas": [
+    "p377",
+    "p355"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v112",
+   "tipo": "frase",
+   "es": "No quiero que se lo digas a nadie.",
+   "pt": "Não quero que você conte para ninguém.",
+   "en": "I don't want you to tell anyone.",
+   "aceitas": [
+    "nao quero que voce conte para ninguem",
+    "nao quero que voce diga a ninguem",
+    "nao quero que conte pra ninguem",
+    "nao quero que voce fale pra ninguem",
+    "nao quero que voce conte a ninguem"
+   ],
+   "aceitasEn": [
+    "i don t want you to tell anyone",
+    "i do not want you to tell anybody",
+    "dont tell anyone"
+   ],
+   "distratores": [
+    "Não quero que você conte para todo mundo.",
+    "Não sei se você contou para alguém.",
+    "Não quero que você esconda de ninguém.",
+    "Não quero que você pergunte a ninguém."
+   ],
+   "distratoresEn": [
+    "I don't want you to tell everybody.",
+    "I don't know if you told anyone.",
+    "I don't want you to hide it from anyone.",
+    "I don't want you to ask anyone."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "subjuntivo",
+    "decir",
+    "irregular"
+   ],
+   "nota": "O subjuntivo de «decir» sai do «digo»: «diga», «digas». O «se lo» é o «le lo» que não existe: «se lo digas», que você diga isso a ele.",
+   "notaEn": "«Diga» comes from «digo». «Se lo» replaces the impossible «le lo».",
+   "formasEs": {
+    "No quiero que se lo dices a nadie": "indicativo, onde o subjuntivo é obrigatório",
+    "No quiero que se lo dijiste a nadie": "pretérito, que aqui não cabe",
+    "No quiero que se lo dirás a nadie": "futuro do indicativo, que aqui não cabe",
+    "No quiero que se lo decías a nadie": "imperfeito"
+   },
+   "formasEsEn": {
+    "No quiero que se lo dices a nadie": "indicative, where the subjunctive is required",
+    "No quiero que se lo dijiste a nadie": "preterite, which does not fit here",
+    "No quiero que se lo dirás a nadie": "future indicative, which does not fit here",
+    "No quiero que se lo decías a nadie": "imperfect"
+   },
+   "requerTodas": [
+    "p377",
+    "p371"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v113",
+   "tipo": "frase",
+   "es": "¿Qué estás diciendo?",
+   "pt": "O que você está dizendo?",
+   "en": "What are you saying?",
+   "aceitas": [
+    "o que voce esta dizendo",
+    "o que voce esta falando",
+    "que voce esta dizendo",
+    "o que voce ta dizendo",
+    "o que voce ta falando"
+   ],
+   "aceitasEn": [
+    "what are you saying",
+    "what are you talking about"
+   ],
+   "distratores": [
+    "O que você disse?",
+    "O que você estava dizendo?",
+    "O que você vai dizer?",
+    "O que você tinha dito?"
+   ],
+   "distratoresEn": [
+    "What did you say?",
+    "What were you saying?",
+    "What will you say?",
+    "What had you said?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "gerúndio",
+    "decir",
+    "irregular"
+   ],
+   "nota": "No gerúndio o e vira i: «diciendo», «pidiendo», «siguiendo». E o i entre vogais vira y: «leyendo», «oyendo», «yendo».",
+   "notaEn": "In the gerund e becomes i: «diciendo». Between vowels i becomes y: «leyendo».",
+   "formasEs": {
+    "Qué dijiste": "pretérito",
+    "Qué estabas diciendo": "imperfeito",
+    "Qué dirás": "futuro",
+    "Qué habías dicho": "mais-que-perfeito"
+   },
+   "formasEsEn": {
+    "Qué dijiste": "preterite",
+    "Qué estabas diciendo": "imperfect",
+    "Qué dirás": "future",
+    "Qué habías dicho": "pluperfect"
+   },
+   "requerTodas": [
+    "p358",
+    "p371"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p1069",
+   "tipo": "palavra",
+   "es": "ahí",
+   "pt": "aí",
+   "en": "there",
+   "aceitas": [
+    "ai",
+    "ali",
+    "la"
+   ],
+   "aceitasEn": [
+    "there",
+    "over there"
+   ],
+   "distratores": [
+    "aqui",
+    "cá",
+    "acolá",
+    "onde"
+   ],
+   "distratoresEn": [
+    "here",
+    "over here",
+    "yonder",
+    "where"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Os três lugares: «aquí», perto de quem fala; «ahí», perto de quem ouve; «allí», longe dos dois. «Por ahí», por aí.",
+   "notaEn": "«Aquí» here, «ahí» near you, «allí» far from both."
+  },
+  {
+   "idioma": "es",
+   "id": "p1070",
+   "tipo": "palavra",
+   "es": "la alarma",
+   "pt": "o alarme",
+   "en": "the alarm",
+   "aceitas": [
+    "alarme",
+    "o despertador",
+    "despertador",
+    "a alarme"
+   ],
+   "aceitasEn": [
+    "alarm",
+    "the alarm",
+    "alarm clock"
+   ],
+   "distratores": [
+    "a alameda",
+    "o alarde",
+    "o apito",
+    "a sirene"
+   ],
+   "distratoresEn": [
+    "the avenue",
+    "the boast",
+    "the whistle",
+    "the siren"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "casa"
+   ],
+   "nota": "É feminina: «la alarma». O despertador é também «el despertador». «Dar la alarma», dar o alarme.",
+   "notaEn": "Feminine: «la alarma»."
+  },
+  {
+   "idioma": "es",
+   "id": "p1071",
+   "tipo": "palavra",
+   "es": "el cuidado",
+   "pt": "o cuidado",
+   "en": "the care",
+   "aceitas": [
+    "cuidado",
+    "a cautela"
+   ],
+   "aceitasEn": [
+    "care",
+    "the care",
+    "caution",
+    "carefulness"
+   ],
+   "distratores": [
+    "o cuidador",
+    "o recado",
+    "o descuido",
+    "o agrado"
+   ],
+   "distratoresEn": [
+    "the carer",
+    "the message",
+    "the oversight",
+    "the liking"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«Tener cuidado», tomar cuidado. «¡Cuidado!», cuidado! «Cuidar», cuidar: «cuida a su madre».",
+   "notaEn": "«Tener cuidado», to be careful."
   }
  ]
 }
