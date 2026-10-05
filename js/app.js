@@ -2857,15 +2857,23 @@
   /* A caixa de escrever cresce para baixo quando a resposta não cabe numa
      linha (comentário do u141), e o Enter responde em vez de quebrar a
      linha: a quebra é só do desenho, a resposta continua sendo uma linha. */
+  /* Vazia, a caixa fica com a altura natural de uma linha. Medir a altura com
+     a tela do card ainda escondida dava zero, e a caixa nascia fechada — no
+     celular, o teclado que só avisa a página no fim da palavra deixava o texto
+     invisível enquanto se digitava (comentário do Gere, 05/10). */
   function ajustarEntrada() {
     const t = el.entrada;
     t.style.height = 'auto';
-    t.style.height = t.scrollHeight + 'px';
+    const h = t.scrollHeight;
+    const borda = t.offsetHeight - t.clientHeight;   // o scrollHeight não conta a borda
+    t.style.height = (t.value && h) ? (h + borda) + 'px' : '';
   }
   el.entrada.addEventListener('input', () => {
     if (/\n/.test(el.entrada.value)) el.entrada.value = el.entrada.value.replace(/\s*\n\s*/g, ' ');
     ajustarEntrada();
   });
+  /* o teclado com sugestão compõe a palavra antes de soltar o «input» */
+  el.entrada.addEventListener('compositionupdate', () => requestAnimationFrame(ajustarEntrada));
   el.entrada.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.keyCode === 13) { e.preventDefault(); responderEscrita(false); }
   });
