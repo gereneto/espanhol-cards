@@ -1,0 +1,11 @@
+// Worker só com arquivos estáticos. Publica só /cards (README do hub:
+// contrato da origem). Os arquivos ficam em public/cards/, porque o
+// caminho completo chega ao Worker.
+{
+  "name": "taioe-cards",
+  "compatibility_date": "2026-09-25",
+  "workers_dev": false,
+  "preview_urls": true,
+  "routes": [ { "pattern": "taioe.com.br/cards*", "zone_name": "taioe.com.br" } ],
+  "assets": { "directory": "./public", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" }
+}
