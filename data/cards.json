@@ -2,7 +2,7 @@
  "versao": 1,
  "idioma": "es",
  "gerado_em": "2026-10-05",
- "total": 1801,
+ "total": 1869,
  "cards": [
   {
    "idioma": "es",
@@ -36948,7 +36948,7 @@
     "Yo me vestiría rápido": "conditional"
    },
    "requerTodas": [
-    "p368",
+    "p1052",
     "p878"
    ]
   },
@@ -52750,7 +52750,10 @@
     "cotidiano"
    ],
    "nota": "A volta e o troco: «quédese con la vuelta». «Dar una vuelta» é dar uma volta; «a la vuelta de la esquina», logo ali.",
-   "notaEn": "A turn, a return and the change: «quédese con la vuelta»."
+   "notaEn": "A turn, a return and the change: «quédese con la vuelta».",
+   "sinonimosEs": [
+    "el paseo"
+   ]
   },
   {
    "idioma": "es",
@@ -75809,6 +75812,2878 @@
    ],
    "nota": "O céu sem nuvens e o lugar desimpedido; também quem está bem acordado: «estoy despejado». O despejado português, posto para fora de casa, é «desahuciado».\n🇪🇸 desahuciado → 🇧🇷 despejado",
    "notaEn": "A clear sky; also wide awake. Evicted is «desahuciado»."
+  },
+  {
+   "idioma": "es",
+   "id": "u441",
+   "tipo": "frase",
+   "requer": "p351",
+   "es": "Son las tres y media.",
+   "pt": "São três e meia.",
+   "en": "It's half past three.",
+   "aceitas": [
+    "sao tres e meia",
+    "agora sao tres e meia",
+    "sao tres e trinta",
+    "e tres e meia"
+   ],
+   "aceitasEn": [
+    "it s half past three",
+    "it is half past three",
+    "its three thirty",
+    "it is three thirty"
+   ],
+   "distratores": [
+    "São quatro e meia.",
+    "São duas e meia.",
+    "São três e quinze.",
+    "São três em ponto."
+   ],
+   "distratoresEn": [
+    "It's half past four.",
+    "It's half past two.",
+    "It's a quarter past three.",
+    "It's three o'clock."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "As horas vão com «ser» e com artigo: «es la una», no singular, e «son las dos», «son las tres», no plural. «¿Qué hora es?», que horas são?",
+   "notaEn": "Time takes «ser» and the article: «es la una», «son las tres».",
+   "requerTodas": [
+    "p351",
+    "p473",
+    "p1053"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u442",
+   "tipo": "frase",
+   "requer": "p351",
+   "es": "Soy de Brasil.",
+   "pt": "Sou do Brasil.",
+   "en": "I'm from Brazil.",
+   "aceitas": [
+    "sou do brasil",
+    "eu sou do brasil",
+    "sou brasileiro",
+    "sou brasileira",
+    "eu sou brasileiro"
+   ],
+   "aceitasEn": [
+    "i m from brazil",
+    "i am from brazil",
+    "im brazilian"
+   ],
+   "distratores": [
+    "Moro no Brasil.",
+    "Estou no Brasil.",
+    "Vou para o Brasil.",
+    "Venho do Brasil."
+   ],
+   "distratoresEn": [
+    "I live in Brazil.",
+    "I'm in Brazil.",
+    "I'm going to Brazil.",
+    "I'm coming from Brazil."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "A origem vai com «ser de»: «soy de Brasil», «es de Madrid». Onde a pessoa está agora vai com «estar»: «estoy en Brasil». O país, sem artigo.",
+   "notaEn": "Origin takes «ser de»; current location takes «estar en».",
+   "requerTodas": [
+    "p351"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u443",
+   "tipo": "frase",
+   "requer": "p351",
+   "es": "La fiesta es en mi casa.",
+   "pt": "A festa é na minha casa.",
+   "en": "The party is at my place.",
+   "aceitas": [
+    "a festa e na minha casa",
+    "a festa vai ser na minha casa",
+    "a festa e la em casa"
+   ],
+   "aceitasEn": [
+    "the party is at my place",
+    "the party is at my house",
+    "the party will be at my house"
+   ],
+   "distratores": [
+    "A festa é perto da minha casa.",
+    "A festa é longe da minha casa.",
+    "A festa é depois da minha casa.",
+    "A festa é na casa ao lado."
+   ],
+   "distratoresEn": [
+    "The party is near my place.",
+    "The party is far from my place.",
+    "The party is past my place.",
+    "The party is next door."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cultura"
+   ],
+   "nota": "O lugar de um evento vai com «ser»: «la reunión es en la sala tres». O lugar de uma coisa ou pessoa vai com «estar»: «las llaves están en la mesa».",
+   "notaEn": "Where an event takes place takes «ser»; where a thing is takes «estar».",
+   "requerTodas": [
+    "p766",
+    "p351",
+    "p400"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u444",
+   "tipo": "frase",
+   "requer": "p354",
+   "es": "Tengo treinta años.",
+   "pt": "Tenho trinta anos.",
+   "en": "I'm thirty years old.",
+   "aceitas": [
+    "tenho trinta anos",
+    "eu tenho trinta anos",
+    "tenho 30 anos"
+   ],
+   "aceitasEn": [
+    "i m thirty years old",
+    "i am thirty",
+    "im thirty",
+    "i am thirty years old"
+   ],
+   "distratores": [
+    "Tenho trinta reais.",
+    "Tenho trinta dias.",
+    "Tenho trinta alunos.",
+    "Tenho trinta livros."
+   ],
+   "distratoresEn": [
+    "I have thirty reais.",
+    "I have thirty days.",
+    "I have thirty pupils.",
+    "I have thirty books."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "A idade vai com «tener», como no português: «¿cuántos años tienes?». Nunca com «ser».",
+   "notaEn": "Age takes «tener»: «¿cuántos años tienes?».",
+   "requerTodas": [
+    "p354",
+    "p1054",
+    "p388"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u445",
+   "tipo": "frase",
+   "requer": "p354",
+   "es": "Tengo mucho frío.",
+   "pt": "Estou com muito frio.",
+   "en": "I'm very cold.",
+   "aceitas": [
+    "estou com muito frio",
+    "tenho muito frio",
+    "to com muito frio",
+    "estou morrendo de frio",
+    "sinto muito frio"
+   ],
+   "aceitasEn": [
+    "i m very cold",
+    "i am very cold",
+    "im really cold",
+    "im freezing"
+   ],
+   "distratores": [
+    "Estou com muita fome.",
+    "Estou com muito sono.",
+    "Estou com muita sede.",
+    "Estou com muito medo."
+   ],
+   "distratoresEn": [
+    "I'm very hungry.",
+    "I'm very sleepy.",
+    "I'm very thirsty.",
+    "I'm very scared."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "corpo"
+   ],
+   "nota": "O que a pessoa sente vai com «tener»: «tener frío», «tener calor», «tener sueño». O tempo vai com «hacer» («hace frío»); a coisa, com «estar» («la sopa está fría»).",
+   "notaEn": "What a person feels takes «tener»; the weather takes «hacer».",
+   "requerTodas": [
+    "p354",
+    "p361",
+    "p447"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u446",
+   "tipo": "frase",
+   "requer": "p355",
+   "es": "Voy al trabajo en bici.",
+   "pt": "Vou para o trabalho de bicicleta.",
+   "en": "I go to work by bike.",
+   "aceitas": [
+    "vou para o trabalho de bicicleta",
+    "vou ao trabalho de bicicleta",
+    "vou pro trabalho de bike",
+    "vou de bicicleta para o trabalho",
+    "vou trabalhar de bicicleta",
+    "vou de bike pro trabalho"
+   ],
+   "aceitasEn": [
+    "i go to work by bike",
+    "i cycle to work",
+    "i ride my bike to work",
+    "i go to work by bicycle"
+   ],
+   "distratores": [
+    "Volto do trabalho de bicicleta.",
+    "Saio do trabalho de bicicleta.",
+    "Chego ao trabalho de bicicleta.",
+    "Fico no trabalho de bicicleta."
+   ],
+   "distratoresEn": [
+    "I come back from work by bike.",
+    "I leave work by bike.",
+    "I arrive at work by bike.",
+    "I stay at work with my bike."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "O meio de transporte vai com «en»: «en coche», «en tren», «en bici». A pé é «a pie». «Bici» é o encurtamento de «bicicleta».",
+   "notaEn": "Transport takes «en»: «en coche», «en bici». On foot is «a pie».",
+   "requerTodas": [
+    "p355",
+    "p691",
+    "p733"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u447",
+   "tipo": "frase",
+   "requer": "p355",
+   "es": "¿Qué tal te va?",
+   "pt": "Como vão as coisas?",
+   "en": "How's it going?",
+   "aceitas": [
+    "como vao as coisas",
+    "como vai",
+    "como voce esta",
+    "como tem passado",
+    "como estao as coisas",
+    "como vai a vida"
+   ],
+   "aceitasEn": [
+    "how s it going",
+    "how are things",
+    "how are you doing",
+    "how is it going"
+   ],
+   "distratores": [
+    "Aonde você vai?",
+    "Quando você volta?",
+    "Com quem você sai?",
+    "Por que você foi?"
+   ],
+   "distratoresEn": [
+    "Where are you going?",
+    "When are you coming back?",
+    "Who are you going out with?",
+    "Why did you go?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Irle a alguien»: como as coisas vão para a pessoa. «Me va bien», vai tudo bem; «¿cómo te va en el trabajo?».",
+   "notaEn": "«Irle bien a alguien», to be doing well.",
+   "requerTodas": [
+    "p557",
+    "p355"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u448",
+   "tipo": "frase",
+   "requer": "p356",
+   "es": "No me di cuenta.",
+   "pt": "Não percebi.",
+   "en": "I didn't realise.",
+   "aceitas": [
+    "nao percebi",
+    "eu nao percebi",
+    "nao me dei conta",
+    "nao reparei",
+    "nao notei",
+    "nao me toquei"
+   ],
+   "aceitasEn": [
+    "i didn t realise",
+    "i didnt notice",
+    "i did not realize",
+    "i didnt realize"
+   ],
+   "distratores": [
+    "Não me lembrei.",
+    "Não me importei.",
+    "Não me atrevi.",
+    "Não me arrependi."
+   ],
+   "distratoresEn": [
+    "I didn't remember.",
+    "I didn't care.",
+    "I didn't dare.",
+    "I didn't regret it."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Darse cuenta de», perceber: «no me di cuenta de la hora». A mesma «cuenta» é a conta do restaurante.",
+   "notaEn": "«Darse cuenta de», to realise.",
+   "requerTodas": [
+    "p356",
+    "p426"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u449",
+   "tipo": "frase",
+   "requer": "p356",
+   "es": "Vamos a dar un paseo.",
+   "pt": "Vamos dar uma volta.",
+   "en": "Let's go for a walk.",
+   "aceitas": [
+    "vamos dar uma volta",
+    "vamos passear",
+    "vamos dar um passeio",
+    "vamos dar uma caminhada",
+    "vamos dar uma volta a pe"
+   ],
+   "aceitasEn": [
+    "let s go for a walk",
+    "lets take a walk",
+    "lets go for a stroll",
+    "we are going for a walk"
+   ],
+   "distratores": [
+    "Vamos dar uma festa.",
+    "Vamos dar uma olhada.",
+    "Vamos dar uma ajuda.",
+    "Vamos dar uma pausa."
+   ],
+   "distratoresEn": [
+    "Let's throw a party.",
+    "Let's take a look.",
+    "Let's lend a hand.",
+    "Let's take a break."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cidade"
+   ],
+   "nota": "«Dar un paseo», passear; «dar una vuelta», dar uma volta. «Ir a» + infinitivo: «vamos a dar», vamos dar.",
+   "notaEn": "«Dar un paseo», to go for a walk.",
+   "requerTodas": [
+    "p355",
+    "p356",
+    "p1055"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u450",
+   "tipo": "frase",
+   "requer": "p356",
+   "es": "Dale las gracias a tu madre.",
+   "pt": "Agradeça à sua mãe.",
+   "en": "Say thank you to your mother.",
+   "aceitas": [
+    "agradeca a sua mae",
+    "agradece a sua mae",
+    "diga obrigado a sua mae",
+    "de obrigado a sua mae",
+    "agradeca a tua mae"
+   ],
+   "aceitasEn": [
+    "say thank you to your mother",
+    "thank your mother",
+    "say thanks to your mother",
+    "give your mother my thanks"
+   ],
+   "distratores": [
+    "Mande lembranças à sua mãe.",
+    "Peça desculpas à sua mãe.",
+    "Dê os parabéns à sua mãe.",
+    "Dê notícias à sua mãe."
+   ],
+   "distratoresEn": [
+    "Give my regards to your mother.",
+    "Apologise to your mother.",
+    "Congratulate your mother.",
+    "Keep your mother posted."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "família"
+   ],
+   "nota": "«Dar las gracias», agradecer. «Dale» é «da» + «le», e o «le» antecipa «a tu madre», como o espanhol gosta.",
+   "notaEn": "«Dar las gracias», to thank.",
+   "requerTodas": [
+    "p356",
+    "p769",
+    "p1056"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u451",
+   "tipo": "frase",
+   "requer": "p357",
+   "es": "Pon la tele, que empieza el partido.",
+   "pt": "Liga a TV, que vai começar o jogo.",
+   "en": "Put the telly on, the match is starting.",
+   "aceitas": [
+    "liga a tv que vai comecar o jogo",
+    "liga a televisao que o jogo vai comecar",
+    "liga a tv que o jogo esta comecando",
+    "liga a tv que comeca o jogo",
+    "liga a tv que o jogo vai comecar"
+   ],
+   "aceitasEn": [
+    "put the telly on the match is starting",
+    "turn on the tv the match is starting",
+    "put the tv on the game is starting"
+   ],
+   "distratores": [
+    "Desliga a TV, que vai começar o jogo.",
+    "Muda a TV, que vai começar o jogo.",
+    "Abaixa a TV, que vai começar o jogo.",
+    "Tira a TV, que vai começar o jogo."
+   ],
+   "distratoresEn": [
+    "Turn the telly off, the match is starting.",
+    "Switch channels, the match is starting.",
+    "Turn the telly down, the match is starting.",
+    "Move the telly, the match is starting."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "«Poner» liga aparelho: «pon la radio», «pon la lavadora». Desligar é «apagar» ou «quitar».",
+   "notaEn": "«Poner» turns appliances on. To turn off is «apagar».",
+   "requerTodas": [
+    "p357",
+    "p821",
+    "p696",
+    "p1057"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u452",
+   "tipo": "frase",
+   "requer": "p379",
+   "es": "Lo echaron del trabajo.",
+   "pt": "Ele foi demitido.",
+   "en": "He got fired.",
+   "aceitas": [
+    "ele foi demitido",
+    "o mandaram embora do trabalho",
+    "demitiram ele",
+    "ele foi mandado embora do trabalho",
+    "botaram ele pra fora do trabalho",
+    "mandaram ele embora"
+   ],
+   "aceitasEn": [
+    "he got fired",
+    "they fired him",
+    "he was sacked",
+    "he was fired from his job"
+   ],
+   "distratores": [
+    "Ele foi promovido.",
+    "Ele foi transferido.",
+    "Ele foi contratado.",
+    "Ele foi elogiado."
+   ],
+   "distratoresEn": [
+    "He got promoted.",
+    "He got transferred.",
+    "He got hired.",
+    "He got praised."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "«Echar a alguien», pôr para fora: do trabalho, de casa, do bar. O formal é «despedir».",
+   "notaEn": "«Echar a alguien», to throw someone out. Formal: «despedir».",
+   "requerTodas": [
+    "p379",
+    "p691"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u453",
+   "tipo": "frase",
+   "requer": "p379",
+   "es": "Siempre echo la siesta después de comer.",
+   "pt": "Sempre tiro uma soneca depois do almoço.",
+   "en": "I always have a nap after lunch.",
+   "aceitas": [
+    "sempre tiro uma soneca depois do almoco",
+    "sempre tiro um cochilo depois do almoco",
+    "sempre durmo depois do almoco",
+    "sempre tiro a sesta depois de comer",
+    "sempre tiro um cochilo depois de comer"
+   ],
+   "aceitasEn": [
+    "i always have a nap after lunch",
+    "i always take a nap after lunch",
+    "i always have a siesta after lunch"
+   ],
+   "distratores": [
+    "Sempre tomo um café depois do almoço.",
+    "Sempre faço uma caminhada depois do almoço.",
+    "Sempre escovo os dentes depois do almoço.",
+    "Sempre lavo a louça depois do almoço."
+   ],
+   "distratoresEn": [
+    "I always have a coffee after lunch.",
+    "I always go for a walk after lunch.",
+    "I always brush my teeth after lunch.",
+    "I always wash up after lunch."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano",
+    "Espanha"
+   ],
+   "nota": "«Echar la siesta», tirar a sesta. Na Espanha, «comer» é almoçar, e a sesta vem logo depois.",
+   "notaEn": "«Echar la siesta», to take a nap.",
+   "requerTodas": [
+    "p407",
+    "p379",
+    "p1058",
+    "p1059",
+    "p364"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u454",
+   "tipo": "frase",
+   "requer": "p431",
+   "es": "¿Nos sacas una foto?",
+   "pt": "Você tira uma foto da gente?",
+   "en": "Will you take a photo of us?",
+   "aceitas": [
+    "voce tira uma foto da gente",
+    "tira uma foto nossa",
+    "voce pode tirar uma foto nossa",
+    "tira uma foto de nos",
+    "voce tira uma foto nossa"
+   ],
+   "aceitasEn": [
+    "will you take a photo of us",
+    "can you take a picture of us",
+    "could you take a photo of us",
+    "will you take a picture of us"
+   ],
+   "distratores": [
+    "Você manda uma foto da gente?",
+    "Você apaga uma foto da gente?",
+    "Você imprime uma foto da gente?",
+    "Você posta uma foto da gente?"
+   ],
+   "distratoresEn": [
+    "Will you send a photo of us?",
+    "Will you delete a photo of us?",
+    "Will you print a photo of us?",
+    "Will you post a photo of us?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "«Sacar una foto», tirar uma foto; também «hacer una foto». O presente na pergunta é o pedido gentil: «¿me pasas la sal?».",
+   "notaEn": "«Sacar una foto», to take a photo.",
+   "requerTodas": [
+    "p431",
+    "p526"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u455",
+   "tipo": "frase",
+   "requer": "p431",
+   "es": "Sacó un nueve en el examen.",
+   "pt": "Tirou nove na prova.",
+   "en": "He got a nine in the exam.",
+   "aceitas": [
+    "tirou nove na prova",
+    "ele tirou nove na prova",
+    "tirou um nove na prova",
+    "tirou nota nove na prova",
+    "ela tirou nove no exame"
+   ],
+   "aceitasEn": [
+    "he got a nine in the exam",
+    "she got a nine in the exam",
+    "he scored nine in the test",
+    "he got a nine on the test"
+   ],
+   "distratores": [
+    "Perdeu nove pontos na prova.",
+    "Errou nove questões na prova.",
+    "Acertou nove questões na prova.",
+    "Esperava nove na prova."
+   ],
+   "distratoresEn": [
+    "He lost nine points in the exam.",
+    "He got nine questions wrong in the exam.",
+    "He got nine questions right in the exam.",
+    "He expected a nine in the exam."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "escola"
+   ],
+   "nota": "«Sacar» é também tirar nota: «sacar buena nota». Na primeira pessoa o c vira qu: «saqué un nueve».",
+   "notaEn": "«Sacar una nota», to get a mark. «Saqué».",
+   "requerTodas": [
+    "p431",
+    "p853",
+    "p420"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u456",
+   "tipo": "frase",
+   "requer": "p376",
+   "es": "Luego paso por tu casa.",
+   "pt": "Depois passo na sua casa.",
+   "en": "I'll drop by your place later.",
+   "aceitas": [
+    "depois passo na sua casa",
+    "mais tarde passo na sua casa",
+    "depois eu passo na tua casa",
+    "passo na sua casa depois",
+    "depois passo ai"
+   ],
+   "aceitasEn": [
+    "i ll drop by your place later",
+    "ill stop by your house later",
+    "ill come round to yours later",
+    "ill drop by later"
+   ],
+   "distratores": [
+    "Depois ligo para sua casa.",
+    "Depois volto para sua casa.",
+    "Depois saio da sua casa.",
+    "Depois mudo para sua casa."
+   ],
+   "distratoresEn": [
+    "I'll call your place later.",
+    "I'll go back to your place later.",
+    "I'll leave your place later.",
+    "I'll move into your place later."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Pasar por», passar em algum lugar de passagem. O presente vale pelo futuro próximo: «paso», passo.",
+   "notaEn": "«Pasar por», to drop by.",
+   "requerTodas": [
+    "p023",
+    "p376",
+    "p400"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u457",
+   "tipo": "frase",
+   "requer": "p376",
+   "es": "¿Cómo pasaste el fin de semana?",
+   "pt": "Como você passou o fim de semana?",
+   "en": "How did you spend the weekend?",
+   "aceitas": [
+    "como voce passou o fim de semana",
+    "como foi o fim de semana",
+    "como foi seu fim de semana",
+    "como voce passou o final de semana",
+    "como foi o seu final de semana"
+   ],
+   "aceitasEn": [
+    "how did you spend the weekend",
+    "how was your weekend",
+    "how did you spend your weekend"
+   ],
+   "distratores": [
+    "Onde você passou o fim de semana?",
+    "Com quem você passou o fim de semana?",
+    "Por que você passou o fim de semana fora?",
+    "Quanto você gastou no fim de semana?"
+   ],
+   "distratoresEn": [
+    "Where did you spend the weekend?",
+    "Who did you spend the weekend with?",
+    "Why did you spend the weekend away?",
+    "How much did you spend at the weekend?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Pasar» o tempo: «pasar el verano en la playa». «Pasarlo bien», divertir-se.",
+   "notaEn": "«Pasarlo bien», to have a good time.",
+   "requerTodas": [
+    "p376",
+    "p446",
+    "p1060"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u458",
+   "tipo": "frase",
+   "requer": "p365",
+   "es": "Lo ha dejado con su novia.",
+   "pt": "Ele terminou com a namorada.",
+   "en": "He's broken up with his girlfriend.",
+   "aceitas": [
+    "ele terminou com a namorada",
+    "ele largou a namorada",
+    "ele terminou o namoro",
+    "ele deixou a namorada",
+    "terminou com a namorada",
+    "ele terminou com a namorada dele"
+   ],
+   "aceitasEn": [
+    "he s broken up with his girlfriend",
+    "he broke up with his girlfriend",
+    "he has split up with his girlfriend",
+    "he dumped his girlfriend"
+   ],
+   "distratores": [
+    "Ele brigou com a namorada.",
+    "Ele voltou com a namorada.",
+    "Ele viajou com a namorada.",
+    "Ele noivou com a namorada."
+   ],
+   "distratoresEn": [
+    "He's had a fight with his girlfriend.",
+    "He's got back together with his girlfriend.",
+    "He's gone away with his girlfriend.",
+    "He's got engaged to his girlfriend."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "família",
+    "Espanha"
+   ],
+   "nota": "«Dejarlo con alguien», terminar com alguém, é da Espanha; em toda parte se diz também «dejar a alguien»: «la dejó».",
+   "notaEn": "«Dejarlo con alguien», to break up with someone (Spain).",
+   "requerTodas": [
+    "p352",
+    "p365",
+    "p991"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u459",
+   "tipo": "frase",
+   "requer": "p353",
+   "es": "¿Puedo hacerte una pregunta?",
+   "pt": "Posso te fazer uma pergunta?",
+   "en": "Can I ask you a question?",
+   "aceitas": [
+    "posso te fazer uma pergunta",
+    "posso fazer uma pergunta",
+    "posso lhe fazer uma pergunta",
+    "posso fazer uma pergunta para voce",
+    "posso perguntar uma coisa"
+   ],
+   "aceitasEn": [
+    "can i ask you a question",
+    "may i ask you a question",
+    "could i ask you a question"
+   ],
+   "distratores": [
+    "Posso te responder uma pergunta?",
+    "Posso te mandar uma pergunta?",
+    "Posso te mostrar uma pergunta?",
+    "Posso te ler uma pergunta?"
+   ],
+   "distratoresEn": [
+    "Can I answer a question for you?",
+    "Can I send you a question?",
+    "Can I show you a question?",
+    "Can I read you a question?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "escola"
+   ],
+   "nota": "«Hacer una pregunta», fazer uma pergunta; «preguntar», perguntar. O pronome cola no infinitivo: «hacerte».",
+   "notaEn": "«Hacer una pregunta», to ask a question.",
+   "requerTodas": [
+    "p383",
+    "p353",
+    "p532"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u460",
+   "tipo": "frase",
+   "requer": "p371",
+   "es": "¿Qué quiere decir esta palabra?",
+   "pt": "O que quer dizer esta palavra?",
+   "en": "What does this word mean?",
+   "aceitas": [
+    "o que quer dizer esta palavra",
+    "o que significa esta palavra",
+    "o que essa palavra quer dizer",
+    "o que significa essa palavra",
+    "o que quer dizer essa palavra"
+   ],
+   "aceitasEn": [
+    "what does this word mean",
+    "what is the meaning of this word",
+    "what does that word mean"
+   ],
+   "distratores": [
+    "Como se escreve esta palavra?",
+    "Como se pronuncia esta palavra?",
+    "De onde vem esta palavra?",
+    "Quem inventou esta palavra?"
+   ],
+   "distratoresEn": [
+    "How do you spell this word?",
+    "How do you pronounce this word?",
+    "Where does this word come from?",
+    "Who invented this word?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "escola"
+   ],
+   "nota": "«Querer decir», querer dizer, significar — como no português. «Significar» também se usa.",
+   "notaEn": "«Querer decir», to mean.",
+   "requerTodas": [
+    "p377",
+    "p371",
+    "p1061"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u461",
+   "tipo": "frase",
+   "requer": "p371",
+   "es": "Es decir, no vienes.",
+   "pt": "Ou seja, você não vem.",
+   "en": "In other words, you're not coming.",
+   "aceitas": [
+    "ou seja voce nao vem",
+    "quer dizer voce nao vem",
+    "isto e voce nao vem",
+    "ou seja nao vem",
+    "ou seja voce nao vai vir"
+   ],
+   "aceitasEn": [
+    "in other words you re not coming",
+    "that is youre not coming",
+    "so youre not coming",
+    "meaning youre not coming"
+   ],
+   "distratores": [
+    "Por isso, você não vem.",
+    "Mesmo assim, você não vem.",
+    "Por enquanto, você não vem.",
+    "De novo, você não vem."
+   ],
+   "distratoresEn": [
+    "That's why you're not coming.",
+    "Even so, you're not coming.",
+    "For now, you're not coming.",
+    "Once again, you're not coming."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Es decir», ou seja, isto é. Na fala, também «o sea».",
+   "notaEn": "«Es decir», that is. In speech, also «o sea».",
+   "requerTodas": [
+    "p351",
+    "p371",
+    "p362"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u462",
+   "tipo": "frase",
+   "requer": "p373",
+   "es": "Sale con una chica de su clase.",
+   "pt": "Ele namora uma garota da turma dele.",
+   "en": "He's going out with a girl from his class.",
+   "aceitas": [
+    "ele namora uma garota da turma dele",
+    "ele esta saindo com uma garota da turma dele",
+    "sai com uma menina da sala dele",
+    "ele namora uma menina da classe dele",
+    "esta saindo com uma garota da turma",
+    "ele sai com uma garota da turma dele"
+   ],
+   "aceitasEn": [
+    "he s going out with a girl from his class",
+    "he is dating a girl from his class",
+    "hes seeing a girl from his class"
+   ],
+   "distratores": [
+    "Ele estuda com uma garota da turma dele.",
+    "Ele brigou com uma garota da turma dele.",
+    "Ele senta com uma garota da turma dele.",
+    "Ele trabalha com uma garota da turma dele."
+   ],
+   "distratoresEn": [
+    "He studies with a girl from his class.",
+    "He's fallen out with a girl from his class.",
+    "He sits with a girl from his class.",
+    "He works with a girl from his class."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Salir con alguien», namorar ou estar saindo com alguém. Sair de um lugar é «salir de»: «salgo de casa».",
+   "notaEn": "«Salir con alguien», to go out with someone.",
+   "requerTodas": [
+    "p373",
+    "p622",
+    "p105"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u463",
+   "tipo": "frase",
+   "requer": "p373",
+   "es": "Al final todo salió bien.",
+   "pt": "No fim, deu tudo certo.",
+   "en": "In the end, everything turned out fine.",
+   "aceitas": [
+    "no fim deu tudo certo",
+    "no final tudo saiu bem",
+    "no fim tudo deu certo",
+    "afinal deu tudo certo",
+    "no fim correu tudo bem",
+    "no fim tudo acabou bem"
+   ],
+   "aceitasEn": [
+    "in the end everything turned out fine",
+    "in the end it all worked out",
+    "everything turned out well in the end",
+    "in the end everything went well"
+   ],
+   "distratores": [
+    "No fim, deu tudo errado.",
+    "No fim, ficou tudo igual.",
+    "No fim, sobrou tudo.",
+    "No fim, sumiu tudo."
+   ],
+   "distratoresEn": [
+    "In the end, everything went wrong.",
+    "In the end, nothing changed.",
+    "In the end, everything was left over.",
+    "In the end, everything disappeared."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Salir bien» ou «salir mal», dar certo ou errado: «el examen me salió fatal». «Al final», no fim.",
+   "notaEn": "«Salir bien», to turn out well.",
+   "requerTodas": [
+    "p643",
+    "p385",
+    "p373",
+    "p369"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u464",
+   "tipo": "frase",
+   "requer": "p409",
+   "es": "¿Tomamos algo?",
+   "pt": "Vamos beber alguma coisa?",
+   "en": "Shall we have a drink?",
+   "aceitas": [
+    "vamos beber alguma coisa",
+    "vamos tomar alguma coisa",
+    "bora tomar alguma coisa",
+    "vamos tomar algo",
+    "tomamos alguma coisa"
+   ],
+   "aceitasEn": [
+    "shall we have a drink",
+    "shall we get a drink",
+    "lets have a drink",
+    "fancy a drink"
+   ],
+   "distratores": [
+    "Vamos comprar alguma coisa?",
+    "Vamos pedir alguma coisa?",
+    "Vamos fazer alguma coisa?",
+    "Vamos ver alguma coisa?"
+   ],
+   "distratoresEn": [
+    "Shall we buy something?",
+    "Shall we order food?",
+    "Shall we do anything?",
+    "Shall we watch a film?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Tomar algo», o convite para um café, uma cerveja ou um refrigerante no bar. O presente na pergunta é o convite: «¿tomamos?».",
+   "notaEn": "«Tomar algo», to have a drink.",
+   "requerTodas": [
+    "p409"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u465",
+   "tipo": "frase",
+   "requer": "p409",
+   "es": "Me encanta tomar el sol.",
+   "pt": "Adoro tomar sol.",
+   "en": "I love sunbathing.",
+   "aceitas": [
+    "adoro tomar sol",
+    "eu adoro tomar sol",
+    "adoro pegar sol",
+    "amo tomar sol"
+   ],
+   "aceitasEn": [
+    "i love sunbathing",
+    "i love lying in the sun",
+    "i love to sunbathe",
+    "i love sitting in the sun"
+   ],
+   "distratores": [
+    "Adoro tomar banho.",
+    "Adoro tomar chá.",
+    "Adoro tomar sorvete.",
+    "Adoro tomar vinho."
+   ],
+   "distratoresEn": [
+    "I love having a bath.",
+    "I love drinking tea.",
+    "I love eating ice cream.",
+    "I love drinking wine."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "viagem"
+   ],
+   "nota": "«Tomar el sol», com artigo, tomar sol. O sorvete, em espanhol, se «toma» também: «tomar un helado».",
+   "notaEn": "«Tomar el sol», to sunbathe.",
+   "requerTodas": [
+    "p697",
+    "p409",
+    "p1062"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u466",
+   "tipo": "frase",
+   "requer": "p428",
+   "es": "No te metas en mis asuntos.",
+   "pt": "Não se meta nos meus assuntos.",
+   "en": "Don't meddle in my business.",
+   "aceitas": [
+    "nao se meta nos meus assuntos",
+    "nao se mete na minha vida",
+    "nao se meta nas minhas coisas",
+    "nao te metas nos meus assuntos",
+    "nao se intrometa nos meus assuntos",
+    "nao se mete nos meus assuntos"
+   ],
+   "aceitasEn": [
+    "don t meddle in my business",
+    "keep out of my business",
+    "dont stick your nose in my business",
+    "mind your own business",
+    "stay out of my affairs"
+   ],
+   "distratores": [
+    "Não se esqueça dos meus assuntos.",
+    "Não se preocupe com os meus assuntos.",
+    "Não se ocupe dos meus assuntos.",
+    "Não se canse dos meus assuntos."
+   ],
+   "distratoresEn": [
+    "Don't forget my business.",
+    "Don't worry about my business.",
+    "Don't take care of my business.",
+    "Don't get tired of my business."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Meterse en», intrometer-se. «No te metas» é o imperativo negativo de tú, com subjuntivo.",
+   "notaEn": "«Meterse en», to meddle in.",
+   "requerTodas": [
+    "p428",
+    "p613"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u467",
+   "tipo": "frase",
+   "requer": "p896",
+   "es": "Toca la guitarra muy bien.",
+   "pt": "Ele toca violão muito bem.",
+   "en": "He plays the guitar very well.",
+   "aceitas": [
+    "ele toca violao muito bem",
+    "toca violao muito bem",
+    "ela toca guitarra muito bem",
+    "toca guitarra muito bem",
+    "ela toca violao muito bem"
+   ],
+   "aceitasEn": [
+    "he plays the guitar very well",
+    "she plays the guitar very well",
+    "he plays guitar really well"
+   ],
+   "distratores": [
+    "Ele afina violão muito bem.",
+    "Ele conserta violão muito bem.",
+    "Ele vende violão muito bem.",
+    "Ele desenha violão muito bem."
+   ],
+   "distratoresEn": [
+    "He tunes the guitar very well.",
+    "He fixes guitars very well.",
+    "He sells instruments very well.",
+    "He draws guitars very well."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cultura"
+   ],
+   "nota": "Instrumento se «toca»; jogo se «juega»: «jugar al fútbol». «La guitarra» é o violão e a guitarra.",
+   "notaEn": "Instruments take «tocar»; games take «jugar».",
+   "requerTodas": [
+    "p896",
+    "p1063",
+    "p360",
+    "p369"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u468",
+   "tipo": "frase",
+   "requer": "p896",
+   "es": "Me tocó la lotería.",
+   "pt": "Ganhei na loteria.",
+   "en": "I won the lottery.",
+   "aceitas": [
+    "ganhei na loteria",
+    "eu ganhei na loteria",
+    "tirei a sorte grande",
+    "saiu a loteria para mim"
+   ],
+   "aceitasEn": [
+    "i won the lottery",
+    "i hit the jackpot",
+    "my lottery ticket won"
+   ],
+   "distratores": [
+    "Joguei na loteria.",
+    "Perdi na loteria.",
+    "Apostei na loteria.",
+    "Desisti da loteria."
+   ],
+   "distratoresEn": [
+    "I played the lottery.",
+    "I lost at the lottery.",
+    "I bet on the lottery.",
+    "I gave up the lottery."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "economia"
+   ],
+   "nota": "«Tocarle algo a alguien», cair para a pessoa: o prêmio, a vez, a tarefa. «Te toca a ti», é a sua vez.",
+   "notaEn": "«Tocarle algo a alguien», to fall to someone.",
+   "requerTodas": [
+    "p896",
+    "p1064"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u469",
+   "tipo": "frase",
+   "requer": "p470",
+   "es": "Lo siento mucho.",
+   "pt": "Sinto muito.",
+   "en": "I'm very sorry.",
+   "aceitas": [
+    "sinto muito",
+    "lamento muito",
+    "sinto muitissimo",
+    "lamento",
+    "eu sinto muito"
+   ],
+   "aceitasEn": [
+    "i m very sorry",
+    "im really sorry",
+    "i am so sorry",
+    "im so sorry"
+   ],
+   "distratores": [
+    "Gosto muito.",
+    "Agradeço muito.",
+    "Entendo muito.",
+    "Penso muito."
+   ],
+   "distratoresEn": [
+    "I like it a lot.",
+    "Thank you very much.",
+    "I understand a lot.",
+    "I think a lot."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Lo siento», sinto muito, desculpe, para pêsames e para esbarrão. O e vira ie: «siento».",
+   "notaEn": "«Lo siento», I'm sorry.",
+   "requerTodas": [
+    "p470",
+    "p361"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u470",
+   "tipo": "frase",
+   "requer": "p470",
+   "es": "Hoy no me siento bien.",
+   "pt": "Hoje não estou me sentindo bem.",
+   "en": "I don't feel well today.",
+   "aceitas": [
+    "hoje nao estou me sentindo bem",
+    "hoje nao me sinto bem",
+    "hoje nao estou bem",
+    "hoje nao to me sentindo bem",
+    "nao me sinto bem hoje"
+   ],
+   "aceitasEn": [
+    "i don t feel well today",
+    "i am not feeling well today",
+    "im not feeling well today"
+   ],
+   "distratores": [
+    "Hoje não estou dormindo bem.",
+    "Hoje não estou comendo bem.",
+    "Hoje não estou me vestindo bem.",
+    "Hoje não estou me sentando direito."
+   ],
+   "distratoresEn": [
+    "I'm not sleeping well today.",
+    "I'm not eating well today.",
+    "I'm not dressing well today.",
+    "I'm not sitting properly today."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "saúde"
+   ],
+   "nota": "«Me siento» é de «sentirse», sentir-se, e de «sentarse», sentar-se. Quem decide é a frase: «me siento bien» contra «me siento aquí».",
+   "notaEn": "«Me siento» belongs to both «sentirse» and «sentarse».",
+   "requerTodas": [
+    "p391",
+    "p470",
+    "p369"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u471",
+   "tipo": "frase",
+   "requer": "p434",
+   "es": "¿Cuánto vale esta camisa?",
+   "pt": "Quanto custa esta camisa?",
+   "en": "How much is this shirt?",
+   "aceitas": [
+    "quanto custa esta camisa",
+    "quanto e esta camisa",
+    "quanto vale essa camisa",
+    "quanto custa essa camisa",
+    "quanto e essa camisa"
+   ],
+   "aceitasEn": [
+    "how much is this shirt",
+    "how much does this shirt cost",
+    "what does this shirt cost"
+   ],
+   "distratores": [
+    "Que tamanho é esta camisa?",
+    "De que cor é esta camisa?",
+    "De quem é esta camisa?",
+    "De onde é esta camisa?"
+   ],
+   "distratoresEn": [
+    "What size is this shirt?",
+    "What colour is this shirt?",
+    "Whose shirt is this?",
+    "Where is this shirt from?"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "«¿Cuánto vale?» e «¿cuánto cuesta?» são o mesmo na loja. «Vale», sozinho, é o «tá bom» da Espanha.",
+   "notaEn": "«¿Cuánto vale?» = «¿cuánto cuesta?».",
+   "requerTodas": [
+    "p434",
+    "p745"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u472",
+   "tipo": "frase",
+   "requer": "p552",
+   "es": "Te pareces mucho a tu padre.",
+   "pt": "Você se parece muito com seu pai.",
+   "en": "You look a lot like your father.",
+   "aceitas": [
+    "voce se parece muito com seu pai",
+    "voce e muito parecido com seu pai",
+    "voce parece muito com seu pai",
+    "voce lembra muito seu pai",
+    "voce e a cara do seu pai"
+   ],
+   "aceitasEn": [
+    "you look a lot like your father",
+    "you are very like your father",
+    "you really look like your dad",
+    "you look just like your father"
+   ],
+   "distratores": [
+    "Você se dá muito bem com seu pai.",
+    "Você fala muito com seu pai.",
+    "Você briga muito com seu pai.",
+    "Você sai muito com seu pai."
+   ],
+   "distratoresEn": [
+    "You get on very well with your father.",
+    "You talk a lot with your father.",
+    "You argue a lot with your father.",
+    "You go out a lot with your father."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "família"
+   ],
+   "nota": "«Parecerse a», parecer-se com: em espanhol a preposição é «a». Sem o «se», é opinião: «me parece bien».",
+   "notaEn": "«Parecerse a», to look like.",
+   "requerTodas": [
+    "p552",
+    "p361",
+    "p218"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u473",
+   "tipo": "frase",
+   "requer": "p552",
+   "es": "Parece que va a llover.",
+   "pt": "Parece que vai chover.",
+   "en": "It looks like it's going to rain.",
+   "aceitas": [
+    "parece que vai chover",
+    "acho que vai chover",
+    "parece que vai cair chuva",
+    "ta com cara de chuva"
+   ],
+   "aceitasEn": [
+    "it looks like it s going to rain",
+    "it looks like rain",
+    "it seems its going to rain"
+   ],
+   "distratores": [
+    "Dizem que vai chover.",
+    "Sei que vai chover.",
+    "Avisaram que vai chover.",
+    "Juram que vai chover."
+   ],
+   "distratoresEn": [
+    "They say it's going to rain.",
+    "I know it's going to rain.",
+    "They warned it's going to rain.",
+    "They swear it's going to rain."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Parece que» + indicativo, como no português. «Ir a» + infinitivo é o futuro do dia a dia: «va a llover».",
+   "notaEn": "«Parece que» + indicative. «Ir a» + infinitive for the near future.",
+   "requerTodas": [
+    "p552",
+    "p355",
+    "p382"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u474",
+   "tipo": "frase",
+   "requer": "p563",
+   "es": "Se ha acabado la leche.",
+   "pt": "Acabou o leite.",
+   "en": "We've run out of milk.",
+   "aceitas": [
+    "acabou o leite",
+    "o leite acabou",
+    "acabou-se o leite",
+    "nao tem mais leite",
+    "ja acabou o leite"
+   ],
+   "aceitasEn": [
+    "we ve run out of milk",
+    "the milk has run out",
+    "the milk is finished",
+    "theres no milk left"
+   ],
+   "distratores": [
+    "Derramou o leite.",
+    "Azedou o leite.",
+    "Esfriou o leite.",
+    "Ferveu o leite."
+   ],
+   "distratoresEn": [
+    "The milk has spilt.",
+    "The milk has gone sour.",
+    "The milk has gone cold.",
+    "The milk has boiled."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "«Acabarse», acabar o que havia: «se acabó el pan». «¡Se acabó!», chega!, acabou!",
+   "notaEn": "«Acabarse», to run out. «¡Se acabó!», that's it!",
+   "requerTodas": [
+    "p352",
+    "p563",
+    "p463"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u475",
+   "tipo": "frase",
+   "requer": "p563",
+   "es": "La película acaba muy bien.",
+   "pt": "O filme termina muito bem.",
+   "en": "The film ends really well.",
+   "aceitas": [
+    "o filme termina muito bem",
+    "o filme acaba muito bem",
+    "o final do filme e muito bom",
+    "o filme tem um final muito bom"
+   ],
+   "aceitasEn": [
+    "the film ends really well",
+    "the movie ends really well",
+    "the film has a great ending"
+   ],
+   "distratores": [
+    "O filme começa muito bem.",
+    "O filme continua muito bem.",
+    "O filme engrena muito bem.",
+    "O filme surpreende muito bem."
+   ],
+   "distratoresEn": [
+    "The film starts really well.",
+    "The film carries on really well.",
+    "The film gets going really well.",
+    "The film surprises really well."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cultura"
+   ],
+   "nota": "«Acabar» e «terminar» se trocam aqui. Com «de», é o passado recente: «acabo de llegar», acabei de chegar.",
+   "notaEn": "«Acabar» = «terminar». «Acabar de», to have just.",
+   "requerTodas": [
+    "p402",
+    "p563",
+    "p360",
+    "p369"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u476",
+   "tipo": "frase",
+   "requer": "p514",
+   "es": "¿Cómo te encuentras hoy?",
+   "pt": "Como você está se sentindo hoje?",
+   "en": "How are you feeling today?",
+   "aceitas": [
+    "como voce esta se sentindo hoje",
+    "como voce esta hoje",
+    "como voce se sente hoje",
+    "como voce esta passando hoje",
+    "como esta hoje"
+   ],
+   "aceitasEn": [
+    "how are you feeling today",
+    "how do you feel today",
+    "how are you today"
+   ],
+   "distratores": [
+    "Onde você está hoje?",
+    "Com quem você está hoje?",
+    "Quando você chega hoje?",
+    "O que você faz hoje?"
+   ],
+   "distratoresEn": [
+    "Where are you today?",
+    "Who are you with today?",
+    "When do you arrive today?",
+    "What are you doing today?"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "saúde"
+   ],
+   "nota": "«Encontrarse», estar, sentir-se: a pergunta do médico. Também é encontrar-se com alguém: «me encontré con Ana».",
+   "notaEn": "«Encontrarse», to feel; also to run into someone.",
+   "requerTodas": [
+    "p514",
+    "p391"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u477",
+   "tipo": "frase",
+   "requer": "p030",
+   "es": "Quita los pies de la mesa.",
+   "pt": "Tira os pés da mesa.",
+   "en": "Take your feet off the table.",
+   "aceitas": [
+    "tira os pes da mesa",
+    "tire os pes da mesa",
+    "tira o pe da mesa",
+    "tire o pe da mesa"
+   ],
+   "aceitasEn": [
+    "take your feet off the table",
+    "get your feet off the table",
+    "feet off the table"
+   ],
+   "distratores": [
+    "Põe os pés na mesa.",
+    "Lava os pés na mesa.",
+    "Seca os pés na mesa.",
+    "Esconde os pés na mesa."
+   ],
+   "distratoresEn": [
+    "Put your feet on the table.",
+    "Wash your feet on the table.",
+    "Dry your feet on the table.",
+    "Hide your feet on the table."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "«Quitar» é tirar de cima, de perto, de alguém: «quitar la mesa», tirar a mesa; «me quitaron el bolso», me roubaram a bolsa.",
+   "notaEn": "«Quitar», to take off or away.",
+   "requerTodas": [
+    "p030",
+    "p506",
+    "p401"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u478",
+   "tipo": "frase",
+   "requer": "p580",
+   "es": "Baja el volumen, por favor.",
+   "pt": "Abaixa o volume, por favor.",
+   "en": "Turn the volume down, please.",
+   "aceitas": [
+    "abaixa o volume por favor",
+    "abaixe o volume por favor",
+    "diminui o volume por favor",
+    "baixa o volume por favor",
+    "abaixa o som por favor"
+   ],
+   "aceitasEn": [
+    "turn the volume down please",
+    "turn it down please",
+    "lower the volume please"
+   ],
+   "distratores": [
+    "Aumenta o volume, por favor.",
+    "Desliga o volume, por favor.",
+    "Muda o volume, por favor.",
+    "Testa o volume, por favor."
+   ],
+   "distratoresEn": [
+    "Turn the volume up, please.",
+    "Switch the sound off, please.",
+    "Change the volume, please.",
+    "Test the volume, please."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "casa"
+   ],
+   "nota": "«Bajar» abaixa volume, preço e voz: «baja la voz». Aumentar é «subir»: «sube el volumen».",
+   "notaEn": "«Bajar» turns things down; «subir» turns them up.",
+   "requerTodas": [
+    "p580",
+    "p232",
+    "p1065",
+    "p421"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u479",
+   "tipo": "frase",
+   "requer": "p584",
+   "es": "He cambiado de idea.",
+   "pt": "Mudei de ideia.",
+   "en": "I've changed my mind.",
+   "aceitas": [
+    "mudei de ideia",
+    "eu mudei de ideia",
+    "troquei de ideia",
+    "mudei de opiniao"
+   ],
+   "aceitasEn": [
+    "i ve changed my mind",
+    "i changed my mind",
+    "ive changed my mind"
+   ],
+   "distratores": [
+    "Gostei da ideia.",
+    "Desisti da ideia.",
+    "Esqueci a ideia.",
+    "Tive uma ideia."
+   ],
+   "distratoresEn": [
+    "I liked the idea.",
+    "I gave up on the plan.",
+    "I forgot the idea.",
+    "I had a thought."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Cambiar de», mudar de: «cambiar de casa», «de trabajo», «de idea». Trocar dinheiro é «cambiar dinero».",
+   "notaEn": "«Cambiar de», to change one thing for another.",
+   "requerTodas": [
+    "p352",
+    "p584",
+    "p528"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u480",
+   "tipo": "frase",
+   "requer": "p483",
+   "es": "Cuenta hasta diez.",
+   "pt": "Conta até dez.",
+   "en": "Count to ten.",
+   "aceitas": [
+    "conta ate dez",
+    "conte ate dez",
+    "conta ate 10"
+   ],
+   "aceitasEn": [
+    "count to ten",
+    "count up to ten",
+    "count to 10"
+   ],
+   "distratores": [
+    "Espera até as dez.",
+    "Fica até as dez.",
+    "Dorme até as dez.",
+    "Trabalha até as dez."
+   ],
+   "distratoresEn": [
+    "Wait until ten.",
+    "Stay till ten.",
+    "Sleep in until ten.",
+    "Work up to ten o'clock."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "escola"
+   ],
+   "nota": "«Contar» é contar números e contar uma história. O o vira ue: «cuenta», «cuento». «Contar con», contar com alguém.",
+   "notaEn": "«Contar»: to count, and to tell. «Contar con», to count on.",
+   "requerTodas": [
+    "p483",
+    "p426",
+    "p486"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u481",
+   "tipo": "frase",
+   "requer": "p440",
+   "es": "Creo que sí.",
+   "pt": "Acho que sim.",
+   "en": "I think so.",
+   "aceitas": [
+    "acho que sim",
+    "creio que sim",
+    "eu acho que sim"
+   ],
+   "aceitasEn": [
+    "i think so",
+    "i believe so"
+   ],
+   "distratores": [
+    "Acho que não.",
+    "Sei que sim.",
+    "Espero que sim.",
+    "Duvido."
+   ],
+   "distratoresEn": [
+    "I don't think so.",
+    "I know so.",
+    "I hope so.",
+    "I doubt it."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Creer que», achar que: o «acho» do português é quase sempre «creo». Com negação, subjuntivo: «no creo que venga».",
+   "notaEn": "«Creer que», to think that.",
+   "requerTodas": [
+    "p440"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u482",
+   "tipo": "frase",
+   "requer": "p861",
+   "es": "Pienso ir a la boda.",
+   "pt": "Pretendo ir ao casamento.",
+   "en": "I'm planning to go to the wedding.",
+   "aceitas": [
+    "pretendo ir ao casamento",
+    "penso em ir ao casamento",
+    "tenho a intencao de ir ao casamento",
+    "quero ir ao casamento",
+    "estou pensando em ir ao casamento",
+    "penso ir ao casamento"
+   ],
+   "aceitasEn": [
+    "i m planning to go to the wedding",
+    "i intend to go to the wedding",
+    "im thinking of going to the wedding"
+   ],
+   "distratores": [
+    "Esqueci de ir ao casamento.",
+    "Evito ir ao casamento.",
+    "Detesto ir ao casamento.",
+    "Desisti de ir ao casamento."
+   ],
+   "distratoresEn": [
+    "I forgot to go to the wedding.",
+    "I avoid going to the wedding.",
+    "I hate going to the wedding.",
+    "I've given up going to the wedding."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "família"
+   ],
+   "nota": "«Pensar» + infinitivo é ter a intenção. Pensar em algo é «pensar en»: «pienso en ti».",
+   "notaEn": "«Pensar» + infinitive: to intend to.",
+   "requerTodas": [
+    "p861",
+    "p355",
+    "p735"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u483",
+   "tipo": "frase",
+   "requer": "p861",
+   "es": "¿Qué piensas de mi novio?",
+   "pt": "O que você acha do meu namorado?",
+   "en": "What do you think of my boyfriend?",
+   "aceitas": [
+    "o que voce acha do meu namorado",
+    "o que voce pensa do meu namorado",
+    "que acha do meu namorado",
+    "o que voce acha do meu noivo"
+   ],
+   "aceitasEn": [
+    "what do you think of my boyfriend",
+    "what do you think about my boyfriend",
+    "what do you make of my boyfriend"
+   ],
+   "distratores": [
+    "O que você sabe do meu namorado?",
+    "O que você ouviu do meu namorado?",
+    "O que você quer do meu namorado?",
+    "O que você lembra do meu namorado?"
+   ],
+   "distratoresEn": [
+    "What do you know about my boyfriend?",
+    "What have you heard about my boyfriend?",
+    "What do you want from my boyfriend?",
+    "What do you remember about my boyfriend?"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Pensar de», a opinião sobre alguém. O e vira ie: «piensas». «¿Qué te parece?» pergunta o mesmo.",
+   "notaEn": "«Pensar de», to think of.",
+   "requerTodas": [
+    "p861",
+    "p991"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u484",
+   "tipo": "frase",
+   "requer": "p845",
+   "es": "Mira, no tengo tiempo.",
+   "pt": "Olha, não tenho tempo.",
+   "en": "Look, I don't have time.",
+   "aceitas": [
+    "olha nao tenho tempo",
+    "olha eu nao tenho tempo",
+    "veja nao tenho tempo",
+    "olha nao da tempo"
+   ],
+   "aceitasEn": [
+    "look i don t have time",
+    "look i have no time",
+    "look ive got no time"
+   ],
+   "distratores": [
+    "Espera, não tenho tempo.",
+    "Desculpa, não tenho tempo.",
+    "Calma, não tenho tempo.",
+    "Pronto, não tenho tempo."
+   ],
+   "distratoresEn": [
+    "Wait, I don't have time.",
+    "Sorry, I don't have time.",
+    "Easy, I don't have time.",
+    "Right, I don't have time."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Mira» abre a fala como o nosso «olha». Com usted, «mire».",
+   "notaEn": "«Mira» opens a sentence like «look».",
+   "requerTodas": [
+    "p845",
+    "p354",
+    "p424"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u485",
+   "tipo": "frase",
+   "requer": "p381",
+   "es": "Llama mucho la atención.",
+   "pt": "Chama muito a atenção.",
+   "en": "It really draws attention.",
+   "aceitas": [
+    "chama muito a atencao",
+    "ela chama muito a atencao",
+    "ele chama muita atencao",
+    "chama muita atencao",
+    "isso chama muito a atencao"
+   ],
+   "aceitasEn": [
+    "it really draws attention",
+    "she really stands out",
+    "it attracts a lot of attention",
+    "he draws a lot of attention"
+   ],
+   "distratores": [
+    "Presta muita atenção.",
+    "Perde muito a atenção.",
+    "Pede muito a atenção.",
+    "Tira muito a atenção."
+   ],
+   "distratoresEn": [
+    "He pays close attention.",
+    "He loses attention a lot.",
+    "He asks for attention all the time.",
+    "He distracts people."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Llamar la atención», chamar a atenção — e também dar bronca: «me llamaron la atención en clase».",
+   "notaEn": "«Llamar la atención», to draw attention, or to tell off.",
+   "requerTodas": [
+    "p381",
+    "p361",
+    "p1066"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u486",
+   "tipo": "frase",
+   "requer": "p395",
+   "es": "Ya no fumo.",
+   "pt": "Não fumo mais.",
+   "en": "I don't smoke any more.",
+   "aceitas": [
+    "nao fumo mais",
+    "eu nao fumo mais",
+    "ja nao fumo",
+    "parei de fumar"
+   ],
+   "aceitasEn": [
+    "i don t smoke any more",
+    "i dont smoke anymore",
+    "i no longer smoke"
+   ],
+   "distratores": [
+    "Ainda fumo.",
+    "Nunca fumei.",
+    "Fumo menos.",
+    "Fumo pouco."
+   ],
+   "distratoresEn": [
+    "I still smoke.",
+    "I've never smoked.",
+    "I smoke less.",
+    "I smoke a little."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "saúde"
+   ],
+   "nota": "«Ya no» é o «não… mais» do português. O contrário, «todavía» ou «aún»: «todavía fumo».",
+   "notaEn": "«Ya no», no longer. «Todavía», still.",
+   "requerTodas": [
+    "p395",
+    "p1067"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u487",
+   "tipo": "frase",
+   "requer": "p369",
+   "es": "Está bien, lo hago yo.",
+   "pt": "Tá bom, eu faço.",
+   "en": "All right, I'll do it.",
+   "aceitas": [
+    "ta bom eu faco",
+    "esta bem eu faco",
+    "tudo bem eu faco",
+    "ta bom eu faco isso",
+    "esta bem eu faco isso",
+    "ta bem eu faco"
+   ],
+   "aceitasEn": [
+    "all right i ll do it",
+    "okay ill do it",
+    "fine ill do it",
+    "alright ill do it"
+   ],
+   "distratores": [
+    "Tá difícil, eu faço.",
+    "Tá tarde, eu faço.",
+    "Tá frio, eu faço.",
+    "Tá cedo, eu faço."
+   ],
+   "distratoresEn": [
+    "It's hard, I'll do it.",
+    "It's late, I'll do it.",
+    "It's cold, I'll do it.",
+    "It's early, I'll do it."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Está bien», tá bom, combinado. O sujeito no fim, «lo hago yo», dá a ênfase: sou eu que faço.",
+   "notaEn": "«Está bien», all right.",
+   "requerTodas": [
+    "p358",
+    "p369",
+    "p353"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u488",
+   "tipo": "frase",
+   "requer": "p360",
+   "es": "Me gusta mucho, es muy bonito.",
+   "pt": "Gosto muito, é muito bonito.",
+   "en": "I like it a lot, it's very pretty.",
+   "aceitas": [
+    "gosto muito e muito bonito",
+    "eu gosto muito e muito bonito",
+    "adoro e muito bonito",
+    "gosto muito ele e muito bonito"
+   ],
+   "aceitasEn": [
+    "i like it a lot it s very pretty",
+    "i really like it its very pretty",
+    "i like it a lot its very nice"
+   ],
+   "distratores": [
+    "Gosto pouco, é muito bonito.",
+    "Gosto muito, é pouco bonito.",
+    "Gosto muito, é bonito demais.",
+    "Gosto demais, é meio bonito."
+   ],
+   "distratoresEn": [
+    "I don't like it much, it's very pretty.",
+    "I like it a lot, it's not very pretty.",
+    "I like it a lot, it's too pretty.",
+    "I like it far too much, it's fairly pretty."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Os dois «muito»: «muy» antes de adjetivo e advérbio («muy bonito», «muy tarde»); «mucho» com verbo e substantivo («me gusta mucho», «mucho dinero»).",
+   "notaEn": "«Muy» before adjectives and adverbs; «mucho» with verbs and nouns.",
+   "requerTodas": [
+    "p398",
+    "p361",
+    "p351",
+    "p360",
+    "p1068"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u489",
+   "tipo": "frase",
+   "requer": "p385",
+   "es": "Se lo ha comido todo.",
+   "pt": "Ele comeu tudo.",
+   "en": "He's eaten it all.",
+   "aceitas": [
+    "ele comeu tudo",
+    "comeu tudo",
+    "ela comeu tudo",
+    "ele ja comeu tudo",
+    "ele comeu tudinho"
+   ],
+   "aceitasEn": [
+    "he s eaten it all",
+    "he ate everything",
+    "he has eaten everything",
+    "she ate it all"
+   ],
+   "distratores": [
+    "Ele comeu pouco.",
+    "Ele comeu metade.",
+    "Ele não comeu nada.",
+    "Ele comeu demais."
+   ],
+   "distratoresEn": [
+    "He's eaten a little.",
+    "He's eaten half.",
+    "He hasn't eaten anything.",
+    "He's eaten too much."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "comida"
+   ],
+   "nota": "«Todo» como objeto pede o «lo»: «se lo ha comido todo», «lo sé todo». «Comerse», comer até o fim.",
+   "notaEn": "«Todo» as object needs «lo»: «lo sé todo».",
+   "requerTodas": [
+    "p352",
+    "p364",
+    "p385"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u490",
+   "tipo": "frase",
+   "requer": "p403",
+   "es": "Quiero un poco más.",
+   "pt": "Quero um pouco mais.",
+   "en": "I'd like a bit more.",
+   "aceitas": [
+    "quero um pouco mais",
+    "eu quero mais um pouco",
+    "quero mais um pouquinho",
+    "queria um pouco mais"
+   ],
+   "aceitasEn": [
+    "i d like a bit more",
+    "i want a little more",
+    "i want a bit more",
+    "i would like a little more"
+   ],
+   "distratores": [
+    "Quero um pouco menos.",
+    "Quero só um pouco.",
+    "Quero muito mais.",
+    "Não quero mais."
+   ],
+   "distratoresEn": [
+    "I'd like a bit less.",
+    "I'd like just a little.",
+    "I'd like a lot more.",
+    "I don't want any more."
+   ],
+   "nivel": "A1",
+   "tags": [
+    "comida"
+   ],
+   "nota": "Com acento é mais; sem acento, «mas» é o mas da adversativa, de livro. «Más o menos», mais ou menos.",
+   "notaEn": "With an accent it means more.",
+   "requerTodas": [
+    "p377",
+    "p405",
+    "p403"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u491",
+   "tipo": "frase",
+   "requer": "p366",
+   "es": "Esa camisa te queda muy bien.",
+   "pt": "Essa camisa fica muito bem em você.",
+   "en": "That shirt really suits you.",
+   "aceitas": [
+    "essa camisa fica muito bem em voce",
+    "essa camisa ficou muito bem em voce",
+    "essa camisa te cai muito bem",
+    "essa camisa combina com voce",
+    "essa camisa fica otima em voce"
+   ],
+   "aceitasEn": [
+    "that shirt really suits you",
+    "that shirt looks great on you",
+    "that shirt fits you really well"
+   ],
+   "distratores": [
+    "Essa camisa é muito cara para você.",
+    "Essa camisa é muito grande para você.",
+    "Essa camisa é muito curta para você.",
+    "Essa camisa é muito velha para você."
+   ],
+   "distratoresEn": [
+    "That shirt costs too much.",
+    "That shirt is too big.",
+    "That shirt is too short.",
+    "That shirt is too old."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "roupa"
+   ],
+   "nota": "«Quedar bien» ou «quedar mal», ficar bem ou mal, de roupa: «te queda grande», fica grande em você.",
+   "notaEn": "«Quedar bien», to suit.",
+   "requerTodas": [
+    "p745",
+    "p366",
+    "p360",
+    "p369"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p1052",
+   "tipo": "palavra",
+   "es": "vestirse",
+   "pt": "vestir-se",
+   "en": "to get dressed",
+   "aceitas": [
+    "vestir-se",
+    "se vestir",
+    "vestir se",
+    "vestir",
+    "se arrumar"
+   ],
+   "aceitasEn": [
+    "to get dressed",
+    "to dress",
+    "get dressed"
+   ],
+   "distratores": [
+    "despir-se",
+    "investir",
+    "pentear-se",
+    "lavar-se"
+   ],
+   "distratoresEn": [
+    "to undress",
+    "to invest",
+    "to comb your hair",
+    "to wash"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "verbo"
+   ],
+   "nota": "O e vira i: «me visto», «se vistió». «Vestirse de», vestir-se de: «se vistió de negro».",
+   "notaEn": "The e becomes i: «me visto»."
+  },
+  {
+   "idioma": "es",
+   "id": "p1053",
+   "tipo": "palavra",
+   "es": "medio",
+   "pt": "meio",
+   "en": "half",
+   "aceitas": [
+    "meio",
+    "meio a meio"
+   ],
+   "aceitasEn": [
+    "half",
+    "middle",
+    "average"
+   ],
+   "distratores": [
+    "inteiro",
+    "meado",
+    "mesmo",
+    "médio"
+   ],
+   "distratoresEn": [
+    "whole",
+    "mid",
+    "same",
+    "medium"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Concorda e vai sem artigo: «media hora», meia hora; «y media», e meia. «En medio de», no meio de.",
+   "notaEn": "«Media hora», half an hour; «y media», half past."
+  },
+  {
+   "idioma": "es",
+   "id": "p1054",
+   "tipo": "palavra",
+   "es": "treinta",
+   "pt": "trinta",
+   "en": "thirty",
+   "aceitas": [
+    "trinta",
+    "30"
+   ],
+   "aceitasEn": [
+    "thirty",
+    "30"
+   ],
+   "distratores": [
+    "treze",
+    "três",
+    "quarenta",
+    "vinte"
+   ],
+   "distratoresEn": [
+    "thirteen",
+    "three",
+    "forty",
+    "twenty"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "Treze é «trece». De trinta em diante se escreve separado: «treinta y uno».",
+   "notaEn": "From thirty on, written apart: «treinta y uno»."
+  },
+  {
+   "idioma": "es",
+   "id": "p1055",
+   "tipo": "palavra",
+   "es": "el paseo",
+   "pt": "o passeio",
+   "en": "the walk",
+   "aceitas": [
+    "passeio",
+    "a volta",
+    "a caminhada"
+   ],
+   "aceitasEn": [
+    "walk",
+    "the walk",
+    "stroll",
+    "ride",
+    "promenade"
+   ],
+   "distratores": [
+    "o passo",
+    "a passagem",
+    "o pasto",
+    "a viagem"
+   ],
+   "distratoresEn": [
+    "the step",
+    "the passage",
+    "the pasture",
+    "the journey"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "cidade"
+   ],
+   "nota": "«Dar un paseo», dar uma volta. «El paseo marítimo», o calçadão da praia. «¡Vete a paseo!», vá passear!",
+   "notaEn": "«Dar un paseo», to go for a walk."
+  },
+  {
+   "idioma": "es",
+   "id": "p1056",
+   "tipo": "palavra",
+   "es": "la madre",
+   "pt": "a mãe",
+   "en": "the mother",
+   "aceitas": [
+    "mae",
+    "a mamae"
+   ],
+   "aceitasEn": [
+    "mother",
+    "the mother",
+    "mum",
+    "mom"
+   ],
+   "distratores": [
+    "a madrinha",
+    "a madrasta",
+    "a avó",
+    "a tia"
+   ],
+   "distratoresEn": [
+    "the godmother",
+    "the stepmother",
+    "the grandmother",
+    "the aunt"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "família"
+   ],
+   "nota": "Na fala, «mamá». «¡Madre mía!», minha nossa! A freira também é «madre».",
+   "notaEn": "In speech, «mamá». «¡Madre mía!», good heavens!"
+  },
+  {
+   "idioma": "es",
+   "id": "p1057",
+   "tipo": "palavra",
+   "es": "el partido",
+   "pt": "o jogo",
+   "en": "the match / the party",
+   "aceitas": [
+    "jogo",
+    "a partida",
+    "o partido",
+    "partida"
+   ],
+   "aceitasEn": [
+    "match",
+    "the match",
+    "game",
+    "party",
+    "political party"
+   ],
+   "distratores": [
+    "o parto",
+    "o pacto",
+    "o partidário",
+    "o pedido"
+   ],
+   "distratoresEn": [
+    "the birth / the delivery",
+    "the pact / the deal",
+    "the supporter / the ally",
+    "the order / the request"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "cultura",
+    "política"
+   ],
+   "nota": "O jogo de futebol, «el partido», e o partido político. «Sacar partido de», tirar proveito de.",
+   "notaEn": "A match, and a political party."
+  },
+  {
+   "idioma": "es",
+   "id": "p1058",
+   "tipo": "palavra",
+   "es": "la siesta",
+   "pt": "a sesta",
+   "en": "the nap",
+   "aceitas": [
+    "sesta",
+    "a soneca",
+    "o cochilo",
+    "soneca",
+    "cochilo"
+   ],
+   "aceitasEn": [
+    "nap",
+    "the nap",
+    "siesta",
+    "afternoon nap"
+   ],
+   "distratores": [
+    "a sexta",
+    "a festa",
+    "a cesta",
+    "a sede"
+   ],
+   "distratoresEn": [
+    "the friday",
+    "the party",
+    "the basket",
+    "the thirst"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "cotidiano"
+   ],
+   "nota": "«Echar la siesta», tirar a sesta, depois do almoço. A palavra vem da «hora sexta» dos romanos, o meio-dia.",
+   "notaEn": "«Echar la siesta», to have a nap."
+  },
+  {
+   "idioma": "es",
+   "id": "p1059",
+   "tipo": "palavra",
+   "es": "después",
+   "pt": "depois",
+   "en": "after / afterwards",
+   "aceitas": [
+    "depois",
+    "mais tarde",
+    "logo depois"
+   ],
+   "aceitasEn": [
+    "after",
+    "afterwards",
+    "later",
+    "then"
+   ],
+   "distratores": [
+    "antes",
+    "durante",
+    "ainda",
+    "desde"
+   ],
+   "distratoresEn": [
+    "before / previously",
+    "during / while",
+    "still / so far",
+    "since / from"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "«Después de» + infinitivo ou substantivo: «después de comer», depois de comer. «Después» sozinho é depois, mais tarde.",
+   "notaEn": "«Después de comer», after eating.",
+   "sinonimosEs": [
+    "luego"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p1060",
+   "tipo": "palavra",
+   "es": "la semana",
+   "pt": "a semana",
+   "en": "the week",
+   "aceitas": [
+    "semana"
+   ],
+   "aceitasEn": [
+    "week",
+    "the week"
+   ],
+   "distratores": [
+    "o semestre",
+    "o mês",
+    "a semente",
+    "o feriado"
+   ],
+   "distratoresEn": [
+    "the semester",
+    "the month",
+    "the seed",
+    "the holiday"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "cotidiano"
+   ],
+   "nota": "«El fin de semana», o fim de semana. «Entre semana», nos dias úteis. «La Semana Santa», a Semana Santa.",
+   "notaEn": "«Entre semana», on weekdays."
+  },
+  {
+   "idioma": "es",
+   "id": "p1061",
+   "tipo": "palavra",
+   "es": "la palabra",
+   "pt": "a palavra",
+   "en": "the word",
+   "aceitas": [
+    "palavra"
+   ],
+   "aceitasEn": [
+    "word",
+    "the word"
+   ],
+   "distratores": [
+    "a parábola",
+    "a palavrinha",
+    "a frase",
+    "a palestra"
+   ],
+   "distratoresEn": [
+    "the parable",
+    "the little word",
+    "the sentence",
+    "the lecture"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "escola"
+   ],
+   "nota": "«Dar la palabra», prometer. «Tomar la palabra», falar numa reunião. O palavrão é «la palabrota».",
+   "notaEn": "«Dar la palabra», to give one's word."
+  },
+  {
+   "idioma": "es",
+   "id": "p1062",
+   "tipo": "palavra",
+   "es": "el sol",
+   "pt": "o sol",
+   "en": "the sun",
+   "aceitas": [
+    "sol"
+   ],
+   "aceitasEn": [
+    "sun",
+    "the sun",
+    "sunshine"
+   ],
+   "distratores": [
+    "o céu",
+    "a lua",
+    "o calor",
+    "o solo"
+   ],
+   "distratoresEn": [
+    "the sky",
+    "the moon",
+    "the heat",
+    "the soil"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "substantivo",
+    "viagem"
+   ],
+   "nota": "«Tomar el sol», tomar sol. «Hace sol», está sol. Sozinho, «sol» também é a nota musical.",
+   "notaEn": "«Hace sol», it's sunny."
+  },
+  {
+   "idioma": "es",
+   "id": "p1063",
+   "tipo": "palavra",
+   "es": "la guitarra",
+   "pt": "o violão",
+   "en": "the guitar",
+   "aceitas": [
+    "violao",
+    "a guitarra",
+    "guitarra"
+   ],
+   "aceitasEn": [
+    "guitar",
+    "the guitar"
+   ],
+   "distratores": [
+    "o violino",
+    "o piano",
+    "a gaita",
+    "o tambor"
+   ],
+   "distratoresEn": [
+    "the violin",
+    "the piano",
+    "the harmonica",
+    "the drum"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "cultura"
+   ],
+   "nota": "É o violão e a guitarra; a elétrica é «la guitarra eléctrica». Instrumento se toca: «tocar la guitarra».",
+   "notaEn": "Acoustic or electric guitar; «tocar la guitarra»."
+  },
+  {
+   "idioma": "es",
+   "id": "p1064",
+   "tipo": "palavra",
+   "es": "la lotería",
+   "pt": "a loteria",
+   "en": "the lottery",
+   "aceitas": [
+    "loteria"
+   ],
+   "aceitasEn": [
+    "lottery",
+    "the lottery"
+   ],
+   "distratores": [
+    "a livraria",
+    "a lavanderia",
+    "a padaria",
+    "a portaria"
+   ],
+   "distratoresEn": [
+    "the bookshop",
+    "the laundry",
+    "the bakery",
+    "the reception"
+   ],
+   "nivel": "B1",
+   "tags": [
+    "substantivo",
+    "economia"
+   ],
+   "nota": "«Tocar la lotería», ganhar na loteria. A de Natal, na Espanha, é a mais famosa: «el Gordo».",
+   "notaEn": "«Tocar la lotería», to win the lottery."
+  },
+  {
+   "idioma": "es",
+   "id": "p1065",
+   "tipo": "palavra",
+   "es": "el volumen",
+   "pt": "o volume",
+   "en": "the volume",
+   "aceitas": [
+    "volume"
+   ],
+   "aceitasEn": [
+    "volume",
+    "the volume",
+    "sound",
+    "level"
+   ],
+   "distratores": [
+    "o vulto",
+    "o valor",
+    "o veludo",
+    "o vômito"
+   ],
+   "distratoresEn": [
+    "the shape",
+    "the value",
+    "the velvet",
+    "the vomit"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "tecnologia"
+   ],
+   "nota": "Plural com acento: «volúmenes». Do som e também do livro da coleção.",
+   "notaEn": "Plural «volúmenes»."
+  },
+  {
+   "idioma": "es",
+   "id": "p1066",
+   "tipo": "palavra",
+   "es": "la atención",
+   "pt": "a atenção",
+   "en": "the attention",
+   "aceitas": [
+    "atencao"
+   ],
+   "aceitasEn": [
+    "attention",
+    "the attention",
+    "care"
+   ],
+   "distratores": [
+    "a tensão",
+    "a intenção",
+    "a extensão",
+    "a menção"
+   ],
+   "distratoresEn": [
+    "the tension",
+    "the intention",
+    "the extension",
+    "the mention"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo"
+   ],
+   "nota": "«Prestar atención», prestar atenção. «Llamar la atención», chamar a atenção e também dar bronca. «Atención al cliente», atendimento.",
+   "notaEn": "«Prestar atención», to pay attention."
+  },
+  {
+   "idioma": "es",
+   "id": "p1067",
+   "tipo": "palavra",
+   "es": "fumar",
+   "pt": "fumar",
+   "en": "to smoke",
+   "aceitas": [
+    "fumar"
+   ],
+   "aceitasEn": [
+    "to smoke",
+    "smoke"
+   ],
+   "distratores": [
+    "furar",
+    "fundar",
+    "fugir",
+    "sumir"
+   ],
+   "distratoresEn": [
+    "to pierce",
+    "to found",
+    "to flee",
+    "to vanish"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "verbo",
+    "saúde"
+   ],
+   "nota": "«Prohibido fumar», proibido fumar. «Dejar de fumar», parar de fumar.",
+   "notaEn": "«Dejar de fumar», to stop smoking."
+  },
+  {
+   "idioma": "es",
+   "id": "p1068",
+   "tipo": "palavra",
+   "es": "bonito",
+   "pt": "bonito",
+   "en": "pretty",
+   "aceitas": [
+    "bonito",
+    "bonita",
+    "lindo"
+   ],
+   "aceitasEn": [
+    "pretty",
+    "nice",
+    "beautiful",
+    "lovely"
+   ],
+   "distratores": [
+    "bobo",
+    "bondoso",
+    "bonzinho",
+    "feio"
+   ],
+   "distratoresEn": [
+    "silly",
+    "kind",
+    "nice and good",
+    "ugly"
+   ],
+   "nivel": "A1",
+   "tags": [
+    "adjetivo"
+   ],
+   "nota": "Também bom, legal: «un detalle muy bonito». O peixe bonito também é «el bonito».",
+   "notaEn": "Also nice: «un detalle muy bonito»."
   }
  ]
 }

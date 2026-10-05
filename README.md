@@ -593,6 +593,8 @@ pelo Gere e batidos com o Wikisource: Machado, Bécquer (Rima LIII) e Martí
 começo do Quixote, de «A la deriva» e de «Nuestra América» em prosa. A leva
 20 (`20-vocabulario-dos-textos.json`, 93 cards) deu card às palavras deles.
 
+Depois veio a primeira volta do ciclo da seção 18: a leva 21 deu uma frase de uso a cada palavra dos textos; a 22, card às 48 palavras que essas frases pediam; a 23 trouxe 51 frases com os usos que faltavam às palavras de muitos sentidos (as horas com «ser», a idade com «tener», «darse cuenta», «parecerse a», «salir con», «lo siento», «tocar» de instrumento e de sorte, «muy» contra «mucho»); e a 24, as 17 palavras dessas frases. Desde então o build não tem aviso no lado espanhol: toda palavra tem card e frase, e nenhuma frase espera palavra sem card.
+
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
 
