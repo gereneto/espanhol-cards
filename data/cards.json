@@ -2,7 +2,7 @@
  "versao": 1,
  "idioma": "es",
  "gerado_em": "2026-10-05",
- "total": 1897,
+ "total": 1907,
  "cards": [
   {
    "idioma": "es",
@@ -80264,6 +80264,520 @@
    ],
    "nota": "«Tener cuidado», tomar cuidado. «¡Cuidado!», cuidado! «Cuidar», cuidar: «cuida a su madre».",
    "notaEn": "«Tener cuidado», to be careful."
+  },
+  {
+   "idioma": "es",
+   "id": "v114",
+   "tipo": "frase",
+   "es": "Hablaré con el jefe.",
+   "pt": "Vou falar com o chefe.",
+   "en": "I'll talk to the boss.",
+   "aceitas": [
+    "vou falar com o chefe",
+    "falarei com o chefe",
+    "eu vou falar com o chefe",
+    "vou conversar com o chefe",
+    "vou falar com a chefe"
+   ],
+   "aceitasEn": [
+    "i ll talk to the boss",
+    "i will talk to the boss",
+    "ill speak to the boss",
+    "i will speak to the boss"
+   ],
+   "distratores": [
+    "Falei com o chefe.",
+    "Eu falava com o chefe.",
+    "Eu falaria com o chefe.",
+    "Eu tinha falado com o chefe."
+   ],
+   "distratoresEn": [
+    "I talked to the boss.",
+    "I used to talk to the boss.",
+    "I would talk to the boss.",
+    "I had talked to the boss."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "hablar",
+    "regular"
+   ],
+   "nota": "O futuro regular é o infinitivo inteiro mais a terminação: «hablaré», «hablarás», «hablará», «hablaremos», «hablarán». É a mesma para -ar, -er e -ir.",
+   "notaEn": "The regular future is the whole infinitive plus -é, -ás, -á, -emos, -éis, -án, the same for all three conjugations.",
+   "formasEs": {
+    "Hablé con el jefe": "pretérito",
+    "Hablaba con el jefe": "imperfeito",
+    "Hablaría con el jefe": "condicional",
+    "Había hablado con el jefe": "mais-que-perfeito"
+   },
+   "formasEsEn": {
+    "Hablé con el jefe": "preterite",
+    "Hablaba con el jefe": "imperfect",
+    "Hablaría con el jefe": "conditional",
+    "Había hablado con el jefe": "pluperfect"
+   },
+   "requerTodas": [
+    "p425",
+    "p500"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v115",
+   "tipo": "frase",
+   "es": "Comeremos en casa de mis padres.",
+   "pt": "Vamos almoçar na casa dos meus pais.",
+   "en": "We'll have lunch at my parents' house.",
+   "aceitas": [
+    "vamos almocar na casa dos meus pais",
+    "comeremos na casa dos meus pais",
+    "vamos comer na casa dos meus pais",
+    "almocaremos na casa dos meus pais",
+    "a gente vai almocar na casa dos meus pais"
+   ],
+   "aceitasEn": [
+    "we ll have lunch at my parents house",
+    "we will eat at my parents house",
+    "well eat at my parents",
+    "we will have lunch at my parents"
+   ],
+   "distratores": [
+    "Almoçamos na casa dos meus pais.",
+    "A gente almoçava na casa dos meus pais.",
+    "Almoçaríamos na casa dos meus pais.",
+    "Tínhamos almoçado na casa dos meus pais."
+   ],
+   "distratoresEn": [
+    "We had lunch at my parents' house.",
+    "We used to have lunch at my parents' house.",
+    "We would have lunch at my parents' house.",
+    "We had had lunch at my parents' house."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "comer",
+    "regular"
+   ],
+   "nota": "O futuro de -er segue a mesma régua: «comeremos». «En casa de», na casa de, sem artigo antes de «casa». Na Espanha, «comer» é almoçar.",
+   "notaEn": "Same rule for -er: «comeremos». «En casa de», at someone's house.",
+   "formasEs": {
+    "Comimos en casa de mis padres": "pretérito",
+    "Comíamos en casa de mis padres": "imperfeito",
+    "Comeríamos en casa de mis padres": "condicional",
+    "Habíamos comido en casa de mis padres": "mais-que-perfeito"
+   },
+   "formasEsEn": {
+    "Comimos en casa de mis padres": "preterite",
+    "Comíamos en casa de mis padres": "imperfect",
+    "Comeríamos en casa de mis padres": "conditional",
+    "Habíamos comido en casa de mis padres": "pluperfect"
+   },
+   "requerTodas": [
+    "p364",
+    "p400",
+    "p218"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v116",
+   "tipo": "frase",
+   "es": "Vivirán en el centro.",
+   "pt": "Eles vão morar no centro.",
+   "en": "They'll live in the town centre.",
+   "aceitas": [
+    "eles vao morar no centro",
+    "eles morarao no centro",
+    "vao morar no centro",
+    "elas vao morar no centro",
+    "eles vao viver no centro"
+   ],
+   "aceitasEn": [
+    "they ll live in the town centre",
+    "they will live in the centre",
+    "theyre going to live downtown",
+    "they will live in the city centre"
+   ],
+   "distratores": [
+    "Eles moraram no centro.",
+    "Eles moravam no centro.",
+    "Eles morariam no centro.",
+    "Eles tinham morado no centro."
+   ],
+   "distratoresEn": [
+    "They lived in the town centre.",
+    "They used to live in the town centre.",
+    "They would live in the town centre.",
+    "They had lived in the town centre."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "futuro",
+    "vivir",
+    "regular"
+   ],
+   "nota": "E de -ir: «vivirán». Repare que nada muda no radical; a irregularidade dos futuros fica só em uma dúzia de verbos (tendré, podré, haré…).",
+   "notaEn": "And -ir: «vivirán». Only about a dozen verbs have irregular futures.",
+   "formasEs": {
+    "Vivieron en el centro": "pretérito",
+    "Vivían en el centro": "imperfeito",
+    "Vivirían en el centro": "condicional",
+    "Habían vivido en el centro": "mais-que-perfeito"
+   },
+   "formasEsEn": {
+    "Vivieron en el centro": "preterite",
+    "Vivían en el centro": "imperfect",
+    "Vivirían en el centro": "conditional",
+    "Habían vivido en el centro": "pluperfect"
+   },
+   "requerTodas": [
+    "p394",
+    "p620"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v117",
+   "tipo": "frase",
+   "es": "Me encantaría conocerte.",
+   "pt": "Eu adoraria te conhecer.",
+   "en": "I'd love to meet you.",
+   "aceitas": [
+    "eu adoraria te conhecer",
+    "adoraria te conhecer",
+    "eu adoraria conhecer voce",
+    "eu adoraria conhecer-te",
+    "seria um prazer te conhecer"
+   ],
+   "aceitasEn": [
+    "i d love to meet you",
+    "i would love to meet you",
+    "id love to get to know you"
+   ],
+   "distratores": [
+    "Eu adorei te conhecer.",
+    "Eu adoro te conhecer.",
+    "Eu vou adorar te conhecer.",
+    "Eu adorava te conhecer."
+   ],
+   "distratoresEn": [
+    "I loved meeting you.",
+    "I love meeting you.",
+    "I'll love meeting you.",
+    "I used to love meeting you."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "condicional",
+    "encantar",
+    "regular"
+   ],
+   "nota": "O condicional regular é o infinitivo mais «-ía»: «encantaría», «comería», «viviría». Com «gustar» e «encantar», o desejo educado: «me gustaría», «me encantaría».",
+   "notaEn": "The regular conditional is the infinitive plus «-ía».",
+   "formasEs": {
+    "Me encantó conocerte": "pretérito",
+    "Me encanta conocerte": "presente",
+    "Me encantará conocerte": "futuro",
+    "Me encantaba conocerte": "imperfeito"
+   },
+   "formasEsEn": {
+    "Me encantó conocerte": "preterite",
+    "Me encanta conocerte": "present",
+    "Me encantará conocerte": "future",
+    "Me encantaba conocerte": "imperfect"
+   },
+   "requerTodas": [
+    "p697",
+    "p414"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v118",
+   "tipo": "frase",
+   "es": "Quiero que me llames mañana.",
+   "pt": "Quero que você me ligue amanhã.",
+   "en": "I want you to call me tomorrow.",
+   "aceitas": [
+    "quero que voce me ligue amanha",
+    "quero que me ligue amanha",
+    "eu quero que voce me ligue amanha",
+    "me liga amanha"
+   ],
+   "aceitasEn": [
+    "i want you to call me tomorrow",
+    "i want you to ring me tomorrow",
+    "call me tomorrow"
+   ],
+   "distratores": [
+    "Quero que você me ligue depois.",
+    "Sei que você vai me ligar amanhã.",
+    "Quero saber se você me liga amanhã.",
+    "Acho que você me liga amanhã."
+   ],
+   "distratoresEn": [
+    "I want you to call me later.",
+    "I know you'll call me tomorrow.",
+    "I want to know if you'll call me tomorrow.",
+    "I think you'll call me tomorrow."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "conjugação",
+    "subjuntivo",
+    "llamar",
+    "regular"
+   ],
+   "nota": "No subjuntivo regular, o -ar troca a vogal para e: «llames», «hables». O -er e o -ir trocam para a: «comas», «vivas». «Querer que» pede subjuntivo.",
+   "notaEn": "Regular subjunctive: -ar takes e («llames»); -er and -ir take a («comas»).",
+   "formasEs": {
+    "Quiero que me llamas mañana": "indicativo, onde o subjuntivo é obrigatório",
+    "Quiero que me llamaste mañana": "pretérito, que aqui não cabe",
+    "Quiero que me llamarás mañana": "futuro do indicativo, que aqui não cabe",
+    "Quiero que me llamabas mañana": "imperfeito"
+   },
+   "formasEsEn": {
+    "Quiero que me llamas mañana": "indicative, where the subjunctive is required",
+    "Quiero que me llamaste mañana": "preterite, which does not fit here",
+    "Quiero que me llamarás mañana": "future indicative, which does not fit here",
+    "Quiero que me llamabas mañana": "imperfect"
+   },
+   "requerTodas": [
+    "p377",
+    "p381",
+    "p372"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "v119",
+   "tipo": "frase",
+   "es": "Es mejor que comas algo.",
+   "pt": "É melhor você comer alguma coisa.",
+   "en": "You'd better eat something.",
+   "aceitas": [
+    "e melhor voce comer alguma coisa",
+    "e melhor que voce coma algo",
+    "e melhor voce comer algo",
+    "e melhor que coma alguma coisa",
+    "melhor voce comer alguma coisa"
+   ],
+   "aceitasEn": [
+    "you d better eat something",
+    "it is better that you eat something",
+    "its best you eat something",
+    "you should eat something"
+   ],
+   "distratores": [
+    "É melhor você ter comido alguma coisa.",
+    "Sei que você comeu alguma coisa.",
+    "É melhor você beber alguma coisa.",
+    "É melhor você comprar alguma coisa."
+   ],
+   "distratoresEn": [
+    "You'd better have eaten something.",
+    "I know you ate something.",
+    "You'd better drink something.",
+    "You'd better buy something."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "conjugação",
+    "subjuntivo",
+    "comer",
+    "regular"
+   ],
+   "nota": "«Es mejor que», «es importante que», «es necesario que» pedem subjuntivo: «comas», com a — o -er troca o e pelo a.",
+   "notaEn": "«Es mejor que» takes the subjunctive: «comas».",
+   "formasEs": {
+    "Es mejor que comes algo": "indicativo, onde o subjuntivo é obrigatório",
+    "Es mejor que comiste algo": "pretérito, que aqui não cabe",
+    "Es mejor que comerás algo": "futuro do indicativo, que aqui não cabe",
+    "Es mejor que comías algo": "imperfeito"
+   },
+   "formasEsEn": {
+    "Es mejor que comes algo": "indicative, where the subjunctive is required",
+    "Es mejor que comiste algo": "preterite, which does not fit here",
+    "Es mejor que comerás algo": "future indicative, which does not fit here",
+    "Es mejor que comías algo": "imperfect"
+   },
+   "requerTodas": [
+    "p351",
+    "p542",
+    "p364"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u492",
+   "tipo": "frase",
+   "requer": "p382",
+   "es": "Mañana lloverá en el norte.",
+   "pt": "Amanhã vai chover no norte.",
+   "en": "It will rain in the north tomorrow.",
+   "aceitas": [
+    "amanha vai chover no norte",
+    "amanha chovera no norte",
+    "vai chover no norte amanha",
+    "amanha chove no norte"
+   ],
+   "aceitasEn": [
+    "it will rain in the north tomorrow",
+    "tomorrow it will rain in the north",
+    "its going to rain in the north tomorrow"
+   ],
+   "distratores": [
+    "Amanhã vai nevar no norte.",
+    "Amanhã vai ventar no norte.",
+    "Amanhã vai esfriar no norte.",
+    "Amanhã vai trovejar no norte."
+   ],
+   "distratoresEn": [
+    "It will snow in the north tomorrow.",
+    "It will be windy in the north tomorrow.",
+    "It will get cold in the north tomorrow.",
+    "It will thunder in the north tomorrow."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "cotidiano"
+   ],
+   "nota": "É o futuro da previsão do tempo: «lloverá», «hará sol», «bajarán las temperaturas». Na conversa, «va a llover».",
+   "notaEn": "The future of weather forecasts. In speech, «va a llover».",
+   "requerTodas": [
+    "p372",
+    "p382",
+    "p1072"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u493",
+   "tipo": "frase",
+   "requer": "p381",
+   "es": "Te llamaré esta noche.",
+   "pt": "Te ligo hoje à noite.",
+   "en": "I'll call you tonight.",
+   "aceitas": [
+    "te ligo hoje a noite",
+    "vou te ligar hoje a noite",
+    "te ligarei esta noite",
+    "eu te ligo hoje a noite",
+    "ligo pra voce hoje a noite"
+   ],
+   "aceitasEn": [
+    "i ll call you tonight",
+    "i will call you tonight",
+    "ill ring you tonight",
+    "ill phone you this evening"
+   ],
+   "distratores": [
+    "Te escrevo hoje à noite.",
+    "Te busco hoje à noite.",
+    "Te vejo hoje à noite.",
+    "Te espero hoje à noite."
+   ],
+   "distratoresEn": [
+    "I'll write to you tonight.",
+    "I'll pick you up tonight.",
+    "I'll see you tonight.",
+    "I'll wait for you tonight."
+   ],
+   "nivel": "A2",
+   "tags": [
+    "social"
+   ],
+   "nota": "«Te llamaré» é a promessa; «te llamo luego» diz o mesmo, mais solto. «Esta noche», hoje à noite.",
+   "notaEn": "«Te llamaré» is the promise; «te llamo luego» says the same more casually.",
+   "requerTodas": [
+    "p381",
+    "p789"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "u494",
+   "tipo": "frase",
+   "requer": "p1045",
+   "es": "En la otra empresa ganarás más.",
+   "pt": "Na outra empresa você vai ganhar mais.",
+   "en": "You'll earn more at the other company.",
+   "aceitas": [
+    "na outra empresa voce vai ganhar mais",
+    "na outra empresa voce ganhara mais",
+    "voce vai ganhar mais na outra empresa",
+    "na outra empresa vai ganhar mais",
+    "na outra firma voce vai ganhar mais"
+   ],
+   "aceitasEn": [
+    "you ll earn more at the other company",
+    "you will earn more at the other company",
+    "youll make more money at the other firm"
+   ],
+   "distratores": [
+    "Na outra empresa você vai gastar mais.",
+    "Na outra empresa você vai trabalhar mais.",
+    "Na outra empresa você vai pagar mais.",
+    "Na outra empresa você vai sofrer mais."
+   ],
+   "distratoresEn": [
+    "You'll spend more at the other company.",
+    "You'll work more at the other company.",
+    "You'll pay more at the other company.",
+    "You'll suffer more at the other company."
+   ],
+   "nivel": "B1",
+   "tags": [
+    "trabalho"
+   ],
+   "nota": "«Ganar» é ganhar dinheiro, sem mais nada: «gana poco», ganha pouco. O futuro regular: «ganarás».",
+   "notaEn": "«Ganar» is to earn: «gana poco».",
+   "requerTodas": [
+    "p858",
+    "p761",
+    "p1045",
+    "p403"
+   ]
+  },
+  {
+   "idioma": "es",
+   "id": "p1072",
+   "tipo": "palavra",
+   "es": "el norte",
+   "pt": "o norte",
+   "en": "the north",
+   "aceitas": [
+    "norte"
+   ],
+   "aceitasEn": [
+    "north",
+    "the north"
+   ],
+   "distratores": [
+    "o sul",
+    "o leste",
+    "o oeste",
+    "o nordeste"
+   ],
+   "distratoresEn": [
+    "the south",
+    "the east",
+    "the west",
+    "the north-east"
+   ],
+   "nivel": "A2",
+   "tags": [
+    "substantivo",
+    "viagem"
+   ],
+   "nota": "Os pontos cardeais: «el norte», «el sur», «el este», «el oeste». «Perder el norte», perder o rumo.",
+   "notaEn": "«Perder el norte», to lose one's bearings."
   }
  ]
 }

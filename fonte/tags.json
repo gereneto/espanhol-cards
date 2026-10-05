@@ -1230,5 +1230,21 @@
   "abrir": {
     "en": "abrir",
     "es": "abrir"
+  },
+  "hablar": {
+    "en": "hablar",
+    "es": "hablar"
+  },
+  "comer": {
+    "en": "comer",
+    "es": "comer"
+  },
+  "encantar": {
+    "en": "encantar",
+    "es": "encantar"
+  },
+  "llamar": {
+    "en": "llamar",
+    "es": "llamar"
   }
 }
