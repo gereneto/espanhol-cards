@@ -305,6 +305,9 @@ window.Motor = (function () {
         saida.push(p);
       }
     }
+    /* resposta que é só palavra omissível («já», para o card de «ya») ficaria
+       vazia: aí ela vale como está, e o funil não descarta nada */
+    if (!saida.length && !cru) return normalizar(txt, lingua, Object.assign({}, opcoes, { cru: true }));
     if (cru) return saida.join(' ');
     return tempoParaOFim(saida, lingua in LINGUAS ? lingua : 'pt').join(' ');
   }
