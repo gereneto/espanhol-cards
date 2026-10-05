@@ -46,11 +46,14 @@ ela não é do card: é do motor ou da leva inteira.
 
 ## 2. O que merece um card
 
-- **O que o português não entrega.** Falso amigo, palavra opaca («el grifo»,
-  «la nevera»), construção sem equivalente («llevar + tempo», «se me cayó»,
-  «soler»), expressão idiomática, colocação fixa («sacar la basura», «hacer
-  cola»). Cognato transparente só entra quando esconde uma armadilha
-  («vislumbrar» não ensina nada; «la carpeta» ensina).
+- **Toda palavra que uma frase exige tem card**, transparente ou não («el
+  agua», «la casa», «comer») — é a regra da seção 17, de outubro de 2026, e ela
+  passa por cima da antiga, que deixava o cognato de fora. O óbvio, cada pessoa
+  tira do jogo com o «Não quero aprender este card». **Fora disso**, a palavra
+  que merece card por conta própria é a que o português não entrega: falso
+  amigo, palavra opaca («el grifo», «la nevera»), construção sem equivalente
+  («llevar + tempo», «se me cayó», «soler»), expressão idiomática, colocação
+  fixa («sacar la basura», «hacer cola»).
 - **Útil e frequente antes de curioso.** O nível é o CEFR e mede **frequência e
   utilidade**, não dificuldade de decorar. Em conjugação, o nível soma a
   frequência do verbo e a dificuldade do tempo; irregularidade não entra
@@ -58,8 +61,8 @@ ela não é do card: é do motor ou da leva inteira.
 - **Leva variada.** Uma leva só de palavras vira, semanas depois, uma enxurrada
   de frases de uso em sequência. A leva 11 é o modelo: expressões, frases do
   dia a dia, conjugação, falsos amigos e vocabulário dos temas fracos.
-- **Toda palavra tem a sua frase de uso** (`requer`), na mesma leva ou na
-  seguinte. O build avisa quando falta.
+- **Toda palavra aparece em ao menos uma frase**, e as frases dela cobrem os
+  usos mais comuns da palavra (seção 18). O build avisa quando falta.
 - **Os dois lados do par.** Falso amigo costuma vir em dupla, e a dupla ensina
   mais que a metade: `vaso` (copo) pede `jarrón` (vaso); `sótano` pede
   `desván`; `propina` pede `soborno`.
@@ -464,8 +467,10 @@ Algumas mandam no comportamento do app, e por isso têm de ser verdade:
 
 ## 9. A frase de uso (`requer`)
 
-Entra no dia seguinte ao domínio da palavra, como primeira revisão dela em
-contexto. Então:
+A frase que existe para mostrar uma palavra em uso aponta para ela em
+`requer`, e lista em `requerTodas` (seção 17) todas as palavras que exige —
+a do `requer` entre elas. Entra no dia seguinte ao domínio da última delas,
+como primeira revisão em contexto. Então:
 
 - **usa a palavra**, na forma que for (o build procura o radical, já prevendo
   «suelo» de `soler` e «me acuerdo» de `acordarse`);
@@ -748,6 +753,127 @@ um card de verso.
   inversão. E pode falar do poema — onde a linha está, que rima faz, que ideia
   carrega. É a única nota do projeto que tem direito de falar do card em si,
   porque aqui o texto é o assunto.
-- **As palavras do texto seguem a seção 2**: ganha card o que o português e o
-  inglês não entregam. «Camino» e «andar» ficam de fora; «la huella», «sino» e
-  «la estela» entram, com frase de uso como qualquer palavra.
+- **As palavras do texto seguem a seção 17**: toda palavra que não seja de
+  função ganha card, como nas frases.
+
+---
+
+## 17. A dinâmica do baralho
+
+Decidida com o Gere em outubro de 2026, e vale para **qualquer língua** — a que
+existe e a que vier. O motor está em `js/motor.js` (`liberadaEm`,
+`atualizarEmVista`, `palavrasEmVista`) e a ordem dos cards novos em
+`js/app.js` (`ordenarIneditos`).
+
+### 17.1 Três tipos de card
+
+- **Palavra** — sempre na **forma de dicionário**: substantivo no singular com
+  artigo, adjetivo no masculino singular, verbo no infinitivo. Flexão, plural,
+  feminino e conjugação **não têm card**: são aprendidos nas frases.
+- **Frase** — de dois tipos: a que mostra os usos de uma palavra, e a que
+  mostra as conjugações de um verbo (o card de conjugação, seção 10).
+- **Texto** — poema ou trecho de prosa em domínio público, que aparece como
+  **recompensa** quando todas as palavras dele estão dominadas. O texto não tem
+  card para decorar; as frases dele que funcionam sozinhas podem ganhar card
+  próprio, e aí são frases como as outras.
+
+### 17.2 A frase só aparece com todas as palavras dela dominadas
+
+Cada frase lista em **`requerTodas`** os ids das palavras que exige. Ela só
+entra no jogo na **meia-noite seguinte** ao domínio da última delas — o
+encontro funciona como primeira revisão daquelas palavras. Frase que ensinava
+palavra nova no meio deixava de ser lição de uso e virava lição de vocabulário
+escondida; agora quem começa do zero só vê palavras até a primeira frase
+destravar.
+
+**Entram na lista** todas as palavras de conteúdo: substantivos, adjetivos,
+verbos (inclusive **ser, estar, haber, tener e ir**), advérbios («muy», «ya»,
+«aquí»), quantificadores («mucho», «todo», «otro»), numerais, interjeições
+que são palavra («ojalá»).
+
+**Ficam de fora**, porque não pedem card:
+
+- as **palavras de função**: artigos, preposições e contrações («al»,
+  «del»), conjunções, pronomes de todo tipo (pessoais, átonos, possessivos,
+  demonstrativos, relativos, interrogativos), «algo», «nada», «alguien»,
+  «nadie», e o «no» e o «sí»;
+- os **nomes próprios** («Madrid», «Ana»);
+- a palavra que **só existe dentro da expressão** e não quer dizer nada fora
+  dela: «troche y moche», «ni fu ni fa», «a la chita callando», «erre que
+  erre». Palavra de verdade dentro de expressão («ojo» e «cara» em «cuesta un
+  ojo de la cara») entra.
+
+A lista aponta para a **forma de dicionário**: «hizo» pede `hacer`, «llevo»
+pede `llevar`, «las naranjas» pede `la naranja`. **O verbo no infinitivo,
+dominado, libera todas as suas conjugações** — por isso não há card por forma
+verbal. A forma irregular («supe», «quepo») é aprendida na frase, com a nota.
+
+Enquanto a palavra ainda não tem card, a entrada é `+` seguido da forma de
+dicionário (`"+el agua"`), e a frase fica presa até a leva que cria o card. O
+build avisa quantas há, e barra a forma cuja palavra já ganhou card (é para
+trocar pelo id).
+
+### 17.3 As frases em vista
+
+O app escolhe **dez frases** ainda presas e vai trazendo as palavras delas como
+cards novos, para que destravem. **60%** são as mais perto de destravar (menos
+palavras faltando dominar), para a recompensa chegar logo; **40%** são
+sorteadas pelo nível certo para quem estuda (o mesmo peso por nível que já
+ordenava os cards novos). A frase sai da lista quando todas as palavras dela já
+entraram no jogo — aí ela só espera o domínio — e outra entra no lugar.
+
+A ordem dos cards novos fica:
+
+1. até **duas frases** recém-destravadas, na frente;
+2. as palavras que as frases em vista pedem — primeiro a que serve a mais
+   frases da lista, depois a da frase mais perto de destravar;
+3. **uma palavra avulsa a cada seis** estreias de palavra (a que nenhuma frase
+   em vista pede), pelo peso de nível;
+4. as outras frases destravadas, intercaladas, uma a cada duas palavras.
+
+Por cima disso valem o piso e o teto de card novo, e a regra de **uma palavra
+a cada cinco cards novos**.
+
+### 17.4 Os textos
+
+A partir de **400 cards dominados**, além das frases, a lista de espera ganha
+**um texto em prosa e um poema** — dois, para o poema de palavra rara não
+travar a fila de textos. As palavras deles entram como as das frases em vista,
+e o texto aparece inteiro, como recompensa, quando todas estão dominadas.
+
+### 17.5 «Não quero aprender este card»
+
+Todo card tem o botão — em destaque na estreia, que é quando a pessoa sabe se
+aquilo já é dela, e discreto depois. Com confirmação («Tem certeza que deseja
+arquivar a palavra X? Ela será tratada como dominada.»), o card **sai do
+jogo**; se é de vocabulário, a palavra **conta como dominada** para destravar
+frases e textos. Volta pela lista de cards, no filtro «arquivados». É assim
+que o óbvio sai do caminho sem custar cinco respostas.
+
+## 18. O ciclo de criação
+
+Para uma **língua do zero**:
+
+1. **50 palavras** de todos os tipos (substantivos, verbos, adjetivos,
+   advérbios), as mais frequentes e úteis primeiro.
+2. **Frases** que mostrem os principais usos de **cada** palavra criada — podem
+   usar palavras que ainda não têm card, que a etapa seguinte cria — e frases
+   de **todos os tipos de conjugação** dos verbos (seção 10).
+3. **Palavras para todas as palavras das frases** que ainda não tiverem card
+   (seção 17.2), mais **algumas avulsas** de todos os tipos.
+4. Volta ao passo 2 com as palavras novas, e assim por diante.
+
+Uma volta do ciclo pode ser dividida em **mais de uma leva**. O único controle do
+número de frases por palavra é este: **todos os usos mais comuns da palavra
+estão contemplados por alguma frase** — uma basta para palavra de uso único;
+a palavra de muitos sentidos ou regências pede uma por uso. **Nenhuma palavra
+fica sem frase.**
+
+Para uma **língua que já existe**, o ciclo continua de onde está: a leva de
+frases cobre as palavras sem frase e os usos que faltam; a leva de palavras
+cria o que as frases pedem (as entradas `+` do `requerTodas`).
+
+Toda frase nova já nasce com o `requerTodas` completo. O build confere que
+cada entrada é um card de palavra do baralho (ou uma `+` pendente) e que a
+palavra do `requer` está na lista; e avisa as frases sem lista, as palavras
+pendentes e as palavras que nenhuma frase usa.

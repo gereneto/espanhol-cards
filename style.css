@@ -485,6 +485,15 @@ label input:focus{outline:0;border-color:var(--acento)}
 }
 .link-comentar:hover{color:var(--texto);text-decoration-color:var(--texto-2)}
 .link-comentar.na-lista{margin-top:8px;font-size:12.5px}
+/* «Não quero aprender este card»: um link miúdo, que na estreia do card vira
+   botão — é a hora em que a pessoa sabe se a palavra já é dela. */
+.linha-arquivar{margin:10px 0 0;text-align:right}
+.link-arquivar{background:none;border:0;padding:4px 0;font-size:12.5px;color:var(--texto-2);
+  text-decoration:underline;text-decoration-color:var(--borda);text-underline-offset:3px;cursor:pointer}
+.link-arquivar:hover{color:var(--texto)}
+.link-arquivar.evidente{border:1px solid var(--borda);border-radius:10px;padding:8px 12px;
+  text-decoration:none;font-size:13.5px;color:var(--texto)}
+.link-arquivar.evidente:hover{border-color:var(--texto-2)}
 
 .comentario-fundo{
   position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55);

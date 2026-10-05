@@ -63,7 +63,7 @@
     'meta-origem',
     'area-feedback', 'veredito', 'conquista', 'resposta-certa', 'caixa-resposta', 'nota', 'medidas',
     'area-julgamento', 'resposta-dada', 'texto-dado',
-    'area-contestar', 'btn-contestar', 'aviso-contestado', 'btn-comentar-card',
+    'area-contestar', 'btn-contestar', 'aviso-contestado', 'btn-comentar-card', 'btn-arquivar',
     'comentario-fundo', 'comentario-alvo', 'comentario-texto', 'comentario-restam',
     'btn-comentario-enviar', 'btn-comentario-fechar',
     'btn-proximo', 'painel-conteudo', 'dica',
@@ -125,7 +125,9 @@
       contestacoes: [],
       comentarios: [],
       totais: { respostas: 0, acertos: 0, sessoes: 0 },
-      trilha: trilhaVazia()
+      trilha: trilhaVazia(),
+      arquivados: {},                          // id → { em, ativo }: «não quero aprender»
+      emVista: []                              // as frases cujas palavras estão chegando
     };
   }
 
@@ -203,7 +205,11 @@
        nenhuma. Não guardo lista de presos: a condição se recalcula aqui a
        cada carregamento, então dominar a palavra num aparelho destrava a
        frase em todos, sem nada de novo trafegar no progresso.json. */
-    const solto = id => Motor.liberado(PORID[id], p.cards);
+    p.arquivados = (p.arquivados && typeof p.arquivados === 'object') ? p.arquivados : {};
+    p.emVista = Array.isArray(p.emVista) ? p.emVista : [];
+    const solto = id => Motor.liberado(PORID[id], p.cards, null, p.arquivados);
+    /* card arquivado sai de todas as filas — e volta a elas se for desarquivado */
+    const fora = id => Motor.arquivado(id, p.arquivados);
 
     /* A ordem que já existia é a dica de quem vem primeiro. «p.fila» é o
        formato antigo, de fila única: quem vinha de lá se distribui pelas
@@ -218,7 +224,7 @@
     /* O card de verso já respondido entra nas filas de revisão como qualquer
        outro: a trilha manda na ESTREIA dele, e não na vida dele depois. */
     CARDS.concat(CARDS_DE_TEXTO).forEach(c => {
-      if (visto(c.id)) filas[Motor.filaDe(p.cards[c.id])].push(c.id);
+      if (visto(c.id) && !fora(c.id)) filas[Motor.filaDe(p.cards[c.id])].push(c.id);
     });
     for (const k in filas) filas[k].sort((a, b) => lugar(a) - lugar(b));
     p.filaEsPt = filas.esPt;
@@ -228,8 +234,8 @@
 
     const antes = Array.isArray(p.ineditos) ? p.ineditos : [];
     const conhecidos = new Set(antes);
-    p.ineditos = antes.filter(id => PORID[id] && !visto(id) && solto(id))
-      .concat(CARDS.filter(c => !conhecidos.has(c.id) && !visto(c.id) && solto(c.id))
+    p.ineditos = antes.filter(id => PORID[id] && !visto(id) && !fora(id) && solto(id))
+      .concat(CARDS.filter(c => !conhecidos.has(c.id) && !visto(c.id) && !fora(c.id) && solto(c.id))
                    .map(c => c.id));
 
     delete p.fila;          // formato antigo, de fila única
@@ -369,6 +375,8 @@
      que você ainda não domina mas já consegue acompanhar. Como agora ele é
      uma lista à parte, basta reordená-la — não há posição alheia a respeitar. */
   function ordenarIneditos(p) {
+    /* uma palavra avulsa a cada seis estreias de palavra (pedido do Gere) */
+    const PALAVRAS_PEDIDAS_POR_AVULSA = 5;
     if (!p.ineditos || p.ineditos.length < 2) return;
     /* A frase que a palavra acabou de destravar fura a fila. Estar aqui já
        quer dizer que ela foi liberada — presa nenhuma chega a este ponto —,
@@ -385,9 +393,16 @@
        tipo. Para palavra dominada antes de existir «dominadoEm», a data que
        sobra é o «ultima», que a revisão do dominado também renova — por isso
        o teto, e não só a janela. */
+    /* Desde outubro de 2026: toda frase que está aqui já destravou (todas as
+       palavras dela estão dominadas ou arquivadas), e as palavras são de dois
+       tipos — as que as frases em vista pedem, que estreiam primeiro, e as
+       avulsas, que entram uma a cada seis palavras (ver Motor.atualizarEmVista). */
     const presas = [], resto = [];
-    p.ineditos.forEach(id => ((PORID[id] || {}).requer ? presas : resto).push(id));
-    const quando = id => Motor.venceuEm(PORID[id], p.cards);
+    p.ineditos.forEach(id => {
+      const c = PORID[id] || {};
+      (c.tipo === 'frase' && Motor.requeridas(c).length ? presas : resto).push(id);
+    });
+    const quando = id => Motor.venceuEm(PORID[id], p.cards, p.arquivados);
     presas.sort((a, b) => quando(b) - quando(a));
 
     const FRESCAS_NA_FRENTE = 2;
@@ -396,7 +411,14 @@
     const antigas = presas.filter(id => frescas.indexOf(id) < 0);
 
     const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, p.cards));
-    p.ineditos = frescas.concat(intercalar(Motor.ordenarNovos(resto, pesos, PORID), antigas, 2));
+    p.emVista = Motor.atualizarEmVista(p.emVista, CARDS, PORID, p.cards, p.arquivados || {}, pesos);
+    const naFila = new Set(resto);
+    const pedidas = Motor.palavrasEmVista(p.emVista, PORID, p.cards, p.arquivados || {})
+      .filter(id => naFila.has(id));
+    const pedidasSet = new Set(pedidas);
+    const avulsas = Motor.ordenarNovos(resto.filter(id => !pedidasSet.has(id)), pesos, PORID);
+    const ordemDoResto = intercalar(pedidas, avulsas, PALAVRAS_PEDIDAS_POR_AVULSA);
+    p.ineditos = frescas.concat(intercalar(ordemDoResto, antigas, 2));
   }
 
   /* «cada» cards de «muitos», depois um de «poucos», até acabarem os dois. */
@@ -709,6 +731,35 @@
 
   /* Tira o card de onde quer que ele esteja — a resposta sobre conhecimento
      prévio chega depois do registro e pode mudar a distância. */
+  /* ── não quero aprender este card ──
+     O card sai do jogo; se for de vocabulário, a palavra passa a contar como
+     dominada para destravar frases e textos (ver Motor.liberadaEm). É para o
+     óbvio, que custaria cinco respostas sem ensinar nada. Volta pela lista
+     de cards, no filtro «arquivados», se foi engano. */
+  function arquivarCardAtual() {
+    if (!cardAtual) return;
+    const c = PORID[cardAtual.id] || cardAtual;
+    const pergunta = c.tipo === 'palavra'
+      ? 'Tem certeza que deseja arquivar a palavra «' + c.es + '»? Ela será tratada como dominada.'
+      : 'Tem certeza que deseja arquivar a frase «' + c.es + '»? Ela não vai mais aparecer.';
+    if (!window.confirm(pergunta)) return;
+    marcarArquivo(c.id, true);
+    statusSync('«' + c.es + '» arquivado. Para trazer de volta: Todos os cards → arquivados.', 'ok');
+    respostaPendente = null;
+    proximoCard();
+  }
+
+  function marcarArquivo(id, ativo) {
+    progresso.arquivados = progresso.arquivados || {};
+    progresso.arquivados[id] = { em: new Date().toISOString(), ativo: ativo };
+    retirarDasFilas(id);
+    const i = progresso.ineditos.indexOf(id);
+    if (i >= 0) progresso.ineditos.splice(i, 1);
+    conciliarFila(progresso);
+    salvarProgresso();
+    atualizarPlacar();
+  }
+
   function retirarDasFilas(id) {
     [progresso.filaEsPt, progresso.filaPtEs, progresso.dominados].forEach(f => {
       const i = f.indexOf(id);
@@ -751,6 +802,9 @@
     const palavra = cardAtual.requer && PORID[cardAtual.requer];
     el['meta-origem'].textContent = palavra ? 'de ' + palavra.es : '';
     el['meta-origem'].classList.add('oculto');
+    /* o «não quero aprender» chama atenção só na estreia do card */
+    const estreando = !estadoDe(id) || !estadoDe(id).vistas;
+    el['btn-arquivar'].classList.toggle('evidente', estreando);
     /* O nível vive na aba do fichário e fica à mostra o tempo todo: saber que
        o card é A1 ou C2 não entrega resposta nenhuma, e ajuda a calibrar o
        esforço antes de ler. */
@@ -1341,8 +1395,9 @@
   function recolherFrasesLiberadas() {
     const agora = Date.now();
     const jaEsta = new Set(progresso.ineditos);
-    const novas = CARDS.filter(c => c.requer && !progresso.cards[c.id] &&
-      !jaEsta.has(c.id) && Motor.liberado(c, progresso.cards, agora));
+    const novas = CARDS.filter(c => c.tipo === 'frase' && Motor.requeridas(c).length &&
+      !progresso.cards[c.id] && !jaEsta.has(c.id) && !Motor.arquivado(c.id, progresso.arquivados) &&
+      Motor.liberado(c, progresso.cards, agora, progresso.arquivados));
     if (!novas.length) return;
     novas.forEach(c => progresso.ineditos.push(c.id));
     ordenarIneditos(progresso);
@@ -1582,7 +1637,7 @@
     const dominados = ids.filter(id => etapaDe(id) === 'dominado').length;
     const dir = Motor.contarDirecoes(progresso.cards);
     const presos = CARDS.filter(c => !progresso.cards[c.id] &&
-                                     !Motor.liberado(c, progresso.cards)).length;
+                                     !Motor.liberado(c, progresso.cards, null, progresso.arquivados)).length;
     /* A chance de o próximo card ser inédito. Não é mais uma contagem
        regressiva: o sorteio pesa as três filas a cada card, e o que dá para
        prometer é a probabilidade, não a data. */
@@ -2260,12 +2315,21 @@
      lista: não pelo nome interno da etapa, mas pelo que falta fazer. */
   function situacaoDe(id) {
     const e = progresso.cards[id];
+    if (Motor.arquivado(id, progresso.arquivados)) {
+      return { chave: 'arquivado', rotulo: (PORID[id] || {}).tipo === 'palavra'
+        ? 'arquivado — conta como dominado' : 'arquivado' };
+    }
     if (!e || !e.vistas) {
       /* «Ainda não apareceu» sugere que é questão de tempo. A frase presa
-         não é: ela depende de você vencer a palavra, e dizer qual é. */
+         não é: ela depende de você vencer as palavras, e diz quais faltam. */
       const c = PORID[id];
-      if (!Motor.liberado(c, progresso.cards)) {
-        return { chave: 'preso', rotulo: 'espera você dominar «' + PORID[c.requer].es + '»' };
+      if (!Motor.liberado(c, progresso.cards, null, progresso.arquivados)) {
+        const faltam = Motor.requeridas(c)
+          .filter(r => Motor.sabidaEm(r, progresso.cards, progresso.arquivados) === Infinity)
+          .map(r => String(r)[0] === '+' ? String(r).slice(1) : (PORID[r] || {}).es || r);
+        return { chave: 'preso', rotulo: faltam.length
+          ? 'espera você dominar ' + faltam.map(f => '«' + f + '»').join(', ')
+          : 'destrava à meia-noite' };
       }
       return { chave: 'novo', rotulo: 'ainda não apareceu' };
     }
@@ -2375,6 +2439,8 @@
         '</div>' +
         (linhaDaNota(c) ? '<p class="card-linha-nota">' + escapar(linhaDaNota(c)) + '</p>' : '') +
         '<button class="link-comentar na-lista" data-comentar="' + escapar(c.id) + '">Comentar</button>' +
+        (s.chave === 'arquivado'
+          ? ' <button class="link-comentar na-lista" data-desarquivar="' + escapar(c.id) + '">Voltar ao jogo</button>' : '') +
       '</div>';
     }).join('');
   }
@@ -2539,6 +2605,9 @@
       }),
       contestacoes: juntarContestacoes(local.contestacoes, remoto.contestacoes),
       comentarios: juntarComentarios(local.comentarios, remoto.comentarios),
+      /* arquivar e desarquivar: fica o gesto mais recente de cada card */
+      arquivados: juntarArquivados(local.arquivados, remoto.arquivados),
+      emVista: (local.emVista && local.emVista.length) ? local.emVista : (remoto.emVista || []),
       cards: {},
       totais: {
         respostas: Math.max(local.totais.respostas, (remoto.totais || {}).respostas || 0),
@@ -2554,6 +2623,15 @@
       saida.cards[id] = (b.vistas > a.vistas) ? b : a;
     });
     return conciliarFila(saida);
+  }
+
+  function juntarArquivados(a, b) {
+    const saida = {};
+    new Set([...Object.keys(a || {}), ...Object.keys(b || {})]).forEach(id => {
+      const x = (a || {})[id], y = (b || {})[id];
+      saida[id] = !x ? y : !y ? x : (String(y.em) > String(x.em) ? y : x);
+    });
+    return saida;
   }
 
   function juntarDiarios(a, b) {
@@ -2775,7 +2853,13 @@
   el['lista-cards'].addEventListener('click', e => {
     const b = e.target.closest('[data-comentar]');
     if (b) abrirComentario(b.dataset.comentar);
+    const d = e.target.closest('[data-desarquivar]');
+    if (d) {
+      marcarArquivo(d.dataset.desarquivar, false);
+      renderizarCards();
+    }
   });
+  el['btn-arquivar'].addEventListener('click', arquivarCardAtual);
   el['btn-comentario-enviar'].addEventListener('click', enviarComentario);
   el['btn-comentario-fechar'].addEventListener('click', fecharComentario);
   el['comentario-texto'].addEventListener('input', contarComentario);

@@ -1607,18 +1607,60 @@ window.Motor = (function () {
      A data do domínio fica em «dominadoEm», que o registrar anota. Palavra
      dominada antes de a data existir não tem o campo, e conta como vencida
      há muito tempo: a frase dela já estava liberada, e continua. */
-  function liberadaEm(card, estados) {
-    if (!card || !card.requer) return 0;
-    const e = estados && estados[card.requer];
+  /* ── a frase presa a TODAS as palavras dela ──
+     Desde outubro de 2026 a frase não espera só a palavra que ela mostra em
+     uso: espera todas as palavras que exige, listadas em «requerTodas» (ver
+     o manual). Frase que ensinava palavra nova no meio deixava de ser lição
+     de uso e virava lição de vocabulário escondida. Agora, quem começa do
+     zero só vê palavras até a primeira frase destravar.
+
+     A lista traz ids de card de palavra. Uma entrada que começa com «+»
+     ainda não tem card — é a palavra que a próxima leva vai criar —, e
+     enquanto houver uma assim a frase fica presa.
+
+     Palavra ARQUIVADA conta como dominada, desde o momento do arquivamento:
+     é o «não quero aprender este card», usado para o que a pessoa já sabe.
+
+     Card sem «requerTodas» cai no «requer» antigo, de uma palavra só. */
+  function requeridas(card) {
+    if (!card) return [];
+    if (Array.isArray(card.requerTodas)) return card.requerTodas;
+    return card.requer ? [card.requer] : [];
+  }
+
+  function arquivado(id, arquivados) {
+    const a = arquivados && arquivados[id];
+    return !!(a && a.ativo);
+  }
+
+  /* Quando a palavra passou a contar como sabida: o domínio, ou o
+     arquivamento. Infinity quando ainda não conta. Sem data (dominada antes
+     de «dominadoEm» existir) vale zero, como vencida há muito tempo. */
+  function sabidaEm(id, estados, arquivados) {
+    if (arquivado(id, arquivados)) return Date.parse(arquivados[id].em) || 0;
+    const e = estados && estados[id];
     if (!e || e.etapa !== 'dominado') return Infinity;
-    if (!e.dominadoEm) return 0;
-    const d = new Date(e.dominadoEm);
+    return e.dominadoEm ? Date.parse(e.dominadoEm) || 0 : 0;
+  }
+
+  function liberadaEm(card, estados, arquivados) {
+    const req = requeridas(card);
+    if (!req.length) return 0;
+    let ultima = 0;
+    for (const id of req) {
+      if (String(id)[0] === '+') return Infinity;   // palavra que ainda não tem card
+      const t = sabidaEm(id, estados, arquivados);
+      if (t === Infinity) return Infinity;
+      if (t > ultima) ultima = t;
+    }
+    if (!ultima) return 0;
+    const d = new Date(ultima);
     d.setHours(24, 0, 0, 0);                     // a meia-noite seguinte
     return d.getTime();
   }
 
-  function liberado(card, estados, agora) {
-    return liberadaEm(card, estados) <= (agora || Date.now());
+  function liberado(card, estados, agora, arquivados) {
+    return liberadaEm(card, estados, arquivados) <= (agora || Date.now());
   }
 
   /* Quando esta frase foi liberada — ordena as recém-liberadas: primeiro a
@@ -1630,11 +1672,94 @@ window.Motor = (function () {
      depois de a palavra ser revista, inclusive quando a revisão era um erro.
      Palavra sem a data foi dominada antes de o campo existir: conta como
      liberada há muito tempo, igual ao que o liberadaEm já diz dela. */
-  function venceuEm(card, estados) {
-    if (!card || !card.requer) return 0;
-    const e = estados && estados[card.requer];
-    if (!e || !e.dominadoEm) return 0;
-    return liberadaEm(card, estados);
+  function venceuEm(card, estados, arquivados) {
+    const req = requeridas(card);
+    if (!req.length) return 0;
+    /* palavra sem data de domínio: a frase conta como liberada há muito tempo */
+    if (req.some(id => !arquivado(id, arquivados) && !(estados[id] && estados[id].dominadoEm))) return 0;
+    const t = liberadaEm(card, estados, arquivados);
+    return t === Infinity ? 0 : t;
+  }
+
+  /* ── as frases em vista ──
+     O app escolhe algumas frases que ainda não destravaram e vai trazendo as
+     palavras delas como cards novos, para que destravem (pedido do Gere,
+     outubro de 2026). São FRASES_EM_VISTA de cada vez: 60% as mais perto de
+     destravar — menos palavras faltando dominar —, para a recompensa chegar
+     logo; 40% sorteadas pelo nível certo para quem estuda (pesosDeNivel),
+     para a escolha não ficar presa nas frases fáceis.
+
+     A frase sai da lista quando já não tem palavra para trazer: todas as
+     dela já entraram no jogo (ou foram arquivadas), e ela só espera serem
+     dominadas — aí entra outra no lugar, e o fluxo de palavras não para.
+     Sai também quando é vista, arquivada, ou quando ainda depende de palavra
+     sem card («+»), que nenhuma estreia resolve. */
+  const FRASES_EM_VISTA = 10;
+  const PARTE_PERTO = 0.6;
+
+  function situacaoDaFrase(card, estados, arquivados) {
+    const req = requeridas(card);
+    const buraco = req.some(id => String(id)[0] === '+');
+    const naoVistas = req.filter(id => String(id)[0] !== '+' &&
+      !(estados[id] && estados[id].vistas) && !arquivado(id, arquivados));
+    const faltamDominar = req.filter(id => sabidaEm(id, estados, arquivados) === Infinity).length;
+    return { buraco: buraco, naoVistas: naoVistas, faltamDominar: faltamDominar };
+  }
+
+  function atualizarEmVista(lista, cards, porId, estados, arquivados, pesos) {
+    const util = id => {
+      const c = porId[id];
+      if (!c || c.tipo !== 'frase' || !Array.isArray(c.requerTodas)) return null;
+      if ((estados[id] && estados[id].vistas) || arquivado(id, arquivados)) return null;
+      const s = situacaoDaFrase(c, estados, arquivados);
+      return !s.buraco && s.naoVistas.length ? s : null;
+    };
+    const fica = (lista || []).filter(x => x && util(x.id));
+    const ja = new Set(fica.map(x => x.id));
+    const candidatas = [];
+    for (const c of cards) {
+      if (ja.has(c.id)) continue;
+      const s = util(c.id);
+      if (s) candidatas.push({ c: c, s: s });
+    }
+    const metaPerto = Math.round(FRASES_EM_VISTA * PARTE_PERTO);
+    while (fica.length < FRASES_EM_VISTA && candidatas.length) {
+      const perto = fica.filter(x => x.origem === 'perto').length;
+      let i;
+      if (perto < metaPerto) {
+        let melhor = Infinity;
+        candidatas.forEach((x, k) => {
+          const nota = x.s.faltamDominar - 0.5 * ((pesos && pesos[x.c.nivel]) || 0) + Math.random() * 0.3;
+          if (nota < melhor) { melhor = nota; i = k; }
+        });
+        fica.push({ id: candidatas[i].c.id, origem: 'perto' });
+      } else {
+        let total = 0;
+        const w = candidatas.map(x => { const v = (pesos && pesos[x.c.nivel]) || 0.15; total += v; return v; });
+        let u = Math.random() * total;
+        for (i = 0; i < w.length - 1 && u > w[i]; i++) u -= w[i];
+        fica.push({ id: candidatas[i].c.id, origem: 'sorteio' });
+      }
+      candidatas.splice(i, 1);
+    }
+    return fica;
+  }
+
+  /* As palavras que as frases em vista ainda pedem, na ordem em que devem
+     estrear: primeiro a que serve a mais frases da lista, depois a da frase
+     mais perto de destravar. */
+  function palavrasEmVista(lista, porId, estados, arquivados) {
+    const conta = new Map(), perto = new Map();
+    (lista || []).forEach(x => {
+      const c = porId[x.id];
+      if (!c) return;
+      const s = situacaoDaFrase(c, estados, arquivados);
+      s.naoVistas.forEach(id => {
+        conta.set(id, (conta.get(id) || 0) + 1);
+        perto.set(id, Math.min(perto.has(id) ? perto.get(id) : Infinity, s.faltamDominar));
+      });
+    });
+    return [...conta.keys()].sort((a, b) => (conta.get(b) - conta.get(a)) || (perto.get(a) - perto.get(b)));
   }
 
   /* ── o intervalo do card maduro ──
@@ -2406,7 +2531,8 @@ window.Motor = (function () {
     ALVO_MIN, ALVO_MAX, alvoDaFila, acertoRecente, vezDoNovo, atrasadoQueFura,
     DOMINADOS_PARA_TRILHA, NOVOS_POR_CARD_DE_TRILHA, dominadosNoTotal,
     trilhaLiberada, vezDaTrilha, proximoDaTrilha, andamentoDaTrilha,
-    liberado, liberadaEm, venceuEm,
+    liberado, liberadaEm, venceuEm, requeridas, arquivado, sabidaEm,
+    situacaoDaFrase, atualizarEmVista, palavrasEmVista, FRASES_EM_VISTA,
     montarFila, alternativas, distratoresDinamicos, distratoresDaLingua, embaralhar,
     dominioPorNivel, pesosDeNivel, ordenarNovos,
     respostasAceitas

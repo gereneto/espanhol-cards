@@ -565,15 +565,64 @@ for (const { idioma, cards } of baralhos) {
     }
   }
 
+  /* ── a frase presa a TODAS as palavras dela ──
+     «requerTodas» lista as palavras que a frase exige (ver o manual): a frase
+     só entra no jogo quando todas estiverem dominadas ou arquivadas. Cada
+     entrada é o id de um card de palavra deste baralho — ou, enquanto a
+     palavra ainda não tem card, «+» seguido da forma de dicionário dela
+     («+el agua»), que prende a frase até a leva que cria o card. */
+  const porEs = new Map();
+  cards.filter(c => c.tipo === 'palavra').forEach(c => porEs.set(normalizar(Motor.formaDoCard(c, 0)[L.texto]), c.id));
+  const pendentes = new Map();
+  let anotadas = 0;
+  const frasesDoBaralho = cards.filter(c => c.tipo === 'frase' && !c.texto);
+  for (const c of cards) {
+    if (c.requerTodas === undefined) continue;
+    const onde = c.id + ' (' + c[L.texto] + ')';
+    if (c.tipo !== 'frase') { erros.push('só frase pode ter "requerTodas": ' + onde); continue; }
+    if (!Array.isArray(c.requerTodas)) { erros.push('"requerTodas" tem de ser uma lista: ' + onde); continue; }
+    if (!c.texto) anotadas++;
+    const vistos = new Set();
+    for (const r of c.requerTodas) {
+      if (typeof r !== 'string' || !r) { erros.push('entrada vazia em "requerTodas": ' + onde); continue; }
+      if (vistos.has(r)) erros.push('palavra repetida em "requerTodas": ' + onde + ' → ' + r);
+      vistos.add(r);
+      if (r[0] === '+') {
+        const forma = r.slice(1).trim();
+        /* a palavra ganhou card e a frase ainda aponta para a forma: é para trocar pelo id */
+        if (porEs.has(normalizar(forma))) {
+          erros.push('"requerTodas" usa a forma de uma palavra que já tem card: ' + onde + ' → ' + r +
+            ' (use ' + porEs.get(normalizar(forma)) + ')');
+        }
+        pendentes.set(forma, (pendentes.get(forma) || 0) + 1);
+        continue;
+      }
+      const alvo = PORID.get(r);
+      if (!alvo) erros.push('"requerTodas" aponta para card que não existe neste baralho: ' + onde + ' → ' + r);
+      else if (alvo.tipo !== 'palavra') erros.push('"requerTodas" tem de apontar para palavras: ' + onde + ' → ' + r);
+    }
+    if (c.requer && !c.requerTodas.includes(c.requer)) {
+      erros.push('a palavra do «requer» tem de estar também em «requerTodas»: ' + onde + ' → ' + c.requer);
+    }
+  }
+  if (frasesDoBaralho.length && anotadas < frasesDoBaralho.length) {
+    avisos.push('[' + idioma + '] ' + (frasesDoBaralho.length - anotadas) + ' frase(s) ainda sem «requerTodas»');
+  }
+  if (pendentes.size) {
+    avisos.push('[' + idioma + '] ' + pendentes.size + ' palavra(s) pedida(s) por frases e ainda sem card ' +
+      '(as frases ficam presas até a leva que as cria)');
+  }
+
   /* ── toda palavra tem a sua frase ──
      A palavra sozinha diz o que é; a frase diz como se usa — e é o uso que a
-     definição não ensina. Desde a leva 10 toda palavra do baralho tem uma
-     frase presa a ela, e o build avisa quando alguma entra sem. Aviso, e não
-     erro: a palavra pode chegar numa leva e a frase na seguinte. */
+     definição não ensina. Toda palavra tem de aparecer em ao menos uma frase
+     («requer» ou «requerTodas»). Aviso, e não erro: a palavra pode chegar
+     numa leva e a frase na seguinte. */
   const comFrase = new Set(cards.filter(c => c.requer).map(c => c.requer));
+  cards.forEach(c => (Array.isArray(c.requerTodas) ? c.requerTodas : []).forEach(r => comFrase.add(r)));
   const soltas = cards.filter(c => c.tipo === 'palavra' && !comFrase.has(c.id));
   if (soltas.length) {
-    avisos.push('[' + idioma + '] ' + soltas.length + ' palavra(s) sem frase de uso presa a ela: ' +
+    avisos.push('[' + idioma + '] ' + soltas.length + ' palavra(s) que nenhuma frase usa: ' +
       soltas.map(c => c.id + ' (' + c[L.texto] + ')').join(', '));
   }
 }
