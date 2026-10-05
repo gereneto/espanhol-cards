@@ -572,6 +572,18 @@ escola e comida, com a dupla `el bolso`/`el bolsillo`, `el escritorio` ao lado
 de `la oficina`, `la sed` diante de `la sede` e o `coger` que a América Latina
 não diz.
 
+**Desde outubro de 2026 a frase fica presa a todas as palavras dela**
+(seção 17 do manual). As levas 15 a 19 (`15-` a `19-vocabulario-das-frases`,
+560 cards) deram card a toda palavra de conteúdo que as 656 frases exigiam —
+de `ser`, `estar` e `haber` a `el olmo` de «pedir peras al olmo» —, e cada
+frase ganhou em `requerTodas` a lista das palavras que pede, 2,9 em média. A
+frase só estreia na meia-noite seguinte ao domínio da última delas. A
+transição tem custo: das 188 frases inéditas que estavam liberadas, nenhuma
+continua, porque toda frase inédita pede ao menos uma palavra ainda não vista.
+Os cards novos seguem no mesmo ritmo, só que por umas duas ou três semanas
+quase tudo é palavra — a mediana da estreia ao domínio é de 17 dias —, e as
+frases voltam conforme as palavras das dez frases em vista vão sendo dominadas.
+
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
 

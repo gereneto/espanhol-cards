@@ -808,6 +808,16 @@ pede `llevar`, «las naranjas» pede `la naranja`. **O verbo no infinitivo,
 dominado, libera todas as suas conjugações** — por isso não há card por forma
 verbal. A forma irregular («supe», «quepo») é aprendida na frase, com a nota.
 
+**Cuidado com a palavra de conteúdo que se escreve como palavra de função.**
+Sem o acento, «está» vira «esta», «sé» vira «se», «té» vira «te» e «dé» vira
+«de», e quem compara sem acento joga o verbo fora; e há verbo que é igual a
+uma palavra de função mesmo com acento: «me **como** un plátano» (comer),
+«no **para** de subir» (parar). Na primeira anotação, de outubro de 2026,
+foram 31 frases que perdiam o «estar», além de «saber», «el té», «comer» e
+«parar» — e os dois últimos nem tinham card. Toda língua tem as suas: antes
+de gravar, procure as formas acentuadas e os verbos que coincidem com a lista
+de função.
+
 Enquanto a palavra ainda não tem card, a entrada é `+` seguido da forma de
 dicionário (`"+el agua"`), e a frase fica presa até a leva que cria o card. O
 build avisa quantas há, e barra a forma cuja palavra já ganhou card (é para
