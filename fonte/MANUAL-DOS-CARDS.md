@@ -514,10 +514,15 @@ Os distratores em português seguem a mesma lógica: a frase nos outros tempos.
 Onde o português não distingue («nós andamos» é presente e pretérito), o tempo
 ambíguo fica de fora.
 
-**Card de conjugação é para a irregularidade, não para o paradigma** (pedido do
-Gere, outubro de 2026). Conjugação regular não ganha card por pessoa nem por
-tempo — ela se aprende nas frases. Ganha card cada forma que foge da regra, uma
-vez por padrão: o futuro que perde a vogal («podré», «sabré») ou ganha o d
+**Card de conjugação é sobretudo para a irregularidade, sem esquecer a regra**
+(Gere, outubro de 2026). O regular não precisa de card por pessoa nem por
+tempo, mas também não pode sumir: se só o irregular ganha card, quem estuda
+acaba mais acostumado com a exceção do que com a regra. O equilíbrio vem
+primeiro das frases de uso, que conjugam os verbos regulares naturalmente — e
+a cada leva de conjugação vale olhar se os tempos regulares (pretérito,
+imperfeito, futuro, subjuntivo de um verbo em -ar, -er e -ir) estão aparecendo
+nas frases; onde não estiverem, entram alguns cards regulares junto com os
+irregulares. Ganha card cada forma que foge da regra, uma vez por padrão: o futuro que perde a vogal («podré», «sabré») ou ganha o d
 («tendré», «saldré»), o imperativo curto de tú («ten», «sal», «di», «ve», «sé»),
 o particípio irregular («visto», «puesto», «vuelto», «escrito», «abierto»), o
 subjuntivo que sai do «yo» irregular («haga», «diga»), o pretérito forte. A
