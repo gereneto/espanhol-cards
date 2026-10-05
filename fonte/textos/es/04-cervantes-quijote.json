@@ -1,0 +1,67 @@
+{
+ "id": "txt-es-004",
+ "idioma": "es",
+ "tipo": "prosa",
+ "titulo": "Don Quijote de la Mancha",
+ "autor": "Miguel de Cervantes",
+ "obra": "El ingenioso hidalgo don Quijote de la Mancha, I, 1",
+ "ano": 1605,
+ "dominio": "Cervantes morreu em 1616. Domínio público há mais de quatro séculos.",
+ "fonte": "https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha_(1905)/Tomo_I/Capítulo_I",
+ "recorte": "as duas primeiras frases do capítulo I",
+ "traducao": "em prosa",
+ "nota": "A abertura mais famosa da língua. É espanhol de 1605, e parte do vocabulário saiu de uso: a adarga era o escudo de couro, o rocim o cavalo magro, e os «duelos y quebrantos» um prato de ovos com toucinho. «Las tres partes de su hacienda» são três quartos da renda.",
+ "notaEn": "The most famous opening in the language. It is Spanish from 1605, and part of the vocabulary has fallen out of use: the adarga was a leather shield, the rocín a skinny horse, and \"duelos y quebrantos\" a dish of eggs and bacon.",
+ "blocos": [
+  [
+   {
+    "es": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.",
+    "pt": "Num lugar da Mancha, de cujo nome não quero me lembrar, não faz muito tempo vivia um fidalgo desses de lança no cabide, adarga antiga, rocim magro e galgo corredor.",
+    "en": "In a village of La Mancha, whose name I have no wish to recall, there lived not long ago one of those gentlemen with a lance in the rack, an old shield, a lean nag and a fast greyhound."
+   },
+   {
+    "es": "Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.",
+    "pt": "Uma panela de algo mais vaca que carneiro, salpicão na maioria das noites, ovos com torresmo aos sábados, lentilhas às sextas e algum pombinho de acréscimo aos domingos consumiam três quartos da sua renda.",
+    "en": "A stew with more beef than mutton, hash most nights, eggs and bacon on Saturdays, lentils on Fridays and a young pigeon as an extra on Sundays used up three quarters of his income."
+   }
+  ]
+ ],
+ "requerTodas": [
+  "p943",
+  "p661",
+  "p377",
+  "p021",
+  "p352",
+  "p361",
+  "p424",
+  "p394",
+  "p944",
+  "p945",
+  "p946",
+  "p947",
+  "p573",
+  "p948",
+  "p949",
+  "p950",
+  "p951",
+  "p792",
+  "p403",
+  "p952",
+  "p953",
+  "p954",
+  "p789",
+  "p955",
+  "p956",
+  "p957",
+  "p958",
+  "p458",
+  "p959",
+  "p960",
+  "p961",
+  "p962",
+  "p963",
+  "p473",
+  "p795",
+  "p964"
+ ]
+}

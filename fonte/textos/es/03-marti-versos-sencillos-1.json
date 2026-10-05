@@ -1,0 +1,144 @@
+{
+ "id": "txt-es-003",
+ "idioma": "es",
+ "tipo": "poema",
+ "titulo": "Versos sencillos, I",
+ "autor": "José Martí",
+ "obra": "Versos sencillos",
+ "ano": 1891,
+ "dominio": "José Martí morreu em 1895. Domínio público há mais de um século.",
+ "fonte": "https://es.wikisource.org/wiki/Versos_sencillos/I",
+ "recorte": "as quatro primeiras quadras do poema",
+ "traducao": "em verso, na medida e na rima do original",
+ "nota": "Octossílabos em quadras de rima cruzada, a medida da canção popular — e parte destes versos virou a letra de «Guantanamera». O espanhol é simples de propósito: o título diz «versos singelos».",
+ "notaEn": "Eight-syllable lines in cross-rhymed quatrains, the metre of the folk song — and some of these lines became the lyrics of \"Guantanamera\". The Spanish is plain on purpose: the title means \"simple verses\".",
+ "blocos": [
+  [
+   {
+    "es": "Yo soy un hombre sincero",
+    "pt": "Eu sou um homem sincero",
+    "en": "I am an honest man"
+   },
+   {
+    "es": "de donde crece la palma.",
+    "pt": "da terra em que cresce a palma,",
+    "en": "from where the palm tree grows,"
+   },
+   {
+    "es": "Y antes de morirme quiero",
+    "pt": "e antes de morrer espero",
+    "en": "and before I die I want"
+   },
+   {
+    "es": "echar mis versos del alma.",
+    "pt": "soltar os meus versos da alma.",
+    "en": "to pour my verses from my soul."
+   }
+  ],
+  [
+   {
+    "es": "Yo vengo de todas partes,",
+    "pt": "Venho de todas as partes",
+    "en": "I come from everywhere,"
+   },
+   {
+    "es": "y hacia todas partes voy:",
+    "pt": "e a toda parte me vou:",
+    "en": "and everywhere I go:"
+   },
+   {
+    "es": "arte soy entre las artes,",
+    "pt": "arte sou em meio às artes,",
+    "en": "I am art among the arts,"
+   },
+   {
+    "es": "en los montes, monte soy.",
+    "pt": "e nos montes, monte sou.",
+    "en": "among the mountains, a mountain."
+   }
+  ],
+  [
+   {
+    "es": "Yo sé los nombres extraños",
+    "pt": "Eu sei os nomes arcanos",
+    "en": "I know the strange names"
+   },
+   {
+    "es": "de las yerbas y las flores,",
+    "pt": "das ervas, também das flores,",
+    "en": "of the herbs and the flowers,"
+   },
+   {
+    "es": "y de mortales engaños,",
+    "pt": "e de mortais desenganos,",
+    "en": "and of deadly deceptions,"
+   },
+   {
+    "es": "y de sublimes dolores.",
+    "pt": "e das mais sublimes dores.",
+    "en": "and of sublime sorrows."
+   }
+  ],
+  [
+   {
+    "es": "Yo he visto en la noche oscura",
+    "pt": "Eu vi, pela noite escura,",
+    "en": "I have seen in the dark night"
+   },
+   {
+    "es": "llover sobre mi cabeza",
+    "pt": "chover sobre a fronte acesa",
+    "en": "rain upon my head"
+   },
+   {
+    "es": "los rayos de lumbre pura",
+    "pt": "os raios de chama pura",
+    "en": "the rays of pure fire"
+   },
+   {
+    "es": "de la divina belleza.",
+    "pt": "da mais divina beleza.",
+    "en": "of divine beauty."
+   }
+  ]
+ ],
+ "requerTodas": [
+  "p351",
+  "p925",
+  "p926",
+  "p927",
+  "p928",
+  "p374",
+  "p546",
+  "p377",
+  "p379",
+  "p929",
+  "p930",
+  "p362",
+  "p385",
+  "p795",
+  "p355",
+  "p931",
+  "p932",
+  "p392",
+  "p661",
+  "p933",
+  "p934",
+  "p767",
+  "p935",
+  "p936",
+  "p937",
+  "p938",
+  "p352",
+  "p368",
+  "p789",
+  "p916",
+  "p382",
+  "p740",
+  "p939",
+  "p940",
+  "p876",
+  "p941",
+  "p942"
+ ]
+}

@@ -1,7 +1,7 @@
 {
- "versao": 1,
+ "versao": 2,
  "idioma": "es",
- "total": 1,
+ "total": 6,
  "textos": [
   {
    "id": "txt-es-001",
@@ -12,411 +12,506 @@
    "obra": "Proverbios y cantares XXIX, de «Campos de Castilla»",
    "ano": 1912,
    "dominio": "Antonio Machado morreu em 22 de fevereiro de 1939. Na Espanha o direito de autor dura 80 anos depois da morte para quem morreu antes de 7 de dezembro de 1987, então o poema é de domínio público desde 1º de janeiro de 2020.",
-   "conferir": "O texto segue a lição corrente de «Campos de Castilla». A pontuação varia de edição para edição — há edições sem a vírgula de «el camino y nada más» e com ponto no verso 9. Vale bater com uma edição impressa antes de dar o texto por fechado.",
+   "fonte": "https://es.wikisource.org/wiki/Proverbios_y_cantares_(Campos_de_Castilla)",
+   "traducao": "em verso, na medida e na rima do original",
    "nota": "São dez versos de romance, com rima nos pares (más / andar / atrás / pisar / mar) e oito sílabas por verso. A ideia cabe numa linha: o caminho não existe antes de alguém andar — e, uma vez andado, não se repete. É o poema espanhol mais citado do século XX.",
    "notaEn": "Ten lines of Spanish romance metre, rhyming on the even lines (más / andar / atrás / pisar / mar), eight syllables each. The idea fits in one line: the road does not exist before someone walks it — and once walked, it cannot be walked again. It is the most quoted Spanish poem of the twentieth century.",
-   "versos": [
-    {
-     "n": 1,
-     "card": "t001"
-    },
-    {
-     "n": 2,
-     "card": "t002"
-    },
-    {
-     "n": 3,
-     "card": "t003"
-    },
-    {
-     "n": 4,
-     "card": "t004"
-    },
-    {
-     "n": 5,
-     "card": "t005"
-    },
-    {
-     "n": 6,
-     "card": "t006"
-    },
-    {
-     "n": 7,
-     "card": "t007"
-    },
-    {
-     "n": 8,
-     "card": "t008"
-    },
-    {
-     "n": 9,
-     "card": "t003"
-    },
-    {
-     "n": 10,
-     "card": "t009"
-    }
+   "blocos": [
+    [
+     {
+      "es": "Caminante, son tus huellas",
+      "pt": "Andante, são os teus rastros",
+      "en": "Wanderer, your footprints are"
+     },
+     {
+      "es": "el camino, y nada más;",
+      "pt": "o caminho, e nada mais;",
+      "en": "the road, and nothing more;"
+     },
+     {
+      "es": "caminante, no hay camino,",
+      "pt": "andante, não há caminho:",
+      "en": "wanderer, there is no road:"
+     },
+     {
+      "es": "se hace camino al andar.",
+      "pt": "faz-se caminho ao andar.",
+      "en": "the road is made by walking."
+     },
+     {
+      "es": "Al andar se hace camino,",
+      "pt": "Ao andar se faz caminho,",
+      "en": "By walking one makes the road,"
+     },
+     {
+      "es": "y al volver la vista atrás",
+      "pt": "e ao voltar a vista atrás",
+      "en": "and on looking back"
+     },
+     {
+      "es": "se ve la senda que nunca",
+      "pt": "se vê a senda que nunca",
+      "en": "one sees the path that never"
+     },
+     {
+      "es": "se ha de volver a pisar.",
+      "pt": "se há de tornar a pisar.",
+      "en": "will be trodden again."
+     },
+     {
+      "es": "caminante, no hay camino,",
+      "pt": "Andante, não há caminho,",
+      "en": "Wanderer, there is no road,"
+     },
+     {
+      "es": "sino estelas en la mar.",
+      "pt": "senão esteiras no mar.",
+      "en": "only wakes upon the sea."
+     }
+    ]
    ],
-   "cards": [
-    {
-     "idioma": "es",
-     "id": "t001",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "requerTodas": [
-      "p348"
-     ],
-     "es": "Caminante, son tus huellas",
-     "pt": "Caminhante, são as tuas pegadas",
-     "en": "Wanderer, your footprints are",
-     "aceitas": [
-      "caminhante sao as tuas pegadas",
-      "caminhante sao suas pegadas",
-      "caminhante sao as suas pegadas",
-      "caminhante as tuas pegadas sao"
-     ],
-     "aceitasEn": [
-      "wanderer your footprints are",
-      "traveler your footprints are",
-      "wayfarer your footprints are"
-     ],
-     "distratores": [
-      "Caminhante, são as tuas mãos",
-      "Caminhante, são as tuas sandálias",
-      "Caminhante, são as tuas lembranças",
-      "Caminhante, são as tuas dúvidas"
-     ],
-     "distratoresEn": [
-      "Wanderer, your hands are",
-      "Wanderer, your sandals are",
-      "Wanderer, your memories are",
-      "Wanderer, your doubts are"
-     ],
-     "nivel": "B1",
-     "tags": [
-      "poema",
-      "substantivo"
-     ],
-     "nota": "O poema abre com o sujeito depois do verbo: «son tus huellas el camino». A frase inteira só fecha no verso seguinte, e é essa inversão que põe as pegadas em primeiro plano.",
-     "notaEn": "The poem opens with the subject after the verb: 'son tus huellas el camino'. The sentence only closes on the next line, and it is that inversion that puts the footprints in the foreground."
-    },
-    {
-     "idioma": "es",
-     "id": "t002",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "el camino, y nada más;",
-     "pt": "o caminho, e nada mais;",
-     "en": "the road, and nothing more;",
-     "aceitas": [
-      "o caminho e nada mais",
-      "o caminho e nada alem disso",
-      "o caminho e so isso",
-      "o caminho e mais nada"
-     ],
-     "aceitasEn": [
-      "the road and nothing more",
-      "the path and nothing more",
-      "the road and nothing else"
-     ],
-     "distratores": [
-      "o caminho, e nada menos;",
-      "o caminho, e muito mais;",
-      "o destino, e nada mais;",
-      "o cansaço, e nada mais;"
-     ],
-     "distratoresEn": [
-      "the road, and nothing less;",
-      "the road, and much more;",
-      "the goal, and nothing more;",
-      "the weariness, and nothing more;"
-     ],
-     "nivel": "A2",
-     "tags": [
-      "poema",
-      "expressão"
-     ],
-     "nota": "«Nada más» é «nada mais», e no fim de uma frase vale «só isso». Fecha a primeira sentença do poema: as pegadas são o caminho, e o caminho não é outra coisa.",
-     "notaEn": "'Nada más' is 'nothing more', and at the end of a sentence it means 'that's all'. It closes the poem's first sentence: the footprints are the road, and the road is nothing else."
-    },
-    {
-     "idioma": "es",
-     "id": "t003",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "caminante, no hay camino,",
-     "pt": "caminhante, não há caminho,",
-     "en": "wanderer, there is no road,",
-     "aceitas": [
-      "caminhante nao ha caminho",
-      "caminhante nao existe caminho",
-      "caminhante nao tem caminho"
-     ],
-     "aceitasEn": [
-      "wanderer there is no road",
-      "wanderer there is no path",
-      "traveler there is no road"
-     ],
-     "distratores": [
-      "caminhante, não há volta,",
-      "caminhante, não há tempo,",
-      "caminhante, não há ninguém,",
-      "caminhante, não há saída,"
-     ],
-     "distratoresEn": [
-      "wanderer, there is no way back,",
-      "wanderer, there is no time,",
-      "wanderer, there is no one,",
-      "wanderer, there is no way out,"
-     ],
-     "nivel": "A2",
-     "tags": [
-      "poema",
-      "gramática"
-     ],
-     "nota": "É o verso mais citado do poema, e volta igual no fim. «No hay» é impessoal e nunca muda de forma: «no hay camino», «no hay caminos» — o verbo fica sempre no singular.",
-     "notaEn": "This is the poem's most quoted line, and it comes back unchanged at the end. 'No hay' is impersonal and never inflects: 'no hay camino', 'no hay caminos' — the verb always stays singular."
-    },
-    {
-     "idioma": "es",
-     "id": "t004",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "se hace camino al andar.",
-     "pt": "faz-se caminho ao andar.",
-     "en": "you make the road by walking.",
-     "aceitas": [
-      "faz se caminho ao andar",
-      "o caminho se faz ao andar",
-      "faz se o caminho ao andar",
-      "se faz caminho andando"
-     ],
-     "aceitasEn": [
-      "you make the road by walking",
-      "the road is made by walking",
-      "one makes the road by walking"
-     ],
-     "distratores": [
-      "faz-se caminho ao parar.",
-      "faz-se caminho ao olhar.",
-      "faz-se caminho ao voltar.",
-      "faz-se caminho ao pensar."
-     ],
-     "distratoresEn": [
-      "you make the road by stopping.",
-      "you make the road by looking.",
-      "you make the road by turning back.",
-      "you make the road by thinking."
-     ],
-     "nivel": "B1",
-     "tags": [
-      "poema",
-      "gramática"
-     ],
-     "nota": "Duas construções num verso só: o «se» impessoal, que é o nosso «faz-se», e «al + infinitivo», que é «ao + infinitivo» — «al andar», «al salir», «al llegar».",
-     "notaEn": "Two constructions in a single line: the impersonal 'se', which English turns into 'you' or a passive, and 'al + infinitive', which is 'on' or 'upon doing' — 'al andar', 'al salir', 'al llegar'."
-    },
-    {
-     "idioma": "es",
-     "id": "t005",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "Al andar se hace camino,",
-     "pt": "Ao andar faz-se caminho,",
-     "en": "By walking you make the road,",
-     "aceitas": [
-      "ao andar faz se caminho",
-      "ao andar se faz caminho",
-      "ao caminhar faz se caminho",
-      "andando se faz caminho"
-     ],
-     "aceitasEn": [
-      "by walking you make the road",
-      "by walking the road is made",
-      "walking you make the road"
-     ],
-     "distratores": [
-      "Ao andar perde-se o caminho,",
-      "Ao andar encontra-se o caminho,",
-      "Ao andar esquece-se o caminho,",
-      "Ao andar escolhe-se o caminho,"
-     ],
-     "distratoresEn": [
-      "By walking you lose the road,",
-      "By walking you find the road,",
-      "By walking you forget the road,",
-      "By walking you choose the road,"
-     ],
-     "nivel": "B1",
-     "tags": [
-      "poema",
-      "gramática"
-     ],
-     "nota": "O mesmo verso de antes, de cabeça para baixo: a segunda estrofe repete a ideia trocando a ordem. Em espanhol a ordem pode mudar assim porque o «se» não deixa dúvida de quem faz.",
-     "notaEn": "The same line as before, turned around: the second stanza repeats the idea by swapping the order. Spanish can move the parts like this because the 'se' leaves no doubt about who acts."
-    },
-    {
-     "idioma": "es",
-     "id": "t006",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "y al volver la vista atrás",
-     "pt": "e ao voltar o olhar para trás",
-     "en": "and on looking back",
-     "aceitas": [
-      "e ao voltar o olhar para tras",
-      "e ao olhar para tras",
-      "e ao virar o olhar para tras",
-      "e ao voltar a vista para tras"
-     ],
-     "aceitasEn": [
-      "and on looking back",
-      "and when you look back",
-      "and looking back"
-     ],
-     "distratores": [
-      "e ao voltar o olhar para cima",
-      "e ao voltar o olhar para o lado",
-      "e ao voltar o olhar para o céu",
-      "e ao voltar o olhar para dentro"
-     ],
-     "distratoresEn": [
-      "and on looking up",
-      "and on looking sideways",
-      "and on looking at the sky",
-      "and on looking inward"
-     ],
-     "nivel": "B2",
-     "tags": [
-      "poema",
-      "expressão"
-     ],
-     "nota": "«Volver la vista atrás» é a combinação fixa de olhar para o passado, e o verbo é «volver», não «mirar». O «atrás» já traz a direção: não se diz «para atrás» nessa frase.",
-     "notaEn": "'Volver la vista atrás' is the set phrase for looking back at the past, and the verb is 'volver', not 'mirar'. The 'atrás' already carries the direction."
-    },
-    {
-     "idioma": "es",
-     "id": "t007",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "se ve la senda que nunca",
-     "pt": "vê-se a senda que nunca",
-     "en": "you see the path that never",
-     "aceitas": [
-      "ve se a senda que nunca",
-      "se ve a senda que nunca",
-      "ve se o caminho que nunca",
-      "ve se a trilha que nunca"
-     ],
-     "aceitasEn": [
-      "you see the path that never",
-      "one sees the path that never",
-      "the path is seen that never"
-     ],
-     "distratores": [
-      "vê-se a sombra que nunca",
-      "vê-se a porta que nunca",
-      "vê-se a casa que nunca",
-      "vê-se a marca que nunca"
-     ],
-     "distratoresEn": [
-      "you see the shadow that never",
-      "you see the door that never",
-      "you see the house that never",
-      "you see the mark that never"
-     ],
-     "nivel": "B2",
-     "tags": [
-      "poema",
-      "substantivo"
-     ],
-     "nota": "«La senda» é a trilha estreita, de registro mais alto que «el camino». O verso quebra no meio da frase: a oração só fecha no verso seguinte, «que nunca se ha de volver a pisar».",
-     "notaEn": "'La senda' is the narrow path, a register above 'el camino'. The line breaks mid-sentence: the clause only closes on the next line, 'que nunca se ha de volver a pisar'."
-    },
-    {
-     "idioma": "es",
-     "id": "t008",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "es": "se ha de volver a pisar.",
-     "pt": "se há de voltar a pisar.",
-     "en": "is to be trodden again.",
-     "aceitas": [
-      "se ha de voltar a pisar",
-      "se vai voltar a pisar",
-      "se tornara a pisar",
-      "havera de voltar a pisar"
-     ],
-     "aceitasEn": [
-      "is to be trodden again",
-      "is to be walked again",
-      "will ever be trodden again",
-      "will ever be walked again",
-      "one is to tread it again"
-     ],
-     "distratores": [
-      "se há de voltar a ver.",
-      "se há de voltar a abrir.",
-      "se há de voltar a usar.",
-      "se há de voltar a contar."
-     ],
-     "distratoresEn": [
-      "is to be seen again.",
-      "is to be opened again.",
-      "is to be used again.",
-      "is to be told again."
-     ],
-     "nivel": "B2",
-     "tags": [
-      "poema",
-      "gramática"
-     ],
-     "nota": "Duas construções empilhadas: «haber de + infinitivo» é o dever ou o destino, e «volver a + infinitivo» é fazer de novo. Juntas, dizem que aquele caminho nunca se tornará a pisar.",
-     "notaEn": "Two constructions stacked: 'haber de + infinitive' is duty or destiny, and 'volver a + infinitive' is to do again. Together they say that path will never be trodden again."
-    },
-    {
-     "idioma": "es",
-     "id": "t009",
-     "tipo": "frase",
-     "texto": "txt-es-001",
-     "requerTodas": [
-      "p349",
-      "p350"
-     ],
-     "es": "sino estelas en la mar.",
-     "pt": "mas sim esteiras no mar.",
-     "en": "but wakes upon the sea.",
-     "aceitas": [
-      "mas sim esteiras no mar",
-      "senao esteiras no mar",
-      "apenas rastros no mar",
-      "so esteiras no mar"
-     ],
-     "aceitasEn": [
-      "but wakes upon the sea",
-      "but wakes on the sea",
-      "only wakes upon the sea"
-     ],
-     "distratores": [
-      "mas sim estrelas no mar.",
-      "mas sim pedras no mar.",
-      "mas sim ilhas no mar.",
-      "mas sim barcos no mar."
-     ],
-     "distratoresEn": [
-      "but stars upon the sea.",
-      "but stones upon the sea.",
-      "but islands upon the sea.",
-      "but boats upon the sea."
-     ],
-     "nivel": "B2",
-     "tags": [
-      "poema",
-      "falso-amigo"
-     ],
-     "nota": "O poema fecha com duas palavras que enganam: «sino» é «mas sim», e «la estela» é o rastro na água — não o sino nem a estrela. E «la mar», no feminino, é o mar dos poetas e dos pescadores; o de todo dia é «el mar».",
-     "notaEn": "The poem closes with two words that mislead: 'sino' is 'but rather', and 'la estela' is the wake on the water. And 'la mar', feminine, is the sea of poets and fishermen; the everyday one is 'el mar'."
-    }
+   "requerTodas": [
+    "p911",
+    "p351",
+    "p348",
+    "p491",
+    "p403",
+    "p352",
+    "p353",
+    "p474",
+    "p435",
+    "p829",
+    "p912",
+    "p368",
+    "p913",
+    "p548",
+    "p914",
+    "p350",
+    "p915"
+   ]
+  },
+  {
+   "id": "txt-es-002",
+   "idioma": "es",
+   "tipo": "poema",
+   "titulo": "Rima LIII",
+   "autor": "Gustavo Adolfo Bécquer",
+   "obra": "Rimas",
+   "ano": 1871,
+   "dominio": "Bécquer morreu em 1870. Domínio público em qualquer cálculo — nenhuma legislação chega perto de 150 anos.",
+   "fonte": "https://es.wikisource.org/wiki/Rimas_(Bécquer,_1885)/Rima_LIII",
+   "recorte": "as duas primeiras das seis quadras",
+   "traducao": "em verso, na medida e na rima do original",
+   "nota": "Endecassílabos com um heptassílabo agudo fechando cada quadra, e rima nos versos pares. O poema inteiro repete três vezes a mesma armação — «voltarão… mas aquelas… essas não voltarão» —, e aqui estão as duas primeiras. A sintaxe é invertida, como no espanhol poético da época: «sus nidos a colgar» no lugar de «a colgar sus nidos».",
+   "notaEn": "Hendecasyllables with a short stressed-ending line closing each quatrain, rhyming on the even lines. The whole poem repeats the same frame three times — \"they will return… but those… those will not return\" — and these are the first two. The word order is inverted, as in the poetic Spanish of the time.",
+   "blocos": [
+    [
+     {
+      "es": "Volverán las oscuras golondrinas",
+      "pt": "Voltarão as escuras andorinhas",
+      "en": "The dark swallows will return"
+     },
+     {
+      "es": "en tu balcón sus nidos a colgar,",
+      "pt": "seus ninhos na sacada a pendurar,",
+      "en": "to hang their nests on your balcony,"
+     },
+     {
+      "es": "y, otra vez, con el ala a sus cristales",
+      "pt": "e de novo, com a asa, nas vidraças",
+      "en": "and once again, with their wings, at its windows"
+     },
+     {
+      "es": "jugando llamarán.",
+      "pt": "brincando chamarão.",
+      "en": "they will knock in play."
+     }
+    ],
+    [
+     {
+      "es": "Pero aquellas que el vuelo refrenaban",
+      "pt": "Mas aquelas que o voo refreavam",
+      "en": "But those that used to slow their flight"
+     },
+     {
+      "es": "tu hermosura y mi dicha a contemplar,",
+      "pt": "teu rosto e minha dita a contemplar,",
+      "en": "to gaze upon your beauty and my joy,"
+     },
+     {
+      "es": "aquellas que aprendieron nuestros nombres…",
+      "pt": "aquelas que aprenderam nossos nomes,",
+      "en": "those that learned our names…"
+     },
+     {
+      "es": "esas… ¡no volverán!",
+      "pt": "essas… não voltarão!",
+      "en": "those… will not return!"
+     }
+    ]
+   ],
+   "requerTodas": [
+    "p435",
+    "p916",
+    "p917",
+    "p617",
+    "p660",
+    "p308",
+    "p858",
+    "p828",
+    "p918",
+    "p919",
+    "p399",
+    "p381",
+    "p920",
+    "p921",
+    "p922",
+    "p923",
+    "p924",
+    "p574",
+    "p661"
+   ]
+  },
+  {
+   "id": "txt-es-003",
+   "idioma": "es",
+   "tipo": "poema",
+   "titulo": "Versos sencillos, I",
+   "autor": "José Martí",
+   "obra": "Versos sencillos",
+   "ano": 1891,
+   "dominio": "José Martí morreu em 1895. Domínio público há mais de um século.",
+   "fonte": "https://es.wikisource.org/wiki/Versos_sencillos/I",
+   "recorte": "as quatro primeiras quadras do poema",
+   "traducao": "em verso, na medida e na rima do original",
+   "nota": "Octossílabos em quadras de rima cruzada, a medida da canção popular — e parte destes versos virou a letra de «Guantanamera». O espanhol é simples de propósito: o título diz «versos singelos».",
+   "notaEn": "Eight-syllable lines in cross-rhymed quatrains, the metre of the folk song — and some of these lines became the lyrics of \"Guantanamera\". The Spanish is plain on purpose: the title means \"simple verses\".",
+   "blocos": [
+    [
+     {
+      "es": "Yo soy un hombre sincero",
+      "pt": "Eu sou um homem sincero",
+      "en": "I am an honest man"
+     },
+     {
+      "es": "de donde crece la palma.",
+      "pt": "da terra em que cresce a palma,",
+      "en": "from where the palm tree grows,"
+     },
+     {
+      "es": "Y antes de morirme quiero",
+      "pt": "e antes de morrer espero",
+      "en": "and before I die I want"
+     },
+     {
+      "es": "echar mis versos del alma.",
+      "pt": "soltar os meus versos da alma.",
+      "en": "to pour my verses from my soul."
+     }
+    ],
+    [
+     {
+      "es": "Yo vengo de todas partes,",
+      "pt": "Venho de todas as partes",
+      "en": "I come from everywhere,"
+     },
+     {
+      "es": "y hacia todas partes voy:",
+      "pt": "e a toda parte me vou:",
+      "en": "and everywhere I go:"
+     },
+     {
+      "es": "arte soy entre las artes,",
+      "pt": "arte sou em meio às artes,",
+      "en": "I am art among the arts,"
+     },
+     {
+      "es": "en los montes, monte soy.",
+      "pt": "e nos montes, monte sou.",
+      "en": "among the mountains, a mountain."
+     }
+    ],
+    [
+     {
+      "es": "Yo sé los nombres extraños",
+      "pt": "Eu sei os nomes arcanos",
+      "en": "I know the strange names"
+     },
+     {
+      "es": "de las yerbas y las flores,",
+      "pt": "das ervas, também das flores,",
+      "en": "of the herbs and the flowers,"
+     },
+     {
+      "es": "y de mortales engaños,",
+      "pt": "e de mortais desenganos,",
+      "en": "and of deadly deceptions,"
+     },
+     {
+      "es": "y de sublimes dolores.",
+      "pt": "e das mais sublimes dores.",
+      "en": "and of sublime sorrows."
+     }
+    ],
+    [
+     {
+      "es": "Yo he visto en la noche oscura",
+      "pt": "Eu vi, pela noite escura,",
+      "en": "I have seen in the dark night"
+     },
+     {
+      "es": "llover sobre mi cabeza",
+      "pt": "chover sobre a fronte acesa",
+      "en": "rain upon my head"
+     },
+     {
+      "es": "los rayos de lumbre pura",
+      "pt": "os raios de chama pura",
+      "en": "the rays of pure fire"
+     },
+     {
+      "es": "de la divina belleza.",
+      "pt": "da mais divina beleza.",
+      "en": "of divine beauty."
+     }
+    ]
+   ],
+   "requerTodas": [
+    "p351",
+    "p925",
+    "p926",
+    "p927",
+    "p928",
+    "p374",
+    "p546",
+    "p377",
+    "p379",
+    "p929",
+    "p930",
+    "p362",
+    "p385",
+    "p795",
+    "p355",
+    "p931",
+    "p932",
+    "p392",
+    "p661",
+    "p933",
+    "p934",
+    "p767",
+    "p935",
+    "p936",
+    "p937",
+    "p938",
+    "p352",
+    "p368",
+    "p789",
+    "p916",
+    "p382",
+    "p740",
+    "p939",
+    "p940",
+    "p876",
+    "p941",
+    "p942"
+   ]
+  },
+  {
+   "id": "txt-es-004",
+   "idioma": "es",
+   "tipo": "prosa",
+   "titulo": "Don Quijote de la Mancha",
+   "autor": "Miguel de Cervantes",
+   "obra": "El ingenioso hidalgo don Quijote de la Mancha, I, 1",
+   "ano": 1605,
+   "dominio": "Cervantes morreu em 1616. Domínio público há mais de quatro séculos.",
+   "fonte": "https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha_(1905)/Tomo_I/Capítulo_I",
+   "recorte": "as duas primeiras frases do capítulo I",
+   "traducao": "em prosa",
+   "nota": "A abertura mais famosa da língua. É espanhol de 1605, e parte do vocabulário saiu de uso: a adarga era o escudo de couro, o rocim o cavalo magro, e os «duelos y quebrantos» um prato de ovos com toucinho. «Las tres partes de su hacienda» são três quartos da renda.",
+   "notaEn": "The most famous opening in the language. It is Spanish from 1605, and part of the vocabulary has fallen out of use: the adarga was a leather shield, the rocín a skinny horse, and \"duelos y quebrantos\" a dish of eggs and bacon.",
+   "blocos": [
+    [
+     {
+      "es": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.",
+      "pt": "Num lugar da Mancha, de cujo nome não quero me lembrar, não faz muito tempo vivia um fidalgo desses de lança no cabide, adarga antiga, rocim magro e galgo corredor.",
+      "en": "In a village of La Mancha, whose name I have no wish to recall, there lived not long ago one of those gentlemen with a lance in the rack, an old shield, a lean nag and a fast greyhound."
+     },
+     {
+      "es": "Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.",
+      "pt": "Uma panela de algo mais vaca que carneiro, salpicão na maioria das noites, ovos com torresmo aos sábados, lentilhas às sextas e algum pombinho de acréscimo aos domingos consumiam três quartos da sua renda.",
+      "en": "A stew with more beef than mutton, hash most nights, eggs and bacon on Saturdays, lentils on Fridays and a young pigeon as an extra on Sundays used up three quarters of his income."
+     }
+    ]
+   ],
+   "requerTodas": [
+    "p943",
+    "p661",
+    "p377",
+    "p021",
+    "p352",
+    "p361",
+    "p424",
+    "p394",
+    "p944",
+    "p945",
+    "p946",
+    "p947",
+    "p573",
+    "p948",
+    "p949",
+    "p950",
+    "p951",
+    "p792",
+    "p403",
+    "p952",
+    "p953",
+    "p954",
+    "p789",
+    "p955",
+    "p956",
+    "p957",
+    "p958",
+    "p458",
+    "p959",
+    "p960",
+    "p961",
+    "p962",
+    "p963",
+    "p473",
+    "p795",
+    "p964"
+   ]
+  },
+  {
+   "id": "txt-es-005",
+   "idioma": "es",
+   "tipo": "prosa",
+   "titulo": "A la deriva",
+   "autor": "Horacio Quiroga",
+   "obra": "Cuentos de amor de locura y de muerte",
+   "ano": 1912,
+   "dominio": "Horacio Quiroga morreu em 1937. Na Argentina e no Uruguai o direito dura 70 anos depois da morte: domínio público desde 2008.",
+   "fonte": "https://es.wikisource.org/wiki/A_la_deriva",
+   "recorte": "o primeiro parágrafo e a primeira frase do segundo",
+   "traducao": "em prosa",
+   "nota": "O começo de um dos contos mais secos da língua: um homem picado por uma cobra na selva de Misiones. A «yararacusú» é a jararacuçu. Prosa curta, de verbos no pretérito, e por isso boa de ler em voz alta.",
+   "notaEn": "The opening of one of the starkest stories in Spanish: a man bitten by a snake in the jungle of Misiones. Short sentences, verbs in the past tense — good for reading aloud.",
+   "blocos": [
+    [
+     {
+      "es": "El hombre pisó algo blanduzco, y enseguida sintió la mordedura en el pie.",
+      "pt": "O homem pisou em algo mole e logo sentiu a picada no pé.",
+      "en": "The man stepped on something soft and at once felt the bite on his foot."
+     },
+     {
+      "es": "Saltó adelante, y al volverse con un juramento vio una yararacusú que arrollada sobre sí misma, esperaba otro ataque.",
+      "pt": "Saltou para a frente e, ao se virar com um palavrão, viu uma jararacuçu que, enrolada sobre si mesma, esperava outro ataque.",
+      "en": "He leapt forward and, turning round with an oath, saw a jararacussu that, coiled upon itself, was waiting to strike again."
+     }
+    ],
+    [
+     {
+      "es": "El hombre echó una veloz ojeada a su pie, donde dos gotitas de sangre engrosaban dificultosamente, y sacó el machete de la cintura.",
+      "pt": "O homem lançou um olhar rápido ao pé, onde duas gotinhas de sangue engrossavam com dificuldade, e tirou o facão da cintura.",
+      "en": "The man cast a quick glance at his foot, where two little drops of blood were slowly swelling, and drew the machete from his belt."
+     }
+    ]
+   ],
+   "requerTodas": [
+    "p925",
+    "p914",
+    "p965",
+    "p966",
+    "p470",
+    "p967",
+    "p506",
+    "p968",
+    "p969",
+    "p435",
+    "p970",
+    "p368",
+    "p971",
+    "p972",
+    "p973",
+    "p389",
+    "p858",
+    "p974",
+    "p379",
+    "p975",
+    "p976",
+    "p375",
+    "p977",
+    "p978",
+    "p979",
+    "p980",
+    "p431",
+    "p981",
+    "p982"
+   ]
+  },
+  {
+   "id": "txt-es-006",
+   "idioma": "es",
+   "tipo": "prosa",
+   "titulo": "Nuestra América",
+   "autor": "José Martí",
+   "obra": "Nuestra América (La Revista Ilustrada de Nueva York)",
+   "ano": 1891,
+   "dominio": "José Martí morreu em 1895. Domínio público há mais de um século.",
+   "fonte": "https://es.wikisource.org/wiki/Nuestra_América",
+   "recorte": "a primeira frase do ensaio",
+   "traducao": "em prosa",
+   "nota": "O ensaio que deu nome a uma ideia da América Latina. Uma frase só, longa e cheia de aposto, que só fecha no fim — o sentido vem de ir guardando as orações até a última. «Con tal que» pede subjuntivo («quede», «crezcan»).",
+   "notaEn": "The essay that named an idea of Latin America. A single long sentence full of asides, which only closes at the end. «Con tal que» takes the subjunctive («quede», «crezcan»).",
+   "blocos": [
+    [
+     {
+      "es": "Cree el aldeano vanidoso que el mundo entero es su aldea, y con tal que él quede de alcalde, o le mortifique al rival que le quitó la novia, o le crezcan en la alcancía los ahorros, ya da por bueno el orden universal, sin saber de los gigantes que llevan siete leguas en las botas y le pueden poner la bota encima, ni de la pelea de los cometas en el Cielo, que van por el aire dormidos engullendo mundos.",
+      "pt": "Crê o aldeão vaidoso que o mundo inteiro é a sua aldeia, e, contanto que ele fique de prefeito, ou que mortifique o rival que lhe tirou a namorada, ou que lhe cresçam no cofrinho as economias, já dá por boa a ordem universal, sem saber dos gigantes que levam sete léguas nas botas e lhe podem pôr a bota em cima, nem da briga dos cometas no Céu, que vão pelo ar adormecidos engolindo mundos.",
+      "en": "The conceited villager believes the whole world is his village, and as long as he gets to be mayor, or humiliates the rival who stole his sweetheart, or sees his savings grow in his piggy bank, he takes the order of the universe to be good, knowing nothing of the giants in seven-league boots who can put their boot on him, nor of the battle of the comets in the heavens, which go through the air asleep, swallowing worlds."
+     }
+    ]
+   ],
+   "requerTodas": [
+    "p440",
+    "p983",
+    "p984",
+    "p985",
+    "p986",
+    "p351",
+    "p987",
+    "p557",
+    "p366",
+    "p988",
+    "p989",
+    "p990",
+    "p030",
+    "p991",
+    "p927",
+    "p992",
+    "p993",
+    "p395",
+    "p356",
+    "p412",
+    "p994",
+    "p995",
+    "p392",
+    "p996",
+    "p359",
+    "p997",
+    "p998",
+    "p738",
+    "p383",
+    "p357",
+    "p513",
+    "p999",
+    "p1000",
+    "p1001",
+    "p355",
+    "p1002",
+    "p387",
+    "p1003"
    ]
   }
  ]

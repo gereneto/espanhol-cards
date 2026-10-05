@@ -23,28 +23,17 @@
   const PORID = {};
   CARDS.forEach(c => { PORID[c.id] = c; });
 
-  /* ── as trilhas de texto ──
-     Um texto não é card, é uma trilha (ver PLANO, seção 6). Os cards dos
-     versos vêm em data/textos-es.js, FORA do baralho, e aqui entram só no
-     PORID — para serem perguntados, mostrados e corrigidos como qualquer
-     card — e nunca no CARDS, que é de onde sai a fila de inéditos. Se
-     entrassem lá, os versos cairiam na fila normal soltos e fora de ordem,
-     que é o contrário do que a trilha faz. */
+  /* ── os textos ──
+     Desde outubro de 2026 o texto não tem card: é a recompensa (manual, seção
+     17.4). Vem em data/textos-es.js com o original, a tradução e a lista das
+     palavras que exige; o app o mostra inteiro quando todas estão dominadas. */
   const TEXTOS = (window.TEXTOS && window.TEXTOS['es'] && window.TEXTOS['es'].textos) || [];
   const TEXTO_POR_ID = {};
-  const CARDS_DE_TEXTO = [];
-  TEXTOS.forEach(txt => {
-    TEXTO_POR_ID[txt.id] = txt;
-    (txt.cards || []).forEach(c => {
-      PORID_FONTE[c.id] = c;
-      const forma = Motor.formaDoCard(c, 0);
-      PORID[c.id] = forma;
-      CARDS_DE_TEXTO.push(forma);
-    });
-  });
+  TEXTOS.forEach(txt => { TEXTO_POR_ID[txt.id] = txt; });
 
-  function trilhaVazia() {
-    return { texto: null, novosDesde: 0, completoEm: null, anunciado: false };
+  /* emVista: o poema e a prosa da vez; lidos: id → quando o texto apareceu */
+  function textosVazio() {
+    return { emVista: { poema: null, prosa: null }, lidos: {} };
   }
 
 
@@ -125,7 +114,7 @@
       contestacoes: [],
       comentarios: [],
       totais: { respostas: 0, acertos: 0, sessoes: 0 },
-      trilha: trilhaVazia(),
+      textos: textosVazio(),
       arquivados: {},                          // id → { em, ativo }: «não quero aprender»
       emVista: []                              // as frases cujas palavras estão chegando
     };
@@ -144,7 +133,11 @@
      progresso vem no formato antigo, de uma fila só. */
   function conciliarFila(p) {
     p.cards = p.cards || {};
-    p.trilha = Object.assign(trilhaVazia(), p.trilha || {});
+    /* a trilha de 01/10 saiu; ninguém chegou a ligá-la */
+    delete p.trilha;
+    p.textos = Object.assign(textosVazio(), p.textos || {});
+    p.textos.emVista = Object.assign({ poema: null, prosa: null }, p.textos.emVista || {});
+    p.textos.lidos = p.textos.lidos || {};
 
     /* Card apagado do baralho deixa para trás o estado dele. Sem varrer, ele
        continuaria contando em "cards já vistos" e nas tabelas do painel, e
@@ -221,9 +214,7 @@
     const lugar = id => (posicao[id] === undefined ? 1e9 : posicao[id]);
 
     const filas = { esPt: [], ptEs: [], dominados: [] };
-    /* O card de verso já respondido entra nas filas de revisão como qualquer
-       outro: a trilha manda na ESTREIA dele, e não na vida dele depois. */
-    CARDS.concat(CARDS_DE_TEXTO).forEach(c => {
+    CARDS.forEach(c => {
       if (visto(c.id) && !fora(c.id)) filas[Motor.filaDe(p.cards[c.id])].push(c.id);
     });
     for (const k in filas) filas[k].sort((a, b) => lugar(a) - lugar(b));
@@ -413,8 +404,20 @@
     const pesos = Motor.pesosDeNivel(Motor.dominioPorNivel(CARDS, p.cards));
     p.emVista = Motor.atualizarEmVista(p.emVista, CARDS, PORID, p.cards, p.arquivados || {}, pesos);
     const naFila = new Set(resto);
-    const pedidas = Motor.palavrasEmVista(p.emVista, PORID, p.cards, p.arquivados || {})
+    let pedidas = Motor.palavrasEmVista(p.emVista, PORID, p.cards, p.arquivados || {})
       .filter(id => naFila.has(id));
+    /* As palavras do poema e da prosa da vez (a partir de 400 dominados)
+       entram uma a cada duas das frases — se viessem depois de todas, nunca
+       chegariam, porque a lista de frases em vista se renova. */
+    let doTexto = [];
+    if (Motor.textosLiberados(p.cards)) {
+      p.textos = p.textos || textosVazio();
+      p.textos.emVista = Motor.atualizarTextosEmVista(p.textos.emVista, TEXTOS, p.cards, p.arquivados || {}, p.textos.lidos);
+      const jaPedida = new Set(pedidas);
+      doTexto = Motor.palavrasDosTextos(p.textos.emVista, TEXTOS, p.cards, p.arquivados || {})
+        .filter(id => naFila.has(id) && !jaPedida.has(id));
+    }
+    pedidas = intercalar(pedidas, doTexto, 2);
     const pedidasSet = new Set(pedidas);
     const avulsas = Motor.ordenarNovos(resto.filter(id => !pedidasSet.has(id)), pesos, PORID);
     const ordemDoResto = intercalar(pedidas, avulsas, PALAVRAS_PEDIDAS_POR_AVULSA);
@@ -602,7 +605,7 @@
     const vencidos = progresso.dominados.filter(id =>
       progresso.cards[id] && !Motor.esperando(progresso.cards[id], agora)).length;
     const tem = {
-      ineditos: progresso.ineditos.length > 0 || !!idDaTrilha(),
+      ineditos: progresso.ineditos.length > 0,
       esPt: progresso.filaEsPt.length > 0,
       ptEs: progresso.filaPtEs.length > 0
     };
@@ -637,32 +640,16 @@
     return proximo === null ? null : progresso.dominados.splice(proximo, 1)[0];
   }
 
-  /* ── o card novo: do baralho ou da trilha ──
-     A vaga de card novo é UMA. A cada três, uma é da trilha do texto da vez —
-     decisão do Gere em 01/10: o card da trilha conta como card novo e passa
-     pelo piso e pelo teto como qualquer estreia, em vez de abrir uma torneira
-     a mais. Quando o baralho não tem mais inédito, a trilha fica com todas. */
-  function idDaTrilha() {
-    const tr = progresso.trilha;
-    const txt = tr && tr.texto && TEXTO_POR_ID[tr.texto];
-    if (!txt) return null;
-    if (!Motor.trilhaLiberada(progresso.cards)) return null;
-    if (!Motor.vezDaTrilha(tr.novosDesde) && progresso.ineditos.length) return null;
-    return Motor.proximoDaTrilha(txt, progresso.cards);
-  }
-
   function proximoNovo() {
     /* Em cada cinco cards novos, pelo menos um é de vocabulário (pedido do
-       Gere, 03/10): se as quatro últimas estreias foram frase — do baralho
-       ou da trilha —, a próxima é a primeira palavra da fila de inéditos. É
+       Gere, 03/10): se as quatro últimas estreias foram frase, a próxima é
+       a primeira palavra da fila de inéditos. É
        só um teto para as frases; palavra seguida pode vir à vontade. */
     if (quatroFrasesSeguidas()) {
       ordenarIneditos(progresso);
       const i = progresso.ineditos.findIndex(id => (PORID[id] || {}).tipo === 'palavra');
       if (i >= 0) return progresso.ineditos.splice(i, 1)[0];
     }
-    const daTrilha = idDaTrilha();
-    if (daTrilha) return daTrilha;
     ordenarIneditos(progresso);
     return progresso.ineditos.shift();
   }
@@ -675,17 +662,6 @@
       .sort((a, b) => progresso.cards[b].estreouNa - progresso.cards[a].estreouNa)
       .slice(0, 4);
     return recentes.length === 4 && recentes.every(id => (PORID[id] || {}).tipo !== 'palavra');
-  }
-
-  /* O id é do texto da vez? Vale para o card de verso e para as palavras que
-     ele exige — a palavra pode estrear pela fila normal, e quando estreia a
-     trilha já recebeu a vez dela. */
-  function pertenceATrilha(id) {
-    const tr = progresso.trilha;
-    const txt = tr && tr.texto && TEXTO_POR_ID[tr.texto];
-    if (!txt) return false;
-    if (PORID[id] && PORID[id].texto === txt.id) return true;
-    return (txt.cards || []).some(c => (c.requerTodas || []).indexOf(id) >= 0);
   }
 
   /* O índice do dominado que já venceu a data — ou, com «agora» nulo, o de
@@ -769,6 +745,8 @@
 
   function proximoCard() {
     recolherFrasesLiberadas();
+    const lido = textoParaLer();
+    if (lido) { mostrarRecompensa(lido); return; }
     if (window.scrollY >= 2) el['tela-card'].style.minHeight = el['tela-card'].offsetHeight + 'px';
     const id = tirarProximoId();
     if (!id) { irParaInicio(); return; }
@@ -1426,15 +1404,6 @@
        teto de card novo (ver respostasDesdeNovo) */
     if (!est.vistas) est.estreouNa = progresso.totais.respostas;
     Motor.registrar(est, r);
-    /* A conta do um-em-três: estreia do baralho soma, estreia da trilha zera.
-       E quando o último verso é dominado, o texto fecha — fica anotado para a
-       tela de textos anunciar e mostrar o poema inteiro. */
-    if (est.vistas === 1) {
-      progresso.trilha = progresso.trilha || trilhaVazia();
-      if (pertenceATrilha(id)) progresso.trilha.novosDesde = 0;
-      else progresso.trilha.novosDesde = (progresso.trilha.novosDesde || 0) + 1;
-    }
-    conferirTextoFechado();
     /* Para o painel: o dia, a hora e o tempo desta resposta, e — se era a
        revisão de um dominado — se a memória aguentou a espera daquele degrau. */
     Motor.anotarDiario(progresso.diario, r, est.ultima);
@@ -2582,6 +2551,16 @@
   }
 
   /* Mescla card a card, ficando com a versão de mais respostas. */
+  function juntarTextos(a, b) {
+    a = a || textosVazio(); b = b || textosVazio();
+    const lidos = Object.assign({}, b.lidos || {});
+    Object.keys(a.lidos || {}).forEach(id => {
+      if (!lidos[id] || String(a.lidos[id]) < String(lidos[id])) lidos[id] = a.lidos[id];
+    });
+    const vista = (a.emVista && (a.emVista.poema || a.emVista.prosa)) ? a.emVista : (b.emVista || {});
+    return { emVista: Object.assign({ poema: null, prosa: null }, vista), lidos: lidos };
+  }
+
   function mesclar(local, remoto) {
     const saida = {
       versao: 1,
@@ -2608,6 +2587,7 @@
       /* arquivar e desarquivar: fica o gesto mais recente de cada card */
       arquivados: juntarArquivados(local.arquivados, remoto.arquivados),
       emVista: (local.emVista && local.emVista.length) ? local.emVista : (remoto.emVista || []),
+      textos: juntarTextos(local.textos, remoto.textos),
       cards: {},
       totais: {
         respostas: Math.max(local.totais.respostas, (remoto.totais || {}).respostas || 0),
@@ -2924,70 +2904,54 @@
     mostrar('tela-inicio');
   }
 
-  /* ═══════════════ textos (trilhas) ═══════════════ */
+  /* ═══════════════ textos ═══════════════ */
 
-  /* O texto fechou quando o último verso virou dominado. Fica a data, e a tela
-     anuncia e mostra o poema de ponta a ponta. */
-  function conferirTextoFechado() {
-    const tr = progresso.trilha;
-    const txt = tr && tr.texto && TEXTO_POR_ID[tr.texto];
-    if (!txt || tr.completoEm) return;
-    if (Motor.andamentoDaTrilha(txt, progresso.cards).completo) {
-      tr.completoEm = new Date().toISOString();
-      tr.anunciado = false;
+  /* O texto da vez que já pode ser lido: todas as palavras dominadas (ou
+     arquivadas) e a meia-noite seguinte passada. */
+  function textoParaLer() {
+    if (!TEXTOS.length || !Motor.textosLiberados(progresso.cards)) return null;
+    const tx = progresso.textos = progresso.textos || textosVazio();
+    tx.emVista = Motor.atualizarTextosEmVista(tx.emVista, TEXTOS, progresso.cards, progresso.arquivados || {}, tx.lidos);
+    for (const tipo of ['poema', 'prosa']) {
+      const txt = tx.emVista[tipo] && TEXTO_POR_ID[tx.emVista[tipo]];
+      if (txt && Motor.andamentoDoTexto(txt, progresso.cards, Date.now(), progresso.arquivados || {}).pronto) return txt;
     }
+    return null;
+  }
+
+  /* A recompensa: o texto inteiro, no lugar do próximo card. Fica marcado
+     como lido na hora, e o próximo do mesmo tipo entra na lista de espera. */
+  function mostrarRecompensa(txt) {
+    progresso.textos.lidos[txt.id] = new Date().toISOString();
+    progresso.textos.emVista = Motor.atualizarTextosEmVista(progresso.textos.emVista, TEXTOS,
+      progresso.cards, progresso.arquivados || {}, progresso.textos.lidos);
+    salvarProgresso();
+    el['texto-conteudo'].innerHTML =
+      '<p class="recompensa">Você destravou ' + (txt.tipo === 'poema' ? 'um poema' : 'um texto') +
+      ': todas as palavras dele já são suas.</p>' + cartaDoTexto(txt) +
+      '<button class="primario" id="btn-seguir-texto">Continuar estudando</button>';
+    document.getElementById('btn-seguir-texto').addEventListener('click', () => { mostrar('tela-card'); proximoCard(); });
+    mostrar('tela-texto');
   }
 
   function abrirTexto() {
     renderizarTexto();
     mostrar('tela-texto');
-    const tr = progresso.trilha;
-    if (tr && tr.completoEm && !tr.anunciado) { tr.anunciado = true; salvarProgresso(); }
   }
 
-  /* Em que pé está cada verso. Quatro situações, e a trava é a do Gere: o
-     verso espera as palavras dele, e palavra sem card não entra na conta. */
-  function situacaoDoVerso(card) {
-    const est = progresso.cards[card.id];
-    if (est && est.etapa === 'dominado') return { marca: '✓', texto: 'dominado' };
-    if (est && est.vistas) return { marca: '·', texto: 'em andamento' };
-    const faltam = (card.requerTodas || []).filter(id => {
-      const e = progresso.cards[id];
-      return !e || e.etapa !== 'dominado';
-    });
-    if (faltam.length) {
-      const nomes = faltam.map(id => (PORID[id] || {}).es || id).join(', ');
-      return { marca: '🔒', texto: 'espera ' + nomes };
-    }
-    return { marca: '○', texto: 'pode vir' };
-  }
-
-  function listaDeVersos(txt) {
-    const porId = {};
-    (txt.cards || []).forEach(c => { porId[c.id] = c; });
-    const linhas = (txt.versos || []).map(v => {
-      const card = porId[v.card];
-      if (!card) return '';
-      const s = situacaoDoVerso(card);
-      return '<tr><td class="verso-marca">' + s.marca + '</td>' +
-             '<td class="verso-es">' + escapar(card.es) + '</td>' +
-             '<td class="verso-situacao">' + escapar(s.texto) + '</td></tr>';
-    });
-    return '<table class="tabela-versos">' + linhas.join('') + '</table>';
-  }
-
-  /* O texto inteiro, original e tradução lado a lado — a recompensa de fechar
-     a trilha. */
-  function tabelaDoTexto(txt) {
-    const porId = {};
-    (txt.cards || []).forEach(c => { porId[c.id] = c; });
-    const linhas = (txt.versos || []).map(v => {
-      const card = porId[v.card];
-      if (!card) return '';
-      return '<tr><td class="verso-es">' + escapar(card.es) + '</td>' +
-             '<td class="verso-pt">' + escapar(card.pt) + '</td></tr>';
-    });
-    return '<table class="tabela-texto">' + linhas.join('') + '</table>';
+  /* O texto inteiro, original e tradução lado a lado, com quem, quando e o
+     que vale saber antes de ler. */
+  function cartaDoTexto(txt) {
+    const cab = '<h3 class="texto-titulo">' + escapar(txt.titulo) + '</h3>' +
+      '<p class="texto-autor">' + escapar(txt.autor) + (txt.ano ? ', ' + txt.ano : '') +
+      (txt.recorte ? ' · ' + escapar(txt.recorte) : '') + '</p>';
+    const blocos = (txt.blocos || []).map(b =>
+      '<table class="tabela-texto ' + (txt.tipo === 'prosa' ? 'prosa' : 'poema') + '">' +
+      b.map(l => '<tr><td class="verso-es" lang="es">' + escapar(l.es) + '</td>' +
+        '<td class="verso-pt">' + escapar(l.pt) + '</td></tr>').join('') + '</table>').join('');
+    const pe = '<p class="ajuda">' + escapar(txt.nota || '') + '</p>' +
+      (txt.traducao ? '<p class="ajuda">Tradução ' + escapar(txt.traducao) + '.</p>' : '');
+    return '<div class="carta-texto">' + cab + blocos + pe + '</div>';
   }
 
   function renderizarTexto() {
@@ -2996,58 +2960,39 @@
       alvo.innerHTML = '<p class="ajuda">Nenhum texto no app ainda.</p>';
       return;
     }
-    progresso.trilha = progresso.trilha || trilhaVazia();
-    const tr = progresso.trilha;
+    const tx = progresso.textos = progresso.textos || textosVazio();
     const dominados = Motor.dominadosNoTotal(progresso.cards);
-    const liberada = dominados >= Motor.DOMINADOS_PARA_TRILHA;
     const partes = [];
-
-    partes.push('<p class="ajuda">Um texto não é um card: é uma <b>trilha</b>. ' +
-      'Ligada, ela ocupa <b>um de cada três</b> cards novos — primeiro as palavras ' +
-      'de cada verso, e depois o verso, que só aparece quando todas as palavras ' +
-      'dele estiverem dominadas.</p>');
-
-    partes.push(liberada
-      ? '<p class="ajuda">Trilha destravada: <b>' + dominados + '</b> cards dominados.</p>'
-      : '<p class="ajuda">A trilha destrava com <b>' + Motor.DOMINADOS_PARA_TRILHA +
+    partes.push('<p class="ajuda">Um poema e um texto em prosa ficam na lista de espera. As palavras ' +
+      'deles vão chegando como cards novos, e quando todas estiverem dominadas o texto aparece ' +
+      'inteiro, no lugar do próximo card.</p>');
+    if (dominados < Motor.DOMINADOS_PARA_TEXTOS) {
+      partes.push('<p class="ajuda">Os textos começam com <b>' + Motor.DOMINADOS_PARA_TEXTOS +
         '</b> cards dominados. Você tem <b>' + dominados + '</b>.</p>');
-
-    partes.push('<div class="grupo"><h3>Texto da vez</h3>');
-    partes.push('<label class="linha-check"><input type="radio" name="trilha-texto" value=""' +
-      (tr.texto ? '' : ' checked') + '><span>nenhum</span></label>');
-    TEXTOS.forEach(txt => {
-      const a = Motor.andamentoDaTrilha(txt, progresso.cards);
-      partes.push('<label class="linha-check"><input type="radio" name="trilha-texto" value="' +
-        escapar(txt.id) + '"' + (tr.texto === txt.id ? ' checked' : '') + '><span><b>' +
-        escapar(txt.titulo) + '</b> — ' + escapar(txt.autor) + ' (' + txt.ano + '): ' +
-        a.dominados + ' de ' + a.versos + ' versos dominados</span></label>');
-    });
-    partes.push('</div>');
-
-    const txt = tr.texto && TEXTO_POR_ID[tr.texto];
-    if (txt) {
-      const a = Motor.andamentoDaTrilha(txt, progresso.cards);
-      if (a.completo) {
-        partes.push('<div class="grupo"><h3>Você fechou este texto</h3>' +
-          '<p class="ajuda">Os ' + a.versos + ' versos estão dominados. Ele fica aqui inteiro.</p>' +
-          tabelaDoTexto(txt) + '</div>');
-      } else {
-        partes.push('<div class="grupo"><h3>Onde você está</h3>' + listaDeVersos(txt) + '</div>');
+    } else {
+      tx.emVista = Motor.atualizarTextosEmVista(tx.emVista, TEXTOS, progresso.cards, progresso.arquivados || {}, tx.lidos);
+      partes.push('<div class="grupo"><h3>Na lista de espera</h3>');
+      for (const tipo of ['poema', 'prosa']) {
+        const txt = tx.emVista[tipo] && TEXTO_POR_ID[tx.emVista[tipo]];
+        if (!txt) { partes.push('<p class="ajuda">Nenhum ' + (tipo === 'poema' ? 'poema' : 'texto em prosa') + ' por ler.</p>'); continue; }
+        const a = Motor.andamentoDoTexto(txt, progresso.cards, Date.now(), progresso.arquivados || {});
+        const faltam = Motor.requeridas(txt).filter(id => Motor.sabidaEm(id, progresso.cards, progresso.arquivados || {}) === Infinity)
+          .map(id => (PORID[id] || {}).es || id);
+        partes.push('<p><b>' + escapar(txt.titulo) + '</b>, de ' + escapar(txt.autor) + ' — ' +
+          a.dominadas + ' de ' + a.palavras + ' palavras dominadas' +
+          (faltam.length ? '. Faltam: ' + escapar(faltam.join(', ')) + '.' : '; aparece amanhã.') + '</p>');
       }
-      if (txt.nota) partes.push('<p class="ajuda">' + escapar(txt.nota) + '</p>');
-      partes.push('<p class="ajuda">' + escapar(txt.obra || '') + '. ' +
-        escapar(txt.dominio || '') + '</p>');
+      partes.push('</div>');
     }
-
+    const lidos = TEXTOS.filter(t => tx.lidos[t.id])
+      .sort((a, b) => String(tx.lidos[b.id]).localeCompare(String(tx.lidos[a.id])));
+    if (lidos.length) {
+      partes.push('<div class="grupo"><h3>Os que você já leu</h3>');
+      lidos.forEach(t => partes.push('<details class="texto-lido"><summary>' + escapar(t.titulo) + ' — ' +
+        escapar(t.autor) + '</summary>' + cartaDoTexto(t) + '</details>'));
+      partes.push('</div>');
+    }
     alvo.innerHTML = partes.join('');
-    alvo.querySelectorAll('input[name="trilha-texto"]').forEach(r => {
-      r.addEventListener('change', () => {
-        progresso.trilha.texto = r.value || null;
-        progresso.trilha.novosDesde = 0;
-        salvarProgresso();
-        renderizarTexto();
-      });
-    });
   }
 
   el['btn-inicio'].addEventListener('click', irParaInicio);

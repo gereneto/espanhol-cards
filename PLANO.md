@@ -292,6 +292,10 @@ Depois disso, commit e push. É o commit que serve de memória, não a conversa.
 
 ## 6. Os textos (trilhas)
 
+> **Substituído em outubro de 2026.** A trilha de cards de verso saiu: o texto
+> agora é recompensa, sem card, e o desenho está no manual, seção 17.4. O que
+> segue fica como registro de como foi pensado.
+
 Decidido com o Gere em 01/10. **Um texto não é um card: é uma trilha.** O aluno
 liga a trilha de um texto, e ela vai soltando cards na fila até o texto estar
 inteiro na cabeça. No fim o app anuncia e mostra o texto completo.

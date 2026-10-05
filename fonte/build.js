@@ -94,19 +94,11 @@ for (const idioma of IDIOMAS) {
 }
 
 /* ── os textos ──
-   Um texto não é card: é uma TRILHA, que o app liga e que vai soltando os
-   cards dos versos na ordem. Por isso ele mora em fonte/textos/<idioma>/ e
-   não em fonte/cards/ — se os cards de verso entrassem no baralho, eles
-   cairiam na fila normal antes de a trilha existir.
-
-   Os cards de verso vêm dentro do próprio arquivo do texto, e aqui são
-   juntados ao baralho só para passar pelas MESMAS checagens de todo card:
-   distrator que o motor lê como certo, formato que entrega a resposta, card
-   repetido, inglês pela metade. Na hora de gravar eles se separam outra vez.
-
-   Um verso pode repetir — «caminante, no hay camino» é o verso 3 e o 9 do
-   Machado —, então a lista de versos aponta para ids, e o mesmo id pode
-   aparecer duas vezes. */
+   Desde outubro de 2026 (manual, seção 17.4) o texto não tem card: é a
+   recompensa. Ele mora em fonte/textos/<idioma>/ com o original e a tradução
+   de cada linha em «blocos» (estrofe ou parágrafo), e lista em «requerTodas»
+   as palavras que exige, como a frase. Quando todas estão dominadas, o app o
+   mostra inteiro. A trilha de cards de verso, de 01/10, saiu. */
 const pastaTextos = path.join(__dirname, 'textos');
 for (const b of baralhos) {
   b.textos = [];
@@ -114,11 +106,10 @@ for (const b of baralhos) {
   if (!fs.existsSync(pasta)) continue;
   for (const f of fs.readdirSync(pasta).filter(f => f.endsWith('.json')).sort()) {
     const texto = JSON.parse(fs.readFileSync(path.join(pasta, f), 'utf8'));
-    const quantos = (texto.cards || []).length;
-    console.log('  ' + ('textos/' + b.idioma + '/' + f).padEnd(36) + quantos + ' versos, ' +
-      (texto.versos || []).length + ' linhas');
+    const linhas = (texto.blocos || []).reduce((a, bl) => a + (bl || []).length, 0);
+    console.log('  ' + ('textos/' + b.idioma + '/' + f).padEnd(36) + (texto.tipo || '?') + ', ' + linhas + ' linhas, ' +
+      (texto.requerTodas || []).length + ' palavras');
     b.textos.push(texto);
-    b.cards = b.cards.concat((texto.cards || []).map(c => Object.assign({ idioma: b.idioma }, c)));
   }
 }
 
@@ -627,50 +618,46 @@ for (const { idioma, cards } of baralhos) {
   }
 }
 
-/* ── o que é só do texto ──
-   Checagem própria da trilha, e depois a separação: daqui para baixo «cards»
-   é só o baralho, e os versos vivem em b.cardsDeTexto. */
+/* ── o que é só do texto ── */
 const idsDeTexto = new Set();
 for (const b of baralhos) {
-  const doBaralho = new Set(b.cards.filter(c => !c.texto).map(c => c.id));
+  const palavrasDoBaralho = new Map(b.cards.filter(c => c.tipo === 'palavra').map(c => [c.id, c]));
+  const porForma = new Map([...palavrasDoBaralho.values()].map(c => [normalizar(Motor.formaDoCard(c, 0)[CAMPOS_DA_LINGUA[b.idioma].texto]), c.id]));
+  b.pendentesDeTexto = 0;
   for (const txt of b.textos || []) {
     const onde = 'texto ' + (txt.id || '(sem id)');
     if (!txt.id) erros.push(onde + ': falta o id');
     else if (idsDeTexto.has(txt.id)) erros.push(onde + ': id de texto repetido');
     idsDeTexto.add(txt.id);
-    for (const campo of ['idioma', 'tipo', 'titulo', 'autor', 'dominio']) {
+    for (const campo of ['idioma', 'tipo', 'titulo', 'autor', 'dominio', 'fonte']) {
       if (!txt[campo]) erros.push(onde + ': falta «' + campo + '»');
     }
-    if (txt.idioma && txt.idioma !== b.idioma) {
-      erros.push(onde + ': diz idioma «' + txt.idioma + '» e está na pasta de ' + b.idioma);
-    }
-    const seus = new Map((txt.cards || []).map(c => [c.id, c]));
-    if (!seus.size) erros.push(onde + ': nenhum card de verso');
-    if (!(txt.versos || []).length) erros.push(onde + ': nenhum verso');
-
-    (txt.versos || []).forEach((v, i) => {
-      if (v.n !== i + 1) erros.push(onde + ': o verso na posição ' + (i + 1) + ' diz n=' + v.n);
-      if (!seus.has(v.card)) erros.push(onde + ': o verso ' + v.n + ' aponta para «' + v.card + '», que não está nos cards do texto');
-    });
-    const usados = new Set((txt.versos || []).map(v => v.card));
-    for (const id of seus.keys()) {
-      if (!usados.has(id)) erros.push(onde + ': o card ' + id + ' não é usado por verso nenhum');
-    }
-    for (const c of seus.values()) {
-      if (c.texto !== txt.id) erros.push(onde + ': o card ' + c.id + ' aponta para o texto «' + c.texto + '»');
-      /* A regra do Gere: o verso só é liberado quando TODAS as palavras dele
-         estiverem dominadas. Palavra que não merece card não entra na conta —
-         ela não tem como ser dominada, e quem fala português já a entende. */
-      for (const req of c.requerTodas || []) {
-        if (!doBaralho.has(req)) {
-          erros.push(onde + ': o card ' + c.id + ' exige «' + req + '», que não existe no baralho');
+    if (txt.tipo && txt.tipo !== 'poema' && txt.tipo !== 'prosa') erros.push(onde + ': o tipo é «poema» ou «prosa», não «' + txt.tipo + '»');
+    if (txt.idioma && txt.idioma !== b.idioma) erros.push(onde + ': diz idioma «' + txt.idioma + '» e está na pasta de ' + b.idioma);
+    if (txt.cards || txt.versos) erros.push(onde + ': «cards» e «versos» eram da trilha; o texto agora é «blocos»');
+    if (!Array.isArray(txt.blocos) || !txt.blocos.length) erros.push(onde + ': nenhum bloco');
+    (txt.blocos || []).forEach((bl, i) => {
+      if (!Array.isArray(bl) || !bl.length) { erros.push(onde + ': o bloco ' + (i + 1) + ' está vazio'); return; }
+      bl.forEach((l, k) => {
+        for (const lg of ['es', 'pt', 'en']) {
+          if (typeof (l || {})[lg] !== 'string' || !l[lg].trim()) erros.push(onde + ', bloco ' + (i + 1) + ', linha ' + (k + 1) + ': falta «' + lg + '»');
         }
+      });
+    });
+    if (!Array.isArray(txt.requerTodas)) { avisos.push(onde + ': sem «requerTodas» — aparece assim que liberar'); continue; }
+    const vistos = new Set();
+    for (const r of txt.requerTodas) {
+      if (vistos.has(r)) erros.push(onde + ': palavra repetida em «requerTodas» → ' + r);
+      vistos.add(r);
+      if (String(r)[0] === '+') {
+        b.pendentesDeTexto++;
+        if (porForma.has(normalizar(r.slice(1)))) erros.push(onde + ': «' + r + '» já tem card (use ' + porForma.get(normalizar(r.slice(1))) + ')');
+        continue;
       }
-      if (c.requer) erros.push(onde + ': o card ' + c.id + ' usa «requer», que é da frase de uso; no verso é «requerTodas»');
+      if (!palavrasDoBaralho.has(r)) erros.push(onde + ': exige «' + r + '», que não é card de palavra do baralho');
     }
   }
-  b.cardsDeTexto = b.cards.filter(c => c.texto);
-  b.cards = b.cards.filter(c => !c.texto);
+  if (b.pendentesDeTexto) avisos.push('[' + b.idioma + '] ' + b.pendentesDeTexto + ' palavra(s) de texto ainda sem card');
 }
 
 /* ── estatísticas, um bloco por baralho ── */
@@ -691,9 +678,9 @@ for (const { idioma, cards } of baralhos) {
 
   const bar = baralhos.find(b => b.idioma === idioma);
   if ((bar.textos || []).length) {
-    const versos = bar.textos.reduce((a, t) => a + (t.versos || []).length, 0);
-    console.log('  textos (trilha) .. ' + bar.textos.length + ', com ' + versos +
-      ' verso(s) em ' + bar.cardsDeTexto.length + ' card(s) — fora da fila normal');
+    const poemas = bar.textos.filter(t => t.tipo === 'poema').length;
+    console.log('  textos .......... ' + bar.textos.length + ' (' + poemas + ' poema(s), ' +
+      (bar.textos.length - poemas) + ' em prosa) — recompensa, fora da fila');
   }
 
   for (const a of audienciasDe(idioma)) {
@@ -775,15 +762,12 @@ for (const { idioma, cards } of baralhos) {
 }
 
 /* ── os textos, à parte do baralho ──
-   data/textos-<idioma>.js põe as trilhas em window.TEXTOS[idioma]. Ficam fora
-   do baralho de propósito: o app só vai lê-las quando a trilha existir, e até
+   data/textos-<idioma>.js põe os textos em window.TEXTOS[idioma]. Ficam fora
+   do baralho de propósito: texto não é card, e até
    lá nenhum verso aparece na fila de ninguém. */
 for (const b of baralhos) {
   if (!(b.textos || []).length) continue;
-  const comVersos = b.textos.map(txt => Object.assign({}, txt, {
-    cards: (txt.cards || []).map(c => Object.assign({ idioma: b.idioma }, c))
-  }));
-  const pacote = { versao: 1, idioma: b.idioma, total: comVersos.length, textos: comVersos };
+  const pacote = { versao: 2, idioma: b.idioma, total: b.textos.length, textos: b.textos };
   fs.writeFileSync(path.join(raiz, 'data', 'textos-' + b.idioma + '.json'),
     JSON.stringify(pacote, null, 1), 'utf8');
   fs.writeFileSync(path.join(raiz, 'data', 'textos-' + b.idioma + '.js'),

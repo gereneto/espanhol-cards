@@ -584,6 +584,15 @@ Os cards novos seguem no mesmo ritmo, só que por umas duas ou três semanas
 quase tudo é palavra — a mediana da estreia ao domínio é de 17 dias —, e as
 frases voltam conforme as palavras das dez frases em vista vão sendo dominadas.
 
+**Os textos são a recompensa** (seção 17.4 do manual). A partir de 400
+dominados, um poema e um trecho de prosa ficam na lista de espera; as palavras
+deles estreiam uma a cada duas das frases em vista, e o texto aparece inteiro,
+com a tradução ao lado, quando a última é dominada. Os primeiros, aprovados
+pelo Gere e batidos com o Wikisource: Machado, Bécquer (Rima LIII) e Martí
+(Versos sencillos I) em verso, traduzidos pelo método do Versificador; o
+começo do Quixote, de «A la deriva» e de «Nuestra América» em prosa. A leva
+20 (`20-vocabulario-dos-textos.json`, 93 cards) deu card às palavras deles.
+
 Os temas ficam em `fonte/tags.json`, com rótulo em `pt`, `en` e `es`. Verbo no
 infinitivo mapeia para si mesmo. Tema em uso sem tradução **barra o build**.
 
@@ -742,7 +751,7 @@ um sinônimo nem a variante de outro lugar. Nas demais frases, pesam mais as
 que dividem palavras com a certa.
 
 **Em cada cinco cards novos, pelo menos um é de vocabulário.** Se as quatro
-últimas estreias foram frase (do baralho ou da trilha de texto), a próxima é
+últimas estreias foram frase, a próxima é
 a primeira palavra da fila de inéditos. É só um teto para as frases.
 
 **«Não sei» também na múltipla escolha**, embaixo das alternativas: mostra a

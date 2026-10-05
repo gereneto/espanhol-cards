@@ -1,0 +1,82 @@
+{
+ "id": "txt-es-002",
+ "idioma": "es",
+ "tipo": "poema",
+ "titulo": "Rima LIII",
+ "autor": "Gustavo Adolfo Bécquer",
+ "obra": "Rimas",
+ "ano": 1871,
+ "dominio": "Bécquer morreu em 1870. Domínio público em qualquer cálculo — nenhuma legislação chega perto de 150 anos.",
+ "fonte": "https://es.wikisource.org/wiki/Rimas_(Bécquer,_1885)/Rima_LIII",
+ "recorte": "as duas primeiras das seis quadras",
+ "traducao": "em verso, na medida e na rima do original",
+ "nota": "Endecassílabos com um heptassílabo agudo fechando cada quadra, e rima nos versos pares. O poema inteiro repete três vezes a mesma armação — «voltarão… mas aquelas… essas não voltarão» —, e aqui estão as duas primeiras. A sintaxe é invertida, como no espanhol poético da época: «sus nidos a colgar» no lugar de «a colgar sus nidos».",
+ "notaEn": "Hendecasyllables with a short stressed-ending line closing each quatrain, rhyming on the even lines. The whole poem repeats the same frame three times — \"they will return… but those… those will not return\" — and these are the first two. The word order is inverted, as in the poetic Spanish of the time.",
+ "blocos": [
+  [
+   {
+    "es": "Volverán las oscuras golondrinas",
+    "pt": "Voltarão as escuras andorinhas",
+    "en": "The dark swallows will return"
+   },
+   {
+    "es": "en tu balcón sus nidos a colgar,",
+    "pt": "seus ninhos na sacada a pendurar,",
+    "en": "to hang their nests on your balcony,"
+   },
+   {
+    "es": "y, otra vez, con el ala a sus cristales",
+    "pt": "e de novo, com a asa, nas vidraças",
+    "en": "and once again, with their wings, at its windows"
+   },
+   {
+    "es": "jugando llamarán.",
+    "pt": "brincando chamarão.",
+    "en": "they will knock in play."
+   }
+  ],
+  [
+   {
+    "es": "Pero aquellas que el vuelo refrenaban",
+    "pt": "Mas aquelas que o voo refreavam",
+    "en": "But those that used to slow their flight"
+   },
+   {
+    "es": "tu hermosura y mi dicha a contemplar,",
+    "pt": "teu rosto e minha dita a contemplar,",
+    "en": "to gaze upon your beauty and my joy,"
+   },
+   {
+    "es": "aquellas que aprendieron nuestros nombres…",
+    "pt": "aquelas que aprenderam nossos nomes,",
+    "en": "those that learned our names…"
+   },
+   {
+    "es": "esas… ¡no volverán!",
+    "pt": "essas… não voltarão!",
+    "en": "those… will not return!"
+   }
+  ]
+ ],
+ "requerTodas": [
+  "p435",
+  "p916",
+  "p917",
+  "p617",
+  "p660",
+  "p308",
+  "p858",
+  "p828",
+  "p918",
+  "p919",
+  "p399",
+  "p381",
+  "p920",
+  "p921",
+  "p922",
+  "p923",
+  "p924",
+  "p574",
+  "p661"
+ ]
+}

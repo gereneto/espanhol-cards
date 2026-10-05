@@ -851,6 +851,34 @@ A partir de **400 cards dominados**, além das frases, a lista de espera ganha
 travar a fila de textos. As palavras deles entram como as das frases em vista,
 e o texto aparece inteiro, como recompensa, quando todas estão dominadas.
 
+Como ficou no app (outubro de 2026), no lugar da trilha de cards de verso de
+01/10:
+
+- **o texto não tem card.** Mora em `fonte/textos/<idioma>/`, com o original
+  e a tradução de cada linha em `blocos` (estrofe ou parágrafo), a lista
+  `requerTodas` das palavras que exige — anotada como a da frase, seção 17.2 —
+  e `autor`, `ano`, `dominio`, `fonte`, `recorte`, `nota`;
+- **as palavras do texto estreiam uma a cada duas das frases em vista**, na
+  ordem de leitura, alternando poema e prosa. Se viessem depois das das
+  frases, nunca chegariam, porque a lista de frases se renova;
+- **na meia-noite seguinte ao domínio da última palavra**, o texto aparece no
+  lugar do próximo card, inteiro, com a tradução ao lado. Fica como lido, o
+  próximo do mesmo tipo entra na espera (o mais perto de destravar), e a tela
+  Textos guarda os já lidos.
+
+**Para pôr um texto novo:**
+
+1. o Gere aprova (`escolher-textos.html`); só domínio público;
+2. o original vem de uma edição de verdade — o Wikisource, pelo
+   `ferramentas/fonte.mjs` do Versificador —, com a grafia atualizada («á»
+   vira «a») e nada digitado de memória. Os candidatos de 02/10 tinham sido
+   escritos de cabeça, e um deles misturava uma quadra de outro poema;
+3. **poema se traduz em verso, pelo método do Versificador** (medida, rima,
+   número de versos), com os arquivos em `fonte/textos/<idioma>/versos/` e o
+   `molde.mjs` sem ✗ nem ≠; prosa, numa tradução fiel e corrente;
+4. as palavras que ainda não têm card ganham card (forma de dicionário), e
+   depois frases, como qualquer palavra (seção 18).
+
 ### 17.5 «Não quero aprender este card»
 
 Todo card tem o botão — em destaque na estreia, que é quando a pessoa sabe se

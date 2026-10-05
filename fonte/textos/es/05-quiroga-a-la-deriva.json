@@ -1,0 +1,67 @@
+{
+ "id": "txt-es-005",
+ "idioma": "es",
+ "tipo": "prosa",
+ "titulo": "A la deriva",
+ "autor": "Horacio Quiroga",
+ "obra": "Cuentos de amor de locura y de muerte",
+ "ano": 1912,
+ "dominio": "Horacio Quiroga morreu em 1937. Na Argentina e no Uruguai o direito dura 70 anos depois da morte: domínio público desde 2008.",
+ "fonte": "https://es.wikisource.org/wiki/A_la_deriva",
+ "recorte": "o primeiro parágrafo e a primeira frase do segundo",
+ "traducao": "em prosa",
+ "nota": "O começo de um dos contos mais secos da língua: um homem picado por uma cobra na selva de Misiones. A «yararacusú» é a jararacuçu. Prosa curta, de verbos no pretérito, e por isso boa de ler em voz alta.",
+ "notaEn": "The opening of one of the starkest stories in Spanish: a man bitten by a snake in the jungle of Misiones. Short sentences, verbs in the past tense — good for reading aloud.",
+ "blocos": [
+  [
+   {
+    "es": "El hombre pisó algo blanduzco, y enseguida sintió la mordedura en el pie.",
+    "pt": "O homem pisou em algo mole e logo sentiu a picada no pé.",
+    "en": "The man stepped on something soft and at once felt the bite on his foot."
+   },
+   {
+    "es": "Saltó adelante, y al volverse con un juramento vio una yararacusú que arrollada sobre sí misma, esperaba otro ataque.",
+    "pt": "Saltou para a frente e, ao se virar com um palavrão, viu uma jararacuçu que, enrolada sobre si mesma, esperava outro ataque.",
+    "en": "He leapt forward and, turning round with an oath, saw a jararacussu that, coiled upon itself, was waiting to strike again."
+   }
+  ],
+  [
+   {
+    "es": "El hombre echó una veloz ojeada a su pie, donde dos gotitas de sangre engrosaban dificultosamente, y sacó el machete de la cintura.",
+    "pt": "O homem lançou um olhar rápido ao pé, onde duas gotinhas de sangue engrossavam com dificuldade, e tirou o facão da cintura.",
+    "en": "The man cast a quick glance at his foot, where two little drops of blood were slowly swelling, and drew the machete from his belt."
+   }
+  ]
+ ],
+ "requerTodas": [
+  "p925",
+  "p914",
+  "p965",
+  "p966",
+  "p470",
+  "p967",
+  "p506",
+  "p968",
+  "p969",
+  "p435",
+  "p970",
+  "p368",
+  "p971",
+  "p972",
+  "p973",
+  "p389",
+  "p858",
+  "p974",
+  "p379",
+  "p975",
+  "p976",
+  "p375",
+  "p977",
+  "p978",
+  "p979",
+  "p980",
+  "p431",
+  "p981",
+  "p982"
+ ]
+}
